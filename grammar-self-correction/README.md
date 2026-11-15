@@ -122,26 +122,28 @@ The other course codes are about spelling, style and organisation, so they aren'
 
 Links live in `data/links.json`. Each code can have one or two links:
 ```json
-"T": [ { "title": "Improve tense and verb forms (iLearn)", "url": "https://..." } ]
+"art": [ { "title": "Using articles (Purdue OWL)", "url": "https://..." } ]
 ```
 They show on the Code key page and next to the student's weak codes on the profile page.
 
-The links come from the course **Correction code (2025)** document. They are Macquarie iLearn pages, so students need to be logged in to iLearn to open them. They couldn't be checked from the build environment.
+These links were chosen by the teacher. They are free, public pages: no login needed. They couldn't be opened from the build environment, so test each one once in a browser.
 
 | Code | Link |
 |---|---|
-| `T`, `vf` | Improve tense and verb forms: https://ilearn.mq.edu.au/mod/page/view.php?id=9018157 |
-| `sv` | Subject-verb agreement: https://ilearn.mq.edu.au/mod/page/view.php?id=9018155 |
-| `art` | Articles: https://ilearn.mq.edu.au/mod/page/view.php?id=9018153 |
-| `N` | Singular and plural: https://ilearn.mq.edu.au/mod/page/view.php?id=9018152&forceview=1 |
-| `uncn/cn` | Countable and uncountable nouns: https://ilearn.mq.edu.au/mod/page/view.php?id=9018158 |
-| `prep` | Prepositions: https://ilearn.mq.edu.au/mod/page/view.php?id=9018154 |
-| `wf` | Word form: https://ilearn.mq.edu.au/mod/page/view.php?id=9018150 |
-| `P` | Punctuation: https://ilearn.mq.edu.au/mod/page/view.php?id=9018151 |
-| `i.s.` | Incomplete sentences: https://ilearn.mq.edu.au/mod/page/view.php?id=9018156 |
-| `sp`, `ref`, `linker`, `INF`, `logic`, `NP` | Shown with the other codes in the code key |
+| `vf` | Incorrect verb form (ProWritingAid): https://prowritingaid.com/grammar/1008109/Incorrect-verb-form |
+| `sv` | Subject-verb agreement (UTS HELPS): https://www.uts.edu.au/for-students/current-students/support/helps/self-help-resources/grammar/subject-verb-agreement |
+| `art` | Using articles (Purdue OWL): https://owl.purdue.edu/owl/general_writing/grammar/using_articles.html |
+| `N` | Nouns: singular and plural (Cambridge Dictionary): https://dictionary.cambridge.org/grammar/british-grammar/nouns-singular-and-plural |
+| `uncn/cn` | Countability (Griffith University): https://www.griffith.edu.au/international/englishhelp/countability |
+| `prep` | Prepositions of time (British Council): https://learnenglishteens.britishcouncil.org/grammar/beginner-grammar/prepositions-time |
+| `wf` | Choosing the correct word form (George Mason University): https://writingcenter.gmu.edu/guides/choosing-the-correct-word-form |
+| `P` | Punctuation and spelling (Griffith University): https://www.griffith.edu.au/international/englishhelp/punctuation-and-spelling |
+| `i.s.` | Sentence fragments (Grammarly): https://www.grammarly.com/blog/sentence-fragment/ |
+| `sp` | Spelling (University of Toronto): https://advice.writing.utoronto.ca/revising/spelling/ |
+| `INF` | Reducing informality (George Mason University): https://writingcenter.gmu.edu/guides/reducing-informality-in-academic-writing |
+| `NP` | Writing clear paragraphs (Monash University): https://www.monash.edu/rlo/research-writing-assignments/writing/clear-communication/writing-clear-paragraphs |
 
-The document has no links for `ww`, `wo`, `SS`, `^` and `/`, so those show none. `vf` uses the tense link, because that page covers "tense and verb forms".
+No link yet: `T`, `ww`, `wo`, `SS`, `^`, `/`, `ref`, `linker`, `logic`.
 
 ## Mode 2: "My own writing" (built, switched off)
 
