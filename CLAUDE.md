@@ -10,6 +10,9 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 - Design: navy ink + amber accent + skill colours. Yellow `#FFFF00` (`--sun`) is used ONLY for the DN logo, highlighter swipes, the scroll-progress bar, text selection and tiny dots. Dave asked for headings that aren't too large.
 - Home page order: hero → AI apps (main focus) → paid resources → stats → courses → statement → testimonials → about → moments → contact.
 
+## Contact
+- Contact email shown on the site: dave.naserbakht@gmail.com (`EMAIL` in `_tools/build.py`, and the error message in `assets/book.js`).
+
 ## Booking form (`/book/`)
 - Submits (no-cors POST) to Dave's Google Form "Student Information Form": `https://docs.google.com/forms/d/e/1FAIpQLSda5OD0a74n93Vw6FKQF-HaWF5spCccaGKzCvCje4vWa11yKA/formResponse`. Entry IDs are in `assets/book.js`. Radio values must match the Google Form's options exactly, or Google rejects the response.
 - The chosen service is prefixed to the "What do you want to improve?" answer. Pages link to `book/?service=<id>` to preselect it (ielts-live, ielts-writing, speaking-mock, writing-mock, speaking-fluency, level-up).
@@ -18,9 +21,10 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 ## Apps
 - Each app is a self-contained static page in its own folder: `/<slug>/index.html`. No backend, no API keys in the code (the repo is public).
 - Apps must work without sign-in on laptops and phones, keep student data on the device (localStorage at most), and support light/dark mode.
-- Live apps: `/note-taking-trainer/` (DAVE Notes). `/note-taking-trainer-ted/` exists but is not linked from the site. The apps load `/assets/site.js` (legacy theme toggle): keep that file.
+- Live apps: `/note-taking-trainer-ted/` (DAVE Notes, TED edition; `/note-taking-trainer/` is now a redirect to it) and `/grammar-self-correction/` (Grammar Self-Correction Trainer). Some apps load `/assets/site.js` (legacy theme toggle): keep that file.
+- Live apps are listed first in `APPS` in `_tools/build.py` so they lead the AI section on the home page.
 - When an app goes live, add it to `LIVE` in `_tools/build.py` (title → folder), rebuild, and add it to `/sitemap.xml`. Card skills: listen, read, write, gram, vocab.
-- Planned apps: dictogloss, skim-and-scan timer, paragraph X-ray, synthesis builder, error-correction coach (coded hints), nominalisation & hedging drills, register swapper.
+- Planned apps: dictogloss, skim-and-scan timer, paragraph X-ray, synthesis builder, nominalisation & hedging drills, register swapper.
 
 ## Resources
 - `/resources/` is the teaching-resources hub (slides, word lists, worksheets). Each resource gets its own SEO page based on `/resources/_template/` (remove its noindex), a card on the hub (in `_tools/build.py`), and an entry in `/sitemap.xml`.
