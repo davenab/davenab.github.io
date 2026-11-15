@@ -1,0 +1,1140 @@
+{
+  "_help": "Track B: Hedging. Items are grouped by stage. See README.md, section 'How to add or edit an item'.",
+  "track": "hedging",
+  "title": "Hedging",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "Spot it",
+      "items": [
+        {
+          "id": "H1-01",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "Online learning may improve access to education for students in rural areas.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "may"
+          ],
+          "modelAnswers": [],
+          "reason": "“may” is a modal verb. It shows the writer is not completely sure.",
+          "hint": "There is one. It is a modal verb.",
+          "pattern": "Modal verbs",
+          "verified": false
+        },
+        {
+          "id": "H1-02",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "The results suggest that regular exercise could reduce stress among office workers.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "suggest",
+            "could"
+          ],
+          "modelAnswers": [],
+          "reason": "“suggest” is a cautious reporting verb and “could” is a modal verb.",
+          "hint": "There are two: a reporting verb and a modal verb.",
+          "pattern": "Reporting verbs",
+          "verified": false
+        },
+        {
+          "id": "H1-03",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "Some students appear to learn more effectively in small groups.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "Some",
+            "appear"
+          ],
+          "modelAnswers": [],
+          "reason": "“Some” limits the claim to part of the group, and “appear” makes it less certain.",
+          "hint": "There are two: a quantity word and a verb.",
+          "pattern": "Quantity and frequency words",
+          "verified": false
+        },
+        {
+          "id": "H1-04",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "Higher taxes on sugary drinks are likely to reduce consumption in the long term.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "likely"
+          ],
+          "modelAnswers": [],
+          "reason": "“likely” shows the result is probable, not certain.",
+          "hint": "There is one. It is an adjective.",
+          "pattern": "Adjectives",
+          "verified": false
+        },
+        {
+          "id": "H1-05",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "This trend is possibly linked to the rising cost of housing in major cities.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "possibly"
+          ],
+          "modelAnswers": [],
+          "reason": "“possibly” is an adverb that makes the link less certain.",
+          "hint": "There is one. It ends in -ly.",
+          "pattern": "Adverbs",
+          "verified": false
+        },
+        {
+          "id": "H1-06",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "Social media use might affect the sleep of some teenagers.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "might",
+            "some"
+          ],
+          "modelAnswers": [],
+          "reason": "“might” is a modal verb, and “some” limits the claim to part of the group.",
+          "hint": "There are two: a modal verb and a quantity word.",
+          "pattern": "Modal verbs",
+          "verified": false
+        },
+        {
+          "id": "H1-07",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "Small businesses often find it difficult to obtain loans from banks.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "often"
+          ],
+          "modelAnswers": [],
+          "reason": "“often” means “many times but not always”, so the claim is less absolute.",
+          "hint": "There is one. It is a frequency word.",
+          "pattern": "Quantity and frequency words",
+          "verified": false
+        },
+        {
+          "id": "H1-08",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "The data indicate that the new policy has probably reduced waste.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "indicate",
+            "probably"
+          ],
+          "modelAnswers": [],
+          "reason": "“indicate” is a cautious reporting verb and “probably” is an adverb.",
+          "hint": "There are two: a reporting verb and an adverb.",
+          "pattern": "Reporting verbs",
+          "verified": false
+        },
+        {
+          "id": "H1-09",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "Perhaps the main cause of the delay was a lack of communication.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "Perhaps"
+          ],
+          "modelAnswers": [],
+          "reason": "“Perhaps” is an adverb that shows the writer is not sure.",
+          "hint": "There is one. Look at the start.",
+          "pattern": "Adverbs",
+          "verified": false
+        },
+        {
+          "id": "H1-10",
+          "track": "hedging",
+          "stage": 1,
+          "type": "spot",
+          "prompt": "Most participants seemed to prefer the shorter version of the course.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "Most",
+            "seemed"
+          ],
+          "modelAnswers": [],
+          "reason": "“Most” means “not all”, and “seemed” makes the claim less certain.",
+          "hint": "There are two: a quantity word and a verb.",
+          "pattern": "Quantity and frequency words",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "How strong?",
+      "items": [
+        {
+          "id": "H2-01",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "Noise reduces concentration.",
+            "Noise probably reduces concentration.",
+            "Noise may reduce concentration."
+          ],
+          "acceptedAnswers": [
+            "Noise reduces concentration.",
+            "Noise probably reduces concentration.",
+            "Noise may reduce concentration."
+          ],
+          "modelAnswers": [],
+          "reason": "No hedge is the strongest. “probably” means more likely than not. “may” means it is only possible.",
+          "hint": "Which one has no hedge at all?",
+          "pattern": "Ordering certainty",
+          "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
+          "verified": false
+        },
+        {
+          "id": "H2-02",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "All students prefer online classes.",
+            "Most students prefer online classes.",
+            "Some students prefer online classes.",
+            "A few students prefer online classes."
+          ],
+          "acceptedAnswers": [
+            "All students prefer online classes.",
+            "Most students prefer online classes.",
+            "Some students prefer online classes.",
+            "A few students prefer online classes."
+          ],
+          "modelAnswers": [],
+          "reason": "“All” covers everyone, “most” more than half, “some” an unknown part, and “a few” a small number.",
+          "hint": "Think about how many students each sentence covers.",
+          "pattern": "Quantity and frequency words",
+          "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
+          "verified": false
+        },
+        {
+          "id": "H2-03",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "Students always check their work.",
+            "Students usually check their work.",
+            "Students sometimes check their work.",
+            "Students rarely check their work."
+          ],
+          "acceptedAnswers": [
+            "Students always check their work.",
+            "Students usually check their work.",
+            "Students sometimes check their work.",
+            "Students rarely check their work."
+          ],
+          "modelAnswers": [],
+          "reason": "always → usually → sometimes → rarely: from every time to almost never.",
+          "hint": "Think about how often each word means.",
+          "pattern": "Quantity and frequency words",
+          "question": "Put these in order. Start with the most often and end with the least often.",
+          "verified": false
+        },
+        {
+          "id": "H2-04",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "It is certain that…",
+            "It is likely that…",
+            "It is possible that…"
+          ],
+          "acceptedAnswers": [
+            "It is certain that…",
+            "It is likely that…",
+            "It is possible that…"
+          ],
+          "modelAnswers": [],
+          "reason": "“certain” means sure, “likely” means probable, and “possible” means it could happen.",
+          "hint": "Which word means 100% sure?",
+          "pattern": "Ordering certainty",
+          "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
+          "verified": false
+        },
+        {
+          "id": "H2-05",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "The evidence proves that…",
+            "The evidence strongly suggests that…",
+            "The evidence may suggest that…"
+          ],
+          "acceptedAnswers": [
+            "The evidence proves that…",
+            "The evidence strongly suggests that…",
+            "The evidence may suggest that…"
+          ],
+          "modelAnswers": [],
+          "reason": "“proves” is the strongest. “strongly suggests” is confident but careful. “may suggest” is weaker.",
+          "hint": "Academic writers rarely use “proves”. Is it strong or weak?",
+          "pattern": "Reporting verbs",
+          "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
+          "verified": false
+        },
+        {
+          "id": "H2-06",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "The new rule will reduce traffic.",
+            "The new rule is likely to reduce traffic.",
+            "The new rule might reduce traffic."
+          ],
+          "acceptedAnswers": [
+            "The new rule will reduce traffic.",
+            "The new rule is likely to reduce traffic.",
+            "The new rule might reduce traffic."
+          ],
+          "modelAnswers": [],
+          "reason": "“will” is a prediction with no doubt. “is likely to” is probable. “might” is only possible.",
+          "hint": "Which one shows no doubt at all?",
+          "pattern": "Modal verbs",
+          "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
+          "verified": false
+        },
+        {
+          "id": "H2-07",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "This is definitely the main reason.",
+            "This is almost certainly the main reason.",
+            "This is possibly the main reason."
+          ],
+          "acceptedAnswers": [
+            "This is definitely the main reason.",
+            "This is almost certainly the main reason.",
+            "This is possibly the main reason."
+          ],
+          "modelAnswers": [],
+          "reason": "“definitely” shows no doubt, “almost certainly” a little doubt, and “possibly” a lot of doubt.",
+          "hint": "“almost” makes a word a little weaker.",
+          "pattern": "Adverbs",
+          "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
+          "verified": false
+        },
+        {
+          "id": "H2-08",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "There is clear evidence that…",
+            "There is some evidence that…",
+            "There is little evidence that…"
+          ],
+          "acceptedAnswers": [
+            "There is clear evidence that…",
+            "There is some evidence that…",
+            "There is little evidence that…"
+          ],
+          "modelAnswers": [],
+          "reason": "“clear evidence” is strong, “some evidence” is partial, and “little evidence” means almost none.",
+          "hint": "“little evidence” means almost no evidence.",
+          "pattern": "Ordering certainty",
+          "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
+          "verified": false
+        },
+        {
+          "id": "H2-09",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "Stress is the cause of the problem.",
+            "Stress is a likely cause of the problem.",
+            "Stress is one possible cause of the problem."
+          ],
+          "acceptedAnswers": [
+            "Stress is the cause of the problem.",
+            "Stress is a likely cause of the problem.",
+            "Stress is one possible cause of the problem."
+          ],
+          "modelAnswers": [],
+          "reason": "“the cause” is the only cause; “a likely cause” is probable; “one possible cause” is one option among others.",
+          "hint": "Compare “the”, “a likely” and “one possible”.",
+          "pattern": "Adjectives",
+          "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
+          "verified": false
+        },
+        {
+          "id": "H2-10",
+          "track": "hedging",
+          "stage": 2,
+          "type": "order",
+          "prompt": "",
+          "frame": null,
+          "options": [
+            "The survey shows that students want more feedback.",
+            "The survey suggests that students want more feedback.",
+            "The survey might suggest that students want more feedback."
+          ],
+          "acceptedAnswers": [
+            "The survey shows that students want more feedback.",
+            "The survey suggests that students want more feedback.",
+            "The survey might suggest that students want more feedback."
+          ],
+          "modelAnswers": [],
+          "reason": "“shows” is confident, “suggests” is cautious, and “might suggest” is the most cautious.",
+          "hint": "Adding “might” makes a verb weaker.",
+          "pattern": "Reporting verbs",
+          "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "Match the evidence",
+      "items": [
+        {
+          "id": "H3-01",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "One small study of 20 university students.",
+          "frame": null,
+          "options": [
+            "Listening to music while studying improves memory.",
+            "Listening to music while studying may improve memory.",
+            "It could perhaps be possible that music might have some effect on memory."
+          ],
+          "acceptedAnswers": [
+            "Listening to music while studying may improve memory."
+          ],
+          "modelAnswers": [],
+          "reason": "One small study is weak evidence, so one hedge (“may”) fits. The weak option uses so many hedges it says almost nothing.",
+          "hint": "How much can one small study show?",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        },
+        {
+          "id": "H3-02",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "Many large studies in different countries agree.",
+          "frame": null,
+          "options": [
+            "Regular physical activity completely prevents heart disease.",
+            "Regular physical activity reduces the risk of heart disease.",
+            "Regular physical activity might possibly reduce the risk of heart disease."
+          ],
+          "acceptedAnswers": [
+            "Regular physical activity reduces the risk of heart disease."
+          ],
+          "modelAnswers": [],
+          "reason": "When many large studies agree, a confident claim fits. “Completely prevents” goes beyond the evidence.",
+          "hint": "Strong evidence allows a confident claim, but not an extreme one.",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        },
+        {
+          "id": "H3-03",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "A survey of 40 students at one university.",
+          "frame": null,
+          "options": [
+            "All university students prefer online exams.",
+            "Some students at this university appear to prefer online exams.",
+            "It is perhaps possible that a few students might prefer online exams."
+          ],
+          "acceptedAnswers": [
+            "Some students at this university appear to prefer online exams."
+          ],
+          "modelAnswers": [],
+          "reason": "A small survey at one university cannot speak for all students, so the claim is limited to “some students at this university”.",
+          "hint": "Who did the survey actually ask?",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        },
+        {
+          "id": "H3-04",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "Several large studies agree, but a few studies found no effect.",
+          "frame": null,
+          "options": [
+            "Homework clearly improves results for every student.",
+            "Homework is likely to improve results for many students.",
+            "Homework could possibly perhaps have some small effect."
+          ],
+          "acceptedAnswers": [
+            "Homework is likely to improve results for many students."
+          ],
+          "modelAnswers": [],
+          "reason": "Mostly strong evidence with some doubt fits “is likely to” and “many students”.",
+          "hint": "The evidence is mostly positive, but not completely.",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        },
+        {
+          "id": "H3-05",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "There are no studies yet. One teacher noticed this in one class.",
+          "frame": null,
+          "options": [
+            "Standing desks improve students' focus.",
+            "It is possible that standing desks help some students focus, but this has not yet been studied.",
+            "Standing desks might perhaps possibly have some kind of effect on something."
+          ],
+          "acceptedAnswers": [
+            "It is possible that standing desks help some students focus, but this has not yet been studied."
+          ],
+          "modelAnswers": [],
+          "reason": "One teacher's observation is very weak evidence, so the claim must be cautious and say that it has not been studied.",
+          "hint": "Is there any real research yet?",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        },
+        {
+          "id": "H3-06",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "A very large, long-term study, supported by many other studies.",
+          "frame": null,
+          "options": [
+            "Long working hours always cause serious illness.",
+            "Long working hours are linked to poorer health.",
+            "Long working hours might perhaps be linked to slightly poorer health in some cases."
+          ],
+          "acceptedAnswers": [
+            "Long working hours are linked to poorer health."
+          ],
+          "modelAnswers": [],
+          "reason": "Strong evidence supports a confident claim (“are linked to”), but “always cause serious illness” goes too far.",
+          "hint": "Strong evidence: be confident, but avoid “always”.",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        },
+        {
+          "id": "H3-07",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "Two small studies found different results.",
+          "frame": null,
+          "options": [
+            "Video games improve problem-solving skills.",
+            "The effect of video games on problem-solving skills is not yet clear.",
+            "Video games may perhaps possibly affect something."
+          ],
+          "acceptedAnswers": [
+            "The effect of video games on problem-solving skills is not yet clear."
+          ],
+          "modelAnswers": [],
+          "reason": "When studies disagree, the honest claim is that the effect is not yet clear.",
+          "hint": "The studies do not agree. What can you safely say?",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        },
+        {
+          "id": "H3-08",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "A government report based on data from every school in the country.",
+          "frame": null,
+          "options": [
+            "Class sizes have increased in every school in the world.",
+            "Class sizes in the country's schools have increased.",
+            "It seems that class sizes might possibly have increased slightly in some schools."
+          ],
+          "acceptedAnswers": [
+            "Class sizes in the country's schools have increased."
+          ],
+          "modelAnswers": [],
+          "reason": "Data from every school in the country is strong evidence, so a direct claim about that country fits. The world is not covered.",
+          "hint": "How much of the evidence is missing?",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        },
+        {
+          "id": "H3-09",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "One online poll that anyone could answer.",
+          "frame": null,
+          "options": [
+            "Most people support the new tax.",
+            "The poll suggests some support for the new tax, but it may not represent the public.",
+            "Perhaps it might be possible that some people could possibly support the tax."
+          ],
+          "acceptedAnswers": [
+            "The poll suggests some support for the new tax, but it may not represent the public."
+          ],
+          "modelAnswers": [],
+          "reason": "An open online poll is weak evidence, so the claim is careful and mentions its limits.",
+          "hint": "Who answers an open online poll?",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        },
+        {
+          "id": "H3-10",
+          "track": "hedging",
+          "stage": 3,
+          "type": "evidence",
+          "prompt": "A single case study of one company.",
+          "frame": null,
+          "options": [
+            "Four-day working weeks increase profits for all businesses.",
+            "A four-day week may have helped this company, but more research is needed.",
+            "Working weeks might perhaps possibly have some effect."
+          ],
+          "acceptedAnswers": [
+            "A four-day week may have helped this company, but more research is needed."
+          ],
+          "modelAnswers": [],
+          "reason": "One company cannot speak for all businesses, so the claim is limited to that company.",
+          "hint": "How many companies were studied?",
+          "pattern": "Matching the evidence",
+          "optionLabels": [
+            "Too strong",
+            "About right",
+            "Too weak"
+          ],
+          "question": "Read the evidence. Which claim fits it best?",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "Free rewrite",
+      "items": [
+        {
+          "id": "H4-01",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Social media causes depression in teenagers.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Social media use may contribute to depression in some teenagers.",
+            "Heavy social media use appears to be linked to depression in teenagers."
+          ],
+          "reason": "A link is not proof of cause, so “causes” becomes “may contribute to” or “appears to be linked to”.",
+          "hint": "Change “causes” to a weaker verb phrase.",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "Several studies found a link, but they cannot show cause.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        },
+        {
+          "id": "H4-02",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Online learning is worse than face-to-face learning.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Online learning may be less effective than face-to-face learning for some students.",
+            "For some students, online learning appears to be less effective than face-to-face learning."
+          ],
+          "reason": "Mixed results mean the claim should be limited (“for some students”) and softened (“may”).",
+          "hint": "Add a modal verb and limit who it is true for.",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "Studies show mixed results.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        },
+        {
+          "id": "H4-03",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Video games make children violent.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Violent video games may increase aggressive behaviour in some children.",
+            "Playing violent video games might be linked to aggression in some children."
+          ],
+          "reason": "A small, uncertain link needs a hedge (“may”, “might”) and a limit (“some children”).",
+          "hint": "Use “may” and “some”.",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "Some studies found a small link; others found none.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        },
+        {
+          "id": "H4-04",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Working from home increases productivity.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Working from home can increase productivity for some employees.",
+            "Working from home appears to increase productivity in some jobs."
+          ],
+          "reason": "Because results differ by job, the claim is limited to “some employees” or “some jobs”.",
+          "hint": "Limit the claim to some workers or jobs.",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "Some surveys of office workers found this; results differ by job.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        },
+        {
+          "id": "H4-05",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Fast food is the cause of obesity.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Fast food is likely to be one cause of obesity.",
+            "Eating fast food regularly may contribute to obesity."
+          ],
+          "reason": "Obesity has many causes, so fast food is “one cause”, not “the cause”.",
+          "hint": "Change “the cause” to “one cause”.",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "Many studies link fast food to weight gain, but obesity has many causes.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        },
+        {
+          "id": "H4-06",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Electric cars will solve the problem of air pollution.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Electric cars could help to reduce air pollution.",
+            "Electric cars are likely to reduce air pollution in cities."
+          ],
+          "reason": "There are other sources of pollution, so “will solve” becomes “could help to reduce”.",
+          "hint": "Change “will solve” to something weaker.",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "Electric cars produce no exhaust fumes, but there are other sources of air pollution.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        },
+        {
+          "id": "H4-07",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Students who use smartphones in class get lower marks.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Students who use smartphones in class tend to get lower marks.",
+            "Smartphone use in class may lead to lower marks for some students."
+          ],
+          "reason": "A pattern across several studies fits “tend to”: true in general, but not for every student.",
+          "hint": "Use “tend to”.",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "Several studies found this pattern.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        },
+        {
+          "id": "H4-08",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Bilingual children are smarter than other children.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Bilingual children may have some advantages in certain thinking skills.",
+            "Being bilingual appears to benefit some thinking skills in children."
+          ],
+          "reason": "The evidence is about some thinking skills, not general intelligence, so the claim is narrower and hedged.",
+          "hint": "Make the claim narrower: which skills?",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "A few studies found small advantages in some thinking skills.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        },
+        {
+          "id": "H4-09",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Raising the minimum wage destroys jobs.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Raising the minimum wage may lead to some job losses.",
+            "A higher minimum wage could reduce the number of jobs in some industries."
+          ],
+          "reason": "When experts disagree, “destroys” becomes “may lead to some job losses”.",
+          "hint": "Use a modal verb and a softer verb.",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "Economists disagree; studies show different results.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        },
+        {
+          "id": "H4-10",
+          "track": "hedging",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Reading on screens damages children's eyes.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Reading on screens for long periods may cause eye strain in some children.",
+            "Long periods of screen reading appear to be linked to eye strain in children."
+          ],
+          "reason": "The evidence is about eye strain after long use, so the claim is narrower and hedged.",
+          "hint": "Use “may” and say “for long periods”.",
+          "pattern": "Free rewrite: softening a claim",
+          "evidence": "Some studies link long screen time to eye strain.",
+          "question": "This claim is too strong for the evidence. How would you say it in an essay?",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "title": "Too much",
+      "items": [
+        {
+          "id": "H5-01",
+          "track": "hedging",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "The results may possibly perhaps suggest that the new method could be somewhat effective.",
+          "frame": null,
+          "options": [
+            "The results suggest that the new method is effective.",
+            "The results prove that the new method is effective.",
+            "The results may possibly suggest the method could perhaps work."
+          ],
+          "acceptedAnswers": [
+            "The results suggest that the new method is effective."
+          ],
+          "modelAnswers": [],
+          "reason": "One hedge (“suggest”) is enough. “prove” is too strong, and the last option still stacks hedges.",
+          "hint": "Keep one reporting verb and one modal.",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. Which version is best?",
+          "verified": false
+        },
+        {
+          "id": "H5-02",
+          "track": "hedging",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "It might be possible that online tutoring could perhaps help some students.",
+          "frame": null,
+          "options": [
+            "Online tutoring may help some students.",
+            "Online tutoring helps all students.",
+            "It is possible that online tutoring might perhaps help."
+          ],
+          "acceptedAnswers": [
+            "Online tutoring may help some students."
+          ],
+          "modelAnswers": [],
+          "reason": "“may” and “some” are enough. “helps all students” is too strong.",
+          "hint": "Which version uses only one hedge word plus “some”?",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. Which version is best?",
+          "verified": false
+        },
+        {
+          "id": "H5-03",
+          "track": "hedging",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "Evidence seems to possibly indicate that there may be a link between diet and mood.",
+          "frame": null,
+          "options": [
+            "Evidence suggests a link between diet and mood.",
+            "Diet controls mood.",
+            "Evidence seems to possibly suggest a link."
+          ],
+          "acceptedAnswers": [
+            "Evidence suggests a link between diet and mood."
+          ],
+          "modelAnswers": [],
+          "reason": "“suggests” already shows caution, so no other hedge is needed. “Diet controls mood” is too strong.",
+          "hint": "One cautious verb is enough.",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. Which version is best?",
+          "verified": false
+        },
+        {
+          "id": "H5-04",
+          "track": "hedging",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "Exercise could perhaps possibly have some benefits for mental health.",
+          "frame": null,
+          "options": [
+            "Exercise has clear benefits for mental health.",
+            "Exercise might perhaps benefit mental health.",
+            "Exercise cures all mental illness."
+          ],
+          "acceptedAnswers": [
+            "Exercise has clear benefits for mental health."
+          ],
+          "modelAnswers": [],
+          "reason": "With many large studies agreeing, a confident claim fits. “cures all mental illness” goes far beyond the evidence.",
+          "hint": "Read the evidence. Is it strong or weak?",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. Which version is best?",
+          "evidence": "Many large studies agree.",
+          "verified": false
+        },
+        {
+          "id": "H5-05",
+          "track": "hedging",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "Perhaps it is likely that some customers may tend to prefer shopping online.",
+          "frame": null,
+          "options": [
+            "Some customers tend to prefer shopping online.",
+            "All customers prefer shopping online.",
+            "Perhaps some customers may tend to prefer it."
+          ],
+          "acceptedAnswers": [
+            "Some customers tend to prefer shopping online."
+          ],
+          "modelAnswers": [],
+          "reason": "“some” and “tend to” are enough. Four hedges in one sentence make it weak and unclear.",
+          "hint": "Keep “some” and one more hedge.",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. Which version is best?",
+          "verified": false
+        },
+        {
+          "id": "H5-06",
+          "track": "hedging",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "Waiting times at hospitals might possibly have increased somewhat in recent years.",
+          "frame": null,
+          "options": [
+            "Waiting times at hospitals have increased in recent years.",
+            "Waiting times may perhaps have increased.",
+            "Waiting times have doubled everywhere."
+          ],
+          "acceptedAnswers": [
+            "Waiting times at hospitals have increased in recent years."
+          ],
+          "modelAnswers": [],
+          "reason": "Data from all hospitals is strong evidence, so a direct claim fits. “doubled everywhere” adds facts the evidence does not give.",
+          "hint": "Read the evidence. How complete is it?",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. Which version is best?",
+          "evidence": "A national report using data from all hospitals.",
+          "verified": false
+        },
+        {
+          "id": "H5-07",
+          "track": "hedging",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "Teachers might possibly perhaps consider giving feedback more often.",
+          "frame": null,
+          "options": [
+            "Teachers could consider giving feedback more often.",
+            "Teachers must give feedback every day.",
+            "Teachers might perhaps consider feedback."
+          ],
+          "acceptedAnswers": [
+            "Teachers could consider giving feedback more often."
+          ],
+          "modelAnswers": [],
+          "reason": "One soft word (“could”) is enough for a polite suggestion. “must … every day” is too strong.",
+          "hint": "Keep one modal verb.",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. Which version is best?",
+          "verified": false
+        },
+        {
+          "id": "H5-08",
+          "track": "hedging",
+          "stage": 5,
+          "type": "rewrite",
+          "prompt": "This may possibly suggest that students could perhaps benefit from shorter lectures.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "This suggests that students benefit from shorter lectures.",
+            "Students may benefit from shorter lectures."
+          ],
+          "reason": "Keep one reporting verb or one modal verb, not four hedges.",
+          "hint": "Keep “suggests” or “may”. Remove the rest.",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. How could you fix it?",
+          "verified": false
+        },
+        {
+          "id": "H5-09",
+          "track": "hedging",
+          "stage": 5,
+          "type": "rewrite",
+          "prompt": "It seems that it might be possible that remote work could reduce stress for some employees.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Remote work may reduce stress for some employees.",
+            "Remote work seems to reduce stress for some employees."
+          ],
+          "reason": "“may” (or “seems to”) plus “some” is enough.",
+          "hint": "Start with “Remote work”.",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. How could you fix it?",
+          "verified": false
+        },
+        {
+          "id": "H5-10",
+          "track": "hedging",
+          "stage": 5,
+          "type": "rewrite",
+          "prompt": "It could perhaps be argued that sleep might possibly affect learning.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Sleep affects learning.",
+            "There is strong evidence that sleep affects learning."
+          ],
+          "reason": "Many large studies agree, so the claim can be confident. The hedges make it weaker than the evidence.",
+          "hint": "Read the evidence. Does the claim need any hedge?",
+          "pattern": "Stacked hedges",
+          "question": "This sentence has too many hedges. How could you fix it?",
+          "evidence": "Many large studies agree.",
+          "verified": false
+        }
+      ]
+    }
+  ]
+}

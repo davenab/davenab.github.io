@@ -1,0 +1,1051 @@
+{
+  "_help": "Track A: Nominalisation. Items are grouped by stage. See README.md, section 'How to add or edit an item'.",
+  "track": "nominalisation",
+  "title": "Nominalisation",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "Word families",
+      "items": [
+        {
+          "id": "N1-01",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “analyse” (verb)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "analysis"
+          ],
+          "modelAnswers": [],
+          "reason": "Verbs ending in -yse often become nouns ending in -ysis: analyse → analysis.",
+          "hint": "It ends in -sis.",
+          "pattern": "-sis nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-02",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “significant” (adjective)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "significance"
+          ],
+          "modelAnswers": [],
+          "reason": "Adjectives ending in -ant usually become nouns ending in -ance.",
+          "hint": "Change -ant to -ance.",
+          "pattern": "-ance / -ence nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-03",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “develop” (verb)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "development"
+          ],
+          "modelAnswers": [],
+          "reason": "Many verbs add -ment to become a noun: develop → development.",
+          "hint": "Add a four-letter ending.",
+          "pattern": "-ment nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-04",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “reduce” (verb)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "reduction"
+          ],
+          "modelAnswers": [],
+          "reason": "Verbs ending in -duce become nouns ending in -duction: reduce → reduction.",
+          "hint": "It ends in -tion.",
+          "pattern": "-tion / -sion nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-05",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “decide” (verb)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "decision"
+          ],
+          "modelAnswers": [],
+          "reason": "Verbs ending in -ide often become nouns ending in -ision: decide → decision.",
+          "hint": "It ends in -sion.",
+          "pattern": "-tion / -sion nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-06",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “grow” (verb)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "growth"
+          ],
+          "modelAnswers": [],
+          "reason": "Some short verbs add -th: grow → growth (like strong → strength).",
+          "hint": "It ends in -th.",
+          "pattern": "-th and other nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-07",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “accurate” (adjective)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "accuracy"
+          ],
+          "modelAnswers": [],
+          "reason": "Adjectives ending in -ate often become nouns ending in -acy: accurate → accuracy.",
+          "hint": "It ends in -acy.",
+          "pattern": "-th and other nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-08",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “available” (adjective)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "availability"
+          ],
+          "modelAnswers": [],
+          "reason": "Adjectives ending in -able become nouns ending in -ability.",
+          "hint": "It ends in -ity.",
+          "pattern": "-ity nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-09",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “fail” (verb)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "failure"
+          ],
+          "modelAnswers": [],
+          "reason": "The noun from “fail” is “failure” (-ure ending), not “failing”.",
+          "hint": "It ends in -ure.",
+          "pattern": "-al / -ure nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-10",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “behave” (verb)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "behaviour"
+          ],
+          "modelAnswers": [],
+          "reason": "behave → behaviour. Australian spelling keeps the u: behaviour.",
+          "hint": "It ends in -iour.",
+          "pattern": "-th and other nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-11",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the noun form of “efficient” (adjective)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "efficiency"
+          ],
+          "modelAnswers": [],
+          "reason": "Adjectives ending in -ent often become nouns ending in -ency.",
+          "hint": "Change -ent to -ency.",
+          "pattern": "-ance / -ence nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-12",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the verb form of “investment” (noun)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "invest"
+          ],
+          "modelAnswers": [],
+          "reason": "Take away the -ment ending to get the verb: investment → invest.",
+          "hint": "Remove the noun ending.",
+          "pattern": "-ment nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-13",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the adjective form of “complexity” (noun)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "complex"
+          ],
+          "modelAnswers": [],
+          "reason": "Take away the -ity ending to get the adjective: complexity → complex.",
+          "hint": "Remove the noun ending.",
+          "pattern": "-ity nouns",
+          "verified": false
+        },
+        {
+          "id": "N1-14",
+          "track": "nominalisation",
+          "stage": 1,
+          "type": "word",
+          "prompt": "What is the verb form of “emphasis” (noun)?",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "emphasise"
+          ],
+          "modelAnswers": [],
+          "reason": "emphasis → emphasise. Australian spelling uses -ise.",
+          "hint": "It ends in -ise.",
+          "pattern": "-sis nouns",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "Spot it",
+      "items": [
+        {
+          "id": "N2-01",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "spot",
+          "prompt": "The rapid expansion of online study has increased the flexibility of university courses.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "expansion",
+            "flexibility"
+          ],
+          "modelAnswers": [],
+          "reason": "“expansion” comes from the verb expand; “flexibility” comes from the adjective flexible.",
+          "hint": "There are two. Look for -sion and -ity.",
+          "pattern": "Spotting nominalisations",
+          "verified": false
+        },
+        {
+          "id": "N2-02",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "spot",
+          "prompt": "The council's decision to raise fees caused strong disagreement among local shop owners.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "decision",
+            "disagreement"
+          ],
+          "modelAnswers": [],
+          "reason": "“decision” comes from decide; “disagreement” comes from disagree.",
+          "hint": "There are two. Look for -sion and -ment.",
+          "pattern": "Spotting nominalisations",
+          "verified": false
+        },
+        {
+          "id": "N2-03",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "spot",
+          "prompt": "Poor ventilation in classrooms can reduce the concentration of students.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "ventilation",
+            "concentration"
+          ],
+          "modelAnswers": [],
+          "reason": "“ventilation” comes from ventilate; “concentration” comes from concentrate.",
+          "hint": "There are two. Both end in -tion.",
+          "pattern": "Spotting nominalisations",
+          "verified": false
+        },
+        {
+          "id": "N2-04",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "spot",
+          "prompt": "The introduction of electric buses has led to a noticeable improvement in the air around schools.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "introduction",
+            "improvement"
+          ],
+          "modelAnswers": [],
+          "reason": "“introduction” comes from introduce; “improvement” comes from improve.",
+          "hint": "There are two. Look for -tion and -ment.",
+          "pattern": "Spotting nominalisations",
+          "verified": false
+        },
+        {
+          "id": "N2-05",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "spot",
+          "prompt": "Regular exercise contributes to the prevention of heart disease and the reduction of stress.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [
+            "prevention",
+            "reduction"
+          ],
+          "modelAnswers": [],
+          "reason": "“prevention” comes from prevent; “reduction” comes from reduce.",
+          "hint": "There are two. Both end in -tion.",
+          "pattern": "Spotting nominalisations",
+          "verified": false
+        },
+        {
+          "id": "N2-06",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "choose",
+          "prompt": "Which sentence sounds more academic, and why?\nA: Because people used more cars, the air got worse.\nB: Increased car use led to a decline in air quality.",
+          "frame": null,
+          "options": [
+            "B, because it turns the actions into noun phrases (“increased car use”, “a decline”).",
+            "A, because it explains the cause with “because”.",
+            "B, because it has more words."
+          ],
+          "acceptedAnswers": [
+            "B, because it turns the actions into noun phrases (“increased car use”, “a decline”)."
+          ],
+          "modelAnswers": [],
+          "reason": "B packs “people used more cars” and “got worse” into noun phrases, which is typical of academic writing.",
+          "hint": "Look for the sentence with fewer verbs and more noun phrases.",
+          "pattern": "Choosing the academic version",
+          "verified": false
+        },
+        {
+          "id": "N2-07",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "choose",
+          "prompt": "Which sentence sounds more academic, and why?\nA: The company grew quickly, and this surprised investors.\nB: The rapid growth of the company surprised investors.",
+          "frame": null,
+          "options": [
+            "B, because “grew quickly” becomes the noun phrase “rapid growth”.",
+            "A, because it joins two clauses with “and”.",
+            "B, because it uses the word “investors”."
+          ],
+          "acceptedAnswers": [
+            "B, because “grew quickly” becomes the noun phrase “rapid growth”."
+          ],
+          "modelAnswers": [],
+          "reason": "B turns the verb “grew” into the noun “growth”, so two clauses become one.",
+          "hint": "Which sentence has one clause instead of two?",
+          "pattern": "Choosing the academic version",
+          "verified": false
+        },
+        {
+          "id": "N2-08",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "choose",
+          "prompt": "Which sentence sounds more academic, and why?\nA: The failure of the policy was due to a lack of funding.\nB: The policy failed because there was not enough money.",
+          "frame": null,
+          "options": [
+            "A, because it packs the actions into nouns (“failure”, “lack of funding”).",
+            "B, because “because” is more formal than “due to”.",
+            "A, because it is longer."
+          ],
+          "acceptedAnswers": [
+            "A, because it packs the actions into nouns (“failure”, “lack of funding”)."
+          ],
+          "modelAnswers": [],
+          "reason": "A uses the nouns “failure” and “lack” instead of the verb “failed” and the phrase “there was not enough”.",
+          "hint": "Which sentence uses -ure and other noun forms?",
+          "pattern": "Choosing the academic version",
+          "verified": false
+        },
+        {
+          "id": "N2-09",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "choose",
+          "prompt": "Which sentence sounds more academic, and why?\nA: When students are anxious, they often perform badly in exams.\nB: Student anxiety often leads to poor exam performance.",
+          "frame": null,
+          "options": [
+            "B, because the adjective “anxious” and the verb “perform” become nouns (“anxiety”, “performance”).",
+            "A, because it starts with “When”.",
+            "A, because it uses the word “often”."
+          ],
+          "acceptedAnswers": [
+            "B, because the adjective “anxious” and the verb “perform” become nouns (“anxiety”, “performance”)."
+          ],
+          "modelAnswers": [],
+          "reason": "B turns “are anxious” into “anxiety” and “perform” into “performance”.",
+          "hint": "Look for -ety and -ance.",
+          "pattern": "Choosing the academic version",
+          "verified": false
+        },
+        {
+          "id": "N2-10",
+          "track": "nominalisation",
+          "stage": 2,
+          "type": "choose",
+          "prompt": "Which sentence sounds more academic, and why?\nA: The introduction of the new timetable caused confusion among staff.\nB: The school introduced a new timetable, and the staff were confused.",
+          "frame": null,
+          "options": [
+            "A, because “introduced” and “were confused” become nouns (“introduction”, “confusion”).",
+            "B, because it names the school.",
+            "B, because it has two verbs."
+          ],
+          "acceptedAnswers": [
+            "A, because “introduced” and “were confused” become nouns (“introduction”, “confusion”)."
+          ],
+          "modelAnswers": [],
+          "reason": "A uses the nouns “introduction” and “confusion”, so the idea fits into one clause.",
+          "hint": "Look for two -tion / -sion words.",
+          "pattern": "Choosing the academic version",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "Guided rewrite",
+      "items": [
+        {
+          "id": "N3-01",
+          "track": "nominalisation",
+          "stage": 3,
+          "type": "gapfill",
+          "prompt": "Energy prices went up sharply, so many families struggled.",
+          "frame": "The sharp ___ in energy ___ caused hardship for many families.",
+          "options": null,
+          "acceptedAnswers": [
+            [
+              "increase",
+              "rise"
+            ],
+            [
+              "prices",
+              "costs"
+            ]
+          ],
+          "modelAnswers": [
+            "The sharp increase in energy prices caused hardship for many families."
+          ],
+          "reason": "“went up” becomes the noun “increase” (or “rise”), so the sentence needs only one main verb: caused.",
+          "hint": "The first gap is a noun for “go up”.",
+          "pattern": "Gap-fill: noun after an adjective",
+          "verified": false
+        },
+        {
+          "id": "N3-02",
+          "track": "nominalisation",
+          "stage": 3,
+          "type": "gapfill",
+          "prompt": "The city's population grew quickly, and housing became harder to find.",
+          "frame": "The rapid ___ of the city's population reduced the ___ of housing.",
+          "options": null,
+          "acceptedAnswers": [
+            [
+              "growth",
+              "increase",
+              "expansion"
+            ],
+            [
+              "availability"
+            ]
+          ],
+          "modelAnswers": [
+            "The rapid growth of the city's population reduced the availability of housing."
+          ],
+          "reason": "“grew” becomes “growth”, and “harder to find” becomes “reduced the availability”.",
+          "hint": "The second gap comes from the adjective “available”.",
+          "pattern": "Gap-fill: noun after an adjective",
+          "verified": false
+        },
+        {
+          "id": "N3-03",
+          "track": "nominalisation",
+          "stage": 3,
+          "type": "gapfill",
+          "prompt": "When teachers respond quickly, students improve faster.",
+          "frame": "A quick ___ from teachers leads to faster ___ in students' work.",
+          "options": null,
+          "acceptedAnswers": [
+            [
+              "response"
+            ],
+            [
+              "improvement",
+              "progress"
+            ]
+          ],
+          "modelAnswers": [
+            "A quick response from teachers leads to faster improvement in students' work."
+          ],
+          "reason": "“respond” becomes “response” and “improve” becomes “improvement”.",
+          "hint": "Noun forms of “respond” and “improve”.",
+          "pattern": "Gap-fill: noun after an adjective",
+          "verified": false
+        },
+        {
+          "id": "N3-04",
+          "track": "nominalisation",
+          "stage": 3,
+          "type": "gapfill",
+          "prompt": "The factory closed, and many people lost their jobs.",
+          "frame": "The ___ of the factory resulted in the ___ of many jobs.",
+          "options": null,
+          "acceptedAnswers": [
+            [
+              "closure",
+              "closing"
+            ],
+            [
+              "loss"
+            ]
+          ],
+          "modelAnswers": [
+            "The closure of the factory resulted in the loss of many jobs."
+          ],
+          "reason": "“closed” becomes “closure” and “lost” becomes “loss”.",
+          "hint": "Noun forms of “close” and “lose”.",
+          "pattern": "Gap-fill: the ___ of",
+          "verified": false
+        },
+        {
+          "id": "N3-05",
+          "track": "nominalisation",
+          "stage": 3,
+          "type": "gapfill",
+          "prompt": "Scientists analysed the data carefully, and they found a clear pattern.",
+          "frame": "Careful ___ of the data led to the ___ of a clear pattern.",
+          "options": null,
+          "acceptedAnswers": [
+            [
+              "analysis"
+            ],
+            [
+              "discovery",
+              "identification"
+            ]
+          ],
+          "modelAnswers": [
+            "Careful analysis of the data led to the discovery of a clear pattern."
+          ],
+          "reason": "“analysed” becomes “analysis” and “found” becomes “discovery”.",
+          "hint": "Noun forms of “analyse” and “discover”.",
+          "pattern": "Gap-fill: the ___ of",
+          "verified": false
+        },
+        {
+          "id": "N3-06",
+          "track": "nominalisation",
+          "stage": 3,
+          "type": "gapfill",
+          "prompt": "Employees are more satisfied when managers communicate clearly.",
+          "frame": "Clear ___ from managers increases employee ___.",
+          "options": null,
+          "acceptedAnswers": [
+            [
+              "communication"
+            ],
+            [
+              "satisfaction"
+            ]
+          ],
+          "modelAnswers": [
+            "Clear communication from managers increases employee satisfaction."
+          ],
+          "reason": "“communicate” becomes “communication” and “satisfied” becomes “satisfaction”.",
+          "hint": "Both answers end in -tion.",
+          "pattern": "Gap-fill: noun after an adjective",
+          "verified": false
+        },
+        {
+          "id": "N3-07",
+          "track": "nominalisation",
+          "stage": 3,
+          "type": "gapfill",
+          "prompt": "People are increasingly worried that the internet is not secure.",
+          "frame": "There is growing ___ about the lack of internet ___.",
+          "options": null,
+          "acceptedAnswers": [
+            [
+              "concern",
+              "worry"
+            ],
+            [
+              "security"
+            ]
+          ],
+          "modelAnswers": [
+            "There is growing concern about the lack of internet security."
+          ],
+          "reason": "“worried” becomes “concern” and “secure” becomes “security”.",
+          "hint": "The second gap comes from the adjective “secure”.",
+          "pattern": "Gap-fill: noun after an adjective",
+          "verified": false
+        },
+        {
+          "id": "N3-08",
+          "track": "nominalisation",
+          "stage": 3,
+          "type": "gapfill",
+          "prompt": "Students who attend lectures regularly usually achieve higher marks.",
+          "frame": "Regular ___ at lectures is usually linked to higher ___.",
+          "options": null,
+          "acceptedAnswers": [
+            [
+              "attendance"
+            ],
+            [
+              "achievement",
+              "marks",
+              "results"
+            ]
+          ],
+          "modelAnswers": [
+            "Regular attendance at lectures is usually linked to higher achievement."
+          ],
+          "reason": "“attend” becomes “attendance” and “achieve” becomes “achievement”.",
+          "hint": "Noun forms of “attend” and “achieve”.",
+          "pattern": "Gap-fill: noun after an adjective",
+          "verified": false
+        },
+        {
+          "id": "N3-09",
+          "track": "nominalisation",
+          "stage": 3,
+          "type": "gapfill",
+          "prompt": "The government invested more in public transport, which reduced traffic.",
+          "frame": "Greater ___ in public transport led to a ___ in traffic.",
+          "options": null,
+          "acceptedAnswers": [
+            [
+              "investment"
+            ],
+            [
+              "reduction",
+              "decrease",
+              "decline",
+              "fall",
+              "drop"
+            ]
+          ],
+          "modelAnswers": [
+            "Greater investment in public transport led to a reduction in traffic."
+          ],
+          "reason": "“invested” becomes “investment” and “reduced” becomes “reduction”.",
+          "hint": "Noun forms of “invest” and “reduce”.",
+          "pattern": "Gap-fill: noun after an adjective",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "Free rewrite",
+      "items": [
+        {
+          "id": "N4-01",
+          "track": "nominalisation",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "People use more cars, so the air gets worse.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Increased car use leads to a decline in air quality.",
+            "Greater car use results in poorer air quality."
+          ],
+          "reason": "The two clauses become noun phrases (“increased car use”, “a decline in air quality”) joined by one verb.",
+          "hint": "Turn “use more cars” into a noun phrase, then link it with “leads to”.",
+          "pattern": "Free rewrite: verbs to nouns",
+          "verified": false
+        },
+        {
+          "id": "N4-02",
+          "track": "nominalisation",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Many students leave university because they cannot pay the fees.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "The inability to pay fees causes many students to leave university.",
+            "Financial difficulty leads many students to withdraw from university."
+          ],
+          "reason": "“cannot pay” becomes the noun phrase “the inability to pay” or “financial difficulty”.",
+          "hint": "Start with a noun phrase for “cannot pay”.",
+          "pattern": "Free rewrite: verbs to nouns",
+          "verified": false
+        },
+        {
+          "id": "N4-03",
+          "track": "nominalisation",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "When companies advertise online, they sell more products.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Online advertising leads to higher sales.",
+            "Online advertising increases product sales."
+          ],
+          "reason": "“advertise” becomes “advertising” and “sell more” becomes “higher sales”.",
+          "hint": "Use the nouns “advertising” and “sales”.",
+          "pattern": "Free rewrite: verbs to nouns",
+          "verified": false
+        },
+        {
+          "id": "N4-04",
+          "track": "nominalisation",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Children who sleep well can concentrate better at school.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Good sleep improves children's concentration at school.",
+            "Adequate sleep leads to better concentration in children at school."
+          ],
+          "reason": "“sleep well” becomes “good sleep” and “concentrate” becomes “concentration”.",
+          "hint": "Use the noun form of “concentrate”.",
+          "pattern": "Free rewrite: verbs to nouns",
+          "verified": false
+        },
+        {
+          "id": "N4-05",
+          "track": "nominalisation",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "The climate is changing, and this is affecting how farmers grow food.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Climate change is affecting food production.",
+            "Climate change is having an effect on agricultural production."
+          ],
+          "reason": "“The climate is changing” becomes “climate change”, and “how farmers grow food” becomes “food production”.",
+          "hint": "Use the nouns “change” and “production”.",
+          "pattern": "Free rewrite: verbs to nouns",
+          "verified": false
+        },
+        {
+          "id": "N4-06",
+          "track": "nominalisation",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "If hospitals have more nurses, patients recover faster.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Higher nurse staffing levels lead to faster patient recovery.",
+            "An increase in nursing staff results in quicker patient recovery."
+          ],
+          "reason": "“recover faster” becomes “faster patient recovery”, linked by “lead to”.",
+          "hint": "Use the noun form of “recover”.",
+          "pattern": "Free rewrite: verbs to nouns",
+          "verified": false
+        },
+        {
+          "id": "N4-07",
+          "track": "nominalisation",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Workers are happier when they can choose their own hours.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Flexible working hours increase employee satisfaction.",
+            "The freedom to choose working hours improves worker satisfaction."
+          ],
+          "reason": "“are happier” becomes “satisfaction” and “can choose” becomes “flexible hours” or “the freedom to choose”.",
+          "hint": "Use the noun “satisfaction”.",
+          "pattern": "Free rewrite: verbs to nouns",
+          "verified": false
+        },
+        {
+          "id": "N4-08",
+          "track": "nominalisation",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Cities are growing quickly, and this puts pressure on water supplies.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Rapid urban growth puts pressure on water supplies.",
+            "The rapid growth of cities increases pressure on water supplies."
+          ],
+          "reason": "“Cities are growing quickly” becomes “rapid urban growth”.",
+          "hint": "Use the noun form of “grow”.",
+          "pattern": "Free rewrite: verbs to nouns",
+          "verified": false
+        },
+        {
+          "id": "N4-09",
+          "track": "nominalisation",
+          "stage": 4,
+          "type": "rewrite",
+          "prompt": "Teachers use technology in class, and students take part more.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "The use of technology in class increases student participation.",
+            "Classroom technology use leads to greater student participation."
+          ],
+          "reason": "“use” becomes “the use of” and “take part” becomes “participation”.",
+          "hint": "Use the noun form of “participate”.",
+          "pattern": "Free rewrite: verbs to nouns",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "title": "Too much",
+      "items": [
+        {
+          "id": "N5-01",
+          "track": "nominalisation",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "The implementation of the reduction of the consumption of plastic is a requirement for the achievement of the improvement of the environment.",
+          "frame": null,
+          "options": [
+            "Reducing plastic consumption is necessary to improve the environment.",
+            "We need to use less plastic to make the environment better.",
+            "The requirement of the implementation of plastic reduction is necessary for environmental improvement."
+          ],
+          "acceptedAnswers": [
+            "Reducing plastic consumption is necessary to improve the environment."
+          ],
+          "modelAnswers": [],
+          "reason": "The best version keeps one clear noun phrase and uses the verb “improve”. The others are too informal or still too heavy.",
+          "hint": "Look for the version that is formal but has fewer “of” phrases.",
+          "pattern": "Too many nouns",
+          "question": "This sentence is too heavy. Which version is clearest?",
+          "verified": false
+        },
+        {
+          "id": "N5-02",
+          "track": "nominalisation",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "The provision of an explanation of the cause of the failure of the system was given by the manager.",
+          "frame": null,
+          "options": [
+            "The manager explained why the system failed.",
+            "The manager provided an explanation of the cause of the system failure.",
+            "The manager gave the system an explanation of failure."
+          ],
+          "acceptedAnswers": [
+            "The manager explained why the system failed."
+          ],
+          "modelAnswers": [],
+          "reason": "“The manager explained why the system failed” is short and clear, and keeps the meaning. Here, verbs work better than nouns.",
+          "hint": "Who did what? Put that person first and use a verb.",
+          "pattern": "Too many nouns",
+          "question": "This sentence is too heavy. Which version is clearest?",
+          "verified": false
+        },
+        {
+          "id": "N5-03",
+          "track": "nominalisation",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "There was a decision by the committee for the postponement of the introduction of the new policy.",
+          "frame": null,
+          "options": [
+            "The committee decided to postpone the introduction of the new policy.",
+            "The committee's decision was a postponement of introduction of the policy.",
+            "The committee postponed and introduced the new policy."
+          ],
+          "acceptedAnswers": [
+            "The committee decided to postpone the introduction of the new policy."
+          ],
+          "modelAnswers": [],
+          "reason": "The best version puts the committee first and uses the verbs “decided” and “postpone”. The last option changes the meaning.",
+          "hint": "Start with “The committee” and use a verb.",
+          "pattern": "Too many nouns",
+          "question": "This sentence is too heavy. Which version is clearest?",
+          "verified": false
+        },
+        {
+          "id": "N5-04",
+          "track": "nominalisation",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "The utilisation of digital tools for the facilitation of the enhancement of student engagement is increasing.",
+          "frame": null,
+          "options": [
+            "Digital tools are increasingly used to improve student engagement.",
+            "Digital tool utilisation facilitation for engagement enhancement is increasing.",
+            "Students use digital tools more and more."
+          ],
+          "acceptedAnswers": [
+            "Digital tools are increasingly used to improve student engagement."
+          ],
+          "modelAnswers": [],
+          "reason": "The best version keeps the meaning and is easy to read. The last option loses the idea of engagement.",
+          "hint": "Which version keeps every idea but uses simple verbs?",
+          "pattern": "Too many nouns",
+          "question": "This sentence is too heavy. Which version is clearest?",
+          "verified": false
+        },
+        {
+          "id": "N5-05",
+          "track": "nominalisation",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "Consideration of the examination of the effects of the reduction of working hours on productivity is needed.",
+          "frame": null,
+          "options": [
+            "The effects of shorter working hours on productivity need to be examined.",
+            "Examination consideration of the reduction effects of hours is needed.",
+            "People should think about working less."
+          ],
+          "acceptedAnswers": [
+            "The effects of shorter working hours on productivity need to be examined."
+          ],
+          "modelAnswers": [],
+          "reason": "The best version keeps one key noun phrase and uses the verb “examined”. The last option changes the meaning.",
+          "hint": "Remove “consideration of the examination of”.",
+          "pattern": "Too many nouns",
+          "question": "This sentence is too heavy. Which version is clearest?",
+          "verified": false
+        },
+        {
+          "id": "N5-06",
+          "track": "nominalisation",
+          "stage": 5,
+          "type": "choose",
+          "prompt": "The occurrence of an increase in the prevalence of obesity among children is a cause of concern for health authorities.",
+          "frame": null,
+          "options": [
+            "The rise in childhood obesity concerns health authorities.",
+            "An increase occurrence of prevalence of obesity in children happens.",
+            "Kids are getting fatter and doctors are worried."
+          ],
+          "acceptedAnswers": [
+            "The rise in childhood obesity concerns health authorities."
+          ],
+          "modelAnswers": [],
+          "reason": "The best version is short, formal and keeps the meaning. The last option is too informal for an essay.",
+          "hint": "Which version is both formal and short?",
+          "pattern": "Too many nouns",
+          "question": "This sentence is too heavy. Which version is clearest?",
+          "verified": false
+        },
+        {
+          "id": "N5-07",
+          "track": "nominalisation",
+          "stage": 5,
+          "type": "rewrite",
+          "prompt": "The achievement of a reduction in the level of the consumption of energy by households is the aim of the programme.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "The programme aims to reduce household energy consumption.",
+            "The aim of the programme is to reduce how much energy households use."
+          ],
+          "reason": "Turning “the achievement of a reduction” back into the verb “reduce” makes the sentence much easier to read.",
+          "hint": "Use the verb “aims to reduce”.",
+          "pattern": "Too many nouns",
+          "question": "This sentence is too heavy. How could you make it clearer?",
+          "verified": false
+        },
+        {
+          "id": "N5-08",
+          "track": "nominalisation",
+          "stage": 5,
+          "type": "rewrite",
+          "prompt": "The improvement of the quality of the communication between staff and management was the outcome of the introduction of weekly meetings.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Introducing weekly meetings improved communication between staff and management.",
+            "Weekly meetings improved communication between staff and managers."
+          ],
+          "reason": "Using the verb “improved” and putting the cause first makes the sentence clear.",
+          "hint": "What caused what? Start with the cause.",
+          "pattern": "Too many nouns",
+          "question": "This sentence is too heavy. How could you make it clearer?",
+          "verified": false
+        },
+        {
+          "id": "N5-09",
+          "track": "nominalisation",
+          "stage": 5,
+          "type": "rewrite",
+          "prompt": "The prevention of the spread of the infection requires the maintenance of hand hygiene by all visitors.",
+          "frame": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "All visitors need to maintain hand hygiene to prevent the spread of infection.",
+            "To stop the infection spreading, all visitors must keep their hands clean."
+          ],
+          "reason": "Putting the people (visitors) first and using verbs makes the instruction clear.",
+          "hint": "Start with “All visitors”.",
+          "pattern": "Too many nouns",
+          "question": "This sentence is too heavy. How could you make it clearer?",
+          "verified": false
+        }
+      ]
+    }
+  ]
+}
