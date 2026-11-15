@@ -11,3 +11,6 @@ This repo is Dave Nab's GitHub Pages portfolio (https://davenab.github.io), publ
 - Shared CSS: `/assets/site.css`; shared JS (theme toggle, year, filters with `data-f` / `data-cat`): `/assets/site.js`. Use root-absolute paths (`/assets/...`).
 - `/resources/` is the teaching-resources hub (slides, word lists, worksheets). Each resource gets its own SEO page copied from `/resources/_template/` (remove its noindex), a card on the hub, and an entry in `/sitemap.xml`.
 - Paid files must never be committed (the repo is public): link to the external store page instead. Only free files go in the repo.
+- PayPal payment link for paid items (use for all paid items unless told otherwise): https://www.paypal.com/ncp/payment/TYYAE8VP9CW2U
+- Resource cards: the main link has classes `btn-card stretch` so the whole card is clickable.
+- `googlecdda09d8d2462fe3.html` in the root is the Google Search Console verification file: never delete it.
