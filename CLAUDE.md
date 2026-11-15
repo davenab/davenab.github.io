@@ -27,7 +27,10 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 - Planned apps: dictogloss, skim-and-scan timer, paragraph X-ray, synthesis builder, nominalisation & hedging drills, register swapper.
 
 ## Resources
-- `/resources/` is the teaching-resources hub (slides, word lists, worksheets). Each resource gets its own SEO page based on `/resources/_template/` (remove its noindex), a card on the hub (in `_tools/build.py`), and an entry in `/sitemap.xml`.
+- Two audiences, kept separate: `/resources/students/` (self-study packs, self-paced courses, free Quizlet sets and apps) and `/resources/teachers/` (zero-prep lesson kits, whole courses, single slides/worksheets/Quizlet sets). `/resources/` is a chooser page. The nav has a Resources dropdown.
+- Pricing model: single Quizlet sets, worksheets and slides are free; lesson kits, courses and self-study packs are the paid products.
+- Items live in the lists `STUDENT_PACKS`, `STUDENT_FREE`, `TEACHER_KITS`, `TEACHER_COURSES`, `TEACHER_FREE` in `_tools/build.py` (status "live"/"soon", price, link). Planned products show as "Coming soon" until they are live.
+- Each resource can also get its own SEO page Each resource gets its own SEO page based on `/resources/_template/` (remove its noindex), a card on the hub (in `_tools/build.py`), and an entry in `/sitemap.xml`.
 - Paid files must never be committed (the repo is public): link to the external store page instead. Only free files go in the repo.
 - Paid items: each item has its OWN PayPal payment link, whose Auto-return sends the buyer to that item's file on Google Drive (automatic delivery). Ask Dave for the link of each new item; never reuse another item's link. The Drive link lives only in PayPal, never in this repo.
 - Hedging in Academic Writing PayPal link: https://www.paypal.com/ncp/payment/TYYAE8VP9CW2U
