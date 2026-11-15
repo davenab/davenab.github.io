@@ -22,7 +22,7 @@
           "reason": "“may” is a modal verb. It shows the writer is not completely sure.",
           "hint": "There is one. It is a modal verb.",
           "pattern": "Modal verbs",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H1-02",
@@ -40,7 +40,7 @@
           "reason": "“suggest” is a cautious reporting verb and “could” is a modal verb.",
           "hint": "There are two: a reporting verb and a modal verb.",
           "pattern": "Reporting verbs",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H1-03",
@@ -58,7 +58,7 @@
           "reason": "“Some” limits the claim to part of the group, and “appear” makes it less certain.",
           "hint": "There are two: a quantity word and a verb.",
           "pattern": "Quantity and frequency words",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H1-04",
@@ -75,7 +75,7 @@
           "reason": "“likely” shows the result is probable, not certain.",
           "hint": "There is one. It is an adjective.",
           "pattern": "Adjectives",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H1-05",
@@ -92,7 +92,7 @@
           "reason": "“possibly” is an adverb that makes the link less certain.",
           "hint": "There is one. It ends in -ly.",
           "pattern": "Adverbs",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H1-06",
@@ -110,7 +110,7 @@
           "reason": "“might” is a modal verb, and “some” limits the claim to part of the group.",
           "hint": "There are two: a modal verb and a quantity word.",
           "pattern": "Modal verbs",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H1-07",
@@ -127,7 +127,7 @@
           "reason": "“often” means “many times but not always”, so the claim is less absolute.",
           "hint": "There is one. It is a frequency word.",
           "pattern": "Quantity and frequency words",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H1-08",
@@ -145,7 +145,7 @@
           "reason": "“indicate” is a cautious reporting verb and “probably” is an adverb.",
           "hint": "There are two: a reporting verb and an adverb.",
           "pattern": "Reporting verbs",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H1-09",
@@ -162,7 +162,7 @@
           "reason": "“Perhaps” is an adverb that shows the writer is not sure.",
           "hint": "There is one. Look at the start.",
           "pattern": "Adverbs",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H1-10",
@@ -180,7 +180,7 @@
           "reason": "“Most” means “not all”, and “seemed” makes the claim less certain.",
           "hint": "There are two: a quantity word and a verb.",
           "pattern": "Quantity and frequency words",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -210,7 +210,7 @@
           "hint": "Which one has no hedge at all?",
           "pattern": "Ordering certainty",
           "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H2-02",
@@ -236,7 +236,7 @@
           "hint": "Think about how many students each sentence covers.",
           "pattern": "Quantity and frequency words",
           "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H2-03",
@@ -262,7 +262,7 @@
           "hint": "Think about how often each word means.",
           "pattern": "Quantity and frequency words",
           "question": "Put these in order. Start with the most often and end with the least often.",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H2-04",
@@ -286,7 +286,7 @@
           "hint": "Which word means 100% sure?",
           "pattern": "Ordering certainty",
           "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H2-05",
@@ -310,7 +310,7 @@
           "hint": "Academic writers rarely use “proves”. Is it strong or weak?",
           "pattern": "Reporting verbs",
           "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H2-06",
@@ -334,7 +334,7 @@
           "hint": "Which one shows no doubt at all?",
           "pattern": "Modal verbs",
           "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H2-07",
@@ -358,7 +358,7 @@
           "hint": "“almost” makes a word a little weaker.",
           "pattern": "Adverbs",
           "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H2-08",
@@ -382,7 +382,7 @@
           "hint": "“little evidence” means almost no evidence.",
           "pattern": "Ordering certainty",
           "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H2-09",
@@ -406,7 +406,7 @@
           "hint": "Compare “the”, “a likely” and “one possible”.",
           "pattern": "Adjectives",
           "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H2-10",
@@ -430,7 +430,7 @@
           "hint": "Adding “might” makes a verb weaker.",
           "pattern": "Reporting verbs",
           "question": "Put these in order. Start with the strongest (most certain) and end with the weakest (least certain).",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -463,7 +463,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H3-02",
@@ -490,7 +490,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H3-03",
@@ -517,7 +517,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H3-04",
@@ -544,7 +544,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H3-05",
@@ -571,7 +571,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H3-06",
@@ -598,7 +598,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H3-07",
@@ -625,7 +625,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H3-08",
@@ -652,7 +652,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H3-09",
@@ -679,7 +679,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H3-10",
@@ -706,7 +706,7 @@
             "Too weak"
           ],
           "question": "Read the evidence. Which claim fits it best?",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -732,7 +732,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "Several studies found a link, but they cannot show cause.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H4-02",
@@ -752,7 +752,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "Studies show mixed results.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H4-03",
@@ -772,7 +772,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "Some studies found a small link; others found none.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H4-04",
@@ -792,7 +792,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "Some surveys of office workers found this; results differ by job.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H4-05",
@@ -812,7 +812,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "Many studies link fast food to weight gain, but obesity has many causes.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H4-06",
@@ -832,7 +832,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "Electric cars produce no exhaust fumes, but there are other sources of air pollution.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H4-07",
@@ -852,7 +852,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "Several studies found this pattern.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H4-08",
@@ -872,7 +872,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "A few studies found small advantages in some thinking skills.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H4-09",
@@ -892,7 +892,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "Economists disagree; studies show different results.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H4-10",
@@ -912,7 +912,7 @@
           "pattern": "Free rewrite: softening a claim",
           "evidence": "Some studies link long screen time to eye strain.",
           "question": "This claim is too strong for the evidence. How would you say it in an essay?",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -940,7 +940,7 @@
           "hint": "Keep one reporting verb and one modal.",
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. Which version is best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H5-02",
@@ -962,7 +962,7 @@
           "hint": "Which version uses only one hedge word plus “some”?",
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. Which version is best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H5-03",
@@ -984,7 +984,7 @@
           "hint": "One cautious verb is enough.",
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. Which version is best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H5-04",
@@ -1007,7 +1007,7 @@
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. Which version is best?",
           "evidence": "Many large studies agree.",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H5-05",
@@ -1029,7 +1029,7 @@
           "hint": "Keep “some” and one more hedge.",
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. Which version is best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H5-06",
@@ -1052,7 +1052,7 @@
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. Which version is best?",
           "evidence": "A national report using data from all hospitals.",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H5-07",
@@ -1074,7 +1074,7 @@
           "hint": "Keep one modal verb.",
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. Which version is best?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H5-08",
@@ -1093,7 +1093,7 @@
           "hint": "Keep “suggests” or “may”. Remove the rest.",
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. How could you fix it?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H5-09",
@@ -1112,7 +1112,7 @@
           "hint": "Start with “Remote work”.",
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. How could you fix it?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "H5-10",
@@ -1132,7 +1132,7 @@
           "pattern": "Stacked hedges",
           "question": "This sentence has too many hedges. How could you fix it?",
           "evidence": "Many large studies agree.",
-          "verified": false
+          "verified": true
         }
       ]
     }
