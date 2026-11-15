@@ -1,0 +1,161 @@
+{
+  "id": "brand-squatter-cities",
+  "source": "ted",
+  "title": "What squatter cities can teach us",
+  "speaker": "Stewart Brand",
+  "topic": "Cities and development",
+  "tedUrl": "https://www.ted.com/talks/stewart_brand_what_squatter_cities_can_teach_us",
+  "embedUrl": "https://embed.ted.com/talks/stewart_brand_what_squatter_cities_can_teach_us",
+  "audioFile": "",
+  "level": "B2-C1",
+  "lengthSeconds": 171,
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "demographic",
+      "definition": "about the population: how many people, and where they live"
+    },
+    {
+      "term": "squatter city",
+      "definition": "an area where people build homes on land they don't own, often without official planning"
+    },
+    {
+      "term": "tipping point",
+      "definition": "the moment when a small change causes a big change"
+    },
+    {
+      "term": "infrastructure",
+      "definition": "basic systems such as roads, water pipes and power"
+    },
+    {
+      "term": "GDP",
+      "definition": "the total value of everything a country or region produces"
+    }
+  ],
+  "predictionQuestion": "Millions of people move from villages to informal city areas. Do you think this is good or bad? What might the speaker argue?",
+  "keyIdeas": [
+    {
+      "text": "A major population change is happening: the world is passing 50% urban. This may be an economic tipping point.",
+      "type": "main",
+      "approxTime": "0:01"
+    },
+    {
+      "text": "The biggest cities used to be Western cities like Paris, London and New York. That has changed.",
+      "type": "detail",
+      "approxTime": "0:15"
+    },
+    {
+      "text": "Villages around the world are emptying out as people move to cities.",
+      "type": "main",
+      "approxTime": "0:30"
+    },
+    {
+      "text": "Most people go to squatter cities, not to big modern centres.",
+      "type": "main",
+      "approxTime": "0:45"
+    },
+    {
+      "text": "People in squatter cities are not trapped by poverty. They are getting out of poverty as fast as they can.",
+      "type": "main",
+      "approxTime": "0:50"
+    },
+    {
+      "text": "The residents build and design these places themselves, with home-made infrastructure and lively street life.",
+      "type": "detail",
+      "approxTime": "1:00"
+    },
+    {
+      "text": "Example: Mumbai produces about one-sixth of India's GDP.",
+      "type": "detail",
+      "approxTime": "1:07"
+    },
+    {
+      "text": "In squatter cities everyone works, and education is a key benefit of city life.",
+      "type": "detail",
+      "approxTime": "1:15"
+    },
+    {
+      "text": "His first punch line: cities have defused the population bomb.",
+      "type": "main",
+      "approxTime": "1:45"
+    },
+    {
+      "text": "Final image: stars have shone on Earth for billions of years; now city lights shine back up.",
+      "type": "detail",
+      "approxTime": "1:54"
+    }
+  ],
+  "modelNotes": [
+    "SQUATTER CITIES (S. Brand, TED)",
+    "Big change",
+    "- world > 50% urban → economic tipping point?",
+    "- old biggest cities = West (Paris, London, NY) → no longer",
+    "- villages emptying → ppl → cities",
+    "Squatter cities",
+    "- most go here (not e.g. Shanghai)",
+    "- ppl getting OUT of poverty fast (not trapped)",
+    "- residents build + design; home-made infrastructure; lively street life",
+    "- e.g. Mumbai ≈ 1/6 of India's GDP",
+    "- everyone works; education = key",
+    "Punch lines",
+    "- 1. cities defused the population bomb",
+    "- 2. city lights 'shine back up' at the stars"
+  ],
+  "questions": [
+    {
+      "stem": "What major change does the speaker describe?",
+      "options": [
+        "More than half the world's people now live in cities",
+        "Cities around the world are getting smaller",
+        "Most people are moving to villages",
+        "Western cities are growing fastest"
+      ],
+      "answer": "More than half the world's people now live in cities",
+      "explanation": "He opens by talking about passing the 50 percent urban point."
+    },
+    {
+      "stem": "According to the talk, where do most people leaving villages go?",
+      "options": [
+        "To squatter cities",
+        "To big modern cities like Shanghai",
+        "To other villages",
+        "To other countries"
+      ],
+      "answer": "To squatter cities",
+      "explanation": "He says some go to places like Shanghai, but most go to squatter cities."
+    },
+    {
+      "stem": "How does he describe the people in squatter cities?",
+      "options": [
+        "They are getting out of poverty quickly",
+        "They are trapped by poverty",
+        "They are mostly unemployed",
+        "They depend on government help"
+      ],
+      "answer": "They are getting out of poverty quickly",
+      "explanation": "He says they are not oppressed by poverty: they are getting out of it as fast as they can."
+    },
+    {
+      "stem": "Why does he mention Mumbai?",
+      "options": [
+        "It produces about one-sixth of India's GDP",
+        "It is the largest city in the world",
+        "It has no squatter areas",
+        "It is where he lives"
+      ],
+      "answer": "It produces about one-sixth of India's GDP",
+      "explanation": "Mumbai is his example of how much squatter cities contribute to the economy."
+    },
+    {
+      "stem": "What is his \"first punch line\"?",
+      "options": [
+        "Cities have defused the population bomb",
+        "The West is rising again",
+        "Villages are the future",
+        "Squatter cities should be removed"
+      ],
+      "answer": "Cities have defused the population bomb",
+      "explanation": "\"Punch line\" here means his main conclusion. Words like \"first\" help you number the main points."
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "id": "bne-loud-music-buses",
+  "source": "bne",
+  "title": "Bus passengers to be fined for playing loud music",
+  "speaker": "Breaking News English (Sean Banville)",
+  "topic": "News: society",
+  "bneUrl": "https://breakingnewsenglish.com/2609/260928-loud-music-public-transport-5l.html",
+  "bneLessonUrl": "https://breakingnewsenglish.com/2609/260928-loud-music-public-transport.html",
+  "audioFile": "",
+  "level": "B2",
+  "lengthSeconds": 100,
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "fine",
+      "definition": "money you must pay as a punishment"
+    },
+    {
+      "term": "anti-social behaviour",
+      "definition": "actions that annoy or upset other people in public"
+    },
+    {
+      "term": "commuter",
+      "definition": "a person who travels to work or school"
+    },
+    {
+      "term": "considerate",
+      "definition": "thinking about other people's feelings"
+    },
+    {
+      "term": "littering",
+      "definition": "leaving rubbish on the ground in a public place"
+    }
+  ],
+  "predictionQuestion": "What annoys you on buses or trains? Should people be fined for it? What might the news say?",
+  "keyIdeas": [
+    {
+      "text": "Loud music on public transport annoys passengers who want to travel in quiet.",
+      "type": "main",
+      "approxTime": "0:00"
+    },
+    {
+      "text": "Singapore has introduced fines of up to S$500 for loud music on buses.",
+      "type": "main",
+      "approxTime": "0:10"
+    },
+    {
+      "text": "The fines also cover other anti-social behaviour, such as feet on seats, littering and eating on buses.",
+      "type": "detail",
+      "approxTime": "0:19"
+    },
+    {
+      "text": "The government says the fines will make public transport safer and more pleasant, and every commuter has a part to play.",
+      "type": "detail",
+      "approxTime": "0:30"
+    },
+    {
+      "text": "The government wants bus drivers to focus on driving safely.",
+      "type": "main",
+      "approxTime": "0:50"
+    },
+    {
+      "text": "But drivers can ask inconsiderate passengers to get off the bus.",
+      "type": "detail",
+      "approxTime": "0:59"
+    },
+    {
+      "text": "Many commuters were happy with the new fines.",
+      "type": "main",
+      "approxTime": "1:07"
+    },
+    {
+      "text": "Example: a flight attendant who takes the bus to the airport was relieved.",
+      "type": "detail",
+      "approxTime": "1:12"
+    },
+    {
+      "text": "Example: an older commuter just wants to get to work without other people's music.",
+      "type": "detail",
+      "approxTime": "1:27"
+    }
+  ],
+  "modelNotes": [
+    "LOUD MUSIC FINES (BNE news)",
+    "Problem: loud music on public transport → annoys ppl who want quiet",
+    "Singapore rule",
+    "- fine up to S$500 (loud music on buses)",
+    "- also: feet on seats, littering, eating",
+    "- govt: safer + more pleasant; every commuter has a part to play",
+    "Drivers",
+    "- focus = drive safely",
+    "- BUT can ask rude passengers to get off",
+    "Reaction: many commuters happy",
+    "- e.g. flight attendant (bus to airport): relieved",
+    "- e.g. older commuter: wants no music on way to work"
+  ],
+  "questions": [
+    {
+      "stem": "What is the maximum fine for loud music on Singapore's buses?",
+      "options": [
+        "S$500",
+        "S$50",
+        "S$5,000",
+        "S$29"
+      ],
+      "answer": "S$500",
+      "explanation": "The fines are up to S$500. The number 29 is the age of one commuter."
+    },
+    {
+      "stem": "Which other behaviour is also covered by the fines?",
+      "options": [
+        "Putting feet on seats",
+        "Talking quietly",
+        "Reading",
+        "Sleeping"
+      ],
+      "answer": "Putting feet on seats",
+      "explanation": "Feet on seats, littering and eating on buses are also covered."
+    },
+    {
+      "stem": "What does the government want bus drivers to focus on?",
+      "options": [
+        "Driving the bus safely",
+        "Collecting fines",
+        "Checking tickets",
+        "Choosing the music"
+      ],
+      "answer": "Driving the bus safely",
+      "explanation": "Drivers should focus on their main job: operating buses safely."
+    },
+    {
+      "stem": "What power will drivers have?",
+      "options": [
+        "To ask inconsiderate passengers to get off",
+        "To arrest passengers",
+        "To give fines on the spot",
+        "To turn off passengers' phones"
+      ],
+      "answer": "To ask inconsiderate passengers to get off",
+      "explanation": "The report says drivers can ask inconsiderate passengers to leave the bus."
+    },
+    {
+      "stem": "How did many commuters react to the new fines?",
+      "options": [
+        "They were happy",
+        "They were angry",
+        "They didn't notice",
+        "They wanted no rules at all"
+      ],
+      "answer": "They were happy",
+      "explanation": "The report says many commuters were happy, and gives two examples."
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "porco-saturn-moon",
+  "source": "ted",
+  "title": "Could a Saturn moon harbor life?",
+  "speaker": "Carolyn Porco",
+  "topic": "Space science",
+  "tedUrl": "https://www.ted.com/talks/carolyn_porco_could_a_saturn_moon_harbor_life",
+  "embedUrl": "https://embed.ted.com/talks/carolyn_porco_could_a_saturn_moon_harbor_life",
+  "audioFile": "",
+  "level": "B2-C1",
+  "lengthSeconds": 190,
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "spacecraft",
+      "definition": "a vehicle that travels in space"
+    },
+    {
+      "term": "geyser",
+      "definition": "a hole in the ground that shoots out hot water and steam"
+    },
+    {
+      "term": "organic compounds",
+      "definition": "chemicals that contain carbon; they are found in living things"
+    },
+    {
+      "term": "hospitable",
+      "definition": "good for living things"
+    },
+    {
+      "term": "Enceladus",
+      "definition": "a small moon of the planet Saturn"
+    }
+  ],
+  "predictionQuestion": "Scientists look for life beyond Earth. What do you think a place needs for life to exist?",
+  "keyIdeas": [
+    {
+      "text": "Two years earlier, the Cassini spacecraft found a warm, geologically active area at the south pole of Enceladus, a small moon of Saturn.",
+      "type": "main",
+      "approxTime": "0:00"
+    },
+    {
+      "text": "The area has long cracks across the south pole, known as \"tiger stripes\".",
+      "type": "detail",
+      "approxTime": "0:15"
+    },
+    {
+      "text": "They discovered tall jets erupting from these cracks.",
+      "type": "main",
+      "approxTime": "0:39"
+    },
+    {
+      "text": "The jets contain tiny ice crystals, water vapour and simple organic compounds.",
+      "type": "detail",
+      "approxTime": "0:45"
+    },
+    {
+      "text": "They thought the jets might be geysers from liquid water under the surface, but they weren't sure.",
+      "type": "detail",
+      "approxTime": "1:00"
+    },
+    {
+      "text": "Cassini then flew closer and through the jets several times to get precise measurements.",
+      "type": "main",
+      "approxTime": "1:25"
+    },
+    {
+      "text": "The organic compounds are more complex than they first reported, but they are not amino acids.",
+      "type": "detail",
+      "approxTime": "1:40"
+    },
+    {
+      "text": "The ice crystals look like frozen drops of salty water, so the liquid water is probably touching rock.",
+      "type": "main",
+      "approxTime": "1:55"
+    },
+    {
+      "text": "Water touching rock could provide the chemical energy and compounds that life needs.",
+      "type": "detail",
+      "approxTime": "2:10"
+    },
+    {
+      "text": "They are now more confident there may be a zone under the south pole where life could survive. Whether life is really there needs a future mission.",
+      "type": "main",
+      "approxTime": "2:19"
+    }
+  ],
+  "modelNotes": [
+    "SATURN MOON ENCELADUS (C. Porco, TED)",
+    "Earlier discovery (2 yrs ago)",
+    "- Cassini spacecraft: warm, active area at S. pole",
+    "- cracks = 'tiger stripes'",
+    "- tall jets: ice crystals + water vapour + simple organic compounds",
+    "- geysers from liquid water? → not sure",
+    "New results",
+    "- flew closer, through jets → precise measurements",
+    "- organics more complex (not amino acids)",
+    "- salty ice → liquid water touching rock → energy + chemicals for life",
+    "Conclusion",
+    "- more confident: zone that could support life",
+    "- life there? ≠ known → needs future mission"
+  ],
+  "questions": [
+    {
+      "stem": "Where is the area the speaker describes?",
+      "options": [
+        "At the south pole of a small moon of Saturn",
+        "On Saturn's rings",
+        "At the north pole of Mars",
+        "On Earth's moon"
+      ],
+      "answer": "At the south pole of a small moon of Saturn",
+      "explanation": "The talk is about the south polar region of Enceladus, a small moon of Saturn."
+    },
+    {
+      "stem": "What do the jets contain?",
+      "options": [
+        "Ice crystals, water vapour and simple organic compounds",
+        "Only rock and dust",
+        "Liquid metal",
+        "Living bacteria"
+      ],
+      "answer": "Ice crystals, water vapour and simple organic compounds",
+      "explanation": "She lists tiny water ice crystals, water vapour and simple organic compounds."
+    },
+    {
+      "stem": "What did the salty ice crystals suggest?",
+      "options": [
+        "The liquid water is probably in contact with rock",
+        "The moon is getting warmer",
+        "The jets come from Saturn",
+        "There is no liquid water"
+      ],
+      "answer": "The liquid water is probably in contact with rock",
+      "explanation": "Salty water suggests the liquid water touches rock, which could supply energy and chemicals for life."
+    },
+    {
+      "stem": "Has the mission found life on Enceladus?",
+      "options": [
+        "No. It found a place that might support life; finding life needs a future mission",
+        "Yes, it found bacteria",
+        "Yes, it found amino acids",
+        "No, and life is impossible there"
+      ],
+      "answer": "No. It found a place that might support life; finding life needs a future mission",
+      "explanation": "She is careful: a zone that could support life is different from finding living things."
+    },
+    {
+      "stem": "What did they learn about the organic compounds on closer flights?",
+      "options": [
+        "They are more complex than first reported",
+        "They are simpler than first reported",
+        "There are none",
+        "They are exactly the same as before"
+      ],
+      "answer": "They are more complex than first reported",
+      "explanation": "She says the compounds are more complex than they previously reported, although they are not amino acids."
+    }
+  ]
+}
