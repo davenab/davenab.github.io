@@ -32,9 +32,7 @@
   function aboutTime(t) { var s = timeToSec(t); return s == null ? '' : 'about ' + fmtLen(s); }
   function why(text) { return '<p class="why"><span><b>Why this helps</b>' + esc(text) + '</span></p>'; }
   function honour(text) { return '<div class="honour"><b class="hl">Honour rule</b>' + text + '</div>'; }
-  function draftBadge(a) {
-    return a && !a.verified ? '<span class="badge draft" title="Not yet checked by the teacher">Draft content</span>' : '';
-  }
+  function draftBadge() { return ''; } // draft labels are not shown to students
   function ext(href, text) { return '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + text + ' <span aria-hidden="true">↗</span><span class="sr"> (opens in a new tab)</span></a>'; }
   var SRC_LABEL = { ted: 'TED talk', bne: 'News listening', teacher: 'Teacher lecture', own: 'My own recording' };
   function srcBadge(s) { return '<span class="badge src-' + esc(s) + '">' + esc(SRC_LABEL[s] || s) + '</span>'; }
@@ -827,7 +825,7 @@
     return 'My own recording';
   }
   function summaryText(r) {
-    var L = ['DAVE Notes: session summary', 'Date: ' + fmtDate(r.date), 'Activity: ' + recTitle(r) + (r.kind === 'act' && !r.verified ? ' (draft content)' : ''), 'Source: ' + sourceLine(r),
+    var L = ['DAVE Notes: session summary', 'Date: ' + fmtDate(r.date), 'Activity: ' + recTitle(r), 'Source: ' + sourceLine(r),
       'Skill focus: ' + skillName(r.skill),
       'Notes: ' + (r.notesMode === 'type' ? 'typed' : 'on paper' + (r.photoCount ? ' (' + r.photoCount + ' photo' + (r.photoCount > 1 ? 's' : '') + ')' : '')),
       'Listens: ' + r.listens + (r.listens >= 2 ? ' (used the optional second listen)' : '')];
@@ -852,7 +850,7 @@
     var rows = [];
     function row(k, v) { if (v !== '' && v != null) rows.push('<dt>' + esc(k) + '</dt><dd>' + v + '</dd>'); }
     row('Date', esc(fmtDate(r.date)));
-    row('Activity', esc(recTitle(r)) + (r.kind === 'act' && !r.verified ? ' <span class="badge draft">Draft content</span>' : ''));
+    row('Activity', esc(recTitle(r)));
     row('Source', esc(sourceLine(r)));
     row('Skill focus', esc(skillName(r.skill)));
     row('Notes', r.notesMode === 'type' ? 'Typed' : 'On paper' + (r.photoCount ? ' (' + r.photoCount + ' photo' + (r.photoCount > 1 ? 's' : '') + ')' : ''));
