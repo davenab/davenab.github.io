@@ -1,0 +1,88 @@
+{
+  "id": "p22",
+  "title": "Plant-based diets",
+  "topic": "Health and environment",
+  "level": "C1",
+  "verified": false,
+  "text": "In recent years, plant-based diets become increasingly popular, particularly among younger consumers. Advocates claim that reducing meat consumption benefit both personal health and the environment. Livestock farming accounts of a significant share of global greenhouse gas emissions and uses vast amounts of land and water that could be used more efficient. However, critics point out that processed meat alternatives contain often high levels of salt and other additive. Moreover, recent study found that many people who follow a vegan diet do not get enough vitamin B12. Consumers who choose to eat less meat should therefore plan their meals carefully.",
+  "errors": [
+    {
+      "start": 35,
+      "end": 41,
+      "wrong": "become",
+      "code": "VT",
+      "acceptedAnswers": [
+        "have become"
+      ],
+      "ruleReminder": "Use the present perfect with in recent years, because the period continues to now.",
+      "explanation": "In recent years includes the present, so we need the present perfect: have become."
+    },
+    {
+      "start": 149,
+      "end": 156,
+      "wrong": "benefit",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "benefits"
+      ],
+      "ruleReminder": "An -ing subject (reducing meat consumption) is singular and takes a singular verb.",
+      "explanation": "The subject is reducing meat consumption, one action, so the verb needs -s: benefits."
+    },
+    {
+      "start": 226,
+      "end": 228,
+      "wrong": "of",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "for"
+      ],
+      "ruleReminder": "Account goes with for: account for a share of something.",
+      "explanation": "The phrase is accounts for, not accounts of."
+    },
+    {
+      "start": 348,
+      "end": 357,
+      "wrong": "efficient",
+      "code": "WF",
+      "acceptedAnswers": [
+        "efficiently"
+      ],
+      "ruleReminder": "To describe how something is done, use an adverb: used more efficiently.",
+      "explanation": "Efficient is an adjective. To describe how land and water are used, we need the adverb efficiently."
+    },
+    {
+      "start": 419,
+      "end": 432,
+      "wrong": "contain often",
+      "code": "WO",
+      "acceptedAnswers": [
+        "often contain"
+      ],
+      "ruleReminder": "Put often before main verbs (often contain) and after be (are often).",
+      "explanation": "Contain is a main verb, so often comes before it: often contain."
+    },
+    {
+      "start": 463,
+      "end": 471,
+      "wrong": "additive",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "additives"
+      ],
+      "ruleReminder": "After other, use a plural countable noun when you mean more than one: other additives.",
+      "explanation": "Other here means more kinds, so the noun must be plural: additives."
+    },
+    {
+      "start": 483,
+      "end": 495,
+      "wrong": "recent study",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a recent study",
+        "one recent study"
+      ],
+      "ruleReminder": "A singular countable noun needs an article (a, an, the) or another determiner.",
+      "explanation": "Study is a singular countable noun, so it needs an article: a recent study."
+    }
+  ]
+}

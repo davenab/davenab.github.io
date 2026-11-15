@@ -1,0 +1,99 @@
+{
+  "id": "p14",
+  "title": "Fast fashion",
+  "topic": "Consumers and the environment",
+  "level": "B2",
+  "verified": false,
+  "text": "Fast fashion mean cheap clothing that is produced quickly to follow the latest trends. Because prices are so low, many people buy new clothes every month and throw away them after wearing them only a few times. This has a serious impact in the environment. The fashion industry is one of the most pollute industries in the world, and it uses huge amounts of water and chemical. In addition, many factory workers paid very low wages. Consumers can make their part by buying fewer clothes or choosing second-hand items, which are often more cheaper and still in good condition.",
+  "errors": [
+    {
+      "start": 13,
+      "end": 17,
+      "wrong": "mean",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "means"
+      ],
+      "ruleReminder": "A singular subject takes a singular verb: fast fashion means.",
+      "explanation": "Fast fashion is one idea (singular), so the verb needs -s: means."
+    },
+    {
+      "start": 164,
+      "end": 173,
+      "wrong": "away them",
+      "code": "WO",
+      "acceptedAnswers": [
+        "them away"
+      ],
+      "ruleReminder": "With phrasal verbs (throw away, pick up), a pronoun goes in the middle: throw them away.",
+      "explanation": "Them is a pronoun, so it goes between throw and away."
+    },
+    {
+      "start": 237,
+      "end": 239,
+      "wrong": "in",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "on"
+      ],
+      "ruleReminder": "Impact goes with on: an impact on something.",
+      "explanation": "The phrase is have an impact on something, not in."
+    },
+    {
+      "start": 297,
+      "end": 304,
+      "wrong": "pollute",
+      "code": "WF",
+      "acceptedAnswers": [
+        "polluting"
+      ],
+      "ruleReminder": "Before a noun, use an adjective: the most polluting industries.",
+      "explanation": "Pollute is a verb. Before industries, we need the adjective polluting."
+    },
+    {
+      "start": 368,
+      "end": 376,
+      "wrong": "chemical",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "chemicals"
+      ],
+      "ruleReminder": "Countable nouns are plural when you mean many: water and chemicals.",
+      "explanation": "Chemical is countable here and means many different substances, so it must be plural."
+    },
+    {
+      "start": 412,
+      "end": 416,
+      "wrong": "paid",
+      "code": "^",
+      "acceptedAnswers": [
+        "are paid"
+      ],
+      "ruleReminder": "In the passive, use be + past participle: are paid, were built.",
+      "explanation": "The workers do not pay; they receive money. This is passive, so it needs are: are paid."
+    },
+    {
+      "start": 447,
+      "end": 451,
+      "wrong": "make",
+      "code": "WC",
+      "acceptedAnswers": [
+        "do",
+        "play"
+      ],
+      "ruleReminder": "Some phrases are fixed: do your part, play your part.",
+      "explanation": "We say do their part or play their part. Make their part is not used."
+    },
+    {
+      "start": 534,
+      "end": 546,
+      "wrong": "more cheaper",
+      "code": "X",
+      "acceptedAnswers": [
+        "cheaper"
+      ],
+      "ruleReminder": "Do not use more with an -er adjective: cheaper, not more cheaper.",
+      "explanation": "Cheaper already means more cheap, so more is not needed."
+    }
+  ]
+}

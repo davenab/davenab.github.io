@@ -1,0 +1,88 @@
+{
+  "id": "p13",
+  "title": "Part-time jobs and study",
+  "topic": "Work and study",
+  "level": "B2",
+  "verified": false,
+  "text": "Many international students works part-time while they study. A job helps them cover their living costs, and it also gives them chance to practise English with local people. Last year, I work in a café near my university for three month. I was responsible of serving customers and cleaning the kitchen. My manager was kind and let me to choose my own hours, so I could still attend all my classes. After a few weeks, I felt much more confidence when I spoke English. In my experience, a part-time job is useful, but students should not work more than fifteen hours a week.",
+  "errors": [
+    {
+      "start": 28,
+      "end": 33,
+      "wrong": "works",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "work"
+      ],
+      "ruleReminder": "A plural subject takes a plural verb: students work, a student works.",
+      "explanation": "The subject is many international students (plural), so the verb has no -s: work."
+    },
+    {
+      "start": 128,
+      "end": 134,
+      "wrong": "chance",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a chance",
+        "the chance"
+      ],
+      "ruleReminder": "A singular countable noun needs an article (a, an, the) or another determiner.",
+      "explanation": "Chance is a singular countable noun here, so it needs a or the: gives them a chance."
+    },
+    {
+      "start": 187,
+      "end": 191,
+      "wrong": "work",
+      "code": "VT",
+      "acceptedAnswers": [
+        "worked"
+      ],
+      "ruleReminder": "Use the past simple for a finished action at a finished time (last year).",
+      "explanation": "Last year is a finished time, so the verb must be past simple: worked."
+    },
+    {
+      "start": 231,
+      "end": 236,
+      "wrong": "month",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "months"
+      ],
+      "ruleReminder": "After numbers above one, use a plural noun: two months, three weeks.",
+      "explanation": "Three is more than one, so the noun must be plural: months."
+    },
+    {
+      "start": 256,
+      "end": 258,
+      "wrong": "of",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "for"
+      ],
+      "ruleReminder": "Responsible goes with for: responsible for something.",
+      "explanation": "The fixed phrase is responsible for, not responsible of."
+    },
+    {
+      "start": 334,
+      "end": 343,
+      "wrong": "to choose",
+      "code": "VF",
+      "acceptedAnswers": [
+        "choose"
+      ],
+      "ruleReminder": "After let and make, use the base verb with no to: let me choose.",
+      "explanation": "Let is followed by an object and the base verb, without to."
+    },
+    {
+      "start": 434,
+      "end": 444,
+      "wrong": "confidence",
+      "code": "WF",
+      "acceptedAnswers": [
+        "confident"
+      ],
+      "ruleReminder": "After feel and more, use an adjective: feel more confident.",
+      "explanation": "Confidence is a noun. After felt much more, we need the adjective confident."
+    }
+  ]
+}
