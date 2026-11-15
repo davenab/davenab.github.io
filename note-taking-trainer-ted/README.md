@@ -1,6 +1,6 @@
 # DAVE Notes: Lecture Note-Taking Trainer (TED edition)
 
-Note-taking practice with real talks, for EAP students at about CEFR B2. Students watch a TED talk (in TED's official player), listen to a Breaking News English story (on their website), play a teacher lecture, or use their own recording. They take notes, check their own notes against a teacher-checked list of key ideas, answer questions from their notes, review, and set a goal.
+Note-taking practice with real talks, for EAP students at about CEFR B2. Students watch a TED talk (in TED's official player), listen to a Breaking News English story (on their website), or use their own recording. Each session, students choose which note-taking skill to practise. They take notes, check their own notes against a teacher-checked list of key ideas, answer questions from their notes, review, and set a goal.
 
 Live address: https://davenab.github.io/note-taking-trainer-ted/
 
@@ -14,8 +14,7 @@ Live address: https://davenab.github.io/note-taking-trainer-ted/
 |---|---|
 | `index.html` | The app |
 | `about.html` | The "About this app" page |
-| `activities/` | One file per talk or lecture, plus `index.json` (the list) |
-| `audio/` | Teacher lecture recordings (MP3). `sample-placeholder.mp3` is just a tone. |
+| `activities/` | One file per talk, plus `index.json` (the list) |
 | `app.js`, `app.css` | The program and its design. You don't need to change these. |
 
 ## Rules for TED and Breaking News English content
@@ -30,7 +29,7 @@ Live address: https://davenab.github.io/note-taking-trainer-ted/
 - Their terms allow linking to their lesson pages, but not to their MP3 files, and not copying their text or exercises into an app. So BNE activities only link to the page (`bneUrl`). Key ideas and questions must be in your own words.
 - These terms are their decision, not ours. If you plan to use BNE a lot, consider emailing Sean Banville to confirm he is happy with this use.
 
-## How to add a talk or lecture
+## How to add a talk
 
 You can do all of this on the GitHub website. You don't need to install anything.
 
@@ -38,7 +37,6 @@ You can do all of this on the GitHub website. You don't need to install anything
 2. Open an activity of the same kind and copy all of its text:
    - TED talk: `cutts-30-days.json`
    - Breaking News English: `bne-food-waste.json`
-   - Teacher lecture: `sample-teacher-lecture.json`
 3. Go back to the `activities` folder and click **Add file → Create new file**.
 4. Name the file with lower-case words and hyphens, ending in `.json`, for example `robinson-schools.json`.
 5. Paste the text and change the content (see the table below). Keep all the quote marks `"`, commas `,` and brackets `[ ] { }` exactly as they are.
@@ -53,26 +51,17 @@ You can do all of this on the GitHub website. You don't need to install anything
 3. For `embedUrl`, use the same ending after `https://embed.ted.com/talks/`. (You can check it on ted.com: **Share → Embed**.)
 4. Open the transcript on ted.com (it has times). Use it to write the key ideas and their `approxTime`. Don't paste the transcript into the file.
 
-### For a teacher lecture
-
-1. Record your lecture as an MP3 (mono, 64 kbps is plenty).
-2. Upload it: open `note-taking-trainer-ted/audio/`, click **Add file → Upload files**, and commit.
-3. Put the file name in `audioFile`, for example `"audioFile": "week3-lecture.mp3"`.
-4. Put your script in `transcript`, one paragraph per item in the list.
-5. Put your signpost phrases in `signpostPhrases`. Copy each one **exactly** as it is in the transcript, with the same capital letters and commas. They are highlighted in the review step.
-6. When your lecture is ready, you can remove the sample: delete `"sample-teacher-lecture.json"` from `index.json`.
-
 ### What each part means
 
 | Part | What to write |
 |---|---|
 | `id` | A short name with no spaces. Use the file name without `.json`. |
-| `source` | `"ted"`, `"bne"` or `"teacher"` |
+| `source` | `"ted"` or `"bne"` |
 | `title`, `speaker`, `topic` | Shown on the activity card |
 | `tedUrl`, `embedUrl` | TED talks only (see above) |
 | `bneUrl` | BNE only: the listening page (the address ending in `l.html`, e.g. `...-5l.html`) |
 | `bneLessonUrl` | BNE only: the main lesson page, for the credit link |
-| `audioFile` | Teacher lectures only: the MP3 file name in `audio/`. Leave as `""` for TED and BNE. |
+| `audioFile` | Leave as `""` |
 | `level` | For example `"B2"` |
 | `lengthSeconds` | Length in seconds (3 minutes 10 seconds = `190`) |
 | `verified` | `false` until you have checked it. Then `true` (no quote marks). This is your own record; students don't see it. |
@@ -81,9 +70,12 @@ You can do all of this on the GitHub website. You don't need to install anything
 | `keyIdeas` | 6 to 10 ideas. `type` is `"main"` or `"detail"`. `approxTime` is where the idea is, like `"1:40"`. |
 | `modelNotes` | Example notes, one line each. Start a line with `- ` (hyphen and space) to put it under the line above. |
 | `questions` | 5 questions. `answer` must be **exactly the same text** as the correct option. |
-| `transcript`, `signpostPhrases` | Teacher lectures only |
 
 **Tip:** If an activity doesn't appear, there is probably a small mistake in the file, like a missing comma or quote mark. Paste the file into a free JSON checker (search "JSON validator") to find the line. To put a double quote mark inside text, write `\"`.
+
+## Skill focus
+
+On the home screen students choose one of four skills: signposting language, abbreviations and symbols, main idea versus detail, or organising notes. The app marks one as "Suggested next" (it rotates through the four), but students can pick any of them. They can also change it on the skill-tip screen.
 
 ## How to check an activity and mark it as verified
 
