@@ -1,0 +1,809 @@
+{
+  "_help": "Warm-up sentences: one error each. 'wrong' must appear exactly once in 'text'. Add at least 5 per code.",
+  "items": [
+    {
+      "id": "w01",
+      "code": "VT",
+      "text": "Yesterday I meet my tutor to discuss my essay.",
+      "wrong": "meet",
+      "acceptedAnswers": [
+        "met"
+      ],
+      "explanation": "Yesterday is a finished time, so use the past simple. Meet is irregular: met."
+    },
+    {
+      "id": "w02",
+      "code": "VT",
+      "text": "The company has been founded in 1998.",
+      "wrong": "has been founded",
+      "acceptedAnswers": [
+        "was founded"
+      ],
+      "explanation": "In 1998 is a finished time, so use the past simple passive: was founded."
+    },
+    {
+      "id": "w03",
+      "code": "VT",
+      "text": "Since 2020, the number of online courses grew quickly.",
+      "wrong": "grew",
+      "acceptedAnswers": [
+        "has grown",
+        "has increased"
+      ],
+      "explanation": "Since 2020 connects the past to now, so use the present perfect: has grown."
+    },
+    {
+      "id": "w04",
+      "code": "VT",
+      "text": "When I was at school, I study French for three years.",
+      "wrong": "study",
+      "acceptedAnswers": [
+        "studied"
+      ],
+      "explanation": "When I was at school is finished time, so use the past simple: studied."
+    },
+    {
+      "id": "w05",
+      "code": "VT",
+      "text": "House prices rise sharply last year.",
+      "wrong": "rise",
+      "acceptedAnswers": [
+        "rose"
+      ],
+      "explanation": "Last year is a finished time. Rise is irregular: rose."
+    },
+    {
+      "id": "w06",
+      "code": "VT",
+      "text": "I live in Brisbane since January.",
+      "wrong": "live",
+      "acceptedAnswers": [
+        "have lived",
+        "have been living"
+      ],
+      "explanation": "Since January connects the past to now, so use the present perfect: have lived."
+    },
+    {
+      "id": "w07",
+      "code": "VF",
+      "text": "She has wrote two reports this month.",
+      "wrong": "wrote",
+      "acceptedAnswers": [
+        "written"
+      ],
+      "explanation": "After has, use the past participle. Write, wrote, written."
+    },
+    {
+      "id": "w08",
+      "code": "VF",
+      "text": "We are plan a group presentation.",
+      "wrong": "plan",
+      "acceptedAnswers": [
+        "planning"
+      ],
+      "explanation": "After are, use the -ing form: are planning."
+    },
+    {
+      "id": "w09",
+      "code": "VF",
+      "text": "I am looking forward to meet you.",
+      "wrong": "meet",
+      "acceptedAnswers": [
+        "meeting"
+      ],
+      "explanation": "In look forward to, to is a preposition, so the -ing form follows: meeting."
+    },
+    {
+      "id": "w10",
+      "code": "VF",
+      "text": "The results were analyse by the research team.",
+      "wrong": "analyse",
+      "acceptedAnswers": [
+        "analysed",
+        "analyzed"
+      ],
+      "explanation": "In the passive, use be + past participle: were analysed."
+    },
+    {
+      "id": "w11",
+      "code": "VF",
+      "text": "He wants improving his writing.",
+      "wrong": "improving",
+      "acceptedAnswers": [
+        "to improve"
+      ],
+      "explanation": "After want, use to + verb: wants to improve."
+    },
+    {
+      "id": "w12",
+      "code": "VF",
+      "text": "She did not came to the lecture.",
+      "wrong": "came",
+      "acceptedAnswers": [
+        "come"
+      ],
+      "explanation": "After did or did not, use the base verb: did not come."
+    },
+    {
+      "id": "w13",
+      "code": "SVA",
+      "text": "The number of students have increased.",
+      "wrong": "have",
+      "acceptedAnswers": [
+        "has"
+      ],
+      "explanation": "The main noun is number (singular), so use has."
+    },
+    {
+      "id": "w14",
+      "code": "SVA",
+      "text": "Everyone in my class speak two languages.",
+      "wrong": "speak",
+      "acceptedAnswers": [
+        "speaks"
+      ],
+      "explanation": "Everyone is singular, so the verb needs -s: speaks."
+    },
+    {
+      "id": "w15",
+      "code": "SVA",
+      "text": "One of my friends live in Perth.",
+      "wrong": "live",
+      "acceptedAnswers": [
+        "lives"
+      ],
+      "explanation": "The subject is one (singular), not friends, so use lives."
+    },
+    {
+      "id": "w16",
+      "code": "SVA",
+      "text": "Each student need a library card.",
+      "wrong": "need",
+      "acceptedAnswers": [
+        "needs"
+      ],
+      "explanation": "Each + singular noun takes a singular verb: needs."
+    },
+    {
+      "id": "w17",
+      "code": "SVA",
+      "text": "My parents works in a hospital.",
+      "wrong": "works",
+      "acceptedAnswers": [
+        "work"
+      ],
+      "explanation": "Parents is plural, so the verb has no -s: work."
+    },
+    {
+      "id": "w18",
+      "code": "SVA",
+      "text": "Mathematics are my favourite subject.",
+      "wrong": "are",
+      "acceptedAnswers": [
+        "is"
+      ],
+      "explanation": "Mathematics looks plural but is one subject, so use is."
+    },
+    {
+      "id": "w19",
+      "code": "Art",
+      "text": "She is engineer at a large company.",
+      "wrong": "engineer",
+      "acceptedAnswers": [
+        "an engineer"
+      ],
+      "explanation": "Jobs need a or an: she is an engineer. Use an before a vowel sound."
+    },
+    {
+      "id": "w20",
+      "code": "Art",
+      "text": "I would like to become doctor.",
+      "wrong": "doctor",
+      "acceptedAnswers": [
+        "a doctor"
+      ],
+      "explanation": "A singular countable noun needs an article: a doctor."
+    },
+    {
+      "id": "w21",
+      "code": "Art",
+      "text": "This is best restaurant in the city.",
+      "wrong": "best",
+      "acceptedAnswers": [
+        "the best"
+      ],
+      "explanation": "Superlatives need the: the best."
+    },
+    {
+      "id": "w22",
+      "code": "Art",
+      "text": "Sun rises in the east.",
+      "wrong": "Sun",
+      "acceptedAnswers": [
+        "The sun",
+        "The Sun"
+      ],
+      "explanation": "There is only one sun, so we use the: The sun."
+    },
+    {
+      "id": "w23",
+      "code": "Art",
+      "text": "Can you give me an information about the course?",
+      "wrong": "an information",
+      "acceptedAnswers": [
+        "information",
+        "some information"
+      ],
+      "explanation": "Information is uncountable, so it never takes a or an."
+    },
+    {
+      "id": "w24",
+      "code": "Art",
+      "text": "We visited the Canberra last year.",
+      "wrong": "the Canberra",
+      "acceptedAnswers": [
+        "Canberra"
+      ],
+      "explanation": "City names do not take the: Canberra."
+    },
+    {
+      "id": "w25",
+      "code": "Pl",
+      "text": "I have three sister.",
+      "wrong": "sister",
+      "acceptedAnswers": [
+        "sisters"
+      ],
+      "explanation": "After three, use a plural noun: sisters."
+    },
+    {
+      "id": "w26",
+      "code": "Pl",
+      "text": "There are many advantage of studying online.",
+      "wrong": "advantage",
+      "acceptedAnswers": [
+        "advantages"
+      ],
+      "explanation": "After many, use a plural countable noun: advantages."
+    },
+    {
+      "id": "w27",
+      "code": "Pl",
+      "text": "She gave me some useful advices.",
+      "wrong": "advices",
+      "acceptedAnswers": [
+        "advice"
+      ],
+      "explanation": "Advice is uncountable, so it has no plural form."
+    },
+    {
+      "id": "w28",
+      "code": "Pl",
+      "text": "Two woman won the prize.",
+      "wrong": "woman",
+      "acceptedAnswers": [
+        "women"
+      ],
+      "explanation": "Woman has an irregular plural: women."
+    },
+    {
+      "id": "w29",
+      "code": "Pl",
+      "text": "One of my friend is a nurse.",
+      "wrong": "friend",
+      "acceptedAnswers": [
+        "friends"
+      ],
+      "explanation": "One of is followed by a plural noun: one of my friends."
+    },
+    {
+      "id": "w30",
+      "code": "Pl",
+      "text": "We bought some new furnitures for the flat.",
+      "wrong": "furnitures",
+      "acceptedAnswers": [
+        "furniture"
+      ],
+      "explanation": "Furniture is uncountable, so it has no plural form."
+    },
+    {
+      "id": "w31",
+      "code": "Prep",
+      "text": "I am interested on psychology.",
+      "wrong": "on",
+      "acceptedAnswers": [
+        "in"
+      ],
+      "explanation": "Interested goes with in: interested in."
+    },
+    {
+      "id": "w32",
+      "code": "Prep",
+      "text": "The lecture starts on 9 am.",
+      "wrong": "on",
+      "acceptedAnswers": [
+        "at"
+      ],
+      "explanation": "Use at with clock times: at 9 am."
+    },
+    {
+      "id": "w33",
+      "code": "Prep",
+      "text": "She arrived to Sydney last night.",
+      "wrong": "to",
+      "acceptedAnswers": [
+        "in"
+      ],
+      "explanation": "Use arrive in with cities and countries, and arrive at with buildings. Not arrive to."
+    },
+    {
+      "id": "w34",
+      "code": "Prep",
+      "text": "This book is very different with the film.",
+      "wrong": "with",
+      "acceptedAnswers": [
+        "from",
+        "to"
+      ],
+      "explanation": "Different goes with from (or to in Australian and British English), not with."
+    },
+    {
+      "id": "w35",
+      "code": "Prep",
+      "text": "We discussed the problem in Monday.",
+      "wrong": "in",
+      "acceptedAnswers": [
+        "on"
+      ],
+      "explanation": "Use on with days: on Monday."
+    },
+    {
+      "id": "w36",
+      "code": "Prep",
+      "text": "He is very good in maths.",
+      "wrong": "in",
+      "acceptedAnswers": [
+        "at"
+      ],
+      "explanation": "Good goes with at for skills: good at maths."
+    },
+    {
+      "id": "w37",
+      "code": "WF",
+      "text": "She speaks English very good.",
+      "wrong": "good",
+      "acceptedAnswers": [
+        "well"
+      ],
+      "explanation": "To describe how someone speaks, use the adverb well, not the adjective good."
+    },
+    {
+      "id": "w38",
+      "code": "WF",
+      "text": "The economic of Australia is strong.",
+      "wrong": "economic",
+      "acceptedAnswers": [
+        "economy"
+      ],
+      "explanation": "After the and before of, use a noun: the economy."
+    },
+    {
+      "id": "w39",
+      "code": "WF",
+      "text": "It was a very interested lecture.",
+      "wrong": "interested",
+      "acceptedAnswers": [
+        "interesting"
+      ],
+      "explanation": "The lecture causes the feeling, so use interesting. People feel interested."
+    },
+    {
+      "id": "w40",
+      "code": "WF",
+      "text": "He checks his work careful.",
+      "wrong": "careful",
+      "acceptedAnswers": [
+        "carefully"
+      ],
+      "explanation": "To describe how he checks, use the adverb carefully."
+    },
+    {
+      "id": "w41",
+      "code": "WF",
+      "text": "There is a strongly link between sleep and memory.",
+      "wrong": "strongly",
+      "acceptedAnswers": [
+        "strong"
+      ],
+      "explanation": "Before a noun, use an adjective: a strong link."
+    },
+    {
+      "id": "w42",
+      "code": "WF",
+      "text": "We need to improvement our results.",
+      "wrong": "improvement",
+      "acceptedAnswers": [
+        "improve"
+      ],
+      "explanation": "After to, use a verb: to improve."
+    },
+    {
+      "id": "w43",
+      "code": "WC",
+      "text": "I need to do a decision about my course.",
+      "wrong": "do",
+      "acceptedAnswers": [
+        "make"
+      ],
+      "explanation": "We make a decision, not do a decision."
+    },
+    {
+      "id": "w44",
+      "code": "WC",
+      "text": "Please say me the answer.",
+      "wrong": "say",
+      "acceptedAnswers": [
+        "tell"
+      ],
+      "explanation": "We tell someone something. We say something (to someone)."
+    },
+    {
+      "id": "w45",
+      "code": "WC",
+      "text": "The rent in Sydney is very expensive.",
+      "wrong": "expensive",
+      "acceptedAnswers": [
+        "high"
+      ],
+      "explanation": "Rent and prices are high or low. Things you buy are expensive."
+    },
+    {
+      "id": "w46",
+      "code": "WC",
+      "text": "I made a lot of research for this essay.",
+      "wrong": "made",
+      "acceptedAnswers": [
+        "did"
+      ],
+      "explanation": "We do research, not make research."
+    },
+    {
+      "id": "w47",
+      "code": "WC",
+      "text": "Can you borrow me your pen?",
+      "wrong": "borrow",
+      "acceptedAnswers": [
+        "lend"
+      ],
+      "explanation": "You lend something to someone. You borrow something from someone."
+    },
+    {
+      "id": "w48",
+      "code": "WC",
+      "text": "The lecturer learned us how to write a summary.",
+      "wrong": "learned",
+      "acceptedAnswers": [
+        "taught"
+      ],
+      "explanation": "A teacher teaches (taught) students. Students learn."
+    },
+    {
+      "id": "w49",
+      "code": "WO",
+      "text": "Can you tell me where is the library?",
+      "wrong": "is the library",
+      "acceptedAnswers": [
+        "the library is"
+      ],
+      "explanation": "In a question inside a sentence, use statement order: where the library is."
+    },
+    {
+      "id": "w50",
+      "code": "WO",
+      "text": "She speaks very well English.",
+      "wrong": "speaks very well English",
+      "acceptedAnswers": [
+        "speaks English very well"
+      ],
+      "explanation": "Do not put words between a verb and its object: speaks English very well."
+    },
+    {
+      "id": "w51",
+      "code": "WO",
+      "text": "I often am late for class.",
+      "wrong": "often am",
+      "acceptedAnswers": [
+        "am often"
+      ],
+      "explanation": "Put often after be: am often late."
+    },
+    {
+      "id": "w52",
+      "code": "WO",
+      "text": "He bought a car red.",
+      "wrong": "car red",
+      "acceptedAnswers": [
+        "red car"
+      ],
+      "explanation": "In English, adjectives go before the noun: a red car."
+    },
+    {
+      "id": "w53",
+      "code": "WO",
+      "text": "I don't know what does this word mean.",
+      "wrong": "does this word mean",
+      "acceptedAnswers": [
+        "this word means"
+      ],
+      "explanation": "In a question inside a sentence, use statement order and no does: what this word means."
+    },
+    {
+      "id": "w54",
+      "code": "WO",
+      "text": "They visited last year Japan.",
+      "wrong": "visited last year Japan",
+      "acceptedAnswers": [
+        "visited Japan last year"
+      ],
+      "explanation": "Put the object right after the verb, and the time at the end: visited Japan last year."
+    },
+    {
+      "id": "w55",
+      "code": "P",
+      "text": "Its a difficult question.",
+      "wrong": "Its",
+      "acceptedAnswers": [
+        "It's",
+        "It is"
+      ],
+      "explanation": "It's means it is. Its shows that something belongs to it."
+    },
+    {
+      "id": "w56",
+      "code": "P",
+      "text": "The dog wagged it's tail.",
+      "wrong": "it's",
+      "acceptedAnswers": [
+        "its"
+      ],
+      "explanation": "The tail belongs to the dog, so use its with no apostrophe."
+    },
+    {
+      "id": "w57",
+      "code": "P",
+      "text": "The students book was on the desk.",
+      "wrong": "students",
+      "acceptedAnswers": [
+        "student's",
+        "students'"
+      ],
+      "explanation": "Use an apostrophe to show who owns something: the student's book."
+    },
+    {
+      "id": "w58",
+      "code": "P",
+      "text": "However the results were clear.",
+      "wrong": "However",
+      "acceptedAnswers": [
+        "However,"
+      ],
+      "explanation": "Put a comma after However at the start of a sentence."
+    },
+    {
+      "id": "w59",
+      "code": "P",
+      "text": "Where is the library.",
+      "wrong": "library.",
+      "acceptedAnswers": [
+        "library?"
+      ],
+      "explanation": "A direct question ends with a question mark."
+    },
+    {
+      "id": "w60",
+      "code": "P",
+      "text": "In addition students need a laptop.",
+      "wrong": "In addition",
+      "acceptedAnswers": [
+        "In addition,"
+      ],
+      "explanation": "Put a comma after linking phrases such as In addition at the start of a sentence."
+    },
+    {
+      "id": "w61",
+      "code": "SS",
+      "text": "I was tired, I went to bed early.",
+      "wrong": "tired, I",
+      "acceptedAnswers": [
+        "tired, so I",
+        "tired. I",
+        "tired; I",
+        "tired so I"
+      ],
+      "explanation": "Do not join two full sentences with only a comma. Use so, a full stop or a semicolon."
+    },
+    {
+      "id": "w62",
+      "code": "SS",
+      "text": "Because it was raining. We stayed inside.",
+      "wrong": "raining. We",
+      "acceptedAnswers": [
+        "raining, we",
+        "raining we"
+      ],
+      "explanation": "A because clause cannot be a sentence on its own. Join it to the main clause with a comma."
+    },
+    {
+      "id": "w63",
+      "code": "SS",
+      "text": "Although I studied hard, but I failed the test.",
+      "wrong": "hard, but I",
+      "acceptedAnswers": [
+        "hard, I",
+        "hard I"
+      ],
+      "explanation": "Use although or but, not both."
+    },
+    {
+      "id": "w64",
+      "code": "SS",
+      "text": "Many students who live on campus.",
+      "wrong": "who live",
+      "acceptedAnswers": [
+        "live"
+      ],
+      "explanation": "This sentence has no main verb. Remove who so that live becomes the main verb."
+    },
+    {
+      "id": "w65",
+      "code": "SS",
+      "text": "There are many people want to study abroad.",
+      "wrong": "people want",
+      "acceptedAnswers": [
+        "people who want",
+        "people that want"
+      ],
+      "explanation": "Two verbs (are, want) need a joining word: people who want."
+    },
+    {
+      "id": "w66",
+      "code": "SS",
+      "text": "I like reading, it helps me relax.",
+      "wrong": "reading, it",
+      "acceptedAnswers": [
+        "reading because it",
+        "reading. It",
+        "reading; it",
+        "reading, as it",
+        "reading as it"
+      ],
+      "explanation": "Do not join two full sentences with only a comma. Use because, a full stop or a semicolon."
+    },
+    {
+      "id": "w67",
+      "code": "^",
+      "text": "She very tired after the exam.",
+      "wrong": "She very",
+      "acceptedAnswers": [
+        "She was very",
+        "She is very",
+        "She felt very"
+      ],
+      "explanation": "Every sentence needs a verb. Add was before the adjective."
+    },
+    {
+      "id": "w68",
+      "code": "^",
+      "text": "Is important to sleep well.",
+      "wrong": "Is important",
+      "acceptedAnswers": [
+        "It is important",
+        "It's important"
+      ],
+      "explanation": "English sentences need a subject. Add it: It is important."
+    },
+    {
+      "id": "w69",
+      "code": "^",
+      "text": "My brother twenty years old.",
+      "wrong": "brother twenty",
+      "acceptedAnswers": [
+        "brother is twenty"
+      ],
+      "explanation": "Use be with age: my brother is twenty years old."
+    },
+    {
+      "id": "w70",
+      "code": "^",
+      "text": "Students not allowed to eat in the library.",
+      "wrong": "not allowed",
+      "acceptedAnswers": [
+        "are not allowed",
+        "aren't allowed"
+      ],
+      "explanation": "The sentence needs a verb. Use are with not allowed."
+    },
+    {
+      "id": "w71",
+      "code": "^",
+      "text": "I look forward hearing from you.",
+      "wrong": "hearing",
+      "acceptedAnswers": [
+        "to hearing"
+      ],
+      "explanation": "The phrase is look forward to + -ing."
+    },
+    {
+      "id": "w72",
+      "code": "^",
+      "text": "He asked me I could help him.",
+      "wrong": "I could",
+      "acceptedAnswers": [
+        "if I could",
+        "whether I could"
+      ],
+      "explanation": "Reported yes/no questions need if or whether."
+    },
+    {
+      "id": "w73",
+      "code": "X",
+      "text": "We discussed about the plan.",
+      "wrong": "discussed about",
+      "acceptedAnswers": [
+        "discussed"
+      ],
+      "explanation": "We discuss something. Do not add about."
+    },
+    {
+      "id": "w74",
+      "code": "X",
+      "text": "My brother he works in Perth.",
+      "wrong": "brother he",
+      "acceptedAnswers": [
+        "brother"
+      ],
+      "explanation": "Use one subject only: my brother works, not my brother he works."
+    },
+    {
+      "id": "w75",
+      "code": "X",
+      "text": "I want to return back home.",
+      "wrong": "return back",
+      "acceptedAnswers": [
+        "return",
+        "go back"
+      ],
+      "explanation": "Return already means go back, so back is not needed."
+    },
+    {
+      "id": "w76",
+      "code": "X",
+      "text": "She married with a doctor.",
+      "wrong": "married with",
+      "acceptedAnswers": [
+        "married"
+      ],
+      "explanation": "We marry someone. Do not add with."
+    },
+    {
+      "id": "w77",
+      "code": "X",
+      "text": "This method is more better than the old one.",
+      "wrong": "more better",
+      "acceptedAnswers": [
+        "better"
+      ],
+      "explanation": "Better already means more good, so more is not needed."
+    },
+    {
+      "id": "w78",
+      "code": "X",
+      "text": "Please contact to the office.",
+      "wrong": "contact to",
+      "acceptedAnswers": [
+        "contact"
+      ],
+      "explanation": "We contact someone. Do not add to."
+    }
+  ]
+}

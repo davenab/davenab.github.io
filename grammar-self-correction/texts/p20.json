@@ -1,0 +1,90 @@
+{
+  "id": "p20",
+  "title": "Academic integrity in the age of AI",
+  "topic": "Study and university life",
+  "level": "C1",
+  "verified": false,
+  "text": "The rapid spread of generative AI tools have raised serious questions about academic integrity. Since 2023, many universities introduced new policies on the use of AI in assessment. Some institutions ban it completely, whereas others allow students to use it, provided that they acknowledge it and take responsibility of the final work. Critics argue that detection software is unreliability and may unfairly accuse students who write in second language. Rather than relying on detection, universities could design assessments that emphasise on the writing process, such as drafts and reflections. Such tasks are harder to outsource, they also develop skills that employers value.",
+  "errors": [
+    {
+      "start": 40,
+      "end": 44,
+      "wrong": "have",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "has"
+      ],
+      "ruleReminder": "In a long subject, find the main noun. Ignore the of phrase after it.",
+      "explanation": "The main noun is spread (singular), not tools, so the verb is has."
+    },
+    {
+      "start": 126,
+      "end": 136,
+      "wrong": "introduced",
+      "code": "VT",
+      "acceptedAnswers": [
+        "have introduced"
+      ],
+      "ruleReminder": "Use the present perfect with since: since 2023, they have done.",
+      "explanation": "Since 2023 connects the past to now, so we need the present perfect: have introduced."
+    },
+    {
+      "start": 318,
+      "end": 320,
+      "wrong": "of",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "for"
+      ],
+      "ruleReminder": "Responsibility goes with for: take responsibility for something.",
+      "explanation": "The phrase is take responsibility for, not of."
+    },
+    {
+      "start": 378,
+      "end": 391,
+      "wrong": "unreliability",
+      "code": "WF",
+      "acceptedAnswers": [
+        "unreliable"
+      ],
+      "ruleReminder": "After be, use an adjective: is unreliable.",
+      "explanation": "Unreliability is a noun. After is, we need the adjective unreliable."
+    },
+    {
+      "start": 438,
+      "end": 453,
+      "wrong": "second language",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a second language"
+      ],
+      "ruleReminder": "A singular countable noun needs an article (a, an, the) or another determiner.",
+      "explanation": "Language is countable here (one of many languages), so it needs a: a second language."
+    },
+    {
+      "start": 532,
+      "end": 544,
+      "wrong": "emphasise on",
+      "code": "X",
+      "acceptedAnswers": [
+        "emphasise"
+      ],
+      "ruleReminder": "Emphasise is followed directly by its object. Do not add on. (The noun takes on: an emphasis on.)",
+      "explanation": "We emphasise something. On is used only with the noun: put an emphasis on."
+    },
+    {
+      "start": 623,
+      "end": 638,
+      "wrong": "outsource, they",
+      "code": "SS",
+      "acceptedAnswers": [
+        "outsource, and they",
+        "outsource. They",
+        "outsource; they",
+        "outsource and they"
+      ],
+      "ruleReminder": "Do not join two full sentences with only a comma. Use a full stop, a semicolon, or a word like and.",
+      "explanation": "Such tasks are harder to outsource and they also develop skills are two full sentences. A comma alone cannot join them."
+    }
+  ]
+}

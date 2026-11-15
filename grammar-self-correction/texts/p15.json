@@ -1,0 +1,87 @@
+{
+  "id": "p15",
+  "title": "Green spaces in cities",
+  "topic": "Urban life",
+  "level": "B2",
+  "verified": false,
+  "text": "Parks and gardens makes cities better places to live. Spending time in green spaces can reduce stress and improve people's mood. Trees also protect people of the summer heat and provide homes for bird and insects. When I was a child, my family lives in an apartment near a large park. There was small lake in the middle, and my brother and I fed the ducks every weekend. Its sad that many new suburbs are built with very few parks. In my view, city planners should think about green spaces more careful when they design new areas.",
+  "errors": [
+    {
+      "start": 18,
+      "end": 23,
+      "wrong": "makes",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "make"
+      ],
+      "ruleReminder": "Two subjects joined by and take a plural verb: parks and gardens make.",
+      "explanation": "Parks and gardens is a plural subject, so the verb has no -s: make."
+    },
+    {
+      "start": 155,
+      "end": 157,
+      "wrong": "of",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "from"
+      ],
+      "ruleReminder": "Protect goes with from: protect someone from something.",
+      "explanation": "The verb protect is followed by from, not of."
+    },
+    {
+      "start": 196,
+      "end": 200,
+      "wrong": "bird",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "birds"
+      ],
+      "ruleReminder": "A countable noun with no article and a general meaning must be plural: birds and insects.",
+      "explanation": "Bird is countable and here means birds in general, so it must be plural."
+    },
+    {
+      "start": 244,
+      "end": 249,
+      "wrong": "lives",
+      "code": "VT",
+      "acceptedAnswers": [
+        "lived"
+      ],
+      "ruleReminder": "Use the past simple for finished past situations (when I was a child).",
+      "explanation": "When I was a child is a finished time, so the verb must be past simple: lived."
+    },
+    {
+      "start": 295,
+      "end": 305,
+      "wrong": "small lake",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a small lake"
+      ],
+      "ruleReminder": "A singular countable noun needs an article (a, an, the) or another determiner.",
+      "explanation": "Lake is a singular countable noun, so it needs an article: a small lake."
+    },
+    {
+      "start": 371,
+      "end": 374,
+      "wrong": "Its",
+      "code": "P",
+      "acceptedAnswers": [
+        "It's"
+      ],
+      "ruleReminder": "It's means it is. Its (no apostrophe) shows that something belongs to it.",
+      "explanation": "Here we mean it is sad, so we need the apostrophe: It's."
+    },
+    {
+      "start": 495,
+      "end": 502,
+      "wrong": "careful",
+      "code": "WF",
+      "acceptedAnswers": [
+        "carefully"
+      ],
+      "ruleReminder": "To describe how someone does something, use an adverb: think carefully.",
+      "explanation": "Careful is an adjective. To describe how planners think, we need the adverb carefully."
+    }
+  ]
+}

@@ -18,13 +18,25 @@ Plain HTML, CSS and JavaScript. No framework, no build step, no server, no sign-
 | `data/codes.json` | The correction codes: name, meaning, examples, rule | Yes |
 | `data/links.json` | Study links for each code | Yes |
 | `texts/index.json` | The list of practice text files | Yes, when you add a text |
-| `texts/p01.json` … `p12.json` | One practice paragraph per file | Yes |
+| `texts/p01.json` … `p22.json` | One practice paragraph per file (p01–p18 B2, p19–p22 C1) | Yes |
+| `data/warmup.json` | Sentences for the two-minute warm-up (one error each) | Yes |
+| `vendor/jspdf.umd.min.js` | jsPDF 4.2.1 (MIT licence, see `vendor/jspdf-LICENSE.txt`), used only to make the teacher pack PDF on the device | No |
 
-Pages inside the app: start page `#/`, practice `#/setup`, profile `#/profile`, code key `#/codes`, about `#/about`. Teacher-only pages that students don't see linked: `#/teacher` (checks the texts) and `?preview=1#/mine` (Mode 2 demo).
+Pages inside the app: start page `#/`, practice `#/setup`, two-minute warm-up `#/warmup`, profile `#/profile`, code key `#/codes`, about `#/about`.
+
+## Features
+
+- **Practice texts:** 22 paragraphs (18 B2, 4 C1). Students choose a focus (one or two codes, or mixed), a level (B2, C1 or any) and how much help they want:
+  - **Guide me:** the errors are marked from the start.
+  - **Show me the sentence:** the sentences with errors are marked, with the number of errors. The student taps the wrong words, then sees what they found and missed.
+  - **Let me hunt:** nothing is marked. The student taps the words they think are wrong.
+- **Two-minute warm-up:** 5 single sentences, one error each, on the student's weakest code (or a code they choose, or mixed). The error and its code are shown. Hints: the rule, then the answer. When time is up, the student finishes the sentence they are on, then sees a summary. Results count in the profile; help is counted from the code, because the code is already shown.
+- **Error profile:** the codes that needed most help, the top three to work on, saved rules and study links, plus **progress over time**: a chart of average help per error for the last 12 sessions (with a table view), and "earlier → recent" for each code with 4 or more errors.
+- **Teacher pack (PDF):** the student types their name and downloads a one-to-two page PDF: overview, top areas, help by code with trends, recent sessions and their rules. It is made on the device; nothing is uploaded. The PDF font covers English and Western European letters only, so other characters (e.g. Chinese in a saved rule) show as "?". Teacher-only pages that students don't see linked: `#/teacher` (checks the texts) and `?preview=1#/mine` (Mode 2 demo).
 
 ## How to verify each practice text (and set "verified": true)
 
-All 12 texts start as `"verified": false`, which shows a small **Draft content** label to students.
+All 22 texts start as `"verified": false`, which shows a small **Draft content** label to students.
 
 1. Open https://davenab.com/grammar-self-correction/#/teacher (or the same address on your preview).
 2. For each text, the page shows: the paragraph with each error numbered and coded, the corrected paragraph, and a table of accepted answers, rule reminders and explanations. A red **Problems** line appears if a position, code or word count is wrong.
@@ -34,7 +46,8 @@ All 12 texts start as `"verified": false`, which shows a small **Draft content**
    - the code matches your college's meaning of that code;
    - the accepted answers include every correct fix a student might type (add more if needed);
    - the rule reminder and explanation are right and easy to read.
-4. To mark a text as checked: on GitHub, open `grammar-self-correction/texts/p01.json`, click the pencil icon (Edit), change `"verified": false` to `"verified": true`, and click **Commit changes**. The Draft content label disappears for that text.
+4. At the end of the page, check the warm-up sentences in the same way (each has one error and its accepted answers). Warm-up sentences have no verified flag.
+5. To mark a text as checked: on GitHub, open `grammar-self-correction/texts/p01.json`, click the pencil icon (Edit), change `"verified": false` to `"verified": true`, and click **Commit changes**. The Draft content label disappears for that text.
 
 ## How to add a practice text
 
@@ -45,7 +58,8 @@ You don't need to be a programmer. You only edit text files on GitHub.
 3. Click **Add file → Create new file**. Name it `p13.json` (the next number). Paste.
 4. Change the parts inside the quotation marks:
    - `"id"`: the same as the file name without `.json`, e.g. `"p13"`.
-   - `"title"`, `"topic"`, `"level"`: what students see.
+   - `"title"`, `"topic"`: what students see.
+   - `"level"`: `"B2"` or `"C1"` (students filter by this).
    - `"verified"`: leave it as `false` until you have checked it.
    - `"text"`: the paragraph **with** the errors in it, on one line.
 5. For each error, there is one block inside `"errors"`:
@@ -68,6 +82,14 @@ You don't need to be a programmer. You only edit text files on GitHub.
 8. Open `#/teacher` to check it. If the JSON has a mistake (a missing comma or quotation mark), the page tells you that the file could not be read.
 
 Tips for good errors: 6 to 8 errors per paragraph, 80 to 120 words, one clear problem per error, no two errors in the same word, no errors that depend on style or opinion. For a missing word (`^`) or a missing article, mark the word next to the gap (e.g. wrong `"been"`, answer `"have been"`). For an unnecessary word (`X`), mark it together with its neighbour (e.g. wrong `"discuss about"`, answer `"discuss"`).
+
+## How to add warm-up sentences
+
+Open `data/warmup.json` and copy one block:
+```json
+{ "id": "w79", "code": "VT", "text": "Last week I go to the library.", "wrong": "go", "acceptedAnswers": ["went"], "explanation": "Last week is finished time, so use the past simple." }
+```
+`"wrong"` must appear exactly once in `"text"`. Keep at least 5 sentences for each code so a warm-up on one code has enough sentences.
 
 ## How to change the correction codes
 
@@ -145,10 +167,11 @@ The proxy must return:
 ## Testing done
 
 Automated browser tests (Chromium, Playwright) at 360 px (phone) and 1280 px (desktop):
-- Guide me (focus VT + Art, phone) and Let me hunt (mixed, desktop): full flow from setup → read → hunt → found/missed → fixing with every hint path (correct answer, hint then correct, two wrong tries then "Yes, mine works", two wrong tries then "No, mine was wrong", answer revealed) → summary → rule → profile → "Practise my weak areas".
+- Guide me (focus VT + Art, phone), Let me hunt (mixed, desktop) and Show me the sentence (both widths): full flow from setup → read → hunt → found/missed → fixing with every hint path (correct answer, hint then correct, two wrong tries then "Yes, mine works", two wrong tries then "No, mine was wrong", answer revealed) → summary → rule → profile → "Practise my weak areas".
 - No horizontal scrolling on any page; buttons, links and error marks are at least 44 px tall.
 - Correction boxes have autocorrect, autocapitalise and spellcheck turned off.
 - Mode 2 is hidden and its address redirects while off; the preview shows the banner, warning, "I think this is correct" and the locked suggestion; the pasted text is not stored.
+- B2/C1 filter (18 and 4 texts). Two-minute warm-up: timer, correct answer, time-up message, "not reached" count (clock fast-forwarded in the test). Progress chart. Teacher pack PDF downloads and opens; the student's name is remembered.
 - Dark mode, and storage blocked, still work. No external network requests.
 - The teacher page reports no position problems in any of the 12 texts.
 

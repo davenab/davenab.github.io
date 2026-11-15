@@ -12,7 +12,7 @@
   var app = document.getElementById("app");
 
   /* ================= data ================= */
-  var D = { codes: [], codeMap: {}, links: {}, texts: [], textMap: {}, issues: {} };
+  var D = { codes: [], codeMap: {}, links: {}, texts: [], textMap: {}, issues: {}, warm: [] };
 
   function getJSON(url) {
     return fetch(url, { cache: "no-cache" }).then(function (r) {
@@ -27,6 +27,9 @@
         D.codes = res[0].codes || [];
         D.codes.forEach(function (c) { D.codeMap[c.code] = c; });
         D.links = (res[1] && res[1].links) || {};
+        getJSON("data/warmup.json").then(function (w) {
+          D.warm = ((w && w.items) || []).filter(function (it) { return it.text && it.wrong && it.text.indexOf(it.wrong) !== -1; });
+        }).catch(function () { D.issues["warmup.json"] = ["The warm-up file could not be read. Check the commas and brackets."]; });
         var files = (res[2] && res[2].texts) || [];
         return Promise.all(files.map(function (f) {
           return getJSON("texts/" + f).then(function (t) { return prepareText(t, f); })
@@ -64,12 +67,12 @@
 
   /* ================= storage (never required) ================= */
   var STORE_OK = true;
-  function blank() { return { v: 1, sessions: [], rules: [] }; }
+  function blank() { return { v: 1, sessions: [], rules: [], name: "" }; }
   var DB = blank();
   function loadDB() {
     try {
       var raw = localStorage.getItem(KEY);
-      if (raw) { var d = JSON.parse(raw); if (d && Array.isArray(d.sessions)) { DB = blank(); DB.sessions = d.sessions; DB.rules = Array.isArray(d.rules) ? d.rules : []; } }
+      if (raw) { var d = JSON.parse(raw); if (d && Array.isArray(d.sessions)) { DB = blank(); DB.sessions = d.sessions; DB.rules = Array.isArray(d.rules) ? d.rules : []; DB.name = typeof d.name === "string" ? d.name : ""; } }
       localStorage.setItem(KEY + "-test", "1"); localStorage.removeItem(KEY + "-test");
     } catch (e) { STORE_OK = false; }
   }
@@ -103,7 +106,7 @@
       nav.insertBefore(a, nav.children[1]);
     }
     nav.querySelectorAll("a").forEach(function (a) {
-      var on = a.dataset.r === route || (a.dataset.r === "setup" && route === "session");
+      var on = a.dataset.r === route || (a.dataset.r === "setup" && (route === "session" || route === "warmup"));
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
   }
@@ -112,12 +115,14 @@
     var r = parseRoute();
     if (r === "mine" && !AI_VISIBLE) { location.replace("#/"); return; }
     if (r !== "mine") M = null;               // Mode 2: forget the pasted text when the student leaves
+    if (r !== "warmup") stopTimer();
     if (r === "session" && !S) { location.replace("#/setup"); return; }
     route = r; setNav();
     var html;
     switch (r) {
       case "setup": html = viewSetup(); break;
       case "session": html = viewSession(S); break;
+      case "warmup": html = viewWarmup(); break;
       case "profile": html = viewProfile(); break;
       case "codes": html = viewCodes(); break;
       case "about": html = viewAbout(); break;
@@ -143,7 +148,7 @@
     return '<p class="eyebrow">Grammar practice for EAP</p>' +
       '<h1>Find and fix your own <em>grammar errors</em></h1>' +
       '<p class="lead">Your teacher marks errors with codes like VT or Art. This app helps you practise acting on them. It shows you where an error is. You do the fixing.</p>' +
-      '<div class="btnrow"><a class="btn primary" href="#/setup">' + (n ? "Practise again" : "Start practising") + '</a><a class="btn" href="#/codes">Open the code key</a></div>' +
+      '<div class="btnrow"><a class="btn primary" href="#/setup">' + (n ? "Practise again" : "Start practising") + '</a><a class="btn" href="#/warmup">Two-minute warm-up</a><a class="btn" href="#/codes">Open the code key</a></div>' +
       storeNote() +
       '<div class="grid three" style="margin-top:28px">' +
       '<div class="card"><h2>1. Choose</h2><p class="muted">Pick one or two error types, or mixed practice. Then choose how much help you want.</p></div>' +
@@ -158,7 +163,7 @@
     return '<h1>About this app</h1>' +
       '<div class="card"><h2>Hints, not corrections</h2><p>This app shows you where an error is and what type it is. It does not fix the error for you. Fixing your own errors is how you improve, because you have to think about the rule. If you are stuck, the hints give you a little more help each time. The answer comes last.</p></div>' +
       '<div class="card"><h2>Where the practice texts come from</h2><p>The practice paragraphs were drafted with AI and checked by the teacher. Texts marked <span class="badge draft">Draft content</span> have not been checked yet.</p><p>The app does not use AI when you practise. It compares your answer with a list of answers the teacher expects. If your answer is different, it may still be right, so you decide by comparing it with a model answer.</p></div>' +
-      '<div class="card"><h2>What is stored, and where</h2><ul><li>Your results, your saved rules and your error profile are stored only in this browser on this device (localStorage).</li><li>Nothing is sent to a server. There is no sign-in, no tracking and no analytics.</li><li>If you use a shared computer, use <b>Clear my data</b> on your profile page when you finish.</li><li>Clearing your browser data also deletes your progress.</li></ul></div>' +
+      '<div class="card"><h2>What is stored, and where</h2><ul><li>Your results, your saved rules and your error profile are stored only in this browser on this device (localStorage).</li><li>Nothing is sent to a server. There is no sign-in, no tracking and no analytics.</li><li>The teacher pack PDF is made on this device. It goes only where you send it.</li><li>If you use a shared computer, use <b>Clear my data</b> on your profile page when you finish.</li><li>Clearing your browser data also deletes your progress.</li></ul></div>' +
       (AI_VISIBLE ? '<div class="card"><h2>My own writing</h2><p>This part uses an AI service. AI suggestions can be wrong or miss errors. Your pasted text is not saved after the session. Check your course rules before using AI tools on assessed work.</p></div>' : "") +
       '<div class="card"><h2>Made by</h2><p>Dave Nab, EAP teacher. <a href="../apps/">More learning apps</a>.</p></div>';
   }
@@ -180,13 +185,15 @@
   }
 
   /* ================= setup ================= */
-  var SETUP = { focus: [], level: "guide", textId: "" };
+  var SETUP = { focus: [], level: "guide", textId: "", cefr: "B2" };
+  var LEVEL_NAMES = { guide: "Guide me", sentence: "Show me the sentence", hunt: "Let me hunt" };
+  function cefrOK(t) { return SETUP.cefr === "any" || t.level === SETUP.cefr; }
 
   function activeErrors(t, focus) { return t.errors.filter(function (e) { return !focus.length || focus.indexOf(e.code) !== -1; }); }
 
   function viewSetup() {
     var f = SETUP.focus;
-    var list = D.texts.filter(function (t) { return activeErrors(t, f).length > 0; });
+    var list = D.texts.filter(function (t) { return cefrOK(t) && activeErrors(t, f).length > 0; });
     if (SETUP.textId && !list.some(function (t) { return t.id === SETUP.textId; })) SETUP.textId = "";
     var chips = D.codes.map(function (c) {
       var on = f.indexOf(c.code) !== -1;
@@ -196,7 +203,7 @@
       '<li><button type="button" class="tile" data-act="text" data-id="" aria-pressed="' + (!SETUP.textId) + '"><b>Choose one for me</b><span>A text you have practised least.</span></button></li>' +
       list.map(function (t) {
         var n = activeErrors(t, f).length, d = timesDone(t.id);
-        return '<li><button type="button" class="tile" data-act="text" data-id="' + esc(t.id) + '" aria-pressed="' + (SETUP.textId === t.id) + '"><b>' + esc(t.title) + "</b><span>" + esc(t.topic) + " · " + plural(n, "error") + " to fix" + (d ? " · done " + plural(d, "time") : "") + "</span>" + draftBadge(t) + "</button></li>";
+        return '<li><button type="button" class="tile" data-act="text" data-id="' + esc(t.id) + '" aria-pressed="' + (SETUP.textId === t.id) + '"><b>' + esc(t.title) + "</b><span>" + esc(t.level) + " · " + esc(t.topic) + " · " + plural(n, "error") + " to fix" + (d ? " · done " + plural(d, "time") : "") + "</span>" + draftBadge(t) + "</button></li>";
       }).join("") + "</ul>";
     return '<h1>Set up your practice</h1>' +
       '<p class="muted">One session takes about 8 to 12 minutes.</p>' +
@@ -208,15 +215,21 @@
       "</fieldset>" +
       '<fieldset><legend>2. How much help do you want?</legend><div class="tiles">' +
       '<button type="button" class="tile" data-act="level" data-level="guide" aria-pressed="' + (SETUP.level === "guide") + '"><b>Guide me</b><span>The errors are marked from the start.</span></button>' +
+      '<button type="button" class="tile" data-act="level" data-level="sentence" aria-pressed="' + (SETUP.level === "sentence") + '"><b>Show me the sentence</b><span>The sentences with errors are marked. You find the wrong words.</span></button>' +
       '<button type="button" class="tile" data-act="level" data-level="hunt" aria-pressed="' + (SETUP.level === "hunt") + '"><b>Let me hunt</b><span>First, you find the errors. Then you see what you found and missed.</span></button>' +
       "</div></fieldset>" +
-      '<fieldset><legend>3. Which text?</legend>' + (list.length ? texts : '<p class="notice">No texts have these codes yet. Choose different codes.</p>') + "</fieldset>" +
+      '<fieldset><legend>3. Which level?</legend><div class="chips">' +
+      [["B2", "B2 upper-intermediate"], ["C1", "C1 advanced"], ["any", "Any level"]].map(function (l) {
+        return '<button type="button" class="chip" data-act="cefr" data-cefr="' + l[0] + '" aria-pressed="' + (SETUP.cefr === l[0]) + '">' + l[1] + "</button>";
+      }).join("") + "</div></fieldset>" +
+      '<fieldset><legend>4. Which text?</legend>' + (list.length ? texts : '<p class="notice">No texts have these codes yet. Choose different codes.</p>') + "</fieldset>" +
       '<div class="btnrow"><button type="button" class="btn primary" data-act="start"' + (list.length ? "" : " disabled") + ">Start</button></div>" +
+      '<p style="margin-top:16px">Short on time? <a href="#/warmup">Try a two-minute warm-up</a>.</p>' +
       why("Practising one or two error types at a time helps you notice the same pattern again and again.");
   }
 
   function pickText(focus) {
-    var list = D.texts.filter(function (t) { return activeErrors(t, focus).length > 0; });
+    var list = D.texts.filter(function (t) { return cefrOK(t) && activeErrors(t, focus).length > 0; });
     if (!list.length) return null;
     list.sort(function (a, b) { return (timesDone(a.id) - timesDone(b.id)) || (activeErrors(b, focus).length - activeErrors(a, focus).length); });
     var best = list.filter(function (t) { return timesDone(t.id) === timesDone(list[0].id) && activeErrors(t, focus).length === activeErrors(list[0], focus).length; });
@@ -245,7 +258,12 @@
     display += t.text.slice(pos);
     var tokens = [], m, re = /\S+/g;
     while ((m = re.exec(display))) tokens.push({ s: m.index, e: m.index + m[0].length, w: m[0] });
-    return { mode: mode, text: t, focus: focus.slice(), level: level, display: display, errs: errs, tokens: tokens,
+    var sents = [], sm, sre = /[^.!?]+[.!?]+["')]*\s*|[^.!?]+$/g;
+    while ((sm = sre.exec(display))) {
+      var st = sm.index, en = sm.index + sm[0].replace(/\s+$/, "").length;
+      sents.push({ s: st, e: en, n: errs.filter(function (x) { return x.ds >= st && x.ds < en; }).length });
+    }
+    return { mode: mode, text: t, focus: focus.slice(), level: level, display: display, errs: errs, tokens: tokens, sents: sents,
       taps: {}, stage: mode === "ai" ? "fix" : "read", cur: 0, recorded: false, ruleSaved: false };
   }
 
@@ -272,7 +290,7 @@
   function viewSession(X) {
     var t = X.text, head = "";
     if (X.mode === "practice") {
-      head = '<div class="progressline"><span>' + esc(t.topic) + "</span><span>" + (X.focus.length ? "Focus: " + X.focus.map(esc).join(" + ") : "Mixed practice") + "</span><span>" + (X.level === "hunt" ? "Let me hunt" : "Guide me") + "</span>" + draftBadge(t) + "</div>";
+      head = '<div class="progressline"><span>' + esc(t.topic) + "</span><span>" + (X.focus.length ? "Focus: " + X.focus.map(esc).join(" + ") : "Mixed practice") + "</span><span>" + esc(LEVEL_NAMES[X.level] || "") + "</span><span>" + esc(t.level) + "</span>" + draftBadge(t) + "</div>";
     }
     switch (X.stage) {
       case "read": return head + viewRead(X);
@@ -289,24 +307,46 @@
     return '<h1>' + esc(X.text.title) + "</h1>" +
       '<p class="lead">Read the paragraph once, just for meaning. Do not look for errors yet.</p>' +
       '<p class="para plain">' + esc(X.display) + "</p>" +
-      '<div class="btnrow"><button type="button" class="btn primary" data-act="readDone">' + (X.level === "hunt" ? "I have read it. Let me hunt" : "I have read it. Show the errors") + "</button></div>" +
+      '<div class="btnrow"><button type="button" class="btn primary" data-act="readDone">' + (X.level === "hunt" ? "I have read it. Let me hunt" : X.level === "sentence" ? "I have read it. Show me the sentences" : "I have read it. Show the errors") + "</button></div>" +
       why("When you understand the message first, it is easier to notice where something sounds wrong.");
   }
 
+  function tokButton(X, tk, k) {
+    return '<button type="button" class="tok" data-act="tap" data-k="' + k + '" aria-pressed="' + (!!X.taps[k]) + '">' + esc(tk.w) + "</button>";
+  }
   function viewHunt(X) {
-    var html = "", pos = 0;
-    X.tokens.forEach(function (tk, k) {
-      html += esc(X.display.slice(pos, tk.s));
-      html += '<button type="button" class="tok" data-act="tap" data-k="' + k + '" aria-pressed="' + (!!X.taps[k]) + '">' + esc(tk.w) + "</button>";
-      pos = tk.e;
-    });
+    var html = "", pos = 0, bySent = X.level === "sentence";
+    if (bySent) {
+      var sn = 0;
+      X.sents.forEach(function (se) {
+        html += esc(X.display.slice(pos, se.s));
+        if (!se.n) { html += esc(X.display.slice(se.s, se.e)); pos = se.e; return; }
+        sn++;
+        var inner = "", p2 = se.s;
+        X.tokens.forEach(function (tk, k) {
+          if (tk.s < se.s || tk.e > se.e) return;
+          inner += esc(X.display.slice(p2, tk.s)) + tokButton(X, tk, k); p2 = tk.e;
+        });
+        inner += esc(X.display.slice(p2, se.e));
+        html += '<span class="sent"><span class="sent-tag">S' + sn + " · " + plural(se.n, "error") + "</span> " + inner + "</span>";
+        pos = se.e;
+      });
+      html += esc(X.display.slice(pos));
+    } else {
+      X.tokens.forEach(function (tk, k) {
+        html += esc(X.display.slice(pos, tk.s)) + tokButton(X, tk, k);
+        pos = tk.e;
+      });
+    }
     var nt = Object.keys(X.taps).length;
-    return '<h1>Hunt for the errors</h1>' +
-      '<p class="lead">There ' + (X.errs.length === 1 ? "is 1 error" : "are " + X.errs.length + " errors") + " in this paragraph" + (X.focus.length ? " (" + X.focus.map(esc).join(" and ") + ")" : "") + ". Tap the words you think are wrong. Tap again to undo.</p>" +
+    return '<h1>' + (bySent ? "Find the wrong words" : "Hunt for the errors") + "</h1>" +
+      (bySent
+        ? '<p class="lead">The marked sentences have errors' + (X.focus.length ? " (" + X.focus.map(esc).join(" and ") + ")" : "") + ". Each label says how many. Tap the words you think are wrong. Tap again to undo.</p>"
+        : '<p class="lead">There ' + (X.errs.length === 1 ? "is 1 error" : "are " + X.errs.length + " errors") + " in this paragraph" + (X.focus.length ? " (" + X.focus.map(esc).join(" and ") + ")" : "") + ". Tap the words you think are wrong. Tap again to undo.</p>") +
       '<p class="para" aria-label="Paragraph. Each word is a button.">' + html + "</p>" +
       '<p class="hint-text" aria-live="polite">You have tapped ' + plural(nt, "word") + ".</p>" +
       '<div class="btnrow"><button type="button" class="btn primary" data-act="huntDone">I have finished looking</button><button type="button" class="btn" data-act="openKey">Code key</button></div>' +
-      why("Looking for errors yourself trains the skill you need when you check your own writing.");
+      why(bySent ? "Knowing which sentence has a problem, then finding it yourself, is a step towards checking your own writing." : "Looking for errors yourself trains the skill you need when you check your own writing.");
   }
 
   function huntScore(X) {
@@ -403,11 +443,11 @@
   }
 
   function panelHTML(X, e) {
-    var i = X.cur, head = '<h2 id="panelTitle" tabindex="-1">Error ' + e.n + " of " + X.errs.length + ": <q>" + esc(e.wrong) + "</q></h2>";
+    var i = X.cur, head = '<h2 id="panelTitle" tabindex="-1">' + (X.mode === "warmup" ? "Sentence " : "Error ") + e.n + " of " + X.errs.length + ": <q>" + esc(e.wrong) + "</q></h2>";
     var next = nextOpen(X, i);
     var nextBtn = next === -1
       ? '<button type="button" class="btn primary" data-act="toSummary">See my summary</button>'
-      : '<button type="button" class="btn primary" data-act="next">Next error</button>';
+      : '<button type="button" class="btn primary" data-act="next">' + (X.mode === "warmup" ? "Next sentence" : "Next error") + "</button>";
 
     if (e.status === "done") {
       var msg;
@@ -447,6 +487,7 @@
   }
 
   function nextOpen(X, from) {
+    if (X.timeUp) return -1;
     for (var k = 1; k <= X.errs.length; k++) { var j = (from + k) % X.errs.length; if (X.errs[j].status !== "done") return j; }
     return -1;
   }
@@ -503,11 +544,13 @@
   function uniq(a) { return a.filter(function (x, i) { return a.indexOf(x) === i; }); }
 
   function recordSession(X) {
-    if (X.recorded || X.mode !== "practice") return;
+    if (X.recorded || X.mode === "ai") return;
     X.recorded = true;
+    var warm = X.mode === "warmup";
     DB.sessions.push({
-      date: Date.now(), textId: X.text.id, title: X.text.title, focus: X.focus, level: X.level,
-      results: X.errs.map(function (e) { return { c: e.code, h: e.level, o: e.outcome }; }),
+      date: Date.now(), kind: warm ? "warmup" : "text", textId: warm ? null : X.text.id, title: X.text.title, focus: X.focus, level: X.level,
+      // warm-ups show the code from the start, so their help level is counted from there (h - 1)
+      results: X.errs.filter(function (e) { return e.status === "done"; }).map(function (e) { return { c: e.code, h: warm ? Math.max(1, e.level - 1) : e.level, o: e.outcome }; }),
       hunt: X.hunt ? { found: X.hunt.found, total: X.hunt.total, falseTaps: X.hunt.falseTaps } : null
     });
     saveDB();
@@ -520,7 +563,7 @@
     DB.sessions.forEach(function (ss) {
       (ss.results || []).forEach(function (r) {
         var x = s[r.c] || (s[r.c] = { code: r.c, n: 0, help: 0, rev: 0, none: 0 });
-        var pts = r.o === "revealed" ? 3 : Math.max(0, Math.min(3, (r.h || 1) - 1));
+        var pts = helpPts(r);
         x.n++; x.help += pts; if (r.o === "revealed") x.rev++; if (pts === 0) x.none++;
       });
     });
@@ -552,20 +595,34 @@
       return '<li><span class="when">' + esc(r.d) + (r.c && r.c.length ? " · " + r.c.map(esc).join(", ") : "") + "</span><br>" + esc(r.t) + "</li>";
     }).join("") + "</ul>" : '<p class="muted">No rules saved yet.</p>';
     return "<h1>My error profile</h1>" + storeNote() +
-      "<p>" + plural(n, "session") + " · " + plural(total, "error") + " fixed · " + none + " with no hint</p>" +
-      '<div class="card"><h2>Top three to work on</h2>' + weakHTML + "</div>" +
+      "<p>" + plural(DB.sessions.filter(function (x) { return x.kind !== "warmup"; }).length, "text") + " · " + plural(DB.sessions.filter(function (x) { return x.kind === "warmup"; }).length, "warm-up") + " · " + plural(total, "error") + " fixed · " + none + " with no hint</p>" +
+      '<div class="card"><h2>Top three to work on</h2>' + weakHTML + (weak.length ? '<div class="btnrow"><a class="btn sm" href="#/warmup">Two-minute warm-up on my weakest code</a></div>' : "") + "</div>" +
+      '<div class="card"><h2>My progress over time</h2>' + progressChart() + trendHTML() + "</div>" +
       '<div class="card"><h2>Which codes needed the most help</h2><p class="small muted">Help per error: no hint = 0, code = 1, rule = 2, answer shown = 3.</p>' + (st.length ? bars : "<p>No results yet.</p>") + "</div>" +
       '<div class="card"><h2>My rules</h2>' + rules + "</div>" +
       '<div class="btnrow">' + (weak.length ? '<button type="button" class="btn primary" data-act="weak">Practise my weak areas</button>' : "") +
       '<button type="button" class="btn" data-act="copy">Copy summary</button><button type="button" class="btn" data-act="print">Print</button><button type="button" class="btn" data-act="clear">Clear my data</button></div>' +
+      '<div class="card" style="margin-top:18px"><h2>Teacher pack</h2><p>Make a PDF report of your practice to send to your teacher. It is made on this device. Nothing is uploaded.</p>' +
+      '<label class="q" for="stuName">Your name (shown on the PDF)</label><input type="text" id="stuName" value="' + esc(DB.name) + '" maxlength="60" autocomplete="name">' +
+      '<div class="btnrow"><button type="button" class="btn primary" data-act="pdf">Download teacher pack (PDF)</button></div></div>' +
       '<p class="hint-text" id="copyMsg" role="status"></p>' +
       why("Seeing your patterns helps you check for your own common errors when you write.");
   }
 
+  function trendHTML() {
+    var t = trendByCode();
+    if (!t.length) return "";
+    return '<h3 style="margin-top:18px">Earlier → recent, by code</h3><ul class="trend">' + t.map(function (x) {
+      return '<li><span class="codepill">' + esc(x.code) + "</span> " + esc(codeName(x.code)) + ": <b>" + x.earlier.toFixed(1) + " → " + x.recent.toFixed(1) + "</b> <span class=\"muted\">(" + trendWord(x) + ")</span></li>";
+    }).join("") + '</ul><p class="small muted">Compares your first half of errors for each code with your second half. Codes need 4 or more errors.</p>';
+  }
+
   function summaryText() {
-    var st = stats(), weak = weakCodes(), lines = ["My grammar error profile (Grammar Self-Correction Trainer)", "Date: " + today(), "Sessions: " + DB.sessions.length, ""];
+    var st = stats(), weak = weakCodes(), lines = ["My grammar error profile (Grammar Self-Correction Trainer)", (DB.name ? "Name: " + DB.name + "\n" : "") + "Date: " + today(), "Sessions: " + DB.sessions.length, ""];
     lines.push("Average help per code (0 = no hint, 3 = answer shown):");
     st.forEach(function (x) { lines.push("- " + x.code + " " + codeName(x.code) + ": " + x.avg.toFixed(1) + " (" + plural(x.n, "error") + ")"); });
+    var tr = trendByCode();
+    if (tr.length) { lines.push("", "Earlier -> recent:"); tr.forEach(function (x) { lines.push("- " + x.code + ": " + x.earlier.toFixed(1) + " -> " + x.recent.toFixed(1) + " (" + trendWord(x).replace(" ✓", "") + ")"); }); }
     if (weak.length) { lines.push("", "Top areas to work on:"); weak.forEach(function (x, i) { lines.push((i + 1) + ". " + x.code + " " + codeName(x.code)); }); }
     if (DB.rules.length) { lines.push("", "My rules:"); DB.rules.forEach(function (r) { lines.push("- " + r.t); }); }
     return lines.join("\n");
@@ -577,6 +634,273 @@
       var ta = document.createElement("textarea"); ta.value = txt; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
       document.body.appendChild(ta); ta.select();
       try { document.execCommand("copy") ? res() : rej(); } catch (e) { rej(e); } finally { document.body.removeChild(ta); }
+    });
+  }
+
+
+  /* ================= two-minute warm-up ================= */
+  var W = null, WARM_PICK = null, timerId = null;
+  var WARM_SECONDS = 120, WARM_ITEMS = 5;
+
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function stopTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+  function fmtTime(sec) { sec = Math.max(0, Math.ceil(sec)); return Math.floor(sec / 60) + ":" + ("0" + sec % 60).slice(-2); }
+
+  function warmCodesAvailable() { return D.codes.filter(function (c) { return D.warm.some(function (it) { return it.code === c.code; }); }); }
+
+  function viewWarmup() {
+    if (W && W.stage === "fix") { if (!timerId && !W.timeUp) timerId = setInterval(tick, 1000); return viewWarmFix(W); }
+    if (W && W.stage === "summary") return viewWarmSummary(W);
+    var weak = weakCodes(), avail = warmCodesAvailable();
+    if (WARM_PICK == null) WARM_PICK = weak.length && avail.some(function (c) { return c.code === weak[0].code; }) ? weak[0].code : "";
+    var chips = '<button type="button" class="chip" data-act="warmCode" data-code="" aria-pressed="' + (WARM_PICK === "") + '"><b>Mixed</b>' + (weak.length ? " my weak codes" : " all codes") + "</button>" +
+      avail.map(function (c) {
+        var isWeak = weak.some(function (x) { return x.code === c.code; });
+        return '<button type="button" class="chip" data-act="warmCode" data-code="' + esc(c.code) + '" aria-pressed="' + (WARM_PICK === c.code) + '"><b>' + esc(c.code) + "</b> " + esc(c.name) + (isWeak ? " (weak)" : "") + "</button>";
+      }).join("");
+    return '<p class="eyebrow">Quick practice</p><h1>Two-minute warm-up</h1>' +
+      '<p class="lead">' + WARM_ITEMS + " short sentences. Each one has one error. The error and its code are marked. You fix it. You have two minutes.</p>" +
+      (weak.length ? '<p class="small muted">Your weakest code is <b>' + esc(weak[0].code) + " · " + esc(codeName(weak[0].code)) + "</b>, so it is chosen for you.</p>" : "") +
+      '<fieldset><legend>Which code?</legend><div class="chips">' + chips + "</div></fieldset>" +
+      '<div class="btnrow"><button type="button" class="btn primary" data-act="warmStart"' + (D.warm.length ? "" : " disabled") + ">Start the timer</button></div>" +
+      '<p class="small muted" style="margin-top:12px">The timer does not stop you mid-sentence. When time is up, you finish the sentence you are on.</p>' +
+      why("A short, focused warm-up before you write reminds you of the errors you make most often.");
+  }
+
+  function startWarmup() {
+    var pool;
+    if (WARM_PICK) pool = D.warm.filter(function (it) { return it.code === WARM_PICK; });
+    else {
+      var weak = weakCodes().map(function (x) { return x.code; });
+      pool = weak.length ? D.warm.filter(function (it) { return weak.indexOf(it.code) !== -1; }) : D.warm;
+      if (pool.length < WARM_ITEMS) pool = D.warm;
+    }
+    var items = shuffle(pool).slice(0, WARM_ITEMS);
+    if (!items.length) return;
+    W = {
+      mode: "warmup", stage: "fix", cur: 0, timeUp: false, recorded: false, level: "warmup", focus: WARM_PICK ? [WARM_PICK] : [],
+      text: { id: "warmup", title: "Two-minute warm-up", topic: "", level: "", verified: true },
+      endAt: Date.now() + WARM_SECONDS * 1000,
+      errs: items.map(function (it, i) {
+        var at = it.text.indexOf(it.wrong);
+        return { n: i + 1, sentence: it.text, before: it.text.slice(0, at), after: it.text.slice(at + it.wrong.length),
+          wrong: it.wrong, code: it.code, acceptedAnswers: it.acceptedAnswers || [], ruleReminder: code(it.code).rule, explanation: it.explanation || "",
+          level: 2, tries: 0, status: "open", outcome: null, answer: it.wrong, final: null, self: false };
+      })
+    };
+    stopTimer();
+    timerId = setInterval(tick, 1000);
+    rerender("#ans", true);
+  }
+
+  function tick() {
+    if (!W || W.stage !== "fix") { stopTimer(); return; }
+    var left = (W.endAt - Date.now()) / 1000, el = document.getElementById("timer");
+    if (el) el.textContent = left > 0 ? fmtTime(left) : "0:00";
+    if (left <= 30 && left > 29) { var a = document.getElementById("timerSay"); if (a) a.textContent = "30 seconds left."; }
+    if (left <= 0 && !W.timeUp) {
+      W.timeUp = true; stopTimer();
+      var msg = document.getElementById("timeUpMsg"), say = document.getElementById("timerSay");
+      if (msg) msg.hidden = false;
+      if (say) say.textContent = "Time is up. Finish this sentence, then see your summary.";
+      var nb = app.querySelector('[data-act="next"]');
+      if (nb) { nb.textContent = "See my summary"; }
+    }
+  }
+
+  function viewWarmFix(X) {
+    var e = X.errs[X.cur], done = X.errs.filter(function (x) { return x.status === "done"; }).length;
+    var left = (X.endAt - Date.now()) / 1000;
+    return '<div class="warmbar"><span class="timer" role="timer" aria-label="Time left"><span id="timer">' + (X.timeUp ? "0:00" : fmtTime(left)) + "</span></span>" +
+      '<span>' + done + " of " + X.errs.length + ' fixed</span><span class="dots" aria-hidden="true">' + X.errs.map(function (x) { return "<i" + (x.status === "done" ? ' class="d"' : "") + "></i>"; }).join("") + "</span></div>" +
+      '<p class="sr" id="timerSay" aria-live="assertive"></p>' +
+      '<p class="notice strong" id="timeUpMsg"' + (X.timeUp ? "" : " hidden") + "><b>Time is up.</b> Finish this sentence, then see your summary.</p>" +
+      "<h1>Fix the error</h1>" +
+      '<p class="para warm">' + esc(e.before) + markHTML(X, e, X.cur) + esc(e.after) + "</p>" +
+      '<div class="card panel" id="panel">' + panelHTML(X, e) + "</div>" +
+      '<div class="btnrow"><button type="button" class="btn" data-act="openKey" data-code="' + esc(e.code) + '">Code key</button></div>';
+  }
+
+  function viewWarmSummary(X) {
+    var b = { none: 0, rule: 0, revealed: 0, missed: 0 };
+    X.errs.forEach(function (e) {
+      if (e.status !== "done") b.missed++;
+      else if (e.outcome === "revealed") b.revealed++;
+      else if (e.level <= 2) b.none++;
+      else b.rule++;
+    });
+    var list = X.errs.map(function (e) {
+      var fixed = e.status === "done" ? (e.outcome === "fixed" || e.outcome === "self" ? e.final : e.acceptedAnswers[0]) : e.acceptedAnswers[0];
+      return "<li><span class=\"codepill\">" + esc(e.code) + "</span> " + esc(e.before) + '<span class="ins">' + esc(fixed) + "</span>" + esc(e.after) +
+        (e.status !== "done" ? ' <span class="badge">not reached</span>' : "") + '<br><span class="small muted">' + esc(e.explanation) + "</span></li>";
+    }).join("");
+    return "<h1>Warm-up done</h1>" +
+      '<div class="tally"><div><b>' + b.none + "</b><span>fixed with no extra help</span></div><div><b>" + b.rule + "</b><span>fixed with the rule</span></div><div><b>" + b.revealed + "</b><span>answer shown</span></div><div><b>" + b.missed + "</b><span>not reached</span></div></div>" +
+      '<ol class="warmlist">' + list + "</ol>" +
+      '<div class="btnrow"><button type="button" class="btn primary" data-act="warmAgain">Do another warm-up</button><a class="btn" href="#/setup">Practise a full text</a><a class="btn" href="#/profile">My profile</a></div>' +
+      why("Short, regular practice on your weakest errors helps the correct form become automatic.");
+  }
+
+  /* ================= progress over time ================= */
+  function sessionPoints(ss) {
+    var r = ss.results || [];
+    if (!r.length) return null;
+    var t = 0; r.forEach(function (x) { t += helpPts(x); });
+    return t / r.length;
+  }
+  function helpPts(r) { return r.o === "revealed" ? 3 : Math.max(0, Math.min(3, (r.h || 1) - 1)); }
+  function shortDate(ms) { try { return new Date(ms).toLocaleDateString("en-AU", { day: "numeric", month: "short" }); } catch (e) { return ""; } }
+
+  function trendByCode() {
+    var seq = {};
+    DB.sessions.forEach(function (ss) { (ss.results || []).forEach(function (r) { (seq[r.c] = seq[r.c] || []).push(helpPts(r)); }); });
+    return Object.keys(seq).filter(function (c) { return seq[c].length >= 4; }).map(function (c) {
+      var a = seq[c], half = Math.floor(a.length / 2);
+      var avg = function (xs) { var t = 0; xs.forEach(function (x) { t += x; }); return t / xs.length; };
+      return { code: c, earlier: avg(a.slice(0, half)), recent: avg(a.slice(half)), n: a.length };
+    });
+  }
+
+  function trendWord(t) {
+    var d = t.recent - t.earlier;
+    return d <= -0.25 ? "needs less help now ✓" : d >= 0.25 ? "needs more help now" : "about the same";
+  }
+
+  function progressChart() {
+    var list = DB.sessions.map(function (ss) { return { ss: ss, v: sessionPoints(ss) }; }).filter(function (x) { return x.v != null; }).slice(-12);
+    if (list.length < 2) return '<p class="muted">Finish two or more sessions to see your progress.</p>';
+    var W0 = 600, H0 = 190, L = 34, B = 26, T = 10, plotW = W0 - L - 8, plotH = H0 - B - T;
+    var step = plotW / list.length, bw = Math.min(34, step * 0.6);
+    var grid = [0, 1, 2, 3].map(function (g) {
+      var y = T + plotH - g / 3 * plotH;
+      return '<line x1="' + L + '" x2="' + (W0 - 8) + '" y1="' + y + '" y2="' + y + '" class="gl"/><text x="' + (L - 8) + '" y="' + (y + 4) + '" class="ax" text-anchor="end">' + g + "</text>";
+    }).join("");
+    var bars = list.map(function (x, i) {
+      var h = Math.max(2, x.v / 3 * plotH), cx = L + step * i + step / 2, y = T + plotH - h;
+      var label = (x.ss.kind === "warmup" ? "Warm-up" : (x.ss.title || "Text")) + ", " + shortDate(x.ss.date) + ": average help " + x.v.toFixed(1) + " of 3";
+      return '<g class="bar" tabindex="0" aria-label="' + esc(label) + '"><title>' + esc(label) + "</title>" +
+        '<rect class="hit" x="' + (cx - step / 2) + '" y="' + T + '" width="' + step + '" height="' + plotH + '"/>' +
+        '<path class="mk-bar" d="M' + (cx - bw / 2) + "," + (T + plotH) + "V" + (y + 4) + "q0,-4 4,-4h" + (bw - 8) + "q4,0 4,4V" + (T + plotH) + 'Z"/>' +
+        '<text x="' + cx + '" y="' + (H0 - 8) + '" class="ax" text-anchor="middle">' + (i + 1) + "</text></g>";
+    }).join("");
+    var rows = list.map(function (x, i) { return "<tr><td>" + (i + 1) + "</td><td>" + esc(shortDate(x.ss.date)) + "</td><td>" + esc(x.ss.kind === "warmup" ? "Warm-up" : x.ss.title || "") + "</td><td>" + x.v.toFixed(1) + "</td></tr>"; }).join("");
+    return '<figure class="chart"><figcaption class="small muted">Average help per error in your last ' + list.length + " sessions (0 = no hint, 3 = answer shown). Lower is better.</figcaption>" +
+      '<svg viewBox="0 0 ' + W0 + " " + H0 + '" role="group" aria-label="Bar chart: average help per error for each session">' + grid + bars + "</svg>" +
+      '<details><summary>Show as a table</summary><div class="tablewrap"><table><thead><tr><th>#</th><th>Date</th><th>Session</th><th>Average help</th></tr></thead><tbody>' + rows + "</tbody></table></div></details></figure>";
+  }
+
+  /* ================= teacher pack (PDF, made on the device) ================= */
+  var pdfLib = null;
+  function loadPdfLib() {
+    if (window.jspdf) return Promise.resolve(window.jspdf);
+    if (pdfLib) return pdfLib;
+    pdfLib = new Promise(function (res, rej) {
+      var sc = document.createElement("script");
+      sc.src = "vendor/jspdf.umd.min.js";
+      sc.onload = function () { window.jspdf ? res(window.jspdf) : rej(new Error("no jspdf")); };
+      sc.onerror = function () { pdfLib = null; rej(new Error("load")); };
+      document.head.appendChild(sc);
+    });
+    return pdfLib;
+  }
+
+  // The PDF's built-in font covers Western European characters only.
+  function pdfText(s) {
+    return String(s == null ? "" : s).replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, "-")
+      .replace(/→/g, "->").replace(/✓/g, "").replace(/…/g, "...").replace(/[^\x09\x0a\x0d\x20-\x7e\xa0-\xff]/g, "?");
+  }
+
+  function makeTeacherPack() {
+    var msg = app.querySelector("#copyMsg");
+    if (msg) msg.textContent = "Making your PDF…";
+    loadPdfLib().then(function (lib) {
+      var doc = new lib.jsPDF({ unit: "mm", format: "a4" });
+      var PW = 210, PH = 297, M0 = 16, y = 0, CW = PW - M0 * 2;
+      var INK = [31, 58, 95], TEXT = [27, 35, 48], MUTED = [90, 97, 109], LINE = [226, 221, 210];
+      function color(c) { doc.setTextColor(c[0], c[1], c[2]); }
+      function need(h) { if (y + h > PH - 20) { doc.addPage(); y = 18; } }
+      function para(t, size, c, bold, indent) {
+        doc.setFont("helvetica", bold ? "bold" : "normal"); doc.setFontSize(size || 10); color(c || TEXT);
+        var lines = doc.splitTextToSize(pdfText(t), CW - (indent || 0)), lh = (size || 10) * 0.45;
+        lines.forEach(function (ln) { need(lh); doc.text(ln, M0 + (indent || 0), y + lh * 0.8); y += lh; });
+        y += 1;
+      }
+      function heading(t) { y += 3; need(12); para(t, 12.5, INK, true); doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.line(M0, y, PW - M0, y); y += 3; }
+      function table(cols, rows) {
+        var lh = 4.6;
+        need(lh * 2);
+        doc.setFontSize(9); doc.setFont("helvetica", "bold"); color(MUTED);
+        cols.forEach(function (c) { doc.text(pdfText(c.t), M0 + c.x, y + 3.5); }); y += lh + 1;
+        doc.setFont("helvetica", "normal"); color(TEXT);
+        rows.forEach(function (r) {
+          var cells = r.map(function (v, i) { return doc.splitTextToSize(pdfText(v), cols[i].w); });
+          var h = Math.max.apply(null, cells.map(function (c) { return c.length; })) * 4.1 + 1.6;
+          need(h);
+          cells.forEach(function (c, i) { c.forEach(function (ln, k) { doc.text(ln, M0 + cols[i].x, y + 3.5 + k * 4.1); }); });
+          y += h; doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.line(M0, y - 0.6, PW - M0, y - 0.6);
+        });
+        y += 2;
+      }
+
+      var st = stats(), weak = weakCodes(), trend = {}, texts = 0, warms = 0, total = 0, by = [0, 0, 0, 0], hf = 0, ht = 0;
+      trendByCode().forEach(function (t) { trend[t.code] = t; });
+      DB.sessions.forEach(function (ss) {
+        if (ss.kind === "warmup") warms++; else texts++;
+        (ss.results || []).forEach(function (r) { total++; by[helpPts(r)]++; });
+        if (ss.hunt) { hf += ss.hunt.found; ht += ss.hunt.total; }
+      });
+      var first = DB.sessions.length ? DB.sessions[0].date : Date.now(), last = DB.sessions.length ? DB.sessions[DB.sessions.length - 1].date : Date.now();
+
+      // header
+      doc.setFillColor(255, 255, 0); doc.roundedRect(M0, 14, 11, 11, 2.5, 2.5, "F");
+      doc.setFont("helvetica", "bold"); doc.setFontSize(10); doc.setTextColor(20, 24, 31); doc.text("DN", M0 + 5.5, 21.2, { align: "center" });
+      doc.setFontSize(16); color(TEXT); doc.text("Grammar self-correction: teacher pack", M0 + 15, 20.5);
+      doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); color(MUTED);
+      doc.text(pdfText("Made on " + today() + " by the student, from the Grammar Self-Correction Trainer"), M0 + 15, 25.5);
+      y = 33;
+      para("Student: " + (DB.name ? DB.name : "(name not given)"), 11, TEXT, true);
+      para("Practice period: " + shortDate(first) + " to " + shortDate(last) + " · " + texts + " text" + (texts === 1 ? "" : "s") + " · " + warms + " warm-up" + (warms === 1 ? "" : "s"), 10, MUTED);
+
+      heading("Overview");
+      para(total + " errors practised. Help used: " + by[0] + " with no hint, " + by[1] + " with the code only, " + by[2] + " with the rule, " + by[3] + " answer shown.");
+      if (total) para(Math.round(by[0] / total * 100) + "% of errors were fixed with no hint. Average help per error: " + ((by[1] + by[2] * 2 + by[3] * 3) / total).toFixed(1) + " of 3.");
+      if (ht) para("Hunting for errors (no marks shown): found " + hf + " of " + ht + " errors (" + Math.round(hf / ht * 100) + "%).");
+
+      heading("Top areas to work on");
+      if (weak.length) weak.forEach(function (x, i) { para((i + 1) + ". " + x.code + " - " + codeName(x.code) + ": average help " + x.avg.toFixed(1) + " of 3", 10.5, TEXT, true); para(code(x.code).rule, 9.5, MUTED, false, 5); });
+      else para("No weak areas yet: the student needed no hints so far.");
+
+      heading("Help needed by code");
+      table([{ t: "Code", x: 0, w: 14 }, { t: "Error type", x: 15, w: 52 }, { t: "Errors", x: 70, w: 16 }, { t: "Avg help", x: 88, w: 20 }, { t: "Answer shown", x: 110, w: 24 }, { t: "Earlier -> recent", x: 136, w: 42 }],
+        st.map(function (x) {
+          var t = trend[x.code];
+          return [x.code, codeName(x.code), String(x.n), x.avg.toFixed(1), String(x.rev), t ? t.earlier.toFixed(1) + " -> " + t.recent.toFixed(1) + " (" + trendWord(t).replace(" ✓", "") + ")" : "not enough data"];
+        }));
+
+      heading("Recent sessions");
+      table([{ t: "Date", x: 0, w: 18 }, { t: "Practice", x: 19, w: 62 }, { t: "Level", x: 83, w: 34 }, { t: "Help used", x: 119, w: 59 }],
+        DB.sessions.slice(-10).reverse().map(function (ss) {
+          var c = [0, 0, 0, 0]; (ss.results || []).forEach(function (r) { c[helpPts(r)]++; });
+          var what = ss.kind === "warmup" ? "Two-minute warm-up" : (ss.title || "") + (ss.focus && ss.focus.length ? " (focus " + ss.focus.join(" + ") + ")" : "");
+          return [shortDate(ss.date), what, ss.kind === "warmup" ? "-" : LEVEL_NAMES[ss.level] || "", c[0] + " no hint, " + c[1] + " code, " + c[2] + " rule, " + c[3] + " answer" + (ss.hunt ? "; found " + ss.hunt.found + "/" + ss.hunt.total : "")];
+        }));
+
+      heading("Rules the student wrote");
+      if (DB.rules.length) DB.rules.slice(-15).forEach(function (r) { para("- " + r.t, 10, TEXT); para((r.d || "") + (r.c && r.c.length ? " · codes " + r.c.join(", ") : ""), 8.5, MUTED, false, 3); });
+      else para("No rules saved yet.", 10, MUTED);
+
+      var pages = doc.getNumberOfPages();
+      for (var pg = 1; pg <= pages; pg++) {
+        doc.setPage(pg); doc.setFont("helvetica", "normal"); doc.setFontSize(8); color(MUTED);
+        doc.text("Help scale: 0 = no hint, 1 = code shown, 2 = rule shown, 3 = answer shown. Made on the student's device; no data was sent anywhere.", M0, PH - 10);
+        doc.text("davenab.com/grammar-self-correction · page " + pg + " of " + pages, PW - M0, PH - 6, { align: "right" });
+      }
+      var d = new Date(), stamp = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+      var safeName = (DB.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      doc.save("grammar-teacher-pack-" + (safeName ? safeName + "-" : "") + stamp + ".pdf");
+      if (msg) msg.textContent = "Your teacher pack PDF has been saved to your downloads.";
+    }).catch(function () {
+      if (msg) msg.textContent = "Sorry, the PDF could not be made. Please check your connection and try again, or use Print.";
     });
   }
 
@@ -626,7 +950,7 @@
   function viewTeacher() {
     var html = "<h1>Teacher: check the practice texts</h1>" +
       '<p class="lead">This page is not linked for students. Use it to check each text and its answers before you set "verified": true.</p>' +
-      "<p>" + D.texts.length + " texts loaded · " + D.texts.filter(function (t) { return t.verified; }).length + " verified.</p>";
+      "<p>" + D.texts.length + " texts loaded (" + D.texts.filter(function (t) { return t.level === "B2"; }).length + " B2, " + D.texts.filter(function (t) { return t.level === "C1"; }).length + " C1) · " + D.texts.filter(function (t) { return t.verified; }).length + " verified. Warm-up sentences are at the end of this page.</p>";
     Object.keys(D.issues).forEach(function (k) { if (!D.textMap[k]) html += '<p class="issue">' + esc(k) + ": " + D.issues[k].map(esc).join(" ") + "</p>"; });
     D.texts.forEach(function (t) {
       var X = buildSession(t, [], "guide", "practice");
@@ -639,7 +963,7 @@
         fixed += '<span class="ins">' + esc(e.final) + "<sup>" + e.n + "</sup></span>";
       });
       var issues = D.issues[t.id];
-      html += '<div class="card" id="t-' + esc(t.id) + '"><h2>' + esc(t.title) + " <span class=\"badge\">" + esc(t.file) + "</span>" + (t.verified ? ' <span class="badge">verified</span>' : draftBadge(t)) + "</h2>" +
+      html += '<div class="card" id="t-' + esc(t.id) + '"><h2>' + esc(t.title) + " <span class=\"badge\">" + esc(t.file) + "</span> <span class=\"badge\">" + esc(t.level) + "</span>" + (t.verified ? ' <span class="badge">verified</span>' : draftBadge(t)) + "</h2>" +
         '<p class="small muted">' + esc(t.topic) + " · " + wordCount(t.text) + " words · " + plural(t.errors.length, "error") + " · codes: " + uniq(t.errors.map(function (e) { return e.code; })).map(esc).join(", ") + "</p>" +
         (issues ? '<p class="issue">Problems: ' + issues.map(esc).join(" ") + "</p>" : '<p class="small">Positions checked: all match.</p>') +
         '<div class="compare"><div><h3>With errors</h3><p class="para plain">' + orig + '</p></div><div><h3>Corrected</h3><p class="para plain">' + fixed + "</p></div></div>" +
@@ -647,11 +971,14 @@
         X.errs.map(function (e) { return "<tr><td>" + e.n + "</td><td>" + esc(e.code) + "</td><td>" + esc(e.wrong) + "</td><td>" + e.acceptedAnswers.map(esc).join("<br>") + "</td><td>" + esc(e.ruleReminder) + "<br><span class=\"muted\">" + esc(e.explanation) + "</span></td></tr>"; }).join("") +
         "</tbody></table></div></div>";
     });
+    html += '<div class="card" id="warmups"><h2>Warm-up sentences <span class="badge">data/warmup.json</span></h2><p class="small muted">' + D.warm.length + ' sentences. Each has one error.</p><div class="tablewrap"><table><thead><tr><th>Code</th><th>Sentence (error in bold)</th><th>Accepted answers</th></tr></thead><tbody>' +
+      D.warm.map(function (it) { var at = it.text.indexOf(it.wrong); return "<tr><td>" + esc(it.code) + "</td><td>" + esc(it.text.slice(0, at)) + "<b>" + esc(it.wrong) + "</b>" + esc(it.text.slice(at + it.wrong.length)) + "</td><td>" + (it.acceptedAnswers || []).map(esc).join("<br>") + "</td></tr>"; }).join("") +
+      "</tbody></table></div></div>";
     return html;
   }
 
   /* ================= events ================= */
-  function cur() { return route === "mine" ? M : S; }
+  function cur() { return route === "mine" ? M : route === "warmup" ? W : S; }
 
   var ACT = {
     focus: function (b) {
@@ -661,6 +988,11 @@
       else { if (f.length >= 2) f.shift(); f.push(c); }
       rerender('[data-act="focus"][data-code="' + cssEsc(c) + '"]');
     },
+    cefr: function (b) { SETUP.cefr = b.dataset.cefr; rerender('[data-act="cefr"][data-cefr="' + b.dataset.cefr + '"]'); },
+    warmCode: function (b) { WARM_PICK = b.dataset.code; rerender('[data-act="warmCode"][data-code="' + cssEsc(b.dataset.code) + '"]'); },
+    warmStart: function () { startWarmup(); },
+    warmAgain: function () { W = null; rerender(null, true); },
+    pdf: function () { makeTeacherPack(); },
     level: function (b) { SETUP.level = b.dataset.level; rerender('[data-act="level"][data-level="' + b.dataset.level + '"]'); },
     text: function (b) { SETUP.textId = b.dataset.id; rerender('[data-act="text"][data-id="' + cssEsc(b.dataset.id) + '"]'); },
     start: function () {
@@ -670,7 +1002,7 @@
       if (location.hash === "#/session") rerender(null, true); else location.hash = "#/session";
     },
     readDone: function () {
-      var X = cur(); X.stage = X.level === "hunt" ? "hunt" : "fix"; rerender(null, true);
+      var X = cur(); X.stage = X.level === "guide" ? "fix" : "hunt"; rerender(null, true);
     },
     tap: function (b) {
       var X = cur(), k = b.dataset.k;
@@ -698,8 +1030,8 @@
     selfYes: function () { var X = cur(), e = X.errs[X.cur]; e.awaitSelf = false; e.status = "done"; e.outcome = "self"; e.self = true; e.final = e.answer; rerender("#panelTitle"); },
     selfNo: function () { var X = cur(), e = X.errs[X.cur]; e.awaitSelf = false; e.status = "done"; e.outcome = "revealed"; e.self = true; e.final = e.acceptedAnswers[0] != null ? e.acceptedAnswers[0] : e.wrong; rerender("#panelTitle"); },
     keep: function () { var X = cur(), e = X.errs[X.cur]; e.status = "done"; e.outcome = "kept"; e.final = e.wrong; rerender("#panelTitle"); },
-    next: function () { var X = cur(), j = nextOpen(X, X.cur); if (j !== -1) X.cur = j; rerender("#ans"); },
-    toSummary: function () { var X = cur(); X.stage = "summary"; recordSession(X); rerender(null, true); },
+    next: function () { var X = cur(), j = nextOpen(X, X.cur); if (j === -1) { ACT.toSummary(); return; } X.cur = j; rerender("#ans"); },
+    toSummary: function () { var X = cur(); X.stage = "summary"; if (X.mode === "warmup") stopTimer(); recordSession(X); rerender(null, true); },
     toReflect: function () { var X = cur(); X.stage = "reflect"; rerender("#rule", true); },
     skipRule: function () { var X = cur(); X.ruleSaved = true; rerender(null, true); },
     openKey: function (b) { openKey(b.dataset.code); },
@@ -756,6 +1088,7 @@
   });
 
   app.addEventListener("input", function (ev) {
+    if (ev.target.id === "stuName") { DB.name = ev.target.value.slice(0, 60); saveDB(); return; }
     if (ev.target.id !== "mineText") return;
     var wc = wordCount(ev.target.value), c = app.querySelector("#mineCount"), go = app.querySelector("#mineGo");
     if (c) c.textContent = wc + " of " + MAX_WORDS + " words." + (wc > MAX_WORDS ? " Please shorten your paragraph." : "");

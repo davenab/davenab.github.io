@@ -1,0 +1,89 @@
+{
+  "id": "p17",
+  "title": "Volunteering",
+  "topic": "Community",
+  "level": "B2",
+  "verified": false,
+  "text": "Volunteering give people the chance to help their community and learn new skills at the same time. Last semester, I volunteered at local food bank once a week. We sorted boxes of food and packed bag for families in need. It was very satisfied to see how much our work helped people. I also became friends to other volunteers from many different countries. Since then, I volunteer at two other events. Volunteering can also help students win work experience, which is useful when they apply for jobs after graduation.",
+  "errors": [
+    {
+      "start": 13,
+      "end": 17,
+      "wrong": "give",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "gives"
+      ],
+      "ruleReminder": "An -ing subject (volunteering) is singular and takes a singular verb.",
+      "explanation": "The subject is volunteering, one activity, so the verb needs -s: gives."
+    },
+    {
+      "start": 131,
+      "end": 136,
+      "wrong": "local",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a local"
+      ],
+      "ruleReminder": "A singular countable noun needs an article (a, an, the) or another determiner.",
+      "explanation": "Food bank is a singular countable noun, so it needs an article: a local food bank."
+    },
+    {
+      "start": 195,
+      "end": 198,
+      "wrong": "bag",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "bags"
+      ],
+      "ruleReminder": "A countable noun with no article must be plural when you mean more than one.",
+      "explanation": "They packed many bags, so the noun must be plural: bags."
+    },
+    {
+      "start": 233,
+      "end": 242,
+      "wrong": "satisfied",
+      "code": "WF",
+      "acceptedAnswers": [
+        "satisfying"
+      ],
+      "ruleReminder": "Use -ing adjectives for the thing (satisfying) and -ed adjectives for the feeling (satisfied).",
+      "explanation": "The experience causes the feeling, so we need satisfying. People feel satisfied."
+    },
+    {
+      "start": 305,
+      "end": 307,
+      "wrong": "to",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "with"
+      ],
+      "ruleReminder": "Become friends and make friends go with with: friends with someone.",
+      "explanation": "The phrase is become friends with someone, not to."
+    },
+    {
+      "start": 370,
+      "end": 379,
+      "wrong": "volunteer",
+      "code": "VT",
+      "acceptedAnswers": [
+        "have volunteered",
+        "have been volunteering"
+      ],
+      "ruleReminder": "Use the present perfect with since: since then, I have done.",
+      "explanation": "Since then connects the past to now, so we need the present perfect: have volunteered."
+    },
+    {
+      "start": 437,
+      "end": 440,
+      "wrong": "win",
+      "code": "WC",
+      "acceptedAnswers": [
+        "gain",
+        "get"
+      ],
+      "ruleReminder": "Some nouns go with certain verbs: gain experience, get experience.",
+      "explanation": "We gain or get experience. Win is used for prizes and games."
+    }
+  ]
+}
