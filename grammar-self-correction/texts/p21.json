@@ -1,0 +1,88 @@
+{
+  "id": "p21",
+  "title": "The gig economy",
+  "topic": "Work and society",
+  "level": "C1",
+  "verified": false,
+  "text": "The gig economy, in which workers are paid for individual tasks rather than receive a regular salary, has expanded rapidly over the past decade. Food delivery and ride-sharing platforms offer a degree of flexibility that many students and parents values. However, this flexibility often arrives at a cost. Gig workers not entitled to sick leave or paid holidays, and their income can vary so much that it is difficult to plan for future. Some governments have responded by classification gig workers as employees, but the debate is likely to continue, as there is no consensus of how to balance flexibility with protection.",
+  "errors": [
+    {
+      "start": 76,
+      "end": 83,
+      "wrong": "receive",
+      "code": "VF",
+      "acceptedAnswers": [
+        "receiving"
+      ],
+      "ruleReminder": "After rather than, use the same form as the first idea, or the -ing form: paid rather than receiving.",
+      "explanation": "Rather than here is followed by the -ing form: rather than receiving a regular salary."
+    },
+    {
+      "start": 247,
+      "end": 253,
+      "wrong": "values",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "value"
+      ],
+      "ruleReminder": "In a relative clause, find the real subject of the verb: that students and parents value.",
+      "explanation": "The subject of the verb is many students and parents (plural), so the verb has no -s: value."
+    },
+    {
+      "start": 287,
+      "end": 294,
+      "wrong": "arrives",
+      "code": "WC",
+      "acceptedAnswers": [
+        "comes"
+      ],
+      "ruleReminder": "Some phrases are fixed: something comes at a cost.",
+      "explanation": "The fixed phrase is comes at a cost. Arrives at a cost is not used."
+    },
+    {
+      "start": 318,
+      "end": 330,
+      "wrong": "not entitled",
+      "code": "^",
+      "acceptedAnswers": [
+        "are not entitled"
+      ],
+      "ruleReminder": "Every clause needs a full verb. Use be with entitled, allowed and able: are not entitled.",
+      "explanation": "Gig workers not entitled has no verb. It needs are: are not entitled."
+    },
+    {
+      "start": 430,
+      "end": 436,
+      "wrong": "future",
+      "code": "Art",
+      "acceptedAnswers": [
+        "the future"
+      ],
+      "ruleReminder": "Use the with future when it means the time to come: plan for the future.",
+      "explanation": "The fixed phrase is plan for the future."
+    },
+    {
+      "start": 473,
+      "end": 487,
+      "wrong": "classification",
+      "code": "WF",
+      "acceptedAnswers": [
+        "classifying"
+      ],
+      "ruleReminder": "After a preposition such as by, use the -ing form of a verb.",
+      "explanation": "Classification is a noun. After by, we need the verb in the -ing form: classifying."
+    },
+    {
+      "start": 577,
+      "end": 579,
+      "wrong": "of",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "on",
+        "about"
+      ],
+      "ruleReminder": "Consensus goes with on or about: consensus on how to do something.",
+      "explanation": "We reach a consensus on or about something, not of."
+    }
+  ]
+}

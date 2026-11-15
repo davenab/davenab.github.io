@@ -1,0 +1,99 @@
+{
+  "id": "p19",
+  "title": "Population ageing and healthcare",
+  "topic": "Health and society",
+  "level": "C1",
+  "verified": false,
+  "text": "Across the developed world, the proportion of people aged over 65 are rising steadily. Over the past two decades, spending on aged care rose in most wealthy countries, and there is growing need for trained carers. However, some economists argue that an older population is not necessary a burden, since many retirees contribute in society through volunteering and caring for grandchildren. Not only older people are living longer, but they are also staying healthy for longer. Governments will therefore need a range of strategy, including encourage people to work for longer and investing in preventive healthcare.",
+  "errors": [
+    {
+      "start": 66,
+      "end": 69,
+      "wrong": "are",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "is"
+      ],
+      "ruleReminder": "In a long subject, find the main noun. Ignore the of phrase after it.",
+      "explanation": "The main noun is proportion (singular), not people, so the verb is is."
+    },
+    {
+      "start": 136,
+      "end": 140,
+      "wrong": "rose",
+      "code": "VT",
+      "acceptedAnswers": [
+        "has risen",
+        "has increased"
+      ],
+      "ruleReminder": "Use the present perfect with over the past ... years, because the period continues to now.",
+      "explanation": "Over the past two decades includes the present, so we need the present perfect: has risen."
+    },
+    {
+      "start": 181,
+      "end": 193,
+      "wrong": "growing need",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a growing need"
+      ],
+      "ruleReminder": "Need is countable in there is a need for. A singular countable noun needs a or an.",
+      "explanation": "The pattern is there is a need for, so we need a growing need."
+    },
+    {
+      "start": 277,
+      "end": 286,
+      "wrong": "necessary",
+      "code": "WF",
+      "acceptedAnswers": [
+        "necessarily"
+      ],
+      "ruleReminder": "To change an adjective or a whole idea, use an adverb: not necessarily true.",
+      "explanation": "Necessary is an adjective. To modify a burden here, we need the adverb necessarily."
+    },
+    {
+      "start": 328,
+      "end": 330,
+      "wrong": "in",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "to"
+      ],
+      "ruleReminder": "Contribute goes with to: contribute to society.",
+      "explanation": "The verb contribute is followed by to, not in."
+    },
+    {
+      "start": 399,
+      "end": 415,
+      "wrong": "older people are",
+      "code": "WO",
+      "acceptedAnswers": [
+        "are older people"
+      ],
+      "ruleReminder": "After not only at the start of a clause, use question order: Not only are they...",
+      "explanation": "Not only at the start needs inversion: the verb are comes before the subject."
+    },
+    {
+      "start": 520,
+      "end": 528,
+      "wrong": "strategy",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "strategies"
+      ],
+      "ruleReminder": "After a range of, a number of and a variety of, use a plural countable noun.",
+      "explanation": "A range of means several, so the noun must be plural: strategies."
+    },
+    {
+      "start": 540,
+      "end": 549,
+      "wrong": "encourage",
+      "code": "VF",
+      "acceptedAnswers": [
+        "encouraging"
+      ],
+      "ruleReminder": "After a preposition such as including, use the -ing form.",
+      "explanation": "Including is followed by the -ing form, which also matches investing later in the sentence."
+    }
+  ]
+}

@@ -244,3 +244,15 @@ footer.foot p{color:#bdbbd8}
   .notesview{max-height:none;overflow:visible;background:#fff;border:1px solid #000}
   .stat-box{background:#fff;color:#000;border:1px solid #000}.stat-box .n,.stat-box .label{color:#000}
 }
+
+/* skill picker */
+.skills{display:grid;gap:8px;grid-template-columns:1fr}
+@media (min-width:560px){.skills{grid-template-columns:1fr 1fr}}
+.skillbtn{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:64px;padding:12px 14px;text-align:left;border-radius:14px;border:2px solid #c9c7d6;background:#fff;color:#16152b;font:inherit;cursor:pointer}
+.skillbtn:hover{border-color:#4f46e5}
+.skillbtn .sk-name{font-weight:700}
+.skillbtn .sk-blurb{font-size:.92rem;color:#53526a}
+.skillbtn .sk-sug{font:700 .7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;background:#ede9ff;color:#3b31b8;border-radius:999px;padding:4px 7px;margin-top:4px}
+.skillbtn[aria-pressed="true"]{background:#4f46e5;border-color:#4f46e5;color:#fff}
+.skillbtn[aria-pressed="true"] .sk-blurb{color:#e6e4ff}
+.skillbtn[aria-pressed="true"] .sk-name::before{content:"✓ "}

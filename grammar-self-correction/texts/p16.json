@@ -1,0 +1,88 @@
+{
+  "id": "p16",
+  "title": "Learning a second language",
+  "topic": "Language learning",
+  "level": "B2",
+  "verified": false,
+  "text": "Learning a second language have many benefits. Many adults believe that they are too old learning a new language, but research suggests that age is not the most importance factor. What matters more is how often do people practise. I started learning English in the age of twelve, but I made slow progress at school. Two years ago, I move to Melbourne to study. Since then, my speaking has improved quickly. Because I use English every day. My advice to other learners is simple: find real reasons to use the language, and practise a little every day.",
+  "errors": [
+    {
+      "start": 27,
+      "end": 31,
+      "wrong": "have",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "has"
+      ],
+      "ruleReminder": "An -ing subject (learning a language) is singular and takes a singular verb.",
+      "explanation": "The subject is learning a second language, one activity, so the verb is has."
+    },
+    {
+      "start": 89,
+      "end": 97,
+      "wrong": "learning",
+      "code": "VF",
+      "acceptedAnswers": [
+        "to learn"
+      ],
+      "ruleReminder": "After too + adjective, use to + verb: too old to learn.",
+      "explanation": "The pattern is too + adjective + to + verb, so we need to learn."
+    },
+    {
+      "start": 161,
+      "end": 171,
+      "wrong": "importance",
+      "code": "WF",
+      "acceptedAnswers": [
+        "important"
+      ],
+      "ruleReminder": "Before a noun, use an adjective: the most important factor.",
+      "explanation": "Importance is a noun. Before factor, we need the adjective important."
+    },
+    {
+      "start": 205,
+      "end": 229,
+      "wrong": "often do people practise",
+      "code": "WO",
+      "acceptedAnswers": [
+        "often people practise"
+      ],
+      "ruleReminder": "In a question inside a sentence, use statement order: subject + verb. Do not use do or does.",
+      "explanation": "Inside a sentence, how often people practise uses statement order, so do is removed."
+    },
+    {
+      "start": 258,
+      "end": 260,
+      "wrong": "in",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "at"
+      ],
+      "ruleReminder": "Use at with ages: at the age of twelve, at 18.",
+      "explanation": "The fixed phrase is at the age of, not in the age of."
+    },
+    {
+      "start": 333,
+      "end": 337,
+      "wrong": "move",
+      "code": "VT",
+      "acceptedAnswers": [
+        "moved"
+      ],
+      "ruleReminder": "Use the past simple for finished past events (two years ago).",
+      "explanation": "Two years ago is a finished time, so the verb must be past simple: moved."
+    },
+    {
+      "start": 398,
+      "end": 414,
+      "wrong": "quickly. Because",
+      "code": "SS",
+      "acceptedAnswers": [
+        "quickly because",
+        "quickly, because"
+      ],
+      "ruleReminder": "A because clause cannot be a sentence on its own. Join it to the main clause.",
+      "explanation": "Because I use English every day is not a full sentence. Join it to the sentence before."
+    }
+  ]
+}

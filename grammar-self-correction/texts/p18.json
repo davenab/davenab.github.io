@@ -1,0 +1,88 @@
+{
+  "id": "p18",
+  "title": "Artificial intelligence at work",
+  "topic": "Technology and work",
+  "level": "B2",
+  "verified": false,
+  "text": "Artificial intelligence (AI) is changing the way many people works. For example, banks now use AI to answer simple question from customers, and hospitals use it to read medical scans. As a result, some workers are anxiety about losing their jobs. However, this is not a new worry. When computers first appear in offices in the 1980s, people had similar fears. In fact, computers created many new jobs, and AI may have similar effect. Workers will need to adapt with new tools, and governments should help them developing new skills.",
+  "errors": [
+    {
+      "start": 61,
+      "end": 66,
+      "wrong": "works",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "work"
+      ],
+      "ruleReminder": "A plural subject takes a plural verb: people work, a person works.",
+      "explanation": "The subject of works is many people (plural), so the verb has no -s: work."
+    },
+    {
+      "start": 115,
+      "end": 123,
+      "wrong": "question",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "questions"
+      ],
+      "ruleReminder": "A countable noun with no article must be plural when you mean many.",
+      "explanation": "Banks answer many questions, so the noun must be plural: questions."
+    },
+    {
+      "start": 214,
+      "end": 221,
+      "wrong": "anxiety",
+      "code": "WF",
+      "acceptedAnswers": [
+        "anxious"
+      ],
+      "ruleReminder": "After be, use an adjective to describe a feeling: are anxious.",
+      "explanation": "Anxiety is a noun. After are, we need the adjective anxious."
+    },
+    {
+      "start": 302,
+      "end": 308,
+      "wrong": "appear",
+      "code": "VT",
+      "acceptedAnswers": [
+        "appeared"
+      ],
+      "ruleReminder": "Use the past simple for finished past events (in the 1980s).",
+      "explanation": "In the 1980s is a finished time, so the verb must be past simple: appeared."
+    },
+    {
+      "start": 418,
+      "end": 432,
+      "wrong": "similar effect",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a similar effect"
+      ],
+      "ruleReminder": "A singular countable noun needs an article (a, an, the) or another determiner.",
+      "explanation": "Effect is a singular countable noun here, so it needs an article: a similar effect."
+    },
+    {
+      "start": 461,
+      "end": 465,
+      "wrong": "with",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "to"
+      ],
+      "ruleReminder": "Adapt goes with to: adapt to something new.",
+      "explanation": "The verb adapt is followed by to, not with."
+    },
+    {
+      "start": 510,
+      "end": 520,
+      "wrong": "developing",
+      "code": "VF",
+      "acceptedAnswers": [
+        "develop",
+        "to develop"
+      ],
+      "ruleReminder": "After help someone, use the base verb or to + verb: help them develop.",
+      "explanation": "Help is followed by the base verb (develop) or to develop, not the -ing form."
+    }
+  ]
+}

@@ -240,3 +240,31 @@ th,td{text-align:left;vertical-align:top;padding:8px 6px;border-bottom:1px solid
   .bars .meter i{background:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   a{color:#000}
 }
+
+/* ---------- "Show me the sentence" level ---------- */
+.sent{background:var(--accent-soft);border-radius:8px;padding:3px 4px;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:inset 0 0 0 1.5px var(--accent)}
+.sent-tag{display:inline-block;font-size:.72em;font-weight:800;line-height:1.5;padding:0 6px;border-radius:6px;background:var(--text);color:var(--bg);vertical-align:.15em}
+
+/* ---------- two-minute warm-up ---------- */
+.warmbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-bottom:14px;color:var(--muted);font-size:.95rem}
+.timer{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:1.35rem;color:var(--text);font-variant-numeric:tabular-nums;padding:4px 14px;border-radius:var(--pill);border:2px solid var(--text)}
+.timer::before{content:"⏱";font-size:.9em}
+.para.warm{font-size:1.15rem}
+.warmlist{padding-left:1.4em;margin-top:18px}
+.warmlist li{margin-bottom:12px;line-height:1.7}
+
+/* ---------- progress chart ---------- */
+.chart{margin:0 0 6px}
+.chart svg{display:block;width:100%;height:auto;margin:8px 0}
+.chart .gl{stroke:var(--border);stroke-width:1}
+.chart .ax{fill:var(--muted);font-size:12px;font-family:var(--f-sans)}
+.chart .mk-bar{fill:var(--ink)}
+.chart .hit{fill:transparent}
+.chart .bar:hover .hit,.chart .bar:focus .hit{fill:var(--surface-2)}
+.chart .bar:focus{outline:none}
+.chart .bar:focus-visible .hit{stroke:var(--accent);stroke-width:2}
+.chart details{margin-top:6px}
+.chart summary{cursor:pointer;min-height:var(--tap);display:flex;align-items:center;color:var(--ink);font-weight:600}
+.trend{list-style:none;padding:0;margin:0}
+.trend li{padding:8px 0;border-bottom:1px solid var(--border)}
+@media print{.chart .mk-bar{fill:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.chart details{display:none}}
