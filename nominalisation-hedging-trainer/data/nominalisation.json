@@ -22,7 +22,7 @@
           "reason": "Verbs ending in -yse often become nouns ending in -ysis: analyse → analysis.",
           "hint": "It ends in -sis.",
           "pattern": "-sis nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-02",
@@ -39,7 +39,7 @@
           "reason": "Adjectives ending in -ant usually become nouns ending in -ance.",
           "hint": "Change -ant to -ance.",
           "pattern": "-ance / -ence nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-03",
@@ -56,7 +56,7 @@
           "reason": "Many verbs add -ment to become a noun: develop → development.",
           "hint": "Add a four-letter ending.",
           "pattern": "-ment nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-04",
@@ -73,7 +73,7 @@
           "reason": "Verbs ending in -duce become nouns ending in -duction: reduce → reduction.",
           "hint": "It ends in -tion.",
           "pattern": "-tion / -sion nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-05",
@@ -90,7 +90,7 @@
           "reason": "Verbs ending in -ide often become nouns ending in -ision: decide → decision.",
           "hint": "It ends in -sion.",
           "pattern": "-tion / -sion nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-06",
@@ -107,7 +107,7 @@
           "reason": "Some short verbs add -th: grow → growth (like strong → strength).",
           "hint": "It ends in -th.",
           "pattern": "-th and other nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-07",
@@ -124,7 +124,7 @@
           "reason": "Adjectives ending in -ate often become nouns ending in -acy: accurate → accuracy.",
           "hint": "It ends in -acy.",
           "pattern": "-th and other nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-08",
@@ -141,7 +141,7 @@
           "reason": "Adjectives ending in -able become nouns ending in -ability.",
           "hint": "It ends in -ity.",
           "pattern": "-ity nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-09",
@@ -158,7 +158,7 @@
           "reason": "The noun from “fail” is “failure” (-ure ending), not “failing”.",
           "hint": "It ends in -ure.",
           "pattern": "-al / -ure nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-10",
@@ -175,7 +175,7 @@
           "reason": "behave → behaviour. Australian spelling keeps the u: behaviour.",
           "hint": "It ends in -iour.",
           "pattern": "-th and other nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-11",
@@ -192,7 +192,7 @@
           "reason": "Adjectives ending in -ent often become nouns ending in -ency.",
           "hint": "Change -ent to -ency.",
           "pattern": "-ance / -ence nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-12",
@@ -209,7 +209,7 @@
           "reason": "Take away the -ment ending to get the verb: investment → invest.",
           "hint": "Remove the noun ending.",
           "pattern": "-ment nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-13",
@@ -226,7 +226,7 @@
           "reason": "Take away the -ity ending to get the adjective: complexity → complex.",
           "hint": "Remove the noun ending.",
           "pattern": "-ity nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N1-14",
@@ -243,7 +243,7 @@
           "reason": "emphasis → emphasise. Australian spelling uses -ise.",
           "hint": "It ends in -ise.",
           "pattern": "-sis nouns",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -267,7 +267,7 @@
           "reason": "“expansion” comes from the verb expand; “flexibility” comes from the adjective flexible.",
           "hint": "There are two. Look for -sion and -ity.",
           "pattern": "Spotting nominalisations",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N2-02",
@@ -285,7 +285,7 @@
           "reason": "“decision” comes from decide; “disagreement” comes from disagree.",
           "hint": "There are two. Look for -sion and -ment.",
           "pattern": "Spotting nominalisations",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N2-03",
@@ -303,7 +303,7 @@
           "reason": "“ventilation” comes from ventilate; “concentration” comes from concentrate.",
           "hint": "There are two. Both end in -tion.",
           "pattern": "Spotting nominalisations",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N2-04",
@@ -321,7 +321,7 @@
           "reason": "“introduction” comes from introduce; “improvement” comes from improve.",
           "hint": "There are two. Look for -tion and -ment.",
           "pattern": "Spotting nominalisations",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N2-05",
@@ -339,7 +339,7 @@
           "reason": "“prevention” comes from prevent; “reduction” comes from reduce.",
           "hint": "There are two. Both end in -tion.",
           "pattern": "Spotting nominalisations",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N2-06",
@@ -360,7 +360,7 @@
           "reason": "B packs “people used more cars” and “got worse” into noun phrases, which is typical of academic writing.",
           "hint": "Look for the sentence with fewer verbs and more noun phrases.",
           "pattern": "Choosing the academic version",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N2-07",
@@ -381,7 +381,7 @@
           "reason": "B turns the verb “grew” into the noun “growth”, so two clauses become one.",
           "hint": "Which sentence has one clause instead of two?",
           "pattern": "Choosing the academic version",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N2-08",
@@ -402,7 +402,7 @@
           "reason": "A uses the nouns “failure” and “lack” instead of the verb “failed” and the phrase “there was not enough”.",
           "hint": "Which sentence uses -ure and other noun forms?",
           "pattern": "Choosing the academic version",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N2-09",
@@ -423,7 +423,7 @@
           "reason": "B turns “are anxious” into “anxiety” and “perform” into “performance”.",
           "hint": "Look for -ety and -ance.",
           "pattern": "Choosing the academic version",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N2-10",
@@ -444,7 +444,7 @@
           "reason": "A uses the nouns “introduction” and “confusion”, so the idea fits into one clause.",
           "hint": "Look for two -tion / -sion words.",
           "pattern": "Choosing the academic version",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -476,7 +476,7 @@
           "reason": "“went up” becomes the noun “increase” (or “rise”), so the sentence needs only one main verb: caused.",
           "hint": "The first gap is a noun for “go up”.",
           "pattern": "Gap-fill: noun after an adjective",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N3-02",
@@ -502,7 +502,7 @@
           "reason": "“grew” becomes “growth”, and “harder to find” becomes “reduced the availability”.",
           "hint": "The second gap comes from the adjective “available”.",
           "pattern": "Gap-fill: noun after an adjective",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N3-03",
@@ -527,7 +527,7 @@
           "reason": "“respond” becomes “response” and “improve” becomes “improvement”.",
           "hint": "Noun forms of “respond” and “improve”.",
           "pattern": "Gap-fill: noun after an adjective",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N3-04",
@@ -552,7 +552,7 @@
           "reason": "“closed” becomes “closure” and “lost” becomes “loss”.",
           "hint": "Noun forms of “close” and “lose”.",
           "pattern": "Gap-fill: the ___ of",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N3-05",
@@ -577,7 +577,7 @@
           "reason": "“analysed” becomes “analysis” and “found” becomes “discovery”.",
           "hint": "Noun forms of “analyse” and “discover”.",
           "pattern": "Gap-fill: the ___ of",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N3-06",
@@ -601,7 +601,7 @@
           "reason": "“communicate” becomes “communication” and “satisfied” becomes “satisfaction”.",
           "hint": "Both answers end in -tion.",
           "pattern": "Gap-fill: noun after an adjective",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N3-07",
@@ -626,7 +626,7 @@
           "reason": "“worried” becomes “concern” and “secure” becomes “security”.",
           "hint": "The second gap comes from the adjective “secure”.",
           "pattern": "Gap-fill: noun after an adjective",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N3-08",
@@ -652,7 +652,7 @@
           "reason": "“attend” becomes “attendance” and “achieve” becomes “achievement”.",
           "hint": "Noun forms of “attend” and “achieve”.",
           "pattern": "Gap-fill: noun after an adjective",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N3-09",
@@ -680,7 +680,7 @@
           "reason": "“invested” becomes “investment” and “reduced” becomes “reduction”.",
           "hint": "Noun forms of “invest” and “reduce”.",
           "pattern": "Gap-fill: noun after an adjective",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -704,7 +704,7 @@
           "reason": "The two clauses become noun phrases (“increased car use”, “a decline in air quality”) joined by one verb.",
           "hint": "Turn “use more cars” into a noun phrase, then link it with “leads to”.",
           "pattern": "Free rewrite: verbs to nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N4-02",
@@ -722,7 +722,7 @@
           "reason": "“cannot pay” becomes the noun phrase “the inability to pay” or “financial difficulty”.",
           "hint": "Start with a noun phrase for “cannot pay”.",
           "pattern": "Free rewrite: verbs to nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N4-03",
@@ -740,7 +740,7 @@
           "reason": "“advertise” becomes “advertising” and “sell more” becomes “higher sales”.",
           "hint": "Use the nouns “advertising” and “sales”.",
           "pattern": "Free rewrite: verbs to nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N4-04",
@@ -758,7 +758,7 @@
           "reason": "“sleep well” becomes “good sleep” and “concentrate” becomes “concentration”.",
           "hint": "Use the noun form of “concentrate”.",
           "pattern": "Free rewrite: verbs to nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N4-05",
@@ -776,7 +776,7 @@
           "reason": "“The climate is changing” becomes “climate change”, and “how farmers grow food” becomes “food production”.",
           "hint": "Use the nouns “change” and “production”.",
           "pattern": "Free rewrite: verbs to nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N4-06",
@@ -794,7 +794,7 @@
           "reason": "“recover faster” becomes “faster patient recovery”, linked by “lead to”.",
           "hint": "Use the noun form of “recover”.",
           "pattern": "Free rewrite: verbs to nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N4-07",
@@ -812,7 +812,7 @@
           "reason": "“are happier” becomes “satisfaction” and “can choose” becomes “flexible hours” or “the freedom to choose”.",
           "hint": "Use the noun “satisfaction”.",
           "pattern": "Free rewrite: verbs to nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N4-08",
@@ -830,7 +830,7 @@
           "reason": "“Cities are growing quickly” becomes “rapid urban growth”.",
           "hint": "Use the noun form of “grow”.",
           "pattern": "Free rewrite: verbs to nouns",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N4-09",
@@ -848,7 +848,7 @@
           "reason": "“use” becomes “the use of” and “take part” becomes “participation”.",
           "hint": "Use the noun form of “participate”.",
           "pattern": "Free rewrite: verbs to nouns",
-          "verified": false
+          "verified": true
         }
       ]
     },
@@ -876,7 +876,7 @@
           "hint": "Look for the version that is formal but has fewer “of” phrases.",
           "pattern": "Too many nouns",
           "question": "This sentence is too heavy. Which version is clearest?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N5-02",
@@ -898,7 +898,7 @@
           "hint": "Who did what? Put that person first and use a verb.",
           "pattern": "Too many nouns",
           "question": "This sentence is too heavy. Which version is clearest?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N5-03",
@@ -920,7 +920,7 @@
           "hint": "Start with “The committee” and use a verb.",
           "pattern": "Too many nouns",
           "question": "This sentence is too heavy. Which version is clearest?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N5-04",
@@ -942,7 +942,7 @@
           "hint": "Which version keeps every idea but uses simple verbs?",
           "pattern": "Too many nouns",
           "question": "This sentence is too heavy. Which version is clearest?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N5-05",
@@ -964,7 +964,7 @@
           "hint": "Remove “consideration of the examination of”.",
           "pattern": "Too many nouns",
           "question": "This sentence is too heavy. Which version is clearest?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N5-06",
@@ -986,7 +986,7 @@
           "hint": "Which version is both formal and short?",
           "pattern": "Too many nouns",
           "question": "This sentence is too heavy. Which version is clearest?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N5-07",
@@ -1005,7 +1005,7 @@
           "hint": "Use the verb “aims to reduce”.",
           "pattern": "Too many nouns",
           "question": "This sentence is too heavy. How could you make it clearer?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N5-08",
@@ -1024,7 +1024,7 @@
           "hint": "What caused what? Start with the cause.",
           "pattern": "Too many nouns",
           "question": "This sentence is too heavy. How could you make it clearer?",
-          "verified": false
+          "verified": true
         },
         {
           "id": "N5-09",
@@ -1043,7 +1043,7 @@
           "hint": "Start with “All visitors”.",
           "pattern": "Too many nouns",
           "question": "This sentence is too heavy. How could you make it clearer?",
-          "verified": false
+          "verified": true
         }
       ]
     }

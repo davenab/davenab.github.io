@@ -212,15 +212,15 @@ GALLERY = [
  ("gallery-13.webp","Macquarie University College - DE8",1187,893),("gallery-14.webp","PD Festival with Jarrad Merlo",1225,922),("gallery-15.webp","IH - UPPER INT 3",883,662),
 ]
 MOMENTS = [("moment-1.webp",768,577),("moment-2.webp",900,675),("moment-3.webp",900,677),("moment-4.webp",900,676),("moment-5.webp",525,700),("moment-6.webp",900,506),("moment-7.webp",900,506),("moment-8.webp",900,506)]
-LIVE = {"DAVE Notes: Lecture Note-Taking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/"}
+LIVE = {"DAVE Notes: Lecture Note-Taking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/"}
 APPS = [
  ("listen","Listening","DAVE Notes: Lecture Note-Taking Trainer","Students watch a short TED talk or listen to a news story and take notes their way. Then they check their own notes against the key ideas, answer questions from their notes and set a goal.",["Key ideas","Signposting","Self-checking"]),
  ("gram","Grammar","Grammar Self-Correction Trainer","The app shows where each error is and what type it is, using correction codes teachers already use, like <b>vf</b> (verb form) or <b>art</b> (article). Students do the fixing, and hints step up only when they ask for one.",["Self-correction","Error codes","Step-by-step hints"]),
+ ("gram","Grammar","Nominalisation and Hedging Trainer","Short drills that move from single words to full sentences: turn verbs into nouns (“analyse” → “analysis”) and match how sure a claim sounds to the evidence (“may suggest”). Students also fix sentences that use too much of either.",["Nominalisation","Hedging","Academic style"]),
  ("listen","Listening","Dictogloss","Students hear a passage twice, then reconstruct it in their own words. Feedback covers both meaning (what they kept or lost) and grammar.",["Listening for meaning","Grammar in context"]),
  ("read","Reading","Skim &amp; Scan Timer","Timed skimming and scanning tasks with a main-idea check, so speed never comes at the cost of understanding. Reading speed is tracked over time.",["Skimming","Scanning","Progress tracking"]),
  ("write","Writing","Paragraph X-Ray","Students paste a paragraph and see it labelled: topic sentence, evidence, analysis and link. The app flags which parts are missing or weak.",["Paragraph structure","Self-review"]),
  ("write","Writing","Synthesis Builder","Students combine two short sources in one piece of writing and get feedback on how well they integrate the ideas and cite them.",["Source integration","Citation","Paraphrasing"]),
- ("gram","Grammar","Nominalisation &amp; Hedging Drills","Transformation drills that turn everyday sentences into academic ones: verbs become nouns (“analyse” → “analysis”), and claims are softened appropriately (“may suggest”).",["Nominalisation","Hedging","Academic style"]),
  ("vocab","Vocabulary","Register Swapper","Students turn informal language into academic language (“a lot of” → “a considerable number of”) and learn why each choice fits the academic register.",["Academic register","Word choice"]),
 ]
 
