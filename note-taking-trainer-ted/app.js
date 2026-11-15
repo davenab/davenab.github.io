@@ -32,16 +32,13 @@
   function aboutTime(t) { var s = timeToSec(t); return s == null ? '' : 'about ' + fmtLen(s); }
   function why(text) { return '<p class="why"><span><b>Why this helps</b>' + esc(text) + '</span></p>'; }
   function honour(text) { return '<div class="honour"><b class="hl">Honour rule</b>' + text + '</div>'; }
-  function draftBadge(a) {
-    return a && !a.verified ? '<span class="badge draft" title="Not yet checked by the teacher">Draft content</span>' : '';
-  }
+  function draftBadge() { return ''; } // draft labels are not shown to students
   function ext(href, text) { return '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + text + ' <span aria-hidden="true">↗</span><span class="sr"> (opens in a new tab)</span></a>'; }
-  var SRC_LABEL = { ted: 'TED talk', bne: 'News listening', teacher: 'Teacher lecture', own: 'My own recording' };
+  var SRC_LABEL = { ted: 'TED talk', bne: 'News listening', own: 'My own recording' };
   function srcBadge(s) { return '<span class="badge src-' + esc(s) + '">' + esc(SRC_LABEL[s] || s) + '</span>'; }
   function attribution(a) {
     if (a.source === 'ted') return '<p class="attrib" style="margin:8px 0 0">' + esc(a.speaker) + ' · “' + esc(a.title) + '” · TED · ' + ext(a.tedUrl, 'Watch on TED.com') + '</p>';
     if (a.source === 'bne') return '<p class="attrib" style="margin:8px 0 0">From Breaking News English by Sean Banville · ' + ext(a.bneLessonUrl || a.bneUrl, 'Full lesson on breakingnewsenglish.com') + '</p>';
-    if (a.source === 'teacher') return '<p class="attrib" style="margin:8px 0 0">Lecture by ' + esc(a.speaker || 'your teacher') + '</p>';
     return '';
   }
 
@@ -140,7 +137,7 @@
   /* ---------------- activity sets (JSON files) ---------------- */
   var ACTS = [], actsError = '';
   function norm(a) {
-    a.source = a.source === 'ted' || a.source === 'bne' ? a.source : 'teacher';
+    if (a.source !== 'ted' && a.source !== 'bne') return null; // only TED talks and news listenings
     a.keyTerms = a.keyTerms || [];
     a.keyIdeas = (a.keyIdeas || []).map(function (k) { return { text: k.text, type: k.type === 'main' ? 'main' : 'detail', approxTime: k.approxTime || '' }; });
     a.modelNotes = a.modelNotes || [];
@@ -164,7 +161,7 @@
         }));
       })
       .then(function (list) {
-        ACTS = list.filter(function (a) { return a && a.id && a.title; }).map(norm);
+        ACTS = list.filter(function (a) { return a && a.id && a.title; }).map(norm).filter(Boolean);
         if (!ACTS.length) actsError = 'No activities could be loaded.';
       })
       .catch(function () {
@@ -193,6 +190,27 @@
       tryit: 'Leave space after each main idea. Fill it in if you listen a second time.' }
   ];
   function tipById(id) { return TIPS.filter(function (t) { return t.id === id; })[0] || TIPS[0]; }
+  var TIP_BLURB = { signpost: 'Hear where the talk is going', abbrev: 'Write less, catch more', mainidea: 'Tell big points from small ones', organise: 'Make notes you can use later' };
+  var pickedSkill = null; // the student's choice for this visit
+  function suggestedSkill() { return TIPS[Store.load().sessions.length % TIPS.length].id; }
+  function skillPicker(current) {
+    var sug = suggestedSkill();
+    return '<fieldset><legend class="q">What do you want to practise today?</legend>' +
+      '<p class="hint">Choose one skill. You get a short tip about it before you listen.</p><div class="skills">' +
+      TIPS.map(function (t) {
+        return '<button type="button" class="skillbtn" data-skill="' + t.id + '" aria-pressed="' + (current === t.id) + '">' +
+          '<span class="sk-name">' + esc(t.name) + '</span><span class="sk-blurb">' + esc(TIP_BLURB[t.id]) + '</span>' +
+          (t.id === sug ? '<span class="sk-sug">Suggested next</span>' : '') + '</button>';
+      }).join('') + '</div></fieldset>';
+  }
+  function bindSkillPicker(onPick) {
+    $$('[data-skill]', app).forEach(function (b) {
+      b.addEventListener('click', function () {
+        $$('[data-skill]', app).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        onPick(b.dataset.skill);
+      });
+    });
+  }
   var YOURWAY = '<div class="notice"><p style="margin:0"><b>Your notes, your way.</b> Write in any language: English, your first language, or a mix. Use symbols, arrows and drawings. Short words are better than full sentences. There is no word count and no “right” layout.</p></div>';
   var STEPNAMES = { ready: 'Get ready', ownready: 'Get ready', skill: 'Skill focus', listen: 'Listen', photo: 'Photo', predict: 'Predict', check: 'Self-check', rate: 'Self-check', quiz: 'Use your notes', summary3: 'Use your notes', review: 'Review', reflect: 'Reflect' };
   var RATE_LABEL = { yes: 'Yes', partly: 'Partly', notyet: 'Not yet' };
@@ -205,7 +223,7 @@
     return {
       id: 's' + Date.now(), date: new Date().toISOString(), kind: kind, act: a || null,
       actId: a ? a.id : '', source: a ? a.source : 'own', title: a ? a.title : 'My own recording', speaker: a ? (a.speaker || '') : '',
-      verified: a ? a.verified : null, skill: TIPS[d.sessions.length % TIPS.length].id,
+      verified: a ? a.verified : null, skill: pickedSkill || TIPS[d.sessions.length % TIPS.length].id,
       expect: '', notesMode: null, notes: '', photos: [], photoURLs: [], listens: 0, ended: false,
       predicted: null, checks: [], ci: 0, organised: null, abbrev: null, quiz: [], qi: 0, reflection: '', goal: '',
       own: { topic: '', expect: '', fileName: '', ratings: {}, summary: ['', '', ''] },
@@ -300,29 +318,31 @@
   }
   function homeScreen() {
     S = null; setGuard(false);
-    var d = Store.load(), tip = TIPS[d.sessions.length % TIPS.length];
+    var d = Store.load();
+    if (!pickedSkill) pickedSkill = suggestedSkill();
     function group(src) { return ACTS.filter(function (a) { return a.source === src; }); }
-    var ted = group('ted'), bne = group('bne'), teacher = group('teacher');
+    var ted = group('ted'), bne = group('bne');
     render('<div class="hero"><div class="wrap">' +
       '<span class="label eyebrow">Lecture note-taking trainer</span>' +
       '<h1>Practise taking notes with real talks</h1>' +
       '<p>Watch a short TED talk or listen to a news story. Take notes your way. Then check your own notes and use them to answer questions. One session takes 10 to 15 minutes.</p>' +
       (d.lastGoal ? '<div class="goalbox" style="margin-top:14px"><span class="label">Your goal from last time</span>' + esc(d.lastGoal) + '</div>' : '') +
-      '<p class="label eyebrow" style="margin:16px 0 0">Today’s skill: ' + esc(tip.name) + '</p></div></div>' +
+      '</div></div>' +
       '<div class="wrap section stack">' +
       (!navigator.onLine ? '<p class="notice warn">You seem to be offline. TED talks and news listenings need the internet. You can still use your own recording.</p>' : '') +
       (!Store.ok ? '<p class="notice warn">This browser is not letting the app save. You can still practise, but your progress will not be kept.</p>' : '') +
+      '<div class="card" id="skillCard">' + skillPicker(pickedSkill) + '</div>' +
       YOURWAY +
       (actsError ? '<p class="notice warn">' + esc(actsError) + '</p>' : '') +
       (ted.length ? '<div class="sec-h"><h2>TED talks</h2><span class="muted small">about 3 minutes each</span></div><div class="grid">' + ted.map(actCard).join('') + '</div>' : '') +
       (bne.length ? '<div class="sec-h"><h2>News listening</h2><span class="muted small">short news stories, about 1–2 minutes</span></div><div class="grid">' + bne.map(actCard).join('') + '</div>' : '') +
-      (teacher.length ? '<div class="sec-h"><h2>Teacher lectures</h2></div><div class="grid">' + teacher.map(actCard).join('') + '</div>' : '') +
       '<div class="sec-h"><h2>Use my own recording</h2></div>' +
       '<div class="card stack"><p style="margin:0">Practise with any lecture or talk you have as an audio file. For example, a recording from class (only if you are allowed to record it).</p>' +
       '<div><label class="btn dark big filebtn"><span aria-hidden="true">🎧</span> Use my own recording<input type="file" id="ownFile" accept="audio/*,.mp3,.m4a,.wav,.ogg,.aac,.mp4"></label></div>' +
       '<p class="small muted" style="margin:0"><b>Your file stays on this device. It is never uploaded.</b></p></div>' +
       '<div class="btnrow" style="margin-top:22px"><a class="btn light" href="#progress">See my progress</a><a class="btn light" href="about.html">About this app</a></div>' +
       '</div>');
+    bindSkillPicker(function (id) { pickedSkill = id; });
     $$('[data-start]', app).forEach(function (b) {
       b.addEventListener('click', function () {
         var a = ACTS.filter(function (x) { return x.id === b.dataset.start; })[0];
@@ -375,12 +395,14 @@
   SCREENS.skill = function () {
     var t = tipById(S.skill);
     render(hero('Today’s skill: ' + esc(t.name), 'A one-minute tip. Read it, then try it while you listen.') +
-      '<div class="wrap section stack"><div class="card"><h3>' + esc(t.title) + '</h3><p>' + esc(t.intro) + '</p>' +
+      '<div class="wrap section stack"><details class="card"><summary class="linkbtn" style="display:inline-flex;align-items:center">Change today’s skill</summary><div style="margin-top:10px">' + skillPicker(S.skill) + '</div></details>' +
+      '<div class="card"><h3>' + esc(t.title) + '</h3><p>' + esc(t.intro) + '</p>' +
       '<div class="tipex">' + t.examples.map(function (e) { return '<div><b>' + esc(e[0]) + '</b><span>' + esc(e[1]) + '</span></div>'; }).join('') + '</div>' +
       (t.sample ? '<p class="label" style="margin-top:12px">Example notes</p><pre class="notesview mono" style="margin:0 0 12px">' + esc(t.sample) + '</pre>' : '') +
       '<p class="goalbox" style="margin:12px 0 0"><span class="label">Try this today</span>' + esc(t.tryit) + '</p></div>' +
       why('Practising one skill at a time, with clear examples, helps you improve faster than just “taking notes”.') +
       navActions({ back: 'Back', next: 'I’m ready to listen' }) + '</div>');
+    bindSkillPicker(function (id) { S.skill = id; pickedSkill = id; SCREENS.skill(); });
     bindNav();
   };
 
@@ -407,15 +429,10 @@
         '<a class="btn big coral" href="' + esc(a.bneUrl) + '" target="_blank" rel="noopener" id="openBne">▶ Open the listening <span aria-hidden="true">↗</span><span class="sr"> (opens in a new tab)</span></a>' +
         '<p class="small" style="margin:12px 0 0">On a phone, paper notes are easiest for this one.</p>' + attribution(a) + againToggle() + '</div>';
     }
-    return honour('Listen once without going back, like a real lecture. Nobody checks this: it is up to you.') +
-      '<div class="player"><p class="label" style="margin:0;color:#ffbca6">' + esc(a.title) + '</p>' +
-      '<audio controls preload="metadata" src="audio/' + esc(a.audioFile) + '" id="tAudio" aria-label="Lecture audio"></audio>' +
-      '<div class="btnrow" style="margin-top:8px"><div class="speed" role="group" aria-label="Speed"><span class="label" style="color:#d6d4f0">Speed</span>' +
-      '<button type="button" class="btn sm dark" data-rate="0.85" aria-pressed="false">0.85×</button><button type="button" class="btn sm dark" data-rate="1" aria-pressed="true">1×</button></div></div>' +
-      '<p class="stat" id="tStat" role="status" style="margin:8px 0 0"></p><div id="embedMsg"></div>' + attribution(a) + '</div>';
+    return '';
   }
   function problemHTML(offline) {
-    return '<div class="notice warn" style="margin-top:12px"><p style="margin:0 0 6px"><b>' + (offline ? 'You seem to be offline.' : 'The TED player didn’t load.') + '</b> Check your internet connection and try again. Or choose a teacher lecture or your own recording instead.</p>' +
+    return '<div class="notice warn" style="margin-top:12px"><p style="margin:0 0 6px"><b>' + (offline ? 'You seem to be offline.' : 'The TED player didn’t load.') + '</b> Check your internet connection and try again. Or choose a news listening or your own recording instead.</p>' +
       '<div class="btnrow"><button type="button" class="btn sm dark" data-retry>Try again</button><button type="button" class="btn sm" data-otherchoice>Choose something else</button></div></div>';
   }
   function bindProblem() {
@@ -450,7 +467,7 @@
       : '<div class="card"><h3>Write on your paper now</h3><p style="margin:0">When you finish, you can take a photo of your notes on the next screen.</p></div>';
     var sub = S.kind === 'own' ? 'Play your recording and take notes while you listen.'
       : S.act.source === 'ted' ? 'Press play on the video and take notes while you listen.'
-        : S.act.source === 'bne' ? 'Open the listening, press play, and take notes.' : 'Press play and take notes while you listen.';
+        : S.act.source === 'bne' ? 'Open the listening, press play, and take notes.' : '';
     render(hero('Listen and take notes', sub) +
       '<div class="wrap section stack">' + playerHTML() +
       '<p class="small muted" style="margin:10px 0 0">Any language, symbols, arrows and drawings are fine. Key words, not full sentences.</p>' + notesHTML +
@@ -473,16 +490,9 @@
       au.addEventListener('play', function () { if (S.ended) S.listens = 2; else S.listens = Math.max(S.listens, 1); });
       au.addEventListener('ended', function () {
         S.ended = true;
-        var st = $('#tStat'); if (st) st.textContent = S.listens >= 2 ? 'Finished your second listen.' : 'Finished. You can listen once more to fill gaps. This is optional.';
       });
       au.addEventListener('error', function () {
-        var m = $('#embedMsg'); if (m) m.innerHTML = '<p class="notice warn" style="margin-top:10px">This audio file could not be loaded. Check your internet connection, or ask your teacher.</p>';
-      });
-      $$('[data-rate]', app).forEach(function (b) {
-        b.addEventListener('click', function () {
-          au.playbackRate = Number(b.dataset.rate);
-          $$('[data-rate]', app).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-        });
+        var m = $('#embedMsg'); if (m) m.innerHTML = '<p class="notice warn" style="margin-top:10px">This audio file could not be played. Try a different file, for example an MP3.</p>';
       });
     }
   };
@@ -642,7 +652,7 @@
     return h + (inList ? '</ul>' : '');
   }
   SCREENS.review = function () {
-    var a = S.act, isT = a.source === 'teacher';
+    var a = S.act;
     var missed = a.keyIdeas.map(function (k, i) { return { k: k, v: S.checks[i] }; }).filter(function (x) { return x.v === 'missed' || x.v === 'partly'; });
     var sourceCard = '';
     if (a.source === 'ted') {
@@ -652,29 +662,21 @@
     } else if (a.source === 'bne') {
       sourceCard = '<div class="card"><h3>Read the story</h3><p>Now you may read the text. It is on the same page as the listening, under the players. Use the times above to find each part.</p>' +
         '<div class="btnrow"><a class="btn" href="' + esc(a.bneUrl) + '" target="_blank" rel="noopener">Open the story on Breaking News English <span aria-hidden="true">↗</span><span class="sr"> (opens in a new tab)</span></a></div>' + attribution(a) + '</div>';
-    } else {
-      sourceCard = '<div class="card script"><h3>The lecture transcript</h3><p class="hint">Signposts are highlighted. They show the structure of the talk.</p>' +
-        '<audio controls preload="metadata" src="audio/' + esc(a.audioFile) + '" id="rAudio" aria-label="Lecture audio"></audio>' +
-        a.transcript.map(function (p) { return '<div class="seg"><p>' + highlight(p, a.signpostPhrases) + '</p></div>'; }).join('') + '</div>';
     }
     render(hero('Review', 'See what you missed and how a model set of notes looks.') +
       '<div class="wrap section stack">' +
       (missed.length
-        ? '<div class="card"><h3>Ideas you missed or partly caught</h3><p class="hint">The times show roughly where each idea is in the ' + (a.source === 'ted' ? 'talk' : a.source === 'bne' ? 'listening' : 'lecture') + '.</p><ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px">' +
+        ? '<div class="card"><h3>Ideas you missed or partly caught</h3><p class="hint">The times show roughly where each idea is in the ' + (a.source === 'ted' ? 'talk' : 'listening') + '.</p><ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px">' +
           missed.map(function (x) {
-            var sec = timeToSec(x.k.approxTime);
             return '<li style="border:1px solid var(--line);border-radius:12px;padding:12px"><p style="margin:0 0 6px"><span class="time">' + esc(aboutTime(x.k.approxTime) || '—') + '</span> <span class="small muted">' + CHECK_LABEL[x.v] + ' · ' + (x.k.type === 'main' ? 'main idea' : 'detail') + '</span></p>' +
               '<p style="margin:0">' + esc(x.k.text) + '</p>' +
-              (isT && sec != null ? '<button type="button" class="btn sm light" style="margin-top:8px" data-seek="' + sec + '">▶ Play from ' + esc(aboutTime(x.k.approxTime)) + '</button>' : '') + '</li>';
+              '</li>';
           }).join('') + '</ul></div>'
         : '<div class="card"><h3>You found every key idea in your notes.</h3><p style="margin:0">Look at the model notes below to compare the organisation.</p></div>') +
       sourceCard +
       '<div class="card model"><h3>Model notes</h3><p class="hint">This is one way to take notes on this. Your notes can look very different and still be good.</p>' + modelNotesHTML(a.modelNotes) + '</div>' +
       why('Seeing exactly what you missed, and where, helps you notice the same kind of moment next time.') +
       navActions({ next: 'Next: reflect' }) + '</div>');
-    $$('[data-seek]', app).forEach(function (b) {
-      b.addEventListener('click', function () { var au = $('#rAudio'); if (!au) return; au.currentTime = Math.max(0, Number(b.dataset.seek) - 2); au.play().catch(function () {}); });
-    });
     var rw = $('#rewatch');
     if (rw) rw.addEventListener('toggle', function () {
       if (rw.open && !$('#rewatchBox iframe')) $('#rewatchBox').innerHTML = '<div class="embed"><iframe src="' + esc(a.embedUrl) + '" title="TED talk: ' + esc(a.title) + ' by ' + esc(a.speaker) + '" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe></div>';
@@ -823,11 +825,10 @@
   function sourceLine(r) {
     if (r.source === 'ted') return r.speaker + ' · TED' + (r.url ? ' · ' + r.url : '');
     if (r.source === 'bne') return 'Breaking News English' + (r.url ? ' · ' + r.url : '');
-    if (r.source === 'teacher') return 'Teacher lecture' + (r.speaker ? ' · ' + r.speaker : '');
     return 'My own recording';
   }
   function summaryText(r) {
-    var L = ['DAVE Notes: session summary', 'Date: ' + fmtDate(r.date), 'Activity: ' + recTitle(r) + (r.kind === 'act' && !r.verified ? ' (draft content)' : ''), 'Source: ' + sourceLine(r),
+    var L = ['DAVE Notes: session summary', 'Date: ' + fmtDate(r.date), 'Activity: ' + recTitle(r), 'Source: ' + sourceLine(r),
       'Skill focus: ' + skillName(r.skill),
       'Notes: ' + (r.notesMode === 'type' ? 'typed' : 'on paper' + (r.photoCount ? ' (' + r.photoCount + ' photo' + (r.photoCount > 1 ? 's' : '') + ')' : '')),
       'Listens: ' + r.listens + (r.listens >= 2 ? ' (used the optional second listen)' : '')];
@@ -852,7 +853,7 @@
     var rows = [];
     function row(k, v) { if (v !== '' && v != null) rows.push('<dt>' + esc(k) + '</dt><dd>' + v + '</dd>'); }
     row('Date', esc(fmtDate(r.date)));
-    row('Activity', esc(recTitle(r)) + (r.kind === 'act' && !r.verified ? ' <span class="badge draft">Draft content</span>' : ''));
+    row('Activity', esc(recTitle(r)));
     row('Source', esc(sourceLine(r)));
     row('Skill focus', esc(skillName(r.skill)));
     row('Notes', r.notesMode === 'type' ? 'Typed' : 'On paper' + (r.photoCount ? ' (' + r.photoCount + ' photo' + (r.photoCount > 1 ? 's' : '') + ')' : ''));

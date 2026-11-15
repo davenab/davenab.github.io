@@ -88,7 +88,7 @@
         done.dataset.sent = "1"; form.hidden = true; done.hidden = false; done.focus(); scrollTo({ top: 0, behavior: "smooth" });
       })
       .catch(function () {
-        errBox.textContent = "Your request couldn’t be sent. Check your internet connection and try again, or email info@davenab.com.";
+        errBox.textContent = "Your request couldn’t be sent. Check your internet connection and try again, or email dave.naserbakht@gmail.com.";
         errBox.hidden = false; send.disabled = false; send.firstChild.textContent = "Send booking request ";
       });
   });
