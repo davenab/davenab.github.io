@@ -36,7 +36,12 @@ COURSES = [
  ("general-english/speaking-fluency/", "Speaking Fluency", "Flexible 1–5 session blocks"),
  ("general-english/level-up/", "Level UP Course", "CEFR A1 to C2"),
 ]
-TOP1 = [("apps/", "AI Apps"), ("resources/", "Resources")]
+TOP1 = [("apps/", "AI Apps")]
+RES = [
+ ("resources/students/", "For students", "Self-study packs and free practice"),
+ ("resources/teachers/", "For teachers", "Lesson kits, courses and free slides"),
+ ("resources/", "All resources", "Not sure? Start here"),
+]
 TOP2 = [("testimonials/", "Testimonials"), ("gallery/", "Gallery"), ("about/", "About")]
 TOP = TOP1 + TOP2
 
@@ -62,6 +67,9 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
     P = "../" * depth
     def L(p): return P + p if p else (P or "./")
     is_course = cur in [c[0] for c in COURSES]
+    is_res = cur.startswith("resources/")
+    rsub = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}<small>{d}</small></a></li>' for h, t, d in RES)
+    sheet_r = "".join(f'<li class="sub-l"><a href="{L(h)}">{t}</a></li>' for h, t, d in RES)
     sub = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}<small>{d}</small></a></li>' for h, t, d in COURSES)
     top1 = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}</a></li>' for h, t in TOP1)
     top = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}</a></li>' for h, t in TOP2)
@@ -99,6 +107,7 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
     <nav aria-label="Main">
       <ul class="menu">
         {top1}
+        <li class="has-sub{' cur' if is_res else ''}"><button class="drop" aria-expanded="false" aria-haspopup="true">Resources {I['chev']}</button><ul class="sub">{rsub}</ul></li>
         <li class="has-sub{' cur' if is_course else ''}"><button class="drop" aria-expanded="false" aria-haspopup="true">Courses {I['chev']}</button><ul class="sub">{sub}</ul></li>
         {top}
       </ul>
@@ -115,6 +124,8 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
   <ul>
     <li><a href="{L('')}">Home</a></li>
     {sheet_1}
+    <li class="label">Resources</li>
+    {sheet_r}
     <li class="label">Courses</li>
     {sheet_c}
     {sheet_t}
@@ -137,7 +148,7 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
         </div>
       </div>
       <div><h4>Courses</h4><ul>{''.join(f'<li><a href="{L(h)}">{t}</a></li>' for h,t,d in COURSES)}</ul></div>
-      <div><h4>Explore</h4><ul>{''.join(f'<li><a href="{L(h)}">{t}</a></li>' for h,t in TOP)}</ul></div>
+      <div><h4>Explore</h4><ul>{''.join(f'<li><a href="{L(h)}">{t}</a></li>' for h,t in TOP1)}<li><a href="{L('resources/students/')}">Resources for students</a></li><li><a href="{L('resources/teachers/')}">Resources for teachers</a></li>{''.join(f'<li><a href="{L(h)}">{t}</a></li>' for h,t in TOP2)}</ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:{EMAIL}">{EMAIL}</a></li><li><a href="{L('book/')}">Book a class</a></li><li><a href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn {EXT}</a></li><li><a href="{INSTA}" target="_blank" rel="noopener">Instagram {EXT}</a></li></ul></div>
     </div>
     <div class="foot-bottom">
@@ -250,18 +261,11 @@ def home(L):
 </div></section>
 
 <section id="shop"><div class="wrap">
-  <div class="sec-head"><div><span class="eyebrow reveal">Teaching resources</span><h2 class="reveal">Ready-to-teach materials for EAP teachers.</h2><p class="reveal">Lesson slides I’ve made and used in my own academic English classes. Secure checkout with PayPal, and your download opens straight after payment.</p></div><a class="btn reveal" href="{L('resources/')}">Browse all resources {ARR}</a></div>
-  <article class="product reveal-scale">
-    <a class="product-img" href="{L('resources/hedging-in-academic-writing/')}"><img src="{L('resources/hedging-in-academic-writing/preview-1.jpg')}" alt="Title slide: Hedging in Academic Writing" width="1000" height="563" loading="lazy"></a>
-    <div class="product-body">
-      <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip">Slides · PPTX</span><span class="chip">B2–C1</span><span class="chip">13 slides</span></div>
-      <h3>Hedging in Academic Writing</h3>
-      <p>A ready-to-teach lesson where students notice, categorise and use hedging language, then avoid over-hedging in their own writing. Includes pair and group tasks, a categorisation activity, suggested answers and a final writing task.</p>
-      <div class="buy-row"><span class="amt">$2</span><a class="btn primary" href="{PAY_HEDGING}" target="_blank" rel="noopener">Buy with PayPal {EXT}</a><a class="link" href="{L('resources/hedging-in-academic-writing/')}">Preview the slides {ARR}</a></div>
-    </div>
-  </article>
-  <h3 class="reveal" style="font-size:1.15rem;margin:44px 0 18px;letter-spacing:-.02em">Coming soon</h3>
-  <div class="res-grid res-3">{soonh}</div>
+  <div class="sec-head"><div><span class="eyebrow reveal">Resources</span><h2 class="reveal">Ready-made materials for <em>students</em> and <em>teachers</em>.</h2><p class="reveal">Two separate shelves, so you only see what’s made for you. Single slides, worksheets and Quizlet sets are free. Lesson kits, courses and self-study packs save you hours.</p></div></div>
+  <div class="aud-grid">
+    <a class="aud reveal" href="{L('resources/students/')}"><span class="chip">For students</span><h3>Study smarter for university and IELTS</h3><ul class="ticks"><li><span>Self-study packs with model answers and checklists</span></li><li><span>Free Quizlet sets and practice apps</span></li><li><span>Built around what direct-entry and first-year courses assess</span></li></ul><span class="more">Go to student resources {ARR}</span></a>
+    <a class="aud reveal" style="--d:.08s" href="{L('resources/teachers/')}"><span class="chip">For teachers</span><h3>Zero-prep lessons and whole courses</h3><ul class="ticks"><li><span>Lesson kits: slides, worksheet, answer key, Quizlet and teacher notes</span></li><li><span>Full course sequences with progression and assessment</span></li><li><span>Free single slides and worksheets</span></li></ul><span class="more">Go to teacher resources {ARR}</span></a>
+  </div>
 </div></section>
 
 <div class="wrap"><div class="stats reveal">
@@ -583,68 +587,114 @@ def about(L):
 page("about/index.html", "About Dave Nab · CELTA & DELTA English Teacher", "Dave Nab is a CELTA and DELTA qualified English educator with 15+ years in higher education, ELICOS and international assessment, teaching at Macquarie University College and UTS College.", about, cur="about/")
 
 # ------------------------------------------------------------------ RESOURCES
+# ---------- resources data
+# Each item: (class, tag, title, description, focus tags, status "live"|"soon", price "Free"|"$2"|None, link)
+# link: "@path/" = page on this site, "https://..." = external. Paid items need their OWN PayPal link from Dave.
+STUDENT_PACKS = [
+ ("pack","Self-study pack","University-Ready Research Essay","Plan, research and write a source-based essay step by step: question analysis, annotated bibliography, outline, paragraphing, integrating sources and referencing, with model texts and checklists.",["B2–C1","Writing","Research"],"soon",None,None),
+ ("pack","Self-study pack","Seminar &amp; Presentation Toolkit","Prepare and deliver an academic presentation, then handle questions: structure, signposting, slides, delivery and Q&amp;A language, with model scripts and audio.",["B2–C1","Speaking"],"soon",None,None),
+ ("pack","Self-study pack","IELTS Writing Band 7 Toolkit","Marked sample answers at Bands 5–8 with criterion-by-criterion comments, plus the checklist I use when I give feedback.",["IELTS","Writing"],"soon",None,None),
+ ("course","Self-paced course","Get Ready for Uni English","A short course on the skills first-year units expect: reading critically, taking notes from lectures, paraphrasing and summarising, and academic integrity.",["B2","All skills"],"soon",None,None),
+]
+STUDENT_FREE = [
+ ("wordlist","Word list · Quizlet","A1 – Academic Word List","Flashcards for Academic Word List vocabulary. Study online, or play Quizlet’s games and tests.",["Vocabulary","AWL"],"live","Free","https://quizlet.com/au/1143969156/a1-flash-cards/?i=oj7gk&amp;x=1qqt"),
+ ("wordlist","Word list · Quizlet","A4 Week 1 Flash Cards","A Quizlet flashcard set for weekly vocabulary practice.",["Vocabulary","Week 1"],"live","Free","https://quizlet.com/au/1216144633/a4-week-1-flash-cards/"),
+ ("listen","App · Listening","DAVE Notes: Lecture Note-Taking Trainer","Watch a short TED talk or news story, take notes your way, then check them against the key ideas.",["Note-taking","Free app"],"live","Free","@note-taking-trainer-ted/"),
+ ("gram","App · Grammar","Grammar Self-Correction Trainer","Find and fix your own errors with correction codes and small hints.",["Self-correction","Free app"],"live","Free","@grammar-self-correction/"),
+]
+TEACHER_KITS = [
+ ("kit","Lesson kit","Paraphrasing &amp; Summarising","One complete lesson: slides, student worksheet, answer key, Quizlet set and teacher notes, with an integrity focus on avoiding patchwriting.",["B2–C1","Writing","Zero prep"],"soon",None,None),
+ ("kit","Lesson kit","Integrating Sources &amp; Referencing","Reporting verbs, quoting versus paraphrasing, and in-text citation, with a source-integration task and a model paragraph.",["B2–C1","Writing","Zero prep"],"soon",None,None),
+ ("kit","Lesson kit","Critical Reading: Evaluating Sources","Students judge the reliability and relevance of academic texts using clear criteria, then justify their choice.",["B2–C1","Reading","Zero prep"],"soon",None,None),
+ ("kit","Lesson kit","Lecture Listening &amp; Note-Taking","Signposting, abbreviations and note formats, linked to the DAVE Notes app for follow-up practice.",["B1–C1","Listening","Zero prep"],"soon",None,None),
+]
+TEACHER_COURSES = [
+ ("course","Course · 10 weeks","Academic Literacy Foundations","A ten-week sequence built around the research-project format used in Australian direct-entry programs: topic and question, annotated bibliography, presentation with Q&amp;A, integrated writing and a final research essay. Weekly slides, tasks, rubrics and model texts.",["B2–C1","Direct entry","EAP"],"soon",None,None),
+ ("course","Course · 8 weeks","From Paragraph to Essay","Topic sentences and paragraph structure through to cohesion, argument and the full academic essay, with coded feedback practice.",["B1–B2","Writing"],"soon",None,None),
+]
+TEACHER_FREE = [
+ ("slides","Slides · PPTX","Hedging in Academic Writing","A 13-slide lesson: notice, categorise and use hedging language, then avoid over-hedging.",["B2–C1","Writing","13 slides"],"live","$2","@resources/hedging-in-academic-writing/"),
+ ("wordlist","Word list · Quizlet","A1 – Academic Word List","Use in class with Quizlet Live, or set it as homework.",["Vocabulary","AWL"],"live","Free","https://quizlet.com/au/1143969156/a1-flash-cards/?i=oj7gk&amp;x=1qqt"),
+ ("wordlist","Word list · Quizlet","A4 Week 1 Flash Cards","A ready-made weekly vocabulary set for class or homework.",["Vocabulary","Week 1"],"live","Free","https://quizlet.com/au/1216144633/a4-week-1-flash-cards/"),
+]
+KIND = {"pack": ("var(--write)", "var(--write-bg)"), "course": ("var(--ink)", "var(--surface-2)"), "kit": ("var(--accent)", "var(--accent-soft)")}
+
+def rcard(L, item, i=0):
+    cls, tag, title, desc, focus, status, price, link = item
+    href = (L(link[1:]) if link.startswith("@") else link) if link else None
+    ext = bool(href) and href.startswith("http")
+    style = f"--d:{(i % 3) * .06:.2f}s"
+    if cls in KIND:
+        style += f";--c:{KIND[cls][0]};--cbg:{KIND[cls][1]}"
+    if status == "live" and price:
+        right = f'<span class="price{" free" if price == "Free" else ""}">{price}</span>'
+    else:
+        right = '<span class="status">Coming soon</span>'
+    go = ""
+    if status == "live" and href:
+        label = "Open on Quizlet" if "quizlet" in href else ("Open the app" if cls in ("listen", "gram") else "View &amp; preview")
+        tgt = ' target="_blank" rel="noopener"' if ext else ""
+        go = f'<div class="go"><a class="btn-card stretch" href="{href}"{tgt}>{label} {EXT if ext else ARR}</a></div>'
+    tags = "".join(f"<span>{x}</span>" for x in focus)
+    return f'<article class="card {cls} reveal" style="{style}"><div class="top"><span class="tag">{tag}</span>{right}</div><h3>{title}</h3><p>{desc}</p><div class="focus">{tags}</div>{go}</article>'
+
+def shelf(L, hid, title, intro, items):
+    cards = "".join(rcard(L, it, i) for i, it in enumerate(items))
+    return f'<div class="shelf" id="{hid}"><div class="shelf-head"><h2 class="subhead">{title}</h2><p class="note">{intro}</p></div><div class="grid{' two' if len(items) % 2 == 0 else ''}">{cards}</div></div>'
+
 def resources(L):
-    return f'''
+    return f"""
 <header class="page-hero"><div class="wrap">
   {crumb(L, "Resources")}
-  <span class="eyebrow fade-up" style="--d:.05s">For students &amp; EAP teachers</span>
-  <h1 class="rise" style="margin-top:20px">{words("Teaching |resources.|")}</h1>
-  <p class="lead fade-up" style="--d:.6s">Lesson slides, vocabulary lists and worksheets I’ve made and used in my own academic English classes. Download the free ones, and pick up the rest for a small fee.</p>
-  <div class="filters fade-up" style="--d:.75s;margin-top:28px" role="group" aria-label="Filter resources by type">
-    <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="slides">Slides</button><button aria-pressed="false" data-f="wordlists">Word lists</button><button aria-pressed="false" data-f="worksheets">Worksheets</button>
-  </div>
+  <span class="eyebrow fade-up" style="--d:.05s">Resources</span>
+  <h1 class="rise" style="margin-top:20px">{words("Who are the resources |for?|")}</h1>
+  <p class="lead fade-up" style="--d:.6s">Pick your shelf. Students find self-study packs and free practice. Teachers find zero-prep lesson kits, full courses and free slides.</p>
 </div></header>
-<section style="padding-top:clamp(24px,4vw,48px)"><div class="wrap">
-  <!-- HOW TO ADD A RESOURCE: copy resources/_template/ to resources/<short-name>/, add a card below (data-cat: slides | wordlists | worksheets), add the page to /sitemap.xml. -->
-  <div data-cat="slides" style="margin-bottom:56px"><h2 class="subhead" id="slides">Lesson slides</h2>
-    <div class="grid">
-      <article class="card slides reveal">
-        <img class="thumb" src="{L('resources/hedging-in-academic-writing/preview-1.jpg')}" alt="" width="1000" height="563" loading="lazy">
-        <div class="top"><span class="tag">Slides · PPTX</span><span class="price">$2</span></div>
-        <h3>Hedging in Academic Writing</h3>
-        <p>A 13-slide lesson where students notice, categorise and use hedging language, then avoid over-hedging in their own writing.</p>
-        <div class="focus"><span>B2–C1</span><span>Writing</span><span>13 slides</span></div>
-        <div class="go"><a class="btn-card stretch" href="{L('resources/hedging-in-academic-writing/')}">View lesson &amp; preview {ARR}</a></div>
-      </article>
-      <article class="card slides reveal" style="--d:.06s">
-        <img class="thumb" src="{L('assets/img/res-nominalisation.webp')}" alt="" width="600" height="600" loading="lazy" style="aspect-ratio:16/9">
-        <div class="top"><span class="tag">Slides</span><span class="status">Coming soon</span></div>
-        <h3>Nominalisation</h3><p>Turning verbs and adjectives into nouns for a more academic style.</p>
-      </article>
-      <article class="card slides reveal" style="--d:.12s">
-        <img class="thumb" src="{L('assets/img/res-dependent-clauses.webp')}" alt="" width="600" height="600" loading="lazy" style="aspect-ratio:16/9">
-        <div class="top"><span class="tag">Slides</span><span class="status">Coming soon</span></div>
-        <h3>Dependent Clauses</h3><p>Building complex sentences with relative, adverbial and noun clauses.</p>
-      </article>
-      <article class="card slides reveal" style="--d:.18s">
-        <img class="thumb" src="{L('assets/img/res-paraphrasing.webp')}" alt="" width="600" height="600" loading="lazy" style="aspect-ratio:16/9">
-        <div class="top"><span class="tag">Slides</span><span class="status">Coming soon</span></div>
-        <h3>Paraphrasing</h3><p>Strategies for restating ideas in your own words without losing meaning.</p>
-      </article>
-    </div></div>
-  <div data-cat="wordlists" style="margin-bottom:56px"><h2 class="subhead" id="wordlists">Word lists</h2>
-    <div class="grid">
-      <article class="card wordlist reveal">
-        <div class="top"><span class="tag">Word list · Quizlet</span><span class="price free">Free</span></div>
-        <h3>A1 – Academic Word List</h3>
-        <p>A Quizlet flashcard set of Academic Word List vocabulary. Study online, or use Quizlet’s games and tests in class.</p>
-        <div class="focus"><span>Vocabulary</span><span>AWL</span></div>
-        <div class="go"><a class="btn-card stretch" href="https://quizlet.com/au/1143969156/a1-flash-cards/?i=oj7gk&amp;x=1qqt" target="_blank" rel="noopener">Study on Quizlet {EXT}</a></div>
-      </article>
-      <article class="card wordlist reveal" style="--d:.06s">
-        <div class="top"><span class="tag">Word list · Quizlet</span><span class="price free">Free</span></div>
-        <h3>A4 Week 1 Flash Cards</h3>
-        <p>A Quizlet flashcard set for weekly vocabulary practice. Study online, or use Quizlet’s games and tests in class.</p>
-        <div class="focus"><span>Vocabulary</span><span>Week 1</span></div>
-        <div class="go"><a class="btn-card stretch" href="https://quizlet.com/au/1216144633/a4-week-1-flash-cards/" target="_blank" rel="noopener">Study on Quizlet {EXT}</a></div>
-      </article>
-    </div></div>
-  <div data-cat="worksheets" style="margin-bottom:56px"><h2 class="subhead" id="worksheets">Worksheets</h2>
-    <div class="grid"><div class="empty">Printable worksheets are coming soon.</div></div></div>
-  <div class="notebox reveal"><h3>Licence</h3>These materials may be used and shared for educational purposes only. Just make sure the copyright stays in place and <strong>Davenab.com</strong> is clearly listed as the source. Paid resources are for use by the buyer in their own classes; please don’t re-upload or resell them.</div>
+<section style="padding-top:clamp(16px,3vw,32px)"><div class="wrap">
+  <div class="aud-grid">
+    <a class="aud big reveal" href="{L('resources/students/')}"><span class="chip">For students</span><h3>I’m preparing for university or IELTS</h3><p>Self-study packs with model answers and checklists, plus free Quizlet sets and practice apps.</p><span class="more">Student resources {ARR}</span></a>
+    <a class="aud big reveal" style="--d:.08s" href="{L('resources/teachers/')}"><span class="chip">For teachers</span><h3>I teach EAP or academic English</h3><p>Zero-prep lesson kits, whole course sequences, and free single slides and worksheets.</p><span class="more">Teacher resources {ARR}</span></a>
+  </div>
+  <div class="notebox reveal" style="margin-top:40px"><h3>Licence</h3>Free materials may be used and shared for educational purposes. Keep the copyright in place and list <strong>davenab.com</strong> as the source. Paid materials are for the buyer’s own use or classes; please don’t re-upload or resell them.</div>
 </div></section>
-'''
-page("resources/index.html", "EAP Teaching Resources · Dave Nab", "Classroom-tested academic English (EAP) teaching resources: PowerPoint lesson slides, Quizlet vocabulary lists and printable worksheets.", resources, cur="resources/")
+"""
+page("resources/index.html", "Resources for Students and Teachers · Dave Nab", "Academic English resources in two places: self-study packs and free practice for students, and zero-prep lesson kits, courses and free slides for EAP teachers.", resources, cur="resources/")
+
+def res_students(L):
+    soon = f'Coming soon. Want one first? <a class="link" href="mailto:{EMAIL}">Email me</a> and I’ll tell you when it’s ready.'
+    return f"""
+<header class="page-hero"><div class="wrap">
+  {crumb(L, ("resources/","Resources"), "For students")}
+  <span class="eyebrow fade-up" style="--d:.05s">Resources for students</span>
+  <h1 class="rise" style="margin-top:20px">{words("Study packs that do the |heavy lifting.|")}</h1>
+  <p class="lead fade-up" style="--d:.6s">For students heading into an Australian university, a direct-entry program or IELTS. Each pack walks you through one big task with models, checklists and the feedback I would give you in class.</p>
+  <div class="cta fade-up" style="--d:.75s"><a class="btn primary" href="#packs">Self-study packs {ARR}</a><a class="btn" href="#free">Free practice</a></div>
+</div></header>
+<section style="padding-top:clamp(16px,3vw,32px)"><div class="wrap">
+  {shelf(L, "packs", "Self-study packs &amp; courses", soon, STUDENT_PACKS)}
+  {shelf(L, "free", "Free practice", "Quizlet sets and practice apps. No sign-in.", STUDENT_FREE)}
+</div></section>
+"""
+page("resources/students/index.html", "Resources for Students · Dave Nab", "Self-study packs for academic English and IELTS, plus free Quizlet sets and practice apps for students preparing for university.", res_students, cur="resources/students/")
+
+def res_teachers(L):
+    return f"""
+<header class="page-hero"><div class="wrap">
+  {crumb(L, ("resources/","Resources"), "For teachers")}
+  <span class="eyebrow fade-up" style="--d:.05s">Resources for teachers</span>
+  <h1 class="rise" style="margin-top:20px">{words("Open it, teach it. |Zero prep.|")}</h1>
+  <p class="lead fade-up" style="--d:.6s">Lesson kits and full course sequences for EAP and academic English, built from my own classroom-tested materials. Single slides, worksheets and Quizlet sets stay free.</p>
+  <div class="cta fade-up" style="--d:.75s"><a class="btn primary" href="#kits">Lesson kits {ARR}</a><a class="btn" href="#courses">Courses</a><a class="btn" href="#free">Single resources</a></div>
+</div></header>
+<section style="padding-top:clamp(16px,3vw,32px)"><div class="wrap">
+  <div class="kit-strip reveal"><b>Every lesson kit includes</b><span>Slides</span><span>Student worksheet</span><span>Answer key</span><span>Quizlet set</span><span>Teacher notes</span><span>App follow-up</span></div>
+  {shelf(L, "kits", "Zero-prep lesson kits", "One complete lesson each. Coming soon.", TEACHER_KITS)}
+  {shelf(L, "courses", "Whole courses", "Week-by-week sequences with progression, rubrics and model texts. Coming soon.", TEACHER_COURSES)}
+  {shelf(L, "free", "Single resources", "Free and low-cost slides, worksheets and Quizlet sets.", TEACHER_FREE)}
+  <!-- HOW TO ADD A RESOURCE: add an item to the lists in _tools/build.py (status "live", price, link); for its own page copy resources/_template/; add the page to /sitemap.xml. -->
+</div></section>
+"""
+page("resources/teachers/index.html", "Resources for EAP Teachers · Dave Nab", "Zero-prep academic English lesson kits, full EAP course sequences, and free slides, worksheets and Quizlet sets for teachers.", res_teachers, cur="resources/teachers/")
 
 def hedging(L):
     return f'''
