@@ -1,0 +1,110 @@
+{
+  "id": "water-scarcity",
+  "title": "Water Scarcity: Causes, Effects and Solutions",
+  "topic": "Environment and development",
+  "level": "B2",
+  "verified": false,
+  "audioFile": "",
+  "keyTerms": [
+    { "term": "scarcity", "definition": "when there is not enough of something" },
+    { "term": "fresh water", "definition": "water that is not salty, for drinking and farming" },
+    { "term": "irrigation", "definition": "bringing water to crops so they can grow" },
+    { "term": "drought", "definition": "a long time with little or no rain" },
+    { "term": "desalination", "definition": "removing salt from seawater" }
+  ],
+  "predictionQuestion": "Most of the Earth is covered in water. So why do some places not have enough? What might the lecturer say?",
+  "segments": [
+    { "text": "Good morning. Our topic today is water scarcity. Water scarcity means that there is not enough fresh water to meet the needs of people and the environment in a particular area. Now, this may seem strange, because most of our planet is covered in water. But as we'll see, very little of that water is fresh and easy to use. Today's lecture has three parts: first, the causes of water scarcity; second, its effects; and third, some possible solutions." },
+    { "text": "Let's begin with an important distinction. There are two kinds of water scarcity. The first is physical scarcity. This is when there isn't enough water in a region, for example in very dry areas. The second is economic scarcity. In this case, water does exist, but people can't get it, because there are no pipes, pumps or treatment plants, or because they can't afford it. So the problem is not always a lack of water. Sometimes, it is a lack of infrastructure." },
+    { "text": "Now, what causes water scarcity? I'll mention three main causes. The first is population growth. More people need more water. The second, and perhaps the most important, is agriculture. Farming uses a very large share of the world's fresh water, mainly to irrigate crops. The third cause is climate change, which can make droughts longer and rainfall less predictable." },
+    { "text": "Turning now to the effects. When water is scarce, people may have to use unsafe water, which can spread disease. Farmers may produce less food. And in many places, someone, often women and girls, must spend hours each day collecting water. This means less time for school or paid work. So, water scarcity affects health, food and education." },
+    { "text": "So, what can be done? Solutions fall into two broad groups: using water more efficiently, and finding new sources. In terms of efficiency, one key example is drip irrigation. Instead of flooding a whole field, drip irrigation delivers small amounts of water directly to the roots of each plant. Fixing leaking pipes in cities is another simple but effective step." },
+    { "text": "As for new sources, some dry coastal countries use desalination, which means removing salt from seawater. However, desalination uses a lot of energy and is expensive. Another option is recycling waste water, cleaning it so that it can be used again." },
+    { "text": "To conclude, then. Water scarcity means not having enough fresh water to meet people's needs. It can be physical, a real lack of water, or economic, a lack of infrastructure or money. The main causes are population growth, agriculture and climate change. It affects health, food and education. And the solutions include using water more efficiently, and finding new sources, such as desalination and recycling." }
+  ],
+  "keyIdeas": [
+    { "text": "Water scarcity means not enough fresh water for the needs of people and the environment in an area.", "type": "main", "segment": 1 },
+    { "text": "There are two kinds: physical scarcity and economic scarcity.", "type": "main", "segment": 2 },
+    { "text": "Economic scarcity: water exists, but there is no infrastructure or people can't afford it.", "type": "detail", "segment": 2 },
+    { "text": "Three main causes: population growth, agriculture and climate change.", "type": "main", "segment": 3 },
+    { "text": "Agriculture is perhaps the most important cause, mainly because of irrigation.", "type": "detail", "segment": 3 },
+    { "text": "Water scarcity affects health, food and education.", "type": "main", "segment": 4 },
+    { "text": "Women and girls often spend hours collecting water, so they have less time for school or work.", "type": "detail", "segment": 4 },
+    { "text": "Solutions: use water more efficiently, and find new sources.", "type": "main", "segment": 5 },
+    { "text": "Drip irrigation delivers water straight to plant roots. Fixing leaking pipes also helps.", "type": "detail", "segment": 5 },
+    { "text": "Desalination uses a lot of energy and is expensive. Recycling waste water is another option.", "type": "detail", "segment": 6 }
+  ],
+  "signpostPhrases": [
+    "Our topic today is",
+    "Water scarcity means",
+    "But as we'll see",
+    "Today's lecture has three parts",
+    "Let's begin with an important distinction",
+    "The first is",
+    "for example",
+    "The second is",
+    "In this case,",
+    "Now, what causes water scarcity?",
+    "I'll mention three main causes",
+    "The second, and perhaps the most important,",
+    "The third cause is",
+    "Turning now to the effects",
+    "This means",
+    "So, what can be done?",
+    "In terms of efficiency",
+    "one key example is",
+    "Instead of",
+    "As for new sources",
+    "However,",
+    "Another option is",
+    "To conclude, then"
+  ],
+  "modelNotes": [
+    "WATER SCARCITY = not enough fresh water for ppl + environment in an area",
+    "2 kinds",
+    "- physical: not enough water (e.g. v. dry areas)",
+    "- economic: water exists BUT no pipes/pumps/treatment or can't afford → infrastructure problem",
+    "1. Causes (3)",
+    "- population ↑ → more water needed",
+    "- agriculture (most imp.?) → irrigation uses large share",
+    "- climate change → longer droughts, rain less predictable",
+    "2. Effects: health, food, education",
+    "- unsafe water → disease; less food",
+    "- women + girls collect water (hrs/day) → less school/work",
+    "3. Solutions",
+    "- efficiency: drip irrigation (water → roots), fix leaking pipes",
+    "- new sources: desalination (salt ← seawater) BUT energy ↑, $$; recycle waste water"
+  ],
+  "questions": [
+    {
+      "stem": "What is economic water scarcity?",
+      "options": ["Water exists, but people cannot get it or afford it", "There is no water in the region at all", "The water is too salty to drink", "Water is sold to other countries"],
+      "answer": "Water exists, but people cannot get it or afford it",
+      "explanation": "In economic scarcity, water does exist, but there are no pipes, pumps or treatment plants, or people can't afford it."
+    },
+    {
+      "stem": "Which cause did the lecturer say is perhaps the most important?",
+      "options": ["Agriculture", "Population growth", "Climate change", "Tourism"],
+      "answer": "Agriculture",
+      "explanation": "\"The second, and perhaps the most important, is agriculture.\" Phrases like \"the most important\" tell you to note this."
+    },
+    {
+      "stem": "According to the lecture, how can water scarcity affect education?",
+      "options": ["People, often girls, spend hours collecting water instead of going to school", "Schools close every summer", "Teachers move to the cities", "Textbooks are damaged by water"],
+      "answer": "People, often girls, spend hours collecting water instead of going to school",
+      "explanation": "Collecting water takes hours each day, which means less time for school or paid work."
+    },
+    {
+      "stem": "What is drip irrigation?",
+      "options": ["Giving small amounts of water directly to plant roots", "Flooding a whole field", "Removing salt from seawater", "Collecting rain on roofs"],
+      "answer": "Giving small amounts of water directly to plant roots",
+      "explanation": "\"Instead of flooding a whole field, drip irrigation delivers small amounts of water directly to the roots of each plant.\""
+    },
+    {
+      "stem": "What problem with desalination did the lecturer mention?",
+      "options": ["It uses a lot of energy and is expensive", "It makes water taste bad", "It only works in cold countries", "It spreads disease"],
+      "answer": "It uses a lot of energy and is expensive",
+      "explanation": "\"However, desalination uses a lot of energy and is expensive.\" The signpost \"However\" introduced the problem."
+    }
+  ]
+}

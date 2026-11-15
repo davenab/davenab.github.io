@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DAVE Notes: Lecture Note-Taking Trainer</title>
+<meta name="description" content="Free lecture note-taking practice for EAP students. Listen to a short lecture, take notes your way, check your own notes and use them. No sign-in. Your notes stay on your device.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Crect x='10' y='10' width='44' height='44' rx='6' fill='%23ff0'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' font-weight='700' text-anchor='middle' fill='%23000'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#app">Skip to main content</a>
+<header class="top">
+  <div class="wrap wide">
+    <a class="brand" href="./" id="homeLink"><b>DAVE</b> Notes</a>
+    <nav class="topnav" aria-label="App">
+      <a href="#progress" id="navProgress">My progress</a>
+      <a href="about.html" class="hide-xs">About</a>
+      <button id="theme" type="button" aria-label="Switch light or dark mode" title="Light / dark mode"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="app" tabindex="-1">
+  <div class="band"><div class="wrap"><h1>DAVE Notes</h1><p>Loading…</p></div></div>
+  <noscript><div class="wrap section"><p class="notice warn">This app needs JavaScript. Please turn it on in your browser settings.</p></div></noscript>
+</main>
+
+<footer class="foot">
+  <div class="wrap wide">
+    <a href="about.html">About this app</a>
+    <a href="#progress">My progress</a>
+    <a href="/">More apps by Dave Nab</a>
+    <p class="small" style="margin:6px 0 0">Your notes, photos and recordings stay on this device. No sign-in. No tracking.</p>
+  </div>
+</footer>
+
+<dialog class="zoom" id="zoom" aria-label="Photo of your notes">
+  <div class="zbar">
+    <button class="btn sm" type="button" id="zoomToggle">Zoom in</button>
+    <button class="btn sm dark" type="button" id="zoomClose">Close</button>
+  </div>
+  <div class="zimg"><img id="zoomImg" alt="Your notes, large view"></div>
+</dialog>
+
+<script src="/assets/site.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

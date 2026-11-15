@@ -1,0 +1,103 @@
+{
+  "id": "academic-integrity",
+  "title": "Academic Integrity at University",
+  "topic": "University study skills",
+  "level": "B2",
+  "verified": false,
+  "audioFile": "",
+  "keyTerms": [
+    { "term": "academic integrity", "definition": "being honest and responsible in your studies" },
+    { "term": "plagiarism", "definition": "using someone else's words or ideas as your own, without saying where they came from" },
+    { "term": "collusion", "definition": "working together on a task that should be done alone" },
+    { "term": "misconduct", "definition": "breaking the rules" },
+    { "term": "reference", "definition": "a note that shows where you found an idea or words" }
+  ],
+  "predictionQuestion": "What do you think \"academic integrity\" means? What rules might the lecturer talk about?",
+  "segments": [
+    { "text": "Hello, everyone. Today we're going to talk about academic integrity. Academic integrity means being honest and responsible in your studies. It means that the work you hand in is your own, and that you give credit to other people whose ideas or words you use. In this talk, I want to cover three points: why integrity matters, the most common forms of misconduct, and how you can protect yourself." },
+    { "text": "So, first, why does it matter? A university degree is a kind of promise. It tells employers and the public that the graduate has the knowledge and skills that the degree describes. If students hand in work that is not their own, that promise becomes meaningless. Integrity also matters for you personally. The purpose of an assignment is to help you learn. If someone else does the thinking, you miss the learning." },
+    { "text": "Now, let's look at the most common forms of misconduct. The best known is plagiarism. Plagiarism means presenting someone else's words or ideas as your own, without acknowledging them. It also includes paraphrasing, that is, changing the words but keeping the ideas, without giving a reference." },
+    { "text": "A second form is collusion. Collusion happens when students work together on a task that is supposed to be done individually. For example, two students who write an essay together, and both submit it as their own work. A third form is contract cheating, which means getting another person or a company to complete your work for you. Using an AI tool to write work that you then submit as your own may also break the rules, depending on your university's policy, so always check." },
+    { "text": "The important thing to remember is that misconduct is not always deliberate. Many students break the rules by accident, often because they are not sure how to reference properly, or because they are under time pressure. Unfortunately, not knowing the rules is usually not accepted as an excuse." },
+    { "text": "So, how can you protect yourself? Here are three habits. One, keep careful notes of your sources while you research, so you always know where an idea came from. Two, learn the referencing style your course uses, and use it every time. And three, plan your time. If you're unsure about anything, ask your lecturer or the library for help." },
+    { "text": "Right, to wrap up. Academic integrity means being honest about whose work and ideas you are using. It matters because it protects the value of your degree, and your own learning. The main forms of misconduct are plagiarism, collusion and contract cheating. And the best protection is good habits: record your sources, reference carefully, and manage your time." }
+  ],
+  "keyIdeas": [
+    { "text": "Academic integrity means being honest: your work is your own, and you give credit to others.", "type": "main", "segment": 1 },
+    { "text": "It matters because a degree is a promise to employers and the public.", "type": "main", "segment": 2 },
+    { "text": "It also matters for you: assignments help you learn. If someone else thinks, you miss the learning.", "type": "detail", "segment": 2 },
+    { "text": "Plagiarism: presenting someone else's words or ideas as your own without acknowledging them.", "type": "main", "segment": 3 },
+    { "text": "Paraphrasing without a reference is also plagiarism.", "type": "detail", "segment": 3 },
+    { "text": "Collusion: students working together on a task that should be done alone.", "type": "detail", "segment": 4 },
+    { "text": "Contract cheating: getting a person or company to do your work. AI use may also break the rules, so check.", "type": "detail", "segment": 4 },
+    { "text": "Misconduct is not always deliberate, but not knowing the rules is usually not an excuse.", "type": "main", "segment": 5 },
+    { "text": "You can protect yourself with good habits.", "type": "main", "segment": 6 },
+    { "text": "Habits: keep notes of sources, learn your referencing style, plan your time, and ask for help.", "type": "detail", "segment": 6 }
+  ],
+  "signpostPhrases": [
+    "Today we're going to talk about",
+    "Academic integrity means",
+    "In this talk, I want to cover three points",
+    "So, first,",
+    "Now, let's look at",
+    "The best known is",
+    "that is,",
+    "A second form is",
+    "For example,",
+    "A third form is",
+    "The important thing to remember is",
+    "So, how can you protect yourself?",
+    "Here are three habits",
+    "One,",
+    "Two,",
+    "And three,",
+    "Right, to wrap up"
+  ],
+  "modelNotes": [
+    "ACADEMIC INTEGRITY = honest + responsible: own work, credit others' ideas/words",
+    "1. Why it matters",
+    "- degree = promise to employers + public (knowledge + skills)",
+    "- for you: assignment → learning; s.o. else thinks → no learning",
+    "2. Forms of misconduct",
+    "- plagiarism: others' words/ideas as own, no acknowledgement (incl. paraphrase w/o ref.)",
+    "- collusion: work together on individual task (e.g. 2 students, 1 essay)",
+    "- contract cheating: person/company does your work; AI? → check uni policy",
+    "- often NOT deliberate (unsure how to ref., time pressure) BUT not knowing ≠ excuse",
+    "3. Protect yourself (3 habits)",
+    "- notes of sources while researching",
+    "- learn referencing style → use every time",
+    "- plan time; unsure? ask lecturer / library"
+  ],
+  "questions": [
+    {
+      "stem": "What does academic integrity mean?",
+      "options": ["Being honest and responsible in your studies", "Getting high marks", "Finishing work quickly", "Always studying alone"],
+      "answer": "Being honest and responsible in your studies",
+      "explanation": "\"Academic integrity means being honest and responsible in your studies.\" The word \"means\" often signals a definition."
+    },
+    {
+      "stem": "Why does the lecturer call a degree \"a kind of promise\"?",
+      "options": ["It tells employers the graduate has the knowledge and skills it describes", "It guarantees a job after university", "It promises high marks", "It is a legal contract with the library"],
+      "answer": "It tells employers the graduate has the knowledge and skills it describes",
+      "explanation": "A degree tells employers and the public that the graduate has the knowledge and skills the degree describes."
+    },
+    {
+      "stem": "According to the lecture, which of these is plagiarism?",
+      "options": ["Paraphrasing ideas without giving a reference", "Asking the library for help", "Planning your time", "Keeping notes of your sources"],
+      "answer": "Paraphrasing ideas without giving a reference",
+      "explanation": "Plagiarism includes paraphrasing, \"that is, changing the words but keeping the ideas, without giving a reference.\""
+    },
+    {
+      "stem": "What is collusion?",
+      "options": ["Students working together on a task that should be done alone", "Paying a company to write an essay", "Copying from a website", "Forgetting one reference"],
+      "answer": "Students working together on a task that should be done alone",
+      "explanation": "Collusion happens when students work together on a task that is supposed to be done individually. Paying a company is contract cheating."
+    },
+    {
+      "stem": "According to the lecturer, why do many students break the rules?",
+      "options": ["By accident, for example because they are unsure how to reference", "Because their lecturers tell them to", "Because referencing is optional", "Because they always work in groups"],
+      "answer": "By accident, for example because they are unsure how to reference",
+      "explanation": "\"Many students break the rules by accident, often because they are not sure how to reference properly, or because they are under time pressure.\""
+    }
+  ]
+}

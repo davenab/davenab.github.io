@@ -1,0 +1,106 @@
+{
+  "id": "urbanisation",
+  "title": "Why Cities Grow: Urbanisation",
+  "topic": "Geography and society",
+  "level": "B2",
+  "verified": false,
+  "audioFile": "",
+  "keyTerms": [
+    { "term": "urbanisation", "definition": "when more and more of a country's people live in towns and cities" },
+    { "term": "push factor", "definition": "something that makes people leave a place" },
+    { "term": "pull factor", "definition": "something that attracts people to a place" },
+    { "term": "agglomeration", "definition": "the benefits that come when people and businesses are close together" },
+    { "term": "infrastructure", "definition": "basic systems a city needs, such as roads, pipes and power" }
+  ],
+  "predictionQuestion": "Why do so many people move to cities? What problems might this cause?",
+  "segments": [
+    { "text": "Good morning, everyone. Today I'm going to talk about urbanisation. By urbanisation, I mean the process by which a growing share of a country's population comes to live in towns and cities, rather than in the countryside. In today's lecture, I'll cover three things. First, why people move to cities. Second, the benefits that cities can bring. And finally, some of the problems that fast urban growth can create." },
+    { "text": "So, let's start with why people move. Researchers often talk about push factors and pull factors. Push factors are the things that push people away from rural areas, such as a lack of jobs, or farming that no longer pays enough to support a family. Pull factors, on the other hand, are the things that attract people to cities. The most important pull factor is work. Cities usually offer more jobs, and a wider range of jobs. Other pull factors include better access to schools, hospitals and services." },
+    { "text": "Let me give you an example. Imagine a young woman who grows up in a small farming village. There is only one primary school, and there are very few paid jobs. In the city, three hours away, her cousin has found work in a factory. For her, the city offers both income and opportunity. Multiply this decision by millions of people, and you have urbanisation." },
+    { "text": "Now, moving on to the benefits. When many people and businesses are close together, ideas and skills spread more quickly. Economists call this agglomeration. In simple terms, being close together makes cities more productive. It is also often cheaper to provide services such as clean water, electricity and public transport to people who live close together than to people who are spread out." },
+    { "text": "However, urban growth also creates problems, and this is the third part of today's talk. When a city grows faster than its housing and infrastructure, problems appear. One problem is housing. If there are not enough affordable homes, people may build informal settlements, often without proper water or sanitation. Another problem is traffic and air pollution. A third is pressure on services, for example, crowded schools and hospitals." },
+    { "text": "So what does this mean for city planners? The key point is that the problem is not growth itself, but unplanned growth. Cities that plan ahead, for instance by building public transport and affordable housing early, are better able to manage growth." },
+    { "text": "So, to sum up. Urbanisation is the movement of people from rural areas to cities. People move because of push and pull factors, especially jobs. Cities can be more productive and can provide services more efficiently. But fast, unplanned growth can lead to housing shortages, pollution and pressure on services." }
+  ],
+  "keyIdeas": [
+    { "text": "Urbanisation means a growing share of the population lives in towns and cities, not the countryside.", "type": "main", "segment": 1 },
+    { "text": "People move to cities because of push factors and pull factors.", "type": "main", "segment": 2 },
+    { "text": "Push factors include a lack of jobs and farming that does not pay enough.", "type": "detail", "segment": 2 },
+    { "text": "Work is the most important pull factor. Schools, hospitals and services also attract people.", "type": "detail", "segment": 2 },
+    { "text": "Example: a young woman leaves her village because the city offers income and opportunity.", "type": "detail", "segment": 3 },
+    { "text": "Benefit: being close together (agglomeration) makes cities more productive.", "type": "main", "segment": 4 },
+    { "text": "Services like water, electricity and transport are cheaper to provide when people live close together.", "type": "detail", "segment": 4 },
+    { "text": "Problems appear when a city grows faster than its housing and infrastructure.", "type": "main", "segment": 5 },
+    { "text": "Three problems: informal settlements, traffic and air pollution, and pressure on services.", "type": "detail", "segment": 5 },
+    { "text": "The real problem is unplanned growth, not growth itself. Planning ahead helps.", "type": "main", "segment": 6 }
+  ],
+  "signpostPhrases": [
+    "Today I'm going to talk about",
+    "By urbanisation, I mean",
+    "In today's lecture, I'll cover three things",
+    "First,",
+    "Second,",
+    "And finally,",
+    "So, let's start with",
+    "on the other hand",
+    "Let me give you an example",
+    "Now, moving on to",
+    "In simple terms",
+    "However,",
+    "this is the third part of today's talk",
+    "One problem is",
+    "Another problem is",
+    "A third is",
+    "for example",
+    "The key point is",
+    "for instance",
+    "So, to sum up"
+  ],
+  "modelNotes": [
+    "URBANISATION = ↑ % of pop. in towns/cities (vs countryside)",
+    "1. Why ppl move",
+    "- push factors (← rural): no jobs, farming ≠ enough $",
+    "- pull factors (→ city): WORK (most imp.), schools, hosp., services",
+    "- e.g. young woman: village → city factory = income + opportunity",
+    "2. Benefits",
+    "- agglomeration: close together → ideas/skills spread → more productive",
+    "- services (water, elec., transport) cheaper when ppl close",
+    "3. Problems (city grows faster than housing + infrastructure)",
+    "- housing ↓ → informal settlements, no water/sanitation",
+    "- traffic + air pollution",
+    "- pressure on services (crowded schools, hosp.)",
+    "KEY POINT: problem = UNPLANNED growth, not growth itself → plan early (transport, housing)"
+  ],
+  "questions": [
+    {
+      "stem": "According to the lecture, what is the most important pull factor?",
+      "options": ["Better weather", "Work", "Cheaper housing", "Being near family"],
+      "answer": "Work",
+      "explanation": "The lecturer said: \"The most important pull factor is work.\" Cities offer more jobs and a wider range of jobs."
+    },
+    {
+      "stem": "What does \"agglomeration\" mean in this lecture?",
+      "options": ["People moving back to the countryside", "The benefits of people and businesses being close together", "Building new roads", "A type of informal settlement"],
+      "answer": "The benefits of people and businesses being close together",
+      "explanation": "When people and businesses are close, ideas and skills spread quickly, so cities become more productive."
+    },
+    {
+      "stem": "Why does the lecturer describe the young woman from the village?",
+      "options": ["To give an example of a decision to move to the city", "To show that villages have good schools", "To explain air pollution", "To describe the work of a city planner"],
+      "answer": "To give an example of a decision to move to the city",
+      "explanation": "The story is an example of push and pull factors. The city offers her income and opportunity."
+    },
+    {
+      "stem": "When do problems appear, according to the lecturer?",
+      "options": ["When a city grows faster than its housing and infrastructure", "When people move from cities to villages", "When a city builds public transport", "When farming pays well"],
+      "answer": "When a city grows faster than its housing and infrastructure",
+      "explanation": "The lecturer said problems appear when growth is faster than housing and infrastructure."
+    },
+    {
+      "stem": "What is the lecturer's main conclusion?",
+      "options": ["Cities should stop growing", "The problem is unplanned growth, not growth itself", "Push factors matter more than pull factors", "Informal settlements are the only problem"],
+      "answer": "The problem is unplanned growth, not growth itself",
+      "explanation": "\"The key point is that the problem is not growth itself, but unplanned growth.\" The signpost \"The key point is\" tells you this is important."
+    }
+  ]
+}
