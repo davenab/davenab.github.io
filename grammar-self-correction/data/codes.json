@@ -1,18 +1,192 @@
 {
-  "_help": "Correction codes. Change these to match your college. Keep the same fields. 'fullHintEarly': true gives the code AND the rule together at hint 2 (use for codes that are not rule-based, like WC and SS).",
+  "_help": "Correction codes, matched to the course correction code (2025). 'codes' are practised in the app. 'otherCodes' are shown in the code key only. 'fullHintEarly': true gives the code AND the rule together at hint 2 (for codes that are not rule-based, like ww and SS). If you rename a code, also change it in the practice texts, data/warmup.json and data/links.json.",
   "codes": [
-    {"code": "VT", "name": "Verb tense", "meaning": "The verb is in the wrong time (past, present or future).", "wrong": "Last week I go to the library.", "right": "Last week I went to the library.", "rule": "Look for time words (last week, since, now). Choose the tense that matches them.", "fullHintEarly": false},
-    {"code": "VF", "name": "Verb form", "meaning": "The tense is right, but the form of the verb is wrong.", "wrong": "She has wrote three essays.", "right": "She has written three essays.", "rule": "Check what comes before the verb: has needs a past participle, is needs -ing, enjoy needs -ing, want needs to + verb.", "fullHintEarly": false},
-    {"code": "SVA", "name": "Subject-verb agreement", "meaning": "The verb does not match its subject (singular or plural).", "wrong": "The results of the study shows a clear trend.", "right": "The results of the study show a clear trend.", "rule": "Find the main noun of the subject. Singular subject: verb + s. Plural subject: no s.", "fullHintEarly": false},
-    {"code": "Art", "name": "Article", "meaning": "A, an or the is missing, wrong or not needed.", "wrong": "Moon moves around Earth.", "right": "The Moon moves around the Earth.", "rule": "Singular countable nouns need a, an or the. Use the when there is only one, or when the reader knows which one.", "fullHintEarly": false},
-    {"code": "Pl", "name": "Singular / plural", "meaning": "The noun should be singular, or it should be plural.", "wrong": "There are many reason for this.", "right": "There are many reasons for this.", "rule": "After many, several, a few, numbers above one and a range of, use a plural noun.", "fullHintEarly": false},
-    {"code": "Prep", "name": "Preposition", "meaning": "The small linking word (in, on, at, for, to...) is wrong.", "wrong": "This depends of the weather.", "right": "This depends on the weather.", "rule": "Many verbs, nouns and adjectives have a fixed preposition. Learn them as a pair: depend on, interested in.", "fullHintEarly": false},
-    {"code": "WF", "name": "Word form", "meaning": "The word family is right, but the type of word (noun, verb, adjective, adverb) is wrong.", "wrong": "It is very importance to sleep well.", "right": "It is very important to sleep well.", "rule": "Ask what the sentence needs here. After the: a noun. After be or very: an adjective. To describe a verb: an adverb.", "fullHintEarly": false},
-    {"code": "WC", "name": "Word choice", "meaning": "The word is a real word, but it is not the right one here.", "wrong": "We need to do a decision soon.", "right": "We need to make a decision soon.", "rule": "Some words always go together (make a decision, do research). Check a learner's dictionary for common partners.", "fullHintEarly": true},
-    {"code": "WO", "name": "Word order", "meaning": "The words are correct, but they are in the wrong order.", "wrong": "I do not know where is the station.", "right": "I do not know where the station is.", "rule": "Use subject + verb order in statements and in questions inside sentences. Put always and often before the main verb, but after be.", "fullHintEarly": false},
-    {"code": "P", "name": "Punctuation", "meaning": "A comma, full stop, apostrophe or question mark is missing or wrong.", "wrong": "Its a good idea however it is expensive.", "right": "It's a good idea. However, it is expensive.", "rule": "Check commas after linking words, apostrophes for owning (the student's book) and it's (it is), and question marks.", "fullHintEarly": false},
-    {"code": "SS", "name": "Sentence structure", "meaning": "The sentence is not built correctly: parts are missing, joined wrongly or mixed up.", "wrong": "Because the rent was high. I moved.", "right": "Because the rent was high, I moved.", "rule": "Every sentence needs a subject and a main verb. Join two full sentences with a full stop, a semicolon or a joining word, not just a comma.", "fullHintEarly": true},
-    {"code": "^", "name": "Missing word", "meaning": "A word is missing here.", "wrong": "The library open until 9 pm.", "right": "The library is open until 9 pm.", "rule": "Read the sentence aloud slowly. Check that every clause has a subject and a full verb (is, are, have, be).", "fullHintEarly": false},
-    {"code": "X", "name": "Unnecessary word", "meaning": "A word here is not needed. Take it out.", "wrong": "We discussed about the results.", "right": "We discussed the results.", "rule": "Some verbs take an object directly, with no preposition (discuss, enter, contact). Do not repeat a meaning (return back).", "fullHintEarly": false}
+    {
+      "code": "T",
+      "name": "Wrong tense",
+      "meaning": "The verb is in the wrong time (past, present or future).",
+      "wrong": "Last week I go to the library.",
+      "right": "Last week I went to the library.",
+      "rule": "Look for time words (last week, since, now). Choose the tense that matches them.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "vf",
+      "name": "Verb form error",
+      "meaning": "You have used the wrong form of the verb.",
+      "wrong": "She has wrote three essays.",
+      "right": "She has written three essays.",
+      "rule": "Check what comes before the verb: has needs a past participle, is needs -ing, enjoy needs -ing, want needs to + verb.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "sv",
+      "name": "Subject-verb agreement error",
+      "meaning": "The verb does not match its subject (singular or plural).",
+      "wrong": "The results of the study shows a clear trend.",
+      "right": "The results of the study show a clear trend.",
+      "rule": "Find the main noun of the subject. Singular subject: verb + s. Plural subject: no s.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "art",
+      "name": "Missing or incorrect article",
+      "meaning": "A, an or the is missing, wrong or not needed.",
+      "wrong": "Moon moves around Earth.",
+      "right": "The Moon moves around the Earth.",
+      "rule": "Singular countable nouns need a, an or the. Use the when there is only one, or when the reader knows which one.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "N",
+      "name": "Number (singular / plural)",
+      "meaning": "Make the noun plural or singular.",
+      "wrong": "There are many reason for this.",
+      "right": "There are many reasons for this.",
+      "rule": "After many, several, a few, numbers above one and a range of, use a plural noun.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "uncn/cn",
+      "name": "Uncountable / countable",
+      "meaning": "The noun is uncountable (no a/an, no plural) or countable, and it is used the wrong way.",
+      "wrong": "We need more informations.",
+      "right": "We need more information.",
+      "rule": "Uncountable nouns (information, advice, research, equipment) have no plural and no a or an. Use much, some or a lot of with them.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "prep",
+      "name": "Wrong preposition",
+      "meaning": "The small linking word (in, on, at, for, to...) is wrong.",
+      "wrong": "This depends of the weather.",
+      "right": "This depends on the weather.",
+      "rule": "Many verbs, nouns and adjectives have a fixed preposition. Learn them as a pair: depend on, interested in.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "wf",
+      "name": "Wrong form",
+      "meaning": "The word family is right, but the type of word (noun, verb, adjective, adverb) is wrong.",
+      "wrong": "It is very importance to sleep well.",
+      "right": "It is very important to sleep well.",
+      "rule": "Ask what the sentence needs here. After the: a noun. After be or very: an adjective. To describe a verb: an adverb.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "ww",
+      "name": "Wrong word",
+      "meaning": "The word is a real word, but it is not the right one here. Use another word.",
+      "wrong": "We need to do a decision soon.",
+      "right": "We need to make a decision soon.",
+      "rule": "Some words always go together (make a decision, do research). Check a learner's dictionary for common partners.",
+      "fullHintEarly": true
+    },
+    {
+      "code": "wo",
+      "name": "Incorrect word order",
+      "meaning": "The words are correct, but they are in the wrong order. Rearrange them.",
+      "wrong": "I do not know where is the station.",
+      "right": "I do not know where the station is.",
+      "rule": "Use subject + verb order in statements and in questions inside sentences. Put always and often before the main verb, but after be.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "P",
+      "name": "Wrong punctuation",
+      "meaning": "A comma, full stop, apostrophe or question mark is missing or wrong.",
+      "wrong": "However the results were its main strength.",
+      "right": "However, the results were its main strength.",
+      "rule": "Check commas after linking words, apostrophes for owning (the student's book) and it's (it is), and question marks.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "SS",
+      "name": "Problems with sentence structure",
+      "meaning": "This sentence does not follow the correct sentence structure. Parts are joined wrongly or mixed up.",
+      "wrong": "The rent was high, I moved.",
+      "right": "The rent was high, so I moved.",
+      "rule": "Join two full sentences with a full stop, a semicolon or a joining word (and, but, so), not just a comma. Use although or but, not both.",
+      "fullHintEarly": true
+    },
+    {
+      "code": "i.s.",
+      "name": "Incomplete sentence",
+      "meaning": "This is not a full sentence. It is missing a main clause or a main verb.",
+      "wrong": "Because the rent was high. I moved.",
+      "right": "Because the rent was high, I moved.",
+      "rule": "Every sentence needs a subject and a main verb. A because, which or to clause cannot stand alone: join it to a main clause.",
+      "fullHintEarly": false
+    },
+    {
+      "code": "^",
+      "name": "Add something",
+      "meaning": "A word is missing here. Add it.",
+      "wrong": "The library open until 9 pm.",
+      "right": "The library is open until 9 pm.",
+      "rule": "Read the sentence aloud slowly. Check that every clause has a subject and a full verb (is, are, have, be).",
+      "fullHintEarly": false
+    },
+    {
+      "code": "/",
+      "name": "Omit",
+      "meaning": "A word here is not needed. Take it out.",
+      "wrong": "We discussed about the results.",
+      "right": "We discussed the results.",
+      "rule": "Some verbs take an object directly, with no preposition (discuss, enter, contact). Do not repeat a meaning (return back).",
+      "fullHintEarly": false
+    }
+  ],
+  "otherCodes": [
+    {
+      "code": "sp",
+      "name": "Wrong spelling",
+      "meaning": "A word is spelt wrongly."
+    },
+    {
+      "code": "ref",
+      "name": "Reference not clear",
+      "meaning": "It is not clear what a pronoun (it, this, they) refers to."
+    },
+    {
+      "code": "linker",
+      "name": "Link error",
+      "meaning": "The linking word (however, therefore, in addition) is wrong or missing."
+    },
+    {
+      "code": "INF",
+      "name": "Informal",
+      "meaning": "This is too informal for academic writing."
+    },
+    {
+      "code": "logic",
+      "name": "Sentences not in logical order",
+      "meaning": "The ideas are not in a logical order."
+    },
+    {
+      "code": "NP",
+      "name": "Paragraph error",
+      "meaning": "You need a new paragraph, or you need to revise your paragraph."
+    },
+    {
+      "code": "m?",
+      "name": "Meaning unclear",
+      "meaning": "The meaning of this phrase or sentence is not clear. Consider rewriting it."
+    },
+    {
+      "code": "irr",
+      "name": "Irrelevant information",
+      "meaning": "This information does not belong here."
+    },
+    {
+      "code": "ill.",
+      "name": "Illegible",
+      "meaning": "Poor handwriting makes this difficult to read."
+    },
+    {
+      "code": "ᴗ",
+      "name": "Join up",
+      "meaning": "Join these words or parts together."
+    }
   ]
 }

@@ -1,18 +1,86 @@
 {
-  "_help": "Study links for each code. Add one or two free, reputable pages per code, like this: \"VT\": [{\"title\": \"Verb tenses (Purdue OWL)\", \"url\": \"https://...\"}]. Check that each link opens before you add it. Codes with an empty list show no links.",
+  "_help": "Study links for each code, chosen by the teacher. Format: \"T\": [{\"title\": \"...\", \"url\": \"https://...\"}]. Codes with an empty list show no links.",
   "links": {
-    "VT": [],
-    "VF": [],
-    "SVA": [],
-    "Art": [],
-    "Pl": [],
-    "Prep": [],
-    "WF": [],
-    "WC": [],
-    "WO": [],
-    "P": [],
+    "T": [],
+    "vf": [
+      {
+        "title": "Incorrect verb form (ProWritingAid)",
+        "url": "https://prowritingaid.com/grammar/1008109/Incorrect-verb-form"
+      }
+    ],
+    "sv": [
+      {
+        "title": "Subject-verb agreement (UTS HELPS)",
+        "url": "https://www.uts.edu.au/for-students/current-students/support/helps/self-help-resources/grammar/subject-verb-agreement"
+      }
+    ],
+    "art": [
+      {
+        "title": "Using articles (Purdue OWL)",
+        "url": "https://owl.purdue.edu/owl/general_writing/grammar/using_articles.html"
+      }
+    ],
+    "N": [
+      {
+        "title": "Nouns: singular and plural (Cambridge Dictionary)",
+        "url": "https://dictionary.cambridge.org/grammar/british-grammar/nouns-singular-and-plural"
+      }
+    ],
+    "uncn/cn": [
+      {
+        "title": "Countability (Griffith University)",
+        "url": "https://www.griffith.edu.au/international/englishhelp/countability"
+      }
+    ],
+    "prep": [
+      {
+        "title": "Prepositions of time (British Council)",
+        "url": "https://learnenglishteens.britishcouncil.org/grammar/beginner-grammar/prepositions-time"
+      }
+    ],
+    "wf": [
+      {
+        "title": "Choosing the correct word form (George Mason University)",
+        "url": "https://writingcenter.gmu.edu/guides/choosing-the-correct-word-form"
+      }
+    ],
+    "ww": [],
+    "wo": [],
+    "P": [
+      {
+        "title": "Punctuation and spelling (Griffith University)",
+        "url": "https://www.griffith.edu.au/international/englishhelp/punctuation-and-spelling"
+      }
+    ],
     "SS": [],
+    "i.s.": [
+      {
+        "title": "Sentence fragments (Grammarly)",
+        "url": "https://www.grammarly.com/blog/sentence-fragment/"
+      }
+    ],
     "^": [],
-    "X": []
+    "/": [],
+    "sp": [
+      {
+        "title": "Spelling (University of Toronto)",
+        "url": "https://advice.writing.utoronto.ca/revising/spelling/"
+      }
+    ],
+    "ref": [],
+    "linker": [],
+    "INF": [
+      {
+        "title": "Reducing informality in academic writing (George Mason University)",
+        "url": "https://writingcenter.gmu.edu/guides/reducing-informality-in-academic-writing"
+      }
+    ],
+    "logic": [],
+    "NP": [
+      {
+        "title": "Writing clear paragraphs (Monash University)",
+        "url": "https://www.monash.edu/rlo/research-writing-assignments/writing/clear-communication/writing-clear-paragraphs"
+      }
+    ]
   }
 }

@@ -3,14 +3,14 @@
   "title": "The gig economy",
   "topic": "Work and society",
   "level": "C1",
-  "verified": false,
+  "verified": true,
   "text": "The gig economy, in which workers are paid for individual tasks rather than receive a regular salary, has expanded rapidly over the past decade. Food delivery and ride-sharing platforms offer a degree of flexibility that many students and parents values. However, this flexibility often arrives at a cost. Gig workers not entitled to sick leave or paid holidays, and their income can vary so much that it is difficult to plan for future. Some governments have responded by classification gig workers as employees, but the debate is likely to continue, as there is no consensus of how to balance flexibility with protection.",
   "errors": [
     {
       "start": 76,
       "end": 83,
       "wrong": "receive",
-      "code": "VF",
+      "code": "vf",
       "acceptedAnswers": [
         "receiving"
       ],
@@ -21,7 +21,7 @@
       "start": 247,
       "end": 253,
       "wrong": "values",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "value"
       ],
@@ -32,7 +32,7 @@
       "start": 287,
       "end": 294,
       "wrong": "arrives",
-      "code": "WC",
+      "code": "ww",
       "acceptedAnswers": [
         "comes"
       ],
@@ -54,7 +54,7 @@
       "start": 430,
       "end": 436,
       "wrong": "future",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "the future"
       ],
@@ -65,7 +65,7 @@
       "start": 473,
       "end": 487,
       "wrong": "classification",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "classifying"
       ],
@@ -76,7 +76,7 @@
       "start": 577,
       "end": 579,
       "wrong": "of",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "on",
         "about"

@@ -11,13 +11,13 @@
 
    Request the browser sends (POST, JSON):
      { "text": "<the student's paragraph, max 150 words>",
-       "codes": ["VT","VF","SVA", ...] }          // the allowed codes
+       "codes": ["T","vf","sv", ...] }          // the allowed codes
 
    Response the proxy MUST return (JSON):
      { "errors": [
          { "start": 12,                 // character position where the error starts (0 = first character)
            "end": 17,                   // character position just after the error
-           "code": "VT",                // one of the allowed codes
+           "code": "T",                 // one of the allowed codes
            "ruleReminder": "Use the past simple for finished past time.",   // short, max 200 characters
            "suggestion": "went",        // OPTIONAL: a fix for THIS span only. Shown only after the student tries.
            "explanation": "Last week is finished time." // OPTIONAL, short
@@ -79,12 +79,12 @@
   var SAMPLE = {
     text: SAMPLE_TEXT,
     errors: [
-      span("thinks", "SVA", "A plural subject takes a plural verb.", "think", "Students is plural, so the verb has no -s."),
-      span("have to", "VT", "Use the past simple for a finished time (in my last course).", "had to", "In my last course is finished time."),
-      span("did not came", "VF", "After did or did not, use the base verb.", "did not come", "Did already shows past, so the main verb is the base form."),
+      span("thinks", "sv", "A plural subject takes a plural verb.", "think", "Students is plural, so the verb has no -s."),
+      span("have to", "T", "Use the past simple for a finished time (in my last course).", "had to", "In my last course is finished time."),
+      span("did not came", "vf", "After did or did not, use the base verb.", "did not come", "Did already shows past, so the main verb is the base form."),
       span("However", "P", "Put a comma after However at the start of a sentence.", "However,", "However is a linking word here."),
-      span("more easier", "X", "Do not use more with an -er adjective.", "easier", "Easier already means more easy."),
-      span("at first meeting", "Art", "Use the before a specific, known noun.", "at the first meeting", "The first meeting is a specific meeting.")
+      span("more easier", "/", "Do not use more with an -er adjective.", "easier", "Easier already means more easy."),
+      span("at first meeting", "art", "Use the before a specific, known noun.", "at the first meeting", "The first meeting is a specific meeting.")
     ]
   };
 

@@ -3,14 +3,14 @@
   "title": "Learning a second language",
   "topic": "Language learning",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Learning a second language have many benefits. Many adults believe that they are too old learning a new language, but research suggests that age is not the most importance factor. What matters more is how often do people practise. I started learning English in the age of twelve, but I made slow progress at school. Two years ago, I move to Melbourne to study. Since then, my speaking has improved quickly. Because I use English every day. My advice to other learners is simple: find real reasons to use the language, and practise a little every day.",
   "errors": [
     {
       "start": 27,
       "end": 31,
       "wrong": "have",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "has"
       ],
@@ -21,7 +21,7 @@
       "start": 89,
       "end": 97,
       "wrong": "learning",
-      "code": "VF",
+      "code": "vf",
       "acceptedAnswers": [
         "to learn"
       ],
@@ -32,7 +32,7 @@
       "start": 161,
       "end": 171,
       "wrong": "importance",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "important"
       ],
@@ -43,7 +43,7 @@
       "start": 205,
       "end": 229,
       "wrong": "often do people practise",
-      "code": "WO",
+      "code": "wo",
       "acceptedAnswers": [
         "often people practise"
       ],
@@ -54,7 +54,7 @@
       "start": 258,
       "end": 260,
       "wrong": "in",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "at"
       ],
@@ -65,7 +65,7 @@
       "start": 333,
       "end": 337,
       "wrong": "move",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "moved"
       ],
@@ -76,7 +76,7 @@
       "start": 398,
       "end": 414,
       "wrong": "quickly. Because",
-      "code": "SS",
+      "code": "i.s.",
       "acceptedAnswers": [
         "quickly because",
         "quickly, because"

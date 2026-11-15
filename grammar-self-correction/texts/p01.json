@@ -3,14 +3,14 @@
   "title": "Technology in the classroom",
   "topic": "Technology in education",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Over the past decade, technology has became a normal part of school life. Many teachers now uses online platforms to share materials and give feedback. For example, students who miss a class can watch recording of it at home. However, technology also brings several problem. Some students find it difficulty to concentrate when their devices are full of notifications. In addition, not every family can afford a laptop, so some children depend of school computers. Last year, my own school introduces a laptop loan scheme to solve this problem, and the results been very positive so far. Overall, technology can support learning, but schools need to use it carefully.",
   "errors": [
     {
       "start": 33,
       "end": 43,
       "wrong": "has became",
-      "code": "VF",
+      "code": "vf",
       "acceptedAnswers": [
         "has become"
       ],
@@ -21,7 +21,7 @@
       "start": 92,
       "end": 96,
       "wrong": "uses",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "use"
       ],
@@ -32,7 +32,7 @@
       "start": 201,
       "end": 210,
       "wrong": "recording",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "a recording",
         "the recording"
@@ -44,7 +44,7 @@
       "start": 266,
       "end": 273,
       "wrong": "problem",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "problems"
       ],
@@ -55,7 +55,7 @@
       "start": 297,
       "end": 307,
       "wrong": "difficulty",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "difficult"
       ],
@@ -66,7 +66,7 @@
       "start": 444,
       "end": 446,
       "wrong": "of",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "on"
       ],
@@ -77,7 +77,7 @@
       "start": 490,
       "end": 500,
       "wrong": "introduces",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "introduced"
       ],

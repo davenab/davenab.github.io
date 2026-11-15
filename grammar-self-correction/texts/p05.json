@@ -3,14 +3,14 @@
   "title": "Plastic waste",
   "topic": "Environment",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Plastic pollution is one of biggest environmental problems today. Every year, millions of tonne of plastic end up in the ocean, where it harms fish and birds. Most of this waste comes of single-use items such as bags, bottles and straws. Fortunately, it is possibility to reduce this waste with simple changes. In 2018, Australia's two largest supermarkets stop giving out free plastic bags, and this decision did a big difference in a short time. However, individuals also need to change their habits, because the problem cannot solved by governments and businesses alone.",
   "errors": [
     {
       "start": 28,
       "end": 35,
       "wrong": "biggest",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "the biggest"
       ],
@@ -21,7 +21,7 @@
       "start": 90,
       "end": 95,
       "wrong": "tonne",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "tonnes"
       ],
@@ -32,7 +32,7 @@
       "start": 184,
       "end": 186,
       "wrong": "of",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "from"
       ],
@@ -43,7 +43,7 @@
       "start": 257,
       "end": 268,
       "wrong": "possibility",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "possible"
       ],
@@ -54,7 +54,7 @@
       "start": 357,
       "end": 361,
       "wrong": "stop",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "stopped"
       ],
@@ -65,7 +65,7 @@
       "start": 410,
       "end": 413,
       "wrong": "did",
-      "code": "WC",
+      "code": "ww",
       "acceptedAnswers": [
         "made"
       ],

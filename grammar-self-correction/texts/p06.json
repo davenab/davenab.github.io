@@ -3,14 +3,14 @@
   "title": "Effective note-taking",
   "topic": "Study skills",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Taking good notes help students remember what they hear in lectures. However, many new students are try to write down every word, which is not efficiency. It is better to focus to key words and main ideas. One useful method is the Cornell system, which divides page into three sections: notes, questions and a summary. Some students also print the lecturers slides and add their own comments next to them. After class, it is a good idea to discuss about the notes with a classmate and fill any gaps. With practice, note-taking becomes faster and more useful.",
   "errors": [
     {
       "start": 18,
       "end": 22,
       "wrong": "help",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "helps"
       ],
@@ -21,7 +21,7 @@
       "start": 96,
       "end": 103,
       "wrong": "are try",
-      "code": "VF",
+      "code": "vf",
       "acceptedAnswers": [
         "try",
         "are trying"
@@ -33,7 +33,7 @@
       "start": 143,
       "end": 153,
       "wrong": "efficiency",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "efficient"
       ],
@@ -44,7 +44,7 @@
       "start": 177,
       "end": 179,
       "wrong": "to",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "on"
       ],
@@ -55,7 +55,7 @@
       "start": 261,
       "end": 265,
       "wrong": "page",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "the page",
         "a page",
@@ -80,7 +80,7 @@
       "start": 440,
       "end": 453,
       "wrong": "discuss about",
-      "code": "X",
+      "code": "/",
       "acceptedAnswers": [
         "discuss"
       ],

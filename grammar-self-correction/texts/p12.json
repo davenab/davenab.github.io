@@ -3,14 +3,14 @@
   "title": "Renewable energy",
   "topic": "Environment",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Renewable energy, such as solar and wind power, are becoming cheaper every year. In 2010, solar panels are much more expensive than they are today, so few families could afford them. Now, millions of household in Australia have solar panels on their roofs. This change is good to the environment, and it also reduces our dependent on coal and gas. However, there are still challenges. The sun does not shine always, and the wind does not blow every day. Storing energy in batteries, which is still expensive. Governments should support research to solve this problem.",
   "errors": [
     {
       "start": 48,
       "end": 51,
       "wrong": "are",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "is"
       ],
@@ -21,7 +21,7 @@
       "start": 103,
       "end": 106,
       "wrong": "are",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "were"
       ],
@@ -32,7 +32,7 @@
       "start": 200,
       "end": 209,
       "wrong": "household",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "households"
       ],
@@ -43,7 +43,7 @@
       "start": 277,
       "end": 279,
       "wrong": "to",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "for"
       ],
@@ -54,7 +54,7 @@
       "start": 321,
       "end": 330,
       "wrong": "dependent",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "dependence",
         "dependency"
@@ -66,7 +66,7 @@
       "start": 402,
       "end": 414,
       "wrong": "shine always",
-      "code": "WO",
+      "code": "wo",
       "acceptedAnswers": [
         "always shine"
       ],
@@ -77,7 +77,7 @@
       "start": 472,
       "end": 491,
       "wrong": "batteries, which is",
-      "code": "SS",
+      "code": "i.s.",
       "acceptedAnswers": [
         "batteries is"
       ],

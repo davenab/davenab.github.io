@@ -12,7 +12,7 @@
   var app = document.getElementById("app");
 
   /* ================= data ================= */
-  var D = { codes: [], codeMap: {}, links: {}, texts: [], textMap: {}, issues: {}, warm: [] };
+  var D = { codes: [], otherCodes: [], codeMap: {}, links: {}, texts: [], textMap: {}, issues: {}, warm: [] };
 
   function getJSON(url) {
     return fetch(url, { cache: "no-cache" }).then(function (r) {
@@ -25,6 +25,7 @@
     return Promise.all([getJSON("data/codes.json"), getJSON("data/links.json"), getJSON("texts/index.json")])
       .then(function (res) {
         D.codes = res[0].codes || [];
+        D.otherCodes = res[0].otherCodes || [];
         D.codes.forEach(function (c) { D.codeMap[c.code] = c; });
         D.links = (res[1] && res[1].links) || {};
         getJSON("data/warmup.json").then(function (w) {
@@ -76,6 +77,16 @@
       localStorage.setItem(KEY + "-test", "1"); localStorage.removeItem(KEY + "-test");
     } catch (e) { STORE_OK = false; }
   }
+  // Saved progress from before the switch to the course codes (2025) is renamed here.
+  var OLD_CODES = { VT: "T", VF: "vf", SVA: "sv", Art: "art", Pl: "N", Prep: "prep", WF: "wf", WC: "ww", WO: "wo", X: "/" };
+  function migrate() {
+    var m = function (c) { return OLD_CODES[c] || c; };
+    DB.sessions.forEach(function (ss) {
+      (ss.results || []).forEach(function (r) { r.c = m(r.c); });
+      if (Array.isArray(ss.focus)) ss.focus = ss.focus.map(m);
+    });
+    DB.rules.forEach(function (r) { if (Array.isArray(r.c)) r.c = r.c.map(m); });
+  }
   function saveDB() { try { localStorage.setItem(KEY, JSON.stringify(DB)); STORE_OK = true; } catch (e) { STORE_OK = false; } }
 
   /* ================= helpers ================= */
@@ -89,7 +100,6 @@
   function plural(n, one, many) { return n + " " + (n === 1 ? one : (many || one + "s")); }
   function today() { try { return new Date().toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" }); } catch (e) { return new Date().toDateString(); } }
   function why(text) { return '<p class="why"><b>Why this helps</b>' + esc(text) + "</p>"; }
-  function draftBadge(t) { return t.verified ? "" : ' <span class="badge draft" title="The teacher has not checked this text yet">Draft content</span>'; }
   function storeNote() { return STORE_OK ? "" : '<p class="notice small">Your browser is not saving progress right now. You can still practise, but your profile will be lost when you close this page.</p>'; }
   function timesDone(id) { return DB.sessions.filter(function (s) { return s.textId === id; }).length; }
 
@@ -147,7 +157,7 @@
     var n = DB.sessions.length;
     return '<p class="eyebrow">Grammar practice for EAP</p>' +
       '<h1>Find and fix your own <em>grammar errors</em></h1>' +
-      '<p class="lead">Your teacher marks errors with codes like VT or Art. This app helps you practise acting on them. It shows you where an error is. You do the fixing.</p>' +
+      '<p class="lead">Your teacher marks errors with codes like T (wrong tense) or art (article). This app helps you practise acting on them. It shows you where an error is. You do the fixing.</p>' +
       '<div class="btnrow"><a class="btn primary" href="#/setup">' + (n ? "Practise again" : "Start practising") + '</a><a class="btn" href="#/warmup">Two-minute warm-up</a><a class="btn" href="#/codes">Open the code key</a></div>' +
       storeNote() +
       '<div class="grid three" style="margin-top:28px">' +
@@ -162,25 +172,28 @@
   function viewAbout() {
     return '<h1>About this app</h1>' +
       '<div class="card"><h2>Hints, not corrections</h2><p>This app shows you where an error is and what type it is. It does not fix the error for you. Fixing your own errors is how you improve, because you have to think about the rule. If you are stuck, the hints give you a little more help each time. The answer comes last.</p></div>' +
-      '<div class="card"><h2>Where the practice texts come from</h2><p>The practice paragraphs were drafted with AI and checked by the teacher. Texts marked <span class="badge draft">Draft content</span> have not been checked yet.</p><p>The app does not use AI when you practise. It compares your answer with a list of answers the teacher expects. If your answer is different, it may still be right, so you decide by comparing it with a model answer.</p></div>' +
+      '<div class="card"><h2>Where the practice texts come from</h2><p>The practice paragraphs were drafted with AI and checked by the teacher.</p><p>The app does not use AI when you practise. It compares your answer with a list of answers the teacher expects. If your answer is different, it may still be right, so you decide by comparing it with a model answer.</p></div>' +
       '<div class="card"><h2>What is stored, and where</h2><ul><li>Your results, your saved rules and your error profile are stored only in this browser on this device (localStorage).</li><li>Nothing is sent to a server. There is no sign-in, no tracking and no analytics.</li><li>The teacher pack PDF is made on this device. It goes only where you send it.</li><li>If you use a shared computer, use <b>Clear my data</b> on your profile page when you finish.</li><li>Clearing your browser data also deletes your progress.</li></ul></div>' +
       (AI_VISIBLE ? '<div class="card"><h2>My own writing</h2><p>This part uses an AI service. AI suggestions can be wrong or miss errors. Your pasted text is not saved after the session. Check your course rules before using AI tools on assessed work.</p></div>' : "") +
       '<div class="card"><h2>Made by</h2><p>Dave Nab, EAP teacher. <a href="../apps/">More learning apps</a>.</p></div>';
   }
 
+  function codeId(c) { return "code-" + String(c).replace(/[^A-Za-z0-9]/g, function (ch) { return "_" + ch.charCodeAt(0); }); }
   function codeBlock(c, withLinks) {
     var links = (D.links[c.code] || []);
-    return '<section class="code" id="code-' + esc(c.code === "^" ? "missing" : c.code) + '">' +
+    return '<section class="code" id="' + esc(codeId(c.code)) + '">' +
       '<h3><span class="codepill">' + esc(c.code) + "</span> " + esc(c.name) + "</h3>" +
       "<p>" + esc(c.meaning) + "</p>" +
-      '<div class="ex"><span class="w">' + esc(c.wrong) + '</span><span class="r">' + esc(c.right) + "</span></div>" +
-      '<p class="rule"><b>Remember:</b> ' + esc(c.rule) + "</p>" +
+      (c.wrong ? '<div class="ex"><span class="w">' + esc(c.wrong) + '</span><span class="r">' + esc(c.right) + "</span></div>" : "") +
+      (c.rule ? '<p class="rule"><b>Remember:</b> ' + esc(c.rule) + "</p>" : "") +
       (withLinks && links.length ? '<p class="small"><b>Study more:</b> ' + links.map(function (l) { return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.title) + "</a>"; }).join(" · ") + "</p>" : "") +
       "</section>";
   }
   function viewCodes() {
     return '<h1>Code key</h1><p class="lead">These are the codes your teacher uses. Each one tells you the type of error, not the answer.</p>' +
       '<div class="card">' + D.codes.map(function (c) { return codeBlock(c, true); }).join("") + "</div>" +
+      (D.otherCodes.length ? '<h2 style="margin-top:28px">Other codes your teacher uses</h2><p class="muted">These codes are about spelling, style and organisation. They are not practised in this app.</p>' +
+        '<div class="card">' + D.otherCodes.map(function (c) { return codeBlock(c, true); }).join("") + "</div>" : "") +
       why("When you know what each code means, you can fix errors in your own writing without waiting for the teacher.");
   }
 
@@ -203,7 +216,7 @@
       '<li><button type="button" class="tile" data-act="text" data-id="" aria-pressed="' + (!SETUP.textId) + '"><b>Choose one for me</b><span>A text you have practised least.</span></button></li>' +
       list.map(function (t) {
         var n = activeErrors(t, f).length, d = timesDone(t.id);
-        return '<li><button type="button" class="tile" data-act="text" data-id="' + esc(t.id) + '" aria-pressed="' + (SETUP.textId === t.id) + '"><b>' + esc(t.title) + "</b><span>" + esc(t.level) + " · " + esc(t.topic) + " · " + plural(n, "error") + " to fix" + (d ? " · done " + plural(d, "time") : "") + "</span>" + draftBadge(t) + "</button></li>";
+        return '<li><button type="button" class="tile" data-act="text" data-id="' + esc(t.id) + '" aria-pressed="' + (SETUP.textId === t.id) + '"><b>' + esc(t.title) + "</b><span>" + esc(t.level) + " · " + esc(t.topic) + " · " + plural(n, "error") + " to fix" + (d ? " · done " + plural(d, "time") : "") + "</span></button></li>";
       }).join("") + "</ul>";
     return '<h1>Set up your practice</h1>' +
       '<p class="muted">One session takes about 8 to 12 minutes.</p>' +
@@ -290,7 +303,7 @@
   function viewSession(X) {
     var t = X.text, head = "";
     if (X.mode === "practice") {
-      head = '<div class="progressline"><span>' + esc(t.topic) + "</span><span>" + (X.focus.length ? "Focus: " + X.focus.map(esc).join(" + ") : "Mixed practice") + "</span><span>" + esc(LEVEL_NAMES[X.level] || "") + "</span><span>" + esc(t.level) + "</span>" + draftBadge(t) + "</div>";
+      head = '<div class="progressline"><span>' + esc(t.topic) + "</span><span>" + (X.focus.length ? "Focus: " + X.focus.map(esc).join(" + ") : "Mixed practice") + "</span><span>" + esc(LEVEL_NAMES[X.level] || "") + "</span><span>" + esc(t.level) + "</span></div>";
     }
     switch (X.stage) {
       case "read": return head + viewRead(X);
@@ -963,7 +976,7 @@
         fixed += '<span class="ins">' + esc(e.final) + "<sup>" + e.n + "</sup></span>";
       });
       var issues = D.issues[t.id];
-      html += '<div class="card" id="t-' + esc(t.id) + '"><h2>' + esc(t.title) + " <span class=\"badge\">" + esc(t.file) + "</span> <span class=\"badge\">" + esc(t.level) + "</span>" + (t.verified ? ' <span class="badge">verified</span>' : draftBadge(t)) + "</h2>" +
+      html += '<div class="card" id="t-' + esc(t.id) + '"><h2>' + esc(t.title) + " <span class=\"badge\">" + esc(t.file) + "</span> <span class=\"badge\">" + esc(t.level) + "</span>" + (t.verified ? ' <span class="badge">verified</span>' : ' <span class="badge">not verified yet</span>') + "</h2>" +
         '<p class="small muted">' + esc(t.topic) + " · " + wordCount(t.text) + " words · " + plural(t.errors.length, "error") + " · codes: " + uniq(t.errors.map(function (e) { return e.code; })).map(esc).join(", ") + "</p>" +
         (issues ? '<p class="issue">Problems: ' + issues.map(esc).join(" ") + "</p>" : '<p class="small">Positions checked: all match.</p>') +
         '<div class="compare"><div><h3>With errors</h3><p class="para plain">' + orig + '</p></div><div><h3>Corrected</h3><p class="para plain">' + fixed + "</p></div></div>" +
@@ -1101,7 +1114,7 @@
     var body = document.getElementById("keyDlgBody");
     body.innerHTML = D.codes.map(function (x) { return codeBlock(x, false); }).join("");
     if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
-    var target = c && body.querySelector("#code-" + (c === "^" ? "missing" : cssEsc(c)));
+    var target = c && body.querySelector("#" + codeId(c));
     if (target) target.scrollIntoView({ block: "start" });
   }
   document.getElementById("keyDlgClose").addEventListener("click", function () { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); });
@@ -1116,7 +1129,7 @@
   });
 
   /* ================= start ================= */
-  loadDB();
+  loadDB(); migrate();
   loadData().then(function () { render(false); })
     .catch(function () {
       app.innerHTML = '<div class="wrap page"><h1>Sorry, the app could not load</h1><p>Please check your internet connection and reload the page. If you opened the file directly from your computer, open it from the website instead.</p></div>';
