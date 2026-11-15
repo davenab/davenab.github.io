@@ -1,0 +1,104 @@
+{
+  "id": "consumer-behaviour",
+  "title": "Why We Buy: Consumer Behaviour",
+  "topic": "Business and marketing",
+  "level": "B2",
+  "verified": false,
+  "audioFile": "",
+  "keyTerms": [
+    { "term": "consumer", "definition": "a person who buys goods or services" },
+    { "term": "purchase", "definition": "something you buy, or the act of buying it" },
+    { "term": "habitual", "definition": "done often, almost without thinking" },
+    { "term": "social proof", "definition": "thinking something is good because many other people chose it" }
+  ],
+  "predictionQuestion": "Think about the last thing you bought. Why did you choose it? What might the lecturer say about how people decide what to buy?",
+  "segments": [
+    { "text": "Good afternoon. Today's lecture is about consumer behaviour, which is the study of how people decide what to buy, and why. You might think that shoppers are always logical, that they compare prices and choose the best value. But as we'll see, that's only part of the story. I'm going to focus on three areas: the stages of a buying decision, the influence of emotions, and the influence of other people." },
+    { "text": "Let's start with the decision process. Marketing textbooks often describe buying as a series of stages. It begins when a person recognises a need, for example, their phone breaks. Next, they search for information, perhaps by reading reviews. Then they compare the options. After that, they make the purchase. And finally, there is the stage after the purchase, when they decide whether they are happy with what they bought." },
+    { "text": "Now, it's important to note that people don't always go through every stage. For a big purchase, like a laptop or a car, they probably will. But for small, everyday items, such as a bottle of water or a chocolate bar, they often skip most of the stages and buy almost automatically. This is sometimes called a habitual purchase, or simply buying out of habit." },
+    { "text": "The second area is emotion. Many buying decisions are driven by feelings rather than logic. A brand might make us feel safe, successful, or part of a group. That's why many advertisements say very little about the product itself, and focus instead on a feeling, such as happiness, freedom or belonging. In short, people often buy the feeling, not just the product." },
+    { "text": "Moving on to the third area, which is social influence. We are strongly influenced by what other people do and say. One form of this is called social proof. Social proof is the tendency to think that something is good because many other people have chosen it. To give you an example, if you see two cafes next to each other, and one is full while the other is empty, most people will choose the full one. They assume the busy cafe must be better." },
+    { "text": "Online shopping uses social proof all the time. Think about star ratings, customer reviews, and labels like bestseller or popular choice. These are all designed to show that other people have already made this choice." },
+    { "text": "So, to bring all this together. Consumer behaviour is about how and why people buy. Buying can be described as a series of stages, but for everyday items, people often buy out of habit. Emotions play a big role, and so do other people, through social proof. As consumers, being aware of these influences can help us make better choices." }
+  ],
+  "keyIdeas": [
+    { "text": "Consumer behaviour is the study of how and why people decide what to buy. Shoppers are not always logical.", "type": "main", "segment": 1 },
+    { "text": "Buying can be described as a series of stages.", "type": "main", "segment": 2 },
+    { "text": "Stages: recognise a need, search for information, compare options, buy, then decide if you are happy.", "type": "detail", "segment": 2 },
+    { "text": "People don't always go through every stage. Everyday items are often bought out of habit.", "type": "main", "segment": 3 },
+    { "text": "Big purchases (laptop, car) follow the stages; small items (water, chocolate) are habitual.", "type": "detail", "segment": 3 },
+    { "text": "Many buying decisions are driven by emotion, not logic.", "type": "main", "segment": 4 },
+    { "text": "Advertisements often focus on a feeling (happiness, freedom, belonging), not the product.", "type": "detail", "segment": 4 },
+    { "text": "Social influence: social proof means we think something is good because many others chose it.", "type": "main", "segment": 5 },
+    { "text": "Example: most people choose the full cafe, not the empty one.", "type": "detail", "segment": 5 },
+    { "text": "Online shops use social proof: star ratings, reviews and 'bestseller' labels.", "type": "detail", "segment": 6 }
+  ],
+  "signpostPhrases": [
+    "Today's lecture is about",
+    "But as we'll see",
+    "I'm going to focus on three areas",
+    "Let's start with",
+    "It begins when",
+    "for example",
+    "Next,",
+    "Then they",
+    "After that,",
+    "And finally,",
+    "Now, it's important to note that",
+    "This is sometimes called",
+    "The second area is",
+    "That's why",
+    "In short,",
+    "Moving on to the third area",
+    "To give you an example",
+    "So, to bring all this together"
+  ],
+  "modelNotes": [
+    "CONSUMER BEHAVIOUR = how + why ppl buy (not always logical)",
+    "1. Decision stages",
+    "- need (e.g. phone breaks) → search info (reviews) → compare → buy → after: happy?",
+    "- big purchase (laptop, car) = all stages",
+    "- small, everyday (water, choc.) = skip stages → habitual purchase",
+    "2. Emotion",
+    "- feelings > logic; brand → safe / successful / part of group",
+    "- ads focus on feeling (happiness, freedom, belonging) not product",
+    "- ppl buy the feeling",
+    "3. Social influence",
+    "- social proof = many ppl chose it → must be good",
+    "- e.g. 2 cafes: full vs empty → choose full",
+    "- online: ★ ratings, reviews, 'bestseller'",
+    "SUMMARY: aware of influences → better choices"
+  ],
+  "questions": [
+    {
+      "stem": "What is the first stage of a buying decision?",
+      "options": ["Recognising a need", "Comparing the options", "Reading reviews", "Making the purchase"],
+      "answer": "Recognising a need",
+      "explanation": "\"It begins when a person recognises a need, for example, their phone breaks.\" The signpost \"It begins when\" marks the first stage."
+    },
+    {
+      "stem": "What is a habitual purchase?",
+      "options": ["Buying almost automatically, out of habit", "Buying something expensive after long research", "Returning a product to the shop", "Buying only online"],
+      "answer": "Buying almost automatically, out of habit",
+      "explanation": "For small, everyday items, people often skip most stages and buy almost automatically."
+    },
+    {
+      "stem": "According to the lecturer, what do many advertisements focus on?",
+      "options": ["A feeling, such as happiness or belonging", "Detailed technical facts", "The lowest price", "Where the factory is"],
+      "answer": "A feeling, such as happiness or belonging",
+      "explanation": "Many advertisements say very little about the product and focus instead on a feeling. \"In short, people often buy the feeling.\""
+    },
+    {
+      "stem": "What is social proof?",
+      "options": ["Thinking something is good because many others chose it", "A receipt that proves you bought something", "A scientific test of a product", "A discount for large groups"],
+      "answer": "Thinking something is good because many others chose it",
+      "explanation": "Social proof is the tendency to think something is good because many other people have chosen it."
+    },
+    {
+      "stem": "Why does the lecturer mention the two cafes?",
+      "options": ["To give an example of social proof", "To compare coffee prices", "To show a habitual purchase", "To describe the stages of buying"],
+      "answer": "To give an example of social proof",
+      "explanation": "The signpost \"To give you an example\" introduced the cafes as an example of social proof."
+    }
+  ]
+}
