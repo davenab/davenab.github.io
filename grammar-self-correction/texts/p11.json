@@ -1,0 +1,88 @@
+{
+  "id": "p11",
+  "title": "Studying abroad",
+  "topic": "Study and university life",
+  "level": "B2",
+  "verified": false,
+  "text": "Every year, thousands of students leave their home country to study in United Kingdom, Australia or Canada. Living in a new culture can be very excite, but many students also suffer of homesickness. When I arrived in Sydney, I was struggle with academic writing, and at first I could not understand what my lecturers saying. I also had to make my homework in a completely new way. Eventually, I asked to my tutor for help, and she showed me some useful strategies. Studying abroad is difficult, but it helps students become more independent.",
+  "errors": [
+    {
+      "start": 71,
+      "end": 85,
+      "wrong": "United Kingdom",
+      "code": "Art",
+      "acceptedAnswers": [
+        "the United Kingdom"
+      ],
+      "ruleReminder": "Use the with country names that include words like Kingdom, States or Republic.",
+      "explanation": "United Kingdom contains the word Kingdom, so it needs the."
+    },
+    {
+      "start": 144,
+      "end": 150,
+      "wrong": "excite",
+      "code": "WF",
+      "acceptedAnswers": [
+        "exciting"
+      ],
+      "ruleReminder": "After be, use an adjective. Use -ing adjectives for the thing (exciting) and -ed for the feeling (excited).",
+      "explanation": "Excite is a verb. The culture causes the feeling, so we need the adjective exciting."
+    },
+    {
+      "start": 182,
+      "end": 184,
+      "wrong": "of",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "from"
+      ],
+      "ruleReminder": "Suffer goes with from: suffer from an illness or a problem.",
+      "explanation": "The verb suffer is followed by from, not of."
+    },
+    {
+      "start": 227,
+      "end": 239,
+      "wrong": "was struggle",
+      "code": "VF",
+      "acceptedAnswers": [
+        "struggled",
+        "was struggling"
+      ],
+      "ruleReminder": "Use was + -ing (was struggling) or the past simple (struggled), not was + base verb.",
+      "explanation": "Was struggle mixes two forms. Use struggled or was struggling."
+    },
+    {
+      "start": 307,
+      "end": 323,
+      "wrong": "lecturers saying",
+      "code": "^",
+      "acceptedAnswers": [
+        "lecturers were saying"
+      ],
+      "ruleReminder": "Every clause needs a full verb. The -ing form needs be before it: were saying.",
+      "explanation": "Saying alone is not a full verb. It needs were: my lecturers were saying."
+    },
+    {
+      "start": 339,
+      "end": 343,
+      "wrong": "make",
+      "code": "WC",
+      "acceptedAnswers": [
+        "do"
+      ],
+      "ruleReminder": "Some nouns go with one verb only. We do homework, do research and make a mistake.",
+      "explanation": "Homework goes with do: do my homework. Make my homework is not used."
+    },
+    {
+      "start": 395,
+      "end": 412,
+      "wrong": "asked to my tutor",
+      "code": "X",
+      "acceptedAnswers": [
+        "asked my tutor"
+      ],
+      "ruleReminder": "Ask is followed directly by the person: ask someone for something.",
+      "explanation": "We ask someone for help. To is not needed after ask."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "p05",
+  "title": "Plastic waste",
+  "topic": "Environment",
+  "level": "B2",
+  "verified": false,
+  "text": "Plastic pollution is one of biggest environmental problems today. Every year, millions of tonne of plastic end up in the ocean, where it harms fish and birds. Most of this waste comes of single-use items such as bags, bottles and straws. Fortunately, it is possibility to reduce this waste with simple changes. In 2018, Australia's two largest supermarkets stop giving out free plastic bags, and this decision did a big difference in a short time. However, individuals also need to change their habits, because the problem cannot solved by governments and businesses alone.",
+  "errors": [
+    {
+      "start": 28,
+      "end": 35,
+      "wrong": "biggest",
+      "code": "Art",
+      "acceptedAnswers": [
+        "the biggest"
+      ],
+      "ruleReminder": "Use the before superlatives: the biggest, the most important.",
+      "explanation": "Biggest is a superlative, so it needs the: one of the biggest."
+    },
+    {
+      "start": 90,
+      "end": 95,
+      "wrong": "tonne",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "tonnes"
+      ],
+      "ruleReminder": "After millions of and thousands of, use a plural countable noun.",
+      "explanation": "Millions of means many, so the noun must be plural: tonnes."
+    },
+    {
+      "start": 184,
+      "end": 186,
+      "wrong": "of",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "from"
+      ],
+      "ruleReminder": "Come goes with from to show where something starts: comes from.",
+      "explanation": "To show the source, use comes from, not comes of."
+    },
+    {
+      "start": 257,
+      "end": 268,
+      "wrong": "possibility",
+      "code": "WF",
+      "acceptedAnswers": [
+        "possible"
+      ],
+      "ruleReminder": "In the pattern it is + adjective + to, use an adjective: it is possible to, it is important to.",
+      "explanation": "Possibility is a noun. The pattern it is + adjective + to needs possible."
+    },
+    {
+      "start": 357,
+      "end": 361,
+      "wrong": "stop",
+      "code": "VT",
+      "acceptedAnswers": [
+        "stopped"
+      ],
+      "ruleReminder": "Use the past simple for finished past events (in 2018, last year).",
+      "explanation": "In 2018 is a finished time, so the verb must be past simple: stopped."
+    },
+    {
+      "start": 410,
+      "end": 413,
+      "wrong": "did",
+      "code": "WC",
+      "acceptedAnswers": [
+        "made"
+      ],
+      "ruleReminder": "Some nouns go with one verb only. We make a difference, make a decision and do homework.",
+      "explanation": "Difference goes with make: make a difference. Do a difference is not used."
+    },
+    {
+      "start": 530,
+      "end": 536,
+      "wrong": "solved",
+      "code": "^",
+      "acceptedAnswers": [
+        "be solved"
+      ],
+      "ruleReminder": "In the passive, use be + past participle: can be solved, must be done.",
+      "explanation": "The problem does not solve anything; it is solved by others. This is passive, so it needs be."
+    }
+  ]
+}

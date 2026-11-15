@@ -1,0 +1,88 @@
+{
+  "id": "p07",
+  "title": "Social media and young people",
+  "topic": "Technology and society",
+  "level": "B2",
+  "verified": false,
+  "text": "Social media has become a big part of young people's lives. According to a recent survey, most teenagers spends more than three hours online every day. When social media first become popular in the early 2000s, few people expected it to have such strong influence. Today, it allows young people to stay in touch to friends and learn about different culture. Although social media has clear benefits, but it also has risks. For example, teenagers always are comparing themselves with others, which can lead to low self-esteem. Parents and schools should therefore teach young people to use social media wisely.",
+  "errors": [
+    {
+      "start": 105,
+      "end": 111,
+      "wrong": "spends",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "spend"
+      ],
+      "ruleReminder": "A plural subject takes a plural verb: teenagers spend, a teenager spends.",
+      "explanation": "The subject is most teenagers (plural), so the verb has no -s: spend."
+    },
+    {
+      "start": 176,
+      "end": 182,
+      "wrong": "become",
+      "code": "VT",
+      "acceptedAnswers": [
+        "became"
+      ],
+      "ruleReminder": "Use the past simple for finished past events (in the early 2000s, first).",
+      "explanation": "In the early 2000s is a finished time. Become is irregular: become, became, become."
+    },
+    {
+      "start": 247,
+      "end": 253,
+      "wrong": "strong",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a strong"
+      ],
+      "ruleReminder": "Such goes before a + adjective + singular countable noun: such a strong influence.",
+      "explanation": "Influence here is singular and countable, so we need such a strong influence."
+    },
+    {
+      "start": 312,
+      "end": 314,
+      "wrong": "to",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "with"
+      ],
+      "ruleReminder": "Stay in touch and keep in touch go with with: stay in touch with someone.",
+      "explanation": "The fixed phrase is stay in touch with, not to."
+    },
+    {
+      "start": 349,
+      "end": 356,
+      "wrong": "culture",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "cultures"
+      ],
+      "ruleReminder": "After different, use a plural countable noun when you mean many kinds: different cultures.",
+      "explanation": "Different here means many kinds, so the noun must be plural: cultures."
+    },
+    {
+      "start": 358,
+      "end": 403,
+      "wrong": "Although social media has clear benefits, but",
+      "code": "SS",
+      "acceptedAnswers": [
+        "Although social media has clear benefits,",
+        "Social media has clear benefits, but"
+      ],
+      "ruleReminder": "Use although or but to join two ideas, not both in one sentence.",
+      "explanation": "Although and but both show contrast. One sentence can use only one of them."
+    },
+    {
+      "start": 446,
+      "end": 456,
+      "wrong": "always are",
+      "code": "WO",
+      "acceptedAnswers": [
+        "are always"
+      ],
+      "ruleReminder": "Put always after be: they are always late. Put it before other verbs: they always arrive late.",
+      "explanation": "With the verb be, always comes after it: are always comparing."
+    }
+  ]
+}

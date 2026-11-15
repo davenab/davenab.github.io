@@ -1,0 +1,87 @@
+{
+  "id": "p08",
+  "title": "Working from home",
+  "topic": "Work and technology",
+  "level": "B2",
+  "verified": false,
+  "text": "Since 2020, working from home have become common in many industries. Many employee say that they enjoy to avoid long commutes and feel more independence at home. However, there are also disadvantages. For example, it is harder to do friends with colleagues when you only see them on a screen. For this reason, some companies now use hybrid model, where staff work in the office two or three days a week. There is no single best solution, so each company must decide on it's own policy.",
+  "errors": [
+    {
+      "start": 30,
+      "end": 34,
+      "wrong": "have",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "has"
+      ],
+      "ruleReminder": "An -ing subject (working from home) is singular and takes a singular verb: has, is, does.",
+      "explanation": "The subject is working from home, one activity, so the verb is has."
+    },
+    {
+      "start": 74,
+      "end": 82,
+      "wrong": "employee",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "employees"
+      ],
+      "ruleReminder": "After many, use a plural countable noun.",
+      "explanation": "Many means more than one, so the noun must be plural: employees."
+    },
+    {
+      "start": 103,
+      "end": 111,
+      "wrong": "to avoid",
+      "code": "VF",
+      "acceptedAnswers": [
+        "avoiding"
+      ],
+      "ruleReminder": "After enjoy, use the -ing form: enjoy reading, enjoy avoiding.",
+      "explanation": "Enjoy is followed by the -ing form, not to + verb."
+    },
+    {
+      "start": 140,
+      "end": 152,
+      "wrong": "independence",
+      "code": "WF",
+      "acceptedAnswers": [
+        "independent"
+      ],
+      "ruleReminder": "After feel and more, use an adjective: feel more independent, feel happier.",
+      "explanation": "Independence is a noun. After feel more, we need the adjective independent."
+    },
+    {
+      "start": 230,
+      "end": 232,
+      "wrong": "do",
+      "code": "WC",
+      "acceptedAnswers": [
+        "make"
+      ],
+      "ruleReminder": "Some nouns go with one verb only. We make friends, make a mistake and do homework.",
+      "explanation": "Friends goes with make: make friends. Do friends is not used."
+    },
+    {
+      "start": 333,
+      "end": 345,
+      "wrong": "hybrid model",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a hybrid model"
+      ],
+      "ruleReminder": "A singular countable noun needs an article (a, an, the) or another determiner.",
+      "explanation": "Model is a singular countable noun, so it needs an article: a hybrid model."
+    },
+    {
+      "start": 469,
+      "end": 473,
+      "wrong": "it's",
+      "code": "P",
+      "acceptedAnswers": [
+        "its"
+      ],
+      "ruleReminder": "It's means it is. Its (no apostrophe) shows that something belongs to it.",
+      "explanation": "Here we mean the company's own policy, not it is own policy, so there is no apostrophe: its."
+    }
+  ]
+}

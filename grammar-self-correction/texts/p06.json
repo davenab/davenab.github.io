@@ -1,0 +1,91 @@
+{
+  "id": "p06",
+  "title": "Effective note-taking",
+  "topic": "Study skills",
+  "level": "B2",
+  "verified": false,
+  "text": "Taking good notes help students remember what they hear in lectures. However, many new students are try to write down every word, which is not efficiency. It is better to focus to key words and main ideas. One useful method is the Cornell system, which divides page into three sections: notes, questions and a summary. Some students also print the lecturers slides and add their own comments next to them. After class, it is a good idea to discuss about the notes with a classmate and fill any gaps. With practice, note-taking becomes faster and more useful.",
+  "errors": [
+    {
+      "start": 18,
+      "end": 22,
+      "wrong": "help",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "helps"
+      ],
+      "ruleReminder": "An -ing subject (Taking notes, Reading) is singular and takes a singular verb.",
+      "explanation": "The subject is Taking good notes, which is one activity, so the verb needs -s: helps."
+    },
+    {
+      "start": 96,
+      "end": 103,
+      "wrong": "are try",
+      "code": "VF",
+      "acceptedAnswers": [
+        "try",
+        "are trying"
+      ],
+      "ruleReminder": "After am, is or are, use the -ing form (are trying), or use the simple verb alone (try).",
+      "explanation": "Are try mixes two forms. Use try or are trying."
+    },
+    {
+      "start": 143,
+      "end": 153,
+      "wrong": "efficiency",
+      "code": "WF",
+      "acceptedAnswers": [
+        "efficient"
+      ],
+      "ruleReminder": "After be, use an adjective to describe something: is efficient, is useful.",
+      "explanation": "Efficiency is a noun. After is not, we need the adjective efficient."
+    },
+    {
+      "start": 177,
+      "end": 179,
+      "wrong": "to",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "on"
+      ],
+      "ruleReminder": "Focus goes with on: focus on something.",
+      "explanation": "The verb focus is followed by on, not to."
+    },
+    {
+      "start": 261,
+      "end": 265,
+      "wrong": "page",
+      "code": "Art",
+      "acceptedAnswers": [
+        "the page",
+        "a page",
+        "each page"
+      ],
+      "ruleReminder": "A singular countable noun needs an article (a, an, the) or another determiner.",
+      "explanation": "Page is a singular countable noun, so it needs the, a or each."
+    },
+    {
+      "start": 348,
+      "end": 357,
+      "wrong": "lecturers",
+      "code": "P",
+      "acceptedAnswers": [
+        "lecturer's",
+        "lecturers'"
+      ],
+      "ruleReminder": "Use an apostrophe to show who owns something: the lecturer's slides.",
+      "explanation": "The slides belong to the lecturer, so we need an apostrophe: lecturer's."
+    },
+    {
+      "start": 440,
+      "end": 453,
+      "wrong": "discuss about",
+      "code": "X",
+      "acceptedAnswers": [
+        "discuss"
+      ],
+      "ruleReminder": "Discuss is followed directly by its object. Do not add about.",
+      "explanation": "We discuss something. Discuss about is a common error; about is not needed."
+    }
+  ]
+}

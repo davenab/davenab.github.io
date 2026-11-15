@@ -1,0 +1,87 @@
+{
+  "id": "p02",
+  "title": "Getting around the city",
+  "topic": "Urban transport",
+  "level": "B2",
+  "verified": false,
+  "text": "Traffic congestion are a serious problem in many large cities. Every morning, thousands of driver sit in long queues on their way to work. One solution is to improve public transport. When my city opened a new train line in 2019, the number of people who travelled by car falls quickly. Trains are also better for environment because they produce less pollution per passenger. However many people still prefer to drive. They say that buses are often late, especially in night. To change this, the city council should make action and run buses more often.",
+  "errors": [
+    {
+      "start": 19,
+      "end": 22,
+      "wrong": "are",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "is"
+      ],
+      "ruleReminder": "Find the main noun of the subject. A singular subject takes a singular verb.",
+      "explanation": "The subject is congestion (singular and uncountable), so the verb is is."
+    },
+    {
+      "start": 91,
+      "end": 97,
+      "wrong": "driver",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "drivers"
+      ],
+      "ruleReminder": "After thousands of, many and a number of, use a plural countable noun.",
+      "explanation": "Thousands of means many, so the noun must be plural: drivers."
+    },
+    {
+      "start": 272,
+      "end": 277,
+      "wrong": "falls",
+      "code": "VT",
+      "acceptedAnswers": [
+        "fell"
+      ],
+      "ruleReminder": "Use the past simple for finished events in the past (in 2019, when my city opened).",
+      "explanation": "The story is about 2019, a finished time, so the verb must be past simple: fell."
+    },
+    {
+      "start": 314,
+      "end": 325,
+      "wrong": "environment",
+      "code": "Art",
+      "acceptedAnswers": [
+        "the environment"
+      ],
+      "ruleReminder": "Use the with nouns when there is only one and everyone knows which one: the environment, the internet.",
+      "explanation": "We usually say the environment, because there is only one natural world."
+    },
+    {
+      "start": 377,
+      "end": 384,
+      "wrong": "However",
+      "code": "P",
+      "acceptedAnswers": [
+        "However,"
+      ],
+      "ruleReminder": "Put a comma after linking words such as However, Therefore and In addition at the start of a sentence.",
+      "explanation": "However is a linking word here, so it needs a comma after it. Without the comma, it reads as however many."
+    },
+    {
+      "start": 467,
+      "end": 469,
+      "wrong": "in",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "at"
+      ],
+      "ruleReminder": "Use at with night: at night. Use in with parts of the day: in the morning.",
+      "explanation": "The fixed phrase is at night, not in night."
+    },
+    {
+      "start": 517,
+      "end": 521,
+      "wrong": "make",
+      "code": "WC",
+      "acceptedAnswers": [
+        "take"
+      ],
+      "ruleReminder": "Some nouns go with one verb only. We take action, make a decision and do research.",
+      "explanation": "Action goes with take: take action. Make action is not used in English."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "p01",
+  "title": "Technology in the classroom",
+  "topic": "Technology in education",
+  "level": "B2",
+  "verified": false,
+  "text": "Over the past decade, technology has became a normal part of school life. Many teachers now uses online platforms to share materials and give feedback. For example, students who miss a class can watch recording of it at home. However, technology also brings several problem. Some students find it difficulty to concentrate when their devices are full of notifications. In addition, not every family can afford a laptop, so some children depend of school computers. Last year, my own school introduces a laptop loan scheme to solve this problem, and the results been very positive so far. Overall, technology can support learning, but schools need to use it carefully.",
+  "errors": [
+    {
+      "start": 33,
+      "end": 43,
+      "wrong": "has became",
+      "code": "VF",
+      "acceptedAnswers": [
+        "has become"
+      ],
+      "ruleReminder": "After has or have, use the past participle (become, gone, taken), not the past simple.",
+      "explanation": "Become is irregular: become, became, become. After has, use the past participle: has become."
+    },
+    {
+      "start": 92,
+      "end": 96,
+      "wrong": "uses",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "use"
+      ],
+      "ruleReminder": "A plural subject takes a plural verb: teachers use, a teacher uses.",
+      "explanation": "The subject is teachers (plural), so the verb has no -s: use."
+    },
+    {
+      "start": 201,
+      "end": 210,
+      "wrong": "recording",
+      "code": "Art",
+      "acceptedAnswers": [
+        "a recording",
+        "the recording"
+      ],
+      "ruleReminder": "A singular countable noun needs an article (a, an, the) or another determiner.",
+      "explanation": "Recording is a singular countable noun here, so it needs a or the."
+    },
+    {
+      "start": 266,
+      "end": 273,
+      "wrong": "problem",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "problems"
+      ],
+      "ruleReminder": "After several, many and a few, use a plural countable noun.",
+      "explanation": "Several means more than two, so the noun must be plural: problems."
+    },
+    {
+      "start": 297,
+      "end": 307,
+      "wrong": "difficulty",
+      "code": "WF",
+      "acceptedAnswers": [
+        "difficult"
+      ],
+      "ruleReminder": "After find it, use an adjective: find it difficult, find it easy.",
+      "explanation": "Difficulty is a noun. The pattern find it + adjective + to needs the adjective difficult."
+    },
+    {
+      "start": 444,
+      "end": 446,
+      "wrong": "of",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "on"
+      ],
+      "ruleReminder": "Depend goes with on: depend on something.",
+      "explanation": "The verb depend is always followed by on, not of."
+    },
+    {
+      "start": 490,
+      "end": 500,
+      "wrong": "introduces",
+      "code": "VT",
+      "acceptedAnswers": [
+        "introduced"
+      ],
+      "ruleReminder": "Use the past simple for a finished action at a finished time (last year, in 2019).",
+      "explanation": "Last year is a finished time, so the verb must be in the past simple: introduced."
+    },
+    {
+      "start": 561,
+      "end": 565,
+      "wrong": "been",
+      "code": "^",
+      "acceptedAnswers": [
+        "have been"
+      ],
+      "ruleReminder": "Every clause needs a full verb. Been needs have, has or had before it.",
+      "explanation": "The verb is incomplete. With so far, use the present perfect: the results have been."
+    }
+  ]
+}
