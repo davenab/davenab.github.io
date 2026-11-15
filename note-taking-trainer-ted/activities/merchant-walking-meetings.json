@@ -1,0 +1,160 @@
+{
+  "id": "merchant-walking-meetings",
+  "source": "ted",
+  "title": "Got a meeting? Take a walk",
+  "speaker": "Nilofer Merchant",
+  "topic": "Health and work",
+  "tedUrl": "https://www.ted.com/talks/nilofer_merchant_got_a_meeting_take_a_walk",
+  "embedUrl": "https://embed.ted.com/talks/nilofer_merchant_got_a_meeting_take_a_walk",
+  "audioFile": "",
+  "level": "B2",
+  "lengthSeconds": 194,
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "prevalent",
+      "definition": "very common"
+    },
+    {
+      "term": "consequence",
+      "definition": "a result of something, often a bad one"
+    },
+    {
+      "term": "obligation",
+      "definition": "something you must do, for example for work"
+    },
+    {
+      "term": "reframe",
+      "definition": "to look at a problem in a new way"
+    },
+    {
+      "term": "viable",
+      "definition": "able to work successfully"
+    }
+  ],
+  "predictionQuestion": "Why might sitting all day be a problem? How could people sit less at work?",
+  "keyIdeas": [
+    {
+      "text": "We sit so much that we don't question it. She compares sitting to the smoking of our generation.",
+      "type": "main",
+      "approxTime": "0:01"
+    },
+    {
+      "text": "People sit about 9.3 hours a day, which is more than they sleep (about 7.7 hours).",
+      "type": "detail",
+      "approxTime": "0:20"
+    },
+    {
+      "text": "Sitting too much has serious health consequences.",
+      "type": "main",
+      "approxTime": "0:42"
+    },
+    {
+      "text": "Examples: some cancers, heart disease and type 2 diabetes.",
+      "type": "detail",
+      "approxTime": "0:50"
+    },
+    {
+      "text": "The health facts didn't change her behaviour. A social invitation did: someone asked her to a meeting while they walked their dogs.",
+      "type": "main",
+      "approxTime": "1:09"
+    },
+    {
+      "text": "Now she has walking meetings instead of coffee or conference-room meetings, about 20 to 30 miles a week.",
+      "type": "main",
+      "approxTime": "1:30"
+    },
+    {
+      "text": "She used to think she had to choose between her health and her work.",
+      "type": "detail",
+      "approxTime": "1:49"
+    },
+    {
+      "text": "Lesson 1: getting outside (\"out of the box\") leads to new, creative thinking.",
+      "type": "main",
+      "approxTime": "2:06"
+    },
+    {
+      "text": "Lesson 2: problems that seem opposite can often both be solved. Reframe them so both things can be true.",
+      "type": "main",
+      "approxTime": "2:17"
+    },
+    {
+      "text": "Her final message: walk and talk. Fresh air brings fresh thinking.",
+      "type": "main",
+      "approxTime": "2:47"
+    }
+  ],
+  "modelNotes": [
+    "WALKING MEETINGS (N. Merchant, TED)",
+    "Problem: sitting",
+    "- sit ~9.3 hrs/day > sleep (~7.7) → so common we don't question it",
+    "- sitting = 'smoking of our generation'",
+    "- health: some cancers, heart disease, type 2 diabetes",
+    "- facts alone ≠ change",
+    "Her change",
+    "- invite: meeting + walk dogs → now walking meetings (20–30 miles/wk)",
+    "- before: health vs work (one OR the other)",
+    "Lessons",
+    "- 1. out of the box → out-of-the-box thinking",
+    "- 2. 'opposite' problems → reframe → both can be true",
+    "End: walk + talk → fresh air = fresh thinking"
+  ],
+  "questions": [
+    {
+      "stem": "What does the speaker compare sitting to?",
+      "options": [
+        "Smoking",
+        "Sleeping",
+        "Driving a car",
+        "Using the internet"
+      ],
+      "answer": "Smoking",
+      "explanation": "She says sitting has become the smoking of our generation."
+    },
+    {
+      "stem": "According to the talk, how does the time people spend sitting compare with sleeping?",
+      "options": [
+        "People sit more than they sleep",
+        "People sit about as much as they sleep",
+        "People sit less than they sleep",
+        "She doesn't compare them"
+      ],
+      "answer": "People sit more than they sleep",
+      "explanation": "She gives about 9.3 hours of sitting compared with about 7.7 hours of sleep."
+    },
+    {
+      "stem": "What first made her change her habits?",
+      "options": [
+        "An invitation to a meeting while walking dogs",
+        "Health statistics",
+        "Advice from her doctor",
+        "A new fitness app"
+      ],
+      "answer": "An invitation to a meeting while walking dogs",
+      "explanation": "She says the statistics didn't get her moving. A social interaction did."
+    },
+    {
+      "stem": "What is one lesson she learned from walking meetings?",
+      "options": [
+        "Being outside helps you think in new ways",
+        "Meetings should always be short",
+        "Walking is only good for your body",
+        "Coffee meetings are more productive"
+      ],
+      "answer": "Being outside helps you think in new ways",
+      "explanation": "Her first lesson: getting out of the box leads to out-of-the-box thinking."
+    },
+    {
+      "stem": "What is her point about health and work?",
+      "options": [
+        "You don't always have to choose one; reframed, both can be true",
+        "Work is more important than health",
+        "Health is more important than work",
+        "You should meet only people you know well"
+      ],
+      "answer": "You don't always have to choose one; reframed, both can be true",
+      "explanation": "She used to see health and work as competing, but walking meetings let her do both."
+    }
+  ]
+}

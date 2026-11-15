@@ -1,0 +1,162 @@
+{
+  "id": "sivers-movement",
+  "source": "ted",
+  "title": "How to start a movement",
+  "speaker": "Derek Sivers",
+  "topic": "Leadership",
+  "tedUrl": "https://www.ted.com/talks/derek_sivers_how_to_start_a_movement",
+  "embedUrl": "https://embed.ted.com/talks/derek_sivers_how_to_start_a_movement",
+  "audioFile": "",
+  "level": "B2",
+  "lengthSeconds": 172,
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "movement",
+      "definition": "a group of people working together for an idea or a change"
+    },
+    {
+      "term": "follower",
+      "definition": "a person who supports and copies a leader"
+    },
+    {
+      "term": "ridicule",
+      "definition": "to laugh at someone in an unkind way"
+    },
+    {
+      "term": "momentum",
+      "definition": "when something keeps growing and moving forward"
+    },
+    {
+      "term": "over-glorified",
+      "definition": "praised more than it deserves"
+    }
+  ],
+  "predictionQuestion": "How does a movement start? Who do you think matters most: the leader or the followers?",
+  "keyIdeas": [
+    {
+      "text": "The talk watches a movement happen from start to finish, then takes lessons from it.",
+      "type": "main",
+      "approxTime": "0:00"
+    },
+    {
+      "text": "A leader needs the courage to stand out and be laughed at.",
+      "type": "main",
+      "approxTime": "0:11"
+    },
+    {
+      "text": "What the leader is doing should be easy to follow.",
+      "type": "detail",
+      "approxTime": "0:15"
+    },
+    {
+      "text": "The first follower has a crucial role: they show everyone else how to follow.",
+      "type": "main",
+      "approxTime": "0:20"
+    },
+    {
+      "text": "The leader should treat the first follower as an equal, so it's about the group, not the leader.",
+      "type": "detail",
+      "approxTime": "0:24"
+    },
+    {
+      "text": "The first follower is what turns a \"lone nut\" into a leader.",
+      "type": "main",
+      "approxTime": "0:40"
+    },
+    {
+      "text": "A movement must be public. New followers copy the other followers, not the leader.",
+      "type": "main",
+      "approxTime": "0:50"
+    },
+    {
+      "text": "As more people join, there is momentum. This is the tipping point.",
+      "type": "detail",
+      "approxTime": "1:07"
+    },
+    {
+      "text": "As the crowd grows, joining becomes less risky, so people who were waiting join too.",
+      "type": "detail",
+      "approxTime": "1:16"
+    },
+    {
+      "text": "Biggest lesson: leadership is over-glorified. Have the courage to follow, and be the first to join someone doing something great.",
+      "type": "main",
+      "approxTime": "2:01"
+    }
+  ],
+  "modelNotes": [
+    "HOW TO START A MOVEMENT (D. Sivers, TED)",
+    "Leader",
+    "- needs guts → stand out, be ridiculed",
+    "- easy to follow",
+    "- treat 1st follower as equal (about 'us', not 'me')",
+    "1st follower",
+    "- shows others how to follow",
+    "- turns 'lone nut' → leader",
+    "- = underrated form of leadership",
+    "Growth",
+    "- movement must be public; new followers copy followers",
+    "- more ppl → momentum → tipping point",
+    "- bigger crowd → less risky → others join",
+    "Biggest lesson",
+    "- leadership over-glorified → have courage to FOLLOW + be 1st to join"
+  ],
+  "questions": [
+    {
+      "stem": "What does a leader need at the start, according to the talk?",
+      "options": [
+        "The courage to stand out and be laughed at",
+        "A lot of money",
+        "Many friends",
+        "A famous name"
+      ],
+      "answer": "The courage to stand out and be laughed at",
+      "explanation": "His first point is that a leader needs the guts to stand out and be ridiculed."
+    },
+    {
+      "stem": "Why is the first follower so important?",
+      "options": [
+        "They show others how to follow and turn the leader into a real leader",
+        "They pay for the movement",
+        "They replace the leader",
+        "They stop the leader looking silly"
+      ],
+      "answer": "They show others how to follow and turn the leader into a real leader",
+      "explanation": "He says the first follower transforms a lone nut into a leader."
+    },
+    {
+      "stem": "According to the talk, who do new followers copy?",
+      "options": [
+        "The other followers",
+        "The leader",
+        "Nobody",
+        "Famous people"
+      ],
+      "answer": "The other followers",
+      "explanation": "He says new followers emulate the followers, not the leader. That is why a movement must be public."
+    },
+    {
+      "stem": "Why do more people join as the crowd gets bigger?",
+      "options": [
+        "Joining becomes less risky",
+        "They are paid to join",
+        "The music gets louder",
+        "The leader asks them personally"
+      ],
+      "answer": "Joining becomes less risky",
+      "explanation": "As more people join, it's less risky, so people who were waiting have no reason not to."
+    },
+    {
+      "stem": "What is the speaker's biggest lesson?",
+      "options": [
+        "Leadership is over-glorified; following takes courage too",
+        "Everyone should try to be a leader",
+        "Movements never start by accident",
+        "Leaders should work alone"
+      ],
+      "answer": "Leadership is over-glorified; following takes courage too",
+      "explanation": "He says the real lesson is that leadership is over-glorified, and he asks us to have the courage to follow."
+    }
+  ]
+}

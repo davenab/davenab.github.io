@@ -1,0 +1,159 @@
+{
+  "id": "bne-food-waste",
+  "source": "bne",
+  "title": "One billion meals thrown away every day",
+  "speaker": "Breaking News English (Sean Banville)",
+  "topic": "News: environment",
+  "bneUrl": "https://breakingnewsenglish.com/2610/261019-food-waste-5l.html",
+  "bneLessonUrl": "https://breakingnewsenglish.com/2610/261019-food-waste.html",
+  "audioFile": "",
+  "level": "B2",
+  "lengthSeconds": 101,
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "famine",
+      "definition": "when many people in a place have no food"
+    },
+    {
+      "term": "household",
+      "definition": "the people who live together in one home"
+    },
+    {
+      "term": "landfill",
+      "definition": "a place where rubbish is buried"
+    },
+    {
+      "term": "greenhouse gas",
+      "definition": "a gas that traps heat and warms the planet"
+    },
+    {
+      "term": "surplus",
+      "definition": "extra; more than you need"
+    }
+  ],
+  "predictionQuestion": "How much food do you think the world throws away? Who wastes the most: homes, restaurants or shops?",
+  "keyIdeas": [
+    {
+      "text": "More than a billion meals are wasted every day, even though some people are starving.",
+      "type": "main",
+      "approxTime": "0:00"
+    },
+    {
+      "text": "Homes cause most food waste: about 60 per cent.",
+      "type": "main",
+      "approxTime": "0:08"
+    },
+    {
+      "text": "Restaurants and food services waste about 28 per cent, and shops about 12 per cent.",
+      "type": "detail",
+      "approxTime": "0:17"
+    },
+    {
+      "text": "The Maldives has the highest home food waste per person (about 260 kg a year).",
+      "type": "detail",
+      "approxTime": "0:24"
+    },
+    {
+      "text": "Food waste causes about 8 to 10 per cent of the world's greenhouse gas emissions.",
+      "type": "main",
+      "approxTime": "0:33"
+    },
+    {
+      "text": "Rotting food in landfill releases gases like methane, which speeds up global warming.",
+      "type": "detail",
+      "approxTime": "0:41"
+    },
+    {
+      "text": "People, businesses and governments can all take steps to reduce food waste.",
+      "type": "main",
+      "approxTime": "0:50"
+    },
+    {
+      "text": "Tips for people: plan meals, use a shopping list, buy only what you need, store and freeze food, and reuse leftovers.",
+      "type": "detail",
+      "approxTime": "0:56"
+    },
+    {
+      "text": "Restaurants and supermarkets can give extra food to people in need.",
+      "type": "detail",
+      "approxTime": "1:13"
+    },
+    {
+      "text": "Less waste would save money, improve food security and help with climate change.",
+      "type": "main",
+      "approxTime": "1:34"
+    }
+  ],
+  "modelNotes": [
+    "FOOD WASTE (BNE news)",
+    "Problem",
+    "- > 1 billion meals wasted / day (while some starve)",
+    "- who: homes 60%, restaurants 28%, shops 12%",
+    "- Maldives = most home waste/person (~260 kg/yr)",
+    "Climate",
+    "- food waste ≈ 8–10% of greenhouse gases",
+    "- rotting in landfill → methane → global warming ↑",
+    "Solutions",
+    "- ppl: plan meals, list, buy only what needed, store/freeze, use leftovers",
+    "- restaurants + supermarkets: give surplus to ppl in need",
+    "Benefits: save $, food security ↑, helps climate"
+  ],
+  "questions": [
+    {
+      "stem": "According to the report, who is responsible for most food waste?",
+      "options": [
+        "Households (homes)",
+        "Restaurants",
+        "Shops",
+        "Farms"
+      ],
+      "answer": "Households (homes)",
+      "explanation": "Homes are responsible for about 60 per cent of food waste."
+    },
+    {
+      "stem": "About how much of the world's greenhouse gas emissions comes from food waste?",
+      "options": [
+        "8 to 10 per cent",
+        "28 per cent",
+        "60 per cent",
+        "Less than 1 per cent"
+      ],
+      "answer": "8 to 10 per cent",
+      "explanation": "The report gives 8 to 10 per cent. The other numbers are shares of food waste, not emissions."
+    },
+    {
+      "stem": "Why is food in landfill a problem for the climate?",
+      "options": [
+        "As it rots, it releases gases like methane",
+        "It uses too much water",
+        "It takes up too much space",
+        "It attracts animals"
+      ],
+      "answer": "As it rots, it releases gases like methane",
+      "explanation": "Rotting food releases greenhouse gases such as methane, which speeds up global warming."
+    },
+    {
+      "stem": "Which of these is NOT one of the tips for households?",
+      "options": [
+        "Buy food in bulk to save money",
+        "Plan your meals",
+        "Freeze extra portions",
+        "Turn leftovers into new dishes"
+      ],
+      "answer": "Buy food in bulk to save money",
+      "explanation": "The advice is to buy only what you need, not to buy more."
+    },
+    {
+      "stem": "What can restaurants and supermarkets do?",
+      "options": [
+        "Give extra food to people in need",
+        "Charge more for food",
+        "Close earlier each day",
+        "Sell food only in small packets"
+      ],
+      "answer": "Give extra food to people in need",
+      "explanation": "They can donate surplus food to people who need it."
+    }
+  ]
+}

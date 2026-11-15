@@ -1,0 +1,157 @@
+{
+  "id": "cutts-30-days",
+  "source": "ted",
+  "title": "Try something new for 30 days",
+  "speaker": "Matt Cutts",
+  "topic": "Habits and personal development",
+  "tedUrl": "https://www.ted.com/talks/matt_cutts_try_something_new_for_30_days",
+  "embedUrl": "https://embed.ted.com/talks/matt_cutts_try_something_new_for_30_days",
+  "audioFile": "",
+  "level": "B1-B2",
+  "lengthSeconds": 190,
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "habit",
+      "definition": "something you do regularly, often without thinking"
+    },
+    {
+      "term": "challenge",
+      "definition": "a difficult task that tests you"
+    },
+    {
+      "term": "self-confidence",
+      "definition": "believing in your own abilities"
+    },
+    {
+      "term": "sustainable",
+      "definition": "able to continue for a long time"
+    },
+    {
+      "term": "novel",
+      "definition": "a long story in a book"
+    }
+  ],
+  "predictionQuestion": "Imagine you try something new every day for 30 days. What might change in your life?",
+  "keyIdeas": [
+    {
+      "text": "The idea: choose something you have always wanted to add to your life, and try it for the next 30 days.",
+      "type": "main",
+      "approxTime": "0:10"
+    },
+    {
+      "text": "He says 30 days is about the right time to add a new habit or drop an old one.",
+      "type": "detail",
+      "approxTime": "0:20"
+    },
+    {
+      "text": "Lesson 1: the months became more memorable, instead of flying by and being forgotten.",
+      "type": "main",
+      "approxTime": "0:31"
+    },
+    {
+      "text": "Example: taking a photo every day for a month.",
+      "type": "detail",
+      "approxTime": "0:40"
+    },
+    {
+      "text": "Lesson 2: as the challenges got bigger and harder, his self-confidence grew.",
+      "type": "main",
+      "approxTime": "0:50"
+    },
+    {
+      "text": "Examples: he started cycling to work, and he climbed Mt Kilimanjaro.",
+      "type": "detail",
+      "approxTime": "0:55"
+    },
+    {
+      "text": "Lesson 3: if you want something badly enough, you can do anything for 30 days.",
+      "type": "main",
+      "approxTime": "1:16"
+    },
+    {
+      "text": "Example: he wrote a 50,000-word novel in a month (about 1,667 words a day). It was not very good, but he finished it.",
+      "type": "detail",
+      "approxTime": "1:25"
+    },
+    {
+      "text": "Lesson 4: small, sustainable changes are more likely to stick than big, crazy challenges.",
+      "type": "main",
+      "approxTime": "2:17"
+    },
+    {
+      "text": "His final message: the next 30 days will pass anyway, so try something now.",
+      "type": "main",
+      "approxTime": "2:42"
+    }
+  ],
+  "modelNotes": [
+    "30-DAY CHALLENGES (M. Cutts, TED)",
+    "Idea",
+    "- add sth new (or drop a habit, e.g. news) for 30 days",
+    "- 30 days ≈ right time for a habit",
+    "Lessons",
+    "- 1. time more memorable (e.g. 1 photo/day)",
+    "- 2. self-confidence ↑ (bike to work, Kilimanjaro)",
+    "- 3. want it enough → can do anything for 30 days (novel: 50k words ≈ 1,667/day; bad but done)",
+    "- 4. small + sustainable → sticks; big + crazy = fun but ↓ likely to last (e.g. no sugar)",
+    "Message: 30 days pass anyway → try it now"
+  ],
+  "questions": [
+    {
+      "stem": "Why does the speaker think 30 days is a good length of time?",
+      "options": [
+        "It is about right for adding or removing a habit",
+        "It is short enough to forget quickly",
+        "It is the time between pay days",
+        "It is what doctors recommend"
+      ],
+      "answer": "It is about right for adding or removing a habit",
+      "explanation": "He says 30 days turns out to be about the right amount of time to add or subtract a habit."
+    },
+    {
+      "stem": "What was the first thing he noticed during his challenges?",
+      "options": [
+        "Time was more memorable",
+        "He lost weight",
+        "He earned more money",
+        "He slept better"
+      ],
+      "answer": "Time was more memorable",
+      "explanation": "His first lesson was that the months were more memorable instead of flying by."
+    },
+    {
+      "stem": "Which example shows that his self-confidence grew?",
+      "options": [
+        "He climbed Mt Kilimanjaro",
+        "He became a famous novelist",
+        "He quit his job",
+        "He gave up sugar"
+      ],
+      "answer": "He climbed Mt Kilimanjaro",
+      "explanation": "He says he would never have been that adventurous before his challenges."
+    },
+    {
+      "stem": "What does he say about the novel he wrote?",
+      "options": [
+        "It isn't very good, but he finished it",
+        "It became a bestseller",
+        "He never finished it",
+        "He wrote it over a year"
+      ],
+      "answer": "It isn't very good, but he finished it",
+      "explanation": "He jokes that the book is awful because he wrote it in a month, but now he can call himself a novelist."
+    },
+    {
+      "stem": "Which kind of change does he say is most likely to last?",
+      "options": [
+        "Small, sustainable changes",
+        "Big, crazy challenges",
+        "Changes you make with friends",
+        "Changes that start in November"
+      ],
+      "answer": "Small, sustainable changes",
+      "explanation": "His last lesson: small changes he could keep doing were more likely to stick. Big challenges are fun but less likely to last."
+    }
+  ]
+}
