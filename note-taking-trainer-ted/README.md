@@ -75,7 +75,7 @@ You can do all of this on the GitHub website. You don't need to install anything
 | `audioFile` | Teacher lectures only: the MP3 file name in `audio/`. Leave as `""` for TED and BNE. |
 | `level` | For example `"B2"` |
 | `lengthSeconds` | Length in seconds (3 minutes 10 seconds = `190`) |
-| `verified` | `false` until you have checked it. Then `true` (no quote marks). |
+| `verified` | `false` until you have checked it. Then `true` (no quote marks). This is your own record; students don't see it. |
 | `keyTerms` | 3 to 5 words, each with a short definition |
 | `predictionQuestion` | One question to help students guess what they will hear |
 | `keyIdeas` | 6 to 10 ideas. `type` is `"main"` or `"detail"`. `approxTime` is where the idea is, like `"1:40"`. |
@@ -87,7 +87,7 @@ You can do all of this on the GitHub website. You don't need to install anything
 
 ## How to check an activity and mark it as verified
 
-All activities start as `"verified": false`, and students see a **Draft content** label.
+All activities start as `"verified": false`. Students no longer see a label for this: `verified` is now just your own record of what you have checked.
 
 For each activity:
 
@@ -96,4 +96,4 @@ For each activity:
 3. **Questions:** is the right answer really right, and are the wrong options clearly wrong? Do the explanations match what the speaker said?
 4. **Key terms and model notes:** are they accurate and useful at B2 level?
 5. **Suitability:** is the talk suitable for your students? (For example, "8 secrets of success" contains one rude word in a joke near the end.)
-6. Edit the file on GitHub: change `"verified": false` to `"verified": true` and click **Commit changes**. The Draft content label disappears.
+6. Edit the file on GitHub: change `"verified": false` to `"verified": true` and click **Commit changes**.
