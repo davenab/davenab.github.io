@@ -13,115 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#faf8f4; --surface:#ffffff; --surface-2:#f2efe8; --text:#1b2330; --muted:#5f6672; --border:#e5e0d6;
-  --ink:#1f3a5f; --accent:#d9822b; --accent-soft:#fbeedd;
-  --listen:#2f6fb0; --listen-bg:#e5effa;
-  --read:#2e7d5b; --read-bg:#e3f2ea;
-  --write:#8a4fb5; --write-bg:#f1e8f8;
-  --gram:#b4553a; --gram-bg:#f9e6df;
-  --vocab:#9a7400; --vocab-bg:#fbf1d4;
-  --radius:18px; --shadow:0 1px 2px rgba(20,30,50,.04),0 8px 24px rgba(20,30,50,.06);
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#12161d; --surface:#1a2029; --surface-2:#222a35; --text:#e8ebf0; --muted:#a2a9b5; --border:#2c3542;
-  --ink:#9cc0ee; --accent:#f4b860; --accent-soft:#3a2c17;
-  --listen:#8dbbf0; --listen-bg:#1c2b3d; --read:#7fd1aa; --read-bg:#1a3128;
-  --write:#c9a1ec; --write-bg:#2c2238; --gram:#f0a58e; --gram-bg:#3a241d; --vocab:#ead07a; --vocab-bg:#352d14;
-  --shadow:none;
-}}
-:root[data-theme="dark"]{
-  --bg:#12161d; --surface:#1a2029; --surface-2:#222a35; --text:#e8ebf0; --muted:#a2a9b5; --border:#2c3542;
-  --ink:#9cc0ee; --accent:#f4b860; --accent-soft:#3a2c17;
-  --listen:#8dbbf0; --listen-bg:#1c2b3d; --read:#7fd1aa; --read-bg:#1a3128;
-  --write:#c9a1ec; --write-bg:#2c2238; --gram:#f0a58e; --gram-bg:#3a241d; --vocab:#ead07a; --vocab-bg:#352d14;
-  --shadow:none;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;letter-spacing:-.015em;margin:0}
-
-/* nav */
-nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600}
-.mark{width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:Fraunces,serif;font-size:.95rem}
-.navlinks{display:flex;gap:6px;align-items:center}
-.navlinks a,.theme{font-size:.92rem;text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:999px;border:0;background:none;cursor:pointer;font-family:inherit}
-.navlinks a:hover,.theme:hover{color:var(--text);background:var(--surface-2)}
-@media (max-width:560px){.navlinks a.hide-sm{display:none}}
-
-/* hero */
-.hero{padding:56px 0 64px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
-@media (max-width:820px){.hero{grid-template-columns:1fr;padding:28px 0 44px}}
-.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:.85rem;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:20px}
-.hero h1{font-size:clamp(2.3rem,5.6vw,3.9rem);line-height:1.05;color:var(--text)}
-.hero h1 em{font-style:italic;color:var(--ink)}
-.lead{font-size:1.14rem;color:var(--muted);max-width:56ch;margin:20px 0 28px}
-.cta{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--border);background:var(--surface);font-size:.96rem}
-.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.btn:hover{transform:translateY(-1px)}
-.btn{transition:transform .15s}
-.hero-card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
-.hero-card h3{font-size:1.05rem;margin-bottom:14px}
-.skillbar{display:flex;flex-direction:column;gap:10px}
-.skillbar div{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:12px;font-weight:600;font-size:.94rem}
-.skillbar span{font-weight:500;font-size:.82rem;opacity:.8}
-
-/* sections */
-section{padding:56px 0}
-.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}
-.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem)}
-.sec-head p{color:var(--muted);margin:6px 0 0;max-width:60ch}
-
-/* filters */
-.filters{display:flex;flex-wrap:wrap;gap:8px}
-.filters button{font:inherit;font-size:.88rem;padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer}
-.filters button[aria-pressed=true]{background:var(--text);color:var(--bg);border-color:var(--text)}
-
-/* app cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-@media (max-width:360px){.grid{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow);transition:transform .18s,border-color .18s}
-.card:hover{transform:translateY(-3px);border-color:var(--c)}
-.card .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.tag{font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:999px;color:var(--c);background:var(--cbg)}
-.status{font-size:.76rem;color:var(--muted);display:flex;align-items:center;gap:6px}
-.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
-.status.live::before{background:var(--read)}
-.card h3{font-size:1.28rem;line-height:1.2}
-.card p{margin:0;color:var(--muted);font-size:.95rem}
-.focus{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
-.focus span{font-size:.75rem;background:var(--surface-2);color:var(--muted);padding:3px 9px;border-radius:999px}
-.card .go{margin-top:auto;padding-top:6px;display:flex;gap:14px;font-size:.92rem;font-weight:600}
-.card .go a{color:var(--c);text-decoration:none}
-.card .go a:hover{text-decoration:underline}
-.card .go .soon{color:var(--muted);font-weight:500}
-.listen{--c:var(--listen);--cbg:var(--listen-bg)} .read{--c:var(--read);--cbg:var(--read-bg)}
-.write{--c:var(--write);--cbg:var(--write-bg)} .gram{--c:var(--gram);--cbg:var(--gram-bg)} .vocab{--c:var(--vocab);--cbg:var(--vocab-bg)}
-
-/* principles */
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:820px){.principles{grid-template-columns:1fr}}
-.pr{padding:24px;border-radius:var(--radius);background:var(--surface-2)}
-.pr .n{font-family:Fraunces,serif;font-size:1.9rem;color:var(--accent);line-height:1}
-.pr h3{font-size:1.18rem;margin:10px 0 6px}
-.pr p{margin:0;color:var(--muted);font-size:.95rem}
-
-/* about / footer */
-.about{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-@media (max-width:820px){.about{grid-template-columns:1fr}}
-.about p{color:var(--muted);margin:0 0 14px}
-footer{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:.9rem}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
-footer a{text-decoration:none} footer a:hover{color:var(--text)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <div class="wrap">
@@ -129,6 +21,7 @@ footer a{text-decoration:none} footer a:hover{color:var(--text)}
     <a class="brand" href="#top" aria-label="Dave Nab, home"><span class="mark">DN</span>Dave Nab</a>
     <div class="navlinks">
       <a href="#apps">Apps</a>
+      <a href="/resources/">Resources</a>
       <a href="#approach" class="hide-sm">Approach</a>
       <a href="#about" class="hide-sm">About</a>
       <a href="https://www.linkedin.com/in/dave-nab/" target="_blank" rel="noopener" class="hide-sm">LinkedIn ↗</a>
@@ -143,6 +36,7 @@ footer a{text-decoration:none} footer a:hover{color:var(--text)}
       <p class="lead">I’m Dave Nab, a learning designer building AI-supported apps for academic English. Each app targets one real skill students need at university, gives feedback that makes them do the thinking, and runs in any browser with no sign-in.</p>
       <div class="cta">
         <a class="btn primary" href="#apps">Explore the apps →</a>
+        <a class="btn" href="/resources/">Teaching resources</a>
         <a class="btn" href="https://www.linkedin.com/in/dave-nab/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a class="btn" href="https://davenab.com" target="_blank" rel="noopener">davenab.com ↗</a>
       </div>
@@ -250,6 +144,23 @@ footer a{text-decoration:none} footer a:hover{color:var(--text)}
         <div class="go"><span class="soon">Coming soon</span></div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Teaching resources</h2>
+        <p>Classroom-tested materials for EAP and academic English teachers: slide decks, vocabulary lists and worksheets. Some are free, some cost a small fee.</p>
+      </div>
+      <a class="btn" href="/resources/">Browse all resources →</a>
+    </div>
+    <div class="res-cats">
+      <a class="res-cat slides" href="/resources/#slides"><div class="ic">📊</div><h3>Lesson slides</h3><p>Ready-to-teach PowerPoint decks on academic skills, grammar and vocabulary.</p></a>
+      <a class="res-cat wordlist" href="/resources/#wordlists"><div class="ic">🗂️</div><h3>Word lists</h3><p>Quizlet sets and printable vocabulary lists with definitions and examples.</p></a>
+      <a class="res-cat worksheet" href="/resources/#worksheets"><div class="ic">📝</div><h3>Worksheets</h3><p>Printable activities to go with the slides and apps.</p></a>
     </div>
   </div>
 </section>

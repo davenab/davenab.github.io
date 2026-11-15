@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /resources/_template/
+Sitemap: https://davenab.github.io/sitemap.xml
