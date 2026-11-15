@@ -1,9 +1,9 @@
 {
-  "_help": "Warm-up sentences: one error each. 'wrong' must appear exactly once in 'text'. Add at least 5 per code.",
+  "_help": "Warm-up sentences: one error each. 'wrong' must appear exactly once in 'text'. Keep at least 5 per code. Codes must match data/codes.json.",
   "items": [
     {
       "id": "w01",
-      "code": "VT",
+      "code": "T",
       "text": "Yesterday I meet my tutor to discuss my essay.",
       "wrong": "meet",
       "acceptedAnswers": [
@@ -13,7 +13,7 @@
     },
     {
       "id": "w02",
-      "code": "VT",
+      "code": "T",
       "text": "The company has been founded in 1998.",
       "wrong": "has been founded",
       "acceptedAnswers": [
@@ -23,7 +23,7 @@
     },
     {
       "id": "w03",
-      "code": "VT",
+      "code": "T",
       "text": "Since 2020, the number of online courses grew quickly.",
       "wrong": "grew",
       "acceptedAnswers": [
@@ -34,7 +34,7 @@
     },
     {
       "id": "w04",
-      "code": "VT",
+      "code": "T",
       "text": "When I was at school, I study French for three years.",
       "wrong": "study",
       "acceptedAnswers": [
@@ -44,7 +44,7 @@
     },
     {
       "id": "w05",
-      "code": "VT",
+      "code": "T",
       "text": "House prices rise sharply last year.",
       "wrong": "rise",
       "acceptedAnswers": [
@@ -54,7 +54,7 @@
     },
     {
       "id": "w06",
-      "code": "VT",
+      "code": "T",
       "text": "I live in Brisbane since January.",
       "wrong": "live",
       "acceptedAnswers": [
@@ -65,7 +65,7 @@
     },
     {
       "id": "w07",
-      "code": "VF",
+      "code": "vf",
       "text": "She has wrote two reports this month.",
       "wrong": "wrote",
       "acceptedAnswers": [
@@ -75,7 +75,7 @@
     },
     {
       "id": "w08",
-      "code": "VF",
+      "code": "vf",
       "text": "We are plan a group presentation.",
       "wrong": "plan",
       "acceptedAnswers": [
@@ -85,7 +85,7 @@
     },
     {
       "id": "w09",
-      "code": "VF",
+      "code": "vf",
       "text": "I am looking forward to meet you.",
       "wrong": "meet",
       "acceptedAnswers": [
@@ -95,7 +95,7 @@
     },
     {
       "id": "w10",
-      "code": "VF",
+      "code": "vf",
       "text": "The results were analyse by the research team.",
       "wrong": "analyse",
       "acceptedAnswers": [
@@ -106,7 +106,7 @@
     },
     {
       "id": "w11",
-      "code": "VF",
+      "code": "vf",
       "text": "He wants improving his writing.",
       "wrong": "improving",
       "acceptedAnswers": [
@@ -116,7 +116,7 @@
     },
     {
       "id": "w12",
-      "code": "VF",
+      "code": "vf",
       "text": "She did not came to the lecture.",
       "wrong": "came",
       "acceptedAnswers": [
@@ -126,7 +126,7 @@
     },
     {
       "id": "w13",
-      "code": "SVA",
+      "code": "sv",
       "text": "The number of students have increased.",
       "wrong": "have",
       "acceptedAnswers": [
@@ -136,7 +136,7 @@
     },
     {
       "id": "w14",
-      "code": "SVA",
+      "code": "sv",
       "text": "Everyone in my class speak two languages.",
       "wrong": "speak",
       "acceptedAnswers": [
@@ -146,7 +146,7 @@
     },
     {
       "id": "w15",
-      "code": "SVA",
+      "code": "sv",
       "text": "One of my friends live in Perth.",
       "wrong": "live",
       "acceptedAnswers": [
@@ -156,7 +156,7 @@
     },
     {
       "id": "w16",
-      "code": "SVA",
+      "code": "sv",
       "text": "Each student need a library card.",
       "wrong": "need",
       "acceptedAnswers": [
@@ -166,7 +166,7 @@
     },
     {
       "id": "w17",
-      "code": "SVA",
+      "code": "sv",
       "text": "My parents works in a hospital.",
       "wrong": "works",
       "acceptedAnswers": [
@@ -176,7 +176,7 @@
     },
     {
       "id": "w18",
-      "code": "SVA",
+      "code": "sv",
       "text": "Mathematics are my favourite subject.",
       "wrong": "are",
       "acceptedAnswers": [
@@ -186,7 +186,7 @@
     },
     {
       "id": "w19",
-      "code": "Art",
+      "code": "art",
       "text": "She is engineer at a large company.",
       "wrong": "engineer",
       "acceptedAnswers": [
@@ -196,7 +196,7 @@
     },
     {
       "id": "w20",
-      "code": "Art",
+      "code": "art",
       "text": "I would like to become doctor.",
       "wrong": "doctor",
       "acceptedAnswers": [
@@ -206,7 +206,7 @@
     },
     {
       "id": "w21",
-      "code": "Art",
+      "code": "art",
       "text": "This is best restaurant in the city.",
       "wrong": "best",
       "acceptedAnswers": [
@@ -216,7 +216,7 @@
     },
     {
       "id": "w22",
-      "code": "Art",
+      "code": "art",
       "text": "Sun rises in the east.",
       "wrong": "Sun",
       "acceptedAnswers": [
@@ -227,7 +227,7 @@
     },
     {
       "id": "w23",
-      "code": "Art",
+      "code": "uncn/cn",
       "text": "Can you give me an information about the course?",
       "wrong": "an information",
       "acceptedAnswers": [
@@ -238,7 +238,7 @@
     },
     {
       "id": "w24",
-      "code": "Art",
+      "code": "art",
       "text": "We visited the Canberra last year.",
       "wrong": "the Canberra",
       "acceptedAnswers": [
@@ -248,7 +248,7 @@
     },
     {
       "id": "w25",
-      "code": "Pl",
+      "code": "N",
       "text": "I have three sister.",
       "wrong": "sister",
       "acceptedAnswers": [
@@ -258,7 +258,7 @@
     },
     {
       "id": "w26",
-      "code": "Pl",
+      "code": "N",
       "text": "There are many advantage of studying online.",
       "wrong": "advantage",
       "acceptedAnswers": [
@@ -268,7 +268,7 @@
     },
     {
       "id": "w27",
-      "code": "Pl",
+      "code": "uncn/cn",
       "text": "She gave me some useful advices.",
       "wrong": "advices",
       "acceptedAnswers": [
@@ -278,7 +278,7 @@
     },
     {
       "id": "w28",
-      "code": "Pl",
+      "code": "N",
       "text": "Two woman won the prize.",
       "wrong": "woman",
       "acceptedAnswers": [
@@ -288,7 +288,7 @@
     },
     {
       "id": "w29",
-      "code": "Pl",
+      "code": "N",
       "text": "One of my friend is a nurse.",
       "wrong": "friend",
       "acceptedAnswers": [
@@ -298,7 +298,7 @@
     },
     {
       "id": "w30",
-      "code": "Pl",
+      "code": "uncn/cn",
       "text": "We bought some new furnitures for the flat.",
       "wrong": "furnitures",
       "acceptedAnswers": [
@@ -308,7 +308,7 @@
     },
     {
       "id": "w31",
-      "code": "Prep",
+      "code": "prep",
       "text": "I am interested on psychology.",
       "wrong": "on",
       "acceptedAnswers": [
@@ -318,7 +318,7 @@
     },
     {
       "id": "w32",
-      "code": "Prep",
+      "code": "prep",
       "text": "The lecture starts on 9 am.",
       "wrong": "on",
       "acceptedAnswers": [
@@ -328,7 +328,7 @@
     },
     {
       "id": "w33",
-      "code": "Prep",
+      "code": "prep",
       "text": "She arrived to Sydney last night.",
       "wrong": "to",
       "acceptedAnswers": [
@@ -338,7 +338,7 @@
     },
     {
       "id": "w34",
-      "code": "Prep",
+      "code": "prep",
       "text": "This book is very different with the film.",
       "wrong": "with",
       "acceptedAnswers": [
@@ -349,7 +349,7 @@
     },
     {
       "id": "w35",
-      "code": "Prep",
+      "code": "prep",
       "text": "We discussed the problem in Monday.",
       "wrong": "in",
       "acceptedAnswers": [
@@ -359,7 +359,7 @@
     },
     {
       "id": "w36",
-      "code": "Prep",
+      "code": "prep",
       "text": "He is very good in maths.",
       "wrong": "in",
       "acceptedAnswers": [
@@ -369,7 +369,7 @@
     },
     {
       "id": "w37",
-      "code": "WF",
+      "code": "wf",
       "text": "She speaks English very good.",
       "wrong": "good",
       "acceptedAnswers": [
@@ -379,7 +379,7 @@
     },
     {
       "id": "w38",
-      "code": "WF",
+      "code": "wf",
       "text": "The economic of Australia is strong.",
       "wrong": "economic",
       "acceptedAnswers": [
@@ -389,7 +389,7 @@
     },
     {
       "id": "w39",
-      "code": "WF",
+      "code": "wf",
       "text": "It was a very interested lecture.",
       "wrong": "interested",
       "acceptedAnswers": [
@@ -399,7 +399,7 @@
     },
     {
       "id": "w40",
-      "code": "WF",
+      "code": "wf",
       "text": "He checks his work careful.",
       "wrong": "careful",
       "acceptedAnswers": [
@@ -409,7 +409,7 @@
     },
     {
       "id": "w41",
-      "code": "WF",
+      "code": "wf",
       "text": "There is a strongly link between sleep and memory.",
       "wrong": "strongly",
       "acceptedAnswers": [
@@ -419,7 +419,7 @@
     },
     {
       "id": "w42",
-      "code": "WF",
+      "code": "wf",
       "text": "We need to improvement our results.",
       "wrong": "improvement",
       "acceptedAnswers": [
@@ -429,7 +429,7 @@
     },
     {
       "id": "w43",
-      "code": "WC",
+      "code": "ww",
       "text": "I need to do a decision about my course.",
       "wrong": "do",
       "acceptedAnswers": [
@@ -439,7 +439,7 @@
     },
     {
       "id": "w44",
-      "code": "WC",
+      "code": "ww",
       "text": "Please say me the answer.",
       "wrong": "say",
       "acceptedAnswers": [
@@ -449,7 +449,7 @@
     },
     {
       "id": "w45",
-      "code": "WC",
+      "code": "ww",
       "text": "The rent in Sydney is very expensive.",
       "wrong": "expensive",
       "acceptedAnswers": [
@@ -459,7 +459,7 @@
     },
     {
       "id": "w46",
-      "code": "WC",
+      "code": "ww",
       "text": "I made a lot of research for this essay.",
       "wrong": "made",
       "acceptedAnswers": [
@@ -469,7 +469,7 @@
     },
     {
       "id": "w47",
-      "code": "WC",
+      "code": "ww",
       "text": "Can you borrow me your pen?",
       "wrong": "borrow",
       "acceptedAnswers": [
@@ -479,7 +479,7 @@
     },
     {
       "id": "w48",
-      "code": "WC",
+      "code": "ww",
       "text": "The lecturer learned us how to write a summary.",
       "wrong": "learned",
       "acceptedAnswers": [
@@ -489,7 +489,7 @@
     },
     {
       "id": "w49",
-      "code": "WO",
+      "code": "wo",
       "text": "Can you tell me where is the library?",
       "wrong": "is the library",
       "acceptedAnswers": [
@@ -499,7 +499,7 @@
     },
     {
       "id": "w50",
-      "code": "WO",
+      "code": "wo",
       "text": "She speaks very well English.",
       "wrong": "speaks very well English",
       "acceptedAnswers": [
@@ -509,7 +509,7 @@
     },
     {
       "id": "w51",
-      "code": "WO",
+      "code": "wo",
       "text": "I often am late for class.",
       "wrong": "often am",
       "acceptedAnswers": [
@@ -519,7 +519,7 @@
     },
     {
       "id": "w52",
-      "code": "WO",
+      "code": "wo",
       "text": "He bought a car red.",
       "wrong": "car red",
       "acceptedAnswers": [
@@ -529,7 +529,7 @@
     },
     {
       "id": "w53",
-      "code": "WO",
+      "code": "wo",
       "text": "I don't know what does this word mean.",
       "wrong": "does this word mean",
       "acceptedAnswers": [
@@ -539,7 +539,7 @@
     },
     {
       "id": "w54",
-      "code": "WO",
+      "code": "wo",
       "text": "They visited last year Japan.",
       "wrong": "visited last year Japan",
       "acceptedAnswers": [
@@ -624,7 +624,7 @@
     },
     {
       "id": "w62",
-      "code": "SS",
+      "code": "i.s.",
       "text": "Because it was raining. We stayed inside.",
       "wrong": "raining. We",
       "acceptedAnswers": [
@@ -646,7 +646,7 @@
     },
     {
       "id": "w64",
-      "code": "SS",
+      "code": "i.s.",
       "text": "Many students who live on campus.",
       "wrong": "who live",
       "acceptedAnswers": [
@@ -746,7 +746,7 @@
     },
     {
       "id": "w73",
-      "code": "X",
+      "code": "/",
       "text": "We discussed about the plan.",
       "wrong": "discussed about",
       "acceptedAnswers": [
@@ -756,7 +756,7 @@
     },
     {
       "id": "w74",
-      "code": "X",
+      "code": "/",
       "text": "My brother he works in Perth.",
       "wrong": "brother he",
       "acceptedAnswers": [
@@ -766,7 +766,7 @@
     },
     {
       "id": "w75",
-      "code": "X",
+      "code": "/",
       "text": "I want to return back home.",
       "wrong": "return back",
       "acceptedAnswers": [
@@ -777,7 +777,7 @@
     },
     {
       "id": "w76",
-      "code": "X",
+      "code": "/",
       "text": "She married with a doctor.",
       "wrong": "married with",
       "acceptedAnswers": [
@@ -787,7 +787,7 @@
     },
     {
       "id": "w77",
-      "code": "X",
+      "code": "/",
       "text": "This method is more better than the old one.",
       "wrong": "more better",
       "acceptedAnswers": [
@@ -797,13 +797,140 @@
     },
     {
       "id": "w78",
-      "code": "X",
+      "code": "/",
       "text": "Please contact to the office.",
       "wrong": "contact to",
       "acceptedAnswers": [
         "contact"
       ],
       "explanation": "We contact someone. Do not add to."
+    },
+    {
+      "id": "w79",
+      "code": "N",
+      "text": "Many child in my class speak Arabic.",
+      "wrong": "child",
+      "acceptedAnswers": [
+        "children"
+      ],
+      "explanation": "Child has an irregular plural: children."
+    },
+    {
+      "id": "w80",
+      "code": "N",
+      "text": "We need two box for these books.",
+      "wrong": "box",
+      "acceptedAnswers": [
+        "boxes"
+      ],
+      "explanation": "After two, use a plural noun. Nouns ending in -x add -es: boxes."
+    },
+    {
+      "id": "w81",
+      "code": "art",
+      "text": "I go to the work by bus every day.",
+      "wrong": "the work",
+      "acceptedAnswers": [
+        "work"
+      ],
+      "explanation": "In go to work, work means your job or workplace and has no article."
+    },
+    {
+      "id": "w82",
+      "code": "uncn/cn",
+      "text": "The lab has some new equipments.",
+      "wrong": "equipments",
+      "acceptedAnswers": [
+        "equipment"
+      ],
+      "explanation": "Equipment is uncountable, so it has no plural form."
+    },
+    {
+      "id": "w83",
+      "code": "uncn/cn",
+      "text": "There is a lot of researches on this topic.",
+      "wrong": "researches",
+      "acceptedAnswers": [
+        "research"
+      ],
+      "explanation": "Research is uncountable, so it has no plural form."
+    },
+    {
+      "id": "w84",
+      "code": "uncn/cn",
+      "text": "How many money do you need for the trip?",
+      "wrong": "many money",
+      "acceptedAnswers": [
+        "much money"
+      ],
+      "explanation": "Money is uncountable, so use much, not many."
+    },
+    {
+      "id": "w85",
+      "code": "i.s.",
+      "text": "The library is open late. Especially during exams.",
+      "wrong": "late. Especially",
+      "acceptedAnswers": [
+        "late, especially",
+        "late especially"
+      ],
+      "explanation": "Especially during exams is not a full sentence. Join it to the sentence before."
+    },
+    {
+      "id": "w86",
+      "code": "i.s.",
+      "text": "I moved to Sydney in 2022. To study engineering.",
+      "wrong": "2022. To study",
+      "acceptedAnswers": [
+        "2022 to study"
+      ],
+      "explanation": "To study engineering is not a full sentence. Join it to the sentence before."
+    },
+    {
+      "id": "w87",
+      "code": "i.s.",
+      "text": "We stayed home all weekend. Because of the storm.",
+      "wrong": "weekend. Because",
+      "acceptedAnswers": [
+        "weekend because"
+      ],
+      "explanation": "Because of the storm is not a full sentence. Join it to the sentence before."
+    },
+    {
+      "id": "w88",
+      "code": "i.s.",
+      "text": "The results were clear. Which surprised us.",
+      "wrong": "clear. Which",
+      "acceptedAnswers": [
+        "clear, which"
+      ],
+      "explanation": "A which clause cannot be a sentence on its own. Join it to the sentence before with a comma."
+    },
+    {
+      "id": "w89",
+      "code": "SS",
+      "text": "It was raining, we stayed inside.",
+      "wrong": "raining, we",
+      "acceptedAnswers": [
+        "raining, so we",
+        "raining. We",
+        "raining; we",
+        "raining so we"
+      ],
+      "explanation": "Do not join two full sentences with only a comma. Use so, a full stop or a semicolon."
+    },
+    {
+      "id": "w90",
+      "code": "SS",
+      "text": "The test was easy, everyone passed.",
+      "wrong": "easy, everyone",
+      "acceptedAnswers": [
+        "easy, so everyone",
+        "easy. Everyone",
+        "easy; everyone",
+        "easy so everyone"
+      ],
+      "explanation": "Do not join two full sentences with only a comma. Use so, a full stop or a semicolon."
     }
   ]
 }

@@ -3,14 +3,14 @@
   "title": "Plant-based diets",
   "topic": "Health and environment",
   "level": "C1",
-  "verified": false,
+  "verified": true,
   "text": "In recent years, plant-based diets become increasingly popular, particularly among younger consumers. Advocates claim that reducing meat consumption benefit both personal health and the environment. Livestock farming accounts of a significant share of global greenhouse gas emissions and uses vast amounts of land and water that could be used more efficient. However, critics point out that processed meat alternatives contain often high levels of salt and other additive. Moreover, recent study found that many people who follow a vegan diet do not get enough vitamin B12. Consumers who choose to eat less meat should therefore plan their meals carefully.",
   "errors": [
     {
       "start": 35,
       "end": 41,
       "wrong": "become",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "have become"
       ],
@@ -21,7 +21,7 @@
       "start": 149,
       "end": 156,
       "wrong": "benefit",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "benefits"
       ],
@@ -32,7 +32,7 @@
       "start": 226,
       "end": 228,
       "wrong": "of",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "for"
       ],
@@ -43,7 +43,7 @@
       "start": 348,
       "end": 357,
       "wrong": "efficient",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "efficiently"
       ],
@@ -54,7 +54,7 @@
       "start": 419,
       "end": 432,
       "wrong": "contain often",
-      "code": "WO",
+      "code": "wo",
       "acceptedAnswers": [
         "often contain"
       ],
@@ -65,7 +65,7 @@
       "start": 463,
       "end": 471,
       "wrong": "additive",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "additives"
       ],
@@ -76,7 +76,7 @@
       "start": 483,
       "end": 495,
       "wrong": "recent study",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "a recent study",
         "one recent study"

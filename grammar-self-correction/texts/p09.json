@@ -3,14 +3,14 @@
   "title": "Tourism and local communities",
   "topic": "Tourism",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Tourism brings both benefits and problems to local communities. On the positive side, it creates job and brings money into the area, because tourists spend money for hotels, food and souvenirs. However, tourism can also cause damage. Last summer, I visit a small island in Thailand. The beaches crowded and noisy, and the pollute in the water was clearly visible. Many local people told me that cost of living had risen because of tourism. In my opinion, the government should cooperate together with local communities to manage tourism in a more sustainable way.",
   "errors": [
     {
       "start": 97,
       "end": 100,
       "wrong": "job",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "jobs"
       ],
@@ -21,7 +21,7 @@
       "start": 162,
       "end": 165,
       "wrong": "for",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "on"
       ],
@@ -32,7 +32,7 @@
       "start": 249,
       "end": 254,
       "wrong": "visit",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "visited"
       ],
@@ -54,7 +54,7 @@
       "start": 322,
       "end": 329,
       "wrong": "pollute",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "pollution"
       ],
@@ -65,7 +65,7 @@
       "start": 395,
       "end": 409,
       "wrong": "cost of living",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "the cost of living"
       ],
@@ -76,7 +76,7 @@
       "start": 477,
       "end": 495,
       "wrong": "cooperate together",
-      "code": "X",
+      "code": "/",
       "acceptedAnswers": [
         "cooperate"
       ],

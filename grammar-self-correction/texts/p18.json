@@ -3,14 +3,14 @@
   "title": "Artificial intelligence at work",
   "topic": "Technology and work",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Artificial intelligence (AI) is changing the way many people works. For example, banks now use AI to answer simple question from customers, and hospitals use it to read medical scans. As a result, some workers are anxiety about losing their jobs. However, this is not a new worry. When computers first appear in offices in the 1980s, people had similar fears. In fact, computers created many new jobs, and AI may have similar effect. Workers will need to adapt with new tools, and governments should help them developing new skills.",
   "errors": [
     {
       "start": 61,
       "end": 66,
       "wrong": "works",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "work"
       ],
@@ -21,7 +21,7 @@
       "start": 115,
       "end": 123,
       "wrong": "question",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "questions"
       ],
@@ -32,7 +32,7 @@
       "start": 214,
       "end": 221,
       "wrong": "anxiety",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "anxious"
       ],
@@ -43,7 +43,7 @@
       "start": 302,
       "end": 308,
       "wrong": "appear",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "appeared"
       ],
@@ -54,7 +54,7 @@
       "start": 418,
       "end": 432,
       "wrong": "similar effect",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "a similar effect"
       ],
@@ -65,7 +65,7 @@
       "start": 461,
       "end": 465,
       "wrong": "with",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "to"
       ],
@@ -76,7 +76,7 @@
       "start": 510,
       "end": 520,
       "wrong": "developing",
-      "code": "VF",
+      "code": "vf",
       "acceptedAnswers": [
         "develop",
         "to develop"

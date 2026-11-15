@@ -3,14 +3,14 @@
   "title": "Fast food and diet",
   "topic": "Health",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Fast food is popular because it is quick, tasty and usually enough cheap for students. However, eating it too often cause health problems such as obesity and heart disease. In many countries, child eat fast food several times a week because their parents are too busy cook. But is fast food really cheaper than cooking at home. Ten years ago, I eat fast food almost every day. Then I learnt to make simple meals. Cooking at home takes more time it is healthier and often cheaper. I believe schools should teach students these basic skills.",
   "errors": [
     {
       "start": 60,
       "end": 72,
       "wrong": "enough cheap",
-      "code": "WO",
+      "code": "wo",
       "acceptedAnswers": [
         "cheap enough"
       ],
@@ -21,7 +21,7 @@
       "start": 116,
       "end": 121,
       "wrong": "cause",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "causes",
         "can cause"
@@ -33,7 +33,7 @@
       "start": 192,
       "end": 197,
       "wrong": "child",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "children"
       ],
@@ -44,7 +44,7 @@
       "start": 268,
       "end": 272,
       "wrong": "cook",
-      "code": "VF",
+      "code": "vf",
       "acceptedAnswers": [
         "to cook"
       ],
@@ -66,7 +66,7 @@
       "start": 345,
       "end": 348,
       "wrong": "eat",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "ate"
       ],

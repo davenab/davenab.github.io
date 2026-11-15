@@ -3,14 +3,14 @@
   "title": "Social media and young people",
   "topic": "Technology and society",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Social media has become a big part of young people's lives. According to a recent survey, most teenagers spends more than three hours online every day. When social media first become popular in the early 2000s, few people expected it to have such strong influence. Today, it allows young people to stay in touch to friends and learn about different culture. Although social media has clear benefits, but it also has risks. For example, teenagers always are comparing themselves with others, which can lead to low self-esteem. Parents and schools should therefore teach young people to use social media wisely.",
   "errors": [
     {
       "start": 105,
       "end": 111,
       "wrong": "spends",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "spend"
       ],
@@ -21,7 +21,7 @@
       "start": 176,
       "end": 182,
       "wrong": "become",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "became"
       ],
@@ -32,7 +32,7 @@
       "start": 247,
       "end": 253,
       "wrong": "strong",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "a strong"
       ],
@@ -43,7 +43,7 @@
       "start": 312,
       "end": 314,
       "wrong": "to",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "with"
       ],
@@ -54,7 +54,7 @@
       "start": 349,
       "end": 356,
       "wrong": "culture",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "cultures"
       ],
@@ -77,7 +77,7 @@
       "start": 446,
       "end": 456,
       "wrong": "always are",
-      "code": "WO",
+      "code": "wo",
       "acceptedAnswers": [
         "are always"
       ],

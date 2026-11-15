@@ -3,14 +3,14 @@
   "title": "Getting around the city",
   "topic": "Urban transport",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Traffic congestion are a serious problem in many large cities. Every morning, thousands of driver sit in long queues on their way to work. One solution is to improve public transport. When my city opened a new train line in 2019, the number of people who travelled by car falls quickly. Trains are also better for environment because they produce less pollution per passenger. However many people still prefer to drive. They say that buses are often late, especially in night. To change this, the city council should make action and run buses more often.",
   "errors": [
     {
       "start": 19,
       "end": 22,
       "wrong": "are",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "is"
       ],
@@ -21,7 +21,7 @@
       "start": 91,
       "end": 97,
       "wrong": "driver",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "drivers"
       ],
@@ -32,7 +32,7 @@
       "start": 272,
       "end": 277,
       "wrong": "falls",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "fell"
       ],
@@ -43,7 +43,7 @@
       "start": 314,
       "end": 325,
       "wrong": "environment",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "the environment"
       ],
@@ -65,7 +65,7 @@
       "start": 467,
       "end": 469,
       "wrong": "in",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "at"
       ],
@@ -76,7 +76,7 @@
       "start": 517,
       "end": 521,
       "wrong": "make",
-      "code": "WC",
+      "code": "ww",
       "acceptedAnswers": [
         "take"
       ],

@@ -3,14 +3,14 @@
   "title": "Academic integrity in the age of AI",
   "topic": "Study and university life",
   "level": "C1",
-  "verified": false,
+  "verified": true,
   "text": "The rapid spread of generative AI tools have raised serious questions about academic integrity. Since 2023, many universities introduced new policies on the use of AI in assessment. Some institutions ban it completely, whereas others allow students to use it, provided that they acknowledge it and take responsibility of the final work. Critics argue that detection software is unreliability and may unfairly accuse students who write in second language. Rather than relying on detection, universities could design assessments that emphasise on the writing process, such as drafts and reflections. Such tasks are harder to outsource, they also develop skills that employers value.",
   "errors": [
     {
       "start": 40,
       "end": 44,
       "wrong": "have",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "has"
       ],
@@ -21,7 +21,7 @@
       "start": 126,
       "end": 136,
       "wrong": "introduced",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "have introduced"
       ],
@@ -32,7 +32,7 @@
       "start": 318,
       "end": 320,
       "wrong": "of",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "for"
       ],
@@ -43,7 +43,7 @@
       "start": 378,
       "end": 391,
       "wrong": "unreliability",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "unreliable"
       ],
@@ -54,7 +54,7 @@
       "start": 438,
       "end": 453,
       "wrong": "second language",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "a second language"
       ],
@@ -65,7 +65,7 @@
       "start": 532,
       "end": 544,
       "wrong": "emphasise on",
-      "code": "X",
+      "code": "/",
       "acceptedAnswers": [
         "emphasise"
       ],

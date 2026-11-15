@@ -3,14 +3,14 @@
   "title": "Green spaces in cities",
   "topic": "Urban life",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Parks and gardens makes cities better places to live. Spending time in green spaces can reduce stress and improve people's mood. Trees also protect people of the summer heat and provide homes for bird and insects. When I was a child, my family lives in an apartment near a large park. There was small lake in the middle, and my brother and I fed the ducks every weekend. Its sad that many new suburbs are built with very few parks. In my view, city planners should think about green spaces more careful when they design new areas.",
   "errors": [
     {
       "start": 18,
       "end": 23,
       "wrong": "makes",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "make"
       ],
@@ -21,7 +21,7 @@
       "start": 155,
       "end": 157,
       "wrong": "of",
-      "code": "Prep",
+      "code": "prep",
       "acceptedAnswers": [
         "from"
       ],
@@ -32,7 +32,7 @@
       "start": 196,
       "end": 200,
       "wrong": "bird",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "birds"
       ],
@@ -43,7 +43,7 @@
       "start": 244,
       "end": 249,
       "wrong": "lives",
-      "code": "VT",
+      "code": "T",
       "acceptedAnswers": [
         "lived"
       ],
@@ -54,7 +54,7 @@
       "start": 295,
       "end": 305,
       "wrong": "small lake",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "a small lake"
       ],
@@ -76,7 +76,7 @@
       "start": 495,
       "end": 502,
       "wrong": "careful",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "carefully"
       ],

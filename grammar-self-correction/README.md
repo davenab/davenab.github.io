@@ -36,7 +36,7 @@ Pages inside the app: start page `#/`, practice `#/setup`, two-minute warm-up `#
 
 ## How to verify each practice text (and set "verified": true)
 
-All 22 texts start as `"verified": false`, which shows a small **Draft content** label to students.
+All 22 texts have been checked by the teacher and are set to `"verified": true`. Students never see a "draft" label. The teacher page shows **not verified yet** for any new text that is still `false`, so you can keep track of what you still need to check.
 
 1. Open https://davenab.com/grammar-self-correction/#/teacher (or the same address on your preview).
 2. For each text, the page shows: the paragraph with each error numbered and coded, the corrected paragraph, and a table of accepted answers, rule reminders and explanations. A red **Problems** line appears if a position, code or word count is wrong.
@@ -47,7 +47,7 @@ All 22 texts start as `"verified": false`, which shows a small **Draft content**
    - the accepted answers include every correct fix a student might type (add more if needed);
    - the rule reminder and explanation are right and easy to read.
 4. At the end of the page, check the warm-up sentences in the same way (each has one error and its accepted answers). Warm-up sentences have no verified flag.
-5. To mark a text as checked: on GitHub, open `grammar-self-correction/texts/p01.json`, click the pencil icon (Edit), change `"verified": false` to `"verified": true`, and click **Commit changes**. The Draft content label disappears for that text.
+5. To mark a text as checked: on GitHub, open `grammar-self-correction/texts/p01.json`, click the pencil icon (Edit), change `"verified": false` to `"verified": true`, and click **Commit changes**. The teacher page then shows it as verified.
 
 ## How to add a practice text
 
@@ -66,7 +66,7 @@ You don't need to be a programmer. You only edit text files on GitHub.
    ```json
    {
      "wrong": "has became",
-     "code": "VF",
+     "code": "vf",
      "acceptedAnswers": ["has become"],
      "ruleReminder": "After has or have, use the past participle.",
      "explanation": "Become is irregular: become, became, become."
@@ -75,54 +75,73 @@ You don't need to be a programmer. You only edit text files on GitHub.
    - `"wrong"` must be copied **exactly** from the paragraph (same spelling, capitals and punctuation).
    - `"start"` and `"end"` (the character positions) are optional. **You can leave them out.** The app finds the wrong words by itself, in order. If the same words appear twice in the paragraph, list the errors in the order they appear.
    - `"acceptedAnswers"`: the correct replacement for the **whole** `"wrong"` part. You can list several, separated by commas: `["a recording", "the recording"]`. Capital letters and extra spaces are ignored when checking.
-   - `"code"` must be one of the codes in `data/codes.json` (for example `VT`, `Art`, `^`).
+   - `"code"` must be one of the codes in `data/codes.json` (for example `T`, `art`, `^`, `/`).
    - Separate the blocks with a comma. Don't put a comma after the last one.
 6. Click **Commit changes**.
 7. Open `texts/index.json`, click Edit, and add your file name to the list: `"p12.json", "p13.json"`. Commit.
 8. Open `#/teacher` to check it. If the JSON has a mistake (a missing comma or quotation mark), the page tells you that the file could not be read.
 
-Tips for good errors: 6 to 8 errors per paragraph, 80 to 120 words, one clear problem per error, no two errors in the same word, no errors that depend on style or opinion. For a missing word (`^`) or a missing article, mark the word next to the gap (e.g. wrong `"been"`, answer `"have been"`). For an unnecessary word (`X`), mark it together with its neighbour (e.g. wrong `"discuss about"`, answer `"discuss"`).
+Tips for good errors: 6 to 8 errors per paragraph, 80 to 120 words, one clear problem per error, no two errors in the same word, no errors that depend on style or opinion. For a missing word (`^`) or a missing article, mark the word next to the gap (e.g. wrong `"been"`, answer `"have been"`). For an unnecessary word (`/`, omit), mark it together with its neighbour (e.g. wrong `"discuss about"`, answer `"discuss"`).
 
 ## How to add warm-up sentences
 
 Open `data/warmup.json` and copy one block:
 ```json
-{ "id": "w79", "code": "VT", "text": "Last week I go to the library.", "wrong": "go", "acceptedAnswers": ["went"], "explanation": "Last week is finished time, so use the past simple." }
+{ "id": "w91", "code": "T", "text": "Last week I go to the library.", "wrong": "go", "acceptedAnswers": ["went"], "explanation": "Last week is finished time, so use the past simple." }
 ```
 `"wrong"` must appear exactly once in `"text"`. Keep at least 5 sentences for each code so a warm-up on one code has enough sentences.
 
 ## How to change the correction codes
 
-Edit `data/codes.json` on GitHub. Each code has: `code`, `name`, `meaning` (one plain line), `wrong` and `right` (an example pair), and `rule` (a short reminder). Set `"fullHintEarly": true` for codes that aren't rule-based (WC and SS now). For those codes, hint 2 shows the code and the rule together.
-If you rename a code (e.g. `Art` → `A`), also change it in the practice texts and in `data/links.json`.
+Edit `data/codes.json` on GitHub. Each code has: `code`, `name`, `meaning` (one plain line), `wrong` and `right` (an example pair), and `rule` (a short reminder). Set `"fullHintEarly": true` for codes that aren't rule-based (ww and SS now). For those codes, hint 2 shows the code and the rule together.
+If you rename a code, also change it in the practice texts, `data/warmup.json` and `data/links.json`.
+
+The codes match the course **Correction code (2025)** document:
+
+| Practised in the app | Meaning |
+|---|---|
+| `T` | wrong tense |
+| `vf` | verb form error |
+| `sv` | subject-verb agreement error |
+| `art` | missing or incorrect article |
+| `N` | number (singular / plural) |
+| `uncn/cn` | uncountable / countable (warm-up sentences only so far) |
+| `prep` | wrong preposition |
+| `wf` | wrong form |
+| `ww` | wrong word |
+| `wo` | incorrect word order |
+| `P` | wrong punctuation |
+| `SS` | problems with sentence structure |
+| `i.s.` | incomplete sentence |
+| `^` | add something |
+| `/` | omit |
+
+The other course codes are about spelling, style and organisation, so they aren't practised. They're listed in `"otherCodes"` and appear on the Code key page under "Other codes your teacher uses": `sp`, `ref`, `linker`, `INF`, `logic`, `NP`, `m?`, `irr`, `ill.`, `ᴗ`.
 
 ## Study links
 
 Links live in `data/links.json`. Each code can have one or two links:
 ```json
-"VT": [ { "title": "Verb tenses (Purdue OWL)", "url": "https://..." } ]
+"T": [ { "title": "Improve tense and verb forms (iLearn)", "url": "https://..." } ]
 ```
 They show on the Code key page and next to the student's weak codes on the profile page.
 
-**No links are included yet.** The build environment couldn't reach any outside website, so no link could be checked. Following the brief, they were left out. Suggested pages to check and add (none of these has been checked):
+The links come from the course **Correction code (2025)** document. They are Macquarie iLearn pages, so students need to be logged in to iLearn to open them. They couldn't be checked from the build environment.
 
-| Code | Suggested page |
+| Code | Link |
 |---|---|
-| VT | Purdue OWL, verb tenses: https://owl.purdue.edu/owl/general_writing/grammar/verb_tenses/index.html |
-| VF | Purdue OWL, gerunds, participles and infinitives: https://owl.purdue.edu/owl/general_writing/grammar/gerunds_participles_and_infinitives/index.html |
-| SVA | Purdue OWL, subject-verb agreement: https://owl.purdue.edu/owl/general_writing/grammar/subject_verb_agreement.html |
-| Art | Purdue OWL, using articles: https://owl.purdue.edu/owl/general_writing/grammar/using_articles.html |
-| Pl | Purdue OWL, count and noncount nouns: https://owl.purdue.edu/owl/general_writing/grammar/count_and_noncount_nouns/index.html |
-| Prep | Purdue OWL, prepositions: https://owl.purdue.edu/owl/general_writing/grammar/prepositions/index.html |
-| WF | British Council LearnEnglish, B1–B2 grammar and vocabulary pages (find the word formation page): https://learnenglish.britishcouncil.org/ |
-| WC | UNC Writing Center, word choice: https://writingcenter.unc.edu/tips-and-tools/word-choice/ |
-| WO | British Council LearnEnglish, word order / indirect questions pages: https://learnenglish.britishcouncil.org/ |
-| P | Purdue OWL, commas: https://owl.purdue.edu/owl/general_writing/punctuation/commas/index.html |
-| SS | Purdue OWL, sentence fragments and run-ons: https://owl.purdue.edu/owl/general_writing/mechanics/sentence_fragments.html |
-| ^ | Same as SS or VF |
-| X | Purdue OWL, conciseness: https://owl.purdue.edu/owl/general_writing/academic_writing/conciseness/index.html |
+| `T`, `vf` | Improve tense and verb forms: https://ilearn.mq.edu.au/mod/page/view.php?id=9018157 |
+| `sv` | Subject-verb agreement: https://ilearn.mq.edu.au/mod/page/view.php?id=9018155 |
+| `art` | Articles: https://ilearn.mq.edu.au/mod/page/view.php?id=9018153 |
+| `N` | Singular and plural: https://ilearn.mq.edu.au/mod/page/view.php?id=9018152&forceview=1 |
+| `uncn/cn` | Countable and uncountable nouns: https://ilearn.mq.edu.au/mod/page/view.php?id=9018158 |
+| `prep` | Prepositions: https://ilearn.mq.edu.au/mod/page/view.php?id=9018154 |
+| `wf` | Word form: https://ilearn.mq.edu.au/mod/page/view.php?id=9018150 |
+| `P` | Punctuation: https://ilearn.mq.edu.au/mod/page/view.php?id=9018151 |
+| `i.s.` | Incomplete sentences: https://ilearn.mq.edu.au/mod/page/view.php?id=9018156 |
+| `sp`, `ref`, `linker`, `INF`, `logic`, `NP` | Shown with the other codes in the code key |
 
-Your own college's academic skills pages (e.g. a university learning centre) are also a good choice.
+The document has no links for `ww`, `wo`, `SS`, `^` and `/`, so those show none. `vf` uses the tense link, because that page covers "tense and verb forms".
 
 ## Mode 2: "My own writing" (built, switched off)
 
@@ -142,12 +161,12 @@ Never put an API key in this repository or in the page (the repository is public
 
 The browser sends (POST, JSON):
 ```json
-{ "text": "the student's paragraph", "codes": ["VT","VF","SVA","Art","Pl","Prep","WF","WC","WO","P","SS","^","X"] }
+{ "text": "the student's paragraph", "codes": ["T","vf","sv","art","N","uncn/cn","prep","wf","ww","wo","P","SS","i.s.","^","/"] }
 ```
 The proxy must return:
 ```json
 { "errors": [
-  { "start": 15, "end": 21, "code": "SVA",
+  { "start": 15, "end": 21, "code": "sv",
     "ruleReminder": "A plural subject takes a plural verb.",
     "suggestion": "think",
     "explanation": "Students is plural." }
@@ -167,7 +186,7 @@ The proxy must return:
 ## Testing done
 
 Automated browser tests (Chromium, Playwright) at 360 px (phone) and 1280 px (desktop):
-- Guide me (focus VT + Art, phone), Let me hunt (mixed, desktop) and Show me the sentence (both widths): full flow from setup → read → hunt → found/missed → fixing with every hint path (correct answer, hint then correct, two wrong tries then "Yes, mine works", two wrong tries then "No, mine was wrong", answer revealed) → summary → rule → profile → "Practise my weak areas".
+- Guide me (focus T + art, phone), Let me hunt (mixed, desktop) and Show me the sentence (both widths): full flow from setup → read → hunt → found/missed → fixing with every hint path (correct answer, hint then correct, two wrong tries then "Yes, mine works", two wrong tries then "No, mine was wrong", answer revealed) → summary → rule → profile → "Practise my weak areas".
 - No horizontal scrolling on any page; buttons, links and error marks are at least 44 px tall.
 - Correction boxes have autocorrect, autocapitalise and spellcheck turned off.
 - Mode 2 is hidden and its address redirects while off; the preview shows the banner, warning, "I think this is correct" and the locked suggestion; the pasted text is not stored.

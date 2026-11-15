@@ -3,14 +3,14 @@
   "title": "Working from home",
   "topic": "Work and technology",
   "level": "B2",
-  "verified": false,
+  "verified": true,
   "text": "Since 2020, working from home have become common in many industries. Many employee say that they enjoy to avoid long commutes and feel more independence at home. However, there are also disadvantages. For example, it is harder to do friends with colleagues when you only see them on a screen. For this reason, some companies now use hybrid model, where staff work in the office two or three days a week. There is no single best solution, so each company must decide on it's own policy.",
   "errors": [
     {
       "start": 30,
       "end": 34,
       "wrong": "have",
-      "code": "SVA",
+      "code": "sv",
       "acceptedAnswers": [
         "has"
       ],
@@ -21,7 +21,7 @@
       "start": 74,
       "end": 82,
       "wrong": "employee",
-      "code": "Pl",
+      "code": "N",
       "acceptedAnswers": [
         "employees"
       ],
@@ -32,7 +32,7 @@
       "start": 103,
       "end": 111,
       "wrong": "to avoid",
-      "code": "VF",
+      "code": "vf",
       "acceptedAnswers": [
         "avoiding"
       ],
@@ -43,7 +43,7 @@
       "start": 140,
       "end": 152,
       "wrong": "independence",
-      "code": "WF",
+      "code": "wf",
       "acceptedAnswers": [
         "independent"
       ],
@@ -54,7 +54,7 @@
       "start": 230,
       "end": 232,
       "wrong": "do",
-      "code": "WC",
+      "code": "ww",
       "acceptedAnswers": [
         "make"
       ],
@@ -65,7 +65,7 @@
       "start": 333,
       "end": 345,
       "wrong": "hybrid model",
-      "code": "Art",
+      "code": "art",
       "acceptedAnswers": [
         "a hybrid model"
       ],

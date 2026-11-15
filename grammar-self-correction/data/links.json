@@ -1,18 +1,106 @@
 {
-  "_help": "Study links for each code. Add one or two free, reputable pages per code, like this: \"VT\": [{\"title\": \"Verb tenses (Purdue OWL)\", \"url\": \"https://...\"}]. Check that each link opens before you add it. Codes with an empty list show no links.",
+  "_help": "Study links for each code, from the course correction code document (2025). These iLearn pages need a Macquarie iLearn login. Format: \"T\": [{\"title\": \"...\", \"url\": \"https://...\"}].",
   "links": {
-    "VT": [],
-    "VF": [],
-    "SVA": [],
-    "Art": [],
-    "Pl": [],
-    "Prep": [],
-    "WF": [],
-    "WC": [],
-    "WO": [],
-    "P": [],
+    "T": [
+      {
+        "title": "Improve tense and verb forms (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018157"
+      }
+    ],
+    "vf": [
+      {
+        "title": "Improve tense and verb forms (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018157"
+      }
+    ],
+    "sv": [
+      {
+        "title": "Improve subject-verb agreement (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018155"
+      }
+    ],
+    "art": [
+      {
+        "title": "Improve article use (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018153"
+      }
+    ],
+    "N": [
+      {
+        "title": "Singular and plural (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018152&forceview=1"
+      }
+    ],
+    "uncn/cn": [
+      {
+        "title": "Countable and uncountable nouns (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018158"
+      }
+    ],
+    "prep": [
+      {
+        "title": "Improve prepositions (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018154"
+      }
+    ],
+    "wf": [
+      {
+        "title": "Improve word form (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018150"
+      }
+    ],
+    "ww": [],
+    "wo": [],
+    "P": [
+      {
+        "title": "Improve punctuation (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018151"
+      }
+    ],
     "SS": [],
+    "i.s.": [
+      {
+        "title": "Avoid incomplete sentences (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018156"
+      }
+    ],
     "^": [],
-    "X": []
+    "/": [],
+    "sp": [
+      {
+        "title": "Improve spelling (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018149"
+      }
+    ],
+    "ref": [
+      {
+        "title": "Improve pronoun references (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018159"
+      }
+    ],
+    "linker": [
+      {
+        "title": "Improve linking words (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018160"
+      }
+    ],
+    "INF": [
+      {
+        "title": "Formal and informal writing styles (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018165"
+      }
+    ],
+    "logic": [
+      {
+        "title": "Writing ideas in a logical order (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018162"
+      }
+    ],
+    "NP": [
+      {
+        "title": "Paragraphs (iLearn)",
+        "url": "https://ilearn.mq.edu.au/mod/page/view.php?id=9018163"
+      }
+    ]
   }
 }
