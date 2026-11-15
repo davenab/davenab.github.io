@@ -1,0 +1,80 @@
+{
+  "_help": "Reference pages. 'wordFamilies' is the Word family page (Track A). 'hedgingBank' is the Hedging bank page (Track B). Each group has a title, a short note, a list of entries and one example sentence. Edit the text between the quotation marks.",
+  "wordFamilies": [
+    {
+      "title": "-tion / -sion",
+      "note": "Very common for verbs.",
+      "entries": [["reduce", "reduction"], ["decide", "decision"], ["introduce", "introduction"], ["consume", "consumption"], ["communicate", "communication"], ["expand", "expansion"]],
+      "example": "The introduction of online classes led to a reduction in travel."
+    },
+    {
+      "title": "-ment",
+      "note": "Add -ment to the verb.",
+      "entries": [["develop", "development"], ["improve", "improvement"], ["invest", "investment"], ["achieve", "achievement"], ["disagree", "disagreement"]],
+      "example": "Greater investment in schools can lead to an improvement in results."
+    },
+    {
+      "title": "-ance / -ence / -ency",
+      "note": "Adjectives ending in -ant / -ent, and some verbs.",
+      "entries": [["significant", "significance"], ["important", "importance"], ["perform", "performance"], ["attend", "attendance"], ["efficient", "efficiency"], ["depend", "dependence"]],
+      "example": "Regular attendance is linked to better performance."
+    },
+    {
+      "title": "-ity",
+      "note": "Adjectives, especially those ending in -able / -ible.",
+      "entries": [["available", "availability"], ["able", "ability"], ["flexible", "flexibility"], ["complex", "complexity"], ["responsible", "responsibility"], ["secure", "security"]],
+      "example": "The availability of cheap flights has increased the complexity of travel rules."
+    },
+    {
+      "title": "-sis / -ysis",
+      "note": "Often from verbs ending in -yse or -ise.",
+      "entries": [["analyse", "analysis"], ["emphasise", "emphasis"], ["hypothesise", "hypothesis"]],
+      "example": "Careful analysis of the data supports this hypothesis."
+    },
+    {
+      "title": "-al / -ure",
+      "note": "A smaller group, but common in essays.",
+      "entries": [["approve", "approval"], ["arrive", "arrival"], ["fail", "failure"], ["close", "closure"]],
+      "example": "The closure of the factory followed the failure of the business."
+    },
+    {
+      "title": "-ness / -th / -acy / -iour",
+      "note": "Other common endings.",
+      "entries": [["aware", "awareness"], ["grow", "growth"], ["strong", "strength"], ["accurate", "accuracy"], ["behave", "behaviour"]],
+      "example": "Rapid growth can reduce the accuracy of forecasts."
+    }
+  ],
+  "hedgingBank": [
+    {
+      "title": "Modal verbs",
+      "note": "Put them before the main verb.",
+      "entries": ["may", "might", "could", "can"],
+      "example": "Online learning may improve access to education."
+    },
+    {
+      "title": "Reporting and other cautious verbs",
+      "note": "Use them to report evidence without saying it proves something.",
+      "entries": ["suggest", "indicate", "appear (to)", "seem (to)", "tend (to)"],
+      "example": "The results suggest that sleep affects memory."
+    },
+    {
+      "title": "Adverbs",
+      "note": "They change how sure the whole claim sounds.",
+      "entries": ["possibly", "probably", "perhaps", "generally", "arguably"],
+      "example": "This is probably the main reason for the change."
+    },
+    {
+      "title": "Adjectives",
+      "note": "Often used with “it is … that” or “a … cause”.",
+      "entries": ["possible", "probable", "likely", "unlikely", "potential"],
+      "example": "It is likely that prices will rise next year."
+    },
+    {
+      "title": "Quantity and frequency words",
+      "note": "They limit how many or how often.",
+      "entries": ["some", "many", "most", "a few", "often", "usually", "sometimes"],
+      "example": "Many students find group work useful."
+    }
+  ],
+  "hedgingTip": "One hedge is usually enough. “may possibly perhaps suggest” is too weak and hard to read. Match the strength of your claim to the evidence."
+}

@@ -1,0 +1,9 @@
+{
+  "_help": "Study links shown on the Progress page. Add one or two free, reputable pages per track, like this: {\"title\": \"Being cautious (Academic Phrasebank, University of Manchester)\", \"url\": \"https://...\"}. Open each link in your browser to check it works before you add it. A track with an empty list shows no links.",
+  "nominalisation": [],
+  "hedging": [],
+  "_notCheckedYet": [
+    "UniLearning, University of Wollongong: nominalisation page. Could not be checked: the site was blocked from the build environment.",
+    "https://www.phrasebank.manchester.ac.uk/being-cautious/ (Academic Phrasebank, Being cautious). Could not be checked: the site was blocked from the build environment."
+  ]
+}
