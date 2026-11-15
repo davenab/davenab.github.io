@@ -85,7 +85,7 @@
     fetch(form.action, { method: "POST", mode: "no-cors", body: p })
       .then(function () {
         document.getElementById("done-name").textContent = val("name").split(" ")[0] || "your request is in";
-        form.hidden = true; done.hidden = false; done.focus(); scrollTo({ top: 0, behavior: "smooth" });
+        done.dataset.sent = "1"; form.hidden = true; done.hidden = false; done.focus(); scrollTo({ top: 0, behavior: "smooth" });
       })
       .catch(function () {
         errBox.textContent = "Your request couldn’t be sent. Check your internet connection and try again, or email info@davenab.com.";
@@ -93,4 +93,44 @@
       });
   });
   progress();
+
+  // ---- Audience switch: student booking vs recruiter / organisation enquiry
+  var org = document.getElementById("org"), odone = document.getElementById("odone");
+  var hero = document.querySelector(".page-hero .lead");
+  function setWho(w) {
+    var isOrg = w === "org";
+    var sentS = done.dataset.sent === "1", sentO = odone.dataset.sent === "1";
+    form.hidden = isOrg || sentS; done.hidden = isOrg || !sentS;
+    org.hidden = !isOrg || sentO; odone.hidden = !isOrg || !sentO;
+    var r = document.querySelector('input[name="who"][value="' + w + '"]'); if (r) r.checked = true;
+    try { history.replaceState(null, "", isOrg ? "?for=org" : location.pathname + (want ? "?service=" + want : "")); } catch (e) {}
+  }
+  document.querySelectorAll('input[name="who"]').forEach(function (r) { r.addEventListener("change", function () { setWho(r.value); }); });
+  if (new URLSearchParams(location.search).get("for") === "org") setWho("org");
+
+  // ---- Recruiter enquiry: validates, then opens the visitor's email app with the message filled in
+  org.addEventListener("input", function (e) { var f = e.target.closest(".field"); if (f) f.classList.remove("bad"); });
+  org.addEventListener("change", function (e) { var f = e.target.closest(".field"); if (f) f.classList.remove("bad"); });
+  org.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var bad = [];
+    function mark(el) { var f = el.closest(".field"); f.classList.add("bad"); bad.push(f); }
+    ["oname", "org", "omsg"].forEach(function (n) { if (!org.elements[n].value.trim()) mark(org.elements[n]); });
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(org.elements.oemail.value.trim())) mark(org.elements.oemail);
+    var topic = org.querySelector('[name="topic"]:checked'); if (!topic) mark(org.querySelector('[name="topic"]'));
+    if (bad.length) { bad[0].scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+    var g = function (n) { return org.elements[n].value.trim(); };
+    var subject = topic.value + " – " + g("org");
+    var body = [g("omsg"), "", "—", "Name: " + g("oname"), "Organisation: " + g("org")];
+    if (g("otitle")) body.push("Role: " + g("otitle"));
+    body.push("Email: " + g("oemail"));
+    if (g("ophone")) body.push("Phone: " + g("ophone"));
+    if (g("olink")) body.push("Link: " + g("olink"));
+    body.push("Topic: " + topic.value, "", "Sent from davenab.com");
+    var href = "mailto:info@davenab.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body.join("\n"));
+    org.dataset.mailto = href;
+    document.getElementById("odone-name").textContent = g("oname").split(" ")[0];
+    odone.dataset.sent = "1"; org.hidden = true; odone.hidden = false; odone.focus(); scrollTo({ top: 0, behavior: "smooth" });
+    location.href = href;
+  });
 })();
