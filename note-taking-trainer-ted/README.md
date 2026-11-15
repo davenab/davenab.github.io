@@ -6,7 +6,7 @@ Live address: https://davenab.github.io/note-taking-trainer-ted/
 
 - No sign-in, no AI while the app runs, no tracking.
 - Notes and progress stay in the student's browser. Photos stay on the student's device. Nothing is uploaded.
-- Version 1 (computer-voice lectures) is still at `/note-taking-trainer/`.
+- This replaces version 1 (computer-voice lectures). The old address `/note-taking-trainer/` now redirects here; version 1 is still in the Git history if you ever need it.
 
 ## What is in this folder
 
