@@ -1,0 +1,88 @@
+{
+  "id": "p12",
+  "title": "Renewable energy",
+  "topic": "Environment",
+  "level": "B2",
+  "verified": false,
+  "text": "Renewable energy, such as solar and wind power, are becoming cheaper every year. In 2010, solar panels are much more expensive than they are today, so few families could afford them. Now, millions of household in Australia have solar panels on their roofs. This change is good to the environment, and it also reduces our dependent on coal and gas. However, there are still challenges. The sun does not shine always, and the wind does not blow every day. Storing energy in batteries, which is still expensive. Governments should support research to solve this problem.",
+  "errors": [
+    {
+      "start": 48,
+      "end": 51,
+      "wrong": "are",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "is"
+      ],
+      "ruleReminder": "Find the main noun of the subject. Ignore extra information between commas.",
+      "explanation": "The subject is renewable energy (uncountable and singular). The words between the commas do not change it, so the verb is is."
+    },
+    {
+      "start": 103,
+      "end": 106,
+      "wrong": "are",
+      "code": "VT",
+      "acceptedAnswers": [
+        "were"
+      ],
+      "ruleReminder": "Use the past simple for finished past situations (in 2010, ten years ago).",
+      "explanation": "In 2010 is a finished time, so the verb must be past simple: were."
+    },
+    {
+      "start": 200,
+      "end": 209,
+      "wrong": "household",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "households"
+      ],
+      "ruleReminder": "After millions of and thousands of, use a plural countable noun.",
+      "explanation": "Millions of means many, so the noun must be plural: households."
+    },
+    {
+      "start": 277,
+      "end": 279,
+      "wrong": "to",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "for"
+      ],
+      "ruleReminder": "Good goes with for when something helps: good for your health, good for the environment.",
+      "explanation": "When something helps, we say good for, not good to."
+    },
+    {
+      "start": 321,
+      "end": 330,
+      "wrong": "dependent",
+      "code": "WF",
+      "acceptedAnswers": [
+        "dependence",
+        "dependency"
+      ],
+      "ruleReminder": "After our and other possessives, use a noun: our dependence, our decision.",
+      "explanation": "Dependent is an adjective. After our, we need the noun dependence."
+    },
+    {
+      "start": 402,
+      "end": 414,
+      "wrong": "shine always",
+      "code": "WO",
+      "acceptedAnswers": [
+        "always shine"
+      ],
+      "ruleReminder": "Put always before main verbs (always shine) and after be (is always).",
+      "explanation": "Shine is a main verb, so always comes before it: does not always shine."
+    },
+    {
+      "start": 472,
+      "end": 491,
+      "wrong": "batteries, which is",
+      "code": "SS",
+      "acceptedAnswers": [
+        "batteries is"
+      ],
+      "ruleReminder": "A sentence needs a main verb. A which clause cannot be the only verb in a sentence.",
+      "explanation": "With which, the sentence has no main verb. Remove which so that is becomes the main verb: Storing energy in batteries is still expensive."
+    }
+  ]
+}

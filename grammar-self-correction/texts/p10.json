@@ -1,0 +1,93 @@
+{
+  "id": "p10",
+  "title": "Fast food and diet",
+  "topic": "Health",
+  "level": "B2",
+  "verified": false,
+  "text": "Fast food is popular because it is quick, tasty and usually enough cheap for students. However, eating it too often cause health problems such as obesity and heart disease. In many countries, child eat fast food several times a week because their parents are too busy cook. But is fast food really cheaper than cooking at home. Ten years ago, I eat fast food almost every day. Then I learnt to make simple meals. Cooking at home takes more time it is healthier and often cheaper. I believe schools should teach students these basic skills.",
+  "errors": [
+    {
+      "start": 60,
+      "end": 72,
+      "wrong": "enough cheap",
+      "code": "WO",
+      "acceptedAnswers": [
+        "cheap enough"
+      ],
+      "ruleReminder": "Put enough after an adjective (cheap enough) and before a noun (enough money).",
+      "explanation": "Cheap is an adjective, so enough goes after it: cheap enough."
+    },
+    {
+      "start": 116,
+      "end": 121,
+      "wrong": "cause",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "causes",
+        "can cause"
+      ],
+      "ruleReminder": "An -ing subject (eating it too often) is singular and takes a singular verb.",
+      "explanation": "The subject is eating it too often, one activity, so the verb needs -s: causes."
+    },
+    {
+      "start": 192,
+      "end": 197,
+      "wrong": "child",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "children"
+      ],
+      "ruleReminder": "Some nouns have irregular plurals: child, children; person, people; man, men.",
+      "explanation": "The verb eat and the meaning show many, so we need the irregular plural children."
+    },
+    {
+      "start": 268,
+      "end": 272,
+      "wrong": "cook",
+      "code": "VF",
+      "acceptedAnswers": [
+        "to cook"
+      ],
+      "ruleReminder": "After too + adjective, use to + verb: too busy to cook, too tired to study.",
+      "explanation": "The pattern is too + adjective + to + verb, so we need to cook."
+    },
+    {
+      "start": 322,
+      "end": 327,
+      "wrong": "home.",
+      "code": "P",
+      "acceptedAnswers": [
+        "home?"
+      ],
+      "ruleReminder": "A direct question ends with a question mark.",
+      "explanation": "This sentence is a direct question (is fast food really cheaper...), so it ends with a question mark."
+    },
+    {
+      "start": 345,
+      "end": 348,
+      "wrong": "eat",
+      "code": "VT",
+      "acceptedAnswers": [
+        "ate"
+      ],
+      "ruleReminder": "Use the past simple for past habits at a finished time (ten years ago).",
+      "explanation": "Ten years ago is a finished time. Eat is irregular: eat, ate, eaten."
+    },
+    {
+      "start": 440,
+      "end": 447,
+      "wrong": "time it",
+      "code": "SS",
+      "acceptedAnswers": [
+        "time, but it",
+        "time but it",
+        "time. However, it",
+        "time; however, it",
+        "time. But it",
+        "time, yet it"
+      ],
+      "ruleReminder": "Do not join two full sentences with nothing between them. Use a full stop, or a word like but.",
+      "explanation": "Cooking at home takes more time and it is healthier are two sentences. They need a comma and but, or a full stop."
+    }
+  ]
+}

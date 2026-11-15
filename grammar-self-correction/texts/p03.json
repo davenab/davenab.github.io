@@ -1,0 +1,87 @@
+{
+  "id": "p03",
+  "title": "Shopping online",
+  "topic": "Online shopping",
+  "level": "B2",
+  "verified": false,
+  "text": "Online shopping has changed the way people buy goods. In the past, most people buy clothes and electronics in local shops, but now many of them order almost everything on internet. The main reason are convenience: customers can compare prices without leaving home. Online stores also offer a much wider range of product. On the other hand, online shopping can be harm to small businesses, which cannot compete with large companies on price. In addition, customers often return back items they do not like, and many people do not think about how does delivery affect the environment. Overall, online shopping is useful, but we should use it responsibly.",
+  "errors": [
+    {
+      "start": 79,
+      "end": 82,
+      "wrong": "buy",
+      "code": "VT",
+      "acceptedAnswers": [
+        "bought"
+      ],
+      "ruleReminder": "Use the past simple for past habits and situations (in the past, years ago).",
+      "explanation": "In the past shows a finished time, so the verb must be past simple: bought."
+    },
+    {
+      "start": 171,
+      "end": 179,
+      "wrong": "internet",
+      "code": "Art",
+      "acceptedAnswers": [
+        "the internet"
+      ],
+      "ruleReminder": "Use the with nouns when there is only one and everyone knows which one: the internet, the environment.",
+      "explanation": "We say on the internet, because there is only one internet."
+    },
+    {
+      "start": 197,
+      "end": 200,
+      "wrong": "are",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "is"
+      ],
+      "ruleReminder": "Find the main noun of the subject. A singular subject takes a singular verb.",
+      "explanation": "The subject is the main reason (singular), so the verb is is."
+    },
+    {
+      "start": 312,
+      "end": 319,
+      "wrong": "product",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "products"
+      ],
+      "ruleReminder": "After a range of, a number of and a variety of, use a plural countable noun.",
+      "explanation": "A range of means many different kinds, so the noun must be plural: products."
+    },
+    {
+      "start": 363,
+      "end": 367,
+      "wrong": "harm",
+      "code": "WF",
+      "acceptedAnswers": [
+        "harmful"
+      ],
+      "ruleReminder": "After be, use an adjective to describe the subject: be harmful, be useful.",
+      "explanation": "Harm is a noun or verb. After can be, we need the adjective harmful."
+    },
+    {
+      "start": 470,
+      "end": 481,
+      "wrong": "return back",
+      "code": "X",
+      "acceptedAnswers": [
+        "return"
+      ],
+      "ruleReminder": "Do not add words that repeat the meaning. Return already means go or give back.",
+      "explanation": "Return means give back, so back is not needed."
+    },
+    {
+      "start": 545,
+      "end": 565,
+      "wrong": "does delivery affect",
+      "code": "WO",
+      "acceptedAnswers": [
+        "delivery affects"
+      ],
+      "ruleReminder": "In a question inside a sentence, use normal statement order: subject + verb. Do not use do or does.",
+      "explanation": "Inside a sentence, how delivery affects uses statement order, so does is removed and the verb takes -s."
+    }
+  ]
+}

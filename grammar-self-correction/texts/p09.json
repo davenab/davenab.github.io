@@ -1,0 +1,87 @@
+{
+  "id": "p09",
+  "title": "Tourism and local communities",
+  "topic": "Tourism",
+  "level": "B2",
+  "verified": false,
+  "text": "Tourism brings both benefits and problems to local communities. On the positive side, it creates job and brings money into the area, because tourists spend money for hotels, food and souvenirs. However, tourism can also cause damage. Last summer, I visit a small island in Thailand. The beaches crowded and noisy, and the pollute in the water was clearly visible. Many local people told me that cost of living had risen because of tourism. In my opinion, the government should cooperate together with local communities to manage tourism in a more sustainable way.",
+  "errors": [
+    {
+      "start": 97,
+      "end": 100,
+      "wrong": "job",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "jobs"
+      ],
+      "ruleReminder": "A countable noun with no article and a general meaning must be plural: it creates jobs.",
+      "explanation": "Job is countable. Here it means jobs in general, so it must be plural."
+    },
+    {
+      "start": 162,
+      "end": 165,
+      "wrong": "for",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "on"
+      ],
+      "ruleReminder": "Spend money goes with on: spend money on something.",
+      "explanation": "We spend money on things, not for things."
+    },
+    {
+      "start": 249,
+      "end": 254,
+      "wrong": "visit",
+      "code": "VT",
+      "acceptedAnswers": [
+        "visited"
+      ],
+      "ruleReminder": "Use the past simple for finished past events (last summer, yesterday).",
+      "explanation": "Last summer is a finished time, so the verb must be past simple: visited."
+    },
+    {
+      "start": 295,
+      "end": 302,
+      "wrong": "crowded",
+      "code": "^",
+      "acceptedAnswers": [
+        "were crowded"
+      ],
+      "ruleReminder": "Every clause needs a verb. Use be before adjectives such as crowded and noisy.",
+      "explanation": "The beaches crowded has no verb. It needs were: the beaches were crowded."
+    },
+    {
+      "start": 322,
+      "end": 329,
+      "wrong": "pollute",
+      "code": "WF",
+      "acceptedAnswers": [
+        "pollution"
+      ],
+      "ruleReminder": "After the, use a noun: the pollution, the decision.",
+      "explanation": "Pollute is a verb. After the, we need the noun pollution."
+    },
+    {
+      "start": 395,
+      "end": 409,
+      "wrong": "cost of living",
+      "code": "Art",
+      "acceptedAnswers": [
+        "the cost of living"
+      ],
+      "ruleReminder": "Use the with nouns made specific by an of phrase: the cost of living, the price of food.",
+      "explanation": "Cost here is made specific by of living, so it needs the."
+    },
+    {
+      "start": 477,
+      "end": 495,
+      "wrong": "cooperate together",
+      "code": "X",
+      "acceptedAnswers": [
+        "cooperate"
+      ],
+      "ruleReminder": "Do not add words that repeat the meaning. Cooperate already means work together.",
+      "explanation": "Cooperate means work together, so together is not needed."
+    }
+  ]
+}

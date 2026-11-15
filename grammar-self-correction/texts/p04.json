@@ -1,0 +1,92 @@
+{
+  "id": "p04",
+  "title": "Sleep and student health",
+  "topic": "Health",
+  "level": "B2",
+  "verified": false,
+  "text": "Many university students do not get enough sleep. Research show that young adults need between seven and nine hour of sleep each night. However, students often stay up late for finishing their assignments. Lack of sleep has a negative effect in memory and concentration, so tired students may find it hard to learn. In contrast, students who sleep well are often more success in their exams. When I started university, I sleep only five hours a night, and I felt tired all the time. I changed my routine in my second year, now I feel much better and study more effectively.",
+  "errors": [
+    {
+      "start": 59,
+      "end": 63,
+      "wrong": "show",
+      "code": "SVA",
+      "acceptedAnswers": [
+        "shows",
+        "has shown"
+      ],
+      "ruleReminder": "An uncountable noun such as research, information or advice takes a singular verb.",
+      "explanation": "Research is uncountable and singular, so the verb needs -s: shows."
+    },
+    {
+      "start": 110,
+      "end": 114,
+      "wrong": "hour",
+      "code": "Pl",
+      "acceptedAnswers": [
+        "hours"
+      ],
+      "ruleReminder": "After numbers above one, use a plural noun: two hours, nine days.",
+      "explanation": "Seven and nine are more than one, so the noun must be plural: hours."
+    },
+    {
+      "start": 173,
+      "end": 186,
+      "wrong": "for finishing",
+      "code": "VF",
+      "acceptedAnswers": [
+        "to finish",
+        "finishing"
+      ],
+      "ruleReminder": "To show purpose (why), use to + verb, not for + -ing.",
+      "explanation": "For finishing is not used to show purpose. Use to finish, or just finishing after stay up late."
+    },
+    {
+      "start": 242,
+      "end": 244,
+      "wrong": "in",
+      "code": "Prep",
+      "acceptedAnswers": [
+        "on"
+      ],
+      "ruleReminder": "Effect goes with on: an effect on something. Affect is the verb.",
+      "explanation": "The phrase is have an effect on something, not in."
+    },
+    {
+      "start": 368,
+      "end": 375,
+      "wrong": "success",
+      "code": "WF",
+      "acceptedAnswers": [
+        "successful"
+      ],
+      "ruleReminder": "After more and be, use an adjective: more successful, more careful.",
+      "explanation": "Success is a noun. After are more, we need the adjective successful."
+    },
+    {
+      "start": 421,
+      "end": 426,
+      "wrong": "sleep",
+      "code": "VT",
+      "acceptedAnswers": [
+        "slept"
+      ],
+      "ruleReminder": "Use the past simple for finished past situations (when I started university).",
+      "explanation": "When I started university is a finished time, so the verb must be past simple: slept."
+    },
+    {
+      "start": 517,
+      "end": 526,
+      "wrong": "year, now",
+      "code": "SS",
+      "acceptedAnswers": [
+        "year, and now",
+        "year. Now",
+        "year; now",
+        "year and now"
+      ],
+      "ruleReminder": "Do not join two full sentences with only a comma. Use a full stop, a semicolon, or a word like and or but.",
+      "explanation": "I changed my routine and now I feel much better are two full sentences. A comma alone cannot join them."
+    }
+  ]
+}

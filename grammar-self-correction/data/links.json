@@ -1,0 +1,18 @@
+{
+  "_help": "Study links for each code. Add one or two free, reputable pages per code, like this: \"VT\": [{\"title\": \"Verb tenses (Purdue OWL)\", \"url\": \"https://...\"}]. Check that each link opens before you add it. Codes with an empty list show no links.",
+  "links": {
+    "VT": [],
+    "VF": [],
+    "SVA": [],
+    "Art": [],
+    "Pl": [],
+    "Prep": [],
+    "WF": [],
+    "WC": [],
+    "WO": [],
+    "P": [],
+    "SS": [],
+    "^": [],
+    "X": []
+  }
+}
