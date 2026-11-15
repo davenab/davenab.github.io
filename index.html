@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dave Nab · AI Learning Apps</title>
+<meta name="description" content="Dave Nab is a learning designer building AI-supported apps for academic English: listening, reading, writing, grammar and vocabulary. Free to use, no sign-in.">
+<meta property="og:title" content="Dave Nab · AI Learning Apps">
+<meta property="og:description" content="Learning designer building AI-supported apps for academic English. Free, no sign-in, privacy-first.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://davenab.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f3a5f'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23f4b860'%3EDN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f4; --surface:#ffffff; --surface-2:#f2efe8; --text:#1b2330; --muted:#5f6672; --border:#e5e0d6;
+  --ink:#1f3a5f; --accent:#d9822b; --accent-soft:#fbeedd;
+  --listen:#2f6fb0; --listen-bg:#e5effa;
+  --read:#2e7d5b; --read-bg:#e3f2ea;
+  --write:#8a4fb5; --write-bg:#f1e8f8;
+  --gram:#b4553a; --gram-bg:#f9e6df;
+  --vocab:#9a7400; --vocab-bg:#fbf1d4;
+  --radius:18px; --shadow:0 1px 2px rgba(20,30,50,.04),0 8px 24px rgba(20,30,50,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12161d; --surface:#1a2029; --surface-2:#222a35; --text:#e8ebf0; --muted:#a2a9b5; --border:#2c3542;
+  --ink:#9cc0ee; --accent:#f4b860; --accent-soft:#3a2c17;
+  --listen:#8dbbf0; --listen-bg:#1c2b3d; --read:#7fd1aa; --read-bg:#1a3128;
+  --write:#c9a1ec; --write-bg:#2c2238; --gram:#f0a58e; --gram-bg:#3a241d; --vocab:#ead07a; --vocab-bg:#352d14;
+  --shadow:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#12161d; --surface:#1a2029; --surface-2:#222a35; --text:#e8ebf0; --muted:#a2a9b5; --border:#2c3542;
+  --ink:#9cc0ee; --accent:#f4b860; --accent-soft:#3a2c17;
+  --listen:#8dbbf0; --listen-bg:#1c2b3d; --read:#7fd1aa; --read-bg:#1a3128;
+  --write:#c9a1ec; --write-bg:#2c2238; --gram:#f0a58e; --gram-bg:#3a241d; --vocab:#ead07a; --vocab-bg:#352d14;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;letter-spacing:-.015em;margin:0}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600}
+.mark{width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:Fraunces,serif;font-size:.95rem}
+.navlinks{display:flex;gap:6px;align-items:center}
+.navlinks a,.theme{font-size:.92rem;text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:999px;border:0;background:none;cursor:pointer;font-family:inherit}
+.navlinks a:hover,.theme:hover{color:var(--text);background:var(--surface-2)}
+@media (max-width:560px){.navlinks a.hide-sm{display:none}}
+
+/* hero */
+.hero{padding:56px 0 64px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+@media (max-width:820px){.hero{grid-template-columns:1fr;padding:28px 0 44px}}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:.85rem;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:20px}
+.hero h1{font-size:clamp(2.3rem,5.6vw,3.9rem);line-height:1.05;color:var(--text)}
+.hero h1 em{font-style:italic;color:var(--ink)}
+.lead{font-size:1.14rem;color:var(--muted);max-width:56ch;margin:20px 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--border);background:var(--surface);font-size:.96rem}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+.btn{transition:transform .15s}
+.hero-card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+.hero-card h3{font-size:1.05rem;margin-bottom:14px}
+.skillbar{display:flex;flex-direction:column;gap:10px}
+.skillbar div{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:12px;font-weight:600;font-size:.94rem}
+.skillbar span{font-weight:500;font-size:.82rem;opacity:.8}
+
+/* sections */
+section{padding:56px 0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem)}
+.sec-head p{color:var(--muted);margin:6px 0 0;max-width:60ch}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{font:inherit;font-size:.88rem;padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--text);color:var(--bg);border-color:var(--text)}
+
+/* app cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+@media (max-width:360px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow);transition:transform .18s,border-color .18s}
+.card:hover{transform:translateY(-3px);border-color:var(--c)}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tag{font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:999px;color:var(--c);background:var(--cbg)}
+.status{font-size:.76rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.status.live::before{background:var(--read)}
+.card h3{font-size:1.28rem;line-height:1.2}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.focus{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.focus span{font-size:.75rem;background:var(--surface-2);color:var(--muted);padding:3px 9px;border-radius:999px}
+.card .go{margin-top:auto;padding-top:6px;display:flex;gap:14px;font-size:.92rem;font-weight:600}
+.card .go a{color:var(--c);text-decoration:none}
+.card .go a:hover{text-decoration:underline}
+.card .go .soon{color:var(--muted);font-weight:500}
+.listen{--c:var(--listen);--cbg:var(--listen-bg)} .read{--c:var(--read);--cbg:var(--read-bg)}
+.write{--c:var(--write);--cbg:var(--write-bg)} .gram{--c:var(--gram);--cbg:var(--gram-bg)} .vocab{--c:var(--vocab);--cbg:var(--vocab-bg)}
+
+/* principles */
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:820px){.principles{grid-template-columns:1fr}}
+.pr{padding:24px;border-radius:var(--radius);background:var(--surface-2)}
+.pr .n{font-family:Fraunces,serif;font-size:1.9rem;color:var(--accent);line-height:1}
+.pr h3{font-size:1.18rem;margin:10px 0 6px}
+.pr p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* about / footer */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+.about p{color:var(--muted);margin:0 0 14px}
+footer{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+footer a{text-decoration:none} footer a:hover{color:var(--text)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#top" aria-label="Dave Nab, home"><span class="mark">DN</span>Dave Nab</a>
+    <div class="navlinks">
+      <a href="#apps">Apps</a>
+      <a href="#approach" class="hide-sm">Approach</a>
+      <a href="#about" class="hide-sm">About</a>
+      <button class="theme" id="theme" aria-label="Switch light or dark mode" title="Light / dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <span class="eyebrow">✦ Learning design × AI in education</span>
+      <h1>Small, smart tools that help students <em>think</em>, not just get answers.</h1>
+      <p class="lead">I’m Dave Nab, a learning designer building AI-supported apps for academic English. Each app targets one real skill students need at university, gives feedback that makes them do the thinking, and runs in any browser with no sign-in.</p>
+      <div class="cta">
+        <a class="btn primary" href="#apps">Explore the apps →</a>
+        <a class="btn" href="https://davenab.com" target="_blank" rel="noopener">davenab.com ↗</a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Skills covered">
+      <h3>Skills covered</h3>
+      <div class="skillbar">
+        <div class="listen" style="background:var(--listen-bg);color:var(--listen)">Listening <span>2 apps</span></div>
+        <div class="read" style="background:var(--read-bg);color:var(--read)">Reading <span>1 app</span></div>
+        <div class="write" style="background:var(--write-bg);color:var(--write)">Writing <span>2 apps</span></div>
+        <div class="gram" style="background:var(--gram-bg);color:var(--gram)">Grammar <span>2 apps</span></div>
+        <div class="vocab" style="background:var(--vocab-bg);color:var(--vocab)">Vocabulary <span>1 app</span></div>
+      </div>
+    </aside>
+  </header>
+</div>
+
+<section id="apps">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>The apps</h2>
+        <p>A growing set of focused tools for academic English. New apps are added as they’re built and tested with students.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter apps by skill">
+        <button aria-pressed="true" data-f="all">All</button>
+        <button aria-pressed="false" data-f="listen">Listening</button>
+        <button aria-pressed="false" data-f="read">Reading</button>
+        <button aria-pressed="false" data-f="write">Writing</button>
+        <button aria-pressed="false" data-f="gram">Grammar</button>
+        <button aria-pressed="false" data-f="vocab">Vocabulary</button>
+      </div>
+    </div>
+
+    <!--
+      HOW TO ADD / UPDATE AN APP
+      1. Put the app in its own folder, e.g. /note-taking/index.html
+      2. In its card below: change <span class="status">In development</span>
+         to <span class="status live">Live</span>, and replace the "Coming soon"
+         span with: <a href="note-taking/">Try it →</a>
+    -->
+    <div class="grid" id="grid">
+
+      <article class="card listen" data-skill="listen">
+        <div class="top"><span class="tag">Listening</span><span class="status">In development</span></div>
+        <h3>Lecture Note-Taking Trainer</h3>
+        <p>Students listen to a short lecture and take notes. The app compares their notes with the key points and the signposting language that marks the lecture’s structure.</p>
+        <div class="focus"><span>Key points</span><span>Signposting</span><span>Note structure</span></div>
+        <div class="go"><span class="soon">Coming soon</span></div>
+      </article>
+
+      <article class="card listen" data-skill="listen">
+        <div class="top"><span class="tag">Listening</span><span class="status">In development</span></div>
+        <h3>Dictogloss</h3>
+        <p>Students hear a passage twice, then reconstruct it in their own words. Feedback covers both meaning (what they kept or lost) and grammar.</p>
+        <div class="focus"><span>Listening for meaning</span><span>Grammar in context</span></div>
+        <div class="go"><span class="soon">Coming soon</span></div>
+      </article>
+
+      <article class="card read" data-skill="read">
+        <div class="top"><span class="tag">Reading</span><span class="status">In development</span></div>
+        <h3>Skim &amp; Scan Timer</h3>
+        <p>Timed skimming and scanning tasks with a main-idea check, so speed never comes at the cost of understanding. Reading speed is tracked over time.</p>
+        <div class="focus"><span>Skimming</span><span>Scanning</span><span>Progress tracking</span></div>
+        <div class="go"><span class="soon">Coming soon</span></div>
+      </article>
+
+      <article class="card write" data-skill="write">
+        <div class="top"><span class="tag">Writing</span><span class="status">In development</span></div>
+        <h3>Paragraph X-Ray</h3>
+        <p>Students paste a paragraph and see it labelled: topic sentence, evidence, analysis and link. The app flags which parts are missing or weak.</p>
+        <div class="focus"><span>Paragraph structure</span><span>Self-review</span></div>
+        <div class="go"><span class="soon">Coming soon</span></div>
+      </article>
+
+      <article class="card write" data-skill="write">
+        <div class="top"><span class="tag">Writing</span><span class="status">In development</span></div>
+        <h3>Synthesis Builder</h3>
+        <p>Students combine two short sources in one piece of writing and get feedback on how well they integrate the ideas and cite them.</p>
+        <div class="focus"><span>Source integration</span><span>Citation</span><span>Paraphrasing</span></div>
+        <div class="go"><span class="soon">Coming soon</span></div>
+      </article>
+
+      <article class="card gram" data-skill="gram">
+        <div class="top"><span class="tag">Grammar</span><span class="status">In development</span></div>
+        <h3>Error-Correction Coach</h3>
+        <p>Instead of fixing mistakes, the app marks them with error codes teachers already use, like <b>VT</b> (verb tense) and <b>Art</b> (article), so students correct their own writing.</p>
+        <div class="focus"><span>Self-correction</span><span>Error codes</span></div>
+        <div class="go"><span class="soon">Coming soon</span></div>
+      </article>
+
+      <article class="card gram" data-skill="gram">
+        <div class="top"><span class="tag">Grammar</span><span class="status">In development</span></div>
+        <h3>Nominalisation &amp; Hedging Drills</h3>
+        <p>Transformation drills that turn everyday sentences into academic ones: verbs become nouns (“analyse” → “analysis”), and claims are softened appropriately (“may suggest”).</p>
+        <div class="focus"><span>Nominalisation</span><span>Hedging</span><span>Academic style</span></div>
+        <div class="go"><span class="soon">Coming soon</span></div>
+      </article>
+
+      <article class="card vocab" data-skill="vocab">
+        <div class="top"><span class="tag">Vocabulary</span><span class="status">In development</span></div>
+        <h3>Register Swapper</h3>
+        <p>Students turn informal language into academic language (“a lot of” → “a considerable number of”) and learn why each choice fits the academic register.</p>
+        <div class="focus"><span>Academic register</span><span>Word choice</span></div>
+        <div class="go"><span class="soon">Coming soon</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Design approach</h2><p>Three principles shape every app.</p></div></div>
+    <div class="principles">
+      <div class="pr"><div class="n">01</div><h3>Feedback that makes students think</h3><p>The apps give hints, codes and comparisons instead of correct answers, so students do the thinking and remember more.</p></div>
+      <div class="pr"><div class="n">02</div><h3>One skill, done well</h3><p>Each tool targets a specific academic skill, like signposting, paragraph structure or hedging, and fits into existing lessons or self-study.</p></div>
+      <div class="pr"><div class="n">03</div><h3>Open and private</h3><p>No accounts and no installs: open the link and start. Student work stays on their own device.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2 style="font-size:clamp(1.7rem,3.4vw,2.3rem)">About</h2>
+    </div>
+    <div>
+      <p>I design learning experiences that use AI to add real educational value. The focus is on helping students build lasting skills rather than handing them shortcuts.</p>
+      <p>These apps come from everyday classroom needs in academic English. Each one is built, tested with learners and refined based on what actually helps.</p>
+      <div class="cta"><a class="btn" href="https://davenab.com" target="_blank" rel="noopener">More about me ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Dave Nab</span>
+    <span><a href="https://davenab.com" target="_blank" rel="noopener">davenab.com</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("yr").textContent=new Date().getFullYear();
+// Skill filter
+const btns=document.querySelectorAll(".filters button");
+btns.forEach(b=>b.addEventListener("click",()=>{
+  btns.forEach(x=>x.setAttribute("aria-pressed",x===b));
+  const f=b.dataset.f;
+  document.querySelectorAll("#grid .card").forEach(c=>{c.style.display=(f==="all"||c.dataset.skill===f)?"":"none";});
+}));
+// Theme toggle (remembered on this device)
+const root=document.documentElement;
+try{const t=localStorage.getItem("theme");if(t)root.dataset.theme=t;}catch(e){}
+document.getElementById("theme").addEventListener("click",()=>{
+  const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+  root.dataset.theme=dark?"light":"dark";
+  try{localStorage.setItem("theme",root.dataset.theme);}catch(e){}
+});
+</script>
+</body>
+</html>
