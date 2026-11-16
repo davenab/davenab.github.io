@@ -134,6 +134,39 @@
     lb.addEventListener("click", function (e) { if (e.target === lb || e.target.classList.contains("x")) lb.close(); });
   }
 
+  // IELTS results: filters, "show all", certificate lightbox
+  var resGrid = document.getElementById("resGrid");
+  if (resGrid) {
+    var moreBtn = document.getElementById("resMore"), expanded = false, rf = "all";
+    function applyRes() {
+      var shown = 0;
+      resGrid.querySelectorAll(".res-card").forEach(function (c) {
+        var ok = rf === "all" || (rf === "b7" ? +c.dataset.band >= 7 : c.dataset.cat === rf);
+        var vis = ok && (expanded || rf !== "all" || !c.classList.contains("res-more"));
+        c.hidden = !vis; if (vis) shown++;
+      });
+      if (moreBtn) moreBtn.parentElement.hidden = expanded || rf !== "all";
+    }
+    document.querySelectorAll("[data-rf]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        document.querySelectorAll("[data-rf]").forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
+        rf = b.dataset.rf; applyRes();
+      });
+    });
+    if (moreBtn) moreBtn.addEventListener("click", function () { expanded = true; applyRes(); });
+    applyRes();
+    var lbx = document.getElementById("lightbox");
+    if (lbx && lbx.showModal) {
+      resGrid.addEventListener("click", function (e) {
+        var c = e.target.closest(".res-card"); if (!c) return;
+        var im = lbx.querySelector("img"); im.src = c.dataset.img; im.alt = "IELTS certificate: " + c.getAttribute("aria-label").replace(". View certificate", "");
+        lbx.querySelector("p").textContent = c.getAttribute("aria-label").replace(". View certificate", "");
+        lbx.showModal();
+      });
+      lbx.addEventListener("click", function (e) { if (e.target === lbx || e.target.classList.contains("x")) lbx.close(); });
+    }
+  }
+
   // Filters: <div class="filters"><button data-f="all|x"> + items with data-cat="x"
   document.querySelectorAll(".filters").forEach(function (group) {
     var btns = group.querySelectorAll("button");
@@ -141,6 +174,7 @@
       b.addEventListener("click", function () {
         btns.forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
         var f = b.dataset.f;
+        if (f === undefined) return;
         document.querySelectorAll("[data-cat]").forEach(function (c) { c.style.display = (f === "all" || c.dataset.cat === f) ? "" : "none"; });
       });
     });

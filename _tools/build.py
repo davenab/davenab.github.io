@@ -42,7 +42,7 @@ RES = [
  ("resources/teachers/", "For teachers", "Lesson kits, courses and free slides"),
  ("resources/", "All resources", "Not sure? Start here"),
 ]
-TOP2 = [("testimonials/", "Testimonials"), ("gallery/", "Gallery"), ("about/", "About")]
+TOP2 = [("testimonials/", "Results"), ("gallery/", "Gallery"), ("about/", "About")]
 TOP = TOP1 + TOP2
 
 def words(text):
@@ -281,6 +281,79 @@ APPS = [
  ("vocab","Vocabulary","Register Swapper","Students turn informal language into academic language (“a lot of” → “a considerable number of”) and learn why each choice fits the academic register.",["Academic register","Word choice"]),
 ]
 
+
+# ------------------------------------------------------------------ IELTS RESULTS (49 students; certificates in assets/img/results/result-NN.webp)
+# (n, first name, module A/G/?, "YYYY-MM", L, R, W, S, overall)  n matches the image number.
+RESULTS = [
+(1,"Serineh","A","2023-03",7.5,5.5,5.5,6.5,6.5),(2,"Sevan","A","2023-03",7.5,6.0,6.5,6.5,6.5),(3,"Sara","A","2023-03",8.0,7.0,6.0,6.5,7.0),
+(4,"Zahra","G","2022-11",7.5,9.0,6.5,6.5,7.5),(5,"Mahla","A","2022-12",7.0,5.0,6.0,7.0,6.5),(6,"Vahid","G","2022-11",4.5,4.5,5.5,6.0,5.0),
+(7,"Sahar","A","2022-12",6.5,6.5,6.0,6.5,6.5),(8,"Mitra","A","2023-01",7.0,6.5,6.5,7.0,7.0),(9,"Shima","A","2022-12",7.5,6.5,6.5,7.0,7.0),
+(10,"Tahereh","A","2022-12",6.5,6.5,6.5,6.5,6.5),(11,"Mahsa","A","2022-12",7.5,7.0,6.5,6.5,7.0),(12,"Mahsa","A","2022-11",6.5,7.5,6.5,7.0,7.0),
+(13,"Zeinab","G","2021-09",5.0,4.0,5.5,5.0,5.0),(14,"Zahra","A","2021-11",6.5,7.0,6.5,7.0,7.0),(15,"Shiva","G","2015-12",5.0,5.0,6.0,6.0,5.5),
+(16,"Siavash","A","2021-08",8.5,7.0,6.0,8.0,7.5),(17,"Zahra","A","2020-06",8.5,7.5,6.5,7.0,7.5),(18,"Touraj","A","2017-11",8.0,7.0,6.5,6.0,7.0),
+(19,"Taraneh","A","2017-02",6.5,6.0,6.0,6.5,6.5),(20,"Shahram","G","2013-05",8.0,7.5,7.5,7.5,7.5),(21,"Sara","G","2021-11",6.5,7.0,6.5,7.5,7.0),
+(22,"Pendar","A","2022-06",7.0,7.0,5.5,6.0,6.5),(23,"Mojtaba","G","2021-10",5.0,4.0,5.0,6.0,5.0),(24,"Melina","G","2022-05",5.5,4.0,6.0,6.5,5.5),
+(25,"Mohammad","A","2022-01",6.0,6.5,6.0,6.5,6.5),(26,"Mahnaz","G","2016-12",5.0,4.5,5.0,6.0,5.0),(27,"Nilgoon","G","2016-03",6.0,6.5,7.0,6.5,6.5),
+(28,"Navid","G","2015-06",7.5,7.0,6.0,6.5,7.0),(29,"Mohammadreza","A","2015-12",7.0,6.0,6.0,7.5,6.5),(30,"Sarah","A","2022-03",7.5,7.0,6.5,7.0,7.0),
+(31,"Morteza","G","2021-05",6.0,5.0,5.5,6.0,5.5),(32,"Niloufar","A","2016-06",8.0,7.0,6.5,6.5,7.0),(33,"Mehdi","G","2022-02",5.0,7.0,6.0,6.0,6.0),
+(34,"Mahsa","A","2022-03",6.5,7.0,6.5,7.0,7.0),(35,"Marjan","A","2021-10",8.0,8.0,7.5,7.0,7.5),(36,"Hadi","G","2022-01",5.0,4.5,5.0,5.5,5.0),
+(37,"Majid","?","2019-02",5.0,4.5,5.5,5.5,5.0),(38,"Fateme","A","2013-06",7.5,8.0,7.0,7.0,7.5),(39,"Elham","G","2021-05",4.0,4.0,6.0,6.0,5.0),
+(40,"Hamed","A","2014-05",7.0,6.5,7.0,7.5,7.0),(41,"Elaheh","A","2017-01",7.5,8.0,7.0,7.5,7.5),(42,"Elham","G","2016-09",6.0,6.0,7.5,7.0,6.5),
+(43,"Maryam","A","2022-03",7.5,6.0,6.0,7.0,6.5),(44,"Behrouz","G","2012-03",7.0,5.5,7.5,6.0,6.5),(45,"Hosein","A","2013-10",7.5,7.0,6.5,7.0,7.0),
+(46,"Anahita","G","2013-07",6.5,7.0,7.0,6.0,6.5),(47,"Diana","A","2022-03",8.0,6.5,6.0,8.0,7.0),(48,"Bita","G","2012-02",8.5,6.5,7.0,6.0,7.0),
+(49,"Amir","A","2021-02",6.5,6.5,6.0,7.0,6.5),
+]
+
+MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
+RES_SORTED = sorted(RESULTS, key=lambda r: r[3], reverse=True)
+RES_N = len(RESULTS)
+RES_65 = sum(r[8] >= 6.5 for r in RESULTS)
+RES_7 = sum(r[8] >= 7 for r in RESULTS)
+RES_TOP = max(max(r[4:8]) for r in RESULTS)
+
+def fmt(b): return f"{b:.1f}"
+def res_card(L, r, i):
+    n, name, mod, ym, l, rd, w, sp, ov = r
+    y, m = ym.split("-")
+    modl = {"A": "Academic", "G": "General Training"}.get(mod, "IELTS")
+    cat = {"A": "acad", "G": "gt"}.get(mod, "other")
+    tier = "b7" if ov >= 7 else ("b65" if ov >= 6.5 else "b6")
+    bars = "".join(f'<li><span>{k}</span><i style="--v:{v/9:.3f}"></i><b>{fmt(v)}</b></li>' for k, v in (("L", l), ("R", rd), ("W", w), ("S", sp)))
+    hidden = " res-more" if i >= 12 else ""
+    return (f'<button type="button" class="res-card {tier}{hidden}" data-cat="{cat}" data-band="{ov}" data-img="{L("assets/img/results/result-%02d.webp" % n)}" '
+            f'aria-label="{name}, overall band {fmt(ov)}, {modl}, {MONTHS[int(m)-1]} {y}. View certificate">'
+            f'<span class="res-top"><span class="res-band">{fmt(ov)}</span><span class="res-meta"><b>{name}</b><small>{modl} · {MONTHS[int(m)-1]} {y}</small></span></span>'
+            f'<ul class="res-bars">{bars}</ul><span class="res-view">View certificate</span></button>')
+
+def results_section(L):
+    cards = "".join(res_card(L, r, i) for i, r in enumerate(RES_SORTED))
+    return f"""
+<section id="results" class="results-sec"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow reveal">IELTS results</span><h2 class="reveal">{RES_N} students. Real certificates.</h2><p class="reveal">Every result my students have shared with me, from Band 5 to Band 7.5. Names are shortened and personal details are removed. Tap a card to see the certificate.</p></div></div>
+  <div class="stats res-stats reveal">
+    <div><div class="n" data-count="{RES_N}">{RES_N}</div><div class="l">IELTS results shared</div></div>
+    <div><div class="n" data-count="{RES_65}">{RES_65}</div><div class="l">scored Band 6.5 or higher</div></div>
+    <div><div class="n" data-count="{RES_7}">{RES_7}</div><div class="l">scored Band 7 or higher</div></div>
+    <div><div class="n">{fmt(RES_TOP)}</div><div class="l">highest skill score (Reading)</div></div>
+  </div>
+  <div class="filters res-filters reveal" role="group" aria-label="Filter results">
+    <button aria-pressed="true" data-rf="all">All {RES_N}</button><button aria-pressed="false" data-rf="b7">Band 7+</button><button aria-pressed="false" data-rf="acad">Academic</button><button aria-pressed="false" data-rf="gt">General Training</button>
+  </div>
+  <div class="res-grid" id="resGrid">{cards}</div>
+  <div class="cta res-more-row" style="justify-content:center;margin-top:24px"><button type="button" class="btn" id="resMore">Show all {RES_N} results</button></div>
+  <p class="note" style="margin-top:18px;text-align:center">Results are shown with each student’s permission. This site is not affiliated with IELTS, the British Council, IDP or Cambridge.</p>
+</div></section>
+<dialog class="lightbox" id="lightbox" aria-label="IELTS certificate"><button class="x" aria-label="Close">×</button><img src="" alt=""><p></p></dialog>
+"""
+
+def results_strip(L):
+    chips = "".join(f'<span class="rchip {"b7" if r[8]>=7 else ""}"><b>{fmt(r[8])}</b>{r[1]}</span>' for r in RES_SORTED)
+    return f"""
+  <div class="res-strip reveal">
+    <div class="res-strip-head"><div><span class="res-strip-n"><b data-count="{RES_N}">{RES_N}</b> IELTS results</span><span class="res-strip-sub">{RES_65} at Band 6.5+ · {RES_7} at Band 7+</span></div><a class="link" href="{L('testimonials/')}#results">See all {RES_N} certificates {ARR}</a></div>
+    <div class="marquee res-marquee" aria-hidden="true"><div class="marquee-track">{chips}{chips}</div></div>
+  </div>"""
+
 # ------------------------------------------------------------------ HOME
 def home(L):
     q = "".join(quote(L, t, n, p, d=i*.08) for i, (t, n, p) in enumerate(T_HOME))
@@ -335,9 +408,10 @@ def home(L):
 </div></section>
 
 <section id="testimonials"><div class="wrap" data-carousel>
-  <div class="sec-head"><div><span class="eyebrow reveal">Testimonials</span><h2 class="reveal">What students say.</h2></div>
+  <div class="sec-head"><div><span class="eyebrow reveal">Results &amp; testimonials</span><h2 class="reveal">What students say, and score.</h2></div>
     <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><a class="link" href="{L('testimonials/')}">Read all {ARR}</a><div class="car-nav"><button data-prev aria-label="Previous testimonial">{I['left']}</button><button data-next aria-label="Next testimonial">{I['right']}</button></div></div></div>
   <div class="quotes">{q}</div>
+{results_strip(L)}
 </div></section>
 
 {contact_band(L)}
@@ -353,6 +427,7 @@ def ielts(L):
   <h1 class="rise" style="margin-top:20px">{words("Two ways to reach your |target band.|")}</h1>
   <p class="lead fade-up" style="--d:.6s">Choose live, personalised coaching across all four skills, or study IELTS Writing at your own pace in a structured Canvas course.</p>
   <div class="cta fade-up" style="--d:.75s"><a class="btn primary" href="#live">Live Skills Mastery {ARR}</a><a class="btn" href="#independent">Independent Study</a></div>
+  <a class="proof fade-up" style="--d:.85s" href="{L('testimonials/')}#results"><b>{RES_N}</b> student results · <b>{RES_65}</b> at Band 6.5+ · <b>{RES_7}</b> at Band 7+ <span aria-hidden="true">→</span></a>
 </div></header>
 
 <section id="live" style="padding-top:clamp(40px,6vw,72px)"><div class="wrap feature">
@@ -410,6 +485,7 @@ def mock(L):
   <span class="eyebrow fade-up" style="--d:.05s">IELTS Mock Test</span>
   <h1 class="rise" style="margin-top:20px">{words("Rehearse test day |before test day.|")}</h1>
   <p class="lead fade-up" style="--d:.6s">The IELTS Mock Test is conducted under conditions that closely replicate the official IELTS exam. The test format, scoring system, timing, and level of difficulty are all aligned with the real IELTS exam. Many IELTS candidates choose to take a mock test to become more familiar with the exam environment and to better prepare for test day.</p>
+  <a class="proof fade-up" style="--d:.75s" href="{L('testimonials/')}#results"><b>{RES_N}</b> student results · <b>{RES_65}</b> at Band 6.5+ · <b>{RES_7}</b> at Band 7+ <span aria-hidden="true">→</span></a>
 </div></header>
 
 <section style="padding-top:clamp(24px,4vw,48px)"><div class="wrap">
@@ -561,14 +637,16 @@ def testi(L):
     return f'''
 <header class="page-hero"><div class="wrap">
   {crumb(L, "Testimonials")}
-  <span class="eyebrow fade-up" style="--d:.05s">Testimonials</span>
-  <h1 class="rise" style="margin-top:20px">{words("In my |students’ words.|")}</h1>
-  <p class="lead fade-up" style="--d:.6s">Messages from IELTS students after their results came in.</p>
+  <span class="eyebrow fade-up" style="--d:.05s">Results &amp; testimonials</span>
+  <h1 class="rise" style="margin-top:20px">{words("Real students, |real results.|")}</h1>
+  <p class="lead fade-up" style="--d:.6s">{RES_N} IELTS certificates from my students, and what they said after their results came in.</p>
+  <div class="cta fade-up" style="--d:.75s"><a class="btn primary" href="#results">See the results {ARR}</a><a class="btn" href="#words">Read testimonials</a></div>
 </div></header>
-<section style="padding-top:clamp(24px,4vw,48px)"><div class="wrap"><div class="wall">{q}</div></div></section>
+{results_section(L)}
+<section id="words" class="band"><div class="wrap"><div class="sec-head"><div><span class="eyebrow reveal">Testimonials</span><h2 class="reveal">In my students’ words.</h2></div></div><div class="wall">{q}</div></div></section>
 {contact_band(L, "Your result could be next.", "Tell me your target band and deadline, and we’ll make a plan.")}
 '''
-page("testimonials/index.html", "Testimonials · Dave Nab", "What IELTS students say about learning with Dave Nab.", testi, cur="testimonials/")
+page("testimonials/index.html", "IELTS Results & Testimonials · Dave Nab", "49 real IELTS results from Dave Nab’s students, with certificates, plus what students say about his classes.", testi, cur="testimonials/")
 
 # ------------------------------------------------------------------ GALLERY
 def gallery(L):

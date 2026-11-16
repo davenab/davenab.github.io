@@ -14,6 +14,11 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 - Share image for every page: `/assets/og/davenab-share.png` (1200×630), added automatically by `page()` unless a page sets its own `og:image`.
 - Phone header shows a small "Book" button next to the menu.
 
+## IELTS results
+- 49 student results live on `/testimonials/#results` (menu label "Results"): data in `RESULTS` in `_tools/build.py` (n, first name, module, YYYY-MM, L, R, W, S, overall); certificate images in `assets/img/results/result-NN.webp` (n = image number). Names: first name only. Never use the original file names (they contain full names).
+- A results strip sits inside the home testimonials section, and a proof link under the IELTS Courses and Mock Test intros. Counts (49 / 6.5+ / 7+) are computed from `RESULTS`.
+- To add a result: add a row to `RESULTS`, add the redacted image as the next `result-NN.webp`, rebuild. Check overall = IELTS rounding of the four scores.
+
 ## Contact
 - Contact email shown on the site: dave.naserbakht@gmail.com (`EMAIL` in `_tools/build.py`, and the error message in `assets/book.js`).
 

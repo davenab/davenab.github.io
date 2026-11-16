@@ -531,3 +531,40 @@ section{padding-block:clamp(72px,10vw,128px)}
 .rel-ext ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .rel-ext a{display:inline-block;padding:7px 0;color:var(--ink);text-decoration:none;font-weight:500}
 .rel-ext a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* IELTS results */
+.results-sec{padding-top:clamp(24px,4vw,48px)}
+.res-stats{margin-bottom:28px}
+.res-filters{margin-bottom:20px}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.res-card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:20px;background:var(--surface);border:1px solid var(--border);transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out),border-color .25s;font-family:var(--f-sans);color:var(--text)}
+.res-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--ink)}
+.res-card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.res-top{display:flex;align-items:center;gap:14px}
+.res-band{flex:none;width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:1.45rem;font-weight:800;letter-spacing:-.04em;background:var(--surface-2);color:var(--text)}
+.res-card.b7 .res-band{background:var(--ink);color:var(--ink-contrast);box-shadow:inset 0 -5px 0 var(--sun)}
+.res-card.b65 .res-band{background:var(--read-bg);color:var(--read)}
+.res-meta{display:flex;flex-direction:column;min-width:0}
+.res-meta b{font-size:1.02rem;letter-spacing:-.015em}
+.res-meta small{color:var(--muted);font-size:.82rem}
+.res-bars{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.res-bars li{display:grid;grid-template-columns:16px 1fr 30px;align-items:center;gap:8px;font-size:.8rem}
+.res-bars span{color:var(--muted);font-weight:600}
+.res-bars i{height:6px;border-radius:6px;background:var(--surface-2);position:relative;overflow:hidden}
+.res-bars i::after{content:"";position:absolute;inset:0;width:calc(var(--v) * 100%);border-radius:6px;background:var(--ink);transform-origin:left;transition:transform 1s var(--ease-out)}
+.res-bars b{text-align:right;font-variant-numeric:tabular-nums}
+.res-view{font-size:.82rem;font-weight:600;color:var(--ink)}
+.res-card:hover .res-view{text-decoration:underline;text-underline-offset:3px}
+.proof{display:inline-flex;flex-wrap:wrap;gap:4px 6px;margin-top:22px;padding:9px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--border);font-size:.9rem;color:var(--muted);text-decoration:none;transition:border-color .2s}
+.proof b{color:var(--text)}
+.proof:hover{border-color:var(--ink)}
+.res-strip{margin-top:28px;padding:20px 0 0;border-top:1px solid var(--border)}
+.res-strip-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;margin-bottom:16px}
+.res-strip-head>div{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.res-strip-n{font-size:1.35rem;font-weight:700;letter-spacing:-.03em}
+.res-strip-sub{color:var(--muted)}
+.res-marquee .marquee-track{animation-duration:90s;gap:10px}
+.rchip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--border);font-size:.9rem;white-space:nowrap}
+.rchip b{display:grid;place-items:center;min-width:38px;height:28px;padding:0 8px;border-radius:999px;background:var(--surface-2);font-weight:800}
+.rchip.b7 b{background:var(--ink);color:var(--ink-contrast)}
+.lightbox img{background:#fff}
