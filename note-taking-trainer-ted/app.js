@@ -879,7 +879,7 @@
       '<div id="sumPhotos"></div>' +
       '<div class="btnrow no-print"><button type="button" class="btn" id="copyS">Copy summary</button><button type="button" class="btn" id="printS">Print</button></div>' +
       '<p id="copyMsg" role="status" class="small"></p>' +
-      '<div class="btnrow no-print"><button type="button" class="btn big coral" id="newS">Start a new session</button><a class="btn light" href="#progress" id="toProg">My progress</a></div></div>');
+      '<div class="btnrow no-print"><button type="button" class="btn big coral" id="newS">Start a new session</button><a class="btn light" href="#progress" id="toProg">My progress</a></div>' + (window.DNNext ? DNNext.html('notes') : '') + '</div>');
     function showPhotos(list) {
       if (!list || !list.length) return;
       $('#sumPhotos').innerHTML = '<div class="card"><h3>Photos of my notes</h3><div class="photos">' + list.map(function (u, i) {

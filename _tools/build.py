@@ -62,10 +62,66 @@ def words(text):
         s += " "
     return s.strip()
 
+
+OG_IMG = SITE + "assets/og/davenab-share.png"
+OG = (f'<meta property="og:image" content="{OG_IMG}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+      f'<meta property="og:image:alt" content="Dave Nab: AI learning apps, resources and IELTS courses">\n<meta property="og:site_name" content="Dave Nab">\n'
+      f'<meta name="twitter:card" content="summary_large_image">\n')
+
+# Useful outside links (open in a new tab). Chosen for students and teachers, not for ranking tricks.
+X = {
+ "ielts":   ("IELTS: official test information", "https://ielts.org/"),
+ "bc":      ("British Council: free IELTS preparation", "https://takeielts.britishcouncil.org/take-ielts/prepare"),
+ "idp":     ("IDP: IELTS practice and tips", "https://ielts.idp.com/prepare"),
+ "phrase":  ("Academic Phrasebank (University of Manchester)", "https://www.phrasebank.manchester.ac.uk/"),
+ "owl":     ("Purdue OWL: academic writing guides", "https://owl.purdue.edu/owl/purdue_owl.html"),
+ "apa":     ("APA Style: referencing", "https://apastyle.apa.org/"),
+ "camb":    ("Cambridge Dictionary", "https://dictionary.cambridge.org/"),
+ "oxf":     ("Oxford Learner’s Dictionaries", "https://www.oxfordlearnersdictionaries.com/"),
+ "ted":     ("TED Talks", "https://www.ted.com/talks"),
+ "bne":     ("Breaking News English", "https://breakingnewsenglish.com/"),
+ "quizlet": ("Quizlet", "https://quizlet.com/"),
+ "eapf":    ("EAP Foundation: Academic Word List", "https://www.eapfoundation.com/vocab/academic/awllists/"),
+ "cefr":    ("CEFR levels (Council of Europe)", "https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale"),
+}
+# path -> ([(site path, label), ...], [outside link keys])
+RELATED = {
+ "index.html": ([], []),
+ "apps/index.html": ([("resources/students/", "Resources for students"), ("resources/teachers/", "Resources for teachers"), ("book/", "Book a class")], ["ted", "phrase", "camb"]),
+ "ielts-courses/index.html": ([("ielts-mock-test/", "IELTS Mock Test"), ("testimonials/", "Testimonials"), ("book/?service=ielts-live", "Book a block")], ["ielts", "bc", "idp"]),
+ "ielts-mock-test/index.html": ([("ielts-courses/", "IELTS Courses"), ("book/?service=speaking-mock", "Book a mock test"), ("testimonials/", "Testimonials")], ["ielts", "bc", "idp"]),
+ "general-english/index.html": ([("general-english/speaking-fluency/", "Speaking Fluency"), ("general-english/level-up/", "Level UP Course"), ("book/", "Book a class")], ["cefr", "camb", "bne"]),
+ "general-english/speaking-fluency/index.html": ([("general-english/level-up/", "Level UP Course"), ("ielts-mock-test/", "IELTS Speaking Mock Test"), ("testimonials/", "Testimonials")], ["bne", "camb", "ted"]),
+ "general-english/level-up/index.html": ([("general-english/speaking-fluency/", "Speaking Fluency"), ("ielts-courses/", "IELTS Courses"), ("book/?service=level-up", "Ask about placement")], ["cefr", "oxf", "bne"]),
+ "testimonials/index.html": ([("ielts-courses/", "IELTS Courses"), ("ielts-mock-test/", "IELTS Mock Test"), ("book/", "Book a class")], ["ielts", "bc"]),
+ "gallery/index.html": ([("about/", "About Dave"), ("testimonials/", "Testimonials"), ("book/", "Book a class")], []),
+ "about/index.html": ([("testimonials/", "Testimonials"), ("apps/", "AI apps"), ("resources/teachers/", "Resources for teachers")], []),
+ "book/index.html": ([("ielts-courses/", "IELTS Courses"), ("ielts-mock-test/", "Mock test fees"), ("testimonials/", "Testimonials")], []),
+ "resources/index.html": ([("apps/", "AI apps"), ("ielts-courses/", "IELTS Courses"), ("book/", "Book a class")], ["quizlet", "phrase", "eapf"]),
+ "resources/students/index.html": ([("apps/", "AI apps"), ("ielts-courses/", "IELTS Courses"), ("ielts-mock-test/", "IELTS Mock Test")], ["phrase", "owl", "camb", "eapf"]),
+ "resources/teachers/index.html": ([("apps/", "AI apps for your class"), ("resources/hedging-in-academic-writing/", "Hedging lesson"), ("resources/students/", "Resources for students")], ["phrase", "apa", "eapf", "cefr"]),
+ "resources/hedging-in-academic-writing/index.html": ([("resources/teachers/", "More teacher resources"), ("nominalisation-hedging-trainer/", "Nominalisation and Hedging Trainer (app)"), ("apps/", "AI apps")], ["phrase", "owl"]),
+}
+
+def related_strip(L, spec):
+    if not spec: return ""
+    inner, outer = spec
+    if not inner and not outer: return ""
+    a = "".join(f'<a class="rel-link" href="{L(h)}">{t} {ARR}</a>' for h, t in inner)
+    b = "".join(f'<li><a href="{X[k][1]}" target="_blank" rel="noopener">{X[k][0]} {EXT}</a></li>' for k in outer)
+    ext = f'<div class="rel-ext"><h3>Useful links</h3><ul>{b}</ul></div>' if b else ""
+    return f'<section class="related" aria-label="Related pages"><div class="wrap"><div class="rel-in"><div class="rel-main"><h2>Keep exploring</h2><div class="rel-links">{a}</div></div>{ext}</div></div></section>'
+
 def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_foot=""):
     depth = path.count("/")
     P = "../" * depth
     def L(p): return P + p if p else (P or "./")
+    if path == "404.html":  # served at any URL depth, so it needs root-absolute links
+        P = "/"
+        def L(p): return "/" + p
+    if "og:image" not in extra_head:
+        extra_head = OG + extra_head
+    rel_html = related_strip(L, RELATED.get(path))
     is_course = cur in [c[0] for c in COURSES]
     is_res = cur.startswith("resources/")
     rsub = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}<small>{d}</small></a></li>' for h, t, d in RES)
@@ -115,6 +171,7 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
     <div class="nav-actions">
       <button class="icon-btn theme" aria-label="Switch light or dark mode" title="Light / dark mode">{I['moon']}{I['sun']}</button>
       <a class="btn primary sm nav-cta" href="{L('book/')}">Book a class</a>
+      <a class="btn primary sm nav-book" href="{L('book/')}">Book</a>
       <button class="icon-btn burger" aria-label="Open menu" aria-expanded="false" aria-controls="sheet">{I['menu']}</button>
     </div>
   </div>
@@ -134,6 +191,7 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
 </div>
 <main id="main">
 {body(L)}
+{rel_html}
 </main>
 <footer class="site-foot">
   <div class="wrap">
@@ -192,13 +250,12 @@ def crumb(L, *items):
 # ------------------------------------------------------------------ data
 T_HOME = [
  ("From the very beginning, the classes were run with precise planning and sharp attention to detail. I learned how to critique my own work and what an examiner looks for in Writing and Speaking. Even very minor mistakes, which I never thought were mistakes, were pointed out clearly. The constant encouragement motivated me to keep practicing. A truly excellent mentor and teacher, with rare kindness, who could calm my stress completely with their guidance.", "Marjan", "t-marjan.webp"),
- ("Before your classes, I had gone to several institutes, but they only taught general test-taking tips and I couldn’t fix my weaknesses there. I’m really glad that, despite all the stress I had to meet my university deadline, my friend introduced me to you. The detailed points you gave me in every skill felt like you knew my exact problems, and you gave me a very precise plan to fix them. It was excellent.", "Siavash", "t-siavash.webp"),
+ ("Well, to be honest, I am not a big fan of tutoring but Dave is special to me because he is a master of turning complex things into simple stuff. He changed my way of thinking about English and took me to higher levels. I have learned a lot of new things in just 45 days and he has helped me to increase my exam IELTS score hugely.", "Amin", "tt-amin.webp"),
  ("I scored an overall band 7 in IELTS, higher than my university required, thanks to the amazing support I received. The classes were enjoyable, the materials were clear and comprehensive, and the feedback was spot on. I highly recommend these classes to anyone aiming for a strong IELTS result.", "Mahsa", "t-mahsa.webp"),
 ]
 T_ALL = [
  ("Well, to be honest, I am not a big fan of tutoring but Dave is special to me because he is a master of turning complex things into simple stuff. He changed my way of thinking about English and took me to higher levels. I have learned a lot of new things in just 45 days and he has helped me to increase my exam IELTS score hugely. Actually, in my eyes, the best advantage of Dave over others is that I feel comfortable with him. Also, his patience is great. Sometimes I have lost control of myself because I have made a lot of mistakes in my lessons, but he has been always patient and helped me to fix them.", "Amin", "tt-amin.webp"),
  ("Although my placement test score was 5.5, I knew with your help I would definitely reach band 7. If that unexpected event hadn’t happened and I hadn’t gone nearly 20 days without studying right before the exam, I’m sure I would have achieved a higher score. But even getting 6.5 shows how deep and effective your teaching method is — it really sticks in the mind, and even without intensive study, it’s possible to achieve a solid result.", "Maryam", "tt-maryam.webp"),
- ("I received my IELTS score and my overall band is 7. I wanted to thank you for all your help, guidance, and everything I learned from you. My scores matched exactly what you predicted about me in the last session. I really enjoyed being in your classes and I learned so many useful things from you. The materials you used for teaching were both visually appealing and very complete and comprehensive, so I honestly didn’t need to study many other resources. I’m very happy that I was able to get a higher score than what my university required, and this was made possible thanks to your incredible support.<br><br>I confidently recommend attending your classes to anyone who needs a good IELTS score, and whenever someone has asked me about an IELTS teacher, I’ve introduced you, because I experienced the results myself and I’m sure it will be the same for all your students. Sorry my message is a bit long, but I had a lot to say about you and your wonderful classes. Once again, thank you so much for everything.", "Mahsa", "tt-mahsa.webp"),
  ("Your class had so many positive points, but if I want to give short and useful feedback:<br><br>First, I was never really a fan of private classes before. I always thought they would feel dry and formal. But your class was nothing like that — it had such a warm and friendly atmosphere.<br><br>Second, the tips you give in class are truly practical! For example, Listening Part 4, which used to be very difficult for me at first, became the ‘tea break part,’ as you call it 😂. And Speaking used to be a real struggle — I couldn’t say more than two sentences — but on exam day, I spoke like a nightingale 😎.<br><br>Third, everything in class moved forward smoothly and in a relaxed but well-structured way. That made me feel confident that nothing was being left out. Even on days when I was completely fed up with English, you didn’t create any stress and very coolly told me to take a week off from studying!<br><br>In short, everything was perfect, and without exaggeration, you make the best possible results happen in the shortest time.", "Sara", "tt-sara.webp"),
  ("Before your classes, I had gone to several institutes, but they only taught general test-taking tips and I couldn’t fix my weaknesses there. I’m really glad that, despite all the stress I had to meet my university deadline, my friend introduced me to you. The detailed points you gave me in every skill felt like you knew my exact problems, and you gave me a very precise plan to fix them. It was excellent.", "Tooraj", "tt-tooraj.webp"),
  ("I received my IELTS score and my overall band is 7. I wanted to thank you for all your help, guidance, and everything I learned from you. My scores matched exactly what you predicted about me in our last session.<br><br>I truly enjoyed your classes and learned so many useful things. The materials you used were visually engaging and very complete and comprehensive, to the point that I hardly needed to study other resources. I’m very happy that I achieved a higher score than what my university required, and this was only possible thanks to your incredible support.<br><br>I confidently recommend your classes to anyone who needs a strong IELTS score. Whenever someone has asked me about an IELTS teacher, I’ve introduced you because I personally experienced the results and I’m sure it will be the same for all your students.<br><br>Sorry for the long message — I just had a lot to say about you and your excellent classes. Once again, thank you for everything Dave!", "Mahsa", "tt-mahsa-2.webp"),
@@ -237,7 +294,7 @@ def home(L):
     <span class="eyebrow fade-up" style="--d:.05s">AI learning apps · IELTS · EAP</span>
     <h1 class="rise" style="margin-top:22px">{words("Learn English with a teacher who knows what |examiners look for.|")}</h1>
     <p class="lead fade-up" style="--d:.7s">I’m Dave Nab, a CELTA and DELTA qualified English language educator with over 15 years of experience. I build AI-supported learning apps and classroom-tested resources for academic English, and I help students prepare for university study and high-stakes exams.</p>
-    <div class="cta fade-up" style="--d:.85s"><a class="btn primary" href="#ai">Explore the AI apps {ARR}</a><a class="btn" href="#shop">Shop resources</a><a class="btn ghost" href="{L('ielts-courses/')}">IELTS courses</a></div>
+    <div class="cta fade-up" style="--d:.85s"><a class="btn primary" href="#ai">Explore the AI apps {ARR}</a><a class="btn" href="{L('ielts-courses/')}">IELTS courses</a></div>
   </div>
   <div class="portrait fade-up" style="--d:.3s">
     <div class="ring" aria-hidden="true"></div>
@@ -246,18 +303,18 @@ def home(L):
     <div class="float f2"><b>15+</b> years teaching</div>
     <div class="float f3">CEFR speaking examiner</div>
   </div>
-</div></section>
+</div>
+<div class="wrap"><nav class="who fade-up" style="--d:1s" aria-label="Who are you?"><span class="who-q">Who are you?</span>
+  <a class="who-opt" href="{L('resources/students/')}"><b>I’m a student</b><span>Self-study packs, free practice and apps</span><i aria-hidden="true">→</i></a>
+  <a class="who-opt" href="{L('resources/teachers/')}"><b>I’m a teacher</b><span>Zero-prep lesson kits, courses and free slides</span><i aria-hidden="true">→</i></a>
+  <a class="who-opt" href="{L('book/')}"><b>Book a class</b><span>IELTS, General English or a mock test</span><i aria-hidden="true">→</i></a>
+</nav></div></section>
 
 <section class="ai-band" id="ai"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow reveal">AI apps &amp; resources</span><h2 class="reveal">Small, smart tools that help students <em>think</em>, not just get answers.</h2><p class="reveal">AI-supported apps for academic English. Each one targets one real skill students need at university, gives feedback that makes them do the thinking, and runs in any browser with no sign-in. Student work stays on their own device.</p></div>
     <a class="btn primary reveal" href="{L('apps/')}">See all apps {ARR}</a></div>
   <div class="filters reveal" role="group" aria-label="Filter apps by skill" style="margin-bottom:24px"><button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="listen">Listening</button><button aria-pressed="false" data-f="read">Reading</button><button aria-pressed="false" data-f="write">Writing</button><button aria-pressed="false" data-f="gram">Grammar</button><button aria-pressed="false" data-f="vocab">Vocabulary</button></div>
   <div class="grid ai-grid">{apps}</div>
-  <div class="principles" style="margin-top:28px">
-    <div class="pr reveal"><h3>Feedback that makes students think</h3><p>Hints, codes and comparisons instead of correct answers, so students do the thinking and remember more.</p></div>
-    <div class="pr reveal" style="--d:.06s"><h3>One skill, done well</h3><p>Each tool targets one academic skill, like signposting, paragraph structure or hedging, and fits into lessons or self-study.</p></div>
-    <div class="pr reveal" style="--d:.12s"><h3>Open and private</h3><p>No accounts and no installs: open the link and start.</p></div>
-  </div>
 </div></section>
 
 <section id="shop"><div class="wrap">
@@ -268,13 +325,6 @@ def home(L):
   </div>
 </div></section>
 
-<div class="wrap"><div class="stats reveal">
-  <div><div class="n" data-count="15" data-suffix="+">15+</div><div class="l">Years teaching English</div></div>
-  <div><div class="n">CELTA</div><div class="l">and DELTA qualified</div></div>
-  <div><div class="n">Band 7</div><div class="l">Results students report</div></div>
-  <div><div class="n">CEFR</div><div class="l">Calibrated speaking examiner</div></div>
-</div></div>
-
 <section id="services"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow reveal">Courses &amp; services</span><h2 class="reveal">Courses built around <em>your</em> target score.</h2></div><a class="link reveal" href="{L('general-english/')}">General English courses {ARR}</a></div>
   <div class="svc-grid">
@@ -284,31 +334,11 @@ def home(L):
   </div>
 </div></section>
 
-<section class="statement band"><div class="wrap">
-  <p data-fill>Structured teaching, fair assessment, and high academic standards that support both students and institutions.</p>
-  <div class="by reveal">My focus across every role, from the classroom to the examiner’s chair.</div>
-</div></section>
-
 <section id="testimonials"><div class="wrap" data-carousel>
   <div class="sec-head"><div><span class="eyebrow reveal">Testimonials</span><h2 class="reveal">What students say.</h2></div>
     <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><a class="link" href="{L('testimonials/')}">Read all {ARR}</a><div class="car-nav"><button data-prev aria-label="Previous testimonial">{I['left']}</button><button data-next aria-label="Next testimonial">{I['right']}</button></div></div></div>
   <div class="quotes">{q}</div>
 </div></section>
-
-<section class="band" id="about"><div class="wrap split">
-  <div class="photo reveal-scale">{img(L,"dave-ih-sydney.webp","Dave Nab at International House Sydney City",734,1070)}</div>
-  <div class="prose">
-    <span class="eyebrow reveal">About me</span>
-    <h2 class="h2 reveal" style="margin:16px 0 24px">Teaching, assessment and <em>academic leadership</em>.</h2>
-    <p class="reveal">I am a CELTA and DELTA qualified English language educator with over 15 years of experience across higher education, ELICOS, and international assessment contexts. I currently teach at <strong>Macquarie University College</strong> and <strong>UTS College</strong>, supporting students who are preparing for university study and high stakes English examinations.</p>
-    <p class="reveal">My qualifications underpin my approach to lesson design, language analysis, and principled teaching practice, and over the years I have developed a broad skill set that connects teaching, assessment, and academic leadership.</p>
-    <div class="cta reveal" style="margin-top:28px"><a class="btn primary" href="{L('about/')}">More about me {ARR}</a></div>
-  </div>
-</div></section>
-
-<section id="moments" style="padding-bottom:0"><div class="wrap"><div class="sec-head"><div><span class="eyebrow reveal">Moments</span><h2 class="reveal">Classrooms, colleagues and graduations.</h2></div><a class="link reveal" href="{L('gallery/')}">Open the gallery {ARR}</a></div></div>
-  <div class="marquee" aria-label="Photo strip"><div class="marquee-track">{marq}{marq.replace('alt="Dave Nab with students and colleagues"','alt="" aria-hidden="true"')}</div></div>
-</section>
 
 {contact_band(L)}
 '''
@@ -557,6 +587,7 @@ page("gallery/index.html", "Gallery · Dave Nab", "Photos of Dave Nab with stude
 
 # ------------------------------------------------------------------ ABOUT
 def about(L):
+    marq = "".join(img(L, f, "Dave Nab with students and colleagues", w, h, lazy=False) for f, w, h in MOMENTS)
     return f'''
 <header class="page-hero"><div class="wrap">
   {crumb(L, "About")}
@@ -564,6 +595,12 @@ def about(L):
   <h1 class="rise" style="margin-top:20px">{words("Hi, I’m |Dave Nab.|")}</h1>
   <p class="lead fade-up" style="--d:.6s">I am a CELTA and DELTA qualified English language educator with over 15 years of experience across higher education, ELICOS, and international assessment contexts.</p>
 </div></header>
+<div class="wrap" style="margin-top:8px"><div class="stats reveal">
+  <div><div class="n" data-count="15" data-suffix="+">15+</div><div class="l">Years teaching English</div></div>
+  <div><div class="n">CELTA</div><div class="l">and DELTA qualified</div></div>
+  <div><div class="n">Band 7</div><div class="l">Results students report</div></div>
+  <div><div class="n">CEFR</div><div class="l">Calibrated speaking examiner</div></div>
+</div></div>
 <section style="padding-top:clamp(24px,4vw,48px)"><div class="wrap split" style="align-items:start">
   <div style="position:sticky;top:96px;display:grid;gap:18px">
     <div class="photo reveal-scale">{img(L,"dave-ih-sydney.webp","Dave Nab at International House Sydney City",734,1070,lazy=False)}</div>
@@ -581,6 +618,13 @@ def about(L):
     <div class="cta reveal" style="margin-top:28px"><a class="btn" href="{LINKEDIN}" target="_blank" rel="noopener">{I['in']} LinkedIn</a><a class="btn" href="{INSTA}" target="_blank" rel="noopener">{I['ig']} Instagram</a><a class="btn" href="{L('gallery/')}">Gallery {ARR}</a></div>
   </div>
 </div></section>
+<section class="statement band"><div class="wrap">
+  <p data-fill>Structured teaching, fair assessment, and high academic standards that support both students and institutions.</p>
+  <div class="by reveal">My focus across every role, from the classroom to the examiner’s chair.</div>
+</div></section>
+<section id="moments" style="padding-bottom:0"><div class="wrap"><div class="sec-head"><div><span class="eyebrow reveal">Moments</span><h2 class="reveal">Classrooms, colleagues and graduations.</h2></div><a class="link reveal" href="{L('gallery/')}">Open the gallery {ARR}</a></div></div>
+  <div class="marquee" aria-label="Photo strip"><div class="marquee-track">{marq}{marq.replace('alt="Dave Nab with students and colleagues"','alt="" aria-hidden="true"')}</div></div>
+</section>
 <div id="contact"></div>
 {contact_band(L)}
 '''
@@ -864,5 +908,26 @@ def template(L):
 </div></section>
 '''
 page("resources/_template/index.html", "[Resource title] – EAP [Slides / Word List / Worksheet] ([Level]) · Dave Nab", "[One or two sentences a teacher would search for: topic, level, format, what’s included.]", template, cur="resources/", canonical="https://davenab.com/resources/[short-name]/", extra_head='<meta name="robots" content="noindex">\n')
+
+# ------------------------------------------------------------------ 404 (GitHub Pages serves /404.html for any missing address)
+def notfound(L):
+    picks = [("apps/", "AI apps", "Free practice apps for academic English"), ("resources/students/", "Resources for students", "Self-study packs and Quizlet sets"),
+             ("resources/teachers/", "Resources for teachers", "Lesson kits, courses and slides"), ("ielts-courses/", "IELTS Courses", "Live coaching and a self-paced Writing course"),
+             ("ielts-mock-test/", "IELTS Mock Test", "Speaking and Writing, from $25"), ("book/", "Book a class", "Takes about two minutes")]
+    cards = "".join(f'<a class="who-opt" href="{L(h)}"><b>{t}</b><span>{d}</span><i aria-hidden="true">→</i></a>' for h, t, d in picks)
+    return f"""
+<header class="page-hero"><div class="wrap">
+  <span class="eyebrow fade-up" style="--d:.05s">Error 404</span>
+  <h1 class="rise" style="margin-top:20px">{words("This page |isn’t here.|")}</h1>
+  <p class="lead fade-up" style="--d:.6s">The address may have a typo, or the page has moved. <span id="nf-guess"></span></p>
+  <div class="cta fade-up" style="--d:.75s"><a class="btn primary" href="{L('')}">Go to the home page {ARR}</a></div>
+</div></header>
+<section style="padding-top:clamp(16px,3vw,32px)"><div class="wrap">
+  <h2 class="subhead">Popular pages</h2>
+  <nav class="who nf-grid" aria-label="Popular pages">{cards}</nav>
+</div></section>
+<script>(function(){{var p=location.pathname.toLowerCase(),m=[["note","/note-taking-trainer-ted/","DAVE Notes"],["grammar","/grammar-self-correction/","the Grammar Self-Correction Trainer"],["hedg","/nominalisation-hedging-trainer/","the Nominalisation and Hedging Trainer"],["nominal","/nominalisation-hedging-trainer/","the Nominalisation and Hedging Trainer"],["mock","/ielts-mock-test/","IELTS Mock Test"],["ielts","/ielts-courses/","IELTS Courses"],["teacher","/resources/teachers/","Resources for teachers"],["student","/resources/students/","Resources for students"],["resource","/resources/","Resources"],["download","/resources/","Resources"],["app","/apps/","AI apps"],["book","/book/","Book a class"],["contact","/about/#contact","Contact"],["about","/about/","About"],["galler","/gallery/","Gallery"],["testimon","/testimonials/","Testimonials"],["general","/general-english/","General English"],["service","/ielts-courses/","Courses"]];for(var i=0;i<m.length;i++)if(p.indexOf(m[i][0])>-1){{var a=document.createElement("a");a.className="link";a.href=m[i][1];a.textContent="Were you looking for "+m[i][2]+"?";document.getElementById("nf-guess").appendChild(a);break;}}}})()</script>
+"""
+page("404.html", "Page not found · Dave Nab", "This page could not be found on davenab.com.", notfound, canonical="https://davenab.com/", extra_head='<meta name="robots" content="noindex">\n')
 
 print("built")

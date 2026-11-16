@@ -8,7 +8,11 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 - Styles: `/assets/style.css` (colour tokens on `:root`, dark mode via `prefers-color-scheme` + `data-theme`). Behaviour: `/assets/app.js` (theme toggle, nav, scroll reveals, carousel, lightbox, `data-f`/`data-cat` filters). Booking form: `/assets/book.js`. Images: `/assets/img/` (WebP).
 - Generated pages use relative links (e.g. `../about/`) so they also work in previews.
 - Design: navy ink + amber accent + skill colours. Yellow `#FFFF00` (`--sun`) is used ONLY for the DN logo, highlighter swipes, the scroll-progress bar, text selection and tiny dots. Dave asked for headings that aren't too large.
-- Home page order: hero → AI apps (main focus) → paid resources → stats → courses → statement → testimonials → about → moments → contact.
+- Home page order (6 sections, keep it short): hero with a "Who are you?" chooser (student / teacher / book) → AI apps (main focus) → resources (students/teachers) → courses → testimonials → contact. The stats, the scrolling statement and the photo strip live on `/about/`.
+- Every page ends with a "Keep exploring" strip: internal links plus a few useful outside links (official IELTS, British Council, Academic Phrasebank, etc.), set per page in `RELATED` in `_tools/build.py`.
+- `404.html` is generated with root-absolute links (GitHub Pages serves it at any depth); it suggests a page based on words in the address.
+- Share image for every page: `/assets/og/davenab-share.png` (1200×630), added automatically by `page()` unless a page sets its own `og:image`.
+- Phone header shows a small "Book" button next to the menu.
 
 ## Contact
 - Contact email shown on the site: dave.naserbakht@gmail.com (`EMAIL` in `_tools/build.py`, and the error message in `assets/book.js`).
@@ -19,6 +23,8 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 - No recruiter/organisation form: Dave wants them to email him or use LinkedIn.
 
 ## Apps
+- Style and build rules for apps: `_tools/APP-STYLE-GUIDE.md` (follow it for every new app).
+- Every app loads `/assets/appbar.js`: a slim "DN Dave Nab · All apps · Resources" bar, plus `DNNext.html("<app-id>")` for the "What next?" box on the finish screen. Add new apps to `APPS`/`NEXT` in that file.
 - Each app is a self-contained static page in its own folder: `/<slug>/index.html`. No backend, no API keys in the code (the repo is public).
 - Apps must work without sign-in on laptops and phones, keep student data on the device (localStorage at most), and support light/dark mode.
 - Live apps: `/note-taking-trainer-ted/` (DAVE Notes, TED edition; `/note-taking-trainer/` is now a redirect to it) `/grammar-self-correction/` (Grammar Self-Correction Trainer) and `/nominalisation-hedging-trainer/` (Nominalisation and Hedging Trainer; items in its `data/*.json`). Some apps load `/assets/site.js` (legacy theme toggle): keep that file.
@@ -37,4 +43,4 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 - Resource cards: the main link has classes `btn-card stretch` so the whole card is clickable.
 
 ## Never delete
-- `googlecdda09d8d2462fe3.html` (Google Search Console verification), `CNAME` (custom domain), `.nojekyll`, `assets/site.js` (used by the apps).
+- `googlecdda09d8d2462fe3.html` (Google Search Console verification), `CNAME` (custom domain), `.nojekyll`, `assets/site.js` and `assets/appbar.js` (used by the apps), `404.html`.

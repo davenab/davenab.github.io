@@ -542,7 +542,7 @@
     var codesHere = uniq(X.errs.map(function (e) { return e.code; }));
     if (X.ruleSaved) {
       return "<h1>Rule saved</h1><p>Well done. You finished this text.</p>" +
-        '<div class="btnrow"><a class="btn primary" href="#/setup">Practise another text</a><a class="btn" href="#/profile">See my error profile</a></div>' +
+        '<div class="btnrow"><a class="btn primary" href="#/setup">Practise another text</a><a class="btn" href="#/profile">See my error profile</a></div>' + (window.DNNext ? DNNext.html("grammar") : "") +
         why("Coming back to your own rules before you write helps you avoid the same errors.");
     }
     return "<h1>Write your rule</h1>" +
@@ -751,6 +751,7 @@
       '<div class="tally"><div><b>' + b.none + "</b><span>fixed with no extra help</span></div><div><b>" + b.rule + "</b><span>fixed with the rule</span></div><div><b>" + b.revealed + "</b><span>answer shown</span></div><div><b>" + b.missed + "</b><span>not reached</span></div></div>" +
       '<ol class="warmlist">' + list + "</ol>" +
       '<div class="btnrow"><button type="button" class="btn primary" data-act="warmAgain">Do another warm-up</button><a class="btn" href="#/setup">Practise a full text</a><a class="btn" href="#/profile">My profile</a></div>' +
+      (window.DNNext ? DNNext.html("grammar") : "") +
       why("Short, regular practice on your weakest errors helps the correct form become automatic.");
   }
 

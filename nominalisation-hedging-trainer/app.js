@@ -524,6 +524,7 @@
       <form class="card stack" id="goalForm"><label for="goal">What will you try in your next piece of writing?</label>
         <textarea id="goal" rows="3" placeholder="For example: I will turn one ‘because’ clause into a noun phrase." ${NOINPUT}>${esc(S.goals[m] ? S.goals[m].text : "")}</textarea>
         <div class="row"><button class="btn primary" type="submit">Save my goal</button><span id="goalMsg" role="status" class="small"></span></div></form>
+      ${window.DNNext ? DNNext.html("nomhedge") : ""}
       <div class="actions"><button class="btn primary" type="button" id="again">Practise again</button><a class="btn" href="#/progress">See my progress</a><a class="btn quiet" href="#/">Back to start</a></div>`);
     $("#goalForm").addEventListener("submit", ev => {
       ev.preventDefault();
