@@ -364,17 +364,17 @@ def home(L):
     return f'''
 <section class="hero"><div class="wrap hero-grid">
   <div>
-    <span class="eyebrow fade-up" style="--d:.05s">AI learning apps · IELTS · EAP</span>
-    <h1 class="rise" style="margin-top:22px">{words("Learn English with a teacher who knows what |examiners look for.|")}</h1>
-    <p class="lead fade-up" style="--d:.7s">I’m Dave Nab, a CELTA and DELTA qualified English language educator with over 15 years of experience. I build AI-supported learning apps and classroom-tested resources for academic English, and I help students prepare for university study and high-stakes exams.</p>
-    <div class="cta fade-up" style="--d:.85s"><a class="btn primary" href="#ai">Explore the AI apps {ARR}</a><a class="btn" href="{L('ielts-courses/')}">IELTS courses</a></div>
+    <span class="eyebrow fade-up" style="--d:.05s">AI learning tools · Resources · IELTS</span>
+    <h1 class="rise" style="margin-top:22px">{words("Learn smarter. Teach faster. |Score higher.|")}</h1>
+    <p class="lead fade-up" style="--d:.7s">Free AI practice apps, ready-made EAP resources and IELTS coaching, built by a CELTA and DELTA qualified teacher and experienced speaking examiner with 15+ years in Australian higher education.</p>
+    <div class="cta fade-up" style="--d:.85s"><a class="btn primary" href="#ai">Try the free apps {ARR}</a><a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
   </div>
   <div class="portrait fade-up" style="--d:.3s">
     <div class="ring" aria-hidden="true"></div>
     {img(L,"dave-portrait.webp","Portrait of Dave Nab",900,900,lazy=False)}
-    <div class="float f1"><b>CELTA</b>&nbsp;·&nbsp;<b>DELTA</b></div>
-    <div class="float f2"><b>15+</b> years teaching</div>
-    <div class="float f3">CEFR speaking examiner</div>
+    <div class="float f1"><b>{len(LIVE)}</b>&nbsp;free apps</div>
+    <div class="float f2"><b>{RES_N}</b>&nbsp;IELTS results</div>
+    <div class="float f3"><b>CELTA</b>&nbsp;&amp;&nbsp;<b>DELTA</b></div>
   </div>
 </div>
 <div class="wrap"><nav class="who fade-up" style="--d:1s" aria-label="Who are you?"><span class="who-q">Who are you?</span>
@@ -416,7 +416,7 @@ def home(L):
 
 {contact_band(L)}
 '''
-page("index.html", "Dave Nab · AI Learning Apps, Resources & IELTS", "AI-supported learning apps and ready-to-teach resources for academic English, plus IELTS courses, IELTS mock tests and General English with a CELTA and DELTA qualified teacher.", home, cur="")
+page("index.html", "Dave Nab · Free AI Apps & Resources for Academic English", "Free AI practice apps, ready-made EAP resources and IELTS coaching from Dave Nab, a CELTA and DELTA qualified teacher and experienced speaking examiner with 15+ years in Australian higher education.", home, cur="")
 
 # ------------------------------------------------------------------ IELTS COURSES
 def ielts(L):
