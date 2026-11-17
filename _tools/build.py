@@ -365,16 +365,16 @@ def home(L):
 <section class="hero"><div class="wrap hero-grid">
   <div>
     <span class="eyebrow fade-up" style="--d:.05s">AI learning tools · Resources · IELTS</span>
-    <h1 class="rise" style="margin-top:22px">{words("Learn smarter. Teach faster. |Score higher.|")}</h1>
+    <h1 class="rise" style="margin-top:22px">{words("Learn smarter. Teach better. |Think deeper.|")}</h1>
     <p class="lead fade-up" style="--d:.7s">Free AI practice apps, ready-made EAP resources and IELTS coaching, built by a CELTA and DELTA qualified teacher and experienced speaking examiner with 15+ years in Australian higher education.</p>
     <div class="cta fade-up" style="--d:.85s"><a class="btn primary" href="#ai">Try the free apps {ARR}</a><a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
   </div>
   <div class="portrait fade-up" style="--d:.3s">
     <div class="ring" aria-hidden="true"></div>
     {img(L,"dave-portrait.webp","Portrait of Dave Nab",900,900,lazy=False)}
-    <div class="float f1"><b>{len(LIVE)}</b>&nbsp;free apps</div>
-    <div class="float f2"><b>{RES_N}</b>&nbsp;IELTS results</div>
-    <div class="float f3"><b>CELTA</b>&nbsp;&amp;&nbsp;<b>DELTA</b></div>
+    <div class="float f1"><b>CELTA</b>&nbsp;&amp;&nbsp;<b>DELTA</b></div>
+    <div class="float f2"><b>15+</b>&nbsp;years teaching</div>
+    <div class="float f3">Speaking examiner</div>
   </div>
 </div>
 <div class="wrap"><nav class="who fade-up" style="--d:1s" aria-label="Who are you?"><span class="who-q">Who are you?</span>
