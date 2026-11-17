@@ -7,14 +7,16 @@
   var APPS = {
     notes:    { t: "DAVE Notes", d: "Practise lecture note-taking with real talks", u: "/note-taking-trainer-ted/" },
     grammar:  { t: "Grammar Self-Correction Trainer", d: "Find and fix your own grammar errors with codes and hints", u: "/grammar-self-correction/" },
-    nomhedge: { t: "Nominalisation and Hedging Trainer", d: "Short practice for a more academic style", u: "/nominalisation-hedging-trainer/" }
+    nomhedge: { t: "Nominalisation and Hedging Trainer", d: "Short practice for a more academic style", u: "/nominalisation-hedging-trainer/" },
+    cite:     { t: "DAVE Cite: APA In-Text Citation Trainer", d: "Build and fix APA 7th in-text citations", u: "/apa-citation-trainer/" }
   };
   var RES_STUDENTS = { t: "Resources for students", d: "Free Quizlet sets and self-study packs", u: "/resources/students/" };
   var HEDGING = { t: "Hedging in Academic Writing", d: "A ready-to-teach lesson for teachers", u: "/resources/hedging-in-academic-writing/" };
   var NEXT = {
     notes:    { lead: "Finished your notes? Keep going:", items: [APPS.grammar, APPS.nomhedge, RES_STUDENTS] },
     grammar:  { lead: "Fixed your errors? Try this next:", items: [APPS.nomhedge, APPS.notes, RES_STUDENTS] },
-    nomhedge: { lead: "Done with nominalisation and hedging? Try this next:", items: [APPS.grammar, HEDGING, APPS.notes] }
+    nomhedge: { lead: "Done with nominalisation and hedging? Try this next:", items: [APPS.grammar, HEDGING, APPS.notes] },
+    cite:     { lead: "Finished your citation practice? Try this next:", items: [APPS.nomhedge, APPS.grammar, RES_STUDENTS] }
   };
 
   var CSS =

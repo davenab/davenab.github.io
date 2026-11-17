@@ -1,0 +1,1001 @@
+{
+  "_help": "Track D: Variety in citing. Items are grouped by stage. See README.md, section 'How to add or edit an item'.",
+  "track": "D",
+  "title": "Variety in citing",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "Name the pattern",
+      "items": [
+        {
+          "id": "D1-01",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "Which pattern does this sentence use?",
+          "frame": "Mensah (2022) found that first-year students read more on their phones than on laptops.",
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Author-first (narrative)"
+          ],
+          "modelAnswers": [],
+          "rule": "Author-first (narrative): the author's name is part of the sentence. It puts the focus on who said it.",
+          "errorDiagnosis": [],
+          "hint": "Where is the author's name: in the sentence or in brackets?",
+          "keepOrder": true,
+          "verified": false
+        },
+        {
+          "id": "D1-02",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "Which pattern does this sentence use?",
+          "frame": "Short study sessions spread across the week help students remember more (Duarte, 2020).",
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Idea-first (parenthetical)"
+          ],
+          "modelAnswers": [],
+          "rule": "Idea-first (parenthetical): the citation is in brackets. It puts the focus on the idea.",
+          "errorDiagnosis": [],
+          "hint": "Where is the author's name: in the sentence or in brackets?",
+          "keepOrder": true,
+          "verified": false
+        },
+        {
+          "id": "D1-03",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "Which pattern does this sentence use?",
+          "frame": "According to Haddad (2017), bus use often falls when fares rise.",
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Author-first (narrative)"
+          ],
+          "modelAnswers": [],
+          "rule": "Author-first (narrative): the author's name is part of the sentence. It puts the focus on who said it.",
+          "errorDiagnosis": [],
+          "hint": "Is the name part of the sentence?",
+          "keepOrder": true,
+          "verified": false
+        },
+        {
+          "id": "D1-04",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "Which pattern does this sentence use?",
+          "frame": "Classroom noise can make concentration harder (Abebe, 2016; Pillai, 2020).",
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Idea-first (parenthetical)"
+          ],
+          "modelAnswers": [],
+          "rule": "Idea-first (parenthetical): the citation is in brackets. It puts the focus on the idea.",
+          "errorDiagnosis": [],
+          "hint": "What does the sentence start with: a person or an idea?",
+          "keepOrder": true,
+          "verified": false
+        },
+        {
+          "id": "D1-05",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "Which pattern does this sentence use?",
+          "frame": "A study by Sato and Kim (2022) showed that students sleep less during exam weeks.",
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Author-first (narrative)"
+          ],
+          "modelAnswers": [],
+          "rule": "Author-first (narrative): the author's name is part of the sentence. It puts the focus on who said it.",
+          "errorDiagnosis": [],
+          "hint": "Is the name part of the sentence?",
+          "keepOrder": true,
+          "verified": false
+        },
+        {
+          "id": "D1-06",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "You want to compare two researchers who disagree with each other. Which pattern fits best?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Author-first (narrative)"
+          ],
+          "modelAnswers": [],
+          "rule": "Author-first lets you put the two names side by side: “Haddad (2019) argued …, whereas Moretti (2017) …”.",
+          "errorDiagnosis": [],
+          "hint": "When people disagree, readers need to know who said what.",
+          "keepOrder": true,
+          "verified": false
+        },
+        {
+          "id": "D1-07",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "The idea is widely accepted and several sources support it. You want the focus on the idea, not the people. Which pattern fits best?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Idea-first (parenthetical)"
+          ],
+          "modelAnswers": [],
+          "rule": "Idea-first keeps the focus on the idea and can hold several sources in one bracket.",
+          "errorDiagnosis": [],
+          "hint": "Is the person important here, or the idea?",
+          "keepOrder": true,
+          "verified": false
+        },
+        {
+          "id": "D1-08",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "You want to show that a claim is one author's opinion and that you are not fully convinced. Which pattern fits best?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Author-first (narrative)"
+          ],
+          "modelAnswers": [],
+          "rule": "Author-first lets you choose a reporting verb (e.g. “Moreau (2019) claimed …”), which shows your stance.",
+          "errorDiagnosis": [],
+          "hint": "Which pattern lets you use a reporting verb?",
+          "keepOrder": true,
+          "verified": false
+        },
+        {
+          "id": "D1-09",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "Which pattern does this sentence use?",
+          "frame": "As Zhou (2023) {notes|noted}, noise is a common problem in shared student houses.",
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Author-first (narrative)"
+          ],
+          "modelAnswers": [],
+          "rule": "Author-first (narrative): the author's name is part of the sentence. It puts the focus on who said it.",
+          "errorDiagnosis": [],
+          "hint": "Is the name part of the sentence?",
+          "keepOrder": true,
+          "verified": false
+        },
+        {
+          "id": "D1-10",
+          "track": "D",
+          "stage": 1,
+          "type": "choice",
+          "topic": "pattern-choice",
+          "sourceCards": [],
+          "prompt": "Which pattern does this sentence use?",
+          "frame": "Music with lyrics can make reading harder for many students (Kaur & Novak, 2020).",
+          "tiles": null,
+          "options": [
+            "Author-first (narrative)",
+            "Idea-first (parenthetical)"
+          ],
+          "acceptedAnswers": [
+            "Idea-first (parenthetical)"
+          ],
+          "modelAnswers": [],
+          "rule": "Idea-first (parenthetical): the citation is in brackets. It puts the focus on the idea.",
+          "errorDiagnosis": [],
+          "hint": "Where is the author's name: in the sentence or in brackets?",
+          "keepOrder": true,
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "Same idea, new pattern",
+      "items": [
+        {
+          "id": "D2-01",
+          "track": "D",
+          "stage": 2,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Rewrite this sentence in a new pattern: start with the author's name.",
+          "frame": "Regular online quizzes can improve students' exam results in first-year courses (Castillo, 2021).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Castillo (2021) found that regular online quizzes can improve students' exam results in first-year courses.",
+            "Castillo (2021) {shows|showed} that regular online quizzes can improve students' exam results in first-year courses."
+          ],
+          "rule": "Different patterns, same idea: Author (year) argues that … / According to Author (year), … / As Author (year) notes, … / A study by Author (year) found … / … (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "Name first, then the year in brackets, then a reporting verb.",
+          "selfCheck": [
+            "Is the citation format correct (and / &, commas, brackets)?",
+            "Did I use the pattern I was asked for?",
+            "Does my verb represent the author fairly?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D2-02",
+          "track": "D",
+          "stage": 2,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Rewrite this sentence in a new pattern: put the citation in brackets at the end.",
+          "frame": "Haddad (2017) {argues|argued} that bus use often falls when fares rise.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Bus use often falls when fares rise (Haddad, 2017).",
+            "When fares rise, bus use often falls (Haddad, 2017)."
+          ],
+          "rule": "Different patterns, same idea: Author (year) argues that … / According to Author (year), … / As Author (year) notes, … / A study by Author (year) found … / … (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "Start with the idea. The full stop goes after the bracket.",
+          "selfCheck": [
+            "Is the citation format correct (and / &, commas, brackets)?",
+            "Did I use the pattern I was asked for?",
+            "Does my verb represent the author fairly?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D2-03",
+          "track": "D",
+          "stage": 2,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Rewrite this sentence in a new pattern: start with “According to”.",
+          "frame": "Cycling lanes reduce traffic accidents near schools (Okafor & Lindqvist, 2018).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "According to Okafor and Lindqvist (2018), cycling lanes reduce traffic accidents near schools."
+          ],
+          "rule": "Different patterns, same idea: Author (year) argues that … / According to Author (year), … / As Author (year) notes, … / A study by Author (year) found … / … (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "The names move into the sentence. What happens to the &?",
+          "selfCheck": [
+            "Is the citation format correct (and / &, commas, brackets)?",
+            "Did I use the pattern I was asked for?",
+            "Does my verb represent the author fairly?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D2-04",
+          "track": "D",
+          "stage": 2,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Rewrite this sentence in a new pattern: use “As … note(s), …”.",
+          "frame": "Kaur and Novak (2020) found that music with lyrics can make reading harder.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "As Kaur and Novak (2020) {note|noted}, music with lyrics can make reading harder."
+          ],
+          "rule": "Different patterns, same idea: Author (year) argues that … / According to Author (year), … / As Author (year) notes, … / A study by Author (year) found … / … (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "Two authors: plural verb. Comma after the verb, no “that”.",
+          "selfCheck": [
+            "Is the citation format correct (and / &, commas, brackets)?",
+            "Did I use the pattern I was asked for?",
+            "Does my verb represent the author fairly?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D2-05",
+          "track": "D",
+          "stage": 2,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Rewrite this sentence in a new pattern: start with “A study by …”.",
+          "frame": "Students sleep less during exam weeks (Sato & Kim, 2022).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "A study by Sato and Kim (2022) found that students sleep less during exam weeks.",
+            "A study by Sato and Kim (2022) showed that students sleep less during exam weeks."
+          ],
+          "rule": "Different patterns, same idea: Author (year) argues that … / According to Author (year), … / As Author (year) notes, … / A study by Author (year) found … / … (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "“A study by” + names in the sentence. & changes to “and”.",
+          "selfCheck": [
+            "Is the citation format correct (and / &, commas, brackets)?",
+            "Did I use the pattern I was asked for?",
+            "Does my verb represent the author fairly?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D2-06",
+          "track": "D",
+          "stage": 2,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Rewrite this sentence in a new pattern: start with the authors' names.",
+          "frame": "Refill stations reduce plastic waste on campus (Abebe et al., 2022).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Abebe et al. (2022) found that refill stations reduce plastic waste on campus.",
+            "Abebe et al. (2022) {demonstrate|demonstrated} that refill stations reduce plastic waste on campus."
+          ],
+          "rule": "Different patterns, same idea: Author (year) argues that … / According to Author (year), … / As Author (year) notes, … / A study by Author (year) found … / … (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "“et al.” stays, and the verb is plural.",
+          "selfCheck": [
+            "Is the citation format correct (and / &, commas, brackets)?",
+            "Did I use the pattern I was asked for?",
+            "Does my verb represent the author fairly?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D2-07",
+          "track": "D",
+          "stage": 2,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Rewrite this sentence in a new pattern: put the citation in brackets at the end.",
+          "frame": "Petrova (2021) {suggests|suggested} that shorter lectures might help students concentrate.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Shorter lectures might help students concentrate (Petrova, 2021)."
+          ],
+          "rule": "Different patterns, same idea: Author (year) argues that … / According to Author (year), … / As Author (year) notes, … / A study by Author (year) found … / … (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "Keep “might”: the idea is still careful.",
+          "selfCheck": [
+            "Is the citation format correct (and / &, commas, brackets)?",
+            "Did I use the pattern I was asked for?",
+            "Does my verb represent the author fairly?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D2-08",
+          "track": "D",
+          "stage": 2,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Rewrite this sentence in a new pattern: start with the original author's name.",
+          "frame": "Students who review notes on the same day remember more (Varga, 2014, as cited in Osei, 2021).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Varga (2014, as cited in Osei, 2021) found that students who review notes on the same day remember more."
+          ],
+          "rule": "Narrative secondary citation: Original (year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Varga goes in the sentence. Everything else stays in one bracket.",
+          "selfCheck": [
+            "Is the citation format correct (and / &, commas, brackets)?",
+            "Did I use the pattern I was asked for?",
+            "Does my verb represent the author fairly?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "Combine sources",
+      "items": [
+        {
+          "id": "D3-01",
+          "track": "D",
+          "stage": 3,
+          "type": "rewrite",
+          "topic": "combine-sources",
+          "sourceCards": [
+            {
+              "authors": [
+                "Tran, Q."
+              ],
+              "year": "2021",
+              "title": "Breaks and focus",
+              "type": "Journal article",
+              "idea": "Short breaks during study help students stay focused."
+            },
+            {
+              "authors": [
+                "Mwangi, J."
+              ],
+              "year": "2019",
+              "title": "Studying smarter",
+              "type": "Book",
+              "idea": "Students concentrate better when they take regular breaks."
+            }
+          ],
+          "prompt": "These two sources agree. Write ONE sentence that cites both.",
+          "frame": null,
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Regular short breaks help students stay focused (Mwangi, 2019; Tran, 2021).",
+            "Both Mwangi (2019) and Tran (2021) found that regular breaks help students concentrate."
+          ],
+          "rule": "Two sources that agree: (Adams, 2019; Lee, 2020) in alphabetical order, or Adams (2019) and Lee (2020) both found …",
+          "errorDiagnosis": [],
+          "hint": "In one bracket, which name comes first in the alphabet?",
+          "selfCheck": [
+            "Are both sources cited?",
+            "Is the citation format correct (alphabetical order, semicolon, and / &)?",
+            "Does my sentence show that the sources agree?",
+            "Is the meaning of each source kept?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D3-02",
+          "track": "D",
+          "stage": 3,
+          "type": "rewrite",
+          "topic": "combine-sources",
+          "sourceCards": [
+            {
+              "authors": [
+                "Romano, P."
+              ],
+              "year": "2020",
+              "title": "Screens and pages",
+              "type": "Book",
+              "idea": "Students remember more from printed texts than from screens."
+            },
+            {
+              "authors": [
+                "Duarte, S."
+              ],
+              "year": "2022",
+              "title": "Print or screen?",
+              "type": "Journal article",
+              "idea": "Most students prefer printed books for long, difficult texts.",
+              "did": "Ran a survey."
+            }
+          ],
+          "prompt": "These two sources agree. Write ONE sentence that cites both.",
+          "frame": null,
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Printed texts may suit long, difficult reading better than screens (Duarte, 2022; Romano, 2020).",
+            "Romano (2020) and Duarte (2022) both {suggest|suggested} that print works better than screens for difficult reading."
+          ],
+          "rule": "Two sources that agree: (Adams, 2019; Lee, 2020) in alphabetical order, or Adams (2019) and Lee (2020) both found …",
+          "errorDiagnosis": [],
+          "hint": "Find the idea the two sources share.",
+          "selfCheck": [
+            "Are both sources cited?",
+            "Is the citation format correct (alphabetical order, semicolon, and / &)?",
+            "Does my sentence show that the sources agree?",
+            "Is the meaning of each source kept?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D3-03",
+          "track": "D",
+          "stage": 3,
+          "type": "rewrite",
+          "topic": "combine-sources",
+          "sourceCards": [
+            {
+              "authors": [
+                "Okafor, T.",
+                "Lindqvist, A."
+              ],
+              "year": "2018",
+              "title": "Safer roads near schools",
+              "type": "Report",
+              "idea": "Cycling lanes reduce accidents near schools."
+            },
+            {
+              "authors": [
+                "Kowalski, P."
+              ],
+              "year": "2020",
+              "title": "Cycling to campus",
+              "type": "Report",
+              "idea": "Safe bike lanes encourage more people to cycle."
+            }
+          ],
+          "prompt": "These two sources agree. Write ONE sentence that cites both.",
+          "frame": null,
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Safe cycling lanes make roads safer and encourage people to cycle (Kowalski, 2020; Okafor & Lindqvist, 2018).",
+            "Okafor and Lindqvist (2018) and Kowalski (2020) all support building safe cycling lanes."
+          ],
+          "rule": "Two sources that agree: (Adams, 2019; Lee, 2020) in alphabetical order, or Adams (2019) and Lee (2020) both found …",
+          "errorDiagnosis": [],
+          "hint": "In brackets, two authors are joined with &. In the sentence, with “and”.",
+          "selfCheck": [
+            "Are both sources cited?",
+            "Is the citation format correct (alphabetical order, semicolon, and / &)?",
+            "Does my sentence show that the sources agree?",
+            "Is the meaning of each source kept?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D3-04",
+          "track": "D",
+          "stage": 3,
+          "type": "rewrite",
+          "topic": "combine-sources",
+          "sourceCards": [
+            {
+              "authors": [
+                "Pillai, R."
+              ],
+              "year": "2020",
+              "title": "Noise and learning",
+              "type": "Journal article",
+              "idea": "Classroom noise makes it harder to concentrate."
+            },
+            {
+              "authors": [
+                "Abebe, M."
+              ],
+              "year": "2016",
+              "title": "Quiet classrooms",
+              "type": "Report",
+              "idea": "Students concentrate better in quiet rooms."
+            }
+          ],
+          "prompt": "These two sources agree. Write ONE sentence that cites both.",
+          "frame": null,
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Noise in the classroom can reduce concentration (Abebe, 2016; Pillai, 2020).",
+            "Both Abebe (2016) and Pillai (2020) found that students concentrate better in quiet classrooms."
+          ],
+          "rule": "Two sources that agree: (Adams, 2019; Lee, 2020) in alphabetical order, or Adams (2019) and Lee (2020) both found …",
+          "errorDiagnosis": [],
+          "hint": "Alphabetical order: A before P.",
+          "selfCheck": [
+            "Are both sources cited?",
+            "Is the citation format correct (alphabetical order, semicolon, and / &)?",
+            "Does my sentence show that the sources agree?",
+            "Is the meaning of each source kept?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D3-05",
+          "track": "D",
+          "stage": 3,
+          "type": "rewrite",
+          "topic": "combine-sources",
+          "sourceCards": [
+            {
+              "authors": [
+                "Sato, Y."
+              ],
+              "year": "2020",
+              "title": "Sleep and memory in teenagers",
+              "type": "Journal article",
+              "idea": "Teenagers who sleep less remember fewer new words."
+            },
+            {
+              "authors": [
+                "Nasser, F.",
+                "Park, J.",
+                "Oyelaran, T."
+              ],
+              "year": "2020",
+              "title": "Sleep and marks",
+              "type": "Journal article",
+              "idea": "Students who sleep well tend to get higher marks."
+            }
+          ],
+          "prompt": "These two sources agree. Write ONE sentence that cites both.",
+          "frame": null,
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Good sleep appears to support learning (Nasser et al., 2020; Sato, 2020).",
+            "Sato (2020) and Nasser et al. (2020) both found links between sleep and learning."
+          ],
+          "rule": "Two sources that agree: (Adams, 2019; Lee, 2020) in alphabetical order, or Adams (2019) and Lee (2020) both found …",
+          "errorDiagnosis": [],
+          "hint": "Three authors: et al. Then put the two works in alphabetical order.",
+          "selfCheck": [
+            "Are both sources cited?",
+            "Is the citation format correct (alphabetical order, semicolon, and / &)?",
+            "Does my sentence show that the sources agree?",
+            "Is the meaning of each source kept?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D3-06",
+          "track": "D",
+          "stage": 3,
+          "type": "rewrite",
+          "topic": "combine-sources",
+          "sourceCards": [
+            {
+              "authors": [
+                "Haddad, R."
+              ],
+              "year": "2017",
+              "title": "Public transport and price",
+              "type": "Journal article",
+              "idea": "Bus use often falls when fares rise."
+            },
+            {
+              "authors": [
+                "National Centre for Urban Transport"
+              ],
+              "year": "2021",
+              "title": "Bus use in growing cities",
+              "type": "Report",
+              "idea": "Cheaper fares lead more people to use buses."
+            }
+          ],
+          "prompt": "These two sources agree. Write ONE sentence that cites both.",
+          "frame": null,
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "The price of a ticket affects how many people take the bus (Haddad, 2017; National Centre for Urban Transport [NCUT], 2021).",
+            "Haddad (2017) and the National Centre for Urban Transport (NCUT, 2021) both link bus use to the price of fares."
+          ],
+          "rule": "Two sources that agree: (Adams, 2019; Lee, 2020) in alphabetical order, or Adams (2019) and Lee (2020) both found …",
+          "errorDiagnosis": [],
+          "hint": "A group author is placed in alphabetical order by the first word of its name. First citation: give the abbreviation too.",
+          "selfCheck": [
+            "Are both sources cited?",
+            "Is the citation format correct (alphabetical order, semicolon, and / &)?",
+            "Does my sentence show that the sources agree?",
+            "Is the meaning of each source kept?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "D3-07",
+          "track": "D",
+          "stage": 3,
+          "type": "rewrite",
+          "topic": "combine-sources",
+          "sourceCards": [
+            {
+              "authors": [
+                "Achieng, W.",
+                "Halvorsen, B.",
+                "Pillai, R.",
+                "Tran, Q."
+              ],
+              "year": "2021",
+              "title": "Language apps and vocabulary",
+              "type": "Journal article",
+              "idea": "Short daily app practice helps learners remember words."
+            },
+            {
+              "authors": [
+                "Kaur, J."
+              ],
+              "year": "2019",
+              "title": "Little and often",
+              "type": "Book",
+              "idea": "Learners remember more vocabulary when they practise a little every day."
+            }
+          ],
+          "prompt": "These two sources agree. Write ONE sentence that cites both.",
+          "frame": null,
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Short daily practice helps learners remember new vocabulary (Achieng et al., 2021; Kaur, 2019).",
+            "Achieng et al. (2021) and Kaur (2019) both found that practising a little every day helps learners remember words."
+          ],
+          "rule": "Two sources that agree: (Adams, 2019; Lee, 2020) in alphabetical order, or Adams (2019) and Lee (2020) both found …",
+          "errorDiagnosis": [],
+          "hint": "Four authors: et al. A before K.",
+          "selfCheck": [
+            "Are both sources cited?",
+            "Is the citation format correct (alphabetical order, semicolon, and / &)?",
+            "Does my sentence show that the sources agree?",
+            "Is the meaning of each source kept?"
+          ],
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "Vary the paragraph",
+      "items": [
+        {
+          "id": "D4-01",
+          "track": "D",
+          "stage": 4,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Every sentence in this paragraph ends with (Author, year). Rewrite two or three sentences so the paragraph has more variety. Then compare with the model.",
+          "frame": "Many students do not get enough sleep during exam weeks (Sato & Kim, 2022). Teenagers who sleep less remember fewer new words (Sato, 2020). Good sleep is linked to higher marks (Nasser et al., 2020). Universities could teach students about sleep in orientation week (Petrova, 2021).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Many students do not get enough sleep during exam weeks (Sato & Kim, 2022). This matters because, as Sato (2020) {shows|showed}, teenagers who sleep less remember fewer new words. Nasser et al. (2020) also found that good sleep is linked to higher marks. For this reason, Petrova (2021) {suggests|suggested} that universities could teach students about sleep in orientation week."
+          ],
+          "rule": "Mix patterns: author-first for people and opinions, idea-first for widely shared facts. Avoid ending every sentence with (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "Try author-first for the findings and for the careful suggestion in the last sentence.",
+          "selfCheck": [
+            "Did I change at least two sentences to a different pattern?",
+            "Is every citation still correct (and / &, commas, brackets)?",
+            "Does each new verb represent the source fairly?",
+            "Is the meaning of each sentence unchanged?"
+          ],
+          "longAnswer": true,
+          "verified": false
+        },
+        {
+          "id": "D4-02",
+          "track": "D",
+          "stage": 4,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Every sentence in this paragraph ends with (Author, year). Rewrite two or three sentences so the paragraph has more variety. Then compare with the model.",
+          "frame": "Bus use often falls when fares rise (Haddad, 2017). Cheaper fares lead more people to use buses (National Centre for Urban Transport [NCUT], 2021). Bus use also rises when buses come more often (NCUT, 2021). Cities should therefore keep fares low (Moretti, 2017).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Bus use often falls when fares rise (Haddad, 2017). In a recent report, the National Centre for Urban Transport (NCUT, 2021) found that cheaper fares lead more people to use buses, and that bus use rises when buses come more often. Moretti (2017) therefore {argues|argued} that cities should keep fares low."
+          ],
+          "rule": "Mix patterns: author-first for people and opinions, idea-first for widely shared facts. Avoid ending every sentence with (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "The last sentence is an opinion. Which pattern lets you show whose opinion it is?",
+          "selfCheck": [
+            "Did I change at least two sentences to a different pattern?",
+            "Is every citation still correct (and / &, commas, brackets)?",
+            "Does each new verb represent the source fairly?",
+            "Is the meaning of each sentence unchanged?"
+          ],
+          "longAnswer": true,
+          "verified": false
+        },
+        {
+          "id": "D4-03",
+          "track": "D",
+          "stage": 4,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Every sentence in this paragraph ends with (Author, year). Rewrite two or three sentences so the paragraph has more variety. Then compare with the model.",
+          "frame": "Plastic bottles are a major source of waste on campus (Ogunleye et al., 2021). Refill stations reduce the number of bottles thrown away (Abebe et al., 2022). Students use refill stations more when they are easy to find (Mwangi, 2021). Every building should have a refill station (Kowalski, 2020).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Plastic bottles are a major source of waste on campus (Ogunleye et al., 2021). A study by Abebe et al. (2022) found that refill stations reduce the number of bottles thrown away, and Mwangi (2021) {notes|noted} that students use them more when they are easy to find. Kowalski (2020) goes further and {argues|argued} that every building should have one."
+          ],
+          "rule": "Mix patterns: author-first for people and opinions, idea-first for widely shared facts. Avoid ending every sentence with (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "Try “A study by …” for a finding, and author-first for the opinion at the end.",
+          "selfCheck": [
+            "Did I change at least two sentences to a different pattern?",
+            "Is every citation still correct (and / &, commas, brackets)?",
+            "Does each new verb represent the source fairly?",
+            "Is the meaning of each sentence unchanged?"
+          ],
+          "longAnswer": true,
+          "verified": false
+        },
+        {
+          "id": "D4-04",
+          "track": "D",
+          "stage": 4,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Every sentence in this paragraph ends with (Author, year). Rewrite two or three sentences so the paragraph has more variety. Then compare with the model.",
+          "frame": "Short study sessions help students remember more (Duarte, 2020). Reviewing notes on the same day also improves memory (Varga, 2014, as cited in Osei, 2021). Regular breaks help students stay focused (Tran, 2021). Students should plan short, regular study sessions (Mwangi, 2019).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Short study sessions help students remember more (Duarte, 2020). Varga (2014, as cited in Osei, 2021) found that reviewing notes on the same day also improves memory. Similarly, Tran (2021) {shows|showed} that regular breaks help students stay focused. Mwangi (2019) therefore {recommends|recommended} short, regular study sessions."
+          ],
+          "rule": "Mix patterns: author-first for people and opinions, idea-first for widely shared facts. Avoid ending every sentence with (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "The second sentence is a secondary citation. Can you make it narrative?",
+          "selfCheck": [
+            "Did I change at least two sentences to a different pattern?",
+            "Is every citation still correct (and / &, commas, brackets)?",
+            "Does each new verb represent the source fairly?",
+            "Is the meaning of each sentence unchanged?"
+          ],
+          "longAnswer": true,
+          "verified": false
+        },
+        {
+          "id": "D4-05",
+          "track": "D",
+          "stage": 4,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Every sentence in this paragraph ends with (Author, year). Rewrite two or three sentences so the paragraph has more variety. Then compare with the model.",
+          "frame": "Cycling lanes reduce traffic accidents near schools (Okafor & Lindqvist, 2018). Safe bike lanes encourage more students to cycle (Kowalski, 2020). Protected lanes work better than painted lines (Castillo, 2021). Small towns may need a different plan for bike lanes (Volkov, 2023).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Cycling lanes reduce traffic accidents near schools (Okafor & Lindqvist, 2018). According to Kowalski (2020), safe bike lanes also encourage more students to cycle, and Castillo (2021) found that protected lanes work better than painted lines. However, Volkov (2023) {suggests|suggested} that small towns may need a different plan."
+          ],
+          "rule": "Mix patterns: author-first for people and opinions, idea-first for widely shared facts. Avoid ending every sentence with (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "The last idea is careful (“may”). Which verb would show that?",
+          "selfCheck": [
+            "Did I change at least two sentences to a different pattern?",
+            "Is every citation still correct (and / &, commas, brackets)?",
+            "Does each new verb represent the source fairly?",
+            "Is the meaning of each sentence unchanged?"
+          ],
+          "longAnswer": true,
+          "verified": false
+        },
+        {
+          "id": "D4-06",
+          "track": "D",
+          "stage": 4,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Every sentence in this paragraph ends with (Author, year). Rewrite two or three sentences so the paragraph has more variety. Then compare with the model.",
+          "frame": "Many first-year students skip breakfast (Okafor, 2021). Classes that start early are one reason (Okafor, 2021). Skipping breakfast can make it harder to concentrate in the morning (Pillai, 2020). Universities could offer cheap breakfasts on campus (Petrova, 2021).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Okafor (2021) found that many first-year students skip breakfast, often because their classes start early. This may matter, because skipping breakfast can make it harder to concentrate in the morning (Pillai, 2020). Petrova (2021) {proposes|proposed} that universities could offer cheap breakfasts on campus."
+          ],
+          "rule": "Mix patterns: author-first for people and opinions, idea-first for widely shared facts. Avoid ending every sentence with (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "Two sentences cite the same source. Could you join them with one author-first citation?",
+          "selfCheck": [
+            "Did I change at least two sentences to a different pattern?",
+            "Is every citation still correct (and / &, commas, brackets)?",
+            "Does each new verb represent the source fairly?",
+            "Is the meaning of each sentence unchanged?"
+          ],
+          "longAnswer": true,
+          "verified": false
+        },
+        {
+          "id": "D4-07",
+          "track": "D",
+          "stage": 4,
+          "type": "rewrite",
+          "topic": "pattern-variety",
+          "sourceCards": [],
+          "prompt": "Every sentence in this paragraph ends with (Author, year). Rewrite two or three sentences so the paragraph has more variety. Then compare with the model.",
+          "frame": "Music with lyrics can make reading harder (Kaur & Novak, 2020). Quiet rooms help students concentrate (Abebe, 2016). Noise in shared houses is a common problem for students (Zhou, 2023). Libraries should offer more silent study spaces (Haddad, 2019).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Music with lyrics can make reading harder (Kaur & Novak, 2020), and quiet rooms help students concentrate (Abebe, 2016). As Zhou (2023) {notes|noted}, noise in shared houses is a common problem for students. Haddad (2019) therefore {argues|argued} that libraries should offer more silent study spaces."
+          ],
+          "rule": "Mix patterns: author-first for people and opinions, idea-first for widely shared facts. Avoid ending every sentence with (Author, year).",
+          "errorDiagnosis": [],
+          "hint": "Try “As … notes, …” and an author-first opinion at the end.",
+          "selfCheck": [
+            "Did I change at least two sentences to a different pattern?",
+            "Is every citation still correct (and / &, commas, brackets)?",
+            "Does each new verb represent the source fairly?",
+            "Is the meaning of each sentence unchanged?"
+          ],
+          "longAnswer": true,
+          "verified": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1198 @@
+{
+  "_help": "Track C: Reporting verbs. Items are grouped by stage. See README.md, section 'How to add or edit an item'.",
+  "track": "C",
+  "title": "Reporting verbs",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "Sort by strength",
+      "items": [
+        {
+          "id": "C1-01",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "suggest",
+            "state",
+            "argue",
+            "find"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "suggest": "Tentative",
+            "state": "Neutral",
+            "argue": "Strong",
+            "find": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "Which verb is used for results from research?",
+          "verified": false
+        },
+        {
+          "id": "C1-02",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "propose",
+            "describe",
+            "assert",
+            "show"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "propose": "Tentative",
+            "describe": "Neutral",
+            "assert": "Strong",
+            "show": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "Which verb puts forward an idea carefully?",
+          "verified": false
+        },
+        {
+          "id": "C1-03",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "hypothesise",
+            "note",
+            "maintain",
+            "demonstrate"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "hypothesise": "Tentative",
+            "note": "Neutral",
+            "maintain": "Strong",
+            "demonstrate": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "“Hypothesise” means to offer a possible explanation that still needs testing.",
+          "verified": false
+        },
+        {
+          "id": "C1-04",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "speculate",
+            "report",
+            "claim",
+            "reveal"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "speculate": "Tentative",
+            "report": "Neutral",
+            "claim": "Strong",
+            "reveal": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "“Speculate” means to guess without much evidence.",
+          "verified": false
+        },
+        {
+          "id": "C1-05",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "suggest",
+            "explain",
+            "insist",
+            "confirm"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "suggest": "Tentative",
+            "explain": "Neutral",
+            "insist": "Strong",
+            "confirm": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "“Insist” means to say something firmly, again and again.",
+          "verified": false
+        },
+        {
+          "id": "C1-06",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "propose",
+            "outline",
+            "argue",
+            "establish"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "propose": "Tentative",
+            "outline": "Neutral",
+            "argue": "Strong",
+            "establish": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "“Establish” means to prove that something is true.",
+          "verified": false
+        },
+        {
+          "id": "C1-07",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "suggest",
+            "report",
+            "maintain",
+            "show"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "suggest": "Tentative",
+            "report": "Neutral",
+            "maintain": "Strong",
+            "show": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "“Maintain” means to keep saying that something is true.",
+          "verified": false
+        },
+        {
+          "id": "C1-08",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "hypothesise",
+            "describe",
+            "claim",
+            "demonstrate"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "hypothesise": "Tentative",
+            "describe": "Neutral",
+            "claim": "Strong",
+            "demonstrate": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "Which verb needs evidence from research?",
+          "verified": false
+        },
+        {
+          "id": "C1-09",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "speculate",
+            "state",
+            "assert",
+            "find"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "speculate": "Tentative",
+            "state": "Neutral",
+            "assert": "Strong",
+            "find": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "“Assert” means to say something firmly and confidently.",
+          "verified": false
+        },
+        {
+          "id": "C1-10",
+          "track": "C",
+          "stage": 1,
+          "type": "sort",
+          "topic": "verb-strength",
+          "sourceCards": [],
+          "prompt": "Put each verb in its group. How sure, or how strong, is the author?",
+          "frame": null,
+          "tiles": [
+            "propose",
+            "note",
+            "insist",
+            "reveal"
+          ],
+          "options": [
+            "Tentative",
+            "Neutral",
+            "Strong",
+            "Findings"
+          ],
+          "acceptedAnswers": {
+            "propose": "Tentative",
+            "note": "Neutral",
+            "insist": "Strong",
+            "reveal": "Findings"
+          },
+          "modelAnswers": [],
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "errorDiagnosis": [],
+          "hint": "“Reveal” is used when research shows something new.",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "Match the verb to the source",
+      "items": [
+        {
+          "id": "C2-01",
+          "track": "C",
+          "stage": 2,
+          "type": "choice",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Tran, Q."
+              ],
+              "year": "2020",
+              "title": "Bilingual children and attention",
+              "type": "Journal article",
+              "did": "Ran an experiment with a large group of children and measured how fast they switched tasks."
+            }
+          ],
+          "prompt": "Read what the author did. Which verb represents the source fairly?",
+          "frame": "Tran (2020) ___ that bilingual children switched tasks faster than other children.",
+          "tiles": null,
+          "options": [
+            "{shows|showed}",
+            "{claims|claimed}",
+            "{proposes|proposed}"
+          ],
+          "acceptedAnswers": [
+            "{shows|showed}"
+          ],
+          "modelAnswers": [],
+          "rule": "Choose a verb that represents what the author really did: findings, a strong opinion, a neutral report or a careful proposal.",
+          "errorDiagnosis": [],
+          "hint": "The author has evidence from an experiment.",
+          "verified": false
+        },
+        {
+          "id": "C2-02",
+          "track": "C",
+          "stage": 2,
+          "type": "choice",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Petrova, D."
+              ],
+              "year": "2021",
+              "title": "Rethinking the lecture",
+              "type": "Journal article",
+              "did": "Gave a careful idea in the final section. Said it should be tested in future studies."
+            }
+          ],
+          "prompt": "Read what the author did. Which verb represents the source fairly?",
+          "frame": "Petrova (2021) ___ that shorter lectures might help students concentrate.",
+          "tiles": null,
+          "options": [
+            "{suggests|suggested}",
+            "{demonstrates|demonstrated}",
+            "{insists|insisted}"
+          ],
+          "acceptedAnswers": [
+            "{suggests|suggested}"
+          ],
+          "modelAnswers": [],
+          "rule": "Choose a verb that represents what the author really did: findings, a strong opinion, a neutral report or a careful proposal.",
+          "errorDiagnosis": [],
+          "hint": "The author is not sure yet. The idea is not tested.",
+          "verified": false
+        },
+        {
+          "id": "C2-03",
+          "track": "C",
+          "stage": 2,
+          "type": "choice",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Haddad, R."
+              ],
+              "year": "2019",
+              "title": "The case for urban parks",
+              "type": "Book",
+              "did": "Strongly disagreed with other writers and gave several reasons for this view. No new data."
+            }
+          ],
+          "prompt": "Read what the author did. Which verb represents the source fairly?",
+          "frame": "Haddad (2019) ___ that cities must build more green space.",
+          "tiles": null,
+          "options": [
+            "{argues|argued}",
+            "{shows|showed}",
+            "{notes|noted}"
+          ],
+          "acceptedAnswers": [
+            "{argues|argued}"
+          ],
+          "modelAnswers": [],
+          "rule": "Choose a verb that represents what the author really did: findings, a strong opinion, a neutral report or a careful proposal.",
+          "errorDiagnosis": [],
+          "hint": "This is a strong opinion with reasons, not research results.",
+          "verified": false
+        },
+        {
+          "id": "C2-04",
+          "track": "C",
+          "stage": 2,
+          "type": "choice",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Achieng, W."
+              ],
+              "year": "2018",
+              "title": "Student loans explained",
+              "type": "Report",
+              "did": "Explained the steps of the repayment system, without giving an opinion."
+            }
+          ],
+          "prompt": "Read what the author did. Which verb represents the source fairly?",
+          "frame": "Achieng (2018) ___ how first-year students pay back their student loans after graduating.",
+          "tiles": null,
+          "options": [
+            "{describes|described}",
+            "{claims|claimed}",
+            "{demonstrates|demonstrated}"
+          ],
+          "acceptedAnswers": [
+            "{describes|described}"
+          ],
+          "modelAnswers": [],
+          "rule": "Choose a verb that represents what the author really did: findings, a strong opinion, a neutral report or a careful proposal.",
+          "errorDiagnosis": [],
+          "hint": "The author simply explains how something works.",
+          "verified": false
+        },
+        {
+          "id": "C2-05",
+          "track": "C",
+          "stage": 2,
+          "type": "choice",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Duarte, S."
+              ],
+              "year": "2022",
+              "title": "Print or screen?",
+              "type": "Journal article",
+              "did": "Carried out a survey of students and reported the answers."
+            }
+          ],
+          "prompt": "Read what the author did. Which verb represents the source fairly?",
+          "frame": "Duarte (2022) ___ that most students in the survey preferred printed books for long texts.",
+          "tiles": null,
+          "options": [
+            "{finds|found}",
+            "{argues|argued}",
+            "{speculates|speculated}"
+          ],
+          "acceptedAnswers": [
+            "{finds|found}"
+          ],
+          "modelAnswers": [],
+          "rule": "Choose a verb that represents what the author really did: findings, a strong opinion, a neutral report or a careful proposal.",
+          "errorDiagnosis": [],
+          "hint": "The author has survey results.",
+          "verified": false
+        },
+        {
+          "id": "C2-06",
+          "track": "C",
+          "stage": 2,
+          "type": "choice",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Volkov, I."
+              ],
+              "year": "2023",
+              "title": "Bike lanes for small towns",
+              "type": "Journal article",
+              "did": "Put forward a new plan and said that more research is needed before towns use it."
+            }
+          ],
+          "prompt": "Read what the author did. Which verb represents the source fairly?",
+          "frame": "Volkov (2023) ___ a new way to plan bike lanes in small towns.",
+          "tiles": null,
+          "options": [
+            "{proposes|proposed}",
+            "{demonstrates|demonstrated}",
+            "{asserts|asserted}"
+          ],
+          "acceptedAnswers": [
+            "{proposes|proposed}"
+          ],
+          "modelAnswers": [],
+          "rule": "Choose a verb that represents what the author really did: findings, a strong opinion, a neutral report or a careful proposal.",
+          "errorDiagnosis": [],
+          "hint": "A new idea, offered carefully.",
+          "verified": false
+        },
+        {
+          "id": "C2-07",
+          "track": "C",
+          "stage": 2,
+          "type": "choice",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Nakamura, H."
+              ],
+              "year": "2020",
+              "title": "Campus housing figures",
+              "type": "Report",
+              "did": "Gave the numbers in a table, with no comment or opinion."
+            }
+          ],
+          "prompt": "Read what the author did. Which verb represents the source fairly?",
+          "frame": "Nakamura (2020) ___ the number of students living on campus each year.",
+          "tiles": null,
+          "options": [
+            "{reports|reported}",
+            "{argues|argued}",
+            "{claims|claimed}"
+          ],
+          "acceptedAnswers": [
+            "{reports|reported}"
+          ],
+          "modelAnswers": [],
+          "rule": "Choose a verb that represents what the author really did: findings, a strong opinion, a neutral report or a careful proposal.",
+          "errorDiagnosis": [],
+          "hint": "The author just presents facts, with no opinion.",
+          "verified": false
+        },
+        {
+          "id": "C2-08",
+          "track": "C",
+          "stage": 2,
+          "type": "choice",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Moretti, G."
+              ],
+              "year": "2017",
+              "title": "Childhood without homework",
+              "type": "Book",
+              "did": "Has defended this view in several books over many years, even though others disagree."
+            }
+          ],
+          "prompt": "Read what the author did. Which verb represents the source fairly?",
+          "frame": "Moretti (2017) ___ that homework should be banned in primary schools.",
+          "tiles": null,
+          "options": [
+            "{maintains|maintained}",
+            "{finds|found}",
+            "{suggests|suggested}"
+          ],
+          "acceptedAnswers": [
+            "{maintains|maintained}"
+          ],
+          "modelAnswers": [],
+          "rule": "Choose a verb that represents what the author really did: findings, a strong opinion, a neutral report or a careful proposal.",
+          "errorDiagnosis": [],
+          "hint": "The author keeps holding a strong view over time.",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "Grammar patterns",
+      "items": [
+        {
+          "id": "C3-01",
+          "track": "C",
+          "stage": 3,
+          "type": "choice",
+          "topic": "according-to",
+          "sourceCards": [],
+          "prompt": "Which sentence is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "According to Haddad (2019), cities need more green space.",
+            "According to Haddad (2019) {argues|argued} that cities need more green space.",
+            "According to Haddad (2019) that cities need more green space."
+          ],
+          "acceptedAnswers": [
+            "According to Haddad (2019), cities need more green space."
+          ],
+          "modelAnswers": [],
+          "rule": "Use “According to Author (year), …” OR “Author (year) argues that …”, never both.",
+          "errorDiagnosis": [],
+          "hint": "“According to” already reports the idea. Does it need a reporting verb too?",
+          "verified": false
+        },
+        {
+          "id": "C3-02",
+          "track": "C",
+          "stage": 3,
+          "type": "choice",
+          "topic": "verb-grammar",
+          "sourceCards": [],
+          "prompt": "Which sentence is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Novak (2021) {suggests|suggested} that students should take regular breaks.",
+            "Novak (2021) {suggests|suggested} students to take regular breaks.",
+            "Novak (2021) {suggests|suggested} about taking regular breaks."
+          ],
+          "acceptedAnswers": [
+            "Novak (2021) {suggests|suggested} that students should take regular breaks."
+          ],
+          "modelAnswers": [],
+          "rule": "“Suggest” is followed by a that-clause, not “to + verb”.",
+          "errorDiagnosis": [],
+          "hint": "After “suggest”, what kind of word comes next?",
+          "verified": false
+        },
+        {
+          "id": "C3-03",
+          "track": "C",
+          "stage": 3,
+          "type": "choice",
+          "topic": "verb-grammar",
+          "sourceCards": [],
+          "prompt": "Which sentence is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Okafor (2020) {describes|described} the process of applying for a student visa.",
+            "Okafor (2020) {describes|described} that applying for a student visa is a long process.",
+            "Okafor (2020) {describes|described} about the process of applying for a student visa."
+          ],
+          "acceptedAnswers": [
+            "Okafor (2020) {describes|described} the process of applying for a student visa."
+          ],
+          "modelAnswers": [],
+          "rule": "“Describe” takes a noun phrase (describe something), not a that-clause.",
+          "errorDiagnosis": [],
+          "hint": "“Describe” needs an object: describe something.",
+          "verified": false
+        },
+        {
+          "id": "C3-04",
+          "track": "C",
+          "stage": 3,
+          "type": "choice",
+          "topic": "verb-grammar",
+          "sourceCards": [],
+          "prompt": "Which sentence is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Kim (2018) {discusses|discussed} the effects of noise on sleep.",
+            "Kim (2018) {discusses|discussed} about the effects of noise on sleep.",
+            "Kim (2018) {discusses|discussed} that noise affects sleep."
+          ],
+          "acceptedAnswers": [
+            "Kim (2018) {discusses|discussed} the effects of noise on sleep."
+          ],
+          "modelAnswers": [],
+          "rule": "“Discuss” takes a noun phrase (discuss something), with no “about” and no that-clause.",
+          "errorDiagnosis": [],
+          "hint": "Do we say “discuss about”?",
+          "verified": false
+        },
+        {
+          "id": "C3-05",
+          "track": "C",
+          "stage": 3,
+          "type": "choice",
+          "topic": "verb-grammar",
+          "sourceCards": [],
+          "prompt": "Which verb can NOT be followed by “that”?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "describe",
+            "argue",
+            "find"
+          ],
+          "acceptedAnswers": [
+            "describe"
+          ],
+          "modelAnswers": [],
+          "rule": "Verbs like describe, discuss and outline take a noun phrase. Verbs like argue, find, suggest and note can take a that-clause.",
+          "errorDiagnosis": [],
+          "hint": "Try each verb with “… that students need more sleep.”",
+          "verified": false
+        },
+        {
+          "id": "C3-06",
+          "track": "C",
+          "stage": 3,
+          "type": "choice",
+          "topic": "according-to",
+          "sourceCards": [],
+          "prompt": "Which sentence is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "According to Pillai (2020), noise makes concentration harder.",
+            "According to (Pillai, 2020), noise makes concentration harder.",
+            "According to Pillai, 2020, noise makes concentration harder."
+          ],
+          "acceptedAnswers": [
+            "According to Pillai (2020), noise makes concentration harder."
+          ],
+          "modelAnswers": [],
+          "rule": "After “According to”, write a narrative citation: According to Pillai (2020), …",
+          "errorDiagnosis": [],
+          "hint": "After “According to”, the author's name is part of the sentence.",
+          "verified": false
+        },
+        {
+          "id": "C3-07",
+          "track": "C",
+          "stage": 3,
+          "type": "choice",
+          "topic": "verb-grammar",
+          "sourceCards": [],
+          "prompt": "Which sentence is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "As Tran (2019) {notes|noted}, bilingual children may switch tasks more easily.",
+            "As Tran (2019) {notes|noted} that bilingual children may switch tasks more easily.",
+            "As noted Tran (2019), bilingual children may switch tasks more easily."
+          ],
+          "acceptedAnswers": [
+            "As Tran (2019) {notes|noted}, bilingual children may switch tasks more easily."
+          ],
+          "modelAnswers": [],
+          "rule": "“As Author (year) notes, …” is followed by a comma and a full clause, with no “that”.",
+          "errorDiagnosis": [],
+          "hint": "“As … notes,” already introduces the idea.",
+          "verified": false
+        },
+        {
+          "id": "C3-08",
+          "track": "C",
+          "stage": 3,
+          "type": "choice",
+          "topic": "verb-grammar",
+          "sourceCards": [],
+          "prompt": "Which sentence is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Varga (2014) {outlines|outlined} three ways to review lecture notes.",
+            "Varga (2014) {outlines|outlined} that there are three ways to review lecture notes.",
+            "Varga (2014) {outlines|outlined} about three ways to review lecture notes."
+          ],
+          "acceptedAnswers": [
+            "Varga (2014) {outlines|outlined} three ways to review lecture notes."
+          ],
+          "modelAnswers": [],
+          "rule": "“Outline” takes a noun phrase: outline something.",
+          "errorDiagnosis": [],
+          "hint": "“Outline” needs an object: outline something.",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "Tense and agreement",
+      "items": [
+        {
+          "id": "C4-01",
+          "track": "C",
+          "stage": 4,
+          "type": "choice",
+          "topic": "verb-agreement",
+          "sourceCards": [],
+          "prompt": "Which verb form fits the gap? Check the subject.",
+          "frame": "Moreau (2019) ___ that public libraries help students from all backgrounds.",
+          "tiles": null,
+          "options": [
+            "argues",
+            "argue",
+            "argued",
+            "have argued"
+          ],
+          "acceptedAnswers": [
+            "argues",
+            "argued"
+          ],
+          "modelAnswers": [],
+          "rule": "One author is singular: argues / argued / has argued.",
+          "errorDiagnosis": [],
+          "hint": "One author. Singular or plural?",
+          "tense": {
+            "argues": "present",
+            "argued": "past"
+          },
+          "verified": false
+        },
+        {
+          "id": "C4-02",
+          "track": "C",
+          "stage": 4,
+          "type": "choice",
+          "topic": "verb-agreement",
+          "sourceCards": [],
+          "prompt": "Which verb form fits the gap? Check the subject.",
+          "frame": "Kaur and Novak (2020) ___ that music with lyrics makes reading harder.",
+          "tiles": null,
+          "options": [
+            "suggests",
+            "suggest",
+            "suggested",
+            "has suggested"
+          ],
+          "acceptedAnswers": [
+            "suggest",
+            "suggested"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors, or et al., are plural: argue / argued / have argued.",
+          "errorDiagnosis": [],
+          "hint": "Two authors. Singular or plural?",
+          "tense": {
+            "suggest": "present",
+            "suggested": "past"
+          },
+          "verified": false
+        },
+        {
+          "id": "C4-03",
+          "track": "C",
+          "stage": 4,
+          "type": "choice",
+          "topic": "verb-agreement",
+          "sourceCards": [],
+          "prompt": "Which verb form fits the gap? Check the subject.",
+          "frame": "Abebe et al. (2022) ___ that refill stations reduce plastic waste.",
+          "tiles": null,
+          "options": [
+            "shows",
+            "show",
+            "showed",
+            "has shown"
+          ],
+          "acceptedAnswers": [
+            "show",
+            "showed"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors, or et al., are plural: argue / argued / have argued.",
+          "errorDiagnosis": [],
+          "hint": "“et al.” means “and others”. Singular or plural?",
+          "tense": {
+            "show": "present",
+            "showed": "past"
+          },
+          "verified": false
+        },
+        {
+          "id": "C4-04",
+          "track": "C",
+          "stage": 4,
+          "type": "choice",
+          "topic": "verb-agreement",
+          "sourceCards": [],
+          "prompt": "Which verb form fits the gap? Check the subject.",
+          "frame": "Ferreira (2015) ___ that homework can build a useful link between school and home.",
+          "tiles": null,
+          "options": [
+            "notes",
+            "note",
+            "has noted",
+            "have noted"
+          ],
+          "acceptedAnswers": [
+            "notes",
+            "has noted"
+          ],
+          "modelAnswers": [],
+          "rule": "One author is singular: argues / argued / has argued.",
+          "errorDiagnosis": [],
+          "hint": "One author. Look at “has” and “have” too.",
+          "tense": {
+            "notes": "present",
+            "has noted": "past"
+          },
+          "verified": false
+        },
+        {
+          "id": "C4-05",
+          "track": "C",
+          "stage": 4,
+          "type": "choice",
+          "topic": "verb-agreement",
+          "sourceCards": [],
+          "prompt": "Which verb form fits the gap? Check the subject.",
+          "frame": "Tanaka and Brennan (2019) ___ that students read more before exams.",
+          "tiles": null,
+          "options": [
+            "maintains",
+            "maintain",
+            "have maintained",
+            "has maintained"
+          ],
+          "acceptedAnswers": [
+            "maintain",
+            "have maintained"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors, or et al., are plural: argue / argued / have argued.",
+          "errorDiagnosis": [],
+          "hint": "Two authors. Look at “has” and “have” too.",
+          "tense": {
+            "maintain": "present",
+            "have maintained": "past"
+          },
+          "verified": false
+        },
+        {
+          "id": "C4-06",
+          "track": "C",
+          "stage": 4,
+          "type": "choice",
+          "topic": "verb-agreement",
+          "sourceCards": [],
+          "prompt": "Which verb form fits the gap? Check the subject.",
+          "frame": "Nguyen et al. (2023) ___ that working from home suits some jobs better than others.",
+          "tiles": null,
+          "options": [
+            "finds",
+            "find",
+            "found",
+            "has found"
+          ],
+          "acceptedAnswers": [
+            "find",
+            "found"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors, or et al., are plural: argue / argued / have argued.",
+          "errorDiagnosis": [],
+          "hint": "“et al.” is plural.",
+          "tense": {
+            "find": "present",
+            "found": "past"
+          },
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "title": "Replace “says”",
+      "items": [
+        {
+          "id": "C5-01",
+          "track": "C",
+          "stage": 5,
+          "type": "rewrite",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Haddad, R."
+              ],
+              "year": "2019",
+              "title": "The case for urban parks",
+              "type": "Book",
+              "did": "Gave a strong opinion, with reasons, against other writers."
+            }
+          ],
+          "prompt": "Rewrite the sentence with a better verb than “says”. Read what the author did first.",
+          "frame": "Haddad (2019) says that cities need much more green space for the health of residents.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Haddad (2019) {argues|argued} that cities need much more green space for the health of residents.",
+            "Haddad (2019) {maintains|maintained} that cities need much more green space for the health of residents."
+          ],
+          "rule": "Replace “says” with a verb that shows what the author did: found, argued, suggested, described …",
+          "errorDiagnosis": [],
+          "hint": "A strong opinion with reasons.",
+          "selfCheck": [
+            "Is the citation format correct?",
+            "Does my verb represent the author fairly?",
+            "Is the grammar after the verb right (that-clause or noun phrase)?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "C5-02",
+          "track": "C",
+          "stage": 5,
+          "type": "rewrite",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Duarte, S."
+              ],
+              "year": "2022",
+              "title": "Print or screen?",
+              "type": "Journal article",
+              "did": "Ran a survey and reported the results."
+            }
+          ],
+          "prompt": "Rewrite the sentence with a better verb than “says”. Read what the author did first.",
+          "frame": "Duarte (2022) says that most students prefer printed books for long texts.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Duarte (2022) found that most students preferred printed books for long texts.",
+            "Duarte (2022) {shows|showed} that most students prefer printed books for long texts."
+          ],
+          "rule": "Replace “says” with a verb that shows what the author did: found, argued, suggested, described …",
+          "errorDiagnosis": [],
+          "hint": "The author has survey results.",
+          "selfCheck": [
+            "Is the citation format correct?",
+            "Does my verb represent the author fairly?",
+            "Is the grammar after the verb right (that-clause or noun phrase)?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "C5-03",
+          "track": "C",
+          "stage": 5,
+          "type": "rewrite",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Petrova, D."
+              ],
+              "year": "2021",
+              "title": "Rethinking the lecture",
+              "type": "Journal article",
+              "did": "Offered a careful idea that still needs testing."
+            }
+          ],
+          "prompt": "Rewrite the sentence with a better verb than “says”. Read what the author did first.",
+          "frame": "Petrova (2021) says that shorter lectures might help students concentrate.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Petrova (2021) {suggests|suggested} that shorter lectures might help students concentrate.",
+            "Petrova (2021) {proposes|proposed} that shorter lectures might help students concentrate."
+          ],
+          "rule": "Replace “says” with a verb that shows what the author did: found, argued, suggested, described …",
+          "errorDiagnosis": [],
+          "hint": "The idea is careful and not yet tested.",
+          "selfCheck": [
+            "Is the citation format correct?",
+            "Does my verb represent the author fairly?",
+            "Is the grammar after the verb right (that-clause or noun phrase)?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "C5-04",
+          "track": "C",
+          "stage": 5,
+          "type": "rewrite",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Achieng, W."
+              ],
+              "year": "2018",
+              "title": "Student loans explained",
+              "type": "Report",
+              "did": "Explained the steps of a system, with no opinion."
+            }
+          ],
+          "prompt": "Rewrite the sentence with a better verb than “says”. Read what the author did first.",
+          "frame": "Achieng (2018) says how first-year students pay back their student loans after graduating.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Achieng (2018) {describes|described} how first-year students pay back their student loans after graduating.",
+            "Achieng (2018) {explains|explained} how first-year students pay back their student loans after graduating."
+          ],
+          "rule": "Replace “says” with a verb that shows what the author did: found, argued, suggested, described …",
+          "errorDiagnosis": [],
+          "hint": "The author explains how something works. Remember that some verbs cannot take “that”.",
+          "selfCheck": [
+            "Is the citation format correct?",
+            "Does my verb represent the author fairly?",
+            "Is the grammar after the verb right (that-clause or noun phrase)?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        },
+        {
+          "id": "C5-05",
+          "track": "C",
+          "stage": 5,
+          "type": "rewrite",
+          "topic": "verb-fair",
+          "sourceCards": [
+            {
+              "authors": [
+                "Abebe, M.",
+                "Moretti, G.",
+                "Iyer, S."
+              ],
+              "year": "2022",
+              "title": "Plastic waste on campus",
+              "type": "Report",
+              "did": "Measured plastic waste before and after refill stations were installed."
+            }
+          ],
+          "prompt": "Rewrite the sentence with a better verb than “says”. Read what the author did first.",
+          "frame": "Abebe et al. (2022) say that refill stations reduce plastic waste.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [],
+          "modelAnswers": [
+            "Abebe et al. (2022) found that refill stations reduced plastic waste.",
+            "Abebe et al. (2022) {demonstrate|demonstrated} that refill stations reduce plastic waste."
+          ],
+          "rule": "Replace “says” with a verb that shows what the author did: found, argued, suggested, described …",
+          "errorDiagnosis": [],
+          "hint": "The authors have evidence. “et al.” takes a plural verb.",
+          "selfCheck": [
+            "Is the citation format correct?",
+            "Does my verb represent the author fairly?",
+            "Is the grammar after the verb right (that-clause or noun phrase)?",
+            "Is the meaning unchanged?"
+          ],
+          "verified": false
+        }
+      ]
+    }
+  ]
+}

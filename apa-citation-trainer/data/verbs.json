@@ -1,0 +1,51 @@
+{
+  "_help": "The Reporting verb bank page. Each verb has a pattern and two examples: \"present\" and \"past\". The app shows the example that matches the reportingVerbTense setting in config.js (\"either\" shows both).",
+  "groups": [
+    {
+      "title": "Tentative",
+      "about": "The author is careful or not completely sure. Use these for ideas that still need testing.",
+      "verbs": [
+        { "verb": "suggest", "pattern": "suggest + that-clause (not “suggest to …”)", "present": "Petrova (2021) suggests that shorter lectures might help students concentrate.", "past": "Petrova (2021) suggested that shorter lectures might help students concentrate." },
+        { "verb": "propose", "pattern": "propose + noun phrase, or propose + that-clause", "present": "Volkov (2023) proposes a new way to plan bike lanes in small towns.", "past": "Volkov (2023) proposed a new way to plan bike lanes in small towns." },
+        { "verb": "hypothesise", "pattern": "hypothesise + that-clause", "present": "Tran (2019) hypothesises that bilingual children switch tasks more easily.", "past": "Tran (2019) hypothesised that bilingual children switch tasks more easily." },
+        { "verb": "speculate", "pattern": "speculate + that-clause", "present": "Romano (2020) speculates that printed books may become a luxury.", "past": "Romano (2020) speculated that printed books may become a luxury." }
+      ]
+    },
+    {
+      "title": "Neutral",
+      "about": "The author presents information without a strong opinion.",
+      "verbs": [
+        { "verb": "state", "pattern": "state + that-clause", "present": "Nakamura (2020) states that campus housing is full.", "past": "Nakamura (2020) stated that campus housing was full." },
+        { "verb": "report", "pattern": "report + that-clause, or report + noun phrase", "present": "Nakamura (2020) reports the number of students living on campus.", "past": "Nakamura (2020) reported the number of students living on campus." },
+        { "verb": "note", "pattern": "note + that-clause; also “As Author (year) notes, …”", "present": "As Zhou (2023) notes, noise is a common problem in shared houses.", "past": "As Zhou (2023) noted, noise is a common problem in shared houses." },
+        { "verb": "describe", "pattern": "describe + noun phrase (NOT + that-clause)", "present": "Achieng (2018) describes how student loans are paid back.", "past": "Achieng (2018) described how student loans are paid back." },
+        { "verb": "explain", "pattern": "explain + that-clause, or explain + how / why …", "present": "Lindqvist (2017) explains why green roofs keep buildings cool.", "past": "Lindqvist (2017) explained why green roofs keep buildings cool." },
+        { "verb": "outline", "pattern": "outline + noun phrase (NOT + that-clause)", "present": "Varga (2014) outlines three ways to review lecture notes.", "past": "Varga (2014) outlined three ways to review lecture notes." }
+      ]
+    },
+    {
+      "title": "Strong",
+      "about": "The author holds a firm position. Use these for opinions and arguments, not for research results.",
+      "verbs": [
+        { "verb": "argue", "pattern": "argue + that-clause", "present": "Haddad (2019) argues that cities need more green space.", "past": "Haddad (2019) argued that cities needed more green space." },
+        { "verb": "claim", "pattern": "claim + that-clause. Careful: “claim” can suggest that you doubt the author.", "present": "Moreau (2019) claims that reading for pleasure helps in every subject.", "past": "Moreau (2019) claimed that reading for pleasure helps in every subject." },
+        { "verb": "assert", "pattern": "assert + that-clause", "present": "Castillo (2018) asserts that confidence grows when students are allowed to make mistakes.", "past": "Castillo (2018) asserted that confidence grows when students are allowed to make mistakes." },
+        { "verb": "maintain", "pattern": "maintain + that-clause", "present": "Moretti (2017) maintains that homework should be banned in primary schools.", "past": "Moretti (2017) maintained that homework should be banned in primary schools." }
+      ]
+    },
+    {
+      "title": "Findings",
+      "about": "The author has evidence from research: an experiment, a survey or data.",
+      "verbs": [
+        { "verb": "find", "pattern": "find + that-clause", "present": "Duarte (2022) finds that most students prefer printed books for long texts.", "past": "Duarte (2022) found that most students preferred printed books for long texts." },
+        { "verb": "show", "pattern": "show + that-clause, or show + noun phrase", "present": "Tran (2020) shows that bilingual children switch tasks faster.", "past": "Tran (2020) showed that bilingual children switched tasks faster." },
+        { "verb": "demonstrate", "pattern": "demonstrate + that-clause, or demonstrate + noun phrase", "present": "Abebe et al. (2022) demonstrate that refill stations reduce plastic waste.", "past": "Abebe et al. (2022) demonstrated that refill stations reduced plastic waste." }
+      ]
+    }
+  ],
+  "notes": [
+    "“According to Haddad (2019), …” already reports the idea. Do not add a reporting verb: NOT “According to Haddad (2019) argues that …”.",
+    "describe, discuss and outline take a noun phrase: “discussed the effects”, NOT “discussed about the effects” or “discussed that …”.",
+    "One author takes a singular verb (argues, has argued). Two authors and et al. take a plural verb (argue, have argued)."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "_help": "Study links shown on the 'My progress' page and in the Quick guide. One or two free, reputable pages per track (A, B, C, D), like this: {\"title\": \"In-text citations (APA Style website)\", \"url\": \"https://...\"}. Open each link in your browser to check it works before you add it. A track with an empty list shows no links.",
+  "A": [],
+  "B": [],
+  "C": [],
+  "D": [],
+  "_notCheckedYet": [
+    "Track A: APA Style website, in-text citation pages (e.g. https://apastyle.apa.org/style-grammar-guidelines/citations). Could not be checked: the site was blocked from the build environment.",
+    "Track B: APA Style website, secondary sources (https://apastyle.apa.org/style-grammar-guidelines/citations/secondary-sources). Could not be checked: blocked from the build environment.",
+    "Track C and D: University of Manchester Academic Phrasebank, Referring to sources (https://www.phrasebank.manchester.ac.uk/referring-to-sources/). Could not be checked: blocked from the build environment."
+  ]
+}

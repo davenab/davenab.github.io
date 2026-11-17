@@ -1,0 +1,1991 @@
+{
+  "_help": "Track A: Citation formats. Items are grouped by stage. See README.md, section 'How to add or edit an item'.",
+  "track": "A",
+  "title": "Citation formats",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "Spot the correct one",
+      "items": [
+        {
+          "id": "A1-01",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "one-author",
+          "sourceCards": [
+            {
+              "authors": [
+                "Okafor, T."
+              ],
+              "year": "2021",
+              "title": "Why students skip breakfast",
+              "type": "Journal article",
+              "idea": "Many first-year students skip breakfast because their classes start early."
+            }
+          ],
+          "prompt": "You want to cite this source in brackets at the end of your sentence. Which citation is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(Okafor, 2021)",
+            "(Okafor 2021)",
+            "(T. Okafor, 2021)"
+          ],
+          "acceptedAnswers": [
+            "(Okafor, 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Parenthetical: (Surname, year), with a comma before the year. Use the surname only, no initials.",
+          "errorDiagnosis": [],
+          "hint": "Look at what comes between the name and the year.",
+          "verified": false
+        },
+        {
+          "id": "A1-02",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "two-authors",
+          "sourceCards": [
+            {
+              "authors": [
+                "Lindqvist, A.",
+                "Haddad, R."
+              ],
+              "year": "2019",
+              "title": "Green roofs in hot cities",
+              "type": "Journal article",
+              "idea": "Plants on roofs can keep buildings cooler in summer."
+            }
+          ],
+          "prompt": "You want to cite this source in brackets at the end of your sentence. Which citation is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(Lindqvist & Haddad, 2019)",
+            "(Lindqvist and Haddad, 2019)",
+            "(Lindqvist & Haddad 2019)"
+          ],
+          "acceptedAnswers": [
+            "(Lindqvist & Haddad, 2019)"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors inside brackets: join the names with &, e.g. (Lee & Okafor, 2020).",
+          "errorDiagnosis": [],
+          "hint": "Inside brackets, one small symbol joins the two names.",
+          "verified": false
+        },
+        {
+          "id": "A1-03",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "two-authors",
+          "sourceCards": [
+            {
+              "authors": [
+                "Mensah, K.",
+                "Petrova, D."
+              ],
+              "year": "2020",
+              "title": "Part-time work and study",
+              "type": "Journal article",
+              "idea": "Students who work long hours have less time for reading."
+            }
+          ],
+          "prompt": "Which sentence is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Mensah and Petrova (2020) found that long working hours leave students less time for reading.",
+            "Mensah & Petrova (2020) found that long working hours leave students less time for reading.",
+            "Mensah and Petrova, (2020) found that long working hours leave students less time for reading."
+          ],
+          "acceptedAnswers": [
+            "Mensah and Petrova (2020) found that long working hours leave students less time for reading."
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors in the sentence: join the names with “and”, e.g. Lee and Okafor (2020).",
+          "errorDiagnosis": [],
+          "hint": "The names are part of the sentence here, not inside brackets.",
+          "verified": false
+        },
+        {
+          "id": "A1-04",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Nakamura, H.",
+                "Ferreira, L.",
+                "Adeyemi, O."
+              ],
+              "year": "2022",
+              "title": "Group work online",
+              "type": "Journal article",
+              "idea": "Online group work is easier when each member has a clear role."
+            }
+          ],
+          "prompt": "You want to cite this source in brackets at the end of your sentence. Which citation is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(Nakamura et al., 2022)",
+            "(Nakamura, Ferreira, & Adeyemi, 2022)",
+            "(Nakamura et. al, 2022)"
+          ],
+          "acceptedAnswers": [
+            "(Nakamura et al., 2022)"
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only.",
+          "errorDiagnosis": [],
+          "hint": "There are three authors. How many names do you need?",
+          "verified": false
+        },
+        {
+          "id": "A1-05",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "quote-page",
+          "sourceCards": [
+            {
+              "authors": [
+                "Castillo, M."
+              ],
+              "year": "2018",
+              "title": "Learning in a second language",
+              "type": "Book",
+              "where": "p. 47",
+              "quote": "Confidence grows when students are allowed to make mistakes."
+            }
+          ],
+          "prompt": "You quote these exact words from the source. Which citation is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(Castillo, 2018, p. 47)",
+            "(Castillo, 2018, 47)",
+            "(Castillo, p. 47, 2018)"
+          ],
+          "acceptedAnswers": [
+            "(Castillo, 2018, p. 47)"
+          ],
+          "modelAnswers": [],
+          "rule": "A direct quotation needs a page: (Author, year, p. 15). Use pp. for a range and para. if there are no pages.",
+          "errorDiagnosis": [],
+          "hint": "A quotation needs the page. Think about the order and the small abbreviation.",
+          "verified": false
+        },
+        {
+          "id": "A1-06",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "multiple-works",
+          "sourceCards": [
+            {
+              "authors": [
+                "Kowalski, P."
+              ],
+              "year": "2020",
+              "title": "Cycling to campus",
+              "type": "Report",
+              "idea": "Safe bike lanes encourage students to cycle."
+            },
+            {
+              "authors": [
+                "Duarte, S."
+              ],
+              "year": "2017",
+              "title": "How students travel",
+              "type": "Journal article",
+              "idea": "Students cycle more when bike lanes are protected."
+            }
+          ],
+          "prompt": "You cite both sources in one bracket. Which citation is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(Duarte, 2017; Kowalski, 2020)",
+            "(Kowalski, 2020; Duarte, 2017)",
+            "(Duarte, 2017, Kowalski, 2020)"
+          ],
+          "acceptedAnswers": [
+            "(Duarte, 2017; Kowalski, 2020)"
+          ],
+          "modelAnswers": [],
+          "rule": "Several works in one bracket: alphabetical order by surname, separated by semicolons.",
+          "errorDiagnosis": [],
+          "hint": "Think about the order of the names, and the mark between the two works.",
+          "verified": false
+        },
+        {
+          "id": "A1-07",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "no-date",
+          "sourceCards": [
+            {
+              "authors": [
+                "Yilmaz, E."
+              ],
+              "year": "no date",
+              "title": "Tips for group presentations",
+              "type": "Web page",
+              "idea": "Practise your presentation together at least once before the day."
+            }
+          ],
+          "prompt": "You want to cite this source in brackets at the end of your sentence. Which citation is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(Yilmaz, n.d.)",
+            "(Yilmaz, no date)",
+            "(Yilmaz, n.d)"
+          ],
+          "acceptedAnswers": [
+            "(Yilmaz, n.d.)"
+          ],
+          "modelAnswers": [],
+          "rule": "No date: write n.d. in place of the year, with two full stops.",
+          "errorDiagnosis": [],
+          "hint": "The web page has no date. APA uses a short abbreviation.",
+          "verified": false
+        },
+        {
+          "id": "A1-08",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "group-author",
+          "sourceCards": [
+            {
+              "authors": [
+                "National Centre for Urban Transport"
+              ],
+              "year": "2021",
+              "title": "Bus use in growing cities",
+              "type": "Report",
+              "idea": "Bus use rises when buses come more often."
+            }
+          ],
+          "prompt": "This is the FIRST time you cite this source in your essay. Which citation is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(National Centre for Urban Transport [NCUT], 2021)",
+            "(NCUT [National Centre for Urban Transport], 2021)",
+            "(National Centre for Urban Transport, NCUT, 2021)"
+          ],
+          "acceptedAnswers": [
+            "(National Centre for Urban Transport [NCUT], 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Group author, first citation: full name + abbreviation in square brackets, e.g. (National Centre for Urban Transport [NCUT], 2021).",
+          "errorDiagnosis": [],
+          "hint": "The first time, readers need the full name and the short form. Look at the type of brackets.",
+          "groupAuthor": true,
+          "verified": false
+        },
+        {
+          "id": "A1-09",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "group-author",
+          "sourceCards": [
+            {
+              "authors": [
+                "National Centre for Urban Transport"
+              ],
+              "year": "2021",
+              "title": "Bus use in growing cities",
+              "type": "Report",
+              "idea": "Bus use rises when buses come more often."
+            }
+          ],
+          "prompt": "You have ALREADY cited this source once, with its abbreviation. Which citation is correct now?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(NCUT, 2021)",
+            "([NCUT], 2021)",
+            "(N.C.U.T., 2021)"
+          ],
+          "acceptedAnswers": [
+            "(NCUT, 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Group author after the first citation: use only the abbreviation, e.g. (NCUT, 2021).",
+          "errorDiagnosis": [],
+          "hint": "After the first time, use the short form only.",
+          "verified": false
+        },
+        {
+          "id": "A1-10",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "same-author-year",
+          "sourceCards": [
+            {
+              "authors": [
+                "Sato, Y."
+              ],
+              "year": "2020",
+              "title": "Sleep and memory in teenagers",
+              "type": "Journal article",
+              "idea": "Teenagers who sleep less remember fewer new words."
+            }
+          ],
+          "prompt": "Sato wrote two articles in 2020. In your reference list, this one is 2020b. Which citation is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(Sato, 2020b)",
+            "(Sato b, 2020)",
+            "(Sato, b2020)"
+          ],
+          "acceptedAnswers": [
+            "(Sato, 2020b)"
+          ],
+          "modelAnswers": [],
+          "rule": "Same author, same year: add a, b, c after the year, e.g. 2020a and 2020b.",
+          "errorDiagnosis": [],
+          "hint": "The letter belongs to the year.",
+          "verified": false
+        },
+        {
+          "id": "A1-11",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "no-author",
+          "sourceCards": [
+            {
+              "authors": [
+                "(no author)"
+              ],
+              "year": "2022",
+              "title": "Rooftop Gardens and City Heat",
+              "type": "Web article",
+              "idea": "Rooftop gardens can reduce heat in city centres."
+            }
+          ],
+          "prompt": "This web article has no author. Which citation is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "(“Rooftop Gardens and City Heat,” 2022)",
+            "(Anonymous, 2022)",
+            "(No author, 2022)"
+          ],
+          "acceptedAnswers": [
+            "(“Rooftop Gardens and City Heat,” 2022)"
+          ],
+          "modelAnswers": [],
+          "rule": "No author: use the title (shortened if long) in place of the author. Article and web page titles go in quotation marks, with the comma inside.",
+          "errorDiagnosis": [],
+          "hint": "Move the title into the place where the author's name normally goes.",
+          "verified": false
+        },
+        {
+          "id": "A1-12",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Tanaka, R.",
+                "Abebe, M.",
+                "Moretti, G.",
+                "Iyer, S."
+              ],
+              "year": "2023",
+              "title": "Commuting and wellbeing",
+              "type": "Journal article",
+              "idea": "Long commutes are linked to lower wellbeing among students."
+            }
+          ],
+          "prompt": "Which sentence is correct?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Tanaka et al. (2023) reported that long commutes are linked to lower student wellbeing.",
+            "Tanaka et al (2023) reported that long commutes are linked to lower student wellbeing.",
+            "Tanaka, et al. (2023) reported that long commutes are linked to lower student wellbeing."
+          ],
+          "acceptedAnswers": [
+            "Tanaka et al. (2023) reported that long commutes are linked to lower student wellbeing."
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only.",
+          "errorDiagnosis": [],
+          "hint": "Check the full stop and the comma.",
+          "verified": false
+        },
+        {
+          "id": "A1-13",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "block-quote",
+          "sourceCards": [
+            {
+              "authors": [
+                "Moreau, C."
+              ],
+              "year": "2019",
+              "title": "Reading beyond the classroom",
+              "type": "Book",
+              "where": "p. 112",
+              "quote": "Reading for pleasure is not a luxury that schools can add when exams are over. It builds the vocabulary, patience and curiosity that every subject depends on, and students who read widely outside class often find academic texts less frightening than those who do not."
+            }
+          ],
+          "prompt": "This quotation is 45 words long. How should it appear in your essay?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "As an indented block with no quotation marks. The citation comes after the final full stop.",
+            "In the normal paragraph, inside quotation marks, with the citation before the final full stop.",
+            "As an indented block inside quotation marks, with the citation before the final full stop."
+          ],
+          "acceptedAnswers": [
+            "As an indented block with no quotation marks. The citation comes after the final full stop."
+          ],
+          "modelAnswers": [],
+          "rule": "40 words or more: block quotation, no quotation marks, citation after the final full stop.",
+          "errorDiagnosis": [],
+          "hint": "Long quotations look different on the page. Think about quotation marks and where the citation goes.",
+          "verified": false
+        },
+        {
+          "id": "A1-14",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "block-quote",
+          "sourceCards": [
+            {
+              "authors": [
+                "Moreau, C."
+              ],
+              "year": "2019",
+              "title": "Reading beyond the classroom",
+              "type": "Book",
+              "where": "p. 112"
+            }
+          ],
+          "prompt": "How should a block quotation (40 words or more) end?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "… find academic texts less frightening than those who do not. (Moreau, 2019, p. 112)",
+            "… find academic texts less frightening than those who do not (Moreau, 2019, p. 112).",
+            "… find academic texts less frightening than those who do not. (Moreau, 2019, p. 112)."
+          ],
+          "acceptedAnswers": [
+            "… find academic texts less frightening than those who do not. (Moreau, 2019, p. 112)"
+          ],
+          "modelAnswers": [],
+          "rule": "40 words or more: block quotation, no quotation marks, citation after the final full stop. There is no full stop after the citation.",
+          "errorDiagnosis": [],
+          "hint": "In a block quotation, the full stop comes before the citation.",
+          "verified": false
+        },
+        {
+          "id": "A1-15",
+          "track": "A",
+          "stage": 1,
+          "type": "choice",
+          "topic": "block-quote",
+          "sourceCards": [],
+          "prompt": "When does a quotation need the block format?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "When it is 40 words or more",
+            "When it is 20 words or more",
+            "When it is longer than one line"
+          ],
+          "acceptedAnswers": [
+            "When it is 40 words or more"
+          ],
+          "modelAnswers": [],
+          "rule": "40 words or more: block quotation, no quotation marks, citation after the final full stop.",
+          "errorDiagnosis": [],
+          "hint": "Count the words in the quotation.",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "Build it",
+      "items": [
+        {
+          "id": "A2-01",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "one-author",
+          "sourceCards": [
+            {
+              "authors": [
+                "Moreau, C."
+              ],
+              "year": "2019",
+              "title": "Reading beyond the classroom",
+              "type": "Book",
+              "idea": "Students who read for pleasure find academic texts easier."
+            }
+          ],
+          "prompt": "How would you cite this source in brackets? Tap the tiles to build it.",
+          "frame": null,
+          "tiles": [
+            "Moreau, C.",
+            ".",
+            ")",
+            "(",
+            "2019",
+            "Moreau",
+            ","
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Moreau, 2019)"
+          ],
+          "modelAnswers": [],
+          "rule": "Parenthetical: (Surname, year), with a comma before the year. Use the surname only, no initials.",
+          "errorDiagnosis": [],
+          "hint": "Surname only. What goes between the name and the year?",
+          "verified": false
+        },
+        {
+          "id": "A2-02",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "two-authors",
+          "sourceCards": [
+            {
+              "authors": [
+                "Kaur, J.",
+                "Novak, M."
+              ],
+              "year": "2020",
+              "title": "Music while studying",
+              "type": "Journal article",
+              "idea": "Music with lyrics can make reading harder."
+            }
+          ],
+          "prompt": "How would you cite this source in brackets? Tap the tiles to build it.",
+          "frame": null,
+          "tiles": [
+            "Novak",
+            "&",
+            "and",
+            "Kaur",
+            ")",
+            "(",
+            ",",
+            "2020"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Kaur & Novak, 2020)"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors inside brackets: join the names with &, e.g. (Lee & Okafor, 2020).",
+          "errorDiagnosis": [
+            {
+              "answer": "(Kaur and Novak, 2020)",
+              "problem": "Inside brackets, join two authors with &, not “and”."
+            }
+          ],
+          "hint": "Inside brackets: & or “and”?",
+          "verified": false
+        },
+        {
+          "id": "A2-03",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "two-authors",
+          "sourceCards": [
+            {
+              "authors": [
+                "Kaur, J.",
+                "Novak, M."
+              ],
+              "year": "2020",
+              "title": "Music while studying",
+              "type": "Journal article",
+              "idea": "Music with lyrics can make reading harder."
+            }
+          ],
+          "prompt": "Build a narrative citation: the names are part of your sentence. Tap the tiles.",
+          "frame": null,
+          "tiles": [
+            ",",
+            "2020",
+            "Novak",
+            ")",
+            "and",
+            "Kaur",
+            "(",
+            "&"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Kaur and Novak (2020)"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors in the sentence: join the names with “and”, e.g. Lee and Okafor (2020).",
+          "errorDiagnosis": [],
+          "hint": "In the sentence: & or “and”?",
+          "verified": false
+        },
+        {
+          "id": "A2-04",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Abebe, M.",
+                "Moretti, G.",
+                "Iyer, S."
+              ],
+              "year": "2022",
+              "title": "Plastic waste on campus",
+              "type": "Report",
+              "idea": "Refill stations reduce the number of plastic bottles thrown away."
+            }
+          ],
+          "prompt": "How would you cite this source in brackets? Tap the tiles to build it.",
+          "frame": null,
+          "tiles": [
+            "Iyer",
+            "&",
+            "et al.",
+            "et al",
+            "2022",
+            "Moretti",
+            ")",
+            ",",
+            "Abebe",
+            "("
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Abebe et al., 2022)"
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only.",
+          "errorDiagnosis": [],
+          "hint": "Three authors: you need only one name. Which et al. tile has the right full stop?",
+          "verified": false
+        },
+        {
+          "id": "A2-05",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Achieng, W.",
+                "Halvorsen, B.",
+                "Pillai, R.",
+                "Tran, Q."
+              ],
+              "year": "2021",
+              "title": "Language apps and vocabulary",
+              "type": "Journal article",
+              "idea": "Short daily practice with an app helps learners remember new words."
+            }
+          ],
+          "prompt": "Build a narrative citation: the names are part of your sentence. Tap the tiles.",
+          "frame": null,
+          "tiles": [
+            "Halvorsen",
+            "Pillai",
+            "Tran",
+            "et. al",
+            "(",
+            "et al.",
+            ")",
+            ",",
+            "2021",
+            "Achieng"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Achieng et al. (2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only.",
+          "errorDiagnosis": [],
+          "hint": "Four authors: first surname + et al.",
+          "verified": false
+        },
+        {
+          "id": "A2-06",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "quote-page",
+          "sourceCards": [
+            {
+              "authors": [
+                "Halvorsen, B."
+              ],
+              "year": "2016",
+              "title": "Why we forget",
+              "type": "Book",
+              "where": "p. 88",
+              "quote": "Memory is less like a library and more like a garden."
+            }
+          ],
+          "prompt": "You quote the words on the card. Build the citation in brackets.",
+          "frame": null,
+          "tiles": [
+            ")",
+            "88",
+            "2016",
+            "Halvorsen",
+            "p.",
+            "pp.",
+            "(",
+            ",",
+            ",",
+            "page"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Halvorsen, 2016, p. 88)"
+          ],
+          "modelAnswers": [],
+          "rule": "A direct quotation needs a page: (Author, year, p. 15). Use pp. for a range and para. if there are no pages.",
+          "errorDiagnosis": [],
+          "hint": "Author, year, page. One page uses a short abbreviation with a full stop.",
+          "verified": false
+        },
+        {
+          "id": "A2-07",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "quote-page",
+          "sourceCards": [
+            {
+              "authors": [
+                "Iyer, S.",
+                "Brennan, F."
+              ],
+              "year": "2019",
+              "title": "Exams and stress",
+              "type": "Book",
+              "where": "pp. 12–13",
+              "quote": "Stress before an exam is normal; it becomes a problem only when it stops students from preparing."
+            }
+          ],
+          "prompt": "You quote the words on the card. Build the citation in brackets.",
+          "frame": null,
+          "tiles": [
+            "and",
+            "&",
+            "p.",
+            ",",
+            ",",
+            "2019",
+            "pp.",
+            "Brennan",
+            "(",
+            ")",
+            "Iyer",
+            "12–13"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Iyer & Brennan, 2019, pp. 12–13)"
+          ],
+          "modelAnswers": [],
+          "rule": "A direct quotation needs a page: (Author, year, p. 15). Use pp. for a range and para. if there are no pages.",
+          "errorDiagnosis": [],
+          "hint": "The quotation runs over two pages. Is that p. or pp.?",
+          "verified": false
+        },
+        {
+          "id": "A2-08",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "quote-page",
+          "sourceCards": [
+            {
+              "authors": [
+                "Zhou, L."
+              ],
+              "year": "2023",
+              "title": "Studying in a shared house",
+              "type": "Web page",
+              "where": "paragraph 6 (no page numbers)",
+              "quote": "A quiet corner is worth more than an expensive desk."
+            }
+          ],
+          "prompt": "You quote the words on the card. Build the citation in brackets.",
+          "frame": null,
+          "tiles": [
+            "6",
+            "2023",
+            "(",
+            ",",
+            "p.",
+            "Zhou",
+            ",",
+            "para.",
+            ")",
+            "pp."
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Zhou, 2023, para. 6)"
+          ],
+          "modelAnswers": [],
+          "rule": "A direct quotation needs a page: (Author, year, p. 15). Use pp. for a range and para. if there are no pages.",
+          "errorDiagnosis": [],
+          "hint": "This web page has no page numbers. How do you show where the quotation is?",
+          "verified": false
+        },
+        {
+          "id": "A2-09",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "multiple-works",
+          "sourceCards": [
+            {
+              "authors": [
+                "Mwangi, J."
+              ],
+              "year": "2021",
+              "title": "Water use in student housing",
+              "type": "Report",
+              "idea": "Students use less water when they can see their own usage."
+            },
+            {
+              "authors": [
+                "Delgado, A."
+              ],
+              "year": "2018",
+              "title": "Saving water at home",
+              "type": "Journal article",
+              "idea": "Feedback on water use helps households use less."
+            }
+          ],
+          "prompt": "You cite both sources in one bracket. Tap the tiles to build it.",
+          "frame": null,
+          "tiles": [
+            "2018",
+            "Delgado",
+            ",",
+            ",",
+            "(",
+            ";",
+            ",",
+            "&",
+            "Mwangi",
+            "2021",
+            ")"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Delgado, 2018; Mwangi, 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Several works in one bracket: alphabetical order by surname, separated by semicolons.",
+          "errorDiagnosis": [],
+          "hint": "Which name comes first in the alphabet? What separates two different works?",
+          "verified": false
+        },
+        {
+          "id": "A2-10",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "group-author",
+          "sourceCards": [
+            {
+              "authors": [
+                "Global Water Research Council"
+              ],
+              "year": "2020",
+              "title": "Clean water for growing towns",
+              "type": "Report",
+              "idea": "Small towns often lack money to test their water."
+            }
+          ],
+          "prompt": "This is the first time you cite this source. Build the citation in brackets.",
+          "frame": null,
+          "tiles": [
+            "(",
+            "Global Water Research Council",
+            ")",
+            "]",
+            "(",
+            "2020",
+            "GWRC",
+            ")",
+            ",",
+            "["
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Global Water Research Council [GWRC], 2020)"
+          ],
+          "modelAnswers": [],
+          "rule": "Group author, first citation: full name + abbreviation in square brackets, e.g. (National Centre for Urban Transport [NCUT], 2021).",
+          "errorDiagnosis": [],
+          "hint": "Full name first, then the short form in square brackets.",
+          "groupAuthor": true,
+          "verified": false
+        },
+        {
+          "id": "A2-11",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "no-date",
+          "sourceCards": [
+            {
+              "authors": [
+                "Varga, T."
+              ],
+              "year": "no date",
+              "title": "Planning an essay",
+              "type": "Web page",
+              "idea": "Writing a plan first saves time later."
+            }
+          ],
+          "prompt": "How would you cite this source in brackets? Tap the tiles to build it.",
+          "frame": null,
+          "tiles": [
+            "(",
+            "Varga",
+            ")",
+            "n.d.",
+            "n.d",
+            "no date",
+            ","
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Varga, n.d.)"
+          ],
+          "modelAnswers": [],
+          "rule": "No date: write n.d. in place of the year, with two full stops.",
+          "errorDiagnosis": [],
+          "hint": "There is no year. Use the short form with two full stops.",
+          "verified": false
+        },
+        {
+          "id": "A2-12",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Suleiman, H.",
+                "Romano, P.",
+                "Kim, S."
+              ],
+              "year": "2020",
+              "title": "Feedback that works",
+              "type": "Journal article",
+              "where": "p. 5",
+              "quote": "Students act on feedback that tells them what to do next."
+            }
+          ],
+          "prompt": "You quote the words on the card. Build the citation in brackets.",
+          "frame": null,
+          "tiles": [
+            "Romano",
+            "Kim",
+            ")",
+            ",",
+            "et al.",
+            "p.",
+            ",",
+            "(",
+            "pp.",
+            "5",
+            "2020",
+            "et al",
+            "Suleiman"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Suleiman et al., 2020, p. 5)"
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only. A quotation also needs the page.",
+          "errorDiagnosis": [],
+          "hint": "Three authors and a quotation: name, et al., year, page.",
+          "verified": false
+        },
+        {
+          "id": "A2-13",
+          "track": "A",
+          "stage": 2,
+          "type": "build",
+          "topic": "paraphrase-page",
+          "sourceCards": [
+            {
+              "authors": [
+                "Larsen, E."
+              ],
+              "year": "2017",
+              "title": "Tourism and small islands",
+              "type": "Book",
+              "where": "p. 31",
+              "idea": "Tourism brings jobs to small islands but can raise housing costs."
+            }
+          ],
+          "prompt": "You paraphrase the idea on the card (you do not quote it). Build the citation in brackets.",
+          "frame": null,
+          "tiles": [
+            ",",
+            "31",
+            ")",
+            "Larsen",
+            ",",
+            "2017",
+            "(",
+            "p."
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Larsen, 2017)",
+            "(Larsen, 2017, p. 31)"
+          ],
+          "modelAnswers": [],
+          "rule": "Parenthetical: (Surname, year), with a comma before the year. Use the surname only, no initials. A page number for a paraphrase depends on your course: see the note after you answer.",
+          "errorDiagnosis": [],
+          "hint": "This is a paraphrase, not a quotation. Is the page needed? Your course setting decides.",
+          "pageRule": "paraphrase",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "Fix it",
+      "items": [
+        {
+          "id": "A3-01",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "two-authors",
+          "sourceCards": [
+            {
+              "authors": [
+                "Ferreira, L.",
+                "Osei, K."
+              ],
+              "year": "2020",
+              "title": "Phones and sleep",
+              "type": "Journal article"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Screen time before bed can delay sleep (Ferreira and Osei, 2020).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Ferreira & Osei, 2020)"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors inside brackets: join the names with &, e.g. (Lee & Okafor, 2020).",
+          "errorDiagnosis": [],
+          "hint": "Look at how the two names are joined inside the brackets.",
+          "wrongCitation": "(Ferreira and Osei, 2020)",
+          "errorTokens": [
+            "and"
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-02",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "two-authors",
+          "sourceCards": [
+            {
+              "authors": [
+                "Pillai, R.",
+                "Tran, Q."
+              ],
+              "year": "2019",
+              "title": "Quizzes and exam preparation",
+              "type": "Journal article"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Pillai & Tran (2019) {argue|argued} that online quizzes help students prepare for exams.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "Pillai and Tran (2019)"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors in the sentence: join the names with “and”, e.g. Lee and Okafor (2020).",
+          "errorDiagnosis": [],
+          "hint": "The names are outside the brackets here.",
+          "wrongCitation": "Pillai & Tran (2019)",
+          "errorTokens": [
+            "&"
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-03",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Ogunleye, A.",
+                "Sandoval, M.",
+                "Park, J."
+              ],
+              "year": "2021",
+              "title": "Plastic on campus",
+              "type": "Report"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Refill stations can reduce plastic waste on campus (Ogunleye, et al., 2021).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Ogunleye et al., 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only. No comma before et al.",
+          "errorDiagnosis": [],
+          "hint": "Look at the punctuation between the first name and et al.",
+          "wrongCitation": "(Ogunleye, et al., 2021)",
+          "errorTokens": [
+            "(Ogunleye,",
+            "et",
+            "al.,"
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-04",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Sandoval, M.",
+                "Kariuki, N.",
+                "Brennan, F."
+              ],
+              "year": "2022",
+              "title": "Recorded lectures",
+              "type": "Journal article"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Students learn more when lectures are recorded (Sandoval et al, 2022).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Sandoval et al., 2022)"
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only.",
+          "errorDiagnosis": [],
+          "hint": "Look closely at “et al”.",
+          "wrongCitation": "(Sandoval et al, 2022)",
+          "errorTokens": [
+            "al,",
+            "et"
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-05",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "one-author",
+          "sourceCards": [
+            {
+              "authors": [
+                "Hosseini, N."
+              ],
+              "year": "2018",
+              "title": "Teamwork at university",
+              "type": "Book"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Group projects can help first-year students build teamwork and communication skills (Hosseini 2018).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Hosseini, 2018)"
+          ],
+          "modelAnswers": [],
+          "rule": "Parenthetical: (Surname, year), with a comma before the year. Use the surname only, no initials.",
+          "errorDiagnosis": [],
+          "hint": "Something is missing between the name and the year.",
+          "wrongCitation": "(Hosseini 2018)",
+          "errorTokens": [
+            "(Hosseini",
+            "2018)."
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-06",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "quote-page",
+          "sourceCards": [
+            {
+              "authors": [
+                "Romano, P."
+              ],
+              "year": "2020",
+              "title": "Screens and pages",
+              "type": "Book",
+              "where": "p. 14",
+              "quote": "a quiet revolution in how students read"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Digital textbooks have caused “a quiet revolution in how students read” (Romano, 2020).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Romano, 2020, p. 14)"
+          ],
+          "modelAnswers": [],
+          "rule": "A direct quotation needs a page: (Author, year, p. 15). Use pp. for a range and para. if there are no pages.",
+          "errorDiagnosis": [],
+          "hint": "These are someone's exact words. What does a quotation need?",
+          "wrongCitation": "(Romano, 2020)",
+          "errorTokens": [
+            "(Romano,",
+            "2020)."
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-07",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "multiple-works",
+          "sourceCards": [
+            {
+              "authors": [
+                "Volkov, I."
+              ],
+              "year": "2019",
+              "title": "Bikes in the city",
+              "type": "Report"
+            },
+            {
+              "authors": [
+                "Castillo, M."
+              ],
+              "year": "2021",
+              "title": "Safe streets for students",
+              "type": "Journal article"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Protected bike lanes make students more likely to cycle (Volkov, 2019; Castillo, 2021).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Castillo, 2021; Volkov, 2019)"
+          ],
+          "modelAnswers": [],
+          "rule": "Several works in one bracket: alphabetical order by surname, separated by semicolons.",
+          "errorDiagnosis": [],
+          "hint": "Check the order of the two works.",
+          "wrongCitation": "(Volkov, 2019; Castillo, 2021)",
+          "errorTokens": [
+            "(Volkov,",
+            "2019;",
+            "Castillo,",
+            "2021)."
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-08",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "narrative",
+          "sourceCards": [
+            {
+              "authors": [
+                "Larsen, E."
+              ],
+              "year": "2017",
+              "title": "Tourism and small islands",
+              "type": "Book"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Larsen, (2017) {notes|noted} that tourism can raise housing costs on small islands.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "Larsen (2017)"
+          ],
+          "modelAnswers": [],
+          "rule": "Narrative: the author's name is part of the sentence and only the year goes in brackets: Lee (2020). No comma before the bracket.",
+          "errorDiagnosis": [],
+          "hint": "Look at the punctuation between the name and the year.",
+          "wrongCitation": "Larsen, (2017)",
+          "errorTokens": [
+            "Larsen,",
+            "(2017)"
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-09",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "quote-page",
+          "sourceCards": [
+            {
+              "authors": [
+                "Kim, S."
+              ],
+              "year": "2021",
+              "title": "Feedback in the classroom",
+              "type": "Book",
+              "where": "p. 9",
+              "quote": "the engine of learning"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Kim described feedback as “the engine of learning” (Kim, 2021, pg. 9).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Kim, 2021, p. 9)"
+          ],
+          "modelAnswers": [],
+          "rule": "A direct quotation needs a page: (Author, year, p. 15). Use pp. for a range and para. if there are no pages.",
+          "errorDiagnosis": [],
+          "hint": "Look at the abbreviation for “page”.",
+          "wrongCitation": "(Kim, 2021, pg. 9)",
+          "errorTokens": [
+            "pg.",
+            "9)."
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-10",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Nasser, F.",
+                "Park, J.",
+                "Oyelaran, T."
+              ],
+              "year": "2020",
+              "title": "Sleep and marks",
+              "type": "Journal article"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Students who sleep well tend to get higher marks (Nasser, Park, & Oyelaran, 2020).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Nasser et al., 2020)"
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only.",
+          "errorDiagnosis": [],
+          "hint": "Count the authors. How many names should you write?",
+          "wrongCitation": "(Nasser, Park, & Oyelaran, 2020)",
+          "errorTokens": [
+            "(Nasser,",
+            "Park,",
+            "&",
+            "Oyelaran,"
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-11",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "no-date",
+          "sourceCards": [
+            {
+              "authors": [
+                "Esposito, V."
+              ],
+              "year": "no date",
+              "title": "Essay planning tips",
+              "type": "Web page"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Writing a plan first can save time later (Esposito, n.d).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Esposito, n.d.)"
+          ],
+          "modelAnswers": [],
+          "rule": "No date: write n.d. in place of the year, with two full stops.",
+          "errorDiagnosis": [],
+          "hint": "Look at the short form for “no date”.",
+          "wrongCitation": "(Esposito, n.d)",
+          "errorTokens": [
+            "n.d)."
+          ],
+          "verified": false
+        },
+        {
+          "id": "A3-12",
+          "track": "A",
+          "stage": 3,
+          "type": "fix",
+          "topic": "quote-page",
+          "sourceCards": [
+            {
+              "authors": [
+                "Tanaka, R."
+              ],
+              "year": "2019",
+              "title": "Working together",
+              "type": "Book",
+              "where": "p. 23",
+              "quote": "a skill, not a gift"
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it.",
+          "frame": "Tanaka called group work “a skill, not a gift” (Tanaka, 2019, pp. 23).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Tanaka, 2019, p. 23)"
+          ],
+          "modelAnswers": [],
+          "rule": "A direct quotation needs a page: (Author, year, p. 15). Use pp. for a range and para. if there are no pages.",
+          "errorDiagnosis": [],
+          "hint": "How many pages is the quotation on?",
+          "wrongCitation": "(Tanaka, 2019, pp. 23)",
+          "errorTokens": [
+            "pp.",
+            "23)."
+          ],
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "Choose the form",
+      "items": [
+        {
+          "id": "A4-01",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "narrative",
+          "sourceCards": [
+            {
+              "authors": [
+                "Mensah, K."
+              ],
+              "year": "2022",
+              "title": "How students read",
+              "type": "Journal article",
+              "idea": "First-year students read more on phones than on laptops."
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "___ found that first-year students read more on their phones than on laptops.",
+          "tiles": [
+            ",",
+            "(",
+            ")",
+            "2022",
+            "(",
+            "Mensah",
+            ")"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Mensah (2022)"
+          ],
+          "modelAnswers": [],
+          "rule": "Narrative: the author's name is part of the sentence and only the year goes in brackets: Lee (2020).",
+          "errorDiagnosis": [],
+          "hint": "The gap is the subject of the verb “found”.",
+          "verified": false
+        },
+        {
+          "id": "A4-02",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "parenthetical",
+          "sourceCards": [
+            {
+              "authors": [
+                "Duarte, S."
+              ],
+              "year": "2020",
+              "title": "Short study sessions",
+              "type": "Journal article",
+              "idea": "Short study sessions help students remember more."
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "Students who study in short, regular sessions tend to remember more of what they learn ___.",
+          "tiles": [
+            "Duarte",
+            ",",
+            "(",
+            ")",
+            "(",
+            "2020"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Duarte, 2020)"
+          ],
+          "modelAnswers": [],
+          "rule": "Parenthetical: author and year both go in brackets, usually at the end of the idea: (Lee, 2020).",
+          "errorDiagnosis": [],
+          "hint": "The sentence is already complete. The citation just adds the source.",
+          "verified": false
+        },
+        {
+          "id": "A4-03",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "two-authors",
+          "sourceCards": [
+            {
+              "authors": [
+                "Okafor, T.",
+                "Lindqvist, A."
+              ],
+              "year": "2018",
+              "title": "Safer roads near schools",
+              "type": "Report",
+              "idea": "Cycling lanes reduce accidents near schools."
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "According to ___, cycling lanes reduce traffic accidents near schools.",
+          "tiles": [
+            "Okafor",
+            "(",
+            ")",
+            "(",
+            "and",
+            "Lindqvist",
+            "2018",
+            "&",
+            ","
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Okafor and Lindqvist (2018)"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors in the sentence: join the names with “and”, e.g. Lee and Okafor (2020).",
+          "errorDiagnosis": [],
+          "hint": "“According to” is followed by the names. Brackets only around the year.",
+          "verified": false
+        },
+        {
+          "id": "A4-04",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "two-authors",
+          "sourceCards": [
+            {
+              "authors": [
+                "Kariuki, N.",
+                "Moreau, C."
+              ],
+              "year": "2021",
+              "title": "Cooler buildings",
+              "type": "Journal article",
+              "idea": "Rooftop gardens lower building temperatures in summer."
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "Rooftop gardens can lower the temperature inside city buildings during the hottest summer months ___.",
+          "tiles": [
+            "(",
+            "&",
+            "(",
+            ",",
+            "Kariuki",
+            "Moreau",
+            "and",
+            "2021",
+            ")"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Kariuki & Moreau, 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors inside brackets: join the names with &, e.g. (Lee & Okafor, 2020).",
+          "errorDiagnosis": [],
+          "hint": "The idea comes first, so the whole citation goes in brackets. & or “and”?",
+          "verified": false
+        },
+        {
+          "id": "A4-05",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Tran, Q.",
+                "Abebe, M.",
+                "Kim, S."
+              ],
+              "year": "2019",
+              "title": "Bilingual children and attention",
+              "type": "Journal article",
+              "idea": "Bilingual children may switch between tasks more easily."
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "___ {suggest|suggested} that bilingual children may switch between tasks more easily.",
+          "tiles": [
+            "Kim",
+            ")",
+            "(",
+            ",",
+            "Tran",
+            "et al.",
+            "Abebe",
+            "2019",
+            "("
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Tran et al. (2019)"
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only.",
+          "errorDiagnosis": [],
+          "hint": "The gap is the subject. There are three authors.",
+          "verified": false
+        },
+        {
+          "id": "A4-06",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "multiple-works",
+          "sourceCards": [
+            {
+              "authors": [
+                "Pillai, R."
+              ],
+              "year": "2020",
+              "title": "Noise and learning",
+              "type": "Journal article",
+              "idea": "Classroom noise makes it harder to concentrate."
+            },
+            {
+              "authors": [
+                "Abebe, M."
+              ],
+              "year": "2016",
+              "title": "Quiet classrooms",
+              "type": "Report",
+              "idea": "Students concentrate better in quiet rooms."
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "Several studies have linked classroom noise to poor concentration ___.",
+          "tiles": [
+            "Abebe",
+            ",",
+            ")",
+            "Pillai",
+            "2020",
+            "&",
+            "2016",
+            ",",
+            "(",
+            "(",
+            ";"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Abebe, 2016; Pillai, 2020)"
+          ],
+          "modelAnswers": [],
+          "rule": "Several works in one bracket: alphabetical order by surname, separated by semicolons.",
+          "errorDiagnosis": [],
+          "hint": "Two sources, one bracket. Think about order and the mark between them.",
+          "verified": false
+        },
+        {
+          "id": "A4-07",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "narrative",
+          "sourceCards": [
+            {
+              "authors": [
+                "Haddad, R."
+              ],
+              "year": "2017",
+              "title": "Public transport and price",
+              "type": "Journal article",
+              "idea": "Bus use often falls when fares rise."
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "As ___ {notes|noted}, bus use often falls when fares rise.",
+          "tiles": [
+            "Haddad",
+            "2017",
+            "(",
+            "(",
+            ",",
+            ")"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Haddad (2017)"
+          ],
+          "modelAnswers": [],
+          "rule": "Narrative: the author's name is part of the sentence and only the year goes in brackets: Lee (2020).",
+          "errorDiagnosis": [],
+          "hint": "“As … notes” needs a name in the sentence.",
+          "verified": false
+        },
+        {
+          "id": "A4-08",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "narrative",
+          "sourceCards": [
+            {
+              "authors": [
+                "Ferreira, L."
+              ],
+              "year": "2015",
+              "title": "Homework and families",
+              "type": "Book",
+              "where": "p. 33",
+              "quote": "a bridge between school and home"
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "___ {describes|described} homework as “a bridge between school and home” (p. 33).",
+          "tiles": [
+            ",",
+            "(",
+            "2015",
+            "(",
+            "Ferreira",
+            ")"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Ferreira (2015)"
+          ],
+          "modelAnswers": [],
+          "rule": "Narrative: the author's name is part of the sentence and only the year goes in brackets: Lee (2020). The page goes in brackets after the quotation.",
+          "errorDiagnosis": [],
+          "hint": "The page is already at the end. What does the gap need?",
+          "verified": false
+        },
+        {
+          "id": "A4-09",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "quote-page",
+          "sourceCards": [
+            {
+              "authors": [
+                "Ferreira, L."
+              ],
+              "year": "2015",
+              "title": "Homework and families",
+              "type": "Book",
+              "where": "p. 33",
+              "quote": "a bridge between school and home"
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "Homework has been described as “a bridge between school and home” ___.",
+          "tiles": [
+            ",",
+            ",",
+            "33",
+            "p.",
+            ")",
+            "Ferreira",
+            "pp.",
+            "2015",
+            "("
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Ferreira, 2015, p. 33)"
+          ],
+          "modelAnswers": [],
+          "rule": "A direct quotation needs a page: (Author, year, p. 15). Use pp. for a range and para. if there are no pages.",
+          "errorDiagnosis": [],
+          "hint": "Idea first, so everything goes in brackets: author, year and page.",
+          "verified": false
+        },
+        {
+          "id": "A4-10",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "two-authors",
+          "sourceCards": [
+            {
+              "authors": [
+                "Sato, Y.",
+                "Kim, S."
+              ],
+              "year": "2022",
+              "title": "Exam weeks and sleep",
+              "type": "Journal article",
+              "idea": "Students sleep less during exam weeks."
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "A study by ___ found that students sleep less during exam weeks.",
+          "tiles": [
+            "Kim",
+            "(",
+            ")",
+            "&",
+            ",",
+            "2022",
+            "(",
+            "and",
+            "Sato"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Sato and Kim (2022)"
+          ],
+          "modelAnswers": [],
+          "rule": "Two authors in the sentence: join the names with “and”, e.g. Lee and Okafor (2020).",
+          "errorDiagnosis": [],
+          "hint": "“A study by” is followed by the names in the sentence.",
+          "verified": false
+        },
+        {
+          "id": "A4-11",
+          "track": "A",
+          "stage": 4,
+          "type": "build",
+          "topic": "et-al",
+          "sourceCards": [
+            {
+              "authors": [
+                "Nguyen, T.",
+                "Osei, K.",
+                "Castillo, M."
+              ],
+              "year": "2023",
+              "title": "Working from home: a review",
+              "type": "Journal article",
+              "idea": "Working from home suits some jobs better than others."
+            }
+          ],
+          "prompt": "Does this gap need a narrative citation (name in the sentence) or a parenthetical one (everything in brackets)? Build it.",
+          "frame": "In a recent review, ___ {argue|argued} that working from home suits some jobs better than others.",
+          "tiles": [
+            "Nguyen",
+            "&",
+            ",",
+            ")",
+            "(",
+            "Osei",
+            "(",
+            "Castillo",
+            "2023",
+            "et al."
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Nguyen et al. (2023)"
+          ],
+          "modelAnswers": [],
+          "rule": "Three or more authors: first author + et al. from the first citation. Full stop after “al” only.",
+          "errorDiagnosis": [],
+          "hint": "The gap is the subject of the verb. Three authors.",
+          "verified": false
+        }
+      ]
+    }
+  ]
+}
