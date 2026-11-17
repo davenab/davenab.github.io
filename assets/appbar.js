@@ -5,10 +5,10 @@
    To add an app: add it to APPS and give it a NEXT list. */
 (function () {
   var APPS = {
-    notes:    { t: "DAVE Notes", d: "Practise lecture note-taking with real talks", u: "/note-taking-trainer-ted/" },
+    notes:    { t: "Notetaking Trainer", d: "Practise lecture note-taking with real talks", u: "/note-taking-trainer-ted/" },
     grammar:  { t: "Grammar Self-Correction Trainer", d: "Find and fix your own grammar errors with codes and hints", u: "/grammar-self-correction/" },
     nomhedge: { t: "Nominalisation and Hedging Trainer", d: "Short practice for a more academic style", u: "/nominalisation-hedging-trainer/" },
-    cite:     { t: "DAVE Cite: APA In-Text Citation Trainer", d: "Build and fix APA 7th in-text citations", u: "/apa-citation-trainer/" }
+    cite:     { t: "APA Trainer", d: "Build and fix APA 7th in-text citations", u: "/apa-citation-trainer/" }
   };
   var RES_STUDENTS = { t: "Resources for students", d: "Free Quizlet sets and self-study packs", u: "/resources/students/" };
   var HEDGING = { t: "Hedging in Academic Writing", d: "A ready-to-teach lesson for teachers", u: "/resources/hedging-in-academic-writing/" };

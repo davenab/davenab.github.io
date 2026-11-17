@@ -1,4 +1,4 @@
-# DAVE Notes: Lecture Note-Taking Trainer (TED edition)
+# Notetaking Trainer (TED edition)
 
 Note-taking practice with real talks, for EAP students at about CEFR B2. Students watch a TED talk (in TED's official player), listen to a Breaking News English story (on their website), or use their own recording. Each session, students choose which note-taking skill to practise. They take notes, check their own notes against a teacher-checked list of key ideas, answer questions from their notes, review, and set a goal.
 
