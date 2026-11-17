@@ -1,0 +1,1357 @@
+{
+  "_help": "Track B: Secondary citation. Items are grouped by stage. See README.md, section 'How to add or edit an item'.",
+  "track": "B",
+  "title": "Secondary citation",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "Who did I read?",
+      "items": [
+        {
+          "id": "B1-01",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-format",
+          "sourceCards": [],
+          "prompt": "You read a 2021 textbook by Osei. In Chapter 3, Osei describes a 2014 study by Varga on study habits. You did not read Varga's study. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Original: Varga (2014). Source I read: Osei (2021).",
+            "Original: Osei (2021). Source I read: Varga (2014).",
+            "I read both Varga (2014) and Osei (2021)."
+          ],
+          "acceptedAnswers": [
+            "Original: Varga (2014). Source I read: Osei (2021)."
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "The original idea is the older study. You held only one book in your hands.",
+          "verified": false
+        },
+        {
+          "id": "B1-02",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-format",
+          "sourceCards": [],
+          "prompt": "In their 2019 book, Tanaka and Brennan summarise a 2008 survey by Alvarez. You read only the book. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Original: Alvarez (2008). Source I read: Tanaka and Brennan (2019).",
+            "Original: Tanaka and Brennan (2019). Source I read: Alvarez (2008).",
+            "Original: Tanaka (2019). Source I read: Brennan (2019)."
+          ],
+          "acceptedAnswers": [
+            "Original: Alvarez (2008). Source I read: Tanaka and Brennan (2019)."
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Who did the survey? Whose book did you read?",
+          "verified": false
+        },
+        {
+          "id": "B1-03",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-when",
+          "sourceCards": [],
+          "prompt": "You found Kowalski's 2012 article mentioned in a 2020 article by Moretti. Then you found Kowalski's article in the library and read it. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "I read Kowalski (2012) myself, so I cite Kowalski directly.",
+            "I must write (Kowalski, 2012, as cited in Moretti, 2020).",
+            "I cite only Moretti (2020), because that is where I found the idea."
+          ],
+          "acceptedAnswers": [
+            "I read Kowalski (2012) myself, so I cite Kowalski directly."
+          ],
+          "modelAnswers": [],
+          "rule": "Use “as cited in” only when you cannot get the original. Reading the original is better.",
+          "errorDiagnosis": [],
+          "hint": "You read the original yourself in the end.",
+          "verified": false
+        },
+        {
+          "id": "B1-04",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-format",
+          "sourceCards": [],
+          "prompt": "You read a 2022 book by Halvorsen. Halvorsen quotes a saying by Mwangi, but does not give a year for it. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Original: Mwangi (year unknown). Source I read: Halvorsen (2022).",
+            "Original: Halvorsen (2022). Source I read: Mwangi (year unknown).",
+            "There is no original, so I cite only Halvorsen (2022)."
+          ],
+          "acceptedAnswers": [
+            "Original: Mwangi (year unknown). Source I read: Halvorsen (2022)."
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year). If the original year is unknown, leave it out.",
+          "errorDiagnosis": [],
+          "hint": "There is no year for the original, but you still know who said it.",
+          "verified": false
+        },
+        {
+          "id": "B1-05",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-format",
+          "sourceCards": [],
+          "prompt": "You read a 2023 web article by Kaur. Kaur reports what Delgado found in a 2016 study. You did not read Delgado's study. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Original: Delgado (2016). Source I read: Kaur (2023).",
+            "Original: Kaur (2023). Source I read: Delgado (2016).",
+            "I read both Delgado (2016) and Kaur (2023)."
+          ],
+          "acceptedAnswers": [
+            "Original: Delgado (2016). Source I read: Kaur (2023)."
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Who found the results? Whose article was on your screen?",
+          "verified": false
+        },
+        {
+          "id": "B1-06",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-format",
+          "sourceCards": [],
+          "prompt": "You read Nasser's 2018 article. Nasser quotes a sentence from Iyer's 2001 book. You did not read Iyer's book. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Original: Iyer (2001). Source I read: Nasser (2018).",
+            "Original: Nasser (2018). Source I read: Iyer (2001).",
+            "Original: Nasser (2018). Source I read: Nasser (2018)."
+          ],
+          "acceptedAnswers": [
+            "Original: Iyer (2001). Source I read: Nasser (2018)."
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Whose words are they? Whose article did you read?",
+          "verified": false
+        },
+        {
+          "id": "B1-07",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-format",
+          "sourceCards": [],
+          "prompt": "You read a 2019 report by the National Centre for Urban Transport. The report describes a 2011 survey by Petrova about bus use. You did not read Petrova's survey. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Original: Petrova (2011). Source I read: National Centre for Urban Transport (2019).",
+            "Original: National Centre for Urban Transport (2019). Source I read: Petrova (2011).",
+            "I read both Petrova (2011) and the report (2019)."
+          ],
+          "acceptedAnswers": [
+            "Original: Petrova (2011). Source I read: National Centre for Urban Transport (2019)."
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Who did the survey? Which report did you read?",
+          "verified": false
+        },
+        {
+          "id": "B1-08",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-format",
+          "sourceCards": [],
+          "prompt": "In their 2020 article, Sandoval and Kariuki summarise Romano's 2009 book on reading habits. You read only the article. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Original: Romano (2009). Source I read: Sandoval and Kariuki (2020).",
+            "Original: Sandoval and Kariuki (2020). Source I read: Romano (2009).",
+            "Original: Sandoval (2020). Source I read: Kariuki (2020)."
+          ],
+          "acceptedAnswers": [
+            "Original: Romano (2009). Source I read: Sandoval and Kariuki (2020)."
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Whose book is the idea from? Whose article did you read?",
+          "verified": false
+        },
+        {
+          "id": "B1-09",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-when",
+          "sourceCards": [],
+          "prompt": "You read a 2017 article by Castillo. Castillo mentions an older study by Okafor, but you use only Castillo's own ideas in your essay. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "I cite Castillo (2017) directly. I do not need to mention Okafor.",
+            "I must cite (Okafor, as cited in Castillo, 2017).",
+            "I must cite both Okafor and Castillo."
+          ],
+          "acceptedAnswers": [
+            "I cite Castillo (2017) directly. I do not need to mention Okafor."
+          ],
+          "modelAnswers": [],
+          "rule": "Cite the person whose idea you use. If you use only Castillo's ideas, cite Castillo directly.",
+          "errorDiagnosis": [],
+          "hint": "Whose ideas are you actually using?",
+          "verified": false
+        },
+        {
+          "id": "B1-10",
+          "track": "B",
+          "stage": 1,
+          "type": "choice",
+          "topic": "secondary-format",
+          "sourceCards": [],
+          "prompt": "You read a 2024 web article by Brennan. Brennan reports what Tanaka found in a 2015 experiment. You did not read Tanaka's report. Which is true?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Original: Tanaka (2015). Source I read: Brennan (2024).",
+            "Original: Brennan (2024). Source I read: Tanaka (2015).",
+            "I read both Tanaka (2015) and Brennan (2024)."
+          ],
+          "acceptedAnswers": [
+            "Original: Tanaka (2015). Source I read: Brennan (2024)."
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Who did the experiment? Whose article was on your screen?",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "Build it",
+      "items": [
+        {
+          "id": "B2-01",
+          "track": "B",
+          "stage": 2,
+          "type": "build",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Varga, T."
+              ],
+              "year": "2014",
+              "title": "Study habits of first-year students",
+              "type": "Journal article",
+              "idea": "Students who review notes on the same day remember more.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Osei, K."
+              ],
+              "year": "2021",
+              "title": "Learning at university",
+              "type": "Textbook",
+              "idea": "Chapter 3 describes Varga's 2014 study.",
+              "read": true
+            }
+          ],
+          "prompt": "Build a secondary citation in brackets. Tap the tiles.",
+          "frame": null,
+          "tiles": [
+            ")",
+            ",",
+            "as cited in",
+            "(",
+            ",",
+            "Osei",
+            "2014",
+            "2021",
+            ";",
+            "cited by",
+            "Varga",
+            ","
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Varga, 2014, as cited in Osei, 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Original author and year first, then “as cited in” and the source you read.",
+          "verified": false
+        },
+        {
+          "id": "B2-02",
+          "track": "B",
+          "stage": 2,
+          "type": "build",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Varga, T."
+              ],
+              "year": "2014",
+              "title": "Study habits of first-year students",
+              "type": "Journal article",
+              "idea": "Students who review notes on the same day remember more.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Osei, K."
+              ],
+              "year": "2021",
+              "title": "Learning at university",
+              "type": "Textbook",
+              "idea": "Chapter 3 describes Varga's 2014 study.",
+              "read": true
+            }
+          ],
+          "prompt": "Build the narrative secondary citation for the gap. Tap the tiles.",
+          "frame": "___ found that students who review notes on the same day remember more.",
+          "tiles": [
+            ",",
+            ",",
+            ")",
+            ")",
+            "(",
+            "Varga",
+            "(",
+            "2014",
+            "2021",
+            "as cited in",
+            "Osei",
+            "cited by"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Varga (2014, as cited in Osei, 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, narrative: Original (year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "The original author is in the sentence. Everything else goes in one bracket.",
+          "verified": false
+        },
+        {
+          "id": "B2-03",
+          "track": "B",
+          "stage": 2,
+          "type": "build",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Alvarez, D."
+              ],
+              "year": "2008",
+              "title": "A survey of student reading",
+              "type": "Report",
+              "idea": "Most students read their course books only before exams.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Tanaka, R.",
+                "Brennan, F."
+              ],
+              "year": "2019",
+              "title": "Reading at university",
+              "type": "Book",
+              "idea": "Summarises Alvarez's 2008 survey.",
+              "read": true
+            }
+          ],
+          "prompt": "Build a secondary citation in brackets. Tap the tiles.",
+          "frame": null,
+          "tiles": [
+            ";",
+            "(",
+            "2008",
+            "&",
+            "Tanaka",
+            ",",
+            ",",
+            "as cited in",
+            ")",
+            "Alvarez",
+            "2019",
+            ",",
+            "Brennan",
+            "and"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Alvarez, 2008, as cited in Tanaka & Brennan, 2019)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year). The two authors are inside the brackets, so use &.",
+          "errorDiagnosis": [],
+          "hint": "Original first. The source you read has two authors, and they are inside brackets.",
+          "verified": false
+        },
+        {
+          "id": "B2-04",
+          "track": "B",
+          "stage": 2,
+          "type": "build",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Alvarez, D."
+              ],
+              "year": "2008",
+              "title": "A survey of student reading",
+              "type": "Report",
+              "idea": "Most students read their course books only before exams.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Tanaka, R.",
+                "Brennan, F."
+              ],
+              "year": "2019",
+              "title": "Reading at university",
+              "type": "Book",
+              "idea": "Summarises Alvarez's 2008 survey.",
+              "read": true
+            }
+          ],
+          "prompt": "Build the narrative secondary citation for the gap. Tap the tiles.",
+          "frame": "___ found that most students read their course books only before exams.",
+          "tiles": [
+            ")",
+            "(",
+            "Tanaka",
+            "Alvarez",
+            "2008",
+            "Brennan",
+            "as cited in",
+            ",",
+            ")",
+            "&",
+            "and",
+            ",",
+            "(",
+            "2019"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Alvarez (2008, as cited in Tanaka & Brennan, 2019)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, narrative: Original (year, as cited in Source you read, year). Tanaka & Brennan are inside the brackets, so use &.",
+          "errorDiagnosis": [],
+          "hint": "Only Alvarez is in the sentence. Tanaka and Brennan are inside the brackets.",
+          "verified": false
+        },
+        {
+          "id": "B2-05",
+          "track": "B",
+          "stage": 2,
+          "type": "build",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Mwangi, J."
+              ],
+              "year": "year unknown",
+              "title": "(a saying)",
+              "type": "Quoted in Halvorsen",
+              "idea": "“Water remembers every promise.”",
+              "read": false
+            },
+            {
+              "authors": [
+                "Halvorsen, B."
+              ],
+              "year": "2022",
+              "title": "Rivers and people",
+              "type": "Book",
+              "idea": "Quotes Mwangi's saying but gives no year.",
+              "read": true
+            }
+          ],
+          "prompt": "The year of the original is unknown. Build the citation in brackets.",
+          "frame": null,
+          "tiles": [
+            "(",
+            "Mwangi",
+            "2022",
+            "cited by",
+            ",",
+            "n.d.",
+            ",",
+            "as cited in",
+            "Halvorsen",
+            ")"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Mwangi, as cited in Halvorsen, 2022)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year). If the original year is unknown, leave it out.",
+          "errorDiagnosis": [],
+          "hint": "There is no year for Mwangi, so leave it out.",
+          "verified": false
+        },
+        {
+          "id": "B2-06",
+          "track": "B",
+          "stage": 2,
+          "type": "build",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Mwangi, J."
+              ],
+              "year": "year unknown",
+              "title": "(a saying)",
+              "type": "Quoted in Halvorsen",
+              "idea": "“Water remembers every promise.”",
+              "read": false
+            },
+            {
+              "authors": [
+                "Halvorsen, B."
+              ],
+              "year": "2022",
+              "title": "Rivers and people",
+              "type": "Book",
+              "idea": "Quotes Mwangi's saying but gives no year.",
+              "read": true
+            }
+          ],
+          "prompt": "The year of the original is unknown. Build the narrative citation for the gap.",
+          "frame": "In a well-known saying, ___ observed that “water remembers every promise”.",
+          "tiles": [
+            "as cited in",
+            ")",
+            ",",
+            "(",
+            "n.d.",
+            ",",
+            "Mwangi",
+            "Halvorsen",
+            "(",
+            "2022"
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "Mwangi (as cited in Halvorsen, 2022)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, narrative: Original (year, as cited in Source you read, year). If the original year is unknown, leave it out.",
+          "errorDiagnosis": [],
+          "hint": "Mwangi goes in the sentence. No year for Mwangi.",
+          "verified": false
+        },
+        {
+          "id": "B2-07",
+          "track": "B",
+          "stage": 2,
+          "type": "build",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Delgado, A."
+              ],
+              "year": "2016",
+              "title": "Feedback and water use",
+              "type": "Journal article",
+              "idea": "Households used less water when they saw their usage.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Kaur, J.",
+                "Novak, M.",
+                "Suleiman, H."
+              ],
+              "year": "2023",
+              "title": "Saving water at home",
+              "type": "Web article",
+              "idea": "Reports Delgado's 2016 findings.",
+              "read": true
+            }
+          ],
+          "prompt": "Build a secondary citation in brackets. Tap the tiles.",
+          "frame": null,
+          "tiles": [
+            "Novak",
+            ",",
+            ",",
+            "2016",
+            ")",
+            ",",
+            "Kaur",
+            "Delgado",
+            "as cited in",
+            "&",
+            "(",
+            "Suleiman",
+            "2023",
+            "et al."
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Delgado, 2016, as cited in Kaur et al., 2023)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year). The source you read has three authors: use et al.",
+          "errorDiagnosis": [],
+          "hint": "The source you read has three authors.",
+          "verified": false
+        },
+        {
+          "id": "B2-08",
+          "track": "B",
+          "stage": 2,
+          "type": "build",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Iyer, S."
+              ],
+              "year": "2001",
+              "title": "Teaching writing",
+              "type": "Book",
+              "idea": "A sentence quoted by Nasser.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Nasser, F."
+              ],
+              "year": "2018",
+              "title": "Writing in a second language",
+              "type": "Journal article",
+              "where": "p. 54",
+              "idea": "Quotes Iyer (2001) on page 54.",
+              "quote": "Good writers are, above all, patient rereaders.",
+              "read": true
+            }
+          ],
+          "prompt": "You quote Iyer's words, which you found on page 54 of Nasser's article. Build the citation in brackets.",
+          "frame": null,
+          "tiles": [
+            "2018",
+            "pp.",
+            ",",
+            ",",
+            "(",
+            "54",
+            "2001",
+            "cited by",
+            ")",
+            "Iyer",
+            "as cited in",
+            "p.",
+            "Nasser",
+            ",",
+            ","
+          ],
+          "options": null,
+          "acceptedAnswers": [
+            "(Iyer, 2001, as cited in Nasser, 2018, p. 54)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year). The page is the page in the source you read, at the end.",
+          "errorDiagnosis": [],
+          "hint": "Original, as cited in, the source you read, then the page where you found the words.",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "Fix it",
+      "items": [
+        {
+          "id": "B3-01",
+          "track": "B",
+          "stage": 3,
+          "type": "fix",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Varga, T."
+              ],
+              "year": "2014",
+              "title": "Study habits of first-year students",
+              "type": "Journal article",
+              "idea": "Students who review notes on the same day remember more.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Osei, K."
+              ],
+              "year": "2021",
+              "title": "Learning at university",
+              "type": "Textbook",
+              "idea": "Chapter 3 describes Varga's 2014 study.",
+              "read": true
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it. Check the source cards: who did you read?",
+          "frame": "Students who review notes on the same day remember more (Osei, 2021, as cited in Varga, 2014).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Varga, 2014, as cited in Osei, 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Who is the original author? Who comes first?",
+          "wrongCitation": "(Osei, 2021, as cited in Varga, 2014)",
+          "errorTokens": [
+            "(Osei,",
+            "2021,",
+            "Varga,",
+            "2014)."
+          ],
+          "verified": false
+        },
+        {
+          "id": "B3-02",
+          "track": "B",
+          "stage": 3,
+          "type": "fix",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Alvarez, D."
+              ],
+              "year": "2008",
+              "title": "A survey of student reading",
+              "type": "Report",
+              "idea": "Most students read their course books only before exams.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Tanaka, R.",
+                "Brennan, F."
+              ],
+              "year": "2019",
+              "title": "Reading at university",
+              "type": "Book",
+              "idea": "Summarises Alvarez's 2008 survey.",
+              "read": true
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it. Check the source cards: who did you read?",
+          "frame": "Most students read their course books only before exams (Alvarez, 2008, cited by Tanaka & Brennan, 2019).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Alvarez, 2008, as cited in Tanaka & Brennan, 2019)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "Look at the words between the two sources.",
+          "wrongCitation": "(Alvarez, 2008, cited by Tanaka & Brennan, 2019)",
+          "errorTokens": [
+            "cited",
+            "by"
+          ],
+          "verified": false
+        },
+        {
+          "id": "B3-03",
+          "track": "B",
+          "stage": 3,
+          "type": "fix",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Delgado, A."
+              ],
+              "year": "2016",
+              "title": "Feedback and water use",
+              "type": "Journal article",
+              "idea": "Households used less water when they saw their usage.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Kaur, J.",
+                "Novak, M.",
+                "Suleiman, H."
+              ],
+              "year": "2023",
+              "title": "Saving water at home",
+              "type": "Web article",
+              "idea": "Reports Delgado's 2016 findings.",
+              "read": true
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it. Check the source cards: who did you read?",
+          "frame": "Households used less water when they could see their usage (Delgado, 2016, cited in Kaur et al., 2023).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Delgado, 2016, as cited in Kaur et al., 2023)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "One small word is missing from the phrase.",
+          "wrongCitation": "(Delgado, 2016, cited in Kaur et al., 2023)",
+          "errorTokens": [
+            "cited",
+            "in",
+            "2016,"
+          ],
+          "verified": false
+        },
+        {
+          "id": "B3-04",
+          "track": "B",
+          "stage": 3,
+          "type": "fix",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Varga, T."
+              ],
+              "year": "2014",
+              "title": "Study habits of first-year students",
+              "type": "Journal article",
+              "idea": "Students who review notes on the same day remember more.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Osei, K."
+              ],
+              "year": "2021",
+              "title": "Learning at university",
+              "type": "Textbook",
+              "idea": "Chapter 3 describes Varga's 2014 study.",
+              "read": true
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it. Check the source cards: who did you read?",
+          "frame": "Students who review notes on the same day remember more (Varga, 2014; Osei, 2021).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Varga, 2014, as cited in Osei, 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year). A semicolon would say you read both.",
+          "errorDiagnosis": [],
+          "hint": "Did you read both sources? A semicolon says you did.",
+          "wrongCitation": "(Varga, 2014; Osei, 2021)",
+          "errorTokens": [
+            "(Varga,",
+            "2014;",
+            "Osei,",
+            "2021)."
+          ],
+          "verified": false
+        },
+        {
+          "id": "B3-05",
+          "track": "B",
+          "stage": 3,
+          "type": "fix",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Iyer, S."
+              ],
+              "year": "2001",
+              "title": "Teaching writing",
+              "type": "Book",
+              "idea": "A sentence quoted by Nasser.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Nasser, F."
+              ],
+              "year": "2018",
+              "title": "Writing in a second language",
+              "type": "Journal article",
+              "where": "p. 54",
+              "idea": "Quotes Iyer (2001) on page 54.",
+              "quote": "Good writers are, above all, patient rereaders.",
+              "read": true
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it. Check the source cards: who did you read?",
+          "frame": "Iyer (2001) as cited in Nasser (2018) {argues|argued} that good writers reread their work.",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "Iyer (2001, as cited in Nasser, 2018)"
+          ],
+          "modelAnswers": [],
+          "rule": "Secondary, narrative: Original (year, as cited in Source you read, year).",
+          "errorDiagnosis": [],
+          "hint": "In a narrative secondary citation, how many brackets are there?",
+          "wrongCitation": "Iyer (2001) as cited in Nasser (2018)",
+          "errorTokens": [
+            "(2001)",
+            "as",
+            "cited",
+            "in",
+            "Nasser",
+            "(2018)"
+          ],
+          "verified": false
+        },
+        {
+          "id": "B3-06",
+          "track": "B",
+          "stage": 3,
+          "type": "fix",
+          "topic": "secondary-format",
+          "sourceCards": [
+            {
+              "authors": [
+                "Varga, T."
+              ],
+              "year": "2014",
+              "title": "Study habits of first-year students",
+              "type": "Journal article",
+              "idea": "Students who review notes on the same day remember more.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Osei, K."
+              ],
+              "year": "2021",
+              "title": "Learning at university",
+              "type": "Textbook",
+              "idea": "Chapter 3 describes Varga's 2014 study.",
+              "read": true
+            }
+          ],
+          "prompt": "One citation in this sentence has a mistake. Tap the part with the mistake, then fix it. Check the source cards: who did you read?",
+          "frame": "Students who review notes on the same day remember more (Varga 2014, as cited in Osei, 2021).",
+          "tiles": null,
+          "options": null,
+          "acceptedAnswers": [
+            "(Varga, 2014, as cited in Osei, 2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Parenthetical: (Surname, year), with a comma before the year. Use the surname only, no initials.",
+          "errorDiagnosis": [],
+          "hint": "Look between the first name and its year.",
+          "wrongCitation": "(Varga 2014, as cited in Osei, 2021)",
+          "errorTokens": [
+            "(Varga",
+            "2014,"
+          ],
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "Reference list check",
+      "items": [
+        {
+          "id": "B4-01",
+          "track": "B",
+          "stage": 4,
+          "type": "choice",
+          "topic": "secondary-reflist",
+          "sourceCards": [
+            {
+              "authors": [
+                "Varga, T."
+              ],
+              "year": "2014",
+              "title": "Study habits of first-year students",
+              "type": "Journal article",
+              "idea": "Students who review notes on the same day remember more.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Osei, K."
+              ],
+              "year": "2021",
+              "title": "Learning at university",
+              "type": "Textbook",
+              "idea": "Chapter 3 describes Varga's 2014 study.",
+              "read": true
+            }
+          ],
+          "prompt": "You wrote: (Varga, 2014, as cited in Osei, 2021). You read only Osei's book. Which source goes in your reference list?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Only Osei (2021)",
+            "Only Varga (2014)",
+            "Both Varga (2014) and Osei (2021)"
+          ],
+          "acceptedAnswers": [
+            "Only Osei (2021)"
+          ],
+          "modelAnswers": [],
+          "rule": "Only the source you actually read goes in the reference list.",
+          "errorDiagnosis": [],
+          "hint": "The reference list shows what you actually read.",
+          "verified": false
+        },
+        {
+          "id": "B4-02",
+          "track": "B",
+          "stage": 4,
+          "type": "choice",
+          "topic": "secondary-reflist",
+          "sourceCards": [
+            {
+              "authors": [
+                "Alvarez, D."
+              ],
+              "year": "2008",
+              "title": "A survey of student reading",
+              "type": "Report",
+              "idea": "Most students read their course books only before exams.",
+              "read": false
+            },
+            {
+              "authors": [
+                "Tanaka, R.",
+                "Brennan, F."
+              ],
+              "year": "2019",
+              "title": "Reading at university",
+              "type": "Book",
+              "idea": "Summarises Alvarez's 2008 survey.",
+              "read": true
+            }
+          ],
+          "prompt": "You wrote: Alvarez (2008, as cited in Tanaka & Brennan, 2019) found that … Which source goes in your reference list?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Only Tanaka and Brennan (2019)",
+            "Only Alvarez (2008)",
+            "Both Alvarez (2008) and Tanaka and Brennan (2019)"
+          ],
+          "acceptedAnswers": [
+            "Only Tanaka and Brennan (2019)"
+          ],
+          "modelAnswers": [],
+          "rule": "Only the source you actually read goes in the reference list.",
+          "errorDiagnosis": [],
+          "hint": "Whose book did you read?",
+          "verified": false
+        },
+        {
+          "id": "B4-03",
+          "track": "B",
+          "stage": 4,
+          "type": "choice",
+          "topic": "secondary-reflist",
+          "sourceCards": [
+            {
+              "authors": [
+                "Kowalski, P."
+              ],
+              "year": "2012",
+              "title": "Students and part-time jobs",
+              "type": "Journal article",
+              "read": true
+            },
+            {
+              "authors": [
+                "Moretti, G."
+              ],
+              "year": "2020",
+              "title": "Work and study",
+              "type": "Journal article",
+              "read": true
+            }
+          ],
+          "prompt": "You read Kowalski (2012) and Moretti (2020) yourself, and you cite both: (Kowalski, 2012; Moretti, 2020). Which source goes in your reference list?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Both Kowalski (2012) and Moretti (2020)",
+            "Only Moretti (2020)",
+            "Only Kowalski (2012)"
+          ],
+          "acceptedAnswers": [
+            "Both Kowalski (2012) and Moretti (2020)"
+          ],
+          "modelAnswers": [],
+          "rule": "Every source you read and cite goes in the reference list.",
+          "errorDiagnosis": [],
+          "hint": "You read both of them.",
+          "verified": false
+        },
+        {
+          "id": "B4-04",
+          "track": "B",
+          "stage": 4,
+          "type": "choice",
+          "topic": "secondary-reflist",
+          "sourceCards": [
+            {
+              "authors": [
+                "Mwangi, J."
+              ],
+              "year": "year unknown",
+              "title": "(a saying)",
+              "type": "Quoted in Halvorsen",
+              "idea": "“Water remembers every promise.”",
+              "read": false
+            },
+            {
+              "authors": [
+                "Halvorsen, B."
+              ],
+              "year": "2022",
+              "title": "Rivers and people",
+              "type": "Book",
+              "idea": "Quotes Mwangi's saying but gives no year.",
+              "read": true
+            }
+          ],
+          "prompt": "You wrote: (Mwangi, as cited in Halvorsen, 2022). Which source goes in your reference list?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Only Halvorsen (2022)",
+            "Only Mwangi",
+            "Both Mwangi and Halvorsen (2022)"
+          ],
+          "acceptedAnswers": [
+            "Only Halvorsen (2022)"
+          ],
+          "modelAnswers": [],
+          "rule": "Only the source you actually read goes in the reference list.",
+          "errorDiagnosis": [],
+          "hint": "Which one did you hold in your hands?",
+          "verified": false
+        },
+        {
+          "id": "B4-05",
+          "track": "B",
+          "stage": 4,
+          "type": "choice",
+          "topic": "secondary-reflist",
+          "sourceCards": [],
+          "prompt": "Why does only the source you read go in the reference list?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "It tells readers exactly which sources you used, so they can find them.",
+            "Older sources are less important, so they are left out.",
+            "APA does not allow two references for one idea."
+          ],
+          "acceptedAnswers": [
+            "It tells readers exactly which sources you used, so they can find them."
+          ],
+          "modelAnswers": [],
+          "rule": "Only the source you actually read goes in the reference list.",
+          "errorDiagnosis": [],
+          "hint": "Think about what a reader does with your reference list.",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "title": "Do I need it?",
+      "items": [
+        {
+          "id": "B5-01",
+          "track": "B",
+          "stage": 5,
+          "type": "choice",
+          "topic": "secondary-when",
+          "sourceCards": [],
+          "prompt": "Your textbook (Osei, 2021) describes Varga's 2014 study. The library has Varga's article online, and you can read it. What should you do?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Read Varga's article and cite Varga directly.",
+            "Use “as cited in”, because it is quicker.",
+            "Cite only Osei, as if the idea were Osei's."
+          ],
+          "acceptedAnswers": [
+            "Read Varga's article and cite Varga directly."
+          ],
+          "modelAnswers": [],
+          "rule": "Use “as cited in” only when you cannot get the original. Reading the original is better.",
+          "errorDiagnosis": [],
+          "hint": "Is the original available to you?",
+          "verified": false
+        },
+        {
+          "id": "B5-02",
+          "track": "B",
+          "stage": 5,
+          "type": "choice",
+          "topic": "secondary-when",
+          "sourceCards": [],
+          "prompt": "Osei (2021) describes a 1985 report by Brennan. The report was never published online, and no library you can use has it. What should you do?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Use a secondary citation: (Brennan, 1985, as cited in Osei, 2021).",
+            "Cite Brennan (1985) directly, as if you had read it.",
+            "Cite only Osei (2021) and do not mention Brennan."
+          ],
+          "acceptedAnswers": [
+            "Use a secondary citation: (Brennan, 1985, as cited in Osei, 2021)."
+          ],
+          "modelAnswers": [],
+          "rule": "Use “as cited in” only when you cannot get the original. Reading the original is better.",
+          "errorDiagnosis": [],
+          "hint": "Can you get the original?",
+          "verified": false
+        },
+        {
+          "id": "B5-03",
+          "track": "B",
+          "stage": 5,
+          "type": "choice",
+          "topic": "secondary-when",
+          "sourceCards": [],
+          "prompt": "You read Moretti's original article yourself. You want to use one of Moretti's findings. What should you do?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Cite Moretti directly, e.g. (Moretti, 2020).",
+            "Use “as cited in” to be safe.",
+            "Do not cite it, because findings are facts."
+          ],
+          "acceptedAnswers": [
+            "Cite Moretti directly, e.g. (Moretti, 2020)."
+          ],
+          "modelAnswers": [],
+          "rule": "If you read the original, cite it directly. No “as cited in” is needed.",
+          "errorDiagnosis": [],
+          "hint": "Did you read the original?",
+          "verified": false
+        },
+        {
+          "id": "B5-04",
+          "track": "B",
+          "stage": 5,
+          "type": "choice",
+          "topic": "secondary-when",
+          "sourceCards": [],
+          "prompt": "You read only a short summary of Delgado's study in Kaur et al. (2023). You want to use Delgado's results in your essay. What should you do?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Find and read Delgado's study. If you cannot get it, use “as cited in Kaur et al., 2023”.",
+            "Cite (Delgado, 2016) directly. The summary is enough.",
+            "Cite (Delgado, 2016; Kaur et al., 2023)."
+          ],
+          "acceptedAnswers": [
+            "Find and read Delgado's study. If you cannot get it, use “as cited in Kaur et al., 2023”."
+          ],
+          "modelAnswers": [],
+          "rule": "Use “as cited in” only when you cannot get the original. Reading the original is better. Citing a source you did not read as if you read it is an integrity problem.",
+          "errorDiagnosis": [],
+          "hint": "Did you read Delgado's study, or only a summary of it?",
+          "verified": false
+        },
+        {
+          "id": "B5-05",
+          "track": "B",
+          "stage": 5,
+          "type": "choice",
+          "topic": "secondary-when",
+          "sourceCards": [],
+          "prompt": "Osei (2021) describes Varga's study, then gives Osei's own opinion about it. You want to use Osei's opinion, not Varga's results. What should you do?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Cite Osei (2021) only.",
+            "Use (Varga, 2014, as cited in Osei, 2021).",
+            "Cite Varga (2014) only."
+          ],
+          "acceptedAnswers": [
+            "Cite Osei (2021) only."
+          ],
+          "modelAnswers": [],
+          "rule": "Cite the person whose idea you use. Osei's own opinion is cited to Osei.",
+          "errorDiagnosis": [],
+          "hint": "Whose idea are you using?",
+          "verified": false
+        },
+        {
+          "id": "B5-06",
+          "track": "B",
+          "stage": 5,
+          "type": "choice",
+          "topic": "secondary-when",
+          "sourceCards": [],
+          "prompt": "Osei (2021) summarises a study by Yilmaz that was published only in Turkish. You cannot read Turkish. What should you do?",
+          "frame": null,
+          "tiles": null,
+          "options": [
+            "Use a secondary citation: Yilmaz (2010, as cited in Osei, 2021).",
+            "Cite Yilmaz (2010) directly, as if you had read it.",
+            "Leave the idea out completely, because you cannot cite it."
+          ],
+          "acceptedAnswers": [
+            "Use a secondary citation: Yilmaz (2010, as cited in Osei, 2021)."
+          ],
+          "modelAnswers": [],
+          "rule": "Use “as cited in” only when you cannot get the original. Reading the original is better.",
+          "errorDiagnosis": [],
+          "hint": "Can you read the original?",
+          "verified": false
+        }
+      ]
+    }
+  ]
+}
