@@ -1,4 +1,4 @@
-/* DAVE Cite: APA 7th In-Text Citation Trainer
+/* APA Trainer: APA 7th In-Text Citation Trainer
    Plain JavaScript. No framework, no server, no AI calls, no tracking.
    Practice items live in data/track-*.json (see README.md). House rules live in config.js.
    Progress is kept in localStorage on this device only, and the app still works if storage is blocked. */
@@ -431,7 +431,7 @@
   function setNav(r) { $$(".appnav a").forEach(a => a.setAttribute("aria-current", a.dataset.r === r ? "page" : "false")); }
   function page(html, title, r) {
     APP().innerHTML = '<div class="wrap page' + (NOANIM ? "" : " enter") + '">' + html + "</div>";
-    document.title = (title ? title + " | " : "") + "DAVE Cite | Dave Nab";
+    document.title = (title ? title + " | " : "") + "APA Trainer | Dave Nab";
     setNav(r);
   }
   function storeNote() { return STORE_OK ? "" : '<p class="notice" role="note">Your browser is not letting this app save. You can still practise, but your progress will be lost when you close the page.</p>'; }
@@ -462,7 +462,7 @@
   /* ---------------- home ---------------- */
   function viewHome() {
     if (DATA.error) { page('<p class="notice">' + esc(DATA.error) + " If you opened the file straight from your computer, open the app from the website instead.</p>", "", "home"); return; }
-    let h = '<section class="hero"><p class="eyebrow">APA 7th · In-text citations</p><h1>DAVE <span class="hl">Cite</span></h1>' +
+    let h = '<section class="hero"><p class="eyebrow">APA 7th · In-text citations</p><h1>APA <span class="hl">Trainer</span></h1>' +
       '<p class="lead">Practise APA 7th in-text citations by building and fixing them yourself. One session is 10 questions and takes about 5 to 8 minutes.</p></section>' + storeNote();
     h += '<div class="tracks">';
     TRACK_IDS.forEach(t => {
@@ -746,7 +746,7 @@
   }
   function linksFor(track) { return (DATA.links && Array.isArray(DATA.links[track])) ? DATA.links[track].filter(l => l && l.url && l.title) : []; }
   function summaryText() {
-    const L = ["DAVE Cite: my progress (" + today() + ")", ""];
+    const L = ["APA Trainer: my progress (" + today() + ")", ""];
     TRACK_IDS.forEach(t => {
       const T = S.tracks[t], ids = DATA.items.filter(i => i.track === t).map(i => i.id);
       const seen = ids.filter(id => rec(id)).length, mast = ids.filter(id => rec(id) && rec(id).box >= MASTER_BOX).length;
@@ -798,7 +798,7 @@
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, fallback); else fallback();
   }
   function clearData() {
-    if (!confirm("Delete all your DAVE Cite progress, goals and review schedule from this device? This cannot be undone.")) return;
+    if (!confirm("Delete all your APA Trainer progress, goals and review schedule from this device? This cannot be undone.")) return;
     try { localStorage.removeItem(KEY); } catch (e) { }
     S = blank(); LAST_END = null;
     render();
@@ -845,7 +845,7 @@
   function viewAbout() {
     const drafts = DATA.items.filter(i => !i.verified).length;
     let h = '<p class="eyebrow">About</p><h1>About this <span class="hl">app</span></h1>' +
-      '<section class="card"><h2>What it is</h2><p>DAVE Cite is a free practice app for APA 7th in-text citations. You build and fix citations yourself in short sessions. Questions you get wrong come back in later sessions.</p>' +
+      '<section class="card"><h2>What it is</h2><p>APA Trainer is a free practice app for APA 7th in-text citations. You build and fix citations yourself in short sessions. Questions you get wrong come back in later sessions.</p>' +
       "<p>There are four tracks: citation formats, secondary citation (“as cited in”), reporting verbs, and variety in citing.</p></section>" +
       '<section class="card"><h2>Honesty and AI</h2><ul>' +
       "<li>The practice items were drafted with AI and are checked by the teacher, Dave Nab. Items that have not been checked yet show a small “Draft content” label.</li>" +

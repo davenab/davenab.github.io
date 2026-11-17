@@ -1,4 +1,4 @@
-# DAVE Cite: APA 7th In-Text Citation Trainer
+# APA Trainer: APA 7th In-Text Citation Trainer
 
 Short drills (10 questions, about 5 to 8 minutes) for EAP pathway students at about CEFR B2. Students build, fix and choose APA 7th in-text citations themselves, and see the rule in one line after every answer.
 

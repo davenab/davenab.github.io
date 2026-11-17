@@ -1,4 +1,4 @@
-/* DAVE Notes: Lecture Note-Taking Trainer (TED edition)
+/* Notetaking Trainer (TED edition)
    Plain JavaScript. No build step, no server, no AI calls, no analytics.
    TED talks play in TED's own embedded player. Breaking News English opens on its own website.
    Notes and progress: localStorage. Photos: IndexedDB. Nothing is uploaded. */
@@ -828,7 +828,7 @@
     return 'My own recording';
   }
   function summaryText(r) {
-    var L = ['DAVE Notes: session summary', 'Date: ' + fmtDate(r.date), 'Activity: ' + recTitle(r), 'Source: ' + sourceLine(r),
+    var L = ['Notetaking Trainer: session summary', 'Date: ' + fmtDate(r.date), 'Activity: ' + recTitle(r), 'Source: ' + sourceLine(r),
       'Skill focus: ' + skillName(r.skill),
       'Notes: ' + (r.notesMode === 'type' ? 'typed' : 'on paper' + (r.photoCount ? ' (' + r.photoCount + ' photo' + (r.photoCount > 1 ? 's' : '') + ')' : '')),
       'Listens: ' + r.listens + (r.listens >= 2 ? ' (used the optional second listen)' : '')];

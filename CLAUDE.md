@@ -32,7 +32,7 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 - Every app loads `/assets/appbar.js`: a slim "DN Dave Nab · All apps · Resources" bar, plus `DNNext.html("<app-id>")` for the "What next?" box on the finish screen. Add new apps to `APPS`/`NEXT` in that file.
 - Each app is a self-contained static page in its own folder: `/<slug>/index.html`. No backend, no API keys in the code (the repo is public).
 - Apps must work without sign-in on laptops and phones, keep student data on the device (localStorage at most), and support light/dark mode.
-- Live apps: `/note-taking-trainer-ted/` (DAVE Notes, TED edition; `/note-taking-trainer/` is now a redirect to it) `/grammar-self-correction/` (Grammar Self-Correction Trainer) and `/nominalisation-hedging-trainer/` (Nominalisation and Hedging Trainer; items in its `data/*.json`). Some apps load `/assets/site.js` (legacy theme toggle): keep that file.
+- Live apps: `/note-taking-trainer-ted/` (Notetaking Trainer, TED edition; `/note-taking-trainer/` is now a redirect to it) `/grammar-self-correction/` (Grammar Self-Correction Trainer) and `/nominalisation-hedging-trainer/` (Nominalisation and Hedging Trainer; items in its `data/*.json`). Some apps load `/assets/site.js` (legacy theme toggle): keep that file.
 - Live apps are listed first in `APPS` in `_tools/build.py` so they lead the AI section on the home page.
 - When an app goes live, add it to `LIVE` in `_tools/build.py` (title → folder), rebuild, and add it to `/sitemap.xml`. Card skills: listen, read, write, gram, vocab.
 - Planned apps: dictogloss, skim-and-scan timer, paragraph X-ray, synthesis builder, register swapper.

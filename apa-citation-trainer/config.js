@@ -1,4 +1,4 @@
-/* DAVE Cite: house rules (the ONLY settings file).
+/* APA Trainer: house rules (the ONLY settings file).
    Change a value between the quotation marks, save, and commit. See README.md, "House rules".
 
    reportingVerbTense
