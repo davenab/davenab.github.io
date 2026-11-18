@@ -14,8 +14,8 @@
   var RES_STUDENTS = { t: "Resources for students", d: "Free Quizlet sets and self-study packs", u: "/resources/students/" };
   var HEDGING = { t: "Hedging in Academic Writing", d: "A ready-to-teach lesson for teachers", u: "/resources/hedging-in-academic-writing/" };
   var NEXT = {
-    notes:    { lead: "Finished your notes? Keep going:", items: [APPS.coach, APPS.grammar, RES_STUDENTS] },
-    grammar:  { lead: "Fixed your errors? Try this next:", items: [APPS.coach, APPS.nomhedge, RES_STUDENTS] },
+    notes:    { lead: "Finished your notes? Keep going:", items: [APPS.grammar, APPS.nomhedge, RES_STUDENTS] },
+    grammar:  { lead: "Fixed your errors? Try this next:", items: [APPS.nomhedge, APPS.notes, RES_STUDENTS] },
     nomhedge: { lead: "Done with nominalisation and hedging? Try this next:", items: [APPS.grammar, HEDGING, APPS.notes] },
     cite:     { lead: "Finished your citation practice? Try this next:", items: [APPS.nomhedge, APPS.grammar, RES_STUDENTS] }
   };

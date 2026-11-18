@@ -13,6 +13,7 @@ PAY_HEDGING = "https://www.paypal.com/ncp/payment/TYYAE8VP9CW2U"
 SITE = "https://davenab.com/"
 import hashlib
 ASSET_V = hashlib.md5((open("assets/style.css","rb").read()+open("assets/app.js","rb").read())).hexdigest()[:8]  # cache-busting
+COACH_ON = False  # Feedback-to-Mastery Coach hidden from the site until Dave decides; set True and rebuild to bring it back
 COACH_URL = "https://claude.ai/artifact/U8aWTwYD84iMXthwhTXHYg"  # Feedback-to-Mastery Coach (Claude artifact; source in _tools/feedback-coach/)
 
 I = {
@@ -273,9 +274,9 @@ GALLERY = [
  ("gallery-13.webp","Macquarie University College - DE8",1187,893),("gallery-14.webp","PD Festival with Jarrad Merlo",1225,922),("gallery-15.webp","IH - UPPER INT 3",883,662),
 ]
 MOMENTS = [("moment-1.webp",768,577),("moment-2.webp",900,675),("moment-3.webp",900,677),("moment-4.webp",900,676),("moment-5.webp",525,700),("moment-6.webp",900,506),("moment-7.webp",900,506),("moment-8.webp",900,506)]
-LIVE = {"Feedback-to-Mastery Coach": "feedback-coach/", "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/"}
+LIVE = {**({"Feedback-to-Mastery Coach": "feedback-coach/"} if COACH_ON else {}), "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/"}
 APPS = [
- ("write","Writing","Feedback-to-Mastery Coach","Students paste their teacher’s feedback. The coach explains what it means, helps them find the exact skill behind it, then teaches it step by step: a short lesson, guided practice with hints, and a new task they complete on their own.",["Cohesion","Paraphrasing","Paragraph development"]),
+ *([("write","Writing","Feedback-to-Mastery Coach","Students paste their teacher’s feedback. The coach explains what it means, helps them find the exact skill behind it, then teaches it step by step: a short lesson, guided practice with hints, and a new task they complete on their own.",["Cohesion","Paraphrasing","Paragraph development"])] if COACH_ON else []),
  ("listen","Listening","Notetaking Trainer","Students watch a short TED talk or listen to a news story and take notes their way. Then they check their own notes against the key ideas, answer questions from their notes and set a goal.",["Key ideas","Signposting","Self-checking"]),
  ("gram","Grammar","Grammar Self-Correction Trainer","The app shows where each error is and what type it is, using correction codes teachers already use, like <b>vf</b> (verb form) or <b>art</b> (article). Students do the fixing, and hints step up only when they ask for one.",["Self-correction","Error codes","Step-by-step hints"]),
  ("gram","Grammar","Nominalisation and Hedging Trainer","Short drills that move from single words to full sentences: turn verbs into nouns (“analyse” → “analysis”) and match how sure a claim sounds to the evidence (“may suggest”). Students also fix sentences that use too much of either.",["Nominalisation","Hedging","Academic style"]),
@@ -399,7 +400,7 @@ def home(L):
     <span class="eyebrow fade-up" style="--d:.05s">AI learning tools · Resources · IELTS</span>
     <h1 class="rise" style="margin-top:22px">{words("Learn smarter. Teach better. |Think deeper.|")}</h1>
     <p class="lead fade-up" style="--d:.7s">Free AI practice apps, ready-made EAP resources and IELTS coaching, built by a CELTA and DELTA qualified teacher and experienced speaking examiner with 15+ years in Australian higher education.</p>
-    <div class="cta fade-up" style="--d:.85s"><a class="btn primary" href="#coach">Try the Feedback Coach {ARR}</a><a class="btn" href="#ai">Free apps</a><a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
+    <div class="cta fade-up" style="--d:.85s">{f'<a class="btn primary" href="#coach">Try the Feedback Coach {ARR}</a><a class="btn" href="#ai">Free apps</a>' if COACH_ON else f'<a class="btn primary" href="#ai">Try the free apps {ARR}</a>'}<a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
   </div>
   <div class="portrait fade-up" style="--d:.3s">
     <div class="ring" aria-hidden="true"></div>
@@ -415,7 +416,7 @@ def home(L):
   <a class="who-opt" href="{L('book/')}"><b>Book a class</b><span>IELTS, General English or a mock test</span><i aria-hidden="true">→</i></a>
 </nav></div></section>
 
-{coach_band(L)}
+{coach_band(L) if COACH_ON else ""}
 
 <section class="ai-band" id="ai"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow reveal">AI apps &amp; resources</span><h2 class="reveal">Small, smart tools that help students <em>think</em>, not just get answers.</h2><p class="reveal">AI-supported apps for academic English. Each one targets one real skill students need at university, gives feedback that makes them do the thinking, and runs in any browser with no sign-in. Student work stays on their own device.</p></div>
@@ -957,7 +958,7 @@ def coach_page(L):
   <p class="coach-note reveal" style="margin-top:18px">Teachers: share this page with your students. The coach supports, but doesn’t replace, your feedback and your university’s learning support.</p>
 </div></section>
 '''
-page("feedback-coach/index.html", "Feedback-to-Mastery Coach · Free AI Tutor for Academic English · Dave Nab", "A free AI tutor that turns teacher feedback (“improve cohesion”, “your paraphrase is too close to the source”) into short lessons and practice, so EAP and university students learn to fix it themselves.", coach_page, cur="apps/")
+if COACH_ON: page("feedback-coach/index.html", "Feedback-to-Mastery Coach · Free AI Tutor for Academic English · Dave Nab", "A free AI tutor that turns teacher feedback (“improve cohesion”, “your paraphrase is too close to the source”) into short lessons and practice, so EAP and university students learn to fix it themselves.", coach_page, cur="apps/")
 
 # ------------------------------------------------------------------ BOOKING
 GF = "https://docs.google.com/forms/d/e/1FAIpQLSda5OD0a74n93Vw6FKQF-HaWF5spCccaGKzCvCje4vWa11yKA"
