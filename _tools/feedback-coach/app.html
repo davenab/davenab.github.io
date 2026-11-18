@@ -248,6 +248,16 @@ function banner() {
   return `<div class="banner" role="status"><b>AI feedback is off in this view</b><span>${why} The lessons, examples and quick checks still work, and you can check your own writing against a checklist.</span></div>`;
 }
 function rerenderSoft() { if (document.readyState !== "loading" && $("#app") && $("#app").firstChild) render(); }
+const COACH_LINK = "https://claude.ai/artifact/U8aWTwYD84iMXthwhTXHYg";
+function offBox() {
+  const framed = (() => { try { return window.top !== window; } catch (e) { return true; } })();
+  const why = AI_OFF_REASON === "declined" ? "You chose not to allow this page to use Claude, so it can’t check answers. Reload the page and choose Allow when asked."
+    : !framed ? "This copy of the page isn’t running inside Claude, so it can’t check answers."
+    : "Claude isn’t connected in this view. You may not be signed in, or your account may not allow AI features in shared pages.";
+  return `<div class="banner" role="status"><b>Your answer can’t be checked automatically right now</b><span>${why}</span>
+    <span>To get feedback: sign in at claude.ai (free, any email), open the coach from <a href="${COACH_LINK}" target="_blank" rel="noopener">this link ↗</a>, and choose <b>Allow</b> when Claude asks.</span>
+    <span class="small">Until then, check your own answer: tick each point only if your answer really meets it.</span></div>`;
+}
 function refreshBanner() { const b = $("#ai-banner"); if (b) b.innerHTML = banner(); }
 
 /* ------------------------------------------------------------------ render router */
@@ -467,8 +477,8 @@ function stGuided() {
   const ownToggle = G.own
     ? `<label class="lab" for="ownx">Your own extract (one short paragraph, personal details removed)</label><textarea id="ownx" rows="4">${esc(G.text === l.task.text ? "" : G.text)}</textarea><button class="btn sm" data-act="ownUse">Use this extract</button>`
     : `<button class="btn ghost sm" data-act="ownOn">Practise on a short extract from my own writing instead</button>`;
-  const selfCheck = !aiReady() ? `<div class="quiet"><b>Check your own answer</b><span class="small">AI feedback is off, so compare your answer with this checklist.</span>${l.criteria.map((c, i) => `<label class="row small"><input type="checkbox" data-self="${i}"> ${esc(c)}</label>`).join("")}<button class="btn sm" data-act="selfDone">I’ve checked my answer</button></div>` : "";
-  return `<div class="card"><h3>Practise with support</h3><p>${esc(G.instr)}</p><div class="task">${esc(G.text)}</div>
+  const selfCheck = !aiReady() ? `<div class="quiet"><b>Self-check</b>${l.criteria.map((c, i) => `<label class="row small"><input type="checkbox" class="selfbox"> ${esc(c)}</label>`).join("")}<button class="btn sm" data-act="selfDone" id="selfbtn" disabled>${G.self ? "Self-check recorded ✓" : "Record my self-check"}</button></div>` : "";
+  return `${aiReady() ? "" : offBox()}<div class="card"><h3>Practise with support</h3><p>${esc(G.instr)}</p><div class="task">${esc(G.text)}</div>
     <div class="row">${ownToggle}</div>
     <label class="lab" for="gans">Your answer</label><textarea id="gans" rows="6" placeholder="Write your revised version here.">${esc(G.answer)}</textarea>
     <div class="row">${aiReady() ? `<button class="btn primary" data-act="gCheck" ${G.busy ? "disabled" : ""}>${G.busy ? '<span class="thinking">Checking</span>' : "Check my answer"}</button><button class="btn" data-act="gHint" ${G.busy || G.hints >= 3 ? "disabled" : ""}>Give me a hint${G.hints ? ` (${G.hints}/3)` : ""}</button>` : `<button class="btn" data-act="gHint" ${G.hints >= l.strategy.length ? "disabled" : ""}>Give me a hint</button>`}</div>
@@ -484,8 +494,8 @@ function stIndep() {
   const L = S.L, I = L.ind, l = L.l;
   if (!I.task) return I.err ? `<div class="card"><h3>On your own</h3><p>${esc(I.err)}</p><div class="row"><button class="btn primary" data-act="again">Try again</button><button class="btn ghost" data-act="prev">← Back</button></div></div>` : `<div class="card"><h3>On your own</h3><p class="thinking">Preparing a new task for you</p></div>`;
   const r = I.result;
-  const selfCheck = !aiReady() && !r ? `<div class="quiet"><b>Check your own answer</b>${l.criteria.map((c, i) => `<label class="row small"><input type="checkbox" data-iself="${i}"> ${esc(c)}</label>`).join("")}<button class="btn sm" data-act="iSelf">Record my self-check</button></div>` : "";
-  return `<div class="card"><h3>On your own</h3>
+  const selfCheck = !aiReady() && !r ? `<div class="quiet"><b>Self-check</b>${l.criteria.map((c, i) => `<label class="row small"><input type="checkbox" class="selfbox"> ${esc(c)}</label>`).join("")}<button class="btn sm" data-act="iSelf" id="selfbtn" disabled>Record my self-check</button></div>` : "";
+  return `${aiReady() ? "" : offBox()}<div class="card"><h3>On your own</h3>
     <p class="muted small">This is a new task. There are no hints this time, so you can see what you can do independently.</p>
     <p>${esc(I.task.instr)}</p><div class="task">${esc(I.task.text)}</div>
     <label class="lab" for="ians">Your answer</label><textarea id="ians" rows="6" ${r ? "readonly" : ""}>${esc(I.answer)}</textarea>
@@ -760,8 +770,11 @@ function bind() {
     render();
   }));
   app.querySelectorAll("[data-ask]").forEach(b => b.addEventListener("click", () => askCoach(b.dataset.ask)));
-  const g = $("#gans"); if (g) g.addEventListener("input", () => { S.L.g.answer = g.value; });
-  const ia = $("#ians"); if (ia) ia.addEventListener("input", () => { S.L.ind.answer = ia.value; });
+  const selfGate = () => { const btn = $("#selfbtn"); if (!btn) return; const ans = ($("#gans") || $("#ians") || {}).value || ""; const boxes = [...app.querySelectorAll(".selfbox")]; btn.disabled = ans.trim().length < 8 || !boxes.every(x => x.checked); };
+  app.querySelectorAll(".selfbox").forEach(x => x.addEventListener("change", selfGate));
+  const g = $("#gans"); if (g) g.addEventListener("input", () => { S.L.g.answer = g.value; selfGate(); });
+  const ia = $("#ians"); if (ia) ia.addEventListener("input", () => { S.L.ind.answer = ia.value; selfGate(); });
+  if (S.L && S.L.g.self && $("#selfbtn") && $("#gans")) { app.querySelectorAll(".selfbox").forEach(x => x.checked = true); selfGate(); }
   const fb = $("#fb"); if (fb) { fb.addEventListener("input", () => { S.feedback = fb.value; }); if (!S.feedback) fb.focus(); }
   const aq = $("#askq"); if (aq) { aq.addEventListener("input", () => { S.L.ask.q = aq.value; }); aq.addEventListener("keydown", e => { if (e.key === "Enter") ACT.askSend(); }); }
 }
