@@ -264,8 +264,15 @@ function refreshBanner() { const b = $("#ai-banner"); if (b) b.innerHTML = banne
 /* ------------------------------------------------------------------ sign-in gate
    Browsing (home, skills list, about, progress) is open. Any activity needs Claude connected. */
 let PENDING = null;
+const LOGIN_URL = "https://claude.ai/login?returnTo=" + encodeURIComponent("/artifact/U8aWTwYD84iMXthwhTXHYg");
+/* After the student clicks Sign in (opens a new tab), reload this tab as soon as they come back to it. */
+let AWAIT_LOGIN = false;
+document.addEventListener("click", e => { if (e.target.closest && e.target.closest("[data-login]")) { AWAIT_LOGIN = true; try { sessionStorage.setItem("ftm-resume", "1"); } catch (x) {} } }, true);
+document.addEventListener("visibilitychange", () => { if (AWAIT_LOGIN && document.visibilityState === "visible") { AWAIT_LOGIN = false; const m = document.getElementById("recheck-msg"); if (m) m.textContent = "Welcome back. Reconnecting…"; setTimeout(() => location.reload(), 400); } });
+window.addEventListener("focus", () => { if (AWAIT_LOGIN) { AWAIT_LOGIN = false; setTimeout(() => location.reload(), 400); } });
+let NOAI = false;
 function gate(fn) {
-  if (aiReady()) return fn();
+  if (aiReady() || NOAI) return fn();
   PENDING = fn;
   go("signin");
 }
@@ -277,14 +284,15 @@ function signin() {
   <p class="lead">The coach uses Claude to read your teacher’s feedback, check your answers and explain what to fix. ${declined ? "You chose not to allow this, so the activities can’t run." : "It’s free, and any email works: personal, Gmail or university."}</p>
   <div class="card"><ol class="strat">
     ${declined ? `<li>Reload this page.</li><li>Start an activity and choose <b>Allow</b> when Claude asks.</li>`
-    : `<li><a href="https://claude.ai/login" target="_blank" rel="noopener">Sign in or create a free Claude account ↗</a></li>
-       <li>Come back and open the coach from <a href="${COACH_LINK}" target="_blank" rel="noopener">this link ↗</a> (or reload this page).</li>
+    : `<li><a data-login href="${LOGIN_URL}" target="_blank" rel="noopener">Sign in or create a free Claude account ↗</a> (opens a new tab)</li>
+       <li>When you’ve signed in, close that tab and come back here. This page reloads by itself.</li>
        <li>When Claude asks if the coach can use Claude, choose <b>Allow</b>. Feedback uses your own free Claude allowance.</li>`}
   </ol>
-  <div class="row"><a class="btn primary" href="${declined ? COACH_LINK : "https://claude.ai/login"}" target="_blank" rel="noopener">${declined ? "Open the coach again ↗" : "Sign in to Claude ↗"}</a><button class="btn" data-act="recheck">I’ve signed in. Try again</button></div>
-  <p class="small muted" id="recheck-msg" aria-live="polite"></p></div>
+  <div class="row"><a class="btn primary" ${declined ? "" : "data-login"} href="${declined ? COACH_LINK : LOGIN_URL}" target="_blank" rel="noopener">${declined ? "Open the coach again ↗" : "Sign in to Claude ↗"}</a><button class="btn" data-act="recheck">I’ve signed in. Try again</button></div>
+  <p class="small muted" id="recheck-msg" aria-live="polite"></p>
+  <p class="small muted">Connection details: ${(() => { let f; try { f = window.top !== window; } catch (e) { f = true; } return (f ? "inside Claude" : "not inside Claude (opened as a separate page)") + " · runtime " + (window.claude ? "found" : "missing") + " · AI " + (AI_OFF_REASON || "unavailable"); })()}</p></div>
   <div class="quiet small"><b>Why sign in?</b><span>Without Claude, the coach can’t check your writing or give you feedback, which is how you learn the skill. Your progress is saved only on your device, and Dave can’t see what you type.</span></div>
-  <button class="btn ghost" data-go2="skills">← Browse the skills first</button>`;
+  <div class="row"><button class="btn" data-act="noai">Continue without AI feedback</button><button class="btn ghost" data-go2="skills">← Browse the skills first</button></div>`;
 }
 
 /* ------------------------------------------------------------------ render router */
@@ -873,10 +881,12 @@ Student's message: """${q}"""`;
 
 const ACT = {
   routeA() { gate(() => { S.item = null; go("intake"); }); },
+  noai() { NOAI = true; if (PENDING) { const f = PENDING; PENDING = null; f(); } else go("home"); },
   recheck() {
     const m = $("#recheck-msg");
     if (aiReady() && PENDING) { const f = PENDING; PENDING = null; return f(); }
-    if (m) m.textContent = AI_OFF_REASON === "declined" ? "Reload the page, then choose Allow when Claude asks." : "Still not connected. Make sure you’re signed in at claude.ai, then reload this page or open the coach link again.";
+    if (m) m.textContent = "Reloading…";
+    try { location.reload(); } catch (e) { if (m) m.textContent = "Reload the page, or open the coach link again."; }
   },
   routeB() { S.item = null; S.menu = { kind: "all" }; go("menu"); },
   async classify() {
@@ -895,7 +905,7 @@ const ACT = {
     S.items = items;
     if (items.length > 1) go("areas"); else routeItem(items[0]);
   },
-  menuStart() { if (!aiReady()) return gate(() => ACT.menuStart());
+  menuStart() { if (!aiReady() && !NOAI) return gate(() => ACT.menuStart());
     const sel = [...S.menu.sel].sort((a, b) => a - b).map(i => S.menu.opts[i]);
     if (!sel.length) return;
     sel.slice(1).forEach(o => { const q = (S.item && S.item.quote ? S.item.quote + " → " : "") + o.label; if (!DB.goals.some(g => g.quote === q)) DB.goals.push({ quote: q, route: o.id ? "explicit" : "explicit", module: o.id ? modOf(o.id) : (o.other || "none"), lessons: o.id ? [o.id] : [], options: o.id ? [] : [o], summary: "" }); });
@@ -905,7 +915,7 @@ const ACT = {
     else if (aiReady()) buildAiLesson(o.label, o.tech, (OTHER.find(x => x.id === o.other) || {}).name || S.menu.area || "academic English");
     else { alertBox("This area needs AI feedback, which is off in this view. Choose one of the core skills instead."); }
   },
-  diagStart() { if (!aiReady()) return gate(() => ACT.diagStart());
+  diagStart() { if (!aiReady() && !NOAI) return gate(() => ACT.diagStart());
     let ids = (S.menu.opts || []).map(o => o.id).filter(id => id && LESSONS[id]);
     if (S.menu.kind === "all" || !ids.length) ids = ["coh.reference", "coh.conjunction", "coh.coherence", "para.patchwriting", "pdev.topic", "pdev.interpret"];
     ids = ids.slice(0, 6);
