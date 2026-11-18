@@ -11,6 +11,7 @@ PAY_WRITING = "https://www.paypal.com/ncp/payment/GRJE2W72TS2LC"
 PAY_GE = "https://www.paypal.com/ncp/payment/UWDH5M4MPMHYU"
 PAY_HEDGING = "https://www.paypal.com/ncp/payment/TYYAE8VP9CW2U"
 SITE = "https://davenab.com/"
+COACH_URL = "https://claude.ai/artifact/U8aWTwYD84iMXthwhTXHYg"  # Feedback-to-Mastery Coach (Claude artifact; source in _tools/feedback-coach/)
 
 I = {
  "chev": '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',
@@ -100,6 +101,7 @@ RELATED = {
  "resources/index.html": ([("apps/", "AI apps"), ("ielts-courses/", "IELTS Courses"), ("book/", "Book a class")], ["quizlet", "phrase", "eapf"]),
  "resources/students/index.html": ([("apps/", "AI apps"), ("ielts-courses/", "IELTS Courses"), ("ielts-mock-test/", "IELTS Mock Test")], ["phrase", "owl", "camb", "eapf"]),
  "resources/teachers/index.html": ([("apps/", "AI apps for your class"), ("resources/hedging-in-academic-writing/", "Hedging lesson"), ("resources/students/", "Resources for students")], ["phrase", "apa", "eapf", "cefr"]),
+ "feedback-coach/index.html": ([("apps/", "More AI apps"), ("resources/students/", "Resources for students"), ("grammar-self-correction/", "Grammar Self-Correction Trainer")], ["phrase", "owl", "eapf"]),
  "resources/hedging-in-academic-writing/index.html": ([("resources/teachers/", "More teacher resources"), ("nominalisation-hedging-trainer/", "Nominalisation and Hedging Trainer (app)"), ("apps/", "AI apps")], ["phrase", "owl"]),
 }
 
@@ -269,8 +271,9 @@ GALLERY = [
  ("gallery-13.webp","Macquarie University College - DE8",1187,893),("gallery-14.webp","PD Festival with Jarrad Merlo",1225,922),("gallery-15.webp","IH - UPPER INT 3",883,662),
 ]
 MOMENTS = [("moment-1.webp",768,577),("moment-2.webp",900,675),("moment-3.webp",900,677),("moment-4.webp",900,676),("moment-5.webp",525,700),("moment-6.webp",900,506),("moment-7.webp",900,506),("moment-8.webp",900,506)]
-LIVE = {"Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/"}
+LIVE = {"Feedback-to-Mastery Coach": "feedback-coach/", "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/"}
 APPS = [
+ ("write","Writing","Feedback-to-Mastery Coach","Students paste their teacher’s feedback. The coach explains what it means, helps them find the exact skill behind it, then teaches it step by step: a short lesson, guided practice with hints, and a new task they complete on their own.",["Cohesion","Paraphrasing","Paragraph development"]),
  ("listen","Listening","Notetaking Trainer","Students watch a short TED talk or listen to a news story and take notes their way. Then they check their own notes against the key ideas, answer questions from their notes and set a goal.",["Key ideas","Signposting","Self-checking"]),
  ("gram","Grammar","Grammar Self-Correction Trainer","The app shows where each error is and what type it is, using correction codes teachers already use, like <b>vf</b> (verb form) or <b>art</b> (article). Students do the fixing, and hints step up only when they ask for one.",["Self-correction","Error codes","Step-by-step hints"]),
  ("gram","Grammar","Nominalisation and Hedging Trainer","Short drills that move from single words to full sentences: turn verbs into nouns (“analyse” → “analysis”) and match how sure a claim sounds to the evidence (“may suggest”). Students also fix sentences that use too much of either.",["Nominalisation","Hedging","Academic style"]),
@@ -355,6 +358,31 @@ def results_strip(L):
   </div>"""
 
 # ------------------------------------------------------------------ HOME
+COACH_EG = [
+ ("“Improve cohesion.”", "Shows the parts of cohesion with examples, so you can recognise which one is your problem.", "Broad comment"),
+ ("“Your reference words are unclear.”", "Goes straight to a lesson on using it, this and they clearly.", "Specific comment"),
+ ("“This needs more work.”", "Shows what the comment could mean and offers a two-minute check to find out.", "Vague comment"),
+]
+COACH_STEPS = [("Paste the comment","Copy your teacher’s feedback, with your name removed."),("Understand it","Plain-English explanation of what the teacher means."),("Find the skill","Choose from examples, not technical terms."),("Learn and practise","Short lesson, worked example, practice with hints."),("Do it alone","A new task without hints shows what you can now do.")]
+def coach_band(L, full=False):
+    steps = "".join(f'<li><b>{t}</b><span>{d}</span></li>' for t, d in COACH_STEPS)
+    eg = "".join(f'<div class="ceg"><span class="ceg-k">{k}</span><q>{q}</q><p>{a}</p></div>' for q, a, k in COACH_EG)
+    more = "" if full else f'<a class="btn" href="{L('feedback-coach/')}">How it works</a>'
+    return f'''<section class="coach-band" id="coach"><div class="wrap coach-grid">
+  <div class="coach-copy">
+    <span class="eyebrow reveal">New · Free AI tutor</span>
+    <h2 class="reveal">Got feedback you don’t understand? <em>Turn it into a skill.</em></h2>
+    <p class="reveal">The Feedback-to-Mastery Coach takes a teacher’s comment like “improve cohesion” and turns it into a short, personal learning path. It teaches the skill instead of fixing your essay, so next time you can do it yourself.</p>
+    <ol class="coach-steps reveal">{steps}</ol>
+    <div class="cta reveal"><a class="btn primary" href="{COACH_URL}" target="_blank" rel="noopener">Open the coach {EXT}</a>{more}</div>
+    <p class="coach-note reveal">Free. Sign in with any email (personal or university) through a free Claude account. It opens on claude.ai.</p>
+  </div>
+  <div class="coach-demo reveal" aria-label="Examples of how the coach responds">
+    <div class="cd-head"><span class="dot"></span>What the coach does with…</div>
+    {eg}
+  </div>
+</div></section>'''
+
 def home(L):
     q = "".join(quote(L, t, n, p, d=i*.08) for i, (t, n, p) in enumerate(T_HOME))
     marq = "".join(img(L, f, "Dave Nab with students and colleagues", w, h, lazy=False) for f, w, h in MOMENTS)
@@ -367,7 +395,7 @@ def home(L):
     <span class="eyebrow fade-up" style="--d:.05s">AI learning tools · Resources · IELTS</span>
     <h1 class="rise" style="margin-top:22px">{words("Learn smarter. Teach better. |Think deeper.|")}</h1>
     <p class="lead fade-up" style="--d:.7s">Free AI practice apps, ready-made EAP resources and IELTS coaching, built by a CELTA and DELTA qualified teacher and experienced speaking examiner with 15+ years in Australian higher education.</p>
-    <div class="cta fade-up" style="--d:.85s"><a class="btn primary" href="#ai">Try the free apps {ARR}</a><a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
+    <div class="cta fade-up" style="--d:.85s"><a class="btn primary" href="#coach">Try the Feedback Coach {ARR}</a><a class="btn" href="#ai">Free apps</a><a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
   </div>
   <div class="portrait fade-up" style="--d:.3s">
     <div class="ring" aria-hidden="true"></div>
@@ -382,6 +410,8 @@ def home(L):
   <a class="who-opt" href="{L('resources/teachers/')}"><b>I’m a teacher</b><span>Zero-prep lesson kits, courses and free slides</span><i aria-hidden="true">→</i></a>
   <a class="who-opt" href="{L('book/')}"><b>Book a class</b><span>IELTS, General English or a mock test</span><i aria-hidden="true">→</i></a>
 </nav></div></section>
+
+{coach_band(L)}
 
 <section class="ai-band" id="ai"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow reveal">AI apps &amp; resources</span><h2 class="reveal">Small, smart tools that help students <em>think</em>, not just get answers.</h2><p class="reveal">AI-supported apps for academic English. Each one targets one real skill students need at university, gives feedback that makes them do the thinking, and runs in any browser with no sign-in. Student work stays on their own device.</p></div>
@@ -888,6 +918,42 @@ def apps(L):
 </div></section>
 '''
 page("apps/index.html", "AI Learning Apps · Dave Nab", "AI-supported apps for academic English: listening, reading, writing, grammar and vocabulary. Free to use, no sign-in.", apps, cur="apps/")
+
+# ------------------------------------------------------------------ FEEDBACK COACH
+def coach_page(L):
+    mods = [("Cohesion and coherence","Linking words, reference words (it, this, they), substitution, ellipsis, word links, sentence flow and logical order.",["Conjunction","Reference","Lexical cohesion","Coherence"]),
+            ("Paraphrasing","Understanding the source, key information, synonyms, word forms, restructuring, avoiding patchwriting, keeping certainty and citing.",["Patchwriting","Restructuring","Hedging","Citation"]),
+            ("Paragraph development","Topic sentences, explanation, elaboration, evidence, examples, interpreting evidence, linking to the argument and unity.",["Topic sentence","Evidence","Interpretation","Unity"])]
+    mh = "".join(f'<div class="pr reveal" style="--d:{i*.06:.2f}s"><h3>{t}</h3><p>{d}</p><div class="focus">{"".join(f"<span>{x}</span>" for x in f)}</div></div>' for i,(t,d,f) in enumerate(mods))
+    return f'''
+<header class="page-hero"><div class="wrap">
+  {crumb(L, ("apps/", "Apps"), "Feedback-to-Mastery Coach")}
+  <span class="eyebrow fade-up" style="--d:.05s">Free AI tutor for EAP and university students</span>
+  <h1 class="rise" style="margin-top:20px">{words("From “improve cohesion” to |I can do this myself.|")}</h1>
+  <p class="lead fade-up" style="--d:.7s">Teacher feedback often names a problem without showing how to fix it. This coach explains what the comment means, helps you find the exact skill behind it, and teaches it step by step until you can use it on your own.</p>
+  <div class="cta fade-up" style="--d:.85s"><a class="btn primary" href="{COACH_URL}" target="_blank" rel="noopener">Open the coach {EXT}</a><a class="btn" href="#how">How it works</a></div>
+</div></header>
+{coach_band(L, full=True)}
+<section id="how"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow reveal">What it covers</span><h2 class="reveal">Three skills that come up in feedback all the time.</h2><p class="reveal">Each skill is broken into small parts, and every part has its own lesson, worked example, guided practice and independent task. The core lessons were written and checked by Dave. For other areas (grammar, academic style, critical analysis, referencing), the AI builds a lesson with the same steps and marks it clearly.</p></div></div>
+  <div class="principles">{mh}</div>
+</div></section>
+<section class="band"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow reveal">Designed for learning</span><h2 class="reveal">A tutor, not an essay writer.</h2></div></div>
+  <div class="principles">
+    <div class="pr reveal"><h3>It teaches, then checks</h3><p>Hints come before answers. You only see “demonstrated independently” after you complete a new task without help, not just because you finished a lesson.</p></div>
+    <div class="pr reveal" style="--d:.06s"><h3>It won’t rewrite your work</h3><p>Ask it to rewrite your essay and it will bring you back to the skill. You can practise on a short extract from your own writing and make the changes yourself.</p></div>
+    <div class="pr reveal" style="--d:.12s"><h3>Your data stays yours</h3><p>Progress is saved only in your browser. Text you submit for feedback goes to Claude through your own account. Dave can’t see it. Remove names and student numbers first.</p></div>
+  </div>
+</div></section>
+<section><div class="wrap narrow">
+  <div class="sec-head"><div><span class="eyebrow reveal">Getting started</span><h2 class="reveal">How to open it</h2></div></div>
+  <ol class="coach-steps reveal" style="margin-bottom:28px"><li><b>Open the coach</b><span>It runs on claude.ai, so it opens in a new tab.</span></li><li><b>Sign in to Claude</b><span>Use any email: personal, Gmail or university. A free account is enough.</span></li><li><b>Allow it to use Claude</b><span>The first time you ask for feedback, Claude asks for permission. The feedback uses your own free Claude allowance.</span></li></ol>
+  <div class="cta reveal"><a class="btn primary" href="{COACH_URL}" target="_blank" rel="noopener">Open the coach {EXT}</a></div>
+  <p class="coach-note reveal" style="margin-top:18px">Teachers: share this page with your students. The coach supports, but doesn’t replace, your feedback and your university’s learning support.</p>
+</div></section>
+'''
+page("feedback-coach/index.html", "Feedback-to-Mastery Coach · Free AI Tutor for Academic English · Dave Nab", "A free AI tutor that turns teacher feedback (“improve cohesion”, “your paraphrase is too close to the source”) into short lessons and practice, so EAP and university students learn to fix it themselves.", coach_page, cur="apps/")
 
 # ------------------------------------------------------------------ BOOKING
 GF = "https://docs.google.com/forms/d/e/1FAIpQLSda5OD0a74n93Vw6FKQF-HaWF5spCccaGKzCvCje4vWa11yKA"

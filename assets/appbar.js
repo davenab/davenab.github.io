@@ -8,13 +8,14 @@
     notes:    { t: "Notetaking Trainer", d: "Practise lecture note-taking with real talks", u: "/note-taking-trainer-ted/" },
     grammar:  { t: "Grammar Self-Correction Trainer", d: "Find and fix your own grammar errors with codes and hints", u: "/grammar-self-correction/" },
     nomhedge: { t: "Nominalisation and Hedging Trainer", d: "Short practice for a more academic style", u: "/nominalisation-hedging-trainer/" },
-    cite:     { t: "APA Trainer", d: "Build and fix APA 7th in-text citations", u: "/apa-citation-trainer/" }
+    cite:     { t: "APA Trainer", d: "Build and fix APA 7th in-text citations", u: "/apa-citation-trainer/" },
+    coach:    { t: "Feedback-to-Mastery Coach", d: "Turn your teacher's feedback into skills you can use", u: "/feedback-coach/" }
   };
   var RES_STUDENTS = { t: "Resources for students", d: "Free Quizlet sets and self-study packs", u: "/resources/students/" };
   var HEDGING = { t: "Hedging in Academic Writing", d: "A ready-to-teach lesson for teachers", u: "/resources/hedging-in-academic-writing/" };
   var NEXT = {
-    notes:    { lead: "Finished your notes? Keep going:", items: [APPS.grammar, APPS.nomhedge, RES_STUDENTS] },
-    grammar:  { lead: "Fixed your errors? Try this next:", items: [APPS.nomhedge, APPS.notes, RES_STUDENTS] },
+    notes:    { lead: "Finished your notes? Keep going:", items: [APPS.coach, APPS.grammar, RES_STUDENTS] },
+    grammar:  { lead: "Fixed your errors? Try this next:", items: [APPS.coach, APPS.nomhedge, RES_STUDENTS] },
     nomhedge: { lead: "Done with nominalisation and hedging? Try this next:", items: [APPS.grammar, HEDGING, APPS.notes] },
     cite:     { lead: "Finished your citation practice? Try this next:", items: [APPS.nomhedge, APPS.grammar, RES_STUDENTS] }
   };

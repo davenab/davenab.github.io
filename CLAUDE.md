@@ -35,6 +35,7 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 - Live apps: `/note-taking-trainer-ted/` (Notetaking Trainer, TED edition; `/note-taking-trainer/` is now a redirect to it) `/grammar-self-correction/` (Grammar Self-Correction Trainer) and `/nominalisation-hedging-trainer/` (Nominalisation and Hedging Trainer; items in its `data/*.json`). Some apps load `/assets/site.js` (legacy theme toggle): keep that file.
 - Live apps are listed first in `APPS` in `_tools/build.py` so they lead the AI section on the home page.
 - When an app goes live, add it to `LIVE` in `_tools/build.py` (title → folder), rebuild, and add it to `/sitemap.xml`. Card skills: listen, read, write, gram, vocab.
+- **Feedback-to-Mastery Coach** (flagship, featured on the home page right after the hero, `#coach`): an AI tutor that turns teacher feedback into lessons. It runs as a Claude artifact at `COACH_URL` in `_tools/build.py` (students sign in with a free Claude account; AI usage is on their own account). Source: `_tools/feedback-coach/curriculum.js` (vetted lessons) + `app.html` (app); combine them into `coach.html` by replacing `/*CURRICULUM*/` with the curriculum, then republish the artifact to the same URL. Its site page is `/feedback-coach/` (generated). The artifact must be shared publicly from its Share menu on claude.ai.
 - Planned apps: dictogloss, skim-and-scan timer, paragraph X-ray, synthesis builder, register swapper.
 
 ## Resources
