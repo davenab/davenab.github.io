@@ -11,6 +11,8 @@ PAY_WRITING = "https://www.paypal.com/ncp/payment/GRJE2W72TS2LC"
 PAY_GE = "https://www.paypal.com/ncp/payment/UWDH5M4MPMHYU"
 PAY_HEDGING = "https://www.paypal.com/ncp/payment/TYYAE8VP9CW2U"
 SITE = "https://davenab.com/"
+import hashlib
+ASSET_V = hashlib.md5((open("assets/style.css","rb").read()+open("assets/app.js","rb").read())).hexdigest()[:8]  # cache-busting
 COACH_URL = "https://claude.ai/artifact/U8aWTwYD84iMXthwhTXHYg"  # Feedback-to-Mastery Coach (Claude artifact; source in _tools/feedback-coach/)
 
 I = {
@@ -154,7 +156,7 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{P}assets/style.css">
+<link rel="stylesheet" href="{P}assets/style.css?v={ASSET_V}">
 {extra_head}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -217,7 +219,7 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
     </div>
   </div>
 </footer>
-<script src="{P}assets/app.js"></script>{extra_foot.replace("{P}",P)}
+<script src="{P}assets/app.js?v={ASSET_V}"></script>{extra_foot.replace("{P}",P)}
 </body>
 </html>
 '''
@@ -358,29 +360,31 @@ def results_strip(L):
   </div>"""
 
 # ------------------------------------------------------------------ HOME
-COACH_EG = [
- ("“Improve cohesion.”", "Shows the parts of cohesion with examples, so you can recognise which one is your problem.", "Broad comment"),
- ("“Your reference words are unclear.”", "Goes straight to a lesson on using it, this and they clearly.", "Specific comment"),
- ("“This needs more work.”", "Shows what the comment could mean and offers a two-minute check to find out.", "Vague comment"),
-]
-COACH_STEPS = [("Paste the comment","Copy your teacher’s feedback, with your name removed."),("Understand it","Plain-English explanation of what the teacher means."),("Find the skill","Choose from examples, not technical terms."),("Learn and practise","Short lesson, worked example, practice with hints."),("Do it alone","A new task without hints shows what you can now do.")]
+COACH_STEPS = [("Paste the comment","Your teacher’s feedback, with your name removed."),("Understand it","A plain-English explanation of what it means."),("Find the skill","Recognise it from examples, not jargon."),("Learn and practise","A short lesson, a worked example and hints."),("Do it alone","A new task, no hints: proof you can do it.")]
 def coach_band(L, full=False):
-    steps = "".join(f'<li><b>{t}</b><span>{d}</span></li>' for t, d in COACH_STEPS)
-    eg = "".join(f'<div class="ceg"><span class="ceg-k">{k}</span><q>{q}</q><p>{a}</p></div>' for q, a, k in COACH_EG)
-    more = "" if full else f'<a class="btn" href="{L('feedback-coach/')}">How it works</a>'
-    return f'''<section class="coach-band" id="coach"><div class="wrap coach-grid">
-  <div class="coach-copy">
-    <span class="eyebrow reveal">New · Free AI tutor</span>
-    <h2 class="reveal">Got feedback you don’t understand? <em>Turn it into a skill.</em></h2>
-    <p class="reveal">The Feedback-to-Mastery Coach takes a teacher’s comment like “improve cohesion” and turns it into a short, personal learning path. It teaches the skill instead of fixing your essay, so next time you can do it yourself.</p>
-    <ol class="coach-steps reveal">{steps}</ol>
-    <div class="cta reveal"><a class="btn primary" href="{COACH_URL}" target="_blank" rel="noopener">Open the coach {EXT}</a>{more}</div>
-    <p class="coach-note reveal">Free. Sign in with any email (personal or university) through a free Claude account. It opens on claude.ai.</p>
+    steps = "".join(f'<li class="cs-step"><span class="cs-n">{i+1}</span><span class="cs-t">{t}</span><span class="cs-d">{d}</span></li>' for i,(t, d) in enumerate(COACH_STEPS))
+    more = "" if full else f'<a class="btn" href="{L('feedback-coach/')}">How it works {ARR}</a>'
+    return f'''<section class="coach-band" id="coach"><div class="wrap">
+  <div class="coach-grid">
+    <div class="coach-copy">
+      <span class="eyebrow reveal">New · Free AI tutor</span>
+      <h2 class="reveal">Got feedback you don’t understand? <em>Turn it into a skill.</em></h2>
+      <p class="reveal">Paste a comment like “improve cohesion”. The coach explains it, finds the exact skill behind it and teaches it step by step. It never fixes your essay for you, so next time you can do it yourself.</p>
+      <div class="cta reveal"><a class="btn primary" href="{COACH_URL}" target="_blank" rel="noopener">Open the coach {EXT}</a>{more}</div>
+    </div>
+    <div class="cv reveal" aria-hidden="true">
+      <div class="cv-note"><span class="cv-lab">Teacher’s comment</span><span class="cv-q">Improve <u>cohesion</u> in this paragraph.</span></div>
+      <div class="cv-arrow"></div>
+      <div class="cv-card">
+        <span class="cv-lab">Which looks like your writing?</span>
+        <div class="cv-opts"><span>Linking words</span><span class="on">Reference words</span><span>Repetition</span><span>Logical order</span></div>
+        <div class="cv-lesson"><span class="cv-lab">Lesson · Referring back clearly</span><div class="cv-bar"><i></i></div>
+          <div class="cv-steps"><b class="d">Learn</b><b class="d">Check</b><b class="d">Example</b><b class="d">Practise</b><b class="n">On your own</b></div></div>
+        <div class="cv-result"><span class="cv-tick">✓</span><span><b>Demonstrated independently</b><small>New task, no hints</small></span></div>
+      </div>
+    </div>
   </div>
-  <div class="coach-demo reveal" aria-label="Examples of how the coach responds">
-    <div class="cd-head"><span class="dot"></span>What the coach does with…</div>
-    {eg}
-  </div>
+  <ol class="cs reveal" aria-label="How the coach works">{steps}</ol>
 </div></section>'''
 
 def home(L):

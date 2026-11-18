@@ -240,6 +240,7 @@ document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", 
 }));
 
 function banner() {
+  if (S.screen !== "lesson") return "";
   if (SAMPLE === undefined) return "";
   if (aiReady()) return "";
   const why = AI_OFF_REASON === "declined"
@@ -247,8 +248,44 @@ function banner() {
     : "Personalised AI feedback works when you open this page on claude.ai and sign in with a free Claude account.";
   return `<div class="banner" role="status"><b>AI feedback is off in this view</b><span>${why} The lessons, examples and quick checks still work, and you can check your own writing against a checklist.</span></div>`;
 }
-function rerenderSoft() { if (document.readyState !== "loading" && $("#app") && $("#app").firstChild) render(); }
+function rerenderSoft() { if (S.screen === "signin" && aiReady() && PENDING) { const f = PENDING; PENDING = null; return f(); } if (document.readyState !== "loading" && $("#app") && $("#app").firstChild) render(); }
+const COACH_LINK = "https://claude.ai/artifact/U8aWTwYD84iMXthwhTXHYg";
+function offBox() {
+  const framed = (() => { try { return window.top !== window; } catch (e) { return true; } })();
+  const why = AI_OFF_REASON === "declined" ? "You chose not to allow this page to use Claude, so it can’t check answers. Reload the page and choose Allow when asked."
+    : !framed ? "This copy of the page isn’t running inside Claude, so it can’t check answers."
+    : "Claude isn’t connected in this view. You may not be signed in, or your account may not allow AI features in shared pages.";
+  return `<div class="banner" role="status"><b>Your answer can’t be checked automatically right now</b><span>${why}</span>
+    <span>To get feedback: sign in at claude.ai (free, any email), open the coach from <a href="${COACH_LINK}" target="_blank" rel="noopener">this link ↗</a>, and choose <b>Allow</b> when Claude asks.</span>
+    <span class="small">Until then, check your own answer: tick each point only if your answer really meets it.</span></div>`;
+}
 function refreshBanner() { const b = $("#ai-banner"); if (b) b.innerHTML = banner(); }
+
+/* ------------------------------------------------------------------ sign-in gate
+   Browsing (home, skills list, about, progress) is open. Any activity needs Claude connected. */
+let PENDING = null;
+function gate(fn) {
+  if (aiReady()) return fn();
+  PENDING = fn;
+  go("signin");
+}
+function signin() {
+  if (SAMPLE === undefined) return `<span class="eyebrow">Connecting</span><h2>Connecting to Claude</h2><div class="card"><p class="thinking">Checking whether you’re signed in</p></div>`;
+  const declined = AI_OFF_REASON === "declined";
+  return `<span class="eyebrow">One step before you start</span>
+  <h2>${declined ? "Allow the coach to use Claude" : "Sign in to Claude to start"}</h2>
+  <p class="lead">The coach uses Claude to read your teacher’s feedback, check your answers and explain what to fix. ${declined ? "You chose not to allow this, so the activities can’t run." : "It’s free, and any email works: personal, Gmail or university."}</p>
+  <div class="card"><ol class="strat">
+    ${declined ? `<li>Reload this page.</li><li>Start an activity and choose <b>Allow</b> when Claude asks.</li>`
+    : `<li><a href="https://claude.ai/login" target="_blank" rel="noopener">Sign in or create a free Claude account ↗</a></li>
+       <li>Come back and open the coach from <a href="${COACH_LINK}" target="_blank" rel="noopener">this link ↗</a> (or reload this page).</li>
+       <li>When Claude asks if the coach can use Claude, choose <b>Allow</b>. Feedback uses your own free Claude allowance.</li>`}
+  </ol>
+  <div class="row"><a class="btn primary" href="${declined ? COACH_LINK : "https://claude.ai/login"}" target="_blank" rel="noopener">${declined ? "Open the coach again ↗" : "Sign in to Claude ↗"}</a><button class="btn" data-act="recheck">I’ve signed in. Try again</button></div>
+  <p class="small muted" id="recheck-msg" aria-live="polite"></p></div>
+  <div class="quiet small"><b>Why sign in?</b><span>Without Claude, the coach can’t check your writing or give you feedback, which is how you learn the skill. Your progress is saved only on your device, and Dave can’t see what you type.</span></div>
+  <button class="btn ghost" data-go2="skills">← Browse the skills first</button>`;
+}
 
 /* ------------------------------------------------------------------ render router */
 function render() {
@@ -256,7 +293,7 @@ function render() {
     const on = (b.dataset.go === S.screen) || (b.dataset.go === "skills" && S.screen === "menu" && S.menu && S.menu.kind === "all");
     b.toggleAttribute("aria-current", false); if (on) b.setAttribute("aria-current", "page");
   });
-  const v = { home, intake, areas, menu, diag, confirm: confirmScr, lesson, progress, about }[S.screen] || home;
+  const v = { home, intake, areas, menu, diag, confirm: confirmScr, lesson, progress, about, signin }[S.screen] || home;
   $("#app").innerHTML = `<div id="ai-banner">${banner()}</div>` + `<section class="screen">${v()}</section>`;
   bind();
 }
@@ -269,6 +306,7 @@ function home() {
     <span class="eyebrow">For EAP and university students</span>
     <h1>Turn your teacher’s feedback into <em>skills</em> you can use.</h1>
     <p class="lead">Paste a comment from your teacher. The coach explains what it means, helps you find the exact skill behind it, and takes you through short lessons and practice until you can do it on your own. It won’t write your assignment for you.</p>
+    ${aiReady() ? "" : `<p class="small muted">Free. You’ll be asked to sign in to Claude (any email) when you start an activity, so the coach can give you feedback.</p>`}
     <div class="journey" aria-label="How it works"><span>Teacher feedback</span><i>→</i><span>What it means</span><i>→</i><span>The skill behind it</span><i>→</i><span>Practice</span><i>→</i><span>You can do it alone</span></div>
   </div>
   <div class="grid2">
@@ -325,7 +363,7 @@ function menu() {
   if (M.kind === "all") {
     head = `<span class="eyebrow">Choose a skill</span><h2>What would you like to practise?</h2><p class="muted">Each skill has a short lesson, practice and an independent task. Choose one to start.</p>`;
     return head + Object.entries(MODULES).map(([mid, m]) => `<div class="card"><h3>${esc(m.name)}</h3><p class="small muted">${esc(m.intro)}</p><div style="display:grid;gap:8px">${m.lessons.map(id => { const l = LESSONS[id]; const st = DB.skills[id]; return `<div class="row" style="justify-content:space-between;border-top:1px solid var(--border);padding-top:8px"><span><b>${esc(l.name)}</b> <span class="small muted">(${esc(l.tech)})</span>${st ? ` <span class="tag ${st.level === "demonstrated" ? "ok" : "warn"}">${esc(levelName(st.level))}</span>` : ""}<br><span class="small muted">${esc(l.short)}</span></span><button class="btn sm" data-start="${id}">Start</button></div>`; }).join("")}</div></div>`).join("")
-      + `<div class="card"><h3>Other areas <span class="tag ai">AI-built lessons</span></h3><p class="small muted">These lessons are created by the AI coach using the same steps. They have not yet been reviewed by Dave.</p><div style="display:grid;gap:8px">${OTHER.map(o => `<div class="row" style="justify-content:space-between;border-top:1px solid var(--border);padding-top:8px"><span><b>${esc(o.name)}</b><br><span class="small muted">${esc(o.explain)}</span></span><button class="btn sm" data-other="${o.id}" ${aiReady() ? "" : "disabled"}>Choose</button></div>`).join("")}</div></div>`;
+      + `<div class="card"><h3>Other areas <span class="tag ai">AI-built lessons</span></h3><p class="small muted">These lessons are created by the AI coach using the same steps. They have not yet been reviewed by Dave.</p><div style="display:grid;gap:8px">${OTHER.map(o => `<div class="row" style="justify-content:space-between;border-top:1px solid var(--border);padding-top:8px"><span><b>${esc(o.name)}</b><br><span class="small muted">${esc(o.explain)}</span></span><button class="btn sm" data-other="${o.id}">Choose</button></div>`).join("")}</div></div>`;
   }
   if (M.kind === "module") {
     const m = MODULES[M.module];
@@ -467,8 +505,8 @@ function stGuided() {
   const ownToggle = G.own
     ? `<label class="lab" for="ownx">Your own extract (one short paragraph, personal details removed)</label><textarea id="ownx" rows="4">${esc(G.text === l.task.text ? "" : G.text)}</textarea><button class="btn sm" data-act="ownUse">Use this extract</button>`
     : `<button class="btn ghost sm" data-act="ownOn">Practise on a short extract from my own writing instead</button>`;
-  const selfCheck = !aiReady() ? `<div class="quiet"><b>Check your own answer</b><span class="small">AI feedback is off, so compare your answer with this checklist.</span>${l.criteria.map((c, i) => `<label class="row small"><input type="checkbox" data-self="${i}"> ${esc(c)}</label>`).join("")}<button class="btn sm" data-act="selfDone">I’ve checked my answer</button></div>` : "";
-  return `<div class="card"><h3>Practise with support</h3><p>${esc(G.instr)}</p><div class="task">${esc(G.text)}</div>
+  const selfCheck = !aiReady() ? `<div class="quiet"><b>Self-check</b>${l.criteria.map((c, i) => `<label class="row small"><input type="checkbox" class="selfbox"> ${esc(c)}</label>`).join("")}<button class="btn sm" data-act="selfDone" id="selfbtn" disabled>${G.self ? "Self-check recorded ✓" : "Record my self-check"}</button></div>` : "";
+  return `${aiReady() ? "" : offBox()}<div class="card"><h3>Practise with support</h3><p>${esc(G.instr)}</p><div class="task">${esc(G.text)}</div>
     <div class="row">${ownToggle}</div>
     <label class="lab" for="gans">Your answer</label><textarea id="gans" rows="6" placeholder="Write your revised version here.">${esc(G.answer)}</textarea>
     <div class="row">${aiReady() ? `<button class="btn primary" data-act="gCheck" ${G.busy ? "disabled" : ""}>${G.busy ? '<span class="thinking">Checking</span>' : "Check my answer"}</button><button class="btn" data-act="gHint" ${G.busy || G.hints >= 3 ? "disabled" : ""}>Give me a hint${G.hints ? ` (${G.hints}/3)` : ""}</button>` : `<button class="btn" data-act="gHint" ${G.hints >= l.strategy.length ? "disabled" : ""}>Give me a hint</button>`}</div>
@@ -484,8 +522,8 @@ function stIndep() {
   const L = S.L, I = L.ind, l = L.l;
   if (!I.task) return I.err ? `<div class="card"><h3>On your own</h3><p>${esc(I.err)}</p><div class="row"><button class="btn primary" data-act="again">Try again</button><button class="btn ghost" data-act="prev">← Back</button></div></div>` : `<div class="card"><h3>On your own</h3><p class="thinking">Preparing a new task for you</p></div>`;
   const r = I.result;
-  const selfCheck = !aiReady() && !r ? `<div class="quiet"><b>Check your own answer</b>${l.criteria.map((c, i) => `<label class="row small"><input type="checkbox" data-iself="${i}"> ${esc(c)}</label>`).join("")}<button class="btn sm" data-act="iSelf">Record my self-check</button></div>` : "";
-  return `<div class="card"><h3>On your own</h3>
+  const selfCheck = !aiReady() && !r ? `<div class="quiet"><b>Self-check</b>${l.criteria.map((c, i) => `<label class="row small"><input type="checkbox" class="selfbox"> ${esc(c)}</label>`).join("")}<button class="btn sm" data-act="iSelf" id="selfbtn" disabled>Record my self-check</button></div>` : "";
+  return `${aiReady() ? "" : offBox()}<div class="card"><h3>On your own</h3>
     <p class="muted small">This is a new task. There are no hints this time, so you can see what you can do independently.</p>
     <p>${esc(I.task.instr)}</p><div class="task">${esc(I.task.text)}</div>
     <label class="lab" for="ians">Your answer</label><textarea id="ians" rows="6" ${r ? "readonly" : ""}>${esc(I.answer)}</textarea>
@@ -728,21 +766,21 @@ function finishLesson(level) {
 function bind() {
   const app = $("#app");
   app.querySelectorAll("[data-act]").forEach(b => b.addEventListener("click", e => { e.preventDefault(); ACT[b.dataset.act] && ACT[b.dataset.act](b); }));
-  app.querySelectorAll("[data-try]").forEach(b => b.addEventListener("click", () => { S.feedback = b.dataset.try; go("intake"); setTimeout(() => ACT.classify(), 0); }));
+  app.querySelectorAll("[data-try]").forEach(b => b.addEventListener("click", () => gate(() => { S.feedback = b.dataset.try; go("intake"); setTimeout(() => ACT.classify(), 0); })));
   app.querySelectorAll("[data-item]").forEach(b => b.addEventListener("click", () => {
     const i = +b.dataset.item, it = S.items[i];
     DB.goals = DB.goals.filter(g => g.quote !== it.quote);
     S.items.forEach((x, k) => { if (k !== i && !DB.goals.some(g => g.quote === x.quote)) DB.goals.push(x); });
     save(); routeItem(it);
   }));
-  app.querySelectorAll("[data-goal]").forEach(b => b.addEventListener("click", () => { const g = DB.goals.splice(+b.dataset.goal, 1)[0]; save(); routeItem(g); }));
+  app.querySelectorAll("[data-goal]").forEach(b => b.addEventListener("click", () => gate(() => { const g = DB.goals.splice(+b.dataset.goal, 1)[0]; save(); routeItem(g); })));
   app.querySelectorAll("[data-dropgoal]").forEach(b => b.addEventListener("click", () => { DB.goals.splice(+b.dataset.dropgoal, 1); save(); render(); }));
-  app.querySelectorAll("[data-start]").forEach(b => b.addEventListener("click", () => startLesson(b.dataset.start)));
+  app.querySelectorAll("[data-start]").forEach(b => b.addEventListener("click", () => gate(() => startLesson(b.dataset.start))));
   app.querySelectorAll("[data-go2]").forEach(b => b.addEventListener("click", () => { S.item = null; S.menu = { kind: "all" }; go("menu"); }));
   app.querySelectorAll("[data-other]").forEach(b => b.addEventListener("click", () => {
     const o = OTHER.find(x => x.id === b.dataset.other);
     S.item = S.item || null;
-    askOtherSubskill(o);
+    gate(() => askOtherSubskill(o));
   }));
   app.querySelectorAll("[data-opt]").forEach(inp => inp.addEventListener("change", () => {
     const i = +inp.dataset.opt; inp.checked ? S.menu.sel.add(i) : S.menu.sel.delete(i);
@@ -760,8 +798,11 @@ function bind() {
     render();
   }));
   app.querySelectorAll("[data-ask]").forEach(b => b.addEventListener("click", () => askCoach(b.dataset.ask)));
-  const g = $("#gans"); if (g) g.addEventListener("input", () => { S.L.g.answer = g.value; });
-  const ia = $("#ians"); if (ia) ia.addEventListener("input", () => { S.L.ind.answer = ia.value; });
+  const selfGate = () => { const btn = $("#selfbtn"); if (!btn) return; const ans = ($("#gans") || $("#ians") || {}).value || ""; const boxes = [...app.querySelectorAll(".selfbox")]; btn.disabled = ans.trim().length < 8 || !boxes.every(x => x.checked); };
+  app.querySelectorAll(".selfbox").forEach(x => x.addEventListener("change", selfGate));
+  const g = $("#gans"); if (g) g.addEventListener("input", () => { S.L.g.answer = g.value; selfGate(); });
+  const ia = $("#ians"); if (ia) ia.addEventListener("input", () => { S.L.ind.answer = ia.value; selfGate(); });
+  if (S.L && S.L.g.self && $("#selfbtn") && $("#gans")) { app.querySelectorAll(".selfbox").forEach(x => x.checked = true); selfGate(); }
   const fb = $("#fb"); if (fb) { fb.addEventListener("input", () => { S.feedback = fb.value; }); if (!S.feedback) fb.focus(); }
   const aq = $("#askq"); if (aq) { aq.addEventListener("input", () => { S.L.ask.q = aq.value; }); aq.addEventListener("keydown", e => { if (e.key === "Enter") ACT.askSend(); }); }
 }
@@ -831,7 +872,12 @@ Student's message: """${q}"""`;
 }
 
 const ACT = {
-  routeA() { S.item = null; go("intake"); },
+  routeA() { gate(() => { S.item = null; go("intake"); }); },
+  recheck() {
+    const m = $("#recheck-msg");
+    if (aiReady() && PENDING) { const f = PENDING; PENDING = null; return f(); }
+    if (m) m.textContent = AI_OFF_REASON === "declined" ? "Reload the page, then choose Allow when Claude asks." : "Still not connected. Make sure you’re signed in at claude.ai, then reload this page or open the coach link again.";
+  },
   routeB() { S.item = null; S.menu = { kind: "all" }; go("menu"); },
   async classify() {
     const fb = (S.feedback || "").trim(), st = $("#cls-status"), btn = document.querySelector('[data-act="classify"]');
@@ -849,7 +895,7 @@ const ACT = {
     S.items = items;
     if (items.length > 1) go("areas"); else routeItem(items[0]);
   },
-  menuStart() {
+  menuStart() { if (!aiReady()) return gate(() => ACT.menuStart());
     const sel = [...S.menu.sel].sort((a, b) => a - b).map(i => S.menu.opts[i]);
     if (!sel.length) return;
     sel.slice(1).forEach(o => { const q = (S.item && S.item.quote ? S.item.quote + " → " : "") + o.label; if (!DB.goals.some(g => g.quote === q)) DB.goals.push({ quote: q, route: o.id ? "explicit" : "explicit", module: o.id ? modOf(o.id) : (o.other || "none"), lessons: o.id ? [o.id] : [], options: o.id ? [] : [o], summary: "" }); });
@@ -859,7 +905,7 @@ const ACT = {
     else if (aiReady()) buildAiLesson(o.label, o.tech, (OTHER.find(x => x.id === o.other) || {}).name || S.menu.area || "academic English");
     else { alertBox("This area needs AI feedback, which is off in this view. Choose one of the core skills instead."); }
   },
-  diagStart() {
+  diagStart() { if (!aiReady()) return gate(() => ACT.diagStart());
     let ids = (S.menu.opts || []).map(o => o.id).filter(id => id && LESSONS[id]);
     if (S.menu.kind === "all" || !ids.length) ids = ["coh.reference", "coh.conjunction", "coh.coherence", "para.patchwriting", "pdev.topic", "pdev.interpret"];
     ids = ids.slice(0, 6);
