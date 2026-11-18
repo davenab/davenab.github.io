@@ -264,6 +264,12 @@ function refreshBanner() { const b = $("#ai-banner"); if (b) b.innerHTML = banne
 /* ------------------------------------------------------------------ sign-in gate
    Browsing (home, skills list, about, progress) is open. Any activity needs Claude connected. */
 let PENDING = null;
+const LOGIN_URL = "https://claude.ai/login?returnTo=" + encodeURIComponent("/artifact/U8aWTwYD84iMXthwhTXHYg");
+/* After the student clicks Sign in (opens a new tab), reload this tab as soon as they come back to it. */
+let AWAIT_LOGIN = false;
+document.addEventListener("click", e => { if (e.target.closest && e.target.closest("[data-login]")) { AWAIT_LOGIN = true; try { sessionStorage.setItem("ftm-resume", "1"); } catch (x) {} } }, true);
+document.addEventListener("visibilitychange", () => { if (AWAIT_LOGIN && document.visibilityState === "visible") { AWAIT_LOGIN = false; const m = document.getElementById("recheck-msg"); if (m) m.textContent = "Welcome back. Reconnecting…"; setTimeout(() => location.reload(), 400); } });
+window.addEventListener("focus", () => { if (AWAIT_LOGIN) { AWAIT_LOGIN = false; setTimeout(() => location.reload(), 400); } });
 function gate(fn) {
   if (aiReady()) return fn();
   PENDING = fn;
@@ -277,11 +283,11 @@ function signin() {
   <p class="lead">The coach uses Claude to read your teacher’s feedback, check your answers and explain what to fix. ${declined ? "You chose not to allow this, so the activities can’t run." : "It’s free, and any email works: personal, Gmail or university."}</p>
   <div class="card"><ol class="strat">
     ${declined ? `<li>Reload this page.</li><li>Start an activity and choose <b>Allow</b> when Claude asks.</li>`
-    : `<li><a href="https://claude.ai/login" target="_blank" rel="noopener">Sign in or create a free Claude account ↗</a></li>
-       <li>Come back and open the coach from <a href="${COACH_LINK}" target="_blank" rel="noopener">this link ↗</a> (or reload this page).</li>
+    : `<li><a data-login href="${LOGIN_URL}" target="_blank" rel="noopener">Sign in or create a free Claude account ↗</a> (opens a new tab)</li>
+       <li>When you’ve signed in, close that tab and come back here. This page reloads by itself.</li>
        <li>When Claude asks if the coach can use Claude, choose <b>Allow</b>. Feedback uses your own free Claude allowance.</li>`}
   </ol>
-  <div class="row"><a class="btn primary" href="${declined ? COACH_LINK : "https://claude.ai/login"}" target="_blank" rel="noopener">${declined ? "Open the coach again ↗" : "Sign in to Claude ↗"}</a><button class="btn" data-act="recheck">I’ve signed in. Try again</button></div>
+  <div class="row"><a class="btn primary" ${declined ? "" : "data-login"} href="${declined ? COACH_LINK : LOGIN_URL}" target="_blank" rel="noopener">${declined ? "Open the coach again ↗" : "Sign in to Claude ↗"}</a><button class="btn" data-act="recheck">I’ve signed in. Try again</button></div>
   <p class="small muted" id="recheck-msg" aria-live="polite"></p>
   <p class="small muted">Connection details: ${(() => { let f; try { f = window.top !== window; } catch (e) { f = true; } return (f ? "inside Claude" : "not inside Claude (opened as a separate page)") + " · runtime " + (window.claude ? "found" : "missing") + " · AI " + (AI_OFF_REASON || "unavailable"); })()}</p></div>
   <div class="quiet small"><b>Why sign in?</b><span>Without Claude, the coach can’t check your writing or give you feedback, which is how you learn the skill. Your progress is saved only on your device, and Dave can’t see what you type.</span></div>
