@@ -211,7 +211,7 @@
     }
     if (/\bpp\. \d/.test(t)) {
       if (hasP && !hasPP) add("The quotation runs over more than one page, so use pp.");
-      else if (!hasPP) add("Add the pages: " + (t.match(/pp\. [\d-]+/) || ["pp. 12-13"])[0].replace("-", "–") + ".");
+      else if (!hasPP) add("Add the pages: " + (t.match(/pp\. [\d-]+/) || ["pp. 12-13"])[0] + ".");
     }
     if (/\bpara\. \d/.test(t)) {
       if (hasP || hasPP) add("This source has no page numbers. Use the paragraph number: " + (t.match(/para\. \d+/) || ["para. 4"])[0] + ".");

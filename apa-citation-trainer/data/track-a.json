@@ -329,74 +329,6 @@
           "verified": false
         },
         {
-          "id": "A1-10",
-          "track": "A",
-          "stage": 1,
-          "type": "choice",
-          "topic": "same-author-year",
-          "sourceCards": [
-            {
-              "authors": [
-                "Sato, Y."
-              ],
-              "year": "2020",
-              "title": "Sleep and memory in teenagers",
-              "type": "Journal article",
-              "idea": "Teenagers who sleep less remember fewer new words."
-            }
-          ],
-          "prompt": "Sato wrote two articles in 2020. In your reference list, this one is 2020b. Which citation is correct?",
-          "frame": null,
-          "tiles": null,
-          "options": [
-            "(Sato, 2020b)",
-            "(Sato b, 2020)",
-            "(Sato, b2020)"
-          ],
-          "acceptedAnswers": [
-            "(Sato, 2020b)"
-          ],
-          "modelAnswers": [],
-          "rule": "Same author, same year: add a, b, c after the year, e.g. 2020a and 2020b.",
-          "errorDiagnosis": [],
-          "hint": "The letter belongs to the year.",
-          "verified": false
-        },
-        {
-          "id": "A1-11",
-          "track": "A",
-          "stage": 1,
-          "type": "choice",
-          "topic": "no-author",
-          "sourceCards": [
-            {
-              "authors": [
-                "(no author)"
-              ],
-              "year": "2022",
-              "title": "Rooftop Gardens and City Heat",
-              "type": "Web article",
-              "idea": "Rooftop gardens can reduce heat in city centres."
-            }
-          ],
-          "prompt": "This web article has no author. Which citation is correct?",
-          "frame": null,
-          "tiles": null,
-          "options": [
-            "(“Rooftop Gardens and City Heat,” 2022)",
-            "(Anonymous, 2022)",
-            "(No author, 2022)"
-          ],
-          "acceptedAnswers": [
-            "(“Rooftop Gardens and City Heat,” 2022)"
-          ],
-          "modelAnswers": [],
-          "rule": "No author: use the title (shortened if long) in place of the author. Article and web page titles go in quotation marks, with the comma inside.",
-          "errorDiagnosis": [],
-          "hint": "Move the title into the place where the author's name normally goes.",
-          "verified": false
-        },
-        {
           "id": "A1-12",
           "track": "A",
           "stage": 1,
@@ -466,40 +398,6 @@
           "rule": "40 words or more: block quotation, no quotation marks, citation after the final full stop.",
           "errorDiagnosis": [],
           "hint": "Long quotations look different on the page. Think about quotation marks and where the citation goes.",
-          "verified": false
-        },
-        {
-          "id": "A1-14",
-          "track": "A",
-          "stage": 1,
-          "type": "choice",
-          "topic": "block-quote",
-          "sourceCards": [
-            {
-              "authors": [
-                "Moreau, C."
-              ],
-              "year": "2019",
-              "title": "Reading beyond the classroom",
-              "type": "Book",
-              "where": "p. 112"
-            }
-          ],
-          "prompt": "How should a block quotation (40 words or more) end?",
-          "frame": null,
-          "tiles": null,
-          "options": [
-            "… find academic texts less frightening than those who do not. (Moreau, 2019, p. 112)",
-            "… find academic texts less frightening than those who do not (Moreau, 2019, p. 112).",
-            "… find academic texts less frightening than those who do not. (Moreau, 2019, p. 112)."
-          ],
-          "acceptedAnswers": [
-            "… find academic texts less frightening than those who do not. (Moreau, 2019, p. 112)"
-          ],
-          "modelAnswers": [],
-          "rule": "40 words or more: block quotation, no quotation marks, citation after the final full stop. There is no full stop after the citation.",
-          "errorDiagnosis": [],
-          "hint": "In a block quotation, the full stop comes before the citation.",
           "verified": false
         },
         {
@@ -799,7 +697,7 @@
               "year": "2019",
               "title": "Exams and stress",
               "type": "Book",
-              "where": "pp. 12–13",
+              "where": "pp. 12-13",
               "quote": "Stress before an exam is normal; it becomes a problem only when it stops students from preparing."
             }
           ],
@@ -817,11 +715,11 @@
             "(",
             ")",
             "Iyer",
-            "12–13"
+            "12-13"
           ],
           "options": null,
           "acceptedAnswers": [
-            "(Iyer & Brennan, 2019, pp. 12–13)"
+            "(Iyer & Brennan, 2019, pp. 12-13)"
           ],
           "modelAnswers": [],
           "rule": "A direct quotation needs a page: (Author, year, p. 15). Use pp. for a range and para. if there are no pages.",

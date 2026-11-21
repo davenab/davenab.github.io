@@ -2,48 +2,203 @@
   "_help": "The Quick guide page. Each rule has an id (used by items in their \"topic\" field), a title, the rule in one line and one example. \"track\" (A, B, C or D) decides which study links are shown with it.",
   "sections": [
     {
-      "title": "In-text basics",
+      "title": "In-text basics (use these all the time)",
       "rules": [
-        { "id": "parenthetical", "track": "A", "title": "Parenthetical citation", "rule": "Author and year both go in brackets, usually at the end of the idea. The full stop goes after the bracket.", "example": "Short study sessions help students remember more (Duarte, 2020)." },
-        { "id": "narrative", "track": "A", "title": "Narrative citation", "rule": "The author's name is part of the sentence. Only the year goes in brackets. No comma before the bracket.", "example": "Duarte (2020) found that short study sessions help students remember more." },
-        { "id": "one-author", "track": "A", "title": "One author", "rule": "Surname only (no initials), a comma, then the year.", "example": "(Okafor, 2021)" },
-        { "id": "two-authors", "track": "A", "title": "Two authors", "rule": "Use & inside brackets. Use “and” in the sentence.", "example": "(Kaur & Novak, 2020) · Kaur and Novak (2020)" },
-        { "id": "et-al", "track": "A", "title": "Three or more authors", "rule": "First author + et al. from the first citation. Full stop after “al” only. No comma before et al.", "example": "(Abebe et al., 2022) · Abebe et al. (2022)" },
-        { "id": "group-author", "track": "A", "title": "Group author with an abbreviation", "rule": "First time: full name + abbreviation in square brackets (or round brackets in a narrative citation). After that: the abbreviation only.", "example": "First: (National Centre for Urban Transport [NCUT], 2021) · Then: (NCUT, 2021)" },
-        { "id": "quote-page", "track": "A", "title": "Direct quotation", "rule": "Add the page: p. for one page, pp. for a range, para. if there are no page numbers.", "example": "(Halvorsen, 2016, p. 88) · (Iyer & Brennan, 2019, pp. 12–13) · (Zhou, 2023, para. 6)" },
-        { "id": "block-quote", "track": "A", "title": "Quotation of 40 words or more", "rule": "Block format: start on a new line, indent the whole quotation, no quotation marks. The citation goes after the final full stop, with no full stop after it.", "example": "… than those who do not. (Moreau, 2019, p. 112)" },
-        { "id": "multiple-works", "track": "A", "title": "Several works in one bracket", "rule": "Alphabetical order by the first author's surname, separated by semicolons.", "example": "(Delgado, 2018; Mwangi, 2021)" },
-        { "id": "same-author-year", "track": "A", "title": "Same author, same year", "rule": "Add a, b, c after the year. The letters follow the order in your reference list.", "example": "(Sato, 2020a) · (Sato, 2020b)" },
-        { "id": "no-date", "track": "A", "title": "No date", "rule": "Write n.d. (two full stops) in place of the year.", "example": "(Varga, n.d.)" },
-        { "id": "no-author", "track": "A", "title": "No author", "rule": "Use the title (shortened if long) in place of the author. Article and web page titles go in quotation marks.", "example": "(“Rooftop Gardens and City Heat,” 2022)" },
-        { "id": "paraphrase-page", "track": "A", "title": "Page numbers for a paraphrase", "rule": "APA: a page number for a paraphrase is optional (but helpful). Your course's setting is shown below.", "example": "(Larsen, 2017) · (Larsen, 2017, p. 31)" }
+        {
+          "id": "parenthetical",
+          "track": "A",
+          "title": "Parenthetical citation",
+          "rule": "Author and year both go in brackets, straight after the idea, usually at the end of the sentence. The full stop goes after the bracket.",
+          "example": "Short study sessions help students remember more (Duarte, 2020)."
+        },
+        {
+          "id": "narrative",
+          "track": "A",
+          "title": "Narrative citation",
+          "rule": "The author's name is part of the sentence. Only the year goes in brackets. No comma before the bracket.",
+          "example": "Duarte (2020) found that short study sessions help students remember more."
+        },
+        {
+          "id": "one-author",
+          "track": "A",
+          "title": "One author",
+          "rule": "Surname only (no initials), a comma, then the year.",
+          "example": "(Okafor, 2021)"
+        },
+        {
+          "id": "two-authors",
+          "track": "A",
+          "title": "Two authors",
+          "rule": "Use & inside brackets. Use “and” in the sentence.",
+          "example": "(Kaur & Novak, 2020) · Kaur and Novak (2020)"
+        },
+        {
+          "id": "et-al",
+          "track": "A",
+          "title": "Three or more authors",
+          "rule": "First author + et al. from the first citation. Full stop after “al” only. No comma before et al.",
+          "example": "(Abebe et al., 2022) · Abebe et al. (2022)"
+        },
+        {
+          "id": "group-author",
+          "track": "A",
+          "title": "Group author with an abbreviation",
+          "rule": "Use the organisation's name when there is no person as author (common for reports and websites). First time: full name + abbreviation in square brackets. After that: the abbreviation only.",
+          "example": "First: (National Centre for Urban Transport [NCUT], 2021) · Then: (NCUT, 2021)"
+        },
+        {
+          "id": "quote-page",
+          "track": "A",
+          "title": "Direct quotation",
+          "rule": "A direct quotation needs a page: p. for one page, pp. for a range, para. if there are no page numbers (web pages).",
+          "example": "(Halvorsen, 2016, p. 88) · (Iyer & Brennan, 2019, pp. 12-13) · (Zhou, 2023, para. 6) · Halvorsen (2016, p. 88) stated that “…”"
+        },
+        {
+          "id": "multiple-works",
+          "track": "A",
+          "title": "Several works in one bracket",
+          "rule": "Alphabetical order by the first author's surname, separated by semicolons.",
+          "example": "(Delgado, 2018; Mwangi, 2021)"
+        },
+        {
+          "id": "no-date",
+          "track": "A",
+          "title": "No date",
+          "rule": "Write n.d. (two full stops) in place of the year.",
+          "example": "(Varga, n.d.)"
+        },
+        {
+          "id": "paraphrase-page",
+          "track": "A",
+          "title": "Page numbers for a paraphrase",
+          "rule": "APA: a page number for a paraphrase is optional (but helpful). Your course's setting is shown below.",
+          "example": "(Larsen, 2017) · (Larsen, 2017, p. 31)"
+        }
+      ]
+    },
+    {
+      "title": "Less common cases (look these up when you need them)",
+      "rules": [
+        {
+          "id": "block-quote",
+          "track": "A",
+          "title": "Quotation of 40 words or more",
+          "rule": "Try not to use long quotations. If you must: start on a new line, indent the whole quotation, no quotation marks. The citation goes after the final full stop, with no full stop after it.",
+          "example": "… than those who do not. (Moreau, 2019, p. 112)"
+        },
+        {
+          "id": "same-author-year",
+          "track": "A",
+          "title": "Same author, same year",
+          "rule": "Add a, b, c after the year. The letters follow the order in your reference list.",
+          "example": "(Sato, 2020a) · (Sato, 2020b)"
+        },
+        {
+          "id": "no-author",
+          "track": "A",
+          "title": "No author",
+          "rule": "First check if an organisation is the author. If there is really no author, use the title (shortened if long) in place of the author. Check your course guide for the exact punctuation.",
+          "example": "(“Rooftop Gardens and City Heat,” 2022)"
+        }
       ]
     },
     {
       "title": "Secondary citation (“as cited in”)",
       "rules": [
-        { "id": "secondary-format", "track": "B", "title": "How to write it", "rule": "The original author first, then “as cited in” and the source you actually read. If the original year is unknown, leave it out.", "example": "(Varga, 2014, as cited in Osei, 2021) · Varga (2014, as cited in Osei, 2021) found … · (Mwangi, as cited in Halvorsen, 2022)" },
-        { "id": "secondary-reflist", "track": "B", "title": "Reference list", "rule": "Only the source you actually read goes in the reference list.", "example": "You wrote (Varga, 2014, as cited in Osei, 2021): only Osei (2021) goes in the reference list." },
-        { "id": "secondary-when", "track": "B", "title": "When to use it", "rule": "Only when you cannot get the original (e.g. it is out of print or in a language you cannot read). Reading the original is better.", "example": "The library has Varga's article online → read it and cite Varga (2014) directly." }
+        {
+          "id": "secondary-format",
+          "track": "B",
+          "title": "How to write it",
+          "rule": "The original author first, then “as cited in” and the source you actually read. If the original year is unknown, leave it out.",
+          "example": "(Varga, 2014, as cited in Osei, 2021) · Varga (2014, as cited in Osei, 2021) found … · (Mwangi, as cited in Halvorsen, 2022)"
+        },
+        {
+          "id": "secondary-reflist",
+          "track": "B",
+          "title": "Reference list",
+          "rule": "Only the source you actually read goes in the reference list.",
+          "example": "You wrote (Varga, 2014, as cited in Osei, 2021): only Osei (2021) goes in the reference list."
+        },
+        {
+          "id": "secondary-when",
+          "track": "B",
+          "title": "When to use it",
+          "rule": "Only when you cannot get the original (e.g. it is out of print or in a language you cannot read). Reading the original is better.",
+          "example": "The library has Varga's article online → read it and cite Varga (2014) directly."
+        }
       ]
     },
     {
       "title": "Reporting verbs",
       "rules": [
-        { "id": "verb-strength", "track": "C", "title": "Strength and stance", "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.", "example": "Petrova (2021) suggested … · Haddad (2019) argued … · Duarte (2022) found …" },
-        { "id": "verb-fair", "track": "C", "title": "Represent the author fairly", "rule": "Choose a verb that matches what the author did: found evidence, gave an opinion, described, or made a careful proposal. Avoid “says” for everything.", "example": "An experiment → showed. A careful idea → suggested. A strong opinion → argued." },
-        { "id": "verb-grammar", "track": "C", "title": "Grammar after the verb", "rule": "Some verbs take a that-clause (argue that, find that). Some take a noun phrase (describe the process, discuss the effects). Do not write “discuss about” or “suggest to”.", "example": "Okafor (2020) described the process of applying for a visa." },
-        { "id": "according-to", "track": "C", "title": "According to", "rule": "“According to Author (year), …” already reports the idea. Do not add a reporting verb.", "example": "According to Haddad (2019), cities need more green space." },
-        { "id": "verb-agreement", "track": "C", "title": "Agreement", "rule": "One author: singular verb (argues, has argued). Two authors or et al.: plural verb (argue, have argued).", "example": "Moreau (2019) argues … · Abebe et al. (2022) show …" },
-        { "id": "verb-tense", "track": "C", "title": "Tense", "rule": "APA prefers the past or present perfect for reporting (argued, has argued). Some courses teach the present simple. Follow your course's setting below.", "example": "Moreau (2019) argued … · Moreau (2019) argues …" }
+        {
+          "id": "verb-strength",
+          "track": "C",
+          "title": "Strength and stance",
+          "rule": "Tentative: suggest, propose. Neutral: state, report, note, describe. Strong: argue, claim, assert, maintain. Findings: find, show, demonstrate.",
+          "example": "Petrova (2021) suggested … · Haddad (2019) argued … · Duarte (2022) found …"
+        },
+        {
+          "id": "verb-fair",
+          "track": "C",
+          "title": "Represent the author fairly",
+          "rule": "Choose a verb that matches what the author did: found evidence, gave an opinion, described, or made a careful proposal. Avoid “says” for everything.",
+          "example": "An experiment → showed. A careful idea → suggested. A strong opinion → argued."
+        },
+        {
+          "id": "verb-grammar",
+          "track": "C",
+          "title": "Grammar after the verb",
+          "rule": "Some verbs take a that-clause (argue that, find that). Some take a noun phrase (describe the process, discuss the effects). Do not write “discuss about” or “suggest to”.",
+          "example": "Okafor (2020) described the process of applying for a visa."
+        },
+        {
+          "id": "according-to",
+          "track": "C",
+          "title": "According to",
+          "rule": "“According to Author (year), …” already reports the idea. Do not add a reporting verb.",
+          "example": "According to Haddad (2019), cities need more green space."
+        },
+        {
+          "id": "verb-agreement",
+          "track": "C",
+          "title": "Agreement",
+          "rule": "One author: singular verb (argues, has argued). Two authors or et al.: plural verb (argue, have argued).",
+          "example": "Moreau (2019) argues … · Abebe et al. (2022) show …"
+        },
+        {
+          "id": "verb-tense",
+          "track": "C",
+          "title": "Tense",
+          "rule": "APA prefers the past or present perfect for reporting (argued, has argued). Some courses teach the present simple. Follow your course's setting below.",
+          "example": "Moreau (2019) argued … · Moreau (2019) argues …"
+        }
       ]
     },
     {
       "title": "Variety in citing",
       "rules": [
-        { "id": "pattern-choice", "track": "D", "title": "Author-first or idea-first?", "rule": "Author-first (narrative) puts the focus on who said it and lets you choose a reporting verb. Idea-first (parenthetical) puts the focus on the idea.", "example": "Mensah (2022) found that … · … more on phones (Mensah, 2022)." },
-        { "id": "pattern-variety", "track": "D", "title": "Patterns to mix", "rule": "Do not end every sentence with (Author, year). Mix several patterns.", "example": "Lee (2020) argues that … · According to Lee (2020), … · As Lee (2020) notes, … · A study by Lee (2020) found … · … (Lee, 2020)." },
-        { "id": "combine-sources", "track": "D", "title": "Combining sources that agree", "rule": "Cite both in one bracket (alphabetical order, semicolon), or name both in the sentence.", "example": "(Mwangi, 2019; Tran, 2021) · Both Mwangi (2019) and Tran (2021) found …" }
+        {
+          "id": "pattern-choice",
+          "track": "D",
+          "title": "Author-first or idea-first?",
+          "rule": "Author-first (narrative) puts the focus on who said it and lets you choose a reporting verb. Idea-first (parenthetical) puts the focus on the idea.",
+          "example": "Mensah (2022) found that … · … more on phones (Mensah, 2022)."
+        },
+        {
+          "id": "pattern-variety",
+          "track": "D",
+          "title": "Patterns to mix",
+          "rule": "Do not end every sentence with (Author, year). Mix several patterns.",
+          "example": "Lee (2020) argues that … · According to Lee (2020), … · As Lee (2020) notes, … · A study by Lee (2020) found … · … (Lee, 2020)."
+        },
+        {
+          "id": "combine-sources",
+          "track": "D",
+          "title": "Combining sources that agree",
+          "rule": "Cite both in one bracket (alphabetical order, semicolon), or name both in the sentence.",
+          "example": "(Mwangi, 2019; Tran, 2021) · Both Mwangi (2019) and Tran (2021) found …"
+        }
       ]
     }
   ]
