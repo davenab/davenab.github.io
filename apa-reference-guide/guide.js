@@ -137,7 +137,7 @@
     browse.hidden = !!r.length;
     count.textContent = r.length ? (r.length === 1 ? "1 match." : r.length + " matches. The best match is first.") : "No match. Try another word, or choose from the list below.";
   }
-  function note() { return '<p class="small muted guide-note">Based on the UTS APA 7th referencing guide (2025) and the University of Sydney Library APA 7th guide. Always follow your own course’s referencing guide if it is different. All example names and titles are invented.</p>'; }
+  function note() { return '<p class="small muted guide-note">Based on the APA 7th guide. Always follow your own course’s referencing guide if it is different. All example names and titles are invented.</p>'; }
 
   function viewSource(id, a, nd) {
     const src = byId(id);
@@ -156,7 +156,7 @@
     h += '<div id="out" aria-live="polite"></div>';
     h += '<section class="card"><h2>Tips</h2><ul>' + src.tips.map(t => "<li>" + fmt(t) + "</li>").join("") + "</ul>" +
       (src.authors.indexOf("three") >= 0 ? '<p class="small muted">21 or more authors? In the reference list, write the first 19, then “…”, then the last author.</p>' : "") + "</section>";
-    h += '<p class="small muted guide-note"><b>Based on:</b> ' + esc(src.ref) + ". Always follow your own course’s referencing guide if it is different. The example is invented.</p>";
+    h += '<p class="small muted guide-note">Based on the APA 7th guide. Always follow your own course’s referencing guide if it is different. The example is invented.</p>';
     h += '<div class="actions"><a class="btn" href="#/">Find another source type</a><a class="btn" href="#/layout">Reference list rules</a><a class="btn" href="../apa-citation-trainer/">Practise with APA Trainer</a></div>';
     page(h, src.title, "home");
     const update = () => {
@@ -175,7 +175,7 @@
     } else {
       const r = reference(src, a, nd);
       h += '<section class="card"><div class="row between"><h2>Pattern</h2><button class="btn small-btn" type="button" id="copyP">Copy pattern</button></div>' +
-        '<p class="ref">' + fmt(r.pattern) + '</p><p class="small muted">Words in <i>italics</i> must be in italics.</p><p class="small" id="copymsg" aria-live="polite"></p></section>' +
+        '<p class="ref">' + fmt(r.pattern) + '</p><p class="small muted">Words in <i>italics</i> must be in italics.</p><p class="small" id="copymsg" aria-live="polite"></p>' + caseNote(src, a) + "</section>" +
         '<section class="card"><h2>Example</h2><p class="ref">' + fmt(r.example) + "</p></section>";
       window.__lastPattern = r.pattern;
     }
@@ -184,6 +184,16 @@
     $("#out").innerHTML = h;
     const cp = $("#copyP");
     if (cp) cp.addEventListener("click", () => copy(window.__lastPattern, $("#copymsg")));
+  }
+  const CASE = { sentence: "Sentence case", title: "Title case", name: "As the name is written" };
+  function caseNote(src, a) {
+    const parts = (src.case || []).filter(p => !(a === "org" && p.notOrg));
+    if (!parts.length) return "";
+    return '<div class="casebox"><h3>Capital letters</h3><dl class="caselist">' + parts.map(p =>
+      "<dt>" + esc(p.part) + '</dt><dd><span class="casetag ' + p.case + '">' + CASE[p.case] + "</span> " + fmt(p.example) + "</dd>").join("") + "</dl>" +
+      '<p class="small"><b>Sentence case:</b> a capital letter only for the first word, the first word after a colon, and names (e.g. <i>Writing at university: A practical guide</i>).<br>' +
+      "<b>Title case:</b> a capital letter for every main word; small words such as <i>and, of, the, in</i> stay lower case (e.g. <i>Journal of Student Learning</i>).</p>" +
+      '<p class="small muted">A common mistake: capital letters on every word of an article, book or web page title. In the reference list, these titles use sentence case.</p></div>';
   }
   function copy(text, msg) {
     const html = fmt(text), txt = plain(text);

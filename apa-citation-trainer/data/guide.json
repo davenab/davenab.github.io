@@ -9,14 +9,16 @@
           "track": "A",
           "title": "Parenthetical citation",
           "rule": "Author and year both go in brackets, straight after the idea, usually at the end of the sentence. The full stop goes after the bracket.",
-          "example": "Short study sessions help students remember more (Duarte, 2020)."
+          "example": "Short study sessions help students remember more (Duarte, 2020).",
+          "use": "When the idea or information matters more than who said it, and for facts that several sources agree on. It keeps the focus on the content."
         },
         {
           "id": "narrative",
           "track": "A",
           "title": "Narrative citation",
           "rule": "The author's name is part of the sentence. Only the year goes in brackets. No comma before the bracket.",
-          "example": "Duarte (2020) found that short study sessions help students remember more."
+          "example": "Duarte (2020) found that short study sessions help students remember more.",
+          "use": "When the person matters: to show whose opinion or finding it is, to compare or contrast authors, or to introduce a source you will discuss. It also lets you choose a reporting verb (argued, found, suggested)."
         },
         {
           "id": "one-author",
@@ -44,28 +46,32 @@
           "track": "A",
           "title": "Group author with an abbreviation",
           "rule": "Use the organisation's name when there is no person as author (common for reports and websites). First time: full name + abbreviation in square brackets. After that: the abbreviation only.",
-          "example": "First: (National Centre for Urban Transport [NCUT], 2021) · Then: (NCUT, 2021)"
+          "example": "First: (National Centre for Urban Transport [NCUT], 2021) · Then: (NCUT, 2021)",
+          "use": "For reports, fact sheets and web pages written by an organisation, not a person."
         },
         {
           "id": "quote-page",
           "track": "A",
           "title": "Direct quotation",
           "rule": "A direct quotation needs a page: p. for one page, pp. for a range, para. if there are no page numbers (web pages).",
-          "example": "(Halvorsen, 2016, p. 88) · (Iyer & Brennan, 2019, pp. 12-13) · (Zhou, 2023, para. 6) · Halvorsen (2016, p. 88) stated that “…”"
+          "example": "(Halvorsen, 2016, p. 88) · (Iyer & Brennan, 2019, pp. 12-13) · (Zhou, 2023, para. 6) · Halvorsen (2016, p. 88) stated that “…”",
+          "use": "Only when the exact words matter: a definition, or a point made in a memorable way. Most of the time, paraphrase instead."
         },
         {
           "id": "multiple-works",
           "track": "A",
           "title": "Several works in one bracket",
           "rule": "Alphabetical order by the first author's surname, separated by semicolons.",
-          "example": "(Delgado, 2018; Mwangi, 2021)"
+          "example": "(Delgado, 2018; Mwangi, 2021)",
+          "use": "When several sources support the same point (synthesis). It shows the idea is well supported."
         },
         {
           "id": "no-date",
           "track": "A",
           "title": "No date",
           "rule": "Write n.d. (two full stops) in place of the year.",
-          "example": "(Varga, n.d.)"
+          "example": "(Varga, n.d.)",
+          "use": "Mostly for web pages. Look for a “published” or “last updated” date first; do not use the copyright year."
         },
         {
           "id": "paraphrase-page",

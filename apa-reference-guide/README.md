@@ -7,7 +7,8 @@ Students search for their source type (or choose it from the "Most used" and "Al
 - the **pattern** (with a "Copy pattern" button that keeps the italics where the browser allows),
 - an **example** (all names and titles are invented),
 - the **in-text citations** (in brackets and in the sentence; first time and after that for organisations),
-- short **tips**, and which guide section it is based on.
+- a **Capital letters** note (which parts use sentence case and which use title case),
+- short **tips**.
 
 There is also a **Reference list rules** page (order, hanging indent, capitals, italics) with a sample list.
 
@@ -53,7 +54,8 @@ Inside patterns and examples:
 | `orgPattern`, `orgExample` | A different pattern when an organisation is the author (e.g. no website name when it is the same as the author). |
 | `none` | The pattern, example and in-text forms when there is no author. |
 | `tips` | Short tips (a list). |
-| `ref` | The guide section it is based on (shown on the page). |
+| `case` | The Capital letters note under the pattern: each part of the reference and whether it uses `"sentence"` case, `"title"` case or `"name"` (written as the name is written), with an example. |
+| `ref` | The guide section it is based on (for you; not shown on the page). |
 | `inTextOnly`, `inText` | For personal communications: no reference list entry, only in-text forms. |
 
 The reference list rules are in `layout` at the end of the file.
