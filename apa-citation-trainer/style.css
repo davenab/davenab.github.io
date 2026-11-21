@@ -260,6 +260,7 @@ label{font-weight:600}
 .g-rule.target{box-shadow:inset 4px 0 0 var(--sun);padding-left:12px}
 .ex{background:var(--surface-2);border-radius:var(--radius-sm);padding:8px 12px;display:block;margin:6px 0}
 .setting{font-size:.92rem;color:var(--muted)}
+.use{border-left:4px solid var(--sun);background:var(--surface-2);padding:6px 12px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:.97rem}
 .verbs{margin:0}
 .verbs dt{font-weight:800;font-size:1.05rem;margin-top:12px}
 .verbs dd{margin:2px 0 0}

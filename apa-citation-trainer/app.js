@@ -812,7 +812,7 @@
     (DATA.guide ? DATA.guide.sections : []).forEach((sec, i) => {
       h += '<section class="card guide" id="g-sec' + i + '"><h2>' + esc(sec.title) + "</h2>";
       sec.rules.forEach(r => {
-        h += '<div class="g-rule" id="g-' + esc(r.id) + '"><h3>' + esc(r.title) + "</h3><p>" + esc(r.rule) + '</p><p class="ex">' + sent(r.example) + "</p>" +
+        h += '<div class="g-rule" id="g-' + esc(r.id) + '"><h3>' + esc(r.title) + "</h3><p>" + esc(r.rule) + "</p>" + (r.use ? '<p class="use"><b>When to use it:</b> ' + esc(r.use) + "</p>" : "") + '<p class="ex">' + sent(r.example) + "</p>" +
           (r.id === "verb-tense" ? '<p class="setting"><b>Your course:</b> ' + esc(TENSE_TEXT[CFG.reportingVerbTense]) + "</p>" : "") +
           (r.id === "paraphrase-page" ? '<p class="setting"><b>Your course:</b> ' + esc(PAGE_TEXT[CFG.pageNumbersForParaphrase]) + "</p>" : "") + "</div>";
       });
@@ -843,7 +843,6 @@
 
   /* ---------------- about ---------------- */
   function viewAbout() {
-    const drafts = DATA.items.filter(i => !i.verified).length;
     let h = '<p class="eyebrow">About</p><h1>About this <span class="hl">app</span></h1>' +
       '<section class="card"><h2>What it is</h2><p>APA Trainer is a free practice app for APA 7th in-text citations. You build and fix citations yourself in short sessions. Questions you get wrong come back in later sessions.</p>' +
       "<p>There are four tracks: citation formats, secondary citation (“as cited in”), reporting verbs, and variety in citing.</p></section>" +
@@ -857,9 +856,7 @@
       "<p>The app saves these things in your browser’s storage (localStorage) on this device only: your stage in each track, the review schedule for each question, your recent scores, when you used hints, and your goals.</p>" +
       '<p>To delete it all, use the button below (or “Clear my data” on the My progress page).</p><div class="actions"><button class="btn danger" type="button" id="clear">Clear my data</button></div><p id="amsg" class="small" aria-live="polite"></p></section>' +
       '<section class="card"><h2>Your course’s settings</h2><p>' + esc(TENSE_TEXT[CFG.reportingVerbTense]) + "</p><p>" + esc(PAGE_TEXT[CFG.pageNumbersForParaphrase]) + "</p></section>" +
-      '<section class="card"><h2>Content check</h2><p>' + DATA.items.length + " questions loaded" + (drafts ? " (" + drafts + " not yet checked by the teacher)" : ", all checked by the teacher") + ".</p>" +
-      (DATA.problems.length ? '<p class="notice">Some items were skipped or need attention:</p><ul class="small">' + DATA.problems.map(p => "<li>" + esc(p) + "</li>").join("") + "</ul>" : '<p class="small muted">All item files loaded with no problems.</p>') +
-      '<p class="small"><a href="#/teacher">For teachers: check every item</a></p></section>';
+      '<p class="small muted"><a href="#/teacher">For teachers: check every item</a></p>';
     page(h, "About", "about");
     $("#clear").addEventListener("click", clearData);
   }

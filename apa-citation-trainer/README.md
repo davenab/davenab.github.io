@@ -57,7 +57,7 @@ You can do all of this on the GitHub website. You do not need to install anythin
    - change the text;
    - leave `"verified": false` until you have checked it.
 6. Click **Commit changes**. The live site updates within a few minutes.
-7. Open the app, go to **About**, and look at **Content check**. It says “All item files loaded with no problems”, or lists any item it skipped and why (for example, “this accepted answer cannot be built from the tiles”). Fix the item and commit again.
+7. Open the app, go to **About** and press **For teachers: check every item** (at the bottom). If an item has a mistake, a **Problems found** box at the top lists it and says why (for example, “this accepted answer cannot be built from the tiles”). Fix the item and commit again.
 8. On the teacher page (**About → For teachers: check every item**), find your item and press **Try this item** to see it as a student would.
 
 Small rules that prevent most mistakes:
@@ -120,7 +120,7 @@ Extra fields used by some types:
    - Are the names, titles and ideas clearly invented (no real researchers, studies or statistics)?
    - Press **Try this item** and answer it once correctly and once wrongly. Is the feedback right?
 3. When an item is right, open its file in `data/`, change `"verified": false` to `"verified": true`, and commit. The “Draft content” label disappears for that item.
-4. The **About** page shows how many items are still drafts.
+4. On the teacher page, tick **Only items not yet checked** to see what is left.
 
 Tip: in the GitHub editor, press Ctrl+F (Cmd+F on a Mac) and search for the item `id` to find it quickly.
 

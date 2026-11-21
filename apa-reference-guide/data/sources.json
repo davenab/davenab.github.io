@@ -1,5 +1,5 @@
 {
-  "_help": "The source types shown in the APA Reference Guide. See README.md, 'How to add or edit a source type'. *text* = italics. {A} = author part, {D} = date part. Patterns and examples follow the UTS APA 7th referencing guide (January 2025) unless the 'ref' field says otherwise. All example authors and titles are invented.",
+  "_help": "The source types shown in the APA Reference Guide. See README.md, 'How to add or edit a source type'. *text* = italics. {A} = author part, {D} = date part. Patterns and examples follow the UTS APA 7th referencing guide (January 2025) unless the 'ref' field says otherwise. All example authors and titles are invented. 'case' lists the parts of each reference and whether they use sentence case, title case or the name as written (shown in the Capital letters note).",
   "people": {
     "surnames": [
       "Rahman",
@@ -65,7 +65,19 @@
         "No issue number? Leave out the brackets and the issue number.",
         "Online-only articles may have an article number instead of pages: …, *14*, Article e0142. https://doi.org/…"
       ],
-      "ref": "UTS APA 7th guide (2025), 2.01–2.06"
+      "ref": "UTS APA 7th guide (2025), 2.01–2.06",
+      "case": [
+        {
+          "part": "Article title",
+          "case": "sentence",
+          "example": "Short study sessions and long-term memory"
+        },
+        {
+          "part": "Journal name",
+          "case": "title",
+          "example": "*Journal of Student Learning*"
+        }
+      ]
     },
     {
       "id": "book",
@@ -111,7 +123,20 @@
         "Two publishers? Separate them with a semicolon (;).",
         "If the book has a DOI, you can add it at the end."
       ],
-      "ref": "UTS APA 7th guide (2025), 1.01–1.06"
+      "ref": "UTS APA 7th guide (2025), 1.01–1.06",
+      "case": [
+        {
+          "part": "Book title",
+          "case": "sentence",
+          "example": "*Writing at university: A practical guide*"
+        },
+        {
+          "part": "Publisher",
+          "case": "name",
+          "example": "Harbour Press",
+          "notOrg": true
+        }
+      ]
     },
     {
       "id": "book-chapter",
@@ -144,7 +169,24 @@
         "Add the edition if it is not the first: *Succeeding at university* (2nd ed., pp. 45-62).",
         "The in-text citation uses the chapter authors, not the editor."
       ],
-      "ref": "UTS APA 7th guide (2025), 1.10"
+      "ref": "UTS APA 7th guide (2025), 1.10",
+      "case": [
+        {
+          "part": "Chapter title",
+          "case": "sentence",
+          "example": "Reading strategies for second-language students"
+        },
+        {
+          "part": "Book title",
+          "case": "sentence",
+          "example": "*Succeeding at university*"
+        },
+        {
+          "part": "Publisher",
+          "case": "name",
+          "example": "Harbour Press"
+        }
+      ]
     },
     {
       "id": "webpage",
@@ -196,7 +238,20 @@
         "No date on the page? Choose “No date” above: the date becomes n.d.",
         "Quoting a long page with no page numbers? Give the section or paragraph: (Rahman, 2024, Planning section) or (Rahman, 2024, para. 3)."
       ],
-      "ref": "UTS APA 7th guide (2025), 3.01–3.02"
+      "ref": "UTS APA 7th guide (2025), 3.01–3.02",
+      "case": [
+        {
+          "part": "Web page title",
+          "case": "sentence",
+          "example": "*How to plan an essay*"
+        },
+        {
+          "part": "Website name",
+          "case": "title",
+          "example": "Student Life Hub",
+          "notOrg": true
+        }
+      ]
     },
     {
       "id": "online-news",
@@ -238,7 +293,19 @@
         "No author? The article title moves to the front. In the in-text citation, put the title in quotation marks with capital letters for the main words.",
         "Print newspaper? Leave out the URL and add the page: … *The Daily Courier*, A8."
       ],
-      "ref": "UTS APA 7th guide (2025), 2.15–2.16"
+      "ref": "UTS APA 7th guide (2025), 2.15–2.16",
+      "case": [
+        {
+          "part": "Article title",
+          "case": "sentence",
+          "example": "City councils plan more bike lanes near campuses"
+        },
+        {
+          "part": "Newspaper name",
+          "case": "title",
+          "example": "*The Daily Courier*"
+        }
+      ]
     },
     {
       "id": "report",
@@ -283,7 +350,19 @@
         "When people wrote the report for an organisation, the people are the authors and the organisation comes after the title.",
         "Long organisation names can be shortened in-text after the first time (see the in-text citations below)."
       ],
-      "ref": "UTS APA 7th guide (2025), 7.01–7.02"
+      "ref": "UTS APA 7th guide (2025), 7.01–7.02",
+      "case": [
+        {
+          "part": "Report title",
+          "case": "sentence",
+          "example": "*Bus use in growing cities*"
+        },
+        {
+          "part": "Organisation",
+          "case": "name",
+          "example": "National Centre for Urban Transport"
+        }
+      ]
     },
     {
       "id": "edited-book",
@@ -316,7 +395,19 @@
         "Write (Ed.) for one editor and (Eds.) for two or more.",
         "If you used one chapter, cite the chapter instead (see “Chapter in an edited book”)."
       ],
-      "ref": "UTS APA 7th guide (2025), 1.08–1.09"
+      "ref": "UTS APA 7th guide (2025), 1.08–1.09",
+      "case": [
+        {
+          "part": "Book title",
+          "case": "sentence",
+          "example": "*Succeeding at university*"
+        },
+        {
+          "part": "Publisher",
+          "case": "name",
+          "example": "Harbour Press"
+        }
+      ]
     },
     {
       "id": "ebook",
@@ -351,7 +442,19 @@
         "No DOI but available on the web? Use the URL instead.",
         "No page numbers? In a quotation, give the chapter or section and the paragraph: (Rahman, 2020, Chapter 3, para. 4)."
       ],
-      "ref": "UTS APA 7th guide (2025), 1.11"
+      "ref": "UTS APA 7th guide (2025), 1.11",
+      "case": [
+        {
+          "part": "Book title",
+          "case": "sentence",
+          "example": "*Thinking critically about sources*"
+        },
+        {
+          "part": "Publisher",
+          "case": "name",
+          "example": "Harbour Press"
+        }
+      ]
     },
     {
       "id": "online-magazine",
@@ -380,7 +483,19 @@
         "The magazine name is in italics. The article title is not.",
         "Quoting an article with no page numbers? Give the paragraph: (Rahman, 2023, para. 5)."
       ],
-      "ref": "UTS APA 7th guide (2025), 2.14"
+      "ref": "UTS APA 7th guide (2025), 2.14",
+      "case": [
+        {
+          "part": "Article title",
+          "case": "sentence",
+          "example": "Why students should sleep before exams"
+        },
+        {
+          "part": "Magazine name",
+          "case": "title",
+          "example": "*Campus Weekly*"
+        }
+      ]
     },
     {
       "id": "youtube",
@@ -422,7 +537,14 @@
       "authorLabels": {
         "one": "A person",
         "org": "A channel or organisation"
-      }
+      },
+      "case": [
+        {
+          "part": "Video title",
+          "case": "sentence",
+          "example": "*How to paraphrase without plagiarising*"
+        }
+      ]
     },
     {
       "id": "ted-talk",
@@ -462,7 +584,14 @@
         "Quoting the talk? Give the time: (Mensah, 2022, 1:40)."
       ],
       "ref": "UTS APA 7th guide (2025), 4.11",
-      "orgPatternName": "TED"
+      "orgPatternName": "TED",
+      "case": [
+        {
+          "part": "Talk title",
+          "case": "sentence",
+          "example": "*Why small habits change cities*"
+        }
+      ]
     },
     {
       "id": "lecture-slides",
@@ -497,7 +626,14 @@
         "Check with your lecturer first: some courses do not want lecture slides in the reference list. Use the original sources the slides mention where you can.",
         "Notes or handouts that are not online are cited as a personal communication (see that source type)."
       ],
-      "ref": "University of Sydney Library APA 7th guide, University study materials"
+      "ref": "University of Sydney Library APA 7th guide, University study materials",
+      "case": [
+        {
+          "part": "Slide title",
+          "case": "sentence",
+          "example": "*ACAD101 Academic skills, week 4: Using sources*"
+        }
+      ]
     },
     {
       "id": "generative-ai",
@@ -538,7 +674,14 @@
         "This example is the one in the UTS guide."
       ],
       "ref": "UTS APA 7th guide (2025), 6.08",
-      "orgPatternName": "Company"
+      "orgPatternName": "Company",
+      "case": [
+        {
+          "part": "Tool name",
+          "case": "name",
+          "example": "*Microsoft Copilot*"
+        }
+      ]
     },
     {
       "id": "dictionary-entry",
@@ -571,7 +714,19 @@
         "Online dictionaries change, so add the date you looked at the page (“Retrieved …”).",
         "Most online dictionary entries have no date: n.d."
       ],
-      "ref": "UTS APA 7th guide (2025), 1.20"
+      "ref": "UTS APA 7th guide (2025), 1.20",
+      "case": [
+        {
+          "part": "Entry word",
+          "case": "sentence",
+          "example": "Hypothesis"
+        },
+        {
+          "part": "Dictionary name",
+          "case": "name",
+          "example": "*Academic Words Online dictionary*"
+        }
+      ]
     },
     {
       "id": "wikipedia",
@@ -598,7 +753,14 @@
         "Check that your course accepts Wikipedia before you use it.",
         "Use the link to the version you read (“View history”), because Wikipedia pages change."
       ],
-      "ref": "UTS APA 7th guide (2025), 3.03"
+      "ref": "UTS APA 7th guide (2025), 3.03",
+      "case": [
+        {
+          "part": "Page title",
+          "case": "sentence",
+          "example": "Urban heat island"
+        }
+      ]
     },
     {
       "id": "personal-communication",
