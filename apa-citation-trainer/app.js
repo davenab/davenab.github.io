@@ -820,7 +820,7 @@
       if (links.length) h += '<p class="small"><b>Study more:</b> ' + links.map(l => '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.title) + "</a>").join(" · ") + "</p>";
       h += "</section>";
     });
-    h += '<p class="small muted">Always follow your own course’s referencing guide where it is different.</p>';
+    h += '<p class="small">Need the reference list entry for a book, web page, newspaper or other source? Use the <a href="../apa-reference-guide/">APA Reference Guide</a>.</p><p class="small muted">Always follow your own course’s referencing guide where it is different.</p>';
     page(h, "Quick guide", "guide");
     if (anchor) { const el = document.getElementById("g-" + anchor); if (el) { el.classList.add("target"); el.setAttribute("tabindex", "-1"); el.scrollIntoView(); el.focus({ preventScroll: true }); } }
   }

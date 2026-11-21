@@ -1,0 +1,645 @@
+{
+  "_help": "The source types shown in the APA Reference Guide. See README.md, 'How to add or edit a source type'. *text* = italics. {A} = author part, {D} = date part. Patterns and examples follow the UTS APA 7th referencing guide (January 2025) unless the 'ref' field says otherwise. All example authors and titles are invented.",
+  "people": {
+    "surnames": [
+      "Rahman",
+      "Okafor",
+      "Lindqvist"
+    ],
+    "exampleAuthors": [
+      "Rahman, S",
+      "Okafor, T",
+      "Lindqvist, A"
+    ]
+  },
+  "groups": [
+    {
+      "id": "most",
+      "title": "Most used",
+      "about": "The sources most students cite in essays and reports."
+    },
+    {
+      "id": "more",
+      "title": "Also useful",
+      "about": "Other sources students often need."
+    }
+  ],
+  "sources": [
+    {
+      "id": "journal-article",
+      "title": "Journal article",
+      "group": "most",
+      "keywords": [
+        "journal",
+        "article",
+        "research",
+        "paper",
+        "study",
+        "peer reviewed",
+        "academic article",
+        "doi",
+        "database",
+        "scholarly"
+      ],
+      "when": "An article from an academic journal, found online or in a library database.",
+      "authors": [
+        "one",
+        "two",
+        "three",
+        "none"
+      ],
+      "datePattern": "Year",
+      "exampleDate": "2021",
+      "pattern": "{A} ({D}). Article title. *Journal Title*, *volume*(issue), page range. https://doi.org/xxxx",
+      "example": "{A} ({D}). Short study sessions and long-term memory. *Journal of Student Learning*, *14*(2), 45-58. https://doi.org/10.1234/jsl.2021.0142",
+      "none": {
+        "pattern": "Article title. ({D}). *Journal Title*, *volume*(issue), page range. https://doi.org/xxxx",
+        "example": "Short study sessions and long-term memory. ({D}). *Journal of Student Learning*, *14*(2), 45-58. https://doi.org/10.1234/jsl.2021.0142",
+        "paren": "(“Short Study Sessions,” {Y})",
+        "narr": "“Short Study Sessions” ({Y})"
+      },
+      "tips": [
+        "The journal title and the volume number are in italics. The issue number is not.",
+        "Only the first word of the article title (and the first word after a colon) has a capital letter.",
+        "No DOI? Leave it out.",
+        "No issue number? Leave out the brackets and the issue number.",
+        "Online-only articles may have an article number instead of pages: …, *14*, Article e0142. https://doi.org/…"
+      ],
+      "ref": "UTS APA 7th guide (2025), 2.01–2.06"
+    },
+    {
+      "id": "book",
+      "title": "Book",
+      "group": "most",
+      "keywords": [
+        "book",
+        "textbook",
+        "print book",
+        "hard copy",
+        "edition",
+        "publisher",
+        "novel"
+      ],
+      "when": "A whole book written by the same author(s) throughout.",
+      "authors": [
+        "one",
+        "two",
+        "three",
+        "org",
+        "none"
+      ],
+      "datePattern": "Year",
+      "exampleDate": "2019",
+      "org": {
+        "name": "National Centre for Study Skills",
+        "abbr": "NCSS"
+      },
+      "pattern": "{A} ({D}). *Title of book* (2nd ed.). Publisher.",
+      "example": "{A} ({D}). *Writing at university: A practical guide* (2nd ed.). Harbour Press.",
+      "orgPattern": "{A} ({D}). *Title of book* (2nd ed.).",
+      "orgExample": "{A} ({D}). *Writing at university: A practical guide* (2nd ed.).",
+      "none": {
+        "pattern": "*Title of book* (2nd ed.). ({D}). Publisher.",
+        "example": "*Writing at university: A practical guide* (2nd ed.). ({D}). Harbour Press.",
+        "paren": "(*Writing at University*, {Y})",
+        "narr": "*Writing at University* ({Y})"
+      },
+      "tips": [
+        "The book title is in italics. Only the first word (and the first word after a colon) has a capital letter.",
+        "First edition? Leave out the edition: *Writing at university*. Harbour Press.",
+        "When the organisation is also the publisher, do not write its name twice: leave out the publisher.",
+        "Two publishers? Separate them with a semicolon (;).",
+        "If the book has a DOI, you can add it at the end."
+      ],
+      "ref": "UTS APA 7th guide (2025), 1.01–1.06"
+    },
+    {
+      "id": "book-chapter",
+      "title": "Chapter in an edited book",
+      "group": "most",
+      "keywords": [
+        "chapter",
+        "edited book",
+        "editor",
+        "ed",
+        "eds",
+        "book chapter",
+        "collection",
+        "reader",
+        "handbook"
+      ],
+      "when": "A book where each chapter has different authors and the book has an editor. Cite the chapter you used.",
+      "authors": [
+        "one",
+        "two",
+        "three"
+      ],
+      "datePattern": "Year",
+      "exampleDate": "2020",
+      "pattern": "{A} ({D}). Chapter title. In A. Editor (Ed.), *Title of book* (pp. xx-xx). Publisher.",
+      "example": "{A} ({D}). Reading strategies for second-language students. In M. Castillo (Ed.), *Succeeding at university* (pp. 45-62). Harbour Press.",
+      "tips": [
+        "The chapter authors go first. The editor goes after “In”, with the initials before the surname.",
+        "Two editors: In M. Castillo & J. Kaur (Eds.), …",
+        "Add the edition if it is not the first: *Succeeding at university* (2nd ed., pp. 45-62).",
+        "The in-text citation uses the chapter authors, not the editor."
+      ],
+      "ref": "UTS APA 7th guide (2025), 1.10"
+    },
+    {
+      "id": "webpage",
+      "title": "Web page",
+      "group": "most",
+      "keywords": [
+        "webpage",
+        "web page",
+        "website",
+        "online",
+        "internet",
+        "page",
+        "site",
+        "url",
+        "government website",
+        "organisation website",
+        "fact sheet"
+      ],
+      "when": "A page on a website (not a news article, journal article or report).",
+      "authors": [
+        "one",
+        "two",
+        "three",
+        "org",
+        "none"
+      ],
+      "defaultAuthor": "org",
+      "datePattern": "Year, Month Day",
+      "exampleDate": "2024, February 6",
+      "ndAllowed": true,
+      "org": {
+        "name": "National Centre for Study Skills",
+        "abbr": "NCSS"
+      },
+      "pattern": "{A} ({D}). *Title of web page*. Website Name. URL",
+      "example": "{A} ({D}). *How to plan an essay*. Student Life Hub. https://www.example.com/essay-planning",
+      "orgPattern": "{A} ({D}). *Title of web page*. URL",
+      "orgExample": "{A} ({D}). *How to plan an essay*. https://www.example.org/essay-planning",
+      "none": {
+        "pattern": "*Title of web page*. ({D}). Website Name. URL",
+        "example": "*How to plan an essay*. ({D}). Student Life Hub. https://www.example.com/essay-planning",
+        "paren": "(*How to Plan an Essay*, {Y})",
+        "narr": "*How to Plan an Essay* ({Y})"
+      },
+      "tips": [
+        "Most web pages are written by an organisation. Check the bottom of the page or the “About us” page.",
+        "When the organisation and the website have the same name, write the name only once (as the author).",
+        "Use the date the page was published or last updated. Do not use the copyright year at the bottom of the screen.",
+        "No date on the page? Choose “No date” above: the date becomes n.d.",
+        "Quoting a long page with no page numbers? Give the section or paragraph: (Rahman, 2024, Planning section) or (Rahman, 2024, para. 3)."
+      ],
+      "ref": "UTS APA 7th guide (2025), 3.01–3.02"
+    },
+    {
+      "id": "online-news",
+      "title": "Online newspaper article",
+      "group": "most",
+      "keywords": [
+        "newspaper",
+        "news",
+        "news article",
+        "online newspaper",
+        "online news",
+        "press",
+        "paper",
+        "daily",
+        "smh",
+        "guardian",
+        "abc news"
+      ],
+      "when": "A news story from a newspaper's website.",
+      "authors": [
+        "one",
+        "two",
+        "three",
+        "none"
+      ],
+      "datePattern": "Year, Month Day",
+      "exampleDate": "2024, July 18",
+      "pattern": "{A} ({D}). Article title. *Newspaper Name*. URL",
+      "example": "{A} ({D}). City councils plan more bike lanes near campuses. *The Daily Courier*. https://www.example.com/news/bike-lanes",
+      "none": {
+        "pattern": "Article title. ({D}). *Newspaper Name*. URL",
+        "example": "City councils plan more bike lanes near campuses. ({D}). *The Daily Courier*. https://www.example.com/news/bike-lanes",
+        "paren": "(“City Councils Plan More Bike Lanes,” {Y})",
+        "narr": "“City Councils Plan More Bike Lanes” ({Y})"
+      },
+      "tips": [
+        "The newspaper name is in italics. The article title is not.",
+        "Give the full date: year, month and day.",
+        "No author? The article title moves to the front. In the in-text citation, put the title in quotation marks with capital letters for the main words.",
+        "Print newspaper? Leave out the URL and add the page: … *The Daily Courier*, A8."
+      ],
+      "ref": "UTS APA 7th guide (2025), 2.15–2.16"
+    },
+    {
+      "id": "report",
+      "title": "Report (government or organisation)",
+      "group": "most",
+      "keywords": [
+        "report",
+        "government report",
+        "government",
+        "organisation",
+        "organization",
+        "agency",
+        "department",
+        "statistics",
+        "white paper",
+        "policy",
+        "grey literature",
+        "pdf"
+      ],
+      "when": "A report published by a government department, agency or organisation.",
+      "authors": [
+        "org",
+        "one",
+        "two",
+        "three"
+      ],
+      "defaultAuthor": "org",
+      "datePattern": "Year",
+      "exampleDate": "2021",
+      "ndAllowed": true,
+      "org": {
+        "name": "National Centre for Urban Transport",
+        "abbr": "NCUT"
+      },
+      "pattern": "{A} ({D}). *Title of report*. Organisation. URL",
+      "example": "{A} ({D}). *Bus use in growing cities*. National Centre for Urban Transport. https://www.example.org/reports/bus-use",
+      "orgPattern": "{A} ({D}). *Title of report* (Report No. 123). URL",
+      "orgExample": "{A} ({D}). *Bus use in growing cities* (Report No. 7). https://www.example.org/reports/bus-use",
+      "tips": [
+        "The report title is in italics.",
+        "If the report has a number, put it in brackets after the title, not in italics. If it has no number, leave this out.",
+        "When people wrote the report for an organisation, the people are the authors and the organisation comes after the title.",
+        "Long organisation names can be shortened in-text after the first time (see the in-text citations below)."
+      ],
+      "ref": "UTS APA 7th guide (2025), 7.01–7.02"
+    },
+    {
+      "id": "edited-book",
+      "title": "Edited book (the whole book)",
+      "group": "more",
+      "keywords": [
+        "edited book",
+        "editor",
+        "eds",
+        "ed",
+        "collection",
+        "whole book"
+      ],
+      "when": "You refer to a whole edited book, not one chapter. (Usually you should cite the chapter instead.)",
+      "authors": [
+        "one",
+        "two",
+        "three"
+      ],
+      "role": "Editor",
+      "suffix": {
+        "one": " (Ed.)",
+        "many": " (Eds.)"
+      },
+      "datePattern": "Year",
+      "exampleDate": "2020",
+      "pattern": "{A} ({D}). *Title of book*. Publisher.",
+      "example": "{A} ({D}). *Succeeding at university*. Harbour Press.",
+      "tips": [
+        "Write (Ed.) for one editor and (Eds.) for two or more.",
+        "If you used one chapter, cite the chapter instead (see “Chapter in an edited book”)."
+      ],
+      "ref": "UTS APA 7th guide (2025), 1.08–1.09"
+    },
+    {
+      "id": "ebook",
+      "title": "E-book (online book)",
+      "group": "more",
+      "keywords": [
+        "ebook",
+        "e-book",
+        "online book",
+        "electronic book",
+        "kindle",
+        "digital book",
+        "pdf book"
+      ],
+      "when": "A book you read online with a DOI or a web address.",
+      "authors": [
+        "one",
+        "two",
+        "three",
+        "org"
+      ],
+      "datePattern": "Year",
+      "exampleDate": "2020",
+      "org": {
+        "name": "National Centre for Study Skills",
+        "abbr": "NCSS"
+      },
+      "pattern": "{A} ({D}). *Title of book*. Publisher. https://doi.org/xxxx",
+      "example": "{A} ({D}). *Thinking critically about sources*. Harbour Press. https://doi.org/10.1234/tcs.2020",
+      "tips": [
+        "Found the e-book in a library database? Reference it like a print book (no URL).",
+        "No DOI but available on the web? Use the URL instead.",
+        "No page numbers? In a quotation, give the chapter or section and the paragraph: (Rahman, 2020, Chapter 3, para. 4)."
+      ],
+      "ref": "UTS APA 7th guide (2025), 1.11"
+    },
+    {
+      "id": "online-magazine",
+      "title": "Online magazine article (e.g. The Conversation)",
+      "group": "more",
+      "keywords": [
+        "magazine",
+        "online magazine",
+        "the conversation",
+        "conversation",
+        "online article",
+        "opinion",
+        "feature article"
+      ],
+      "when": "An article from a magazine or news-and-analysis website.",
+      "authors": [
+        "one",
+        "two",
+        "three"
+      ],
+      "datePattern": "Year, Month Day",
+      "exampleDate": "2023, August 2",
+      "pattern": "{A} ({D}). Article title. *Magazine Name*. URL",
+      "example": "{A} ({D}). Why students should sleep before exams. *Campus Weekly*. https://www.example.com/sleep-exams",
+      "tips": [
+        "The magazine name is in italics. The article title is not.",
+        "Quoting an article with no page numbers? Give the paragraph: (Rahman, 2023, para. 5)."
+      ],
+      "ref": "UTS APA 7th guide (2025), 2.14"
+    },
+    {
+      "id": "youtube",
+      "title": "YouTube video",
+      "group": "more",
+      "keywords": [
+        "youtube",
+        "video",
+        "online video",
+        "clip",
+        "channel",
+        "vlog"
+      ],
+      "when": "A video on YouTube (or a similar video site).",
+      "authors": [
+        "one",
+        "org"
+      ],
+      "suffix": {
+        "one": " [Username]"
+      },
+      "exampleSuffix": {
+        "one": " [StudyWithSam]"
+      },
+      "datePattern": "Year, Month Day",
+      "exampleDate": "2023, May 9",
+      "org": {
+        "name": "Study Skills Lab"
+      },
+      "pattern": "{A} ({D}). *Title of video* [Video]. YouTube. URL",
+      "example": "{A} ({D}). *How to paraphrase without plagiarising* [Video]. YouTube. https://www.youtube.com/watch?v=example",
+      "tips": [
+        "The person or channel that uploaded the video is the author.",
+        "If you know the person's real name, write it and add the username in square brackets. If not, use the channel name only (choose “A channel or organisation” above).",
+        "Quoting the video? Give the time instead of a page: (Rahman, 2023, 1:30)."
+      ],
+      "ref": "UTS APA 7th guide (2025), 3.17",
+      "orgPatternName": "Channel Name",
+      "authorLabels": {
+        "one": "A person",
+        "org": "A channel or organisation"
+      }
+    },
+    {
+      "id": "ted-talk",
+      "title": "TED talk",
+      "group": "more",
+      "keywords": [
+        "ted",
+        "ted talk",
+        "talk",
+        "speech",
+        "lecture video",
+        "tedx"
+      ],
+      "when": "A TED talk watched on ted.com (speaker as author) or on YouTube (TED as author).",
+      "authors": [
+        "one",
+        "org"
+      ],
+      "role": "Speaker",
+      "authorLabels": {
+        "one": "The speaker (watched on ted.com)",
+        "org": "TED (watched on YouTube)"
+      },
+      "datePattern": "Year, Month",
+      "exampleDate": "2022, May",
+      "org": {
+        "name": "TED"
+      },
+      "pattern": "{A} ({D}). *Title of talk* [Video]. TED Conferences. URL",
+      "example": "{A} ({D}). *Why small habits change cities* [Video]. TED Conferences. https://www.ted.com/talks/example",
+      "orgPattern": "{A} ({D}). *Speaker Name: Title of talk* [Video]. YouTube. URL",
+      "orgExample": "{A} ({D}). *Kwame Mensah: Why small habits change cities* [Video]. YouTube. https://www.youtube.com/watch?v=example",
+      "orgDatePattern": "Year, Month Day",
+      "orgExampleDate": "2022, June 3",
+      "tips": [
+        "On ted.com, the speaker is the author. On YouTube, the TED channel is the author and the speaker's name goes in the title.",
+        "Quoting the talk? Give the time: (Mensah, 2022, 1:40)."
+      ],
+      "ref": "UTS APA 7th guide (2025), 4.11",
+      "orgPatternName": "TED"
+    },
+    {
+      "id": "lecture-slides",
+      "title": "Lecture slides (online)",
+      "group": "more",
+      "keywords": [
+        "lecture",
+        "lecture slides",
+        "slides",
+        "powerpoint",
+        "class notes",
+        "tutorial",
+        "handout",
+        "canvas",
+        "moodle",
+        "ilearn",
+        "lms",
+        "unit materials",
+        "study materials"
+      ],
+      "when": "Slides or handouts from your course that are online (for example on Canvas or Moodle).",
+      "authors": [
+        "one",
+        "two"
+      ],
+      "role": "Lecturer",
+      "datePattern": "Year",
+      "exampleDate": "2025",
+      "pattern": "{A} ({D}). *Unit code Unit name, lecture or week: Title* [PowerPoint slides]. Learning platform. URL",
+      "example": "{A} ({D}). *ACAD101 Academic skills, week 4: Using sources* [PowerPoint slides]. Harbour University Canvas. https://canvas.example.edu/courses/101",
+      "tips": [
+        "Check with your lecturer first: some courses do not want lecture slides in the reference list. Use the original sources the slides mention where you can.",
+        "Notes or handouts that are not online are cited as a personal communication (see that source type)."
+      ],
+      "ref": "University of Sydney Library APA 7th guide, University study materials"
+    },
+    {
+      "id": "generative-ai",
+      "title": "Generative AI (ChatGPT, Copilot, etc.)",
+      "group": "more",
+      "keywords": [
+        "ai",
+        "chatgpt",
+        "copilot",
+        "gemini",
+        "claude",
+        "generative ai",
+        "artificial intelligence",
+        "large language model",
+        "llm",
+        "chatbot",
+        "dall-e"
+      ],
+      "when": "Text or images made by a generative AI tool. Check first that your course allows it.",
+      "authors": [
+        "org"
+      ],
+      "role": "Company",
+      "authorLabels": {
+        "org": "The company that makes the tool"
+      },
+      "datePattern": "Year",
+      "exampleDate": "2024",
+      "org": {
+        "name": "Microsoft"
+      },
+      "pattern": "{A} ({D}). *Name of tool* (Version) [Large language model]. URL",
+      "example": "{A} ({D}). *Microsoft Copilot* (October 23 version) [Large language model]. https://copilot.microsoft.com/",
+      "tips": [
+        "Check with your tutor first. Using AI without permission may be academic misconduct.",
+        "The company is the author. The tool's name is the title.",
+        "Your course may ask you to put your prompts and the AI's answers in an appendix.",
+        "This example is the one in the UTS guide."
+      ],
+      "ref": "UTS APA 7th guide (2025), 6.08",
+      "orgPatternName": "Company"
+    },
+    {
+      "id": "dictionary-entry",
+      "title": "Online dictionary entry",
+      "group": "more",
+      "keywords": [
+        "dictionary",
+        "definition",
+        "define",
+        "online dictionary",
+        "encyclopedia",
+        "encyclopaedia",
+        "thesaurus",
+        "entry"
+      ],
+      "when": "A definition from an online dictionary or encyclopedia that is updated over time.",
+      "authors": [
+        "org"
+      ],
+      "datePattern": "Year",
+      "exampleDate": "2024",
+      "ndAllowed": true,
+      "ndDefault": true,
+      "org": {
+        "name": "Academic Words Online"
+      },
+      "pattern": "{A} ({D}). Entry word. In *Name of dictionary*. Retrieved Month Day, Year, from URL",
+      "example": "{A} ({D}). Hypothesis. In *Academic Words Online dictionary*. Retrieved March 14, 2025, from https://www.example.com/hypothesis",
+      "tips": [
+        "Online dictionaries change, so add the date you looked at the page (“Retrieved …”).",
+        "Most online dictionary entries have no date: n.d."
+      ],
+      "ref": "UTS APA 7th guide (2025), 1.20"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia page",
+      "group": "more",
+      "keywords": [
+        "wikipedia",
+        "wiki",
+        "online encyclopedia"
+      ],
+      "when": "Many lecturers do not accept Wikipedia. Use it to find better sources, and cite those instead.",
+      "authors": [
+        "none"
+      ],
+      "datePattern": "Year, Month Day",
+      "exampleDate": "2024, January 13",
+      "none": {
+        "pattern": "Title of page. ({D}). In *Wikipedia*. URL",
+        "example": "Urban heat island. ({D}). In *Wikipedia*. https://en.wikipedia.org/w/index.php?title=Urban_heat_island&oldid=example",
+        "paren": "(“Urban Heat Island,” {Y})",
+        "narr": "“Urban Heat Island” ({Y})"
+      },
+      "tips": [
+        "Check that your course accepts Wikipedia before you use it.",
+        "Use the link to the version you read (“View history”), because Wikipedia pages change."
+      ],
+      "ref": "UTS APA 7th guide (2025), 3.03"
+    },
+    {
+      "id": "personal-communication",
+      "title": "Personal communication (email, conversation, class notes)",
+      "group": "more",
+      "keywords": [
+        "personal communication",
+        "email",
+        "conversation",
+        "interview",
+        "class notes",
+        "private",
+        "message",
+        "lecture notes",
+        "phone"
+      ],
+      "when": "Something a person told you privately (email, conversation, message) or notes that are not online.",
+      "authors": [
+        "one"
+      ],
+      "inTextOnly": true,
+      "inText": {
+        "pattern": "A. Author (personal communication, Month Day, Year)",
+        "paren": "(S. Rahman, personal communication, March 14, 2025)",
+        "narr": "S. Rahman (personal communication, March 14, 2025)"
+      },
+      "tips": [
+        "Personal communications are NOT in the reference list. You only cite them in your text.",
+        "Write the initials before the surname, and give the full date."
+      ],
+      "ref": "UTS APA 7th guide (2025), 6.05"
+    }
+  ],
+  "layout": [
+    "Start the reference list on a new page, with the heading “References” in bold and centred.",
+    "Put the references in alphabetical order by the first author's surname (or by the title if there is no author).",
+    "Use a hanging indent of 1.27 cm: the first line starts at the margin and the other lines are indented. In Word: select the list, then Ctrl + T (Windows) or Cmd + T (Mac).",
+    "Book, article and web page titles: only the first word, the first word after a colon and names have capital letters (“sentence case”).",
+    "Journal, newspaper and magazine names: capitals for the main words (“title case”), in italics.",
+    "Write DOIs as links: https://doi.org/…",
+    "Every in-text citation needs a reference list entry (except personal communications), and every entry needs at least one in-text citation.",
+    "Used “as cited in”? Only the source you actually read goes in the reference list."
+  ]
+}

@@ -1,0 +1,44 @@
+/* APA Reference Guide: extra styles only.
+   Colours, fonts, header, buttons and cards come from ../apa-citation-trainer/style.css,
+   so this page always looks like APA Trainer and the rest of davenab.com. */
+
+/* search */
+.search label{display:block;font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.search input[type=search]{width:100%;font:inherit;font-size:max(16px,1.1rem);color:var(--text);background:var(--surface);border:2px solid var(--border-strong);border-radius:var(--pill);padding:12px 18px;min-height:52px}
+.search input[type=search]:focus{border-color:var(--ink)}
+.search .srclist{margin-top:10px}
+#qcount{margin:8px 4px 0}
+
+/* lists of source types */
+.group{margin:22px 0 8px}
+.group h2{margin-bottom:.2em}
+.srclist{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:10px}
+@media (min-width:720px){.group .srclist{grid-template-columns:1fr 1fr}}
+.srclist li{margin:0}
+.srcbtn{display:flex;flex-direction:column;gap:2px;height:100%;min-height:var(--tap);padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);text-decoration:none;box-shadow:var(--shadow)}
+.srcbtn b{font-size:1.05rem;color:var(--ink)}
+.srcbtn span{font-size:.92rem;color:var(--muted)}
+.srcbtn:hover{border-color:var(--ink)}
+@media (prefers-reduced-motion:no-preference){.srcbtn{transition:transform .3s var(--ease),border-color .15s}.srcbtn:hover{transform:translateY(-2px)}}
+
+/* choices */
+.pick{border:0;padding:0;margin:0 0 14px}
+.pick:last-child{margin-bottom:0}
+.pick legend{font-weight:700;font-size:1.08rem;margin-bottom:8px;padding:0}
+
+/* pattern and example: hanging indent, like a real reference list */
+.ref{font-size:1.06rem;line-height:1.7;background:var(--surface-2);border-radius:var(--radius-sm);padding:12px 14px 12px calc(14px + 2em);text-indent:-2em;margin:0 0 8px;max-width:none;overflow-wrap:anywhere}
+.row.between{justify-content:space-between}
+.row.between h2{margin:0}
+.intext{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:6px 16px;margin:0 0 10px}
+.intext dt{font-weight:600;color:var(--muted);font-size:.95rem}
+.intext dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.intext dd.muted{font-weight:400}
+@media (max-width:520px){.intext{grid-template-columns:1fr}.intext dd{margin-bottom:8px}}
+
+/* reference list sample */
+.layout li{margin-bottom:.6em}
+.reflist{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px}
+.reflist-h{text-align:center;font-weight:800;margin:0 0 10px;max-width:none}
+.reflist .ref{background:none;padding:0 0 0 2em;border-radius:0;margin:0 0 10px}
+.guide-note{margin-top:18px}
