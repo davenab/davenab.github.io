@@ -9,6 +9,7 @@
     grammar:  { t: "Grammar Self-Correction Trainer", d: "Find and fix your own grammar errors with codes and hints", u: "/grammar-self-correction/" },
     nomhedge: { t: "Nominalisation and Hedging Trainer", d: "Short practice for a more academic style", u: "/nominalisation-hedging-trainer/" },
     cite:     { t: "APA Trainer", d: "Build and fix APA 7th in-text citations", u: "/apa-citation-trainer/" },
+    apaguide: { t: "APA Reference Guide", d: "Patterns and examples for every common source type", u: "/apa-reference-guide/" },
     coach:    { t: "Feedback-to-Mastery Coach", d: "Turn your teacher's feedback into skills you can use", u: "/feedback-coach/" }
   };
   var RES_STUDENTS = { t: "Resources for students", d: "Free Quizlet sets and self-study packs", u: "/resources/students/" };
@@ -17,7 +18,7 @@
     notes:    { lead: "Finished your notes? Keep going:", items: [APPS.grammar, APPS.nomhedge, RES_STUDENTS] },
     grammar:  { lead: "Fixed your errors? Try this next:", items: [APPS.nomhedge, APPS.notes, RES_STUDENTS] },
     nomhedge: { lead: "Done with nominalisation and hedging? Try this next:", items: [APPS.grammar, HEDGING, APPS.notes] },
-    cite:     { lead: "Finished your citation practice? Try this next:", items: [APPS.nomhedge, APPS.grammar, RES_STUDENTS] }
+    cite:     { lead: "Finished your citation practice? Try this next:", items: [APPS.apaguide, APPS.nomhedge, APPS.grammar] }
   };
 
   var CSS =
