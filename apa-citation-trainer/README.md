@@ -63,7 +63,7 @@ You can do all of this on the GitHub website. You do not need to install anythin
 Small rules that prevent most mistakes:
 - Text goes inside straight double quotes: `"like this"`. Inside the text, use curly quotation marks: “like this”.
 - Every item, and every line inside an item, is followed by a comma, **except the last one** in its list.
-- Extra spaces in students' typed answers are ignored, so you do not need to list them. Hyphens and dashes in page ranges (12-13, 12–13) are treated the same. Capital letters and punctuation are **not** ignored: they are what the app teaches.
+- Extra spaces in students' typed answers are ignored, so you do not need to list them. Page ranges are written with a hyphen (pp. 12-13), as in the UTS and University of Sydney guides; a dash typed by a student is also accepted. Capital letters and punctuation are **not** ignored: they are what the app teaches.
 - Reporting verbs in sentences can follow the tense setting: write `{argues|argued}` (present form first, then past). Use the singular or plural form that matches the author(s).
 
 ### What each field means

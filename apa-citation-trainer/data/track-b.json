@@ -86,21 +86,21 @@
           "type": "choice",
           "topic": "secondary-format",
           "sourceCards": [],
-          "prompt": "You read a 2022 book by Halvorsen. Halvorsen quotes a saying by Mwangi, but does not give a year for it. Which is true?",
+          "prompt": "You read a 2022 book by Halvorsen. Halvorsen describes a 2012 report by Mwangi on river pollution. You did not read Mwangi's report. Which is true?",
           "frame": null,
           "tiles": null,
           "options": [
-            "Original: Mwangi (year unknown). Source I read: Halvorsen (2022).",
-            "Original: Halvorsen (2022). Source I read: Mwangi (year unknown).",
-            "There is no original, so I cite only Halvorsen (2022)."
+            "Original: Mwangi (2012). Source I read: Halvorsen (2022).",
+            "Original: Halvorsen (2022). Source I read: Mwangi (2012).",
+            "I read both Mwangi (2012) and Halvorsen (2022)."
           ],
           "acceptedAnswers": [
-            "Original: Mwangi (year unknown). Source I read: Halvorsen (2022)."
+            "Original: Mwangi (2012). Source I read: Halvorsen (2022)."
           ],
           "modelAnswers": [],
-          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year). If the original year is unknown, leave it out.",
+          "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year).",
           "errorDiagnosis": [],
-          "hint": "There is no year for the original, but you still know who said it.",
+          "hint": "Who wrote the report? Whose book did you read?",
           "verified": false
         },
         {
@@ -525,58 +525,6 @@
           "rule": "Secondary, in brackets: (Original, year, as cited in Source you read, year). If the original year is unknown, leave it out.",
           "errorDiagnosis": [],
           "hint": "There is no year for Mwangi, so leave it out.",
-          "verified": false
-        },
-        {
-          "id": "B2-06",
-          "track": "B",
-          "stage": 2,
-          "type": "build",
-          "topic": "secondary-format",
-          "sourceCards": [
-            {
-              "authors": [
-                "Mwangi, J."
-              ],
-              "year": "year unknown",
-              "title": "(a saying)",
-              "type": "Quoted in Halvorsen",
-              "idea": "“Water remembers every promise.”",
-              "read": false
-            },
-            {
-              "authors": [
-                "Halvorsen, B."
-              ],
-              "year": "2022",
-              "title": "Rivers and people",
-              "type": "Book",
-              "idea": "Quotes Mwangi's saying but gives no year.",
-              "read": true
-            }
-          ],
-          "prompt": "The year of the original is unknown. Build the narrative citation for the gap.",
-          "frame": "In a well-known saying, ___ observed that “water remembers every promise”.",
-          "tiles": [
-            "as cited in",
-            ")",
-            ",",
-            "(",
-            "n.d.",
-            ",",
-            "Mwangi",
-            "Halvorsen",
-            "(",
-            "2022"
-          ],
-          "options": null,
-          "acceptedAnswers": [
-            "Mwangi (as cited in Halvorsen, 2022)"
-          ],
-          "modelAnswers": [],
-          "rule": "Secondary, narrative: Original (year, as cited in Source you read, year). If the original year is unknown, leave it out.",
-          "errorDiagnosis": [],
-          "hint": "Mwangi goes in the sentence. No year for Mwangi.",
           "verified": false
         },
         {
