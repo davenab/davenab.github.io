@@ -275,6 +275,11 @@ GALLERY = [
 ]
 MOMENTS = [("moment-1.webp",768,577),("moment-2.webp",900,675),("moment-3.webp",900,677),("moment-4.webp",900,676),("moment-5.webp",525,700),("moment-6.webp",900,506),("moment-7.webp",900,506),("moment-8.webp",900,506)]
 LIVE = {**({"Feedback-to-Mastery Coach": "feedback-coach/"} if COACH_ON else {}), "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/", "APA Trainer": "apa-citation-trainer/", "APA Reference Guide": "apa-reference-guide/"}
+# Featured on the home page: shown first, side by side, as wide horizontal cards. title -> (icon, short text, button)
+FEATURE = {
+ "APA Trainer": ("“ ”", "Short drills for APA 7th in-text citations: build and fix citations, use “as cited in” correctly and choose reporting verbs that fit.", "Start practising"),
+ "APA Reference Guide": ("R", "Search for any source type and see the APA 7th pattern, an example and the in-text citation.", "Find a source"),
+}
 APPS = [
  *([("write","Writing","Feedback-to-Mastery Coach","Students paste their teacher’s feedback. The coach explains what it means, helps them find the exact skill behind it, then teaches it step by step: a short lesson, guided practice with hints, and a new task they complete on their own.",["Cohesion","Paraphrasing","Paragraph development"])] if COACH_ON else []),
  ("listen","Listening","Notetaking Trainer","Students watch a short TED talk or listen to a news story and take notes their way. Then they check their own notes against the key ideas, answer questions from their notes and set a goal.",["Key ideas","Signposting","Self-checking"]),
@@ -393,7 +398,8 @@ def coach_band(L, full=False):
 def home(L):
     q = "".join(quote(L, t, n, p, d=i*.08) for i, (t, n, p) in enumerate(T_HOME))
     marq = "".join(img(L, f, "Dave Nab with students and colleagues", w, h, lazy=False) for f, w, h in MOMENTS)
-    apps = "".join(f'''<article class="card {c} reveal" style="--d:{(i%4)*.05:.2f}s" data-cat="{c}"><div class="top"><span class="tag">{s}</span>{'<span class="status live">Live</span>' if t in LIVE else '<span class="status">In development</span>'}</div><h3>{t}</h3><p>{d}</p><div class="focus">{''.join(f'<span>{x}</span>' for x in fo)}</div>{f'<div class="go"><a class="btn-card stretch" href="{L(LIVE[t])}">Try it {ARR}</a></div>' if t in LIVE else ''}</article>''' for i,(c,s,t,d,fo) in enumerate(APPS))
+    feat = "".join(f'''<article class="card feature {c} reveal" style="--d:{i*.06:.2f}s" data-cat="{c}"><span class="f-icon" aria-hidden="true">{FEATURE[t][0]}</span><div class="f-main"><div class="top"><span class="tag">{s}</span><span class="status live">Live</span></div><h3>{t}</h3><p>{FEATURE[t][1]}</p></div><div class="go"><a class="btn-card stretch" href="{L(LIVE[t])}">{FEATURE[t][2]} {ARR}</a></div></article>''' for i,(c,s,t,d,fo) in enumerate(x for x in APPS if x[2] in FEATURE and x[2] in LIVE))
+    apps = "".join(f'''<article class="card {c} reveal" style="--d:{(i%4)*.05:.2f}s" data-cat="{c}"><div class="top"><span class="tag">{s}</span>{'<span class="status live">Live</span>' if t in LIVE else '<span class="status">In development</span>'}</div><h3>{t}</h3><p>{d}</p><div class="focus">{''.join(f'<span>{x}</span>' for x in fo)}</div>{f'<div class="go"><a class="btn-card stretch" href="{L(LIVE[t])}">Try it {ARR}</a></div>' if t in LIVE else ''}</article>''' for i,(c,s,t,d,fo) in enumerate(x for x in APPS if x[2] not in FEATURE))
     soon = [("res-nominalisation.webp","Nominalisation"),("res-dependent-clauses.webp","Dependent clauses"),("res-paraphrasing.webp","Paraphrasing")]
     soonh = "".join(f'<a class="res reveal" style="--d:{i*.06:.2f}s" href="{L("resources/")}"><div class="thumb">{img(L,f,t+" lesson slides",600,600)}</div><div><h3>{t}</h3><div class="meta">Coming soon</div></div></a>' for i,(f,t) in enumerate(soon))
     return f'''
@@ -424,6 +430,7 @@ def home(L):
   <div class="sec-head"><div><span class="eyebrow reveal">AI apps &amp; resources</span><h2 class="reveal">Small, smart tools that help students <em>think</em>, not just get answers.</h2><p class="reveal">AI-supported apps for academic English. Each one targets one real skill students need at university, gives feedback that makes them do the thinking, and runs in any browser with no sign-in. Student work stays on their own device.</p></div>
     <a class="btn primary reveal" href="{L('apps/')}">See all apps {ARR}</a></div>
   <div class="filters reveal" role="group" aria-label="Filter apps by skill" style="margin-bottom:24px"><button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="listen">Listening</button><button aria-pressed="false" data-f="read">Reading</button><button aria-pressed="false" data-f="write">Writing</button><button aria-pressed="false" data-f="gram">Grammar</button><button aria-pressed="false" data-f="vocab">Vocabulary</button></div>
+  <div class="grid ai-feature">{feat}</div>
   <div class="grid ai-grid">{apps}</div>
 </div></section>
 

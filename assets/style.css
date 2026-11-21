@@ -410,6 +410,17 @@ section{padding-block:clamp(72px,10vw,128px)}
 .ai-grid .card{padding:22px;gap:10px}
 .ai-grid .card h3{font-size:1.12rem}
 .ai-grid .card p{font-size:.9rem}
+/* featured apps (home): two wide horizontal cards above the other apps */
+.ai-feature{grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media (max-width:900px){.ai-feature{grid-template-columns:1fr}}
+.card.feature{flex-direction:row;align-items:center;gap:20px;padding:24px 26px}
+.card.feature .f-icon{flex:none;width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:var(--cbg);color:var(--c);font:italic 500 1.6rem/1 var(--f-serif)}
+.card.feature .f-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:8px}
+.card.feature .f-main .top{justify-content:flex-start}
+.card.feature h3{font-size:1.25rem}
+.card.feature p{font-size:.93rem}
+.card.feature .go{margin-top:0;padding-top:0;flex:none}
+@media (max-width:560px){.card.feature{flex-direction:column;align-items:flex-start;gap:14px}.card.feature .f-icon{width:52px;height:52px;font-size:1.35rem}}
 .ai-band .pr{background:var(--surface);border:1px solid var(--border)}
 .product{display:grid;grid-template-columns:1.1fr .9fr;background:var(--surface);border:1px solid var(--border);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
 .product>*{min-width:0}
