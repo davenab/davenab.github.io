@@ -271,9 +271,8 @@
     const card = t => {
       const tr = S.tracks[t], due = dueItems([t]).length;
       const stages = [1, 2, 3, 4, 5].map(n => {
-        const locked = n > tr.unlocked;
         return `<li><button type="button" class="btn stage-btn" data-stage="${n}" data-track="${t}" ${n === tr.stage ? 'aria-current="true"' : ""}>
-          <span>Stage ${n}: ${esc(stageTitle(t, n))}</span><span class="small">${n === tr.stage ? "● Now" : locked ? "Locked" : "Open"}</span></button></li>`;
+          <span>Stage ${n}: ${esc(stageTitle(t, n))}</span><span class="small">${n === tr.stage ? "● Now" : "Choose"}</span></button></li>`;
       }).join("");
       return `<section class="card" aria-labelledby="h-${t}">
         <h2 id="h-${t}">Track ${TRACKS[t].letter}: ${TRACKS[t].name}</h2>
@@ -281,8 +280,8 @@
         <p><strong>You are on Stage ${tr.stage}: ${esc(stageTitle(t, tr.stage))}.</strong>${due ? ` ${due} item${due > 1 ? "s" : ""} to review.` : ""}</p>
         ${goal(t)}
         <button class="btn primary full" type="button" data-start="${t}">Start ${TRACKS[t].name.toLowerCase()} practice</button>
-        <details><summary>Choose a different stage</summary>
-          <p class="small muted">You can go back to any open stage. A stage opens when you get about 8 out of 10 right in two sessions.</p>
+        <details><summary>Choose any stage (1 to 5)</summary>
+          <p class="small muted">You can choose any stage, at any time. Tip: move on when you get about 8 out of 10 right in two sessions.</p>
           <ul class="stages">${stages}</ul></details>
       </section>`;
     };
@@ -299,10 +298,7 @@
     $$("[data-start]", app).forEach(b => b.addEventListener("click", () => startSession(b.dataset.start)));
     $$(".stage-btn", app).forEach(b => b.addEventListener("click", () => {
       const t = b.dataset.track, n = +b.dataset.stage, tr = S.tracks[t];
-      if (n > tr.unlocked) {
-        if (!window.confirm(`Stage ${n} is still locked. Most students get about 8 out of 10 right in two sessions before they move on. Do you want to skip ahead anyway?`)) return;
-        tr.unlocked = n;
-      }
+      tr.unlocked = Math.max(tr.unlocked, n);
       tr.stage = n; save(); renderHome();
       const again = $(`.stage-btn[data-track="${t}"][data-stage="${n}"]`, app);
       if (again) { again.closest("details").open = true; again.focus(); }
@@ -332,7 +328,6 @@
     const top = it.type === "evidence" ? `<p class="evidence"><strong>Evidence:</strong> ${esc(it.prompt)}</p>` : evid + (it.type === "word" ? "" : promptHtml);
     page(`<div class="progressline"><span>Question ${n} of ${total}</span><span>${TRACKS[it.track].name} · Stage ${it.stage}: ${esc(stageTitle(it.track, it.stage))}</span></div>
       <div class="bar" aria-hidden="true"><span style="width:${(n - 1) / total * 100}%"></span></div>
-      ${it.verified === true ? "" : `<p><span class="tag draft">Draft content</span></p>`}
       <h1 class="question" id="q">${esc(it.type === "word" ? it.prompt : q)}</h1>
       ${top}
       <div id="hintbox" aria-live="polite"></div>
@@ -516,7 +511,7 @@
     const name = m === "mixed" ? "Mixed" : TRACKS[m].name;
     page(`<h1>Session finished</h1>
       <div class="card"><p><strong>${e.right} out of ${e.total}</strong> right (${name}).${e.hints ? ` You used a hint ${e.hints} time${e.hints > 1 ? "s" : ""}.` : ""}</p>
-        ${e.unlocked.length ? `<p class="notice">New stage open! ${e.unlocked.map(esc).join("; ")}.</p>` : ""}</div>
+        ${e.unlocked.length ? `<p class="notice">Ready for the next stage: ${e.unlocked.map(esc).join("; ")}. You can choose any stage on the start page.</p>` : ""}</div>
       <div class="grid two">
         <div class="card"><h2>What went well</h2>${e.good.length ? `<ul>${e.good.map(p => `<li>✓ ${esc(p)}</li>`).join("")}</ul>` : `<p>Keep going. Every session helps you remember.</p>`}</div>
         <div class="card"><h2>Patterns to review</h2>${e.bad.length ? `<ul>${e.bad.map(p => `<li>↻ ${esc(p)}</li>`).join("")}</ul><p class="small muted">These items will come back next session.</p>` : `<p>Nothing this time. Well done!</p>`}</div>
@@ -611,11 +606,10 @@
       <p><a class="btn primary" href="#/">Practise</a></p>`);
   }
   function renderAbout() {
-    const draft = DATA.items.filter(i => i.verified !== true).length;
     page(`<h1>About this app</h1>
       <div class="card"><h2>What it is for</h2><p>Many students write in a spoken style: short clauses with lots of verbs, and claims that sound 100% certain. University writing asks for two skills: <strong>nominalisation</strong> (putting actions and qualities into nouns) and <strong>hedging</strong> (making a claim as strong as the evidence, and no stronger).</p>
         <p>This app gives you short, regular practice. You answer from memory, items you get wrong come back later, and items you know come back less often. You move from single words to full sentences. Some items show what happens when you use <em>too much</em> nominalisation or hedging, so you also learn when to stop.</p></div>
-      <div class="card"><h2>Who wrote the questions</h2><p>The practice items were drafted with the help of AI and are checked by the teacher, Dave Nab. Items that have not been checked yet show a <span class="tag draft">Draft content</span> label.${draft ? ` Right now ${draft} of ${DATA.items.length} items are still drafts.` : ""}</p>
+      <div class="card"><h2>Who wrote the questions</h2><p>The practice items were drafted with the help of AI and checked by the teacher, Dave Nab.</p>
         <p>The app itself does not use AI. Nothing you type is sent to an AI or to anyone else.</p></div>
       <div class="card"><h2>Why you check your own rewrites</h2><p>When you rewrite a whole sentence, there is more than one good answer, so the app does not mark it. Instead, you compare your sentence with model answers and a short checklist. Judging your own sentence is part of the skill: it is what you will do when you edit your essays.</p></div>
       <div class="card"><h2>What is stored, and where</h2><ul>

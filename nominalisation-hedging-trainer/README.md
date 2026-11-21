@@ -62,7 +62,7 @@ Small rules that prevent most mistakes:
 | `question` | (optional) Replaces the standard question for this item, e.g. "Put these in order. Start with the most often…". |
 | `evidence` | (optional) A short description of the evidence, shown in a blue box (Track B rewrites and "Too much" items). |
 | `optionLabels` | Match-the-evidence only: "Too strong", "About right", "Too weak", in the same order as `options`. |
-| `verified` | `false` until you have checked the item; then `true`. Unverified items show a small "Draft content" label. |
+| `verified` | `false` until you have checked the item; then `true`. Students never see this label. |
 
 ### Question types
 
@@ -82,8 +82,7 @@ The self-check lists for free rewrites are in `app.js` (search for `SELF_CHECK`)
 
 1. Open the app, choose a stage on the home page ("Choose a different stage"), and work through the items. Or read them in the JSON file.
 2. For each item, check: Is there one clearly best answer (or are all the accepted answers listed)? Is the reason correct and one line? Is the hint helpful? Would another teacher agree?
-3. When an item is right, change `"verified": false` to `"verified": true` and commit. The "Draft content" label disappears for that item.
-4. The **About** page shows how many items are still drafts.
+3. When an item is right, change `"verified": false` to `"verified": true` and commit. Nothing changes for students; it is a record for you.
 
 ## Study links
 
@@ -101,7 +100,7 @@ Open each link in your browser first to check that it works. The two candidate l
 
 - **Session:** up to 6 items due for review, then new items at the student's current stage (taken in turn from each track in Mixed mode), then the weakest items they have already seen. 10 items in total.
 - **Review boxes:** every item starts in box 1. A right answer moves it up one box; a wrong answer (or "Mine needs work") sends it back to box 1. Box 1 comes back next session, box 2 after 2 sessions, box 3 after 4, box 4 after 8, box 5 after 16. Box 4 or 5 counts as "mastered".
-- **Unlocking:** a stage opens when the student gets at least 80% right over their last two sessions at their highest stage (a session counts if it had at least 3 items from that stage). Students can go back to any open stage, and can skip ahead after a warning.
+- **Stages:** nothing is locked; students can choose any stage at any time. When they get at least 80% right over their last two sessions at their furthest stage (a session counts if it had at least 3 items from that stage), the app suggests the next stage.
 - **Hints** are recorded and shown on the session results and the progress page.
 
 These numbers are at the top of `app.js` if you want to change them.
