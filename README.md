@@ -10,3 +10,7 @@ Live site: https://davenab.com (served by GitHub Pages from `main`; DNS on Cloud
 - `assets/` holds the shared CSS, JS and images.
 - `<app-name>/` folders hold the self-contained learning apps, e.g. `note-taking-trainer/`.
 - `CNAME` sets the custom domain; `.nojekyll` tells GitHub Pages to serve files as-is.
+
+## Copyright
+
+© Dave Nab. All rights reserved. The code is public only because the site is hosted on GitHub Pages; it is not licensed for reuse. See [LICENSE.md](LICENSE.md).

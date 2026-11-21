@@ -49,4 +49,4 @@ This repo is Dave Nab's website, live at https://davenab.com (custom domain via 
 - Resource cards: the main link has classes `btn-card stretch` so the whole card is clickable.
 
 ## Never delete
-- `googlecdda09d8d2462fe3.html` (Google Search Console verification), `CNAME` (custom domain), `.nojekyll`, `assets/site.js` and `assets/appbar.js` (used by the apps), `404.html`.
+- `LICENSE.md` (all-rights-reserved copyright notice; keep third-party licences listed in it up to date), `googlecdda09d8d2462fe3.html` (Google Search Console verification), `CNAME` (custom domain), `.nojekyll`, `assets/site.js` and `assets/appbar.js` (used by the apps), `404.html`.
