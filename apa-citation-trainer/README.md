@@ -85,7 +85,7 @@ Small rules that prevent most mistakes:
 | `rule` | The one-line rule shown after every answer. |
 | `errorDiagnosis` | Optional special feedback for a typical wrong answer: `[{"answer": "(Kaur and Novak, 2020)", "problem": "Inside brackets, join two authors with &, not “and”."}]`. Usually `[]`: the app already names most format errors by itself. |
 | `hint` | The optional hint before answering. It should help, not give the answer. |
-| `verified` | `false` until you have checked the item; then `true`. Unverified items show a small “Draft content” label. |
+| `verified` | `false` until you have checked the item; then `true`. Students never see this: the teacher page uses it to show which items you have checked. |
 
 Extra fields used by some types:
 
@@ -119,7 +119,7 @@ Extra fields used by some types:
    - Is the rule correct and one line? Does the hint help without giving the answer away?
    - Are the names, titles and ideas clearly invented (no real researchers, studies or statistics)?
    - Press **Try this item** and answer it once correctly and once wrongly. Is the feedback right?
-3. When an item is right, open its file in `data/`, change `"verified": false` to `"verified": true`, and commit. The “Draft content” label disappears for that item.
+3. When an item is right, open its file in `data/`, change `"verified": false` to `"verified": true`, and commit. The teacher page then shows it as checked.
 4. On the teacher page, tick **Only items not yet checked** to see what is left.
 
 Tip: in the GitHub editor, press Ctrl+F (Cmd+F on a Mac) and search for the item `id` to find it quickly.
@@ -140,7 +140,7 @@ Open each link in your browser first to check that it works. None of the candida
 
 - **Session:** up to 6 questions that are due for review, then new questions at the student's current stage (taken in turn from each track in Mixed mode), then earlier unseen questions, then the weakest questions already seen. 10 questions in total.
 - **Review boxes:** every question starts in box 1. A right answer moves it up one box; a wrong answer (or “Mine needs work”) sends it back to box 1. Box 1 comes back next session, box 2 after 2 sessions, box 3 after 4, box 4 after 8, box 5 after 16. Box 4 or 5 counts as “mastered”.
-- **Unlocking:** the next stage opens when the student gets at least 80% right over their last two sessions at their highest stage (a session counts for a stage if it had at least 3 questions from that stage, so mostly single-track sessions count). Students can go back to any open stage at any time.
+- **Stages:** nothing is locked; students can choose any stage at any time. When they get at least 80% right over their last two sessions at their furthest stage, the app suggests the next stage and starts there next time (a session counts for a stage if it had at least 3 questions from that stage, so mostly single-track sessions count). Students can go back to any open stage at any time.
 - **Hints** are recorded and shown on the results screen and the progress page.
 
 These numbers are at the top of `app.js` if you want to change them.

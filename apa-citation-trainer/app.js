@@ -339,7 +339,7 @@
       TRACK_IDS.forEach(t => {
         const T = S.tracks[t]; const n = DATA.nStages[t] || 1;
         T.unlocked = Math.min(Math.max(1, T.unlocked || 1), n);
-        T.stage = Math.min(Math.max(1, T.stage || 1), T.unlocked);
+        T.stage = Math.min(Math.max(1, T.stage || 1), n);   /* any stage can be chosen */
       });
     } catch (e) { DATA.error = "The practice items could not be loaded."; }
     DATA.loaded = true;
@@ -349,7 +349,7 @@
   function rec(id) { return S.items[id]; }
   function buildSession(mode) {
     const tracks = mode === "mixed" ? TRACK_IDS : [mode];
-    const pool = DATA.items.filter(it => tracks.indexOf(it.track) >= 0 && it.stage <= S.tracks[it.track].unlocked);
+    const pool = DATA.items.filter(it => tracks.indexOf(it.track) >= 0 && it.stage <= Math.max(S.tracks[it.track].unlocked, S.tracks[it.track].stage));
     const picked = [];
     const add = it => { if (picked.length < SESSION_SIZE && picked.indexOf(it) < 0) picked.push(it); };
     pool.filter(it => rec(it.id) && rec(it.id).due <= S.session)
@@ -406,7 +406,7 @@
           const sr = last.reduce((a, x) => a + x.r, 0), sn = last.reduce((a, x) => a + x.n, 0);
           if (last.length >= UNLOCK_SESSIONS && sr / sn >= UNLOCK_SCORE) {
             T.unlocked++; T.stage = T.unlocked;
-            unlocks.push("Track " + g.t + ", Stage " + T.unlocked + ": " + stageTitle(g.t, T.unlocked));
+            unlocks.push("Track " + g.t + ": Stage " + T.unlocked + ", " + stageTitle(g.t, T.unlocked));
           }
         }
       });
@@ -436,7 +436,7 @@
   }
   function storeNote() { return STORE_OK ? "" : '<p class="notice" role="note">Your browser is not letting this app save. You can still practise, but your progress will be lost when you close the page.</p>'; }
   function chip(t) { return '<span class="chip ' + TRACKS[t].chip + '">Track ' + t + "</span>"; }
-  function draftTag(it) { return it.verified ? "" : ' <span class="tag draft" title="Dave has not checked this item yet">Draft content</span>'; }
+  function draftTag(it) { return ""; } /* draft labels are not shown to students (the teacher page still shows which items are checked) */
   function sourceCard(c) {
     const au = (c.authors || []).map(a => {
       const i = a.indexOf(",");
@@ -471,16 +471,16 @@
       const dots = Array.from({ length: n }, (_, i) => '<span class="dot' + (i + 1 <= T.unlocked ? " on" : "") + (i + 1 === T.stage ? " cur" : "") + '"></span>').join("");
       h += '<article class="card track"><p class="track-top">' + chip(t) + '<span class="dots" aria-hidden="true">' + dots + "</span></p>" +
         "<h2>" + esc(TRACKS[t].name) + '</h2><p class="muted">' + esc(TRACKS[t].blurb) + "</p>" +
-        '<p class="stage-now">Your stage: <b>' + T.stage + " of " + n + " · " + esc(stageTitle(t, T.stage)) + "</b>" + (T.unlocked > T.stage ? ' <span class="muted small">(Stage ' + T.unlocked + " is open)</span>" : "") + "</p>" +
+        '<p class="stage-now">Your stage: <b>' + T.stage + " of " + n + " · " + esc(stageTitle(t, T.stage)) + "</b></p>" +
         (stageProgress(t) ? '<p class="small muted">' + esc(stageProgress(t)) + "</p>" : "") +
         (goal ? '<p class="goal"><b>Your goal from last time:</b> ' + esc(goal.text) + "</p>" : "") +
         '<button class="btn primary" type="button" data-start="' + t + '">Practise Track ' + t + "</button>" +
-        '<details class="stage-pick"><summary>Choose a stage</summary><ul class="stages">' +
+        '<details class="stage-pick"><summary>Choose any stage (1 to ' + n + ')</summary><ul class="stages">' +
         Array.from({ length: n }, (_, i) => {
-          const s = i + 1, open = s <= T.unlocked;
-          return '<li><button class="stage-btn" type="button" data-track="' + t + '" data-stage="' + s + '"' + (open ? "" : " disabled") + (s === T.stage ? ' aria-current="true"' : "") + ">" +
-            "<span>" + s + ". " + esc(stageTitle(t, s)) + "</span><span class=\"small\">" + (s === T.stage ? "Selected" : open ? "Open" : "Locked") + "</span></button></li>";
-        }).join("") + '</ul><p class="small muted">A new stage opens when you get about 80% right over two sessions. You can go back to earlier stages at any time.</p></details></article>';
+          const s = i + 1;
+          return '<li><button class="stage-btn" type="button" data-track="' + t + '" data-stage="' + s + '"' + (s === T.stage ? ' aria-current="true"' : "") + ">" +
+            "<span>" + s + ". " + esc(stageTitle(t, s)) + "</span><span class=\"small\">" + (s === T.stage ? "Selected" : "Choose") + "</span></button></li>";
+        }).join("") + '</ul><p class="small muted">You can choose any stage, at any time. Tip: move on when you get about 8 out of 10 right in two sessions.</p></details></article>';
     });
     h += "</div>";
     const mg = S.goals.mixed;
@@ -489,7 +489,7 @@
     h += '<p class="small muted center">Need the rules first? Read the <a href="#/guide">Quick guide</a> or the <a href="#/verbs">Reporting verb bank</a>.</p>';
     page(h, "", "home");
     $$("[data-start]").forEach(b => b.addEventListener("click", () => startSession(b.dataset.start)));
-    $$(".stage-btn").forEach(b => b.addEventListener("click", () => { S.tracks[b.dataset.track].stage = +b.dataset.stage; save(); viewHome(); const d = $$(".stage-pick")[TRACK_IDS.indexOf(b.dataset.track)]; if (d) { d.open = true; const x = $('.stage-btn[data-track="' + b.dataset.track + '"][data-stage="' + b.dataset.stage + '"]'); if (x) x.focus(); } }));
+    $$(".stage-btn").forEach(b => b.addEventListener("click", () => { const T = S.tracks[b.dataset.track]; T.stage = +b.dataset.stage; T.unlocked = Math.max(T.unlocked, T.stage); save(); viewHome(); const d = $$(".stage-pick")[TRACK_IDS.indexOf(b.dataset.track)]; if (d) { d.open = true; const x = $('.stage-btn[data-track="' + b.dataset.track + '"][data-stage="' + b.dataset.stage + '"]'); if (x) x.focus(); } }));
   }
 
   /* ---------------- practice ---------------- */
@@ -723,7 +723,7 @@
     const review = Object.keys(byTopic).filter(t => byTopic[t].r < byTopic[t].n);
     let h = '<p class="eyebrow">Session finished</p><h1 tabindex="-1" id="rh">You got <span class="hl">' + E.right + " of " + res.length + "</span> right</h1>" +
       '<p class="muted">' + esc(modeName(E.mode)) + " · Hints used: " + hints + "</p>" + storeNote();
-    if (E.unlocks.length) h += '<div class="feedback ok" role="status"><h2>✓ New stage open</h2><ul>' + E.unlocks.map(u => "<li>" + esc(u) + "</li>").join("") + "</ul><p>Your next session starts at the new stage. You can still choose earlier stages on the start page.</p></div>";
+    if (E.unlocks.length) h += '<div class="feedback ok" role="status"><h2>✓ Ready for the next stage</h2><ul>' + E.unlocks.map(u => "<li>" + esc(u) + "</li>").join("") + "</ul><p>Your next session starts at this stage. You can choose any stage on the start page.</p></div>";
     h += '<div class="grid two"><section class="card"><h2>What went well</h2>' + (good.length ? "<ul>" + good.map(t => "<li>" + esc(topicTitle(t)) + "</li>").join("") + "</ul>" : '<p class="muted">Keep going. Every rule you practise now will be easier next time.</p>') + "</section>" +
       '<section class="card"><h2>Rules to review</h2>' + (review.length ? "<ul>" + review.map(t => '<li><a href="#/guide/' + esc(t) + '">' + esc(topicTitle(t)) + "</a></li>").join("") + '</ul><p class="small muted">These questions will come back in your next sessions.</p>' : '<p class="muted">Nothing this time. Well done.</p>') + "</section></div>";
     if (!E.preview) {
@@ -750,7 +750,7 @@
     TRACK_IDS.forEach(t => {
       const T = S.tracks[t], ids = DATA.items.filter(i => i.track === t).map(i => i.id);
       const seen = ids.filter(id => rec(id)).length, mast = ids.filter(id => rec(id) && rec(id).box >= MASTER_BOX).length;
-      L.push("Track " + t + " (" + TRACKS[t].name + "): Stage " + T.unlocked + " of " + DATA.nStages[t] + " open (" + stageTitle(t, T.unlocked) + "). Practised " + seen + " of " + ids.length + " questions, " + mast + " mastered.");
+      L.push("Track " + t + " (" + TRACKS[t].name + "): furthest stage " + T.unlocked + " of " + DATA.nStages[t] + " (" + stageTitle(t, T.unlocked) + "). Practised " + seen + " of " + ids.length + " questions, " + mast + " mastered.");
     });
     const tr = troubleTopics();
     L.push("", "Rules to review: " + (tr.length ? tr.map(x => topicTitle(x.t)).join("; ") : "none yet"));
@@ -766,7 +766,7 @@
       const T = S.tracks[t], ids = DATA.items.filter(i => i.track === t).map(i => i.id);
       const seen = ids.filter(id => rec(id)).length, mast = ids.filter(id => rec(id) && rec(id).box >= MASTER_BOX).length;
       h += '<section class="card">' + chip(t) + "<h2>" + esc(TRACKS[t].name) + "</h2>" +
-        '<div class="kv"><span>Stage open</span><b>' + T.unlocked + " of " + DATA.nStages[t] + " · " + esc(stageTitle(t, T.unlocked)) + "</b></div>" +
+        '<div class="kv"><span>Furthest stage</span><b>' + T.unlocked + " of " + DATA.nStages[t] + " · " + esc(stageTitle(t, T.unlocked)) + "</b></div>" +
         '<div class="kv"><span>Questions practised</span><b>' + seen + " of " + ids.length + "</b></div>" +
         '<div class="kv"><span>Mastered (right 3 times in a row)</span><b>' + mast + "</b></div>" +
         (stageProgress(t) ? '<p class="small muted">' + esc(stageProgress(t)) + "</p>" : "") +
@@ -847,7 +847,7 @@
       '<section class="card"><h2>What it is</h2><p>APA Trainer is a free practice app for APA 7th in-text citations. You build and fix citations yourself in short sessions. Questions you get wrong come back in later sessions.</p>' +
       "<p>There are four tracks: citation formats, secondary citation (“as cited in”), reporting verbs, and variety in citing.</p></section>" +
       '<section class="card"><h2>Honesty and AI</h2><ul>' +
-      "<li>The practice items were drafted with AI and are checked by the teacher, Dave Nab. Items that have not been checked yet show a small “Draft content” label.</li>" +
+      "<li>The practice items were drafted with AI and checked by the teacher, Dave Nab.</li>" +
       "<li><b>All sources in this app are invented for practice.</b> The authors, studies and titles are not real. Do not cite them in your work.</li>" +
       "<li>This app trains the skill. It does not make citations for your assignments.</li>" +
       "<li>Always follow your own course’s referencing guide where it is different from this app.</li>" +
