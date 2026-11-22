@@ -1,0 +1,58 @@
+{
+  "id": "plastic-recycling",
+  "title": "What happens to recycled plastic",
+  "topic": "Environmental science",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "sort",
+      "definition": "to put things into groups"
+    },
+    {
+      "term": "contaminated",
+      "definition": "made dirty or mixed with the wrong material"
+    },
+    {
+      "term": "pellet",
+      "definition": "a very small, hard piece of material"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Passive voice"
+    ],
+    "codes": [
+      "passive"
+    ],
+    "listenFor": "Listen for passive verbs: is/are/was/were + past participle (for example, is collected)."
+  },
+  "text": "When you put a plastic bottle in a recycling bin, a long process begins. First, the plastic is collected and taken to a sorting centre. There, it is separated from paper, glass and metal, and the different types of plastic are sorted. Next, the plastic is washed, because labels and food remains can cause problems. It is then cut into small pieces and melted into pellets, which are sold to make new products. Unfortunately, not all plastic can be recycled. If it is contaminated, it is often sent to landfill instead.",
+  "keyIdeas": [
+    {
+      "text": "Recycling plastic is a process with several steps.",
+      "type": "main"
+    },
+    {
+      "text": "Plastic is collected and taken to a sorting centre.",
+      "type": "detail"
+    },
+    {
+      "text": "It is separated from other materials, and plastic types are sorted.",
+      "type": "detail"
+    },
+    {
+      "text": "It is washed to remove labels and food.",
+      "type": "detail"
+    },
+    {
+      "text": "It is cut, melted into pellets and used to make new products.",
+      "type": "main"
+    },
+    {
+      "text": "Not all plastic can be recycled; dirty plastic often goes to landfill.",
+      "type": "main"
+    }
+  ],
+  "audioFile": ""
+}

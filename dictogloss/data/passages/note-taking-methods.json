@@ -1,0 +1,60 @@
+{
+  "id": "note-taking-methods",
+  "title": "Laptop or pen and paper?",
+  "topic": "Study skills",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "summarise",
+      "definition": "to give the main points in fewer words"
+    },
+    {
+      "term": "verbatim",
+      "definition": "using exactly the same words"
+    },
+    {
+      "term": "distraction",
+      "definition": "something that takes your attention away"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Linking words: contrast",
+      "Comparatives"
+    ],
+    "codes": [
+      "contrast",
+      "comparatives"
+    ],
+    "listenFor": "Listen for however, although, while and on the other hand. Listen for -er than, more … than, less … than and the most."
+  },
+  "text": "Students often ask whether it is better to take notes on a laptop or by hand. Typing is usually faster than writing, so students can record more information. However, some teachers argue that typing encourages students to copy the lecture almost word for word. When students write by hand, they cannot write everything, so they have to choose and summarise the main points. This can help them think more about the content. On the other hand, laptop notes are easier to organise and search. Laptops can also bring more distractions, such as messages.",
+  "keyIdeas": [
+    {
+      "text": "Students wonder whether to take notes on a laptop or by hand.",
+      "type": "main"
+    },
+    {
+      "text": "Typing is faster, so students can record more.",
+      "type": "detail"
+    },
+    {
+      "text": "Some teachers think typing makes students copy word for word.",
+      "type": "main"
+    },
+    {
+      "text": "Writing by hand forces students to choose and summarise, which helps thinking.",
+      "type": "main"
+    },
+    {
+      "text": "Laptop notes are easier to organise and search.",
+      "type": "detail"
+    },
+    {
+      "text": "Laptops can be more distracting, for example with messages.",
+      "type": "detail"
+    }
+  ],
+  "audioFile": ""
+}

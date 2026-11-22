@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Generates the site pages (shared nav, footer, page content) as static HTML. Run from the repo root: python3 _tools/build.py ."""
-import os, sys, html
+import os, sys, html, re
 OUT = sys.argv[1]
 
 EMAIL = "dave.naserbakht@gmail.com"
@@ -13,7 +13,11 @@ PAY_HEDGING = "https://www.paypal.com/ncp/payment/TYYAE8VP9CW2U"
 SITE = "https://davenab.com/"
 import hashlib
 ASSET_V = hashlib.md5((open("assets/style.css","rb").read()+open("assets/app.js","rb").read())).hexdigest()[:8]  # cache-busting
-COACH_ON = False  # Feedback-to-Mastery Coach hidden from the site until Dave decides; set True and rebuild to bring it back
+# Cloudflare Web Analytics (cookieless page views; the token is public by design). Set "" to turn off.
+CF_BEACON = "618c9d602257483795361f11fc6b1a08"
+BEACON = (f'<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{{"token": "{CF_BEACON}"}}\'></script>\n' if CF_BEACON else "")
+COACH_ON = True   # Feedback-to-Mastery Coach: listed in the apps; the app itself is assembled into /feedback-coach/ (see assemble_coach)
+COACH_BAND = False  # True = big featured Coach band on the home page after the hero
 COACH_URL = "https://claude.ai/artifact/U8aWTwYD84iMXthwhTXHYg"  # Feedback-to-Mastery Coach (Claude artifact; source in _tools/feedback-coach/)
 
 I = {
@@ -41,6 +45,11 @@ COURSES = [
  ("general-english/level-up/", "Level UP Course", "CEFR A1 to C2"),
 ]
 TOP1 = [("apps/", "AI Apps")]
+APPS_MENU = [
+ ("grammar-hub/", "Grammar Hub", "A2–C1 grammar units with progress"),
+ ("vocabulary-hub/", "Vocabulary Hub", "Academic words and collocations"),
+ ("apps/", "All apps", "Every free practice app"),
+]
 RES = [
  ("resources/students/", "For students", "Self-study packs and free practice"),
  ("resources/teachers/", "For teachers", "Lesson kits, courses and free slides"),
@@ -132,10 +141,12 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
     rsub = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}<small>{d}</small></a></li>' for h, t, d in RES)
     sheet_r = "".join(f'<li class="sub-l"><a href="{L(h)}">{t}</a></li>' for h, t, d in RES)
     sub = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}<small>{d}</small></a></li>' for h, t, d in COURSES)
-    top1 = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}</a></li>' for h, t in TOP1)
+    is_app = cur == "apps/"
+    asub = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}<small>{d}</small></a></li>' for h, t, d in APPS_MENU)
+    top1 = f'<li class="has-sub{" cur" if is_app else ""}"><button class="drop" aria-expanded="false" aria-haspopup="true">Apps {I["chev"]}</button><ul class="sub">{asub}</ul></li>'
     top = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}</a></li>' for h, t in TOP2)
     sheet_c = "".join(f'<li class="sub-l"><a href="{L(h)}">{t}</a></li>' for h, t, d in COURSES)
-    sheet_1 = "".join(f'<li><a href="{L(h)}">{t}</a></li>' for h, t in TOP1)
+    sheet_1 = '<li class="label">Apps</li>' + "".join(f'<li class="sub-l"><a href="{L(h)}">{t}</a></li>' for h, t, d in APPS_MENU)
     sheet_t = "".join(f'<li><a href="{L(h)}">{t}</a></li>' for h, t in TOP2)
     canon = canonical if canonical is not None else SITE + path.replace("index.html", "")
     doc = f'''<!doctype html>
@@ -158,7 +169,7 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{P}assets/style.css?v={ASSET_V}">
-{extra_head}</head>
+{extra_head}{BEACON}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" aria-hidden="true"><span></span></div>
@@ -274,20 +285,29 @@ GALLERY = [
  ("gallery-13.webp","Macquarie University College - DE8",1187,893),("gallery-14.webp","PD Festival with Jarrad Merlo",1225,922),("gallery-15.webp","IH - UPPER INT 3",883,662),
 ]
 MOMENTS = [("moment-1.webp",768,577),("moment-2.webp",900,675),("moment-3.webp",900,677),("moment-4.webp",900,676),("moment-5.webp",525,700),("moment-6.webp",900,506),("moment-7.webp",900,506),("moment-8.webp",900,506)]
-LIVE = {**({"Feedback-to-Mastery Coach": "feedback-coach/"} if COACH_ON else {}), "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/", "APA Trainer": "apa-citation-trainer/", "APA Reference Guide": "apa-reference-guide/"}
+LIVE = {**({"Feedback-to-Mastery Coach": "feedback-coach/"} if COACH_ON else {}), "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/", "APA Trainer": "apa-citation-trainer/", "APA Reference Guide": "apa-reference-guide/", "Grammar Hub": "grammar-hub/", "Vocabulary Hub": "vocabulary-hub/", "Dictogloss": "dictogloss/"}
 # Featured on the home page: shown first, side by side, as wide horizontal cards. title -> (icon, short text, button)
 FEATURE = {
- "APA Trainer": ("“ ”", "Short drills for APA 7th in-text citations: build and fix citations, use “as cited in” correctly and choose reporting verbs that fit.", "Start practising"),
- "APA Reference Guide": ("R", "Search for any source type and see the APA 7th pattern, an example and the in-text citation.", "Find a source"),
+ "Feedback-to-Mastery Coach": ("F", "Paste your teacher’s feedback: the coach explains it, teaches the skill and checks your practice.", "Start coaching"),
+ "Grammar Hub": ("G", "A2–C1 grammar units: test yourself, work out the rule, practise and see your progress.", "Start a unit"),
+ "Vocabulary Hub": ("V", "Academic words and collocations, A2–C1, with a searchable word bank.", "Learn words"),
+ "Dictogloss": ("Dg", "Hear a short academic talk twice, take notes, rebuild it in your own sentences and get hints on meaning and grammar.", "Start listening"),
+ "Notetaking Trainer": ("N", "Take notes on a short TED talk or news story, then check them against the key ideas.", "Take notes"),
+ "Grammar Self-Correction Trainer": ("Gc", "Find and fix grammar errors yourself, with correction codes and step-by-step hints.", "Fix errors"),
+ "Nominalisation and Hedging Trainer": ("Nh", "Sound more academic: turn verbs into nouns, and match claims to the evidence.", "Practise"),
+ "APA Trainer": ("“ ”", "Build and fix APA 7th in-text citations, and choose reporting verbs that fit.", "Start practising"),
+ "APA Reference Guide": ("R", "Find your source type and see the APA 7th pattern, an example and the in-text citation.", "Find a source"),
 }
 APPS = [
  *([("write","Writing","Feedback-to-Mastery Coach","Students paste their teacher’s feedback. The coach explains what it means, helps them find the exact skill behind it, then teaches it step by step: a short lesson, guided practice with hints, and a new task they complete on their own.",["Cohesion","Paraphrasing","Paragraph development"])] if COACH_ON else []),
+ ("gram","Grammar","Grammar Hub","Short grammar units from A2 to C1 built on test–teach–test: students try a few questions first, notice the form in a short text, answer guiding questions to work out the rule, practise with hints, then test again and see their before-and-after scores. Missed questions come back for spaced review.",["Guided discovery","Test–teach–test","A2–C1"]),
+ ("vocab","Vocabulary","Vocabulary Hub","Academic vocabulary and collocations from A2 to C1: study collocations, describing trends, cause and effect, research words, reporting verbs and evaluating evidence. Students notice words in context, work out the patterns and practise, with a searchable word bank.",["Collocations","Academic words","A2–C1"]),
+ ("listen","Listening","Dictogloss","Students hear a short academic passage twice, note key words and rebuild it in full sentences. AI feedback checks which key ideas they kept and points to grammar slips with correction codes, without giving the answer. They revise once, then compare with the original and set a goal.",["Listening for meaning","Grammar in context","AI hints"]),
  ("listen","Listening","Notetaking Trainer","Students watch a short TED talk or listen to a news story and take notes their way. Then they check their own notes against the key ideas, answer questions from their notes and set a goal.",["Key ideas","Signposting","Self-checking"]),
  ("gram","Grammar","Grammar Self-Correction Trainer","The app shows where each error is and what type it is, using correction codes teachers already use, like <b>vf</b> (verb form) or <b>art</b> (article). Students do the fixing, and hints step up only when they ask for one.",["Self-correction","Error codes","Step-by-step hints"]),
  ("gram","Grammar","Nominalisation and Hedging Trainer","Short drills that move from single words to full sentences: turn verbs into nouns (“analyse” → “analysis”) and match how sure a claim sounds to the evidence (“may suggest”). Students also fix sentences that use too much of either.",["Nominalisation","Hedging","Academic style"]),
  ("write","Writing","APA Trainer","Short drills for APA 7th in-text citations. Students build and fix citations themselves, learn when to use “as cited in”, choose reporting verbs that represent a source fairly, and vary how they cite. Every answer comes with the rule in one line.",["In-text citation","Secondary sources","Reporting verbs"]),
  ("write","Writing","APA Reference Guide","A searchable APA 7th referencing guide. Students search for their source (journal article, book, web page, online newspaper, report, YouTube, AI and more), choose who wrote it, and see the pattern, an example and the in-text citation.",["Reference list","Source types","Free guide"]),
- ("listen","Listening","Dictogloss","Students hear a passage twice, then reconstruct it in their own words. Feedback covers both meaning (what they kept or lost) and grammar.",["Listening for meaning","Grammar in context"]),
  ("read","Reading","Skim &amp; Scan Timer","Timed skimming and scanning tasks with a main-idea check, so speed never comes at the cost of understanding. Reading speed is tracked over time.",["Skimming","Scanning","Progress tracking"]),
  ("write","Writing","Paragraph X-Ray","Students paste a paragraph and see it labelled: topic sentence, evidence, analysis and link. The app flags which parts are missing or weak.",["Paragraph structure","Self-review"]),
  ("write","Writing","Synthesis Builder","Students combine two short sources in one piece of writing and get feedback on how well they integrate the ideas and cite them.",["Source integration","Citation","Paraphrasing"]),
@@ -371,14 +391,14 @@ def results_strip(L):
 COACH_STEPS = [("Paste the comment","Your teacher’s feedback, with your name removed."),("Understand it","A plain-English explanation of what it means."),("Find the skill","Recognise it from examples, not jargon."),("Learn and practise","A short lesson, a worked example and hints."),("Do it alone","A new task, no hints: proof you can do it.")]
 def coach_band(L, full=False):
     steps = "".join(f'<li class="cs-step"><span class="cs-n">{i+1}</span><span class="cs-t">{t}</span><span class="cs-d">{d}</span></li>' for i,(t, d) in enumerate(COACH_STEPS))
-    more = "" if full else f'<a class="btn" href="{L('feedback-coach/')}">How it works {ARR}</a>'
+    more = ""
     return f'''<section class="coach-band" id="coach"><div class="wrap">
   <div class="coach-grid">
     <div class="coach-copy">
       <span class="eyebrow reveal">New · Free AI tutor</span>
       <h2 class="reveal">Got feedback you don’t understand? <em>Turn it into a skill.</em></h2>
       <p class="reveal">Paste a comment like “improve cohesion”. The coach explains it, finds the exact skill behind it and teaches it step by step. It never fixes your essay for you, so next time you can do it yourself.</p>
-      <div class="cta reveal"><a class="btn primary" href="{COACH_URL}" target="_blank" rel="noopener">Open the coach {EXT}</a>{more}</div>
+      <div class="cta reveal"><a class="btn primary" href="{L('feedback-coach/')}">Open the coach {ARR}</a>{more}</div>
     </div>
     <div class="cv reveal" aria-hidden="true">
       <div class="cv-note"><span class="cv-lab">Teacher’s comment</span><span class="cv-q">Improve <u>cohesion</u> in this paragraph.</span></div>
@@ -399,7 +419,7 @@ def home(L):
     q = "".join(quote(L, t, n, p, d=i*.08) for i, (t, n, p) in enumerate(T_HOME))
     marq = "".join(img(L, f, "Dave Nab with students and colleagues", w, h, lazy=False) for f, w, h in MOMENTS)
     feat = "".join(f'''<article class="card feature {c} reveal" style="--d:{i*.06:.2f}s" data-cat="{c}"><span class="f-icon" aria-hidden="true">{FEATURE[t][0]}</span><div class="f-main"><div class="top"><span class="tag">{s}</span><span class="status live">Live</span></div><h3>{t}</h3><p>{FEATURE[t][1]}</p></div><div class="go"><a class="btn-card stretch" href="{L(LIVE[t])}">{FEATURE[t][2]} {ARR}</a></div></article>''' for i,(c,s,t,d,fo) in enumerate(x for x in APPS if x[2] in FEATURE and x[2] in LIVE))
-    apps = "".join(f'''<article class="card {c} reveal" style="--d:{(i%4)*.05:.2f}s" data-cat="{c}"><div class="top"><span class="tag">{s}</span>{'<span class="status live">Live</span>' if t in LIVE else '<span class="status">In development</span>'}</div><h3>{t}</h3><p>{d}</p><div class="focus">{''.join(f'<span>{x}</span>' for x in fo)}</div>{f'<div class="go"><a class="btn-card stretch" href="{L(LIVE[t])}">Try it {ARR}</a></div>' if t in LIVE else ''}</article>''' for i,(c,s,t,d,fo) in enumerate(x for x in APPS if x[2] not in FEATURE))
+    apps = ", ".join(t for c,s_,t,d,fo in APPS if t not in LIVE)
     soon = [("res-nominalisation.webp","Nominalisation"),("res-dependent-clauses.webp","Dependent clauses"),("res-paraphrasing.webp","Paraphrasing")]
     soonh = "".join(f'<a class="res reveal" style="--d:{i*.06:.2f}s" href="{L("resources/")}"><div class="thumb">{img(L,f,t+" lesson slides",600,600)}</div><div><h3>{t}</h3><div class="meta">Coming soon</div></div></a>' for i,(f,t) in enumerate(soon))
     return f'''
@@ -408,7 +428,7 @@ def home(L):
     <span class="eyebrow fade-up" style="--d:.05s">AI learning tools · Resources · IELTS</span>
     <h1 class="rise" style="margin-top:22px">{words("Learn smarter. Teach better. |Think deeper.|")}</h1>
     <p class="lead fade-up" style="--d:.7s">Free AI practice apps, ready-made EAP resources and IELTS coaching, built by a CELTA and DELTA qualified teacher and experienced speaking examiner with 15+ years in Australian higher education.</p>
-    <div class="cta fade-up" style="--d:.85s">{f'<a class="btn primary" href="#coach">Try the Feedback Coach {ARR}</a><a class="btn" href="#ai">Free apps</a>' if COACH_ON else f'<a class="btn primary" href="#ai">Try the free apps {ARR}</a>'}<a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
+    <div class="cta fade-up" style="--d:.85s">{f'<a class="btn primary" href="#coach">Try the Feedback Coach {ARR}</a><a class="btn" href="#ai">Free apps</a>' if COACH_BAND else f'<a class="btn primary" href="#ai">Try the free apps {ARR}</a>'}<a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
   </div>
   <div class="portrait fade-up" style="--d:.3s">
     <div class="ring" aria-hidden="true"></div>
@@ -424,14 +444,14 @@ def home(L):
   <a class="who-opt" href="{L('book/')}"><b>Book a class</b><span>IELTS, General English or a mock test</span><i aria-hidden="true">→</i></a>
 </nav></div></section>
 
-{coach_band(L) if COACH_ON else ""}
+{coach_band(L) if COACH_BAND else ""}
 
 <section class="ai-band" id="ai"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow reveal">AI apps &amp; resources</span><h2 class="reveal">Small, smart tools that help students <em>think</em>, not just get answers.</h2><p class="reveal">AI-supported apps for academic English. Each one targets one real skill students need at university, gives feedback that makes them do the thinking, and runs in any browser with no sign-in. Student work stays on their own device.</p></div>
     <a class="btn primary reveal" href="{L('apps/')}">See all apps {ARR}</a></div>
   <div class="filters reveal" role="group" aria-label="Filter apps by skill" style="margin-bottom:24px"><button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="listen">Listening</button><button aria-pressed="false" data-f="read">Reading</button><button aria-pressed="false" data-f="write">Writing</button><button aria-pressed="false" data-f="gram">Grammar</button><button aria-pressed="false" data-f="vocab">Vocabulary</button></div>
   <div class="grid ai-feature">{feat}</div>
-  <div class="grid ai-grid">{apps}</div>
+  <p class="ai-next reveal"><b>Coming next:</b> {apps}. <a href="{L('apps/')}">See all apps</a></p>
 </div></section>
 
 <section id="shop"><div class="wrap">
@@ -765,6 +785,9 @@ STUDENT_PACKS = [
 STUDENT_FREE = [
  ("wordlist","Word list · Quizlet","A1 – Academic Word List","Flashcards for Academic Word List vocabulary. Study online, or play Quizlet’s games and tests.",["Vocabulary","AWL"],"live","Free","https://quizlet.com/au/1143969156/a1-flash-cards/?i=oj7gk&amp;x=1qqt"),
  ("wordlist","Word list · Quizlet","A4 Week 1 Flash Cards","A Quizlet flashcard set for weekly vocabulary practice.",["Vocabulary","Week 1"],"live","Free","https://quizlet.com/au/1216144633/a4-week-1-flash-cards/"),
+ ("gram","App · Grammar","Grammar Hub","Short grammar units, A2–C1: test yourself, work out the rule, practise, and see your progress.",["Grammar","Free app"],"live","Free","@grammar-hub/"),
+ ("vocab","App · Vocabulary","Vocabulary Hub","Academic words and collocations, A2–C1, with a searchable word bank.",["Vocabulary","Free app"],"live","Free","@vocabulary-hub/"),
+ ("listen","App · Listening","Dictogloss Trainer","Hear a short academic talk, take notes, rebuild it in your own sentences and get hints on meaning and grammar.",["Listening","Free app"],"live","Free","@dictogloss/"),
  ("listen","App · Listening","Notetaking Trainer","Watch a short TED talk or news story, take notes your way, then check them against the key ideas.",["Note-taking","Free app"],"live","Free","@note-taking-trainer-ted/"),
  ("gram","App · Grammar","Grammar Self-Correction Trainer","Find and fix your own errors with correction codes and small hints.",["Self-correction","Free app"],"live","Free","@grammar-self-correction/"),
  ("write","App · Writing","APA Trainer","Build and fix APA 7th in-text citations, use “as cited in” correctly and choose better reporting verbs.",["Referencing","Free app"],"live","Free","@apa-citation-trainer/"),
@@ -969,7 +992,48 @@ def coach_page(L):
   <p class="coach-note reveal" style="margin-top:18px">Teachers: share this page with your students. The coach supports, but doesn’t replace, your feedback and your university’s learning support.</p>
 </div></section>
 '''
-if COACH_ON: page("feedback-coach/index.html", "Feedback-to-Mastery Coach · Free AI Tutor for Academic English · Dave Nab", "A free AI tutor that turns teacher feedback (“improve cohesion”, “your paraphrase is too close to the source”) into short lessons and practice, so EAP and university students learn to fix it themselves.", coach_page, cur="apps/")
+# ------------------------------------------------------------------ Feedback-to-Mastery Coach app (/feedback-coach/)
+# Built from _tools/feedback-coach/app.html + curriculum.js (the same source as the Claude artifact),
+# in website mode: AI requests go to the davenab-api Worker (COACH_API); no sign-in.
+COACH_API = "https://api.davenab.com"
+def assemble_coach():
+    src = open("_tools/feedback-coach/app.html", encoding="utf-8").read()
+    cur = open("_tools/feedback-coach/curriculum.js", encoding="utf-8").read()
+    src = src.replace("/*CURRICULUM*/", cur, 1)
+    k = src.index("</style>") + len("</style>")
+    head, body = src[:k], src[k:]
+    head = re.sub(r"<title>.*?</title>\n?", "", head, count=1)
+    head = head.replace('<meta name="claude:viewport-fit-sides" content="cover">\n', "")
+    body = body.replace('<a class="brand" href="https://davenab.com/" target="_blank" rel="noopener">', '<a class="brand" href="/">')
+    body = body.replace('href="https://davenab.com/apps/" target="_blank" rel="noopener">More free apps ↗', 'href="/apps/">More free apps')
+    body = body.replace('href="https://davenab.com/resources/students/" target="_blank" rel="noopener">Student resources ↗', 'href="/resources/students/">Student resources')
+    body = body.replace("<script>\n" + cur, f'<script>window.COACH_API = "{COACH_API}";</script>\n<script>\n' + cur, 1)
+    desc = "Free AI tutor for academic English: paste your teacher’s feedback, and the coach explains what it means, teaches the skill with examples and checks your practice. No sign-in."
+    doc = f'''<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Feedback-to-Mastery Coach · Free AI Tutor for Academic English · Dave Nab</title>
+<meta name="description" content="{html.escape(desc)}">
+<link rel="canonical" href="{SITE}feedback-coach/">
+<meta property="og:title" content="Feedback-to-Mastery Coach by Dave Nab">
+<meta property="og:description" content="{html.escape(desc)}">
+<meta property="og:image" content="{OG_IMG}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{FAV}">
+<script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}}catch(e){{}}</script>
+{head}
+</head>
+<body>
+<script src="/assets/appbar.js"></script>
+{body}
+</body>
+</html>
+'''
+    os.makedirs(os.path.join(OUT, "feedback-coach"), exist_ok=True)
+    open(os.path.join(OUT, "feedback-coach", "index.html"), "w", encoding="utf-8").write(doc)
+if COACH_ON: assemble_coach()
 
 # ------------------------------------------------------------------ BOOKING
 GF = "https://docs.google.com/forms/d/e/1FAIpQLSda5OD0a74n93Vw6FKQF-HaWF5spCccaGKzCvCje4vWa11yKA"

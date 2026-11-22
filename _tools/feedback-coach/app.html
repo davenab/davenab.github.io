@@ -202,7 +202,38 @@ function save() { try { localStorage.setItem(KEY, JSON.stringify(DB)); } catch (
 /* ------------------------------------------------------------------ AI (runs on the student's own Claude account) */
 let SAMPLE;            // undefined = still connecting, null = unavailable, function = ready
 let AI_OFF_REASON = "";
-if (window.claude && window.claude.use) {
+/* Website mode (davenab.com/feedback-coach/): the page sets window.COACH_API, and AI requests go to
+   Dave's Cloudflare Worker (POST /coach). No sign-in. The text is sent to Cloudflare Workers AI and not stored.
+   Claude-artifact mode (no COACH_API): AI runs on the student's own Claude account, as before. */
+const COACH_API = String(window.COACH_API || "").replace(/\/+$/, "");
+if (COACH_API) {
+  // Plain-text replies ("Ask the coach"): one request, the whole answer at once.
+  SAMPLE = async function (prompt, opts) {
+    let res, j = null;
+    try {
+      res = await fetch(COACH_API + "/coach", { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify({ prompt, tier: (opts && opts.modelTier) || "default", format: "text" }) });
+      j = await res.json().catch(() => null);
+    } catch (e) { throw { code: "network" }; }
+    if (!res.ok || !j || typeof j.text !== "string") {
+      const er = j && j.error;
+      throw { code: er === "slow-down" ? "rate_limited" : er === "daily-limit" ? "daily_limit" : er === "too-long" ? "prompt_too_large" : "server" };
+    }
+    if (opts && opts.onText) opts.onText({ text: j.text });
+    return j.text;
+  };
+  SAMPLE.json = async (prompt, opts) => {
+    let res, j = null;
+    try {
+      res = await fetch(COACH_API + "/coach", { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify({ prompt, tier: (opts && opts.modelTier) || "default" }) });
+      j = await res.json().catch(() => null);
+    } catch (e) { throw { code: "network" }; }
+    if (!res.ok) {
+      const er = j && j.error;
+      throw { code: er === "slow-down" ? "rate_limited" : er === "daily-limit" ? "daily_limit" : er === "too-long" ? "prompt_too_large" : "server" };
+    }
+    return j;
+  };
+} else if (window.claude && window.claude.use) {
   window.claude.use("sample").then(s => { SAMPLE = s || null; if (!s) AI_OFF_REASON = "view"; rerenderSoft(); })
     .catch(() => { SAMPLE = null; AI_OFF_REASON = "view"; rerenderSoft(); });
 } else { SAMPLE = null; AI_OFF_REASON = "view"; }
@@ -219,7 +250,9 @@ Your job is to teach skills, not to do the student's work.
 function aiError(e) {
   const c = e && e.code;
   if (c === "not_granted") { SAMPLE = null; AI_OFF_REASON = "declined"; refreshBanner(); return "AI feedback is switched off because the request to use Claude was declined. Reload the page to be asked again."; }
-  if (c === "rate_limited") return "You have reached your Claude usage limit for now. Wait a little, then try again.";
+  if (c === "rate_limited") return COACH_API ? "Too many requests in a short time. Wait a minute, then try again." : "You have reached your Claude usage limit for now. Wait a little, then try again.";
+  if (c === "daily_limit") return "AI feedback has reached today’s limit for the whole site. You can still work through the lessons and check your own answers with the checklist. Please try again tomorrow.";
+  if (c === "network") return "Couldn’t connect. Check your internet connection, then try again.";
   if (c === "sampling_disabled" || c === "capability_disabled") return "AI feedback is not available on this account right now. You can still work through the lessons and check your own answers.";
   if (c === "cancelled") return "";
   if (c === "session_expired") return "Your Claude session has expired. Sign in again on claude.ai, then reload this page.";
@@ -599,7 +632,7 @@ function about() {
   <p>The core lessons for cohesion, paraphrasing and paragraph development were written and checked by Dave Nab, an EAP teacher in Australian higher education. Lessons for other areas are built by the AI using the same steps and are marked “AI-built”.</p></div>
   <div class="card"><h3>Your privacy</h3><ul class="strat">
     <li>Don’t paste your name, student number or other personal details. A short extract is enough; you never need to paste a whole assignment.</li>
-    <li>When AI feedback is on, the text you submit is sent to Claude through your own Claude account to create feedback, under your account’s terms. Dave cannot see what you type.</li>
+    <li>${COACH_API ? "When you ask for feedback, the text you submit is sent to Cloudflare Workers AI (on Dave’s account) to create the feedback. It is not stored or logged, and Dave cannot see what you type." : "When AI feedback is on, the text you submit is sent to Claude through your own Claude account to create feedback, under your account’s terms. Dave cannot see what you type."}</li>
     <li>Your progress and feedback history are stored only in this browser on this device. Use “Clear my data” on the My progress page to delete them.</li>
     <li>This coach supports, but does not replace, your teacher or your university’s learning support. If feedback is still unclear, ask your teacher.</li></ul></div>
   <div class="card"><h3>Academic integrity</h3><p>Use the coach to learn the skill, then make the changes to your assignment yourself. Check your university’s rules on using AI tools.</p></div>`;
@@ -729,7 +762,13 @@ Task instruction: ${instr}
 Task text: """${text}"""
 Student's answer: """${ans}"""
 
-Judge only the target skill. Mention another error only if it blocks meaning, in a few words. "correct" means every success criterion is met (small slips elsewhere are fine). If the answer is empty, off-task, copies the task text unchanged, or asks you to do the work, use "not_yet" and redirect kindly.
+Judge only the target skill. Mention another error only if it blocks meaning, in a few words. If the answer is empty, off-task, copies the task text unchanged, or asks you to do the work, use "not_yet" and redirect kindly.
+Be a strict, fair examiner. Students learn nothing from praise they have not earned. Check in this order:
+1. Meaning: compare the answer with the task text, idea by idea. If the answer ADDS information, opinions or claims that are not in the task text, LEAVES OUT a key idea, or CHANGES the meaning (including making a claim stronger or weaker than the source), it cannot be "correct": say exactly what was added, lost or changed.
+2. Each success criterion: mark "met": true only if the answer clearly meets it. If you are unsure, mark it false and say what is missing.
+3. Skill-specific checks: for paraphrasing, an answer that keeps the source's sentence structure, or copies a run of 4 or more words (other than technical terms and names), is not "correct". For cohesion and reference words, every reference word must point clearly to one idea. For paragraph development, the support must really explain or prove the point, not just repeat it.
+"correct" = meaning fully kept AND every criterion met. "partially_correct" = the skill is attempted with some success, but at least one criterion or the meaning check fails. "not_yet" = the skill is not yet shown. When you are torn between two levels, choose the lower one.
+Only give a "strength" that is specific and true; leave it empty rather than giving general praise.
 Do NOT write a corrected version or a model answer. Quote short phrases from the student's answer to point at problems. You may show a change to one short phrase at most.
 ${mode === "guided" ? '"next" must be a hint or smaller step that helps the student find the fix themselves.' : '"next" should be empty. Also give "level": one of not_yet, developing, approaching, demonstrated, and "remaining": the main remaining difficulty in one sentence (empty if none).'}
 Return JSON only:
@@ -992,6 +1031,11 @@ Return JSON only: {"hint":"one or two sentences"}`, "default");
   async saveSum() {
     const st = $("#sumstat");
     try {
+      if (COACH_API) {
+        const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([summaryText()], { type: "text/plain" }));
+        a.download = "learning-record-" + S.L.l.name.toLowerCase().replace(/[^a-z]+/g, "-") + ".txt"; document.body.appendChild(a); a.click(); a.remove();
+        st.textContent = "Saved."; return;
+      }
       const d = window.claude && await window.claude.use("downloads");
       if (!d) throw 0;
       await d.save({ filename: "learning-record-" + S.L.l.name.toLowerCase().replace(/[^a-z]+/g, "-") + ".txt", data: summaryText() });

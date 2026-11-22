@@ -1,5 +1,6 @@
 /* Nominalisation and Hedging Trainer
-   Plain JavaScript. No framework, no server, no AI calls, no tracking.
+   Plain JavaScript. No framework, no tracking. Optional AI feedback on rewritten sentences only when the
+   student presses the button (Worker route /rewrite via /assets/ai.js; nothing stored).
    Practice items live in data/*.json (see README.md). Progress is kept in
    localStorage on this device only, and the app still works if storage is blocked. */
 (function () {
@@ -474,14 +475,34 @@
         const models = `<p><strong>Model answers</strong> (there is more than one good answer):</p><ul class="models">${it.modelAnswers.map(m => `<li>${esc(m)}</li>`).join("")}</ul>`;
         const list = (SELF_CHECK[it.track][it.stage] || SELF_CHECK[it.track][4]);
         $("#fb").innerHTML = `<div class="feedback neutral"><h2 tabindex="-1">Compare your sentence</h2>
-          <p class="mine">Your sentence: ${esc(val)}</p>${models}
+          <p class="mine">Your sentence: ${esc(val)}</p>${models}${aiBlock()}
           <p><strong>Check your sentence:</strong></p>
           <ul class="checklist">${list.map((c, i) => `<li><label><input type="checkbox" id="sc${i}"> <span>${esc(c)}</span></label></li>`).join("")}</ul>
           <div class="actions"><button class="btn primary" type="button" data-judge="1">✓ Mine works</button><button class="btn" type="button" data-judge="0">✗ Mine needs work</button></div></div>`;
         $("#fb h2").focus();
         judge(it, models);
+        bindAi(it, val);
       });
     }
+  }
+  /* Optional AI feedback on a rewritten sentence (Worker route /rewrite via /assets/ai.js). The student still decides. */
+  function aiBlock() {
+    if (!window.DNAI) return "";
+    return `<div class="ai-fb" id="aiFb"><button class="btn" type="button" id="aiBtn">Get AI feedback on my sentence</button>
+      <p class="small" id="aiOut" role="status">AI feedback. It can be wrong or miss things. Your sentence is sent to Cloudflare Workers AI and not stored.</p></div>`;
+  }
+  function bindAi(it, val) {
+    const b = $("#aiBtn"); if (!b) return;
+    b.addEventListener("click", () => {
+      b.disabled = true; b.textContent = "Checking…";
+      DNAI.post("/rewrite", { skill: it.track === "hedging" ? "hedging" : "nominalisation", instruction: defaultQuestion(it), source: it.prompt, models: it.modelAnswers || [], answer: val }, { app: "nomhedge" })
+        .then(r => {
+          const head = { works: "✓ AI thinks your sentence works", almost: "~ AI thinks it is almost there", not_yet: "✗ AI thinks it needs more work", off_task: "AI thinks this doesn’t answer the task" }[r.verdict] || "AI feedback";
+          $("#aiOut").innerHTML = `<b>${head}.</b>${r.well ? " " + esc(r.well) : ""}${(r.points || []).map(p => `<br>${p.quote ? "“" + esc(p.quote) + "”: " : ""}${esc(p.hint)}`).join("")}<br><span class="muted">AI feedback can be wrong. Compare with the models and decide.</span>`;
+          b.remove();
+        })
+        .catch(e => { b.disabled = false; b.textContent = "Get AI feedback on my sentence"; $("#aiOut").textContent = e.message; });
+    });
   }
   function expected(it) {
     return `<p><strong>Answers I expected:</strong> ${it.acceptedAnswers.map((a, i) => `gap ${i + 1}: ${esc(a.join(" / "))}`).join("; ")}</p>`;
@@ -610,11 +631,11 @@
       <div class="card"><h2>What it is for</h2><p>Many students write in a spoken style: short clauses with lots of verbs, and claims that sound 100% certain. University writing asks for two skills: <strong>nominalisation</strong> (putting actions and qualities into nouns) and <strong>hedging</strong> (making a claim as strong as the evidence, and no stronger).</p>
         <p>This app gives you short, regular practice. You answer from memory, items you get wrong come back later, and items you know come back less often. You move from single words to full sentences. Some items show what happens when you use <em>too much</em> nominalisation or hedging, so you also learn when to stop.</p></div>
       <div class="card"><h2>Who wrote the questions</h2><p>The practice items were drafted with the help of AI and checked by the teacher, Dave Nab.</p>
-        <p>The app itself does not use AI. Nothing you type is sent to an AI or to anyone else.</p></div>
+        <p>Most of the app does not use AI. On “rewrite” questions you can press <b>Get AI feedback on my sentence</b>: only then, your sentence, the task and the model answers are sent to Cloudflare Workers AI to create feedback. They are not stored or logged. AI feedback can be wrong, so compare with the models and decide yourself.</p></div>
       <div class="card"><h2>Why you check your own rewrites</h2><p>When you rewrite a whole sentence, there is more than one good answer, so the app does not mark it. Instead, you compare your sentence with model answers and a short checklist. Judging your own sentence is part of the skill: it is what you will do when you edit your essays.</p></div>
       <div class="card"><h2>What is stored, and where</h2><ul>
         <li>Your stage in each track, your review schedule, your recent scores, how often you used hints, and your goals.</li>
-        <li>It is stored only in this browser on this device (localStorage). Nothing is sent to a server.</li>
+        <li>It is stored only in this browser on this device (localStorage). Your progress is never sent to a server.</li>
         <li>There is no sign-in, no tracking and no analytics.</li>
         <li>On a shared computer, use <strong>Clear my data</strong> on the <a href="#/progress">My progress</a> page when you finish. Clearing your browser data also deletes your progress.</li></ul></div>
       <div class="card"><h2>Content check</h2>${DATA.problems.length ? `<p class="notice">Some items were skipped because of mistakes in the data files:</p><ul>${DATA.problems.map(p => `<li>${esc(p)}</li>`).join("")}</ul>` : `<p>✓ All ${DATA.items.length} items loaded with no problems.</p>`}</div>`);

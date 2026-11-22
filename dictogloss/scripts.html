@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dictogloss scripts for recording | Dave Nab</title>
+<meta name="robots" content="noindex">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap page" id="app">
+  <h1>Dictogloss scripts</h1>
+  <p class="noprint">All passages on one page, for checking and recording. Print with your browser (Ctrl+P or ⌘P). <a href="./">Back to the app</a></p>
+  <div id="list"><p>Loading…</p></div>
+</main>
+<script>
+(function () {
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  fetch("data/index.json").then(function (r) { return r.json(); }).then(function (d) {
+    return Promise.all(d.passages.map(function (p) { return fetch("data/passages/" + p.id + ".json").then(function (r) { return r.json(); }); }));
+  }).then(function (ps) {
+    document.getElementById("list").innerHTML = ps.map(function (p, i) {
+      var n = (p.text.match(/\S+/g) || []).length;
+      return '<section class="script"><h2>' + (i + 1) + ". " + esc(p.title) + ' <span class="draft">' + (p.verified ? "verified" : "draft") + "</span></h2>" +
+        '<p class="small muted">File: data/passages/' + esc(p.id) + ".json · " + n + " words · Recording file name: audio/" + esc(p.id) + ".mp3 · Target: " + p.targetGrammar.points.map(esc).join(", ") + "</p>" +
+        '<p class="text">' + esc(p.text) + "</p>" +
+        '<details><summary>Key ideas (' + p.keyIdeas.length + ")</summary><ol>" + p.keyIdeas.map(function (k) { return "<li>" + esc(k.text) + " <i>(" + k.type + ")</i></li>"; }).join("") + "</ol></details></section>";
+    }).join("");
+  }).catch(function () { document.getElementById("list").innerHTML = "<p>Couldn’t load the passages.</p>"; });
+})();
+</script>
+</body>
+</html>

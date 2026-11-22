@@ -1,0 +1,60 @@
+{
+  "id": "remote-work",
+  "title": "Working from home",
+  "topic": "Business and society",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "commute",
+      "definition": "the journey to and from work"
+    },
+    {
+      "term": "flexible",
+      "definition": "able to change easily"
+    },
+    {
+      "term": "isolated",
+      "definition": "alone and without contact with others"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Comparatives",
+      "Linking words: contrast"
+    ],
+    "codes": [
+      "comparatives",
+      "contrast"
+    ],
+    "listenFor": "Listen for -er than, more … than, less … than and the most. Listen for however, although, while and on the other hand."
+  },
+  "text": "Since more people started working from home, employers and workers have been comparing it with office work. For many people, working from home is more flexible, and it saves time because there is no commute. Some workers say they can concentrate better at home than in a busy office. On the other hand, working from home can be lonelier. Without colleagues nearby, it is harder to ask quick questions or share ideas. While some people prefer to stay at home every day, many choose a mix of home and office.",
+  "keyIdeas": [
+    {
+      "text": "People are comparing working from home with working in an office.",
+      "type": "main"
+    },
+    {
+      "text": "Working from home is more flexible and saves commuting time.",
+      "type": "main"
+    },
+    {
+      "text": "Some people concentrate better at home than in a busy office.",
+      "type": "detail"
+    },
+    {
+      "text": "However, working from home can be lonelier.",
+      "type": "main"
+    },
+    {
+      "text": "It is harder to ask quick questions or share ideas without colleagues.",
+      "type": "detail"
+    },
+    {
+      "text": "Many people choose a mix of home and office work.",
+      "type": "detail"
+    }
+  ],
+  "audioFile": ""
+}

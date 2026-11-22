@@ -182,3 +182,8 @@ input.gap{display:inline-block;width:9.5em;max-width:100%;padding:4px 8px;min-he
   body{background:#fff;color:#000;font-size:12pt}
   .card{border:1px solid #999;box-shadow:none;break-inside:avoid}
 }
+
+/* optional AI feedback box */
+.ai-fb{margin:14px 0;padding:12px 14px;border:1px dashed var(--border-strong);border-radius:var(--radius-sm)}
+.ai-fb .btn{margin-bottom:8px}
+.ai-fb p{margin:0}

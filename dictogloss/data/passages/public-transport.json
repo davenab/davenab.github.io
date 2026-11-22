@@ -1,0 +1,58 @@
+{
+  "id": "public-transport",
+  "title": "Buses, trains and cars",
+  "topic": "Transport planning",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "congestion",
+      "definition": "too much traffic on the roads"
+    },
+    {
+      "term": "emissions",
+      "definition": "gases released into the air"
+    },
+    {
+      "term": "frequent",
+      "definition": "happening often"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Comparatives"
+    ],
+    "codes": [
+      "comparatives"
+    ],
+    "listenFor": "Listen for -er than, more … than, less … than and the most."
+  },
+  "text": "City planners often compare public transport with private cars. A full bus carries many more people than a car, so it takes up much less space on the road. This helps to reduce congestion. Trains are usually faster than buses, because they do not share the road with other traffic. Public transport also produces lower emissions per passenger than most cars. However, people will only leave their cars at home if buses and trains are frequent, reliable and cheaper than driving. For this reason, the best transport systems are often the most convenient.",
+  "keyIdeas": [
+    {
+      "text": "Planners compare public transport with private cars.",
+      "type": "main"
+    },
+    {
+      "text": "A full bus carries more people than a car and uses less road space, reducing congestion.",
+      "type": "main"
+    },
+    {
+      "text": "Trains are often faster than buses because they avoid road traffic.",
+      "type": "detail"
+    },
+    {
+      "text": "Public transport produces lower emissions per passenger.",
+      "type": "detail"
+    },
+    {
+      "text": "People only switch if services are frequent, reliable and cheaper than driving.",
+      "type": "main"
+    },
+    {
+      "text": "The best systems are usually the most convenient ones.",
+      "type": "detail"
+    }
+  ],
+  "audioFile": ""
+}

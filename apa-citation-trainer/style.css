@@ -279,3 +279,8 @@ label{font-weight:600}
   .card{border:1px solid #999;box-shadow:none;break-inside:avoid}
   .enter{animation:none}
 }
+
+/* optional AI feedback box */
+.ai-fb{margin:14px 0;padding:12px 14px;border:1px dashed currentColor;border-radius:12px}
+.ai-fb .btn{margin-bottom:8px}
+.ai-fb p{margin:0}

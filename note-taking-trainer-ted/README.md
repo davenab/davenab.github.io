@@ -4,7 +4,7 @@ Note-taking practice with real talks, for EAP students at about CEFR B2. Student
 
 Live address: https://davenab.github.io/note-taking-trainer-ted/
 
-- No sign-in, no AI while the app runs, no tracking.
+- No sign-in, no tracking. Optional AI check on the self-check step (“Ask AI to check my notes”): typed notes + key ideas go to the davenab-api Worker route `/notes` (`/assets/ai.js`); nothing is stored. The student still decides each idea.
 - Notes and progress stay in the student's browser. Photos stay on the student's device. Nothing is uploaded.
 - This replaces version 1 (computer-voice lectures). The old address `/note-taking-trainer/` now redirects here; version 1 is still in the Git history if you ever need it.
 

@@ -10,15 +10,22 @@
     nomhedge: { t: "Nominalisation and Hedging Trainer", d: "Short practice for a more academic style", u: "/nominalisation-hedging-trainer/" },
     cite:     { t: "APA Trainer", d: "Build and fix APA 7th in-text citations", u: "/apa-citation-trainer/" },
     apaguide: { t: "APA Reference Guide", d: "Patterns and examples for every common source type", u: "/apa-reference-guide/" },
+    grammarhub: { t: "Grammar Hub", d: "Test yourself, work out the rule, practise (A2–C1)", u: "/grammar-hub/" },
+    vocabhub: { t: "Vocabulary Hub", d: "Academic words and collocations (A2–C1)", u: "/vocabulary-hub/" },
+    dictogloss: { t: "Dictogloss Trainer", d: "Listen, take notes and rebuild a short academic talk", u: "/dictogloss/" },
     coach:    { t: "Feedback-to-Mastery Coach", d: "Turn your teacher's feedback into skills you can use", u: "/feedback-coach/" }
   };
   var RES_STUDENTS = { t: "Resources for students", d: "Free Quizlet sets and self-study packs", u: "/resources/students/" };
   var HEDGING = { t: "Hedging in Academic Writing", d: "A ready-to-teach lesson for teachers", u: "/resources/hedging-in-academic-writing/" };
   var NEXT = {
-    notes:    { lead: "Finished your notes? Keep going:", items: [APPS.grammar, APPS.nomhedge, RES_STUDENTS] },
+    notes:    { lead: "Finished your notes? Keep going:", items: [APPS.dictogloss, APPS.grammar, RES_STUDENTS] },
     grammar:  { lead: "Fixed your errors? Try this next:", items: [APPS.nomhedge, APPS.notes, RES_STUDENTS] },
     nomhedge: { lead: "Done with nominalisation and hedging? Try this next:", items: [APPS.grammar, HEDGING, APPS.notes] },
-    cite:     { lead: "Finished your citation practice? Try this next:", items: [APPS.apaguide, APPS.nomhedge, APPS.grammar] }
+    cite:     { lead: "Finished your citation practice? Try this next:", items: [APPS.apaguide, APPS.nomhedge, APPS.grammar] },
+    grammarhub: { lead: "Finished a unit? Keep going:", items: [APPS.vocabhub, APPS.grammar, APPS.nomhedge] },
+    vocabhub: { lead: "Finished a unit? Keep going:", items: [APPS.grammarhub, APPS.cite, APPS.nomhedge] },
+    dictogloss: { lead: "Finished your dictogloss? Try this next:", items: [APPS.notes, APPS.grammarhub, APPS.grammar] },
+    coach:    { lead: "Finished your lesson? Keep going:", items: [APPS.grammarhub, APPS.grammar, APPS.vocabhub] }
   };
 
   var CSS =
@@ -67,6 +74,16 @@
     }
   };
 
+  // Cloudflare Web Analytics: cookieless page-view counts only (no personal data). Token is public by design.
+  // An app can opt out by setting window.DN_NO_BEACON = true before loading this file.
+  function addBeacon() {
+    if (window.DN_NO_BEACON || document.querySelector('script[src*="cloudflareinsights.com"]') || !/davenab\.(com|github\.io)$/.test(location.hostname)) return;
+    var s = document.createElement("script"); s.defer = true; s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    s.setAttribute("data-cf-beacon", '{"token": "618c9d602257483795361f11fc6b1a08"}');
+    document.head.appendChild(s);
+  }
+
   addStyle();
+  try { addBeacon(); } catch (e) {}
   if (document.body) addBar(); else document.addEventListener("DOMContentLoaded", addBar);
 })();

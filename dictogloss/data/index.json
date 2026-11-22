@@ -1,0 +1,145 @@
+{
+  "_help": "The list of passages shown on the start screen. One entry per file in passages/. See README.md: How to add a passage.",
+  "passages": [
+    {
+      "id": "street-trees",
+      "title": "Why cities plant street trees",
+      "topic": "Urban planning",
+      "level": "B2",
+      "words": 87,
+      "targetGrammar": [
+        "Linking words: cause and result",
+        "Passive voice"
+      ],
+      "verified": false
+    },
+    {
+      "id": "sleep-learning",
+      "title": "Sleep and learning",
+      "topic": "Psychology",
+      "level": "B2",
+      "words": 85,
+      "targetGrammar": [
+        "Relative clauses",
+        "Linking words: cause and result"
+      ],
+      "verified": false
+    },
+    {
+      "id": "plastic-recycling",
+      "title": "What happens to recycled plastic",
+      "topic": "Environmental science",
+      "level": "B2",
+      "words": 91,
+      "targetGrammar": [
+        "Passive voice"
+      ],
+      "verified": false
+    },
+    {
+      "id": "remote-work",
+      "title": "Working from home",
+      "topic": "Business and society",
+      "level": "B2",
+      "words": 90,
+      "targetGrammar": [
+        "Comparatives",
+        "Linking words: contrast"
+      ],
+      "verified": false
+    },
+    {
+      "id": "household-water",
+      "title": "Saving water at home",
+      "topic": "Water resources",
+      "level": "B2",
+      "words": 95,
+      "targetGrammar": [
+        "Articles"
+      ],
+      "verified": false
+    },
+    {
+      "id": "language-learning",
+      "title": "How language learning has changed",
+      "topic": "Education",
+      "level": "B2",
+      "words": 89,
+      "targetGrammar": [
+        "Present perfect and past simple",
+        "Relative clauses"
+      ],
+      "verified": false
+    },
+    {
+      "id": "public-transport",
+      "title": "Buses, trains and cars",
+      "topic": "Transport planning",
+      "level": "B2",
+      "words": 93,
+      "targetGrammar": [
+        "Comparatives"
+      ],
+      "verified": false
+    },
+    {
+      "id": "food-waste",
+      "title": "Where food waste comes from",
+      "topic": "Food systems",
+      "level": "B2",
+      "words": 95,
+      "targetGrammar": [
+        "Passive voice",
+        "Articles"
+      ],
+      "verified": false
+    },
+    {
+      "id": "coral-reefs",
+      "title": "Coral reefs under pressure",
+      "topic": "Marine science",
+      "level": "B2",
+      "words": 92,
+      "targetGrammar": [
+        "Present perfect and past simple"
+      ],
+      "verified": false
+    },
+    {
+      "id": "note-taking-methods",
+      "title": "Laptop or pen and paper?",
+      "topic": "Study skills",
+      "level": "B2",
+      "words": 93,
+      "targetGrammar": [
+        "Linking words: contrast",
+        "Comparatives"
+      ],
+      "verified": false
+    },
+    {
+      "id": "urban-heat",
+      "title": "The urban heat island",
+      "topic": "Urban climate",
+      "level": "B2",
+      "words": 83,
+      "targetGrammar": [
+        "Articles",
+        "Relative clauses"
+      ],
+      "verified": false
+    },
+    {
+      "id": "fast-fashion",
+      "title": "The cost of cheap clothes",
+      "topic": "Consumer studies",
+      "level": "B2",
+      "words": 84,
+      "targetGrammar": [
+        "Linking words: cause and result",
+        "Passive voice"
+      ],
+      "verified": false
+    }
+  ]
+}

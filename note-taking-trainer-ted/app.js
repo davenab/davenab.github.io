@@ -224,7 +224,7 @@
       id: 's' + Date.now(), date: new Date().toISOString(), kind: kind, act: a || null,
       actId: a ? a.id : '', source: a ? a.source : 'own', title: a ? a.title : 'My own recording', speaker: a ? (a.speaker || '') : '',
       verified: a ? a.verified : null, skill: pickedSkill || TIPS[d.sessions.length % TIPS.length].id,
-      expect: '', notesMode: null, notes: '', photos: [], photoURLs: [], listens: 0, ended: false,
+      expect: '', notesMode: null, notes: '', photos: [], photoURLs: [], listens: 0, ended: false, aiRes: null,
       predicted: null, checks: [], ci: 0, organised: null, abbrev: null, quiz: [], qi: 0, reflection: '', goal: '',
       own: { topic: '', expect: '', fileName: '', ratings: {}, summary: ['', '', ''] },
       step: kind === 'act' ? 'ready' : 'ownready', done: false
@@ -561,18 +561,40 @@
     var main = $('#checkMain');
     function dots() { var h = ''; for (var i = 0; i < n; i++) h += '<i class="' + (S.checks[i] ? 'done' : '') + (i === S.ci ? ' now' : '') + '"></i>'; $('#dots').innerHTML = h; }
     function focusH() { var h = $('#ideaH') || $('#rateH'); if (h) h.focus(); }
+    var AIL = { got: '✓ Got it', partly: '~ Partly', missed: '✗ Missed' };
+    function aiBox() {
+      if (!window.DNAI || S.notesMode !== 'type' || S.notes.trim().length < 15) return '';
+      if (S.aiRes) return '<p class="small muted" style="margin:0">AI feedback is shown under each idea. It can be wrong or miss things: you decide.</p>';
+      return '<div class="card"><p style="margin-top:0"><b>Want a second opinion?</b> AI can read your typed notes and suggest which key ideas are there. You still decide.</p>' +
+        '<button type="button" class="btn light" id="aiNotes">Ask AI to check my notes</button>' +
+        '<p class="small muted" id="aiMsg" role="status" style="margin:10px 0 0">Your notes and the key ideas are sent to AI feedback (Cloudflare Workers AI). Nothing is stored.</p></div>';
+    }
+    function aiLine(i) {
+      var r = S.aiRes && S.aiRes.ideas && S.aiRes.ideas[i]; if (!r) return '';
+      return '<p class="small" style="margin:12px 0 0;padding:10px 12px;border-radius:12px;border:1px dashed currentColor"><b>AI feedback:</b> ' + esc(AIL[r.status] || r.status) + (r.hint ? ' · ' + esc(r.hint) : '') + ' <span class="muted">(It can be wrong.)</span></p>';
+    }
+    function bindAi() {
+      var b = $('#aiNotes'); if (!b) return;
+      b.addEventListener('click', function () {
+        b.disabled = true; b.textContent = 'Reading your notes…';
+        DNAI.post('/notes', { ideas: S.act.keyIdeas.map(function (k) { return { text: k.text, type: k.type }; }), notes: S.notes }, { app: 'notes' })
+          .then(function (r) { S.aiRes = r; showIdea(); focusH(); })
+          .catch(function (e) { b.disabled = false; b.textContent = 'Ask AI to check my notes'; $('#aiMsg').textContent = e.message + ' You can check your notes yourself below.'; });
+      });
+    }
     function showIdea() {
       dots();
       if (S.ci >= n) return showRatings();
       var k = S.act.keyIdeas[S.ci];
-      main.innerHTML = '<div class="card"><h3 tabindex="-1" id="ideaH" class="label" style="font-size:.88rem">Key idea ' + (S.ci + 1) + ' of ' + n + '</h3>' +
+      main.innerHTML = aiBox() + '<div class="card"><h3 tabindex="-1" id="ideaH" class="label" style="font-size:.88rem">Key idea ' + (S.ci + 1) + ' of ' + n + '</h3>' +
         '<div class="badges"><span class="badge ' + k.type + '">' + (k.type === 'main' ? 'Main idea' : 'Supporting detail') + '</span></div>' +
         '<p class="idea">' + esc(k.text) + '</p>' +
-        '<fieldset><legend class="q">Is this in your notes?</legend>' + choiceGroup('check', S.checks[S.ci], 'check') + '</fieldset>' +
+        aiLine(S.ci) + '<fieldset><legend class="q">Is this in your notes?</legend>' + choiceGroup('check', S.checks[S.ci], 'check') + '</fieldset>' +
         '<p class="small muted" style="margin:12px 0 0">“Got it” means the idea is in your notes in any form: a word, a symbol, a drawing or another language.</p></div>' +
         (S.ci > 0 ? '<div><button type="button" class="btn light" id="prevIdea">← Previous idea</button></div>' : '');
       $$('.choices button', main).forEach(function (b) { b.addEventListener('click', function () { S.checks[S.ci] = b.dataset.v; S.ci++; showIdea(); focusH(); }); });
       var p = $('#prevIdea'); if (p) p.addEventListener('click', function () { S.ci--; showIdea(); focusH(); });
+      bindAi();
     }
     function showRatings() {
       main.innerHTML = '<div class="card stack"><h3 tabindex="-1" id="rateH">Two quick questions about your notes</h3>' +
