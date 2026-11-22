@@ -13,6 +13,9 @@ PAY_HEDGING = "https://www.paypal.com/ncp/payment/TYYAE8VP9CW2U"
 SITE = "https://davenab.com/"
 import hashlib
 ASSET_V = hashlib.md5((open("assets/style.css","rb").read()+open("assets/app.js","rb").read())).hexdigest()[:8]  # cache-busting
+# Cloudflare Web Analytics (cookieless page views; the token is public by design). Set "" to turn off.
+CF_BEACON = "618c9d602257483795361f11fc6b1a08"
+BEACON = (f'<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{{"token": "{CF_BEACON}"}}\'></script>\n' if CF_BEACON else "")
 COACH_ON = False  # Feedback-to-Mastery Coach hidden from the site until Dave decides; set True and rebuild to bring it back
 COACH_URL = "https://claude.ai/artifact/U8aWTwYD84iMXthwhTXHYg"  # Feedback-to-Mastery Coach (Claude artifact; source in _tools/feedback-coach/)
 
@@ -158,7 +161,7 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{P}assets/style.css?v={ASSET_V}">
-{extra_head}</head>
+{extra_head}{BEACON}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" aria-hidden="true"><span></span></div>

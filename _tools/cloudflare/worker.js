@@ -142,7 +142,7 @@ The learner did this task: "${task}".
 Judge ONLY ${focus}. Also mention at most one other serious error that blocks meaning.
 Rules:
 - Use Australian/British spelling. Use simple words suitable for a ${level} learner.
-- Do NOT rewrite the whole text. Point to the problem and give a hint so the learner can fix it themselves.
+- Never write the corrected word, phrase or sentence in any field. Instead, name the rule or ask a short guiding question (for example: "Do you need both more and -er here?"), so the learner fixes it themselves.
 - Quote the learner's exact words in "quote" (max 8 words).
 - If the target is used correctly, say so and praise one specific thing.
 - If the text is not an attempt at the task, or is not English, set verdict to "off_task".

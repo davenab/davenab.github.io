@@ -71,6 +71,15 @@
     }
   };
 
+  // Cloudflare Web Analytics: cookieless page-view counts only (no personal data). Token is public by design.
+  function addBeacon() {
+    if (document.querySelector('script[src*="cloudflareinsights.com"]') || !/davenab\.(com|github\.io)$/.test(location.hostname)) return;
+    var s = document.createElement("script"); s.defer = true; s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    s.setAttribute("data-cf-beacon", '{"token": "618c9d602257483795361f11fc6b1a08"}');
+    document.head.appendChild(s);
+  }
+
   addStyle();
+  try { addBeacon(); } catch (e) {}
   if (document.body) addBar(); else document.addEventListener("DOMContentLoaded", addBar);
 })();

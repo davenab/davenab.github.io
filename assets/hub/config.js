@@ -5,6 +5,6 @@
    aiFeedback: true shows the "Get AI feedback" button on the "Use it" step (needs apiBase).
    Never put an API key in this file: the repository is public. */
 window.DN_HUB_CONFIG = {
-  apiBase: "",
+  apiBase: "https://api.davenab.com",
   aiFeedback: true
 };

@@ -24,7 +24,7 @@ Files: `worker.js` (the code), `schema.sql` (database tables), `wrangler.toml` (
 
 ## Part 2: The Worker and database. Choose ONE option
 
-**Status (22 Nov 2026):** the D1 database `davenab-db` (id `5564a46b-fdb7-48f2-b091-b24405761de3`, Oceania) is created and its tables are set up. In Option B, skip steps 1–2. The Worker itself is not deployed yet.
+**Status (22 Nov 2026): DONE.** Deployed by Claude through the Cloudflare API connector. Worker `davenab-api` runs at **https://api.davenab.com** (custom domain; the workers.dev address is switched off), with bindings DB → `davenab-db` (id `5564a46b-fdb7-48f2-b091-b24405761de3`, Oceania), AI, FEEDBACK_LIMITER (10/min), and the three variables. Logs are off. Web Analytics: site `davenab.com` (token `618c9d602257483795361f11fc6b1a08`) — the site is DNS-only, so the beacon script is added to every page by `_tools/build.py` (`CF_BEACON`) and to every app by `assets/appbar.js`. The options below are only needed to rebuild it from scratch.
 
 ### Option A (easiest for you): let Claude deploy it
 1. dash.cloudflare.com → top-right profile icon → **My Profile → API Tokens → Create Token → Create Custom Token**.
@@ -96,7 +96,7 @@ Leave `apiBase` empty to turn both off.
 
 ## Part 4: Reading your impact data
 - Quick summary (anyone can open it; groups under 5 are hidden):
-  `https://davenab-api.yourname.workers.dev/stats` (or `/stats?hub=grammar`)
+  `https://api.davenab.com/stats` (or `/stats?hub=grammar`)
 - Full queries: D1 → `davenab-db` → **Console**:
 
 ```sql

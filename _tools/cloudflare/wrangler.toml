@@ -2,7 +2,8 @@
 name = "davenab-api"
 main = "worker.js"
 compatibility_date = "2026-11-01"
-workers_dev = true
+workers_dev = false
+routes = [{ pattern = "api.davenab.com", custom_domain = true }]
 
 [vars]
 ALLOWED_ORIGINS = "https://davenab.com,https://www.davenab.com,https://davenab.github.io"
