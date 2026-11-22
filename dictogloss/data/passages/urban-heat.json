@@ -1,0 +1,60 @@
+{
+  "id": "urban-heat",
+  "title": "The urban heat island",
+  "topic": "Urban climate",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "heat island",
+      "definition": "an area that is warmer than the land around it"
+    },
+    {
+      "term": "surface",
+      "definition": "the outside or top layer of something"
+    },
+    {
+      "term": "reflect",
+      "definition": "to send light or heat back"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Articles",
+      "Relative clauses"
+    ],
+    "codes": [
+      "articles",
+      "relative"
+    ],
+    "listenFor": "Listen for a, an and the, and for nouns with no article. Listen for who, which and that adding information about a noun."
+  },
+  "text": "A city is often warmer than the countryside around it. This effect is called an urban heat island. It happens because roads and buildings, which are often made of dark materials, absorb heat from the sun during the day. At night, they slowly release that heat, so the city stays warm. There are also fewer plants in cities, and plants help to cool the air. Some cities are now painting roofs a light colour, which reflects sunlight, and adding parks that give shade.",
+  "keyIdeas": [
+    {
+      "text": "Cities are often warmer than the countryside around them: an urban heat island.",
+      "type": "main"
+    },
+    {
+      "text": "Roads and buildings with dark surfaces absorb heat during the day.",
+      "type": "main"
+    },
+    {
+      "text": "They release the heat at night, so the city stays warm.",
+      "type": "detail"
+    },
+    {
+      "text": "Cities have fewer plants, which normally cool the air.",
+      "type": "detail"
+    },
+    {
+      "text": "Some cities paint roofs a light colour to reflect sunlight.",
+      "type": "detail"
+    },
+    {
+      "text": "Cities are adding parks to give shade.",
+      "type": "detail"
+    }
+  ],
+  "audioFile": ""
+}

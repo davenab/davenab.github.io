@@ -1,0 +1,54 @@
+{
+  "id": "household-water",
+  "title": "Saving water at home",
+  "topic": "Water resources",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "drought",
+      "definition": "a long period with little or no rain"
+    },
+    {
+      "term": "appliance",
+      "definition": "a machine used at home, such as a washing machine"
+    },
+    {
+      "term": "leak",
+      "definition": "a small hole that lets water escape"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Articles"
+    ],
+    "codes": [
+      "articles"
+    ],
+    "listenFor": "Listen for a, an and the, and for nouns with no article."
+  },
+  "text": "In a country with frequent droughts, saving water at home is important. The biggest change usually comes from the shower. A shorter shower can save a lot of water, and a water-saving shower head can help too. In the kitchen, a dishwasher often uses less water than washing dishes by hand, if it is full. Gardens also use water, especially in summer. Watering plants in the early morning means less water is lost to the sun. Finally, a dripping tap or a hidden leak can waste water every day, so it should be fixed quickly.",
+  "keyIdeas": [
+    {
+      "text": "Saving water at home matters in a country with droughts.",
+      "type": "main"
+    },
+    {
+      "text": "Shorter showers and water-saving shower heads save a lot of water.",
+      "type": "main"
+    },
+    {
+      "text": "A full dishwasher can use less water than washing by hand.",
+      "type": "detail"
+    },
+    {
+      "text": "Watering the garden early in the morning loses less water to the sun.",
+      "type": "detail"
+    },
+    {
+      "text": "Dripping taps and hidden leaks waste water and should be fixed quickly.",
+      "type": "main"
+    }
+  ],
+  "audioFile": ""
+}

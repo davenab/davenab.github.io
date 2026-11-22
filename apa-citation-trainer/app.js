@@ -1,5 +1,6 @@
 /* APA Trainer: APA 7th In-Text Citation Trainer
-   Plain JavaScript. No framework, no server, no AI calls, no tracking.
+   Plain JavaScript. No framework, no tracking. Optional AI feedback on rewrite answers only when the student
+   presses the button (Worker route /rewrite via /assets/ai.js; nothing stored).
    Practice items live in data/track-*.json (see README.md). House rules live in config.js.
    Progress is kept in localStorage on this device only, and the app still works if storage is blocked. */
 (function () {
@@ -585,6 +586,7 @@
           h += '<div class="compare"><h2>Compare with ' + (it.modelAnswers.length > 1 ? "these models" : "this model") + "</h2>" +
             '<p class="small muted">There is more than one good answer. Yours does not need to match exactly.</p><ul class="models">' + it.modelAnswers.map(m => "<li>" + sent(m) + "</li>").join("") + "</ul>" +
             (it.track === "C" || it.track === "D" ? '<p class="small muted">' + esc(TENSE_TEXT[CFG.reportingVerbTense]) + "</p>" : "") +
+            aiBlock() +
             '<h2>Check your answer</h2><ul class="checklist">' + (it.selfCheck || SELF_CHECK).map((q, k) => '<li><label><input type="checkbox" data-chk="' + k + '"' + (CUR.checks[k] ? " checked" : "") + (CUR.done ? " disabled" : "") + "> " + esc(q) + "</label></li>").join("") + "</ul></div>";
         }
         return h;
@@ -613,6 +615,12 @@
 
   function feedback(ok, parts) {
     return '<div class="feedback ' + (ok === null ? "neutral" : ok ? "ok" : "bad") + '"><h2>' + (ok === null ? "Noted" : ok ? "✓ Right" : "✗ Not quite") + "</h2>" + parts.join("") + "</div>";
+  }
+  /* Optional AI feedback on a rewritten citation (Worker route /rewrite via /assets/ai.js). The student still decides. */
+  function aiBlock() {
+    if (!window.DNAI) return "";
+    if (CUR.ai) return '<div class="ai-fb" tabindex="-1"><p>' + CUR.ai + "</p></div>";
+    return '<div class="ai-fb" tabindex="-1"><button class="btn" type="button" id="aiBtn"' + (CUR.done ? " disabled" : "") + '>Get AI feedback on my answer</button><p class="small" id="aiOut" role="status">AI feedback. It can be wrong or miss things. Your answer is sent to Cloudflare Workers AI and not stored.</p></div>';
   }
   function ruleLine(it) { return '<p class="rule"><b>Rule:</b> ' + esc(it.rule) + (it.topic && DATA.topics[it.topic] ? ' <a href="#/guide/' + esc(it.topic) + '" target="_blank" rel="noopener">Quick guide<span class="sr"> (opens in a new tab)</span></a>' : "") + "</p>"; }
   function finish(it, ok, html) {
@@ -697,6 +705,17 @@
       };
       on("#works", "click", () => self(true));
       on("#needs", "click", () => self(false));
+      on("#aiBtn", "click", () => {
+        const b = $("#aiBtn"); b.disabled = true; b.textContent = "Checking…";
+        const info = (it.sourceCards || []).map(c => (c.authors || []).join(", ") + " (" + c.year + "), " + (c.type || "") + ": " + (c.did || "")).join(" | ");
+        DNAI.post("/rewrite", { skill: "apa", instruction: it.prompt, source: it.frame || "", sourceInfo: info, models: it.modelAnswers || [], answer: CUR.text }, { app: "apa" })
+          .then(r => {
+            const head = { works: "✓ AI thinks your answer works", almost: "~ AI thinks it is almost there", not_yet: "✗ AI thinks it needs more work", off_task: "AI thinks this doesn’t answer the task" }[r.verdict] || "AI feedback";
+            CUR.ai = "<b>" + head + ".</b>" + (r.well ? " " + esc(r.well) : "") + (r.points || []).map(p => "<br>" + (p.quote ? "“" + esc(p.quote) + "”: " : "") + esc(p.hint)).join("") + '<br><span class="muted">AI feedback can be wrong. Check the rule and the models, then decide.</span>';
+            rerender(".ai-fb");
+          })
+          .catch(e => { b.disabled = false; b.textContent = "Get AI feedback on my answer"; $("#aiOut").textContent = e.message; });
+      });
     }
   }
   function citeFeedback(it, input) {
@@ -852,7 +871,7 @@
       "<li><b>All sources in this app are invented for practice.</b> The authors, studies and titles are not real. Do not cite them in your work.</li>" +
       "<li>This app trains the skill. It does not make citations for your assignments.</li>" +
       "<li>Always follow your own course’s referencing guide where it is different from this app.</li>" +
-      "<li>The app makes no AI calls while you use it.</li></ul></section>" +
+      "<li>On rewrite questions you can press <b>Get AI feedback on my answer</b>. Only then, your answer, the task and the model answers are sent to Cloudflare Workers AI. They are not stored or logged. AI feedback can be wrong: check the rule and decide yourself.</li></ul></section>" +
       '<section class="card"><h2>Your data</h2><p>No sign-in. No tracking. No analytics. Nothing leaves your device.</p>' +
       "<p>The app saves these things in your browser’s storage (localStorage) on this device only: your stage in each track, the review schedule for each question, your recent scores, when you used hints, and your goals.</p>" +
       '<p>To delete it all, use the button below (or “Clear my data” on the My progress page).</p><div class="actions"><button class="btn danger" type="button" id="clear">Clear my data</button></div><p id="amsg" class="small" aria-live="polite"></p></section>' +

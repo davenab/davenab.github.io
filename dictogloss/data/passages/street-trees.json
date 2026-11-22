@@ -1,0 +1,60 @@
+{
+  "id": "street-trees",
+  "title": "Why cities plant street trees",
+  "topic": "Urban planning",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "urban",
+      "definition": "to do with towns and cities"
+    },
+    {
+      "term": "shade",
+      "definition": "an area where direct sunlight is blocked"
+    },
+    {
+      "term": "absorb",
+      "definition": "to take in liquid, like a sponge"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Linking words: cause and result",
+      "Passive voice"
+    ],
+    "codes": [
+      "cause",
+      "passive"
+    ],
+    "listenFor": "Listen for because, so, as a result and therefore. Listen for passive verbs: is/are/was/were + past participle (for example, is collected)."
+  },
+  "text": "Many cities are now planting more trees along their streets, and there are several good reasons for this. Trees provide shade, so the buildings and pavements nearby stay cooler on hot days. As a result, people often need less air conditioning in summer. Trees also absorb rainwater. Because of this, less water runs into the drains during storms, and the risk of flooding is reduced. However, street trees need care. They are usually chosen carefully, because some types grow too large or damage footpaths with their roots.",
+  "keyIdeas": [
+    {
+      "text": "Many cities are planting more street trees.",
+      "type": "main"
+    },
+    {
+      "text": "Trees give shade, so nearby buildings and streets stay cooler.",
+      "type": "main"
+    },
+    {
+      "text": "As a result, people may use less air conditioning in summer.",
+      "type": "detail"
+    },
+    {
+      "text": "Trees absorb rainwater, which reduces flooding.",
+      "type": "main"
+    },
+    {
+      "text": "Street trees need care and planning.",
+      "type": "detail"
+    },
+    {
+      "text": "Some types are avoided because they grow too big or damage footpaths.",
+      "type": "detail"
+    }
+  ],
+  "audioFile": ""
+}

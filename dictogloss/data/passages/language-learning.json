@@ -1,0 +1,60 @@
+{
+  "id": "language-learning",
+  "title": "How language learning has changed",
+  "topic": "Education",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "textbook",
+      "definition": "a book used for study"
+    },
+    {
+      "term": "authentic",
+      "definition": "real, not made for learners"
+    },
+    {
+      "term": "feedback",
+      "definition": "comments on how well you are doing"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Present perfect and past simple",
+      "Relative clauses"
+    ],
+    "codes": [
+      "ppps",
+      "relative"
+    ],
+    "listenFor": "Listen for have/has + past participle (has changed) and for finished past times (in the past, ten years ago). Listen for who, which and that adding information about a noun."
+  },
+  "text": "The way people learn languages has changed a lot. In the past, most learners studied from a textbook and practised with a teacher in a classroom. They heard the language mainly from recordings that were made for learners. Today, learners have access to authentic materials, such as films, podcasts and news, which they can watch or listen to at any time. Apps have also become popular. However, many teachers believe that practice with real people is still essential, because conversation gives learners feedback that an app cannot always give.",
+  "keyIdeas": [
+    {
+      "text": "The way people learn languages has changed a lot.",
+      "type": "main"
+    },
+    {
+      "text": "In the past, learners mostly used a textbook and a teacher in class.",
+      "type": "detail"
+    },
+    {
+      "text": "They mainly heard recordings made for learners.",
+      "type": "detail"
+    },
+    {
+      "text": "Now learners can use real materials like films, podcasts and news at any time.",
+      "type": "main"
+    },
+    {
+      "text": "Language apps have become popular.",
+      "type": "detail"
+    },
+    {
+      "text": "Many teachers think practice with real people is still essential because it gives feedback.",
+      "type": "main"
+    }
+  ],
+  "audioFile": ""
+}

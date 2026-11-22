@@ -1,0 +1,58 @@
+{
+  "id": "coral-reefs",
+  "title": "Coral reefs under pressure",
+  "topic": "Marine science",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "coral",
+      "definition": "a sea animal that builds hard structures called reefs"
+    },
+    {
+      "term": "bleaching",
+      "definition": "when coral loses its colour because of stress"
+    },
+    {
+      "term": "recover",
+      "definition": "to return to a healthy state"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Present perfect and past simple"
+    ],
+    "codes": [
+      "ppps"
+    ],
+    "listenFor": "Listen for have/has + past participle (has changed) and for finished past times (in the past, ten years ago)."
+  },
+  "text": "Coral reefs are home to a huge variety of sea life. Over the last few decades, many reefs have experienced bleaching. Bleaching happens when the water becomes too warm for a long time and the coral loses the tiny living things that give it colour and food. In the past, reefs usually had many years to recover between warm periods. Recently, however, these periods have become more frequent, so there is less time for recovery. Scientists have also started testing ways to help reefs, such as growing young coral and replanting it.",
+  "keyIdeas": [
+    {
+      "text": "Coral reefs support a huge variety of sea life.",
+      "type": "main"
+    },
+    {
+      "text": "In recent decades many reefs have experienced bleaching.",
+      "type": "main"
+    },
+    {
+      "text": "Bleaching happens when water stays too warm and coral loses the living things that give it colour and food.",
+      "type": "detail"
+    },
+    {
+      "text": "In the past, reefs had years to recover between warm periods.",
+      "type": "detail"
+    },
+    {
+      "text": "Warm periods are now more frequent, leaving less time to recover.",
+      "type": "main"
+    },
+    {
+      "text": "Scientists are testing ways to help, such as growing and replanting young coral.",
+      "type": "detail"
+    }
+  ],
+  "audioFile": ""
+}

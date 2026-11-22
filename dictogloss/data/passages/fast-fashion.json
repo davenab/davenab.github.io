@@ -1,0 +1,60 @@
+{
+  "id": "fast-fashion",
+  "title": "The cost of cheap clothes",
+  "topic": "Consumer studies",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "fast fashion",
+      "definition": "cheap clothes made quickly to follow new trends"
+    },
+    {
+      "term": "trend",
+      "definition": "a new style that many people follow"
+    },
+    {
+      "term": "second-hand",
+      "definition": "owned by someone before"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Linking words: cause and result",
+      "Passive voice"
+    ],
+    "codes": [
+      "cause",
+      "passive"
+    ],
+    "listenFor": "Listen for because, so, as a result and therefore. Listen for passive verbs: is/are/was/were + past participle (for example, is collected)."
+  },
+  "text": "Clothes have become much cheaper, partly because of fast fashion. New styles are designed and produced very quickly, so shops can sell the latest trends at low prices. As a result, many people buy more clothes and wear them fewer times. This has an environmental cost. Large amounts of water and energy are used to make clothes, and many items are thrown away after a short time. Therefore, some shoppers are choosing to buy second-hand clothes, repair what they own, or simply buy less.",
+  "keyIdeas": [
+    {
+      "text": "Clothes have become cheaper partly because of fast fashion.",
+      "type": "main"
+    },
+    {
+      "text": "New styles are made very quickly, so trends are sold at low prices.",
+      "type": "detail"
+    },
+    {
+      "text": "As a result, people buy more clothes and wear them less.",
+      "type": "main"
+    },
+    {
+      "text": "Making clothes uses a lot of water and energy.",
+      "type": "detail"
+    },
+    {
+      "text": "Many clothes are thrown away after a short time.",
+      "type": "detail"
+    },
+    {
+      "text": "Some shoppers now buy second-hand, repair clothes or buy less.",
+      "type": "main"
+    }
+  ],
+  "audioFile": ""
+}

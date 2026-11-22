@@ -1,0 +1,60 @@
+{
+  "id": "food-waste",
+  "title": "Where food waste comes from",
+  "topic": "Food systems",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "supply chain",
+      "definition": "all the steps that bring a product to the customer"
+    },
+    {
+      "term": "perishable",
+      "definition": "likely to go bad quickly"
+    },
+    {
+      "term": "compost",
+      "definition": "rotting plant material used to feed soil"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Passive voice",
+      "Articles"
+    ],
+    "codes": [
+      "passive",
+      "articles"
+    ],
+    "listenFor": "Listen for passive verbs: is/are/was/were + past participle (for example, is collected). Listen for a, an and the, and for nouns with no article."
+  },
+  "text": "A large amount of food is wasted before it is eaten. Some food is lost on the farm, for example when fruit is damaged by bad weather. More is wasted in the supply chain, because perishable food can go bad during transport or storage. In shops, food is sometimes thrown away because it does not look perfect. However, a lot of waste also happens at home. People buy more than they need, or they forget food in the fridge. Food that cannot be eaten can be turned into compost instead of being sent to landfill.",
+  "keyIdeas": [
+    {
+      "text": "A lot of food is wasted before it is eaten.",
+      "type": "main"
+    },
+    {
+      "text": "Some food is lost on farms, for example because of bad weather.",
+      "type": "detail"
+    },
+    {
+      "text": "Food can go bad during transport or storage in the supply chain.",
+      "type": "detail"
+    },
+    {
+      "text": "Shops throw away food that doesn't look perfect.",
+      "type": "detail"
+    },
+    {
+      "text": "A lot of waste happens at home: people buy too much or forget food.",
+      "type": "main"
+    },
+    {
+      "text": "Inedible food can be composted instead of going to landfill.",
+      "type": "detail"
+    }
+  ],
+  "audioFile": ""
+}

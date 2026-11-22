@@ -1,0 +1,60 @@
+{
+  "id": "sleep-learning",
+  "title": "Sleep and learning",
+  "topic": "Psychology",
+  "level": "B2",
+  "verified": false,
+  "keyTerms": [
+    {
+      "term": "memory",
+      "definition": "the part of the mind that stores what you learn"
+    },
+    {
+      "term": "consolidate",
+      "definition": "to make something stronger and more stable"
+    },
+    {
+      "term": "all-nighter",
+      "definition": "staying awake all night, usually to study"
+    }
+  ],
+  "targetGrammar": {
+    "points": [
+      "Relative clauses",
+      "Linking words: cause and result"
+    ],
+    "codes": [
+      "relative",
+      "cause"
+    ],
+    "listenFor": "Listen for who, which and that adding information about a noun. Listen for because, so, as a result and therefore."
+  },
+  "text": "Students who stay up late before an exam often believe they are using their time well. However, sleep plays an important role in learning. During sleep, the brain consolidates memories, which means it makes new information more stable. Information that we learned during the day is sorted and stored. Because of this, a student who sleeps well may remember more than a student who studies all night. Tiredness also affects concentration, so an all-nighter can make it harder to think clearly during the exam itself.",
+  "keyIdeas": [
+    {
+      "text": "Many students stay up late before exams, thinking it helps.",
+      "type": "main"
+    },
+    {
+      "text": "Sleep is important for learning.",
+      "type": "main"
+    },
+    {
+      "text": "During sleep, the brain makes new memories more stable.",
+      "type": "detail"
+    },
+    {
+      "text": "Information from the day is sorted and stored during sleep.",
+      "type": "detail"
+    },
+    {
+      "text": "A student who sleeps well may remember more than one who studies all night.",
+      "type": "main"
+    },
+    {
+      "text": "Tiredness reduces concentration, so all-nighters can make thinking harder in the exam.",
+      "type": "detail"
+    }
+  ],
+  "audioFile": ""
+}

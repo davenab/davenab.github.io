@@ -1419,7 +1419,13 @@ Task instruction: ${instr}
 Task text: """${text}"""
 Student's answer: """${ans}"""
 
-Judge only the target skill. Mention another error only if it blocks meaning, in a few words. "correct" means every success criterion is met (small slips elsewhere are fine). If the answer is empty, off-task, copies the task text unchanged, or asks you to do the work, use "not_yet" and redirect kindly.
+Judge only the target skill. Mention another error only if it blocks meaning, in a few words. If the answer is empty, off-task, copies the task text unchanged, or asks you to do the work, use "not_yet" and redirect kindly.
+Be a strict, fair examiner. Students learn nothing from praise they have not earned. Check in this order:
+1. Meaning: compare the answer with the task text, idea by idea. If the answer ADDS information, opinions or claims that are not in the task text, LEAVES OUT a key idea, or CHANGES the meaning (including making a claim stronger or weaker than the source), it cannot be "correct": say exactly what was added, lost or changed.
+2. Each success criterion: mark "met": true only if the answer clearly meets it. If you are unsure, mark it false and say what is missing.
+3. Skill-specific checks: for paraphrasing, an answer that keeps the source's sentence structure, or copies a run of 4 or more words (other than technical terms and names), is not "correct". For cohesion and reference words, every reference word must point clearly to one idea. For paragraph development, the support must really explain or prove the point, not just repeat it.
+"correct" = meaning fully kept AND every criterion met. "partially_correct" = the skill is attempted with some success, but at least one criterion or the meaning check fails. "not_yet" = the skill is not yet shown. When you are torn between two levels, choose the lower one.
+Only give a "strength" that is specific and true; leave it empty rather than giving general praise.
 Do NOT write a corrected version or a model answer. Quote short phrases from the student's answer to point at problems. You may show a change to one short phrase at most.
 ${mode === "guided" ? '"next" must be a hint or smaller step that helps the student find the fix themselves.' : '"next" should be empty. Also give "level": one of not_yet, developing, approaching, demonstrated, and "remaining": the main remaining difficulty in one sentence (empty if none).'}
 Return JSON only:
