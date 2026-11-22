@@ -22,7 +22,8 @@
     nomhedge: { lead: "Done with nominalisation and hedging? Try this next:", items: [APPS.grammar, HEDGING, APPS.notes] },
     cite:     { lead: "Finished your citation practice? Try this next:", items: [APPS.apaguide, APPS.nomhedge, APPS.grammar] },
     grammarhub: { lead: "Finished a unit? Keep going:", items: [APPS.vocabhub, APPS.grammar, APPS.nomhedge] },
-    vocabhub: { lead: "Finished a unit? Keep going:", items: [APPS.grammarhub, APPS.cite, APPS.nomhedge] }
+    vocabhub: { lead: "Finished a unit? Keep going:", items: [APPS.grammarhub, APPS.cite, APPS.nomhedge] },
+    coach:    { lead: "Finished your lesson? Keep going:", items: [APPS.grammarhub, APPS.grammar, APPS.vocabhub] }
   };
 
   var CSS =

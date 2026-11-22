@@ -24,7 +24,7 @@ Files: `worker.js` (the code), `schema.sql` (database tables), `wrangler.toml` (
 
 ## Part 2: The Worker and database. Choose ONE option
 
-**Status (22 Nov 2026): DONE.** Deployed by Claude through the Cloudflare API connector. Worker `davenab-api` runs at **https://api.davenab.com** (custom domain; the workers.dev address is switched off), with bindings DB → `davenab-db` (id `5564a46b-fdb7-48f2-b091-b24405761de3`, Oceania), AI, FEEDBACK_LIMITER (10/min), and the three variables. Logs are off. Web Analytics: site `davenab.com` (token `618c9d602257483795361f11fc6b1a08`) — the site is DNS-only, so the beacon script is added to every page by `_tools/build.py` (`CF_BEACON`) and to every app by `assets/appbar.js`. The options below are only needed to rebuild it from scratch.
+**Status (22 Nov 2026): DONE.** Deployed by Claude through the Cloudflare API connector. Worker `davenab-api` runs at **https://api.davenab.com** (custom domain; the workers.dev address is switched off), with bindings DB → `davenab-db` (id `5564a46b-fdb7-48f2-b091-b24405761de3`, Oceania), AI, FEEDBACK_LIMITER (10/min), and variables ALLOWED_ORIGINS, AI_MODEL (`@cf/google/gemma-4-26b-a4b-it`), CAP_FEEDBACK 300, CAP_COACH 250, CAP_GSC 150 (daily request caps per route). Routes: /e, /stats, /feedback (hubs), /coach (Feedback Coach), /gsc (Grammar Self-Correction). Logs are off. Web Analytics: site `davenab.com` (token `618c9d602257483795361f11fc6b1a08`) — the site is DNS-only, so the beacon script is added to every page by `_tools/build.py` (`CF_BEACON`) and to every app by `assets/appbar.js`. The options below are only needed to rebuild it from scratch.
 
 ### Option A (easiest for you): let Claude deploy it
 1. dash.cloudflare.com → top-right profile icon → **My Profile → API Tokens → Create Token → Create Custom Token**.
@@ -51,8 +51,8 @@ Files: `worker.js` (the code), `schema.sql` (database tables), `wrangler.toml` (
    - (Optional) **Rate limiting**: name `FEEDBACK_LIMITER`, limit 10, period 60 seconds. If the dashboard doesn't offer it, skip it: the daily cap still protects you.
 6. **Settings → Variables and Secrets → Add** (type: Text):
    - `ALLOWED_ORIGINS` = `https://davenab.com,https://www.davenab.com,https://davenab.github.io`
-   - `DAILY_AI_CAP` = `150`
-   - `AI_MODEL` = `@cf/meta/llama-3.3-70b-instruct-fp8-fast`
+   - `AI_MODEL` = `@cf/google/gemma-4-26b-a4b-it`
+   - `CAP_FEEDBACK` = `300`, `CAP_COACH` = `250`, `CAP_GSC` = `150`
 7. **Settings → Observability**: make sure Workers Logs are **off** (so no request details are kept).
 8. Copy the Worker's address (e.g. `https://davenab-api.yourname.workers.dev`) and send it to Claude. Open it in a browser: it should say "davenab-api is running."
 
@@ -113,7 +113,7 @@ FROM events GROUP BY hub, unit ORDER BY completion_pct;
 -- Activity by month
 SELECT month, hub, COUNT(*) AS results FROM events WHERE kind = 'post' GROUP BY month, hub ORDER BY month;
 
--- AI feedback use per day
+-- AI use per day and route (rows look like 2026-11-22|coach)
 SELECT * FROM ai_usage ORDER BY day DESC LIMIT 30;
 ```
 

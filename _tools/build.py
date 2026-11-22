@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Generates the site pages (shared nav, footer, page content) as static HTML. Run from the repo root: python3 _tools/build.py ."""
-import os, sys, html
+import os, sys, html, re
 OUT = sys.argv[1]
 
 EMAIL = "dave.naserbakht@gmail.com"
@@ -16,7 +16,8 @@ ASSET_V = hashlib.md5((open("assets/style.css","rb").read()+open("assets/app.js"
 # Cloudflare Web Analytics (cookieless page views; the token is public by design). Set "" to turn off.
 CF_BEACON = "618c9d602257483795361f11fc6b1a08"
 BEACON = (f'<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{{"token": "{CF_BEACON}"}}\'></script>\n' if CF_BEACON else "")
-COACH_ON = False  # Feedback-to-Mastery Coach hidden from the site until Dave decides; set True and rebuild to bring it back
+COACH_ON = True   # Feedback-to-Mastery Coach: listed in the apps; the app itself is assembled into /feedback-coach/ (see assemble_coach)
+COACH_BAND = False  # True = big featured Coach band on the home page after the hero
 COACH_URL = "https://claude.ai/artifact/U8aWTwYD84iMXthwhTXHYg"  # Feedback-to-Mastery Coach (Claude artifact; source in _tools/feedback-coach/)
 
 I = {
@@ -389,14 +390,14 @@ def results_strip(L):
 COACH_STEPS = [("Paste the comment","Your teacher’s feedback, with your name removed."),("Understand it","A plain-English explanation of what it means."),("Find the skill","Recognise it from examples, not jargon."),("Learn and practise","A short lesson, a worked example and hints."),("Do it alone","A new task, no hints: proof you can do it.")]
 def coach_band(L, full=False):
     steps = "".join(f'<li class="cs-step"><span class="cs-n">{i+1}</span><span class="cs-t">{t}</span><span class="cs-d">{d}</span></li>' for i,(t, d) in enumerate(COACH_STEPS))
-    more = "" if full else f'<a class="btn" href="{L('feedback-coach/')}">How it works {ARR}</a>'
+    more = ""
     return f'''<section class="coach-band" id="coach"><div class="wrap">
   <div class="coach-grid">
     <div class="coach-copy">
       <span class="eyebrow reveal">New · Free AI tutor</span>
       <h2 class="reveal">Got feedback you don’t understand? <em>Turn it into a skill.</em></h2>
       <p class="reveal">Paste a comment like “improve cohesion”. The coach explains it, finds the exact skill behind it and teaches it step by step. It never fixes your essay for you, so next time you can do it yourself.</p>
-      <div class="cta reveal"><a class="btn primary" href="{COACH_URL}" target="_blank" rel="noopener">Open the coach {EXT}</a>{more}</div>
+      <div class="cta reveal"><a class="btn primary" href="{L('feedback-coach/')}">Open the coach {ARR}</a>{more}</div>
     </div>
     <div class="cv reveal" aria-hidden="true">
       <div class="cv-note"><span class="cv-lab">Teacher’s comment</span><span class="cv-q">Improve <u>cohesion</u> in this paragraph.</span></div>
@@ -426,7 +427,7 @@ def home(L):
     <span class="eyebrow fade-up" style="--d:.05s">AI learning tools · Resources · IELTS</span>
     <h1 class="rise" style="margin-top:22px">{words("Learn smarter. Teach better. |Think deeper.|")}</h1>
     <p class="lead fade-up" style="--d:.7s">Free AI practice apps, ready-made EAP resources and IELTS coaching, built by a CELTA and DELTA qualified teacher and experienced speaking examiner with 15+ years in Australian higher education.</p>
-    <div class="cta fade-up" style="--d:.85s">{f'<a class="btn primary" href="#coach">Try the Feedback Coach {ARR}</a><a class="btn" href="#ai">Free apps</a>' if COACH_ON else f'<a class="btn primary" href="#ai">Try the free apps {ARR}</a>'}<a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
+    <div class="cta fade-up" style="--d:.85s">{f'<a class="btn primary" href="#coach">Try the Feedback Coach {ARR}</a><a class="btn" href="#ai">Free apps</a>' if COACH_BAND else f'<a class="btn primary" href="#ai">Try the free apps {ARR}</a>'}<a class="btn" href="{L('book/?service=ielts-live')}">Book IELTS coaching</a></div>
   </div>
   <div class="portrait fade-up" style="--d:.3s">
     <div class="ring" aria-hidden="true"></div>
@@ -442,7 +443,7 @@ def home(L):
   <a class="who-opt" href="{L('book/')}"><b>Book a class</b><span>IELTS, General English or a mock test</span><i aria-hidden="true">→</i></a>
 </nav></div></section>
 
-{coach_band(L) if COACH_ON else ""}
+{coach_band(L) if COACH_BAND else ""}
 
 <section class="ai-band" id="ai"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow reveal">AI apps &amp; resources</span><h2 class="reveal">Small, smart tools that help students <em>think</em>, not just get answers.</h2><p class="reveal">AI-supported apps for academic English. Each one targets one real skill students need at university, gives feedback that makes them do the thinking, and runs in any browser with no sign-in. Student work stays on their own device.</p></div>
@@ -989,7 +990,48 @@ def coach_page(L):
   <p class="coach-note reveal" style="margin-top:18px">Teachers: share this page with your students. The coach supports, but doesn’t replace, your feedback and your university’s learning support.</p>
 </div></section>
 '''
-if COACH_ON: page("feedback-coach/index.html", "Feedback-to-Mastery Coach · Free AI Tutor for Academic English · Dave Nab", "A free AI tutor that turns teacher feedback (“improve cohesion”, “your paraphrase is too close to the source”) into short lessons and practice, so EAP and university students learn to fix it themselves.", coach_page, cur="apps/")
+# ------------------------------------------------------------------ Feedback-to-Mastery Coach app (/feedback-coach/)
+# Built from _tools/feedback-coach/app.html + curriculum.js (the same source as the Claude artifact),
+# in website mode: AI requests go to the davenab-api Worker (COACH_API); no sign-in.
+COACH_API = "https://api.davenab.com"
+def assemble_coach():
+    src = open("_tools/feedback-coach/app.html", encoding="utf-8").read()
+    cur = open("_tools/feedback-coach/curriculum.js", encoding="utf-8").read()
+    src = src.replace("/*CURRICULUM*/", cur, 1)
+    k = src.index("</style>") + len("</style>")
+    head, body = src[:k], src[k:]
+    head = re.sub(r"<title>.*?</title>\n?", "", head, count=1)
+    head = head.replace('<meta name="claude:viewport-fit-sides" content="cover">\n', "")
+    body = body.replace('<a class="brand" href="https://davenab.com/" target="_blank" rel="noopener">', '<a class="brand" href="/">')
+    body = body.replace('href="https://davenab.com/apps/" target="_blank" rel="noopener">More free apps ↗', 'href="/apps/">More free apps')
+    body = body.replace('href="https://davenab.com/resources/students/" target="_blank" rel="noopener">Student resources ↗', 'href="/resources/students/">Student resources')
+    body = body.replace("<script>\n" + cur, f'<script>window.COACH_API = "{COACH_API}";</script>\n<script>\n' + cur, 1)
+    desc = "Free AI tutor for academic English: paste your teacher’s feedback, and the coach explains what it means, teaches the skill with examples and checks your practice. No sign-in."
+    doc = f'''<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Feedback-to-Mastery Coach · Free AI Tutor for Academic English · Dave Nab</title>
+<meta name="description" content="{html.escape(desc)}">
+<link rel="canonical" href="{SITE}feedback-coach/">
+<meta property="og:title" content="Feedback-to-Mastery Coach by Dave Nab">
+<meta property="og:description" content="{html.escape(desc)}">
+<meta property="og:image" content="{OG_IMG}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{FAV}">
+<script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}}catch(e){{}}</script>
+{head}
+</head>
+<body>
+<script src="/assets/appbar.js"></script>
+{body}
+</body>
+</html>
+'''
+    os.makedirs(os.path.join(OUT, "feedback-coach"), exist_ok=True)
+    open(os.path.join(OUT, "feedback-coach", "index.html"), "w", encoding="utf-8").write(doc)
+if COACH_ON: assemble_coach()
 
 # ------------------------------------------------------------------ BOOKING
 GF = "https://docs.google.com/forms/d/e/1FAIpQLSda5OD0a74n93Vw6FKQF-HaWF5spCccaGKzCvCje4vWa11yKA"
