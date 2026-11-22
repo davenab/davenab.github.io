@@ -626,3 +626,14 @@ section{padding-block:clamp(72px,10vw,128px)}
 .coach-steps b{display:block;font-size:.98rem}
 .coach-steps span{display:block;color:var(--muted);font-size:.92rem}
 .coach-note{font-size:.88rem;color:var(--muted);margin-top:14px}
+/* home: compact horizontal app cards (Nov 2026) */
+.ai-feature .card.feature{padding:16px 20px;gap:16px;border-radius:18px}
+.ai-feature .card.feature .f-icon{width:48px;height:48px;border-radius:14px;font-size:1.2rem}
+.ai-feature .card.feature .f-main{gap:4px}
+.ai-feature .card.feature h3{font-size:1.06rem}
+.ai-feature .card.feature p{font-size:.88rem;line-height:1.45}
+.ai-feature .card.feature .top .tag{font-size:.72rem}
+.ai-feature .card.feature .go a.btn-card{padding:8px 14px;font-size:.86rem;white-space:nowrap}
+.ai-next{margin:18px 0 0;color:var(--muted);font-size:.93rem;max-width:none}
+.ai-next b{color:var(--text);font-weight:600}
+@media (max-width:560px){.ai-feature .card.feature{flex-direction:row;align-items:center;flex-wrap:wrap}.ai-feature .card.feature .f-main{flex-basis:calc(100% - 70px)}.ai-feature .card.feature .go{width:100%}}

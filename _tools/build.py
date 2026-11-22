@@ -44,6 +44,11 @@ COURSES = [
  ("general-english/level-up/", "Level UP Course", "CEFR A1 to C2"),
 ]
 TOP1 = [("apps/", "AI Apps")]
+APPS_MENU = [
+ ("grammar-hub/", "Grammar Hub", "A2–C1 grammar units with progress"),
+ ("vocabulary-hub/", "Vocabulary Hub", "Academic words and collocations"),
+ ("apps/", "All apps", "Every free practice app"),
+]
 RES = [
  ("resources/students/", "For students", "Self-study packs and free practice"),
  ("resources/teachers/", "For teachers", "Lesson kits, courses and free slides"),
@@ -135,10 +140,12 @@ def page(path, title, desc, body, cur="", canonical=None, extra_head="", extra_f
     rsub = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}<small>{d}</small></a></li>' for h, t, d in RES)
     sheet_r = "".join(f'<li class="sub-l"><a href="{L(h)}">{t}</a></li>' for h, t, d in RES)
     sub = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}<small>{d}</small></a></li>' for h, t, d in COURSES)
-    top1 = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}</a></li>' for h, t in TOP1)
+    is_app = cur == "apps/"
+    asub = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}<small>{d}</small></a></li>' for h, t, d in APPS_MENU)
+    top1 = f'<li class="has-sub{" cur" if is_app else ""}"><button class="drop" aria-expanded="false" aria-haspopup="true">Apps {I["chev"]}</button><ul class="sub">{asub}</ul></li>'
     top = "".join(f'<li><a href="{L(h)}"{" aria-current=\"page\"" if cur==h else ""}>{t}</a></li>' for h, t in TOP2)
     sheet_c = "".join(f'<li class="sub-l"><a href="{L(h)}">{t}</a></li>' for h, t, d in COURSES)
-    sheet_1 = "".join(f'<li><a href="{L(h)}">{t}</a></li>' for h, t in TOP1)
+    sheet_1 = '<li class="label">Apps</li>' + "".join(f'<li class="sub-l"><a href="{L(h)}">{t}</a></li>' for h, t, d in APPS_MENU)
     sheet_t = "".join(f'<li><a href="{L(h)}">{t}</a></li>' for h, t in TOP2)
     canon = canonical if canonical is not None else SITE + path.replace("index.html", "")
     doc = f'''<!doctype html>
@@ -280,8 +287,14 @@ MOMENTS = [("moment-1.webp",768,577),("moment-2.webp",900,675),("moment-3.webp",
 LIVE = {**({"Feedback-to-Mastery Coach": "feedback-coach/"} if COACH_ON else {}), "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/", "APA Trainer": "apa-citation-trainer/", "APA Reference Guide": "apa-reference-guide/", "Grammar Hub": "grammar-hub/", "Vocabulary Hub": "vocabulary-hub/"}
 # Featured on the home page: shown first, side by side, as wide horizontal cards. title -> (icon, short text, button)
 FEATURE = {
- "APA Trainer": ("“ ”", "Short drills for APA 7th in-text citations: build and fix citations, use “as cited in” correctly and choose reporting verbs that fit.", "Start practising"),
- "APA Reference Guide": ("R", "Search for any source type and see the APA 7th pattern, an example and the in-text citation.", "Find a source"),
+ "Feedback-to-Mastery Coach": ("F", "Paste your teacher’s feedback: the coach explains it, teaches the skill and checks your practice.", "Start coaching"),
+ "Grammar Hub": ("G", "A2–C1 grammar units: test yourself, work out the rule, practise and see your progress.", "Start a unit"),
+ "Vocabulary Hub": ("V", "Academic words and collocations, A2–C1, with a searchable word bank.", "Learn words"),
+ "Notetaking Trainer": ("N", "Take notes on a short TED talk or news story, then check them against the key ideas.", "Take notes"),
+ "Grammar Self-Correction Trainer": ("Gc", "Find and fix grammar errors yourself, with correction codes and step-by-step hints.", "Fix errors"),
+ "Nominalisation and Hedging Trainer": ("Nh", "Sound more academic: turn verbs into nouns, and match claims to the evidence.", "Practise"),
+ "APA Trainer": ("“ ”", "Build and fix APA 7th in-text citations, and choose reporting verbs that fit.", "Start practising"),
+ "APA Reference Guide": ("R", "Find your source type and see the APA 7th pattern, an example and the in-text citation.", "Find a source"),
 }
 APPS = [
  *([("write","Writing","Feedback-to-Mastery Coach","Students paste their teacher’s feedback. The coach explains what it means, helps them find the exact skill behind it, then teaches it step by step: a short lesson, guided practice with hints, and a new task they complete on their own.",["Cohesion","Paraphrasing","Paragraph development"])] if COACH_ON else []),
@@ -404,7 +417,7 @@ def home(L):
     q = "".join(quote(L, t, n, p, d=i*.08) for i, (t, n, p) in enumerate(T_HOME))
     marq = "".join(img(L, f, "Dave Nab with students and colleagues", w, h, lazy=False) for f, w, h in MOMENTS)
     feat = "".join(f'''<article class="card feature {c} reveal" style="--d:{i*.06:.2f}s" data-cat="{c}"><span class="f-icon" aria-hidden="true">{FEATURE[t][0]}</span><div class="f-main"><div class="top"><span class="tag">{s}</span><span class="status live">Live</span></div><h3>{t}</h3><p>{FEATURE[t][1]}</p></div><div class="go"><a class="btn-card stretch" href="{L(LIVE[t])}">{FEATURE[t][2]} {ARR}</a></div></article>''' for i,(c,s,t,d,fo) in enumerate(x for x in APPS if x[2] in FEATURE and x[2] in LIVE))
-    apps = "".join(f'''<article class="card {c} reveal" style="--d:{(i%4)*.05:.2f}s" data-cat="{c}"><div class="top"><span class="tag">{s}</span>{'<span class="status live">Live</span>' if t in LIVE else '<span class="status">In development</span>'}</div><h3>{t}</h3><p>{d}</p><div class="focus">{''.join(f'<span>{x}</span>' for x in fo)}</div>{f'<div class="go"><a class="btn-card stretch" href="{L(LIVE[t])}">Try it {ARR}</a></div>' if t in LIVE else ''}</article>''' for i,(c,s,t,d,fo) in enumerate(x for x in APPS if x[2] not in FEATURE))
+    apps = ", ".join(t for c,s_,t,d,fo in APPS if t not in LIVE)
     soon = [("res-nominalisation.webp","Nominalisation"),("res-dependent-clauses.webp","Dependent clauses"),("res-paraphrasing.webp","Paraphrasing")]
     soonh = "".join(f'<a class="res reveal" style="--d:{i*.06:.2f}s" href="{L("resources/")}"><div class="thumb">{img(L,f,t+" lesson slides",600,600)}</div><div><h3>{t}</h3><div class="meta">Coming soon</div></div></a>' for i,(f,t) in enumerate(soon))
     return f'''
@@ -436,7 +449,7 @@ def home(L):
     <a class="btn primary reveal" href="{L('apps/')}">See all apps {ARR}</a></div>
   <div class="filters reveal" role="group" aria-label="Filter apps by skill" style="margin-bottom:24px"><button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="listen">Listening</button><button aria-pressed="false" data-f="read">Reading</button><button aria-pressed="false" data-f="write">Writing</button><button aria-pressed="false" data-f="gram">Grammar</button><button aria-pressed="false" data-f="vocab">Vocabulary</button></div>
   <div class="grid ai-feature">{feat}</div>
-  <div class="grid ai-grid">{apps}</div>
+  <p class="ai-next reveal"><b>Coming next:</b> {apps}. <a href="{L('apps/')}">See all apps</a></p>
 </div></section>
 
 <section id="shop"><div class="wrap">
