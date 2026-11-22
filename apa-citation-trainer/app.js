@@ -463,7 +463,8 @@
   function viewHome() {
     if (DATA.error) { page('<p class="notice">' + esc(DATA.error) + " If you opened the file straight from your computer, open the app from the website instead.</p>", "", "home"); return; }
     let h = '<section class="hero"><p class="eyebrow">APA 7th · In-text citations</p><h1>APA <span class="hl">Trainer</span></h1>' +
-      '<p class="lead">Practise APA 7th in-text citations by building and fixing them yourself. One session is 10 questions and takes about 5 to 8 minutes.</p></section>' + storeNote();
+      '<p class="lead">Practise APA 7th in-text citations by building and fixing them yourself. One session is 10 questions and takes about 5 to 8 minutes.</p></section>' + storeNote() +
+      (SESSION && !SESSION.preview ? '<div class="card"><h2>You have a session in progress</h2><p>' + esc(modeName(SESSION.mode)) + ", question " + (SESSION.i + 1) + " of " + SESSION.items.length + '.</p><a class="btn primary" href="#/practice">Continue your session</a></div>' : "");
     h += '<div class="tracks">';
     TRACK_IDS.forEach(t => {
       const T = S.tracks[t], n = DATA.nStages[t];
@@ -613,7 +614,7 @@
   function feedback(ok, parts) {
     return '<div class="feedback ' + (ok === null ? "neutral" : ok ? "ok" : "bad") + '"><h2>' + (ok === null ? "Noted" : ok ? "✓ Right" : "✗ Not quite") + "</h2>" + parts.join("") + "</div>";
   }
-  function ruleLine(it) { return '<p class="rule"><b>Rule:</b> ' + esc(it.rule) + (it.topic && DATA.topics[it.topic] ? ' <a href="#/guide/' + esc(it.topic) + '" target="_self">Quick guide</a>' : "") + "</p>"; }
+  function ruleLine(it) { return '<p class="rule"><b>Rule:</b> ' + esc(it.rule) + (it.topic && DATA.topics[it.topic] ? ' <a href="#/guide/' + esc(it.topic) + '" target="_blank" rel="noopener">Quick guide<span class="sr"> (opens in a new tab)</span></a>' : "") + "</p>"; }
   function finish(it, ok, html) {
     CUR.done = true; CUR.ok = ok; CUR.fb = html;
     record(it, ok);
@@ -679,7 +680,7 @@
         const parts = [];
         if (!ok) parts.push("<p><b>Check again:</b> " + wrong.map(v => "“" + esc(v) + "” is " + esc(it.acceptedAnswers[v]).toLowerCase()).join("; ") + ".</p>");
         parts.push(ruleLine(it));
-        parts.push('<p class="small"><a href="#/verbs">See all the verbs in the Reporting verb bank</a></p>');
+        parts.push('<p class="small"><a href="#/verbs" target="_blank" rel="noopener">See all the verbs in the Reporting verb bank<span class="sr"> (opens in a new tab)</span></a></p>');
         finish(it, ok, feedback(ok, parts));
       });
     }
