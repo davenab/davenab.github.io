@@ -15,7 +15,7 @@ binding = "AI"
 [[d1_databases]]
 binding = "DB"
 database_name = "davenab-db"
-database_id = "PASTE-THE-DATABASE-ID-HERE"   # shown after: npx wrangler d1 create davenab-db
+database_id = "5564a46b-fdb7-48f2-b091-b24405761de3"   # davenab-db, created 22 Nov 2026 (Oceania)
 
 [[ratelimits]]
 name = "FEEDBACK_LIMITER"

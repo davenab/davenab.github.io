@@ -24,6 +24,8 @@ Files: `worker.js` (the code), `schema.sql` (database tables), `wrangler.toml` (
 
 ## Part 2: The Worker and database. Choose ONE option
 
+**Status (22 Nov 2026):** the D1 database `davenab-db` (id `5564a46b-fdb7-48f2-b091-b24405761de3`, Oceania) is created and its tables are set up. In Option B, skip steps 1–2. The Worker itself is not deployed yet.
+
 ### Option A (easiest for you): let Claude deploy it
 1. dash.cloudflare.com → top-right profile icon → **My Profile → API Tokens → Create Token → Create Custom Token**.
 2. Name: `Claude deploy davenab-api`. Permissions:
