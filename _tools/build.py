@@ -274,7 +274,7 @@ GALLERY = [
  ("gallery-13.webp","Macquarie University College - DE8",1187,893),("gallery-14.webp","PD Festival with Jarrad Merlo",1225,922),("gallery-15.webp","IH - UPPER INT 3",883,662),
 ]
 MOMENTS = [("moment-1.webp",768,577),("moment-2.webp",900,675),("moment-3.webp",900,677),("moment-4.webp",900,676),("moment-5.webp",525,700),("moment-6.webp",900,506),("moment-7.webp",900,506),("moment-8.webp",900,506)]
-LIVE = {**({"Feedback-to-Mastery Coach": "feedback-coach/"} if COACH_ON else {}), "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/", "APA Trainer": "apa-citation-trainer/", "APA Reference Guide": "apa-reference-guide/"}
+LIVE = {**({"Feedback-to-Mastery Coach": "feedback-coach/"} if COACH_ON else {}), "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/", "APA Trainer": "apa-citation-trainer/", "APA Reference Guide": "apa-reference-guide/", "Grammar Hub": "grammar-hub/", "Vocabulary Hub": "vocabulary-hub/"}
 # Featured on the home page: shown first, side by side, as wide horizontal cards. title -> (icon, short text, button)
 FEATURE = {
  "APA Trainer": ("“ ”", "Short drills for APA 7th in-text citations: build and fix citations, use “as cited in” correctly and choose reporting verbs that fit.", "Start practising"),
@@ -282,6 +282,8 @@ FEATURE = {
 }
 APPS = [
  *([("write","Writing","Feedback-to-Mastery Coach","Students paste their teacher’s feedback. The coach explains what it means, helps them find the exact skill behind it, then teaches it step by step: a short lesson, guided practice with hints, and a new task they complete on their own.",["Cohesion","Paraphrasing","Paragraph development"])] if COACH_ON else []),
+ ("gram","Grammar","Grammar Hub","Short grammar units from A2 to C1 built on test–teach–test: students try a few questions first, notice the form in a short text, answer guiding questions to work out the rule, practise with hints, then test again and see their before-and-after scores. Missed questions come back for spaced review.",["Guided discovery","Test–teach–test","A2–C1"]),
+ ("vocab","Vocabulary","Vocabulary Hub","Academic vocabulary and collocations from A2 to C1: study collocations, describing trends, cause and effect, research words, reporting verbs and evaluating evidence. Students notice words in context, work out the patterns and practise, with a searchable word bank.",["Collocations","Academic words","A2–C1"]),
  ("listen","Listening","Notetaking Trainer","Students watch a short TED talk or listen to a news story and take notes their way. Then they check their own notes against the key ideas, answer questions from their notes and set a goal.",["Key ideas","Signposting","Self-checking"]),
  ("gram","Grammar","Grammar Self-Correction Trainer","The app shows where each error is and what type it is, using correction codes teachers already use, like <b>vf</b> (verb form) or <b>art</b> (article). Students do the fixing, and hints step up only when they ask for one.",["Self-correction","Error codes","Step-by-step hints"]),
  ("gram","Grammar","Nominalisation and Hedging Trainer","Short drills that move from single words to full sentences: turn verbs into nouns (“analyse” → “analysis”) and match how sure a claim sounds to the evidence (“may suggest”). Students also fix sentences that use too much of either.",["Nominalisation","Hedging","Academic style"]),
@@ -765,6 +767,8 @@ STUDENT_PACKS = [
 STUDENT_FREE = [
  ("wordlist","Word list · Quizlet","A1 – Academic Word List","Flashcards for Academic Word List vocabulary. Study online, or play Quizlet’s games and tests.",["Vocabulary","AWL"],"live","Free","https://quizlet.com/au/1143969156/a1-flash-cards/?i=oj7gk&amp;x=1qqt"),
  ("wordlist","Word list · Quizlet","A4 Week 1 Flash Cards","A Quizlet flashcard set for weekly vocabulary practice.",["Vocabulary","Week 1"],"live","Free","https://quizlet.com/au/1216144633/a4-week-1-flash-cards/"),
+ ("gram","App · Grammar","Grammar Hub","Short grammar units, A2–C1: test yourself, work out the rule, practise, and see your progress.",["Grammar","Free app"],"live","Free","@grammar-hub/"),
+ ("vocab","App · Vocabulary","Vocabulary Hub","Academic words and collocations, A2–C1, with a searchable word bank.",["Vocabulary","Free app"],"live","Free","@vocabulary-hub/"),
  ("listen","App · Listening","Notetaking Trainer","Watch a short TED talk or news story, take notes your way, then check them against the key ideas.",["Note-taking","Free app"],"live","Free","@note-taking-trainer-ted/"),
  ("gram","App · Grammar","Grammar Self-Correction Trainer","Find and fix your own errors with correction codes and small hints.",["Self-correction","Free app"],"live","Free","@grammar-self-correction/"),
  ("write","App · Writing","APA Trainer","Build and fix APA 7th in-text citations, use “as cited in” correctly and choose better reporting verbs.",["Referencing","Free app"],"live","Free","@apa-citation-trainer/"),

@@ -10,7 +10,7 @@ Build this app so it looks and behaves like the rest of davenab.com. Follow ever
 - Repo: `davenab/davenab.github.io` (public, GitHub Pages, custom domain https://davenab.com).
 - The app goes in its own folder: `/<app-slug>/index.html`, plus `style.css`, `app.js` and `data/*.json` as needed. Plain HTML, CSS and JavaScript only: no framework, no build step, no server, no sign-in.
 - **No API keys or secrets anywhere** (the repo is public). If AI feedback is needed later, it goes behind a separate server-side proxy, switched off by default in `config.js`.
-- **Privacy:** student work and progress stay on the device (localStorage only), with a "Clear my data" button. No tracking or analytics inside apps. The app must still work if storage is blocked; it just doesn't save.
+- **Privacy:** student work and progress stay on the device (localStorage only), with a "Clear my data" button. No tracking or analytics inside apps. (One approved exception: the Grammar and Vocabulary Hubs can share anonymous before/after scores, opt-in only, through the davenab-api Worker; see `_tools/cloudflare/SETUP.md`.) The app must still work if storage is blocked; it just doesn't save.
 - Must work on phones (from 360 px wide) and laptops, with no horizontal scrolling.
 - Australian/British spelling. Plain, short instructions for B1–C1 students.
 

@@ -1,0 +1,26 @@
+# Deploy from the repo root:  npx wrangler deploy --config _tools/cloudflare/wrangler.toml
+name = "davenab-api"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGINS = "https://davenab.com,https://www.davenab.com,https://davenab.github.io"
+DAILY_AI_CAP = "150"
+AI_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+
+[ai]
+binding = "AI"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "davenab-db"
+database_id = "PASTE-THE-DATABASE-ID-HERE"   # shown after: npx wrangler d1 create davenab-db
+
+[[ratelimits]]
+name = "FEEDBACK_LIMITER"
+namespace_id = "1001"
+simple = { limit = 10, period = 60 }
+
+[observability]
+enabled = false   # keep request logs off: nothing about visitors is kept
