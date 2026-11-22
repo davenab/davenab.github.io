@@ -7,8 +7,10 @@ routes = [{ pattern = "api.davenab.com", custom_domain = true }]
 
 [vars]
 ALLOWED_ORIGINS = "https://davenab.com,https://www.davenab.com,https://davenab.github.io"
-DAILY_AI_CAP = "150"
-AI_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+AI_MODEL = "@cf/google/gemma-4-26b-a4b-it"
+CAP_FEEDBACK = "300"
+CAP_COACH = "250"
+CAP_GSC = "150"
 
 [ai]
 binding = "AI"
