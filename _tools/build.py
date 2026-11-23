@@ -46,6 +46,7 @@ COURSES = [
 ]
 TOP1 = [("apps/", "AI Apps")]
 APPS_MENU = [
+ ("level-check/", "Level Check", "Find your level in 30 minutes (B1–C1)"),
  ("grammar-hub/", "Grammar Hub", "A2–C1 grammar units with progress"),
  ("vocabulary-hub/", "Vocabulary Hub", "Academic words and collocations"),
  ("apps/", "All apps", "Every free practice app"),
@@ -285,10 +286,11 @@ GALLERY = [
  ("gallery-13.webp","Macquarie University College - DE8",1187,893),("gallery-14.webp","PD Festival with Jarrad Merlo",1225,922),("gallery-15.webp","IH - UPPER INT 3",883,662),
 ]
 MOMENTS = [("moment-1.webp",768,577),("moment-2.webp",900,675),("moment-3.webp",900,677),("moment-4.webp",900,676),("moment-5.webp",525,700),("moment-6.webp",900,506),("moment-7.webp",900,506),("moment-8.webp",900,506)]
-LIVE = {**({"Feedback-to-Mastery Coach": "feedback-coach/"} if COACH_ON else {}), "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/", "APA Trainer": "apa-citation-trainer/", "APA Reference Guide": "apa-reference-guide/", "Grammar Hub": "grammar-hub/", "Vocabulary Hub": "vocabulary-hub/", "Dictogloss": "dictogloss/"}
+LIVE = {**({"Feedback-to-Mastery Coach": "feedback-coach/"} if COACH_ON else {}), "Notetaking Trainer": "note-taking-trainer-ted/", "Grammar Self-Correction Trainer": "grammar-self-correction/", "Nominalisation and Hedging Trainer": "nominalisation-hedging-trainer/", "APA Trainer": "apa-citation-trainer/", "APA Reference Guide": "apa-reference-guide/", "Grammar Hub": "grammar-hub/", "Vocabulary Hub": "vocabulary-hub/", "Dictogloss": "dictogloss/", "Level Check": "level-check/"}
 # Featured on the home page: shown first, side by side, as wide horizontal cards. title -> (icon, short text, button)
 FEATURE = {
  "Feedback-to-Mastery Coach": ("F", "Paste your teacher’s feedback: the coach explains it, teaches the skill and checks your practice.", "Start coaching"),
+ "Level Check": ("L", "A 30-minute grammar and vocabulary test, B1 to C1: your level, a skills profile and what to study next.", "Check my level"),
  "Grammar Hub": ("G", "A2–C1 grammar units: test yourself, work out the rule, practise and see your progress.", "Start a unit"),
  "Vocabulary Hub": ("V", "Academic words and collocations, A2–C1, with a searchable word bank.", "Learn words"),
  "Dictogloss": ("Dg", "Hear a short academic talk twice, take notes, rebuild it in your own sentences and get hints on meaning and grammar.", "Start listening"),
@@ -300,6 +302,7 @@ FEATURE = {
 }
 APPS = [
  *([("write","Writing","Feedback-to-Mastery Coach","Students paste their teacher’s feedback. The coach explains what it means, helps them find the exact skill behind it, then teaches it step by step: a short lesson, guided practice with hints, and a new task they complete on their own.",["Cohesion","Paraphrasing","Paragraph development"])] if COACH_ON else []),
+ ("gram","Grammar","Level Check","A 30-minute placement test from B1 to C1: grammar, academic vocabulary and short academic texts. Students get their level, a skills profile and the hub units to study next. Teachers paste students’ result codes into a class summary.",["Placement","B1–C1","Class summary"]),
  ("gram","Grammar","Grammar Hub","Short grammar units from A2 to C1 built on test–teach–test: students try a few questions first, notice the form in a short text, answer guiding questions to work out the rule, practise with hints, then test again and see their before-and-after scores. Missed questions come back for spaced review.",["Guided discovery","Test–teach–test","A2–C1"]),
  ("vocab","Vocabulary","Vocabulary Hub","Academic vocabulary and collocations from A2 to C1: study collocations, describing trends, cause and effect, research words, reporting verbs and evaluating evidence. Students notice words in context, work out the patterns and practise, with a searchable word bank.",["Collocations","Academic words","A2–C1"]),
  ("listen","Listening","Dictogloss","Students hear a short academic passage twice, note key words and rebuild it in full sentences. AI feedback checks which key ideas they kept and points to grammar slips with correction codes, without giving the answer. They revise once, then compare with the original and set a goal.",["Listening for meaning","Grammar in context","AI hints"]),
@@ -785,6 +788,7 @@ STUDENT_PACKS = [
 STUDENT_FREE = [
  ("wordlist","Word list · Quizlet","A1 – Academic Word List","Flashcards for Academic Word List vocabulary. Study online, or play Quizlet’s games and tests.",["Vocabulary","AWL"],"live","Free","https://quizlet.com/au/1143969156/a1-flash-cards/?i=oj7gk&amp;x=1qqt"),
  ("wordlist","Word list · Quizlet","A4 Week 1 Flash Cards","A Quizlet flashcard set for weekly vocabulary practice.",["Vocabulary","Week 1"],"live","Free","https://quizlet.com/au/1216144633/a4-week-1-flash-cards/"),
+ ("gram","Test · Free","Level Check (B1–C1)","Find your level in 30 minutes: grammar, academic vocabulary and reading, with the units to study next.",["Placement","Free test"],"live","Free","@level-check/"),
  ("gram","App · Grammar","Grammar Hub","Short grammar units, A2–C1: test yourself, work out the rule, practise, and see your progress.",["Grammar","Free app"],"live","Free","@grammar-hub/"),
  ("vocab","App · Vocabulary","Vocabulary Hub","Academic words and collocations, A2–C1, with a searchable word bank.",["Vocabulary","Free app"],"live","Free","@vocabulary-hub/"),
  ("listen","App · Listening","Dictogloss Trainer","Hear a short academic talk, take notes, rebuild it in your own sentences and get hints on meaning and grammar.",["Listening","Free app"],"live","Free","@dictogloss/"),
@@ -804,6 +808,7 @@ TEACHER_COURSES = [
  ("course","Course · 8 weeks","From Paragraph to Essay","Topic sentences and paragraph structure through to cohesion, argument and the full academic essay, with coded feedback practice.",["B1–B2","Writing"],"soon",None,None),
 ]
 TEACHER_FREE = [
+ ("gram","Test · Free","Level Check for your first lesson","A 30-minute B1–C1 placement test. Students send you a result code; paste the codes into the class summary to see every level and skills profile in one table.",["B1–C1","Placement","Class summary"],"live","Free","@level-check/#/teacher"),
  ("slides","Slides · PPTX","Hedging in Academic Writing","A 13-slide lesson: notice, categorise and use hedging language, then avoid over-hedging.",["B2–C1","Writing","13 slides"],"live","$2","@resources/hedging-in-academic-writing/"),
  ("wordlist","Word list · Quizlet","A1 – Academic Word List","Use in class with Quizlet Live, or set it as homework.",["Vocabulary","AWL"],"live","Free","https://quizlet.com/au/1143969156/a1-flash-cards/?i=oj7gk&amp;x=1qqt"),
  ("wordlist","Word list · Quizlet","A4 Week 1 Flash Cards","A ready-made weekly vocabulary set for class or homework.",["Vocabulary","Week 1"],"live","Free","https://quizlet.com/au/1216144633/a4-week-1-flash-cards/"),

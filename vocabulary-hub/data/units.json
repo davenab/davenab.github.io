@@ -7,45 +7,569 @@
   },
   "searchHint": "Search, e.g. evidence, deadline, research",
   "levels": {
-    "A2": { "name": "Elementary", "cando": "Everyday study words and their partners.", "about": "You can talk about familiar topics in simple sentences." },
-    "B1": { "name": "Intermediate", "cando": "Common collocations for essays and graphs.", "about": "You can describe experiences and processes and give simple reasons and opinions." },
-    "B2": { "name": "Upper-intermediate", "cando": "Core academic vocabulary for university.", "about": "You can write clear, connected texts and explain a viewpoint. A typical level for starting university." },
-    "C1": { "name": "Advanced", "cando": "Precise language for sources and evidence.", "about": "You can write well-structured, detailed academic texts and use language flexibly." }
+    "A2": {
+      "name": "Elementary",
+      "cando": "Everyday study words and their partners.",
+      "about": "You can talk about familiar topics in simple sentences."
+    },
+    "B1": {
+      "name": "Intermediate",
+      "cando": "Common collocations for essays and graphs.",
+      "about": "You can describe experiences and processes and give simple reasons and opinions."
+    },
+    "B2": {
+      "name": "Upper-intermediate",
+      "cando": "Core academic vocabulary for university.",
+      "about": "You can write clear, connected texts and explain a viewpoint. A typical level for starting university."
+    },
+    "C1": {
+      "name": "Advanced",
+      "cando": "Precise language for sources and evidence.",
+      "about": "You can write well-structured, detailed academic texts and use language flexibly."
+    }
   },
   "soon": {
-    "A2": ["Adjectives for opinions", "Linking words: and, but, because, so"],
-    "B1": ["Giving opinions: In my view…", "Comparing numbers in graphs"],
-    "B2": ["Academic Word List: core words", "Environment and sustainability"],
-    "C1": ["Hedging language", "Precise adjectives: crucial, inherent, substantial"]
+    "A2": [
+      "Adjectives for opinions",
+      "Linking words: and, but, because, so"
+    ],
+    "B1": [
+      "Giving opinions: In my view…",
+      "Comparing numbers in graphs"
+    ],
+    "B2": [
+      "Environment and sustainability"
+    ],
+    "C1": [
+      "Hedging language",
+      "Argument and debate"
+    ]
   },
   "related": [
-    { "t": "Grammar Hub", "d": "Grammar units with test–teach–test, A2–C1", "u": "../grammar-hub/" },
-    { "t": "Nominalisation and Hedging Trainer", "d": "Short practice for a more academic style", "u": "../nominalisation-hedging-trainer/" },
-    { "t": "APA Trainer", "d": "Practise reporting verbs and in-text citations", "u": "../apa-citation-trainer/" }
+    {
+      "t": "Grammar Hub",
+      "d": "Grammar units with test–teach–test, A2–C1",
+      "u": "../grammar-hub/"
+    },
+    {
+      "t": "Nominalisation and Hedging Trainer",
+      "d": "Short practice for a more academic style",
+      "u": "../nominalisation-hedging-trainer/"
+    },
+    {
+      "t": "APA Trainer",
+      "d": "Practise reporting verbs and in-text citations",
+      "u": "../apa-citation-trainer/"
+    }
   ],
   "units": [
     {
-      "id": "study-life", "level": "A2", "minutes": 10, "verified": false,
-      "title": "Study life collocations",
-      "cando": "Talk about classes, assignments and exams with natural word partners.",
-      "tags": ["study", "exam", "assignment", "lecture", "deadline", "notes", "collocations"],
-      "sample": ["<b>take</b> notes", "<b>meet</b> a deadline"],
+      "id": "affect-effect",
+      "level": "B1",
+      "quick": true,
+      "minutes": 4,
+      "verified": false,
+      "title": "Affect or effect?",
+      "cando": "Use affect (verb) and effect (noun) correctly.",
+      "tags": [
+        "affect",
+        "effect",
+        "confusing words",
+        "quick fix",
+        "cause and effect"
+      ],
+      "sample": [
+        "Noise <b>affects</b> sleep",
+        "a positive <b>effect</b>"
+      ],
       "words": [
-        { "w": "take notes", "m": "write down key points while you listen or read", "ex": "I always take notes in lectures." },
-        { "w": "attend a lecture", "m": "go to a lecture", "ex": "All students must attend the first lecture." },
-        { "w": "hand in an assignment", "m": "give your work to the teacher", "ex": "Please hand in your assignment by Friday." },
-        { "w": "meet a deadline", "m": "finish your work on time", "ex": "I worked all weekend to meet the deadline." },
-        { "w": "miss a deadline", "m": "finish your work too late", "ex": "If you miss the deadline, you lose marks." },
-        { "w": "sit an exam", "m": "take an exam (British and Australian English)", "ex": "We sit the final exam in June." },
-        { "w": "pass / fail an exam", "m": "get / not get the mark you need", "ex": "She passed all her exams." },
-        { "w": "revise for an exam", "m": "study your notes again before a test", "ex": "I’m revising for my exam this weekend." }
+        {
+          "w": "affect (verb)",
+          "m": "change or influence something",
+          "ex": "Stress can affect your sleep."
+        },
+        {
+          "w": "effect (noun)",
+          "m": "a change that something causes",
+          "ex": "Exercise has a positive effect on mood."
+        },
+        {
+          "w": "have an effect on",
+          "m": "influence",
+          "ex": "Screens have an effect on sleep."
+        }
       ],
       "pre": [
-        { "t": "mcq", "q": "Please ___ notes during the lecture.", "o": ["make", "take", "do"], "a": 1 },
-        { "t": "mcq", "q": "I need to ___ my assignment by Friday.", "o": ["hand in", "hand on", "give up"], "a": 0 },
-        { "t": "mcq", "q": "She worked all night to ___ the deadline.", "o": ["meet", "make", "win"], "a": 0 },
-        { "t": "gap", "instr": "Type the missing word. It means ‘study again before a test’.", "q": "I’m ___ for my exam this weekend, so I can’t go out.", "a": ["revising", "studying"] },
-        { "t": "mcq", "q": "All first-year students must ___ the welcome lecture.", "o": ["attend", "assist", "join to"], "a": 0 }
+        {
+          "t": "mcq",
+          "q": "Lack of sleep can ___ your memory.",
+          "o": [
+            "affect",
+            "effect"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The new rule had a big ___ on attendance.",
+          "o": [
+            "effect",
+            "affect"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Caffeine ___ people in different ways.",
+          "o": [
+            "affects",
+            "effects"
+          ],
+          "a": 0,
+          "keep": true
+        }
+      ],
+      "notice": {
+        "title": "From a student essay",
+        "instr": "Tap every form of affect and effect.",
+        "text": "Social media can [[affect]] how young people feel about themselves. Some studies report a negative [[effect]] on sleep. However, the [[effects]] are not the same for everyone, and many things [[affect]] how much time people spend online.",
+        "after": "One word follows “a” or “the”; the other comes after “can” or a subject. What’s the difference?"
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "can <b>affect</b> how… · many things <b>affect</b>…",
+          "q": "What kind of word is <b>affect</b>?",
+          "o": [
+            "a verb (an action)",
+            "a noun (a thing)"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "It comes after can and after a subject.",
+          "insight": "<b>affect</b> is a verb: <i>X affects Y.</i>"
+        },
+        {
+          "t": "mcq",
+          "ctx": "a negative <b>effect</b> on sleep · the <b>effects</b>",
+          "q": "What kind of word is <b>effect</b>?",
+          "o": [
+            "a noun (a thing)",
+            "a verb"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "It comes after a/the and an adjective.",
+          "insight": "<b>effect</b> is a noun: <i>have an effect on, the effects of.</i> Memory tip: <b>A</b>ffect = <b>A</b>ction, <b>E</b>ffect = <b>E</b>nd result."
+        }
+      ],
+      "rule": {
+        "title": "Affect or effect?",
+        "points": [
+          "<b>affect</b> = verb: <i>Noise affects concentration.</i>",
+          "<b>effect</b> = noun: <i>Noise has an effect on concentration. The effects of noise…</i>",
+          "Tip: if you can put <b>a/the</b> or an adjective before it, you need <b>effect</b>."
+        ],
+        "watch": "<s>has a big affect on</s> → has a big effect on."
+      },
+      "practice": [
+        {
+          "t": "mcq",
+          "q": "Climate change will ___ farming in many countries.",
+          "o": [
+            "affect",
+            "effect"
+          ],
+          "a": 0,
+          "why": "After will → a verb.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "Music has a strong {affect} on mood.",
+          "c": "effect",
+          "why": "After a strong → a noun: effect."
+        },
+        {
+          "t": "gap",
+          "q": "The side ___ of the drug are mild.",
+          "a": [
+            "effects"
+          ],
+          "why": "After side → a noun, plural.",
+          "hint": "Noun or verb?"
+        },
+        {
+          "t": "mcq",
+          "q": "How does noise ___ students’ concentration?",
+          "o": [
+            "affect",
+            "effect"
+          ],
+          "a": 0,
+          "why": "After does … → a verb.",
+          "keep": true
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "Diet can ___ your energy levels.",
+          "o": [
+            "affect",
+            "effect"
+          ],
+          "a": 0,
+          "why": "After can → verb.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The policy had no ___ on prices.",
+          "o": [
+            "effect",
+            "affect"
+          ],
+          "a": 0,
+          "why": "After no → noun.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The cold weather ___ the crops.",
+          "o": [
+            "affected",
+            "effected"
+          ],
+          "a": 0,
+          "why": "Verb in the past: affected.",
+          "keep": true
+        }
+      ],
+      "produce": {
+        "task": "Write 2–3 sentences about how something (for example, sleep, screens or exercise) influences students. Use affect once and effect once.",
+        "target": "affect (verb) and effect (noun)",
+        "checklist": [
+          "<b>affect</b> is a verb.",
+          "<b>effect</b> is a noun (have an effect on).",
+          "I didn’t mix them up."
+        ],
+        "model": "Screen time before bed can affect how well students sleep. Poor sleep then has a negative effect on concentration in class."
+      }
+    },
+    {
+      "id": "eg-ie",
+      "level": "B2",
+      "quick": true,
+      "minutes": 4,
+      "verified": false,
+      "title": "e.g. or i.e.?",
+      "cando": "Give examples and explanations correctly in academic writing.",
+      "tags": [
+        "e.g.",
+        "i.e.",
+        "examples",
+        "academic writing",
+        "quick fix"
+      ],
+      "sample": [
+        "fruit, <b>e.g.</b> apples",
+        "the capital, <b>i.e.</b> Canberra"
+      ],
+      "words": [
+        {
+          "w": "e.g.",
+          "m": "for example (one or more examples, not all)",
+          "ex": "Some fruits, e.g. oranges, are high in vitamin C."
+        },
+        {
+          "w": "i.e.",
+          "m": "that is (it explains or names exactly)",
+          "ex": "Australia’s capital, i.e. Canberra, is a planned city."
+        },
+        {
+          "w": "such as",
+          "m": "for example (in a sentence)",
+          "ex": "Skills such as note-taking need practice."
+        }
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "Bring something to write with, ___ a pen or a pencil.",
+          "o": [
+            "e.g.",
+            "i.e."
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The study ran for one academic year, ___ from March to November.",
+          "o": [
+            "i.e.",
+            "e.g."
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Many apps, ___ Duolingo, use games.",
+          "o": [
+            "e.g.",
+            "i.e."
+          ],
+          "a": 0,
+          "keep": true
+        }
+      ],
+      "notice": {
+        "title": "From a report",
+        "instr": "Tap every e.g. and i.e.",
+        "text": "Many students use digital tools, [[e.g.]] flashcard apps and online dictionaries. The survey focused on first-year students, [[i.e.]] students in their first two semesters. Some tools, [[e.g.]] spell checkers, are built into common software.",
+        "after": "In one case the writer gives examples; in another they explain exactly who. Which is which?"
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "digital tools, <b>e.g.</b> flashcard apps and online dictionaries",
+          "q": "Does <b>e.g.</b> give ALL the tools, or some examples?",
+          "o": [
+            "Some examples",
+            "All of them"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Are flashcard apps the only digital tools?",
+          "insight": "<b>e.g.</b> = for example (from Latin <i>exempli gratia</i>). The list is not complete."
+        },
+        {
+          "t": "mcq",
+          "ctx": "first-year students, <b>i.e.</b> students in their first two semesters",
+          "q": "What does <b>i.e.</b> do?",
+          "o": [
+            "It explains exactly what the writer means",
+            "It gives one example of many"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Is this an example, or a definition?",
+          "insight": "<b>i.e.</b> = that is / in other words (Latin <i>id est</i>). It says exactly what you mean."
+        }
+      ],
+      "rule": {
+        "title": "e.g. or i.e.?",
+        "points": [
+          "<b>e.g.</b> = for example: some examples, not a complete list.",
+          "<b>i.e.</b> = that is: explains or names exactly.",
+          "Don’t add <i>etc.</i> after e.g. (it already means the list isn’t complete).",
+          "In running text, many writers prefer <b>for example</b> / <b>that is</b> or <b>such as</b>."
+        ],
+        "watch": "<s>e.g. apples, bananas, etc.</s> → e.g. apples and bananas."
+      },
+      "practice": [
+        {
+          "t": "mcq",
+          "q": "Some Australian animals, ___ kangaroos and koalas, are marsupials.",
+          "o": [
+            "e.g.",
+            "i.e."
+          ],
+          "a": 0,
+          "why": "Examples, not all marsupials.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "We met at noon, ___ 12 p.m.",
+          "o": [
+            "i.e.",
+            "e.g."
+          ],
+          "a": 0,
+          "why": "Noon means exactly 12 p.m.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "Use reliable sources, {i.e.} journal articles and government reports.",
+          "c": "e.g.",
+          "why": "These are examples, not the only reliable sources."
+        },
+        {
+          "t": "mcq",
+          "q": "Which is correct?",
+          "o": [
+            "Bring warm clothes, e.g. a jacket and gloves.",
+            "Bring warm clothes, e.g. a jacket, gloves, etc."
+          ],
+          "a": 0,
+          "why": "No etc. after e.g.",
+          "keep": true
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "Leafy vegetables, ___ spinach, are rich in iron.",
+          "o": [
+            "e.g.",
+            "i.e."
+          ],
+          "a": 0,
+          "why": "Spinach is one example.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The task is due on the last day of term, ___ 28 November.",
+          "o": [
+            "i.e.",
+            "e.g."
+          ],
+          "a": 0,
+          "why": "It names the exact day.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Some skills, ___ time management, are useful in every course.",
+          "o": [
+            "e.g.",
+            "i.e."
+          ],
+          "a": 0,
+          "why": "Time management is one example.",
+          "keep": true
+        }
+      ],
+      "produce": {
+        "task": "Write 2 sentences about your study habits: one with e.g. (examples) and one with i.e. (an explanation).",
+        "target": "e.g. (for example) and i.e. (that is)",
+        "checklist": [
+          "<b>e.g.</b> gives examples, not the whole list.",
+          "<b>i.e.</b> explains exactly.",
+          "No <i>etc.</i> after e.g."
+        ],
+        "model": "I use a few apps to study, e.g. Quizlet and Anki. I study at my best in the morning, i.e. before 10 a.m."
+      }
+    },
+    {
+      "id": "study-life",
+      "level": "A2",
+      "minutes": 10,
+      "verified": false,
+      "title": "Study life collocations",
+      "cando": "Talk about classes, assignments and exams with natural word partners.",
+      "tags": [
+        "study",
+        "exam",
+        "assignment",
+        "lecture",
+        "deadline",
+        "notes",
+        "collocations"
+      ],
+      "sample": [
+        "<b>take</b> notes",
+        "<b>meet</b> a deadline"
+      ],
+      "words": [
+        {
+          "w": "take notes",
+          "m": "write down key points while you listen or read",
+          "ex": "I always take notes in lectures."
+        },
+        {
+          "w": "attend a lecture",
+          "m": "go to a lecture",
+          "ex": "All students must attend the first lecture."
+        },
+        {
+          "w": "hand in an assignment",
+          "m": "give your work to the teacher",
+          "ex": "Please hand in your assignment by Friday."
+        },
+        {
+          "w": "meet a deadline",
+          "m": "finish your work on time",
+          "ex": "I worked all weekend to meet the deadline."
+        },
+        {
+          "w": "miss a deadline",
+          "m": "finish your work too late",
+          "ex": "If you miss the deadline, you lose marks."
+        },
+        {
+          "w": "sit an exam",
+          "m": "take an exam (British and Australian English)",
+          "ex": "We sit the final exam in June."
+        },
+        {
+          "w": "pass / fail an exam",
+          "m": "get / not get the mark you need",
+          "ex": "She passed all her exams."
+        },
+        {
+          "w": "revise for an exam",
+          "m": "study your notes again before a test",
+          "ex": "I’m revising for my exam this weekend."
+        }
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "Please ___ notes during the lecture.",
+          "o": [
+            "make",
+            "take",
+            "do"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "I need to ___ my assignment by Friday.",
+          "o": [
+            "hand in",
+            "hand on",
+            "give up"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "She worked all night to ___ the deadline.",
+          "o": [
+            "meet",
+            "make",
+            "win"
+          ],
+          "a": 0
+        },
+        {
+          "t": "gap",
+          "instr": "Type the missing word. It means ‘study again before a test’.",
+          "q": "I’m ___ for my exam this weekend, so I can’t go out.",
+          "a": [
+            "revising",
+            "studying"
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "All first-year students must ___ the welcome lecture.",
+          "o": [
+            "attend",
+            "assist",
+            "join to"
+          ],
+          "a": 0
+        }
       ],
       "notice": {
         "title": "A message to a classmate",
@@ -54,59 +578,302 @@
         "after": "Each noun has its own verb partner: <b>take</b> notes, <b>miss</b> a deadline. Could you change the verbs? You’ll find out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "<b>take</b> notes · <b>hand in</b> my assignment · <b>attend</b> the lecture", "q": "We say ‘take notes’. Which one is NOT natural?", "o": ["write notes", "make notes", "do notes"], "a": 2, "keep": true, "hint": "Which verb never goes with notes?", "insight": "We <b>take</b> notes (in a lecture) or <b>make</b> notes (from a book). We don’t ‘do’ notes." },
-        { "t": "mcq", "ctx": "<b>meet</b> the deadline · <b>miss</b> the deadline", "q": "What is the opposite of ‘meet a deadline’?", "o": ["miss a deadline", "lose a deadline", "fail a deadline"], "a": 0, "keep": true, "hint": "Look at Ben’s message.", "insight": "<b>meet</b> a deadline = finish on time; <b>miss</b> a deadline = finish late. Also: <b>extend</b> a deadline = give more time." },
-        { "t": "mcq", "ctx": "<b>sit</b> the exam · <b>revise for</b> the exam", "q": "In Australia and the UK, what does ‘revise for an exam’ mean?", "o": ["Study your notes again before the exam", "Change your exam answers", "Write the exam questions"], "a": 0, "keep": true, "hint": "Ben does this after he hands in his assignment, before the exam.", "insight": "<b>revise</b> = study again before a test (American English: review). <b>sit</b> an exam = take an exam." }
+        {
+          "t": "mcq",
+          "ctx": "<b>take</b> notes · <b>hand in</b> my assignment · <b>attend</b> the lecture",
+          "q": "We say ‘take notes’. Which one is NOT natural?",
+          "o": [
+            "write notes",
+            "make notes",
+            "do notes"
+          ],
+          "a": 2,
+          "keep": true,
+          "hint": "Which verb never goes with notes?",
+          "insight": "We <b>take</b> notes (in a lecture) or <b>make</b> notes (from a book). We don’t ‘do’ notes."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>meet</b> the deadline · <b>miss</b> the deadline",
+          "q": "What is the opposite of ‘meet a deadline’?",
+          "o": [
+            "miss a deadline",
+            "lose a deadline",
+            "fail a deadline"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at Ben’s message.",
+          "insight": "<b>meet</b> a deadline = finish on time; <b>miss</b> a deadline = finish late. Also: <b>extend</b> a deadline = give more time."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>sit</b> the exam · <b>revise for</b> the exam",
+          "q": "In Australia and the UK, what does ‘revise for an exam’ mean?",
+          "o": [
+            "Study your notes again before the exam",
+            "Change your exam answers",
+            "Write the exam questions"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Ben does this after he hands in his assignment, before the exam.",
+          "insight": "<b>revise</b> = study again before a test (American English: review). <b>sit</b> an exam = take an exam."
+        }
       ],
       "rule": {
         "title": "Your word card",
-        "points": ["Learn nouns with their verb partners: <b>take</b> notes, <b>meet</b> a deadline, <b>sit</b> an exam.", "The verb usually can’t be changed: <s>do notes</s>, <s>win a deadline</s>."],
+        "points": [
+          "Learn nouns with their verb partners: <b>take</b> notes, <b>meet</b> a deadline, <b>sit</b> an exam.",
+          "The verb usually can’t be changed: <s>do notes</s>, <s>win a deadline</s>."
+        ],
         "watch": "<i>assist</i> = help. To go to a lecture is <b>attend</b>: <s>assist a lecture</s> → attend a lecture."
       },
       "practice": [
-        { "t": "match", "instr": "Match each verb with its partner.", "pairs": [["take", "notes"], ["attend", "a lecture"], ["hand in", "an assignment"], ["meet", "a deadline"], ["sit", "an exam"]] },
-        { "t": "mcq", "q": "Oh no! I ___ the deadline. Can I still submit it?", "o": ["missed", "lost", "failed"], "a": 0, "hint": "The opposite of meet a deadline.", "why": "miss a deadline = be too late." },
-        { "t": "gap", "q": "I always ___ notes on my laptop in lectures.", "a": ["take"], "hint": "Which verb goes with notes?", "why": "take notes" },
-        { "t": "mcq", "q": "Which one is NOT natural?", "o": ["pass an exam", "fail an exam", "win an exam"], "a": 2, "keep": true, "hint": "You can win a game, but not…", "why": "pass / fail / sit an exam. We don’t ‘win’ an exam." },
-        { "t": "fix", "s": "I {assisted} the lecture on Monday.", "c": "attended", "hint": "Assist means help.", "why": "Go to a lecture = attend a lecture." },
-        { "t": "order", "a": "You must hand in the assignment by Monday.", "hint": "Start with You must…", "why": "hand in + the assignment + by + day." }
+        {
+          "t": "match",
+          "instr": "Match each verb with its partner.",
+          "pairs": [
+            [
+              "take",
+              "notes"
+            ],
+            [
+              "attend",
+              "a lecture"
+            ],
+            [
+              "hand in",
+              "an assignment"
+            ],
+            [
+              "meet",
+              "a deadline"
+            ],
+            [
+              "sit",
+              "an exam"
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "Oh no! I ___ the deadline. Can I still submit it?",
+          "o": [
+            "missed",
+            "lost",
+            "failed"
+          ],
+          "a": 0,
+          "hint": "The opposite of meet a deadline.",
+          "why": "miss a deadline = be too late."
+        },
+        {
+          "t": "gap",
+          "q": "I always ___ notes on my laptop in lectures.",
+          "a": [
+            "take"
+          ],
+          "hint": "Which verb goes with notes?",
+          "why": "take notes"
+        },
+        {
+          "t": "mcq",
+          "q": "Which one is NOT natural?",
+          "o": [
+            "pass an exam",
+            "fail an exam",
+            "win an exam"
+          ],
+          "a": 2,
+          "keep": true,
+          "hint": "You can win a game, but not…",
+          "why": "pass / fail / sit an exam. We don’t ‘win’ an exam."
+        },
+        {
+          "t": "fix",
+          "s": "I {assisted} the lecture on Monday.",
+          "c": "attended",
+          "hint": "Assist means help.",
+          "why": "Go to a lecture = attend a lecture."
+        },
+        {
+          "t": "order",
+          "a": "You must hand in the assignment by Monday.",
+          "hint": "Start with You must…",
+          "why": "hand in + the assignment + by + day."
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "Don’t forget to ___ notes in the seminar.", "o": ["take", "do", "get"], "a": 0, "why": "take notes" },
-        { "t": "mcq", "q": "When do we have to ___ the essay?", "o": ["hand in", "hand out", "give in to"], "a": 0, "why": "hand in = give your work to the teacher. (hand out = give to everyone, e.g. worksheets.)" },
-        { "t": "mcq", "q": "If you ___ the deadline, you lose 5% per day.", "o": ["miss", "lose", "break"], "a": 0, "why": "miss a deadline" },
-        { "t": "gap", "q": "We ___ the final exam in the main hall next Tuesday.", "a": ["sit", "take", "have", "do"], "why": "sit / take an exam" },
-        { "t": "fix", "s": "Many students {assist} lectures online.", "c": "attend", "why": "attend a lecture (assist = help)." }
+        {
+          "t": "mcq",
+          "q": "Don’t forget to ___ notes in the seminar.",
+          "o": [
+            "take",
+            "do",
+            "get"
+          ],
+          "a": 0,
+          "why": "take notes"
+        },
+        {
+          "t": "mcq",
+          "q": "When do we have to ___ the essay?",
+          "o": [
+            "hand in",
+            "hand out",
+            "give in to"
+          ],
+          "a": 0,
+          "why": "hand in = give your work to the teacher. (hand out = give to everyone, e.g. worksheets.)"
+        },
+        {
+          "t": "mcq",
+          "q": "If you ___ the deadline, you lose 5% per day.",
+          "o": [
+            "miss",
+            "lose",
+            "break"
+          ],
+          "a": 0,
+          "why": "miss a deadline"
+        },
+        {
+          "t": "gap",
+          "q": "We ___ the final exam in the main hall next Tuesday.",
+          "a": [
+            "sit",
+            "take",
+            "have",
+            "do"
+          ],
+          "why": "sit / take an exam"
+        },
+        {
+          "t": "fix",
+          "s": "Many students {assist} lectures online.",
+          "c": "attend",
+          "why": "attend a lecture (assist = help)."
+        }
       ],
       "produce": {
         "task": "Write 3–4 sentences about your study routine or your next exam. Use at least four collocations from this unit.",
         "target": "study collocations: take notes, attend a lecture, hand in an assignment, meet/miss a deadline, sit an exam, revise for an exam",
-        "checklist": ["I used the right verb with each noun (take notes, meet a deadline…).", "I used at least four collocations.", "My sentences are about my real study life."],
+        "checklist": [
+          "I used the right verb with each noun (take notes, meet a deadline…).",
+          "I used at least four collocations.",
+          "My sentences are about my real study life."
+        ],
         "model": "I attend three lectures a week and I always take notes on my laptop. Next week, I have to hand in my first assignment. I want to meet the deadline, so I’m starting early. In June, I’ll sit two exams, so I’ll revise for them in May."
       }
     },
     {
-      "id": "make-do-take-have", "level": "B1", "minutes": 10, "verified": false,
+      "id": "make-do-take-have",
+      "level": "B1",
+      "minutes": 10,
+      "verified": false,
       "title": "Make, do, take or have?",
       "cando": "Choose the right verb in common collocations: make progress, do research, take part…",
-      "tags": ["make", "do", "take", "have", "collocations", "progress", "research", "mistake"],
-      "sample": ["<b>make</b> a decision", "<b>do</b> research"],
+      "tags": [
+        "make",
+        "do",
+        "take",
+        "have",
+        "collocations",
+        "progress",
+        "research",
+        "mistake"
+      ],
+      "sample": [
+        "<b>make</b> a decision",
+        "<b>do</b> research"
+      ],
       "words": [
-        { "w": "make a decision", "m": "decide", "ex": "I need to make a decision about my major." },
-        { "w": "make progress", "m": "get better over time", "ex": "You have made great progress this term." },
-        { "w": "make a mistake", "m": "do something wrong", "ex": "Everyone makes mistakes when learning." },
-        { "w": "do research", "m": "study a topic to find information", "ex": "I did some research for my essay." },
-        { "w": "do homework", "m": "complete work set by the teacher", "ex": "I do my homework every evening." },
-        { "w": "take part in", "m": "join an activity", "ex": "Thirty students took part in the study." },
-        { "w": "take / have a break", "m": "stop and rest for a short time", "ex": "Let’s take a ten-minute break." },
-        { "w": "have a meeting / discussion", "m": "meet or talk about something", "ex": "We had a long discussion about the topic." }
+        {
+          "w": "make a decision",
+          "m": "decide",
+          "ex": "I need to make a decision about my major."
+        },
+        {
+          "w": "make progress",
+          "m": "get better over time",
+          "ex": "You have made great progress this term."
+        },
+        {
+          "w": "make a mistake",
+          "m": "do something wrong",
+          "ex": "Everyone makes mistakes when learning."
+        },
+        {
+          "w": "do research",
+          "m": "study a topic to find information",
+          "ex": "I did some research for my essay."
+        },
+        {
+          "w": "do homework",
+          "m": "complete work set by the teacher",
+          "ex": "I do my homework every evening."
+        },
+        {
+          "w": "take part in",
+          "m": "join an activity",
+          "ex": "Thirty students took part in the study."
+        },
+        {
+          "w": "take / have a break",
+          "m": "stop and rest for a short time",
+          "ex": "Let’s take a ten-minute break."
+        },
+        {
+          "w": "have a meeting / discussion",
+          "m": "meet or talk about something",
+          "ex": "We had a long discussion about the topic."
+        }
       ],
       "pre": [
-        { "t": "mcq", "q": "I need to ___ a decision about my course.", "o": ["do", "make", "have"], "a": 1 },
-        { "t": "mcq", "q": "Many students ___ research in the library.", "o": ["make", "do", "take"], "a": 1 },
-        { "t": "mcq", "q": "Would you like to ___ part in our study?", "o": ["have", "make", "take"], "a": 2 },
-        { "t": "fix", "s": "Everyone {does} mistakes when learning a language.", "c": "makes" },
-        { "t": "gap", "q": "Let’s ___ a short break and continue in ten minutes.", "a": ["take", "have"] }
+        {
+          "t": "mcq",
+          "q": "I need to ___ a decision about my course.",
+          "o": [
+            "do",
+            "make",
+            "have"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "Many students ___ research in the library.",
+          "o": [
+            "make",
+            "do",
+            "take"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "Would you like to ___ part in our study?",
+          "o": [
+            "have",
+            "make",
+            "take"
+          ],
+          "a": 2
+        },
+        {
+          "t": "fix",
+          "s": "Everyone {does} mistakes when learning a language.",
+          "c": "makes"
+        },
+        {
+          "t": "gap",
+          "q": "Let’s ___ a short break and continue in ten minutes.",
+          "a": [
+            "take",
+            "have"
+          ]
+        }
       ],
       "notice": {
         "title": "Feedback from a teacher",
@@ -115,59 +882,330 @@
         "after": "When do we use make, and when do we use do? There is a pattern. You’ll work it out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "<b>made</b> progress · <b>made</b> mistakes · <b>make</b> a decision", "q": "Which idea fits <b>make</b> best?", "o": ["Creating or producing a result", "Doing a task or a job", "Taking a short rest"], "a": 0, "keep": true, "hint": "A decision, progress and a mistake are all results.", "insight": "<b>make</b>: creating or producing something: make a decision, make progress, make a mistake, make a plan." },
-        { "t": "mcq", "ctx": "<b>did</b> research · <b>do</b> your homework", "q": "Which idea fits <b>do</b> best?", "o": ["Work, tasks and activities", "Creating new things", "Meetings"], "a": 0, "keep": true, "hint": "Research and homework are kinds of work.", "insight": "<b>do</b>: work, tasks and activities: do research, do homework, do an exercise, do a course." },
-        { "t": "mcq", "ctx": "<b>took</b> part · <b>take</b> a break · <b>have</b> a meeting", "q": "Take and have are used in fixed phrases. Which phrase is correct?", "o": ["take part in a discussion", "make part in a discussion", "do part in a discussion"], "a": 0, "keep": true, "hint": "Look at the teacher’s feedback.", "insight": "Some collocations just need to be learned: <b>take</b> part, <b>take</b> a break, <b>have</b> a meeting, <b>have</b> a discussion." }
+        {
+          "t": "mcq",
+          "ctx": "<b>made</b> progress · <b>made</b> mistakes · <b>make</b> a decision",
+          "q": "Which idea fits <b>make</b> best?",
+          "o": [
+            "Creating or producing a result",
+            "Doing a task or a job",
+            "Taking a short rest"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "A decision, progress and a mistake are all results.",
+          "insight": "<b>make</b>: creating or producing something: make a decision, make progress, make a mistake, make a plan."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>did</b> research · <b>do</b> your homework",
+          "q": "Which idea fits <b>do</b> best?",
+          "o": [
+            "Work, tasks and activities",
+            "Creating new things",
+            "Meetings"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Research and homework are kinds of work.",
+          "insight": "<b>do</b>: work, tasks and activities: do research, do homework, do an exercise, do a course."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>took</b> part · <b>take</b> a break · <b>have</b> a meeting",
+          "q": "Take and have are used in fixed phrases. Which phrase is correct?",
+          "o": [
+            "take part in a discussion",
+            "make part in a discussion",
+            "do part in a discussion"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at the teacher’s feedback.",
+          "insight": "Some collocations just need to be learned: <b>take</b> part, <b>take</b> a break, <b>have</b> a meeting, <b>have</b> a discussion."
+        }
       ],
       "rule": {
         "title": "Your word card",
-        "points": ["<b>make</b> = create or produce (a decision, progress, a mistake, a plan, an effort).", "<b>do</b> = work, tasks, activities (research, homework, a course, an exercise).", "<b>take / have</b> = fixed phrases (take part, take a break, have a meeting, have a discussion)."],
+        "points": [
+          "<b>make</b> = create or produce (a decision, progress, a mistake, a plan, an effort).",
+          "<b>do</b> = work, tasks, activities (research, homework, a course, an exercise).",
+          "<b>take / have</b> = fixed phrases (take part, take a break, have a meeting, have a discussion)."
+        ],
         "watch": "<s>do a mistake</s> → make a mistake; <s>make research</s> → do research."
       },
       "practice": [
-        { "t": "sort", "instr": "Which verb goes with each noun?", "bins": ["make", "do", "take / have"], "chips": [["a decision", 0], ["research", 1], ["a break", 2, "take a break / have a break"], ["progress", 0], ["homework", 1], ["part in", 2, "take part in"], ["a mistake", 0], ["a course", 1], ["a meeting", 2, "have a meeting"]] },
-        { "t": "mcq", "q": "You’ve ___ a lot of progress this year!", "o": ["made", "done", "taken"], "a": 0, "hint": "Progress is a result.", "why": "make progress" },
-        { "t": "gap", "q": "Have you ___ your homework?", "a": ["done", "finished"], "hint": "Homework is a task.", "why": "do homework → have you done…" },
-        { "t": "fix", "s": "I {made} some research on climate change for my essay.", "c": "did", "hint": "Research is work.", "why": "do research" },
-        { "t": "mcq", "q": "How many students ___ part in the survey?", "o": ["took", "made", "did"], "a": 0, "hint": "A fixed phrase.", "why": "take part in" },
-        { "t": "order", "a": "We need to make a decision today.", "hint": "Start with We need…", "why": "make a decision" }
+        {
+          "t": "sort",
+          "instr": "Which verb goes with each noun?",
+          "bins": [
+            "make",
+            "do",
+            "take / have"
+          ],
+          "chips": [
+            [
+              "a decision",
+              0
+            ],
+            [
+              "research",
+              1
+            ],
+            [
+              "a break",
+              2,
+              "take a break / have a break"
+            ],
+            [
+              "progress",
+              0
+            ],
+            [
+              "homework",
+              1
+            ],
+            [
+              "part in",
+              2,
+              "take part in"
+            ],
+            [
+              "a mistake",
+              0
+            ],
+            [
+              "a course",
+              1
+            ],
+            [
+              "a meeting",
+              2,
+              "have a meeting"
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "You’ve ___ a lot of progress this year!",
+          "o": [
+            "made",
+            "done",
+            "taken"
+          ],
+          "a": 0,
+          "hint": "Progress is a result.",
+          "why": "make progress"
+        },
+        {
+          "t": "gap",
+          "q": "Have you ___ your homework?",
+          "a": [
+            "done",
+            "finished"
+          ],
+          "hint": "Homework is a task.",
+          "why": "do homework → have you done…"
+        },
+        {
+          "t": "fix",
+          "s": "I {made} some research on climate change for my essay.",
+          "c": "did",
+          "hint": "Research is work.",
+          "why": "do research"
+        },
+        {
+          "t": "mcq",
+          "q": "How many students ___ part in the survey?",
+          "o": [
+            "took",
+            "made",
+            "did"
+          ],
+          "a": 0,
+          "hint": "A fixed phrase.",
+          "why": "take part in"
+        },
+        {
+          "t": "order",
+          "a": "We need to make a decision today.",
+          "hint": "Start with We need…",
+          "why": "make a decision"
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "It’s OK to ___ mistakes in class.", "o": ["make", "do", "take"], "a": 0, "why": "make a mistake" },
-        { "t": "mcq", "q": "She is ___ research on online learning.", "o": ["making", "doing", "having"], "a": 1, "why": "do research" },
-        { "t": "mcq", "q": "Fifty people ___ part in the interview study.", "o": ["took", "made", "had"], "a": 0, "why": "take part in" },
-        { "t": "fix", "s": "We need to {do} a decision before Friday.", "c": "make", "why": "make a decision" },
-        { "t": "gap", "q": "Let’s ___ a meeting on Monday to plan the project.", "a": ["have", "hold", "schedule", "arrange", "organise", "organize"], "why": "have / hold a meeting" }
+        {
+          "t": "mcq",
+          "q": "It’s OK to ___ mistakes in class.",
+          "o": [
+            "make",
+            "do",
+            "take"
+          ],
+          "a": 0,
+          "why": "make a mistake"
+        },
+        {
+          "t": "mcq",
+          "q": "She is ___ research on online learning.",
+          "o": [
+            "making",
+            "doing",
+            "having"
+          ],
+          "a": 1,
+          "why": "do research"
+        },
+        {
+          "t": "mcq",
+          "q": "Fifty people ___ part in the interview study.",
+          "o": [
+            "took",
+            "made",
+            "had"
+          ],
+          "a": 0,
+          "why": "take part in"
+        },
+        {
+          "t": "fix",
+          "s": "We need to {do} a decision before Friday.",
+          "c": "make",
+          "why": "make a decision"
+        },
+        {
+          "t": "gap",
+          "q": "Let’s ___ a meeting on Monday to plan the project.",
+          "a": [
+            "have",
+            "hold",
+            "schedule",
+            "arrange",
+            "organise",
+            "organize"
+          ],
+          "why": "have / hold a meeting"
+        }
       ],
       "produce": {
         "task": "Write 3–4 sentences about your progress as a learner this year. Use at least four collocations with make, do, take or have.",
         "target": "collocations with make, do, take and have",
-        "checklist": ["I used <b>make</b> for decisions, progress and mistakes.", "I used <b>do</b> for research, homework and tasks.", "I used fixed phrases like take part and take a break."],
+        "checklist": [
+          "I used <b>make</b> for decisions, progress and mistakes.",
+          "I used <b>do</b> for research, homework and tasks.",
+          "I used fixed phrases like take part and take a break."
+        ],
         "model": "This year I have made good progress with my writing. I do my homework every evening and I try to take a short break every hour. I took part in a speaking club, and I made a decision to do a short research course next term."
       }
     },
     {
-      "id": "describing-trends", "level": "B1", "minutes": 12, "verified": false,
+      "id": "describing-trends",
+      "level": "B1",
+      "minutes": 12,
+      "verified": false,
       "title": "Describing trends and changes",
       "cando": "Describe graphs and changes: rise sharply, a slight fall, remain stable.",
-      "tags": ["graphs", "IELTS Task 1", "trends", "increase", "decrease", "rise", "fall", "sharply", "slightly"],
-      "sample": ["<b>rose sharply</b>", "a <b>slight</b> fall"],
+      "tags": [
+        "graphs",
+        "IELTS Task 1",
+        "trends",
+        "increase",
+        "decrease",
+        "rise",
+        "fall",
+        "sharply",
+        "slightly"
+      ],
+      "sample": [
+        "<b>rose sharply</b>",
+        "a <b>slight</b> fall"
+      ],
       "words": [
-        { "w": "rise / increase / grow", "m": "go up", "ex": "Prices rose by 10%." },
-        { "w": "fall / decrease / decline / drop", "m": "go down", "ex": "Sales fell in March." },
-        { "w": "remain stable", "m": "stay the same", "ex": "The figure remained stable for two years." },
-        { "w": "fluctuate", "m": "go up and down", "ex": "Temperatures fluctuated all week." },
-        { "w": "reach a peak (of)", "m": "get to the highest point", "ex": "Visitor numbers reached a peak of 9,000 in July." },
-        { "w": "sharply / dramatically", "m": "by a lot, or very quickly", "ex": "Costs increased sharply." },
-        { "w": "slightly", "m": "by a small amount", "ex": "Numbers fell slightly." },
-        { "w": "gradually / steadily", "m": "slowly, over time", "ex": "The population grew steadily." }
+        {
+          "w": "rise / increase / grow",
+          "m": "go up",
+          "ex": "Prices rose by 10%."
+        },
+        {
+          "w": "fall / decrease / decline / drop",
+          "m": "go down",
+          "ex": "Sales fell in March."
+        },
+        {
+          "w": "remain stable",
+          "m": "stay the same",
+          "ex": "The figure remained stable for two years."
+        },
+        {
+          "w": "fluctuate",
+          "m": "go up and down",
+          "ex": "Temperatures fluctuated all week."
+        },
+        {
+          "w": "reach a peak (of)",
+          "m": "get to the highest point",
+          "ex": "Visitor numbers reached a peak of 9,000 in July."
+        },
+        {
+          "w": "sharply / dramatically",
+          "m": "by a lot, or very quickly",
+          "ex": "Costs increased sharply."
+        },
+        {
+          "w": "slightly",
+          "m": "by a small amount",
+          "ex": "Numbers fell slightly."
+        },
+        {
+          "w": "gradually / steadily",
+          "m": "slowly, over time",
+          "ex": "The population grew steadily."
+        }
       ],
       "pre": [
-        { "t": "mcq", "q": "The number of students ___ from 200 to 500.", "o": ["rose", "raised", "grew up"], "a": 0 },
-        { "t": "mcq", "q": "Sales fell ___, from 90 to 88.", "o": ["slightly", "sharply", "dramatically"], "a": 0 },
-        { "t": "mcq", "q": "Prices ___ stable between 2020 and 2022.", "o": ["remained", "stayed on", "kept"], "a": 0 },
-        { "t": "fix", "s": "There was a {sharply} increase in house prices.", "c": "sharp" },
-        { "t": "gap", "q": "The price of oil went up and down all year: it ___ a lot.", "a": ["fluctuated", "varied"] }
+        {
+          "t": "mcq",
+          "q": "The number of students ___ from 200 to 500.",
+          "o": [
+            "rose",
+            "raised",
+            "grew up"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "Sales fell ___, from 90 to 88.",
+          "o": [
+            "slightly",
+            "sharply",
+            "dramatically"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "Prices ___ stable between 2020 and 2022.",
+          "o": [
+            "remained",
+            "stayed on",
+            "kept"
+          ],
+          "a": 0
+        },
+        {
+          "t": "fix",
+          "s": "There was a {sharply} increase in house prices.",
+          "c": "sharp"
+        },
+        {
+          "t": "gap",
+          "q": "The price of oil went up and down all year: it ___ a lot.",
+          "a": [
+            "fluctuated",
+            "varied"
+          ]
+        }
       ],
       "notice": {
         "title": "IELTS-style graph description",
@@ -176,59 +1214,328 @@
         "after": "Look at <b>rose steadily</b> and <b>a sharp fall</b>. They follow two different patterns. You’ll work them out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "The number <b>rose steadily</b>. · There was <b>a sharp fall</b>.", "q": "What follows <b>rose</b>, and what comes before <b>fall</b>?", "o": ["rose + adverb (steadily); a + adjective + noun (a sharp fall)", "Both use adverbs", "Both use adjectives"], "a": 0, "keep": true, "hint": "Is fall a verb or a noun here?", "insight": "Two patterns: <b>verb + adverb</b> (rose steadily, fell sharply) or <b>a/an + adjective + noun</b> (a steady rise, a sharp fall)." },
-        { "t": "mcq", "ctx": "reached a peak of 4,500 · remained stable · fluctuated", "q": "Which phrase means ‘stayed the same’?", "o": ["remained stable", "reached a peak", "fluctuated"], "a": 0, "keep": true, "hint": "What happened in 2021 and 2022?", "insight": "<b>remain stable</b> = stay the same; <b>fluctuate</b> = go up and down; <b>reach a peak</b> = get to the highest point." },
-        { "t": "mcq", "ctx": "slight · gradual · steady · sharp · dramatic", "q": "Which words describe a BIG or fast change?", "o": ["sharp, dramatic", "slight, gradual", "steady, slight"], "a": 0, "keep": true, "hint": "4,500 to 2,500 in one year was ‘a … fall’.", "insight": "Size and speed: <b>slight</b> (small) → <b>gradual / steady</b> (slow) → <b>significant</b> → <b>sharp / dramatic</b> (big or fast)." }
+        {
+          "t": "mcq",
+          "ctx": "The number <b>rose steadily</b>. · There was <b>a sharp fall</b>.",
+          "q": "What follows <b>rose</b>, and what comes before <b>fall</b>?",
+          "o": [
+            "rose + adverb (steadily); a + adjective + noun (a sharp fall)",
+            "Both use adverbs",
+            "Both use adjectives"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Is fall a verb or a noun here?",
+          "insight": "Two patterns: <b>verb + adverb</b> (rose steadily, fell sharply) or <b>a/an + adjective + noun</b> (a steady rise, a sharp fall)."
+        },
+        {
+          "t": "mcq",
+          "ctx": "reached a peak of 4,500 · remained stable · fluctuated",
+          "q": "Which phrase means ‘stayed the same’?",
+          "o": [
+            "remained stable",
+            "reached a peak",
+            "fluctuated"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "What happened in 2021 and 2022?",
+          "insight": "<b>remain stable</b> = stay the same; <b>fluctuate</b> = go up and down; <b>reach a peak</b> = get to the highest point."
+        },
+        {
+          "t": "mcq",
+          "ctx": "slight · gradual · steady · sharp · dramatic",
+          "q": "Which words describe a BIG or fast change?",
+          "o": [
+            "sharp, dramatic",
+            "slight, gradual",
+            "steady, slight"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "4,500 to 2,500 in one year was ‘a … fall’.",
+          "insight": "Size and speed: <b>slight</b> (small) → <b>gradual / steady</b> (slow) → <b>significant</b> → <b>sharp / dramatic</b> (big or fast)."
+        }
       ],
       "rule": {
         "title": "Your word card",
-        "points": ["Up: <b>rise, increase, grow</b>. Down: <b>fall, decrease, decline, drop</b>. Same: <b>remain stable</b>. Up and down: <b>fluctuate</b>.", "Verb + adverb: <i>rose sharply, fell slightly</i>.", "a/an + adjective + noun: <i>a sharp rise, a slight fall</i>.", "Highest point: <b>reach a peak</b>. Lowest point: <b>hit a low</b>."],
+        "points": [
+          "Up: <b>rise, increase, grow</b>. Down: <b>fall, decrease, decline, drop</b>. Same: <b>remain stable</b>. Up and down: <b>fluctuate</b>.",
+          "Verb + adverb: <i>rose sharply, fell slightly</i>.",
+          "a/an + adjective + noun: <i>a sharp rise, a slight fall</i>.",
+          "Highest point: <b>reach a peak</b>. Lowest point: <b>hit a low</b>."
+        ],
         "watch": "<s>raised</s> → rose. <i>Rise</i> has no object (prices rose); <i>raise</i> needs one (they raised prices)."
       },
       "practice": [
-        { "t": "match", "instr": "Match each word with its meaning.", "pairs": [["rise", "go up"], ["decline", "go down"], ["remain stable", "stay the same"], ["fluctuate", "go up and down"], ["reach a peak", "get to the highest point"]] },
-        { "t": "gap", "q": "Online shopping increased ___ (dramatic) in 2020.", "a": ["dramatically"], "hint": "After a verb, use an adverb.", "why": "verb + adverb: increased dramatically." },
-        { "t": "mcq", "q": "Which describes a change from 100 to 101?", "o": ["a slight rise", "a sharp rise", "a dramatic rise"], "a": 0, "keep": true, "hint": "It’s a very small change.", "why": "A small change = slight." },
-        { "t": "fix", "s": "The number of cars {raised} quickly after 2010.", "c": "rose", "hint": "No object: the number went up by itself.", "why": "rise – rose – risen (no object)." },
-        { "t": "order", "a": "There was a gradual decline in sales.", "hint": "Start with There was…", "why": "a + adjective + noun + in." },
-        { "t": "sort", "instr": "Small or slow change, or big or fast change?", "bins": ["Small or slow", "Big or fast"], "chips": [["slightly", 0], ["dramatically", 1], ["gradually", 0], ["sharply", 1], ["a slight dip", 0], ["a steep rise", 1, "steep = very fast"], ["steadily", 0, "steady = slow and regular"]] }
+        {
+          "t": "match",
+          "instr": "Match each word with its meaning.",
+          "pairs": [
+            [
+              "rise",
+              "go up"
+            ],
+            [
+              "decline",
+              "go down"
+            ],
+            [
+              "remain stable",
+              "stay the same"
+            ],
+            [
+              "fluctuate",
+              "go up and down"
+            ],
+            [
+              "reach a peak",
+              "get to the highest point"
+            ]
+          ]
+        },
+        {
+          "t": "gap",
+          "q": "Online shopping increased ___ (dramatic) in 2020.",
+          "a": [
+            "dramatically"
+          ],
+          "hint": "After a verb, use an adverb.",
+          "why": "verb + adverb: increased dramatically."
+        },
+        {
+          "t": "mcq",
+          "q": "Which describes a change from 100 to 101?",
+          "o": [
+            "a slight rise",
+            "a sharp rise",
+            "a dramatic rise"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "It’s a very small change.",
+          "why": "A small change = slight."
+        },
+        {
+          "t": "fix",
+          "s": "The number of cars {raised} quickly after 2010.",
+          "c": "rose",
+          "hint": "No object: the number went up by itself.",
+          "why": "rise – rose – risen (no object)."
+        },
+        {
+          "t": "order",
+          "a": "There was a gradual decline in sales.",
+          "hint": "Start with There was…",
+          "why": "a + adjective + noun + in."
+        },
+        {
+          "t": "sort",
+          "instr": "Small or slow change, or big or fast change?",
+          "bins": [
+            "Small or slow",
+            "Big or fast"
+          ],
+          "chips": [
+            [
+              "slightly",
+              0
+            ],
+            [
+              "dramatically",
+              1
+            ],
+            [
+              "gradually",
+              0
+            ],
+            [
+              "sharply",
+              1
+            ],
+            [
+              "a slight dip",
+              0
+            ],
+            [
+              "a steep rise",
+              1,
+              "steep = very fast"
+            ],
+            [
+              "steadily",
+              0,
+              "steady = slow and regular"
+            ]
+          ]
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "Unemployment ___ from 6% to 4%.", "o": ["fell", "felt", "fallen"], "a": 0, "why": "fall – fell – fallen." },
-        { "t": "mcq", "q": "Sales went from 1,000 to 3,000 in one month: they rose ___.", "o": ["dramatically", "slightly", "steadily"], "a": 0, "why": "A big, fast change = dramatically." },
-        { "t": "mcq", "q": "The temperature ___ at 25°C for a week.", "o": ["remained stable", "remained stably", "fluctuated stable"], "a": 0, "why": "remain + adjective: remained stable." },
-        { "t": "fix", "s": "There was a {gradually} rise in prices.", "c": "gradual", "why": "Before a noun, use an adjective: a gradual rise." },
-        { "t": "gap", "q": "Visitor numbers ___ a peak of 10,000 in July.", "a": ["reached", "hit"], "why": "reach a peak" }
+        {
+          "t": "mcq",
+          "q": "Unemployment ___ from 6% to 4%.",
+          "o": [
+            "fell",
+            "felt",
+            "fallen"
+          ],
+          "a": 0,
+          "why": "fall – fell – fallen."
+        },
+        {
+          "t": "mcq",
+          "q": "Sales went from 1,000 to 3,000 in one month: they rose ___.",
+          "o": [
+            "dramatically",
+            "slightly",
+            "steadily"
+          ],
+          "a": 0,
+          "why": "A big, fast change = dramatically."
+        },
+        {
+          "t": "mcq",
+          "q": "The temperature ___ at 25°C for a week.",
+          "o": [
+            "remained stable",
+            "remained stably",
+            "fluctuated stable"
+          ],
+          "a": 0,
+          "why": "remain + adjective: remained stable."
+        },
+        {
+          "t": "fix",
+          "s": "There was a {gradually} rise in prices.",
+          "c": "gradual",
+          "why": "Before a noun, use an adjective: a gradual rise."
+        },
+        {
+          "t": "gap",
+          "q": "Visitor numbers ___ a peak of 10,000 in July.",
+          "a": [
+            "reached",
+            "hit"
+          ],
+          "why": "reach a peak"
+        }
       ],
       "produce": {
         "task": "Describe a change you know about (for example, rent in your city, or your study hours over a year). Write 3–4 sentences like an IELTS Task 1 description. Use at least three trend expressions.",
         "target": "trend vocabulary: rise/fall/remain stable/fluctuate/reach a peak, with adverbs (sharply, slightly) and adjectives (a sharp rise)",
-        "checklist": ["I used verb + adverb (rose sharply) or a + adjective + noun (a sharp rise).", "I gave numbers or dates.", "I used at least three different trend words."],
+        "checklist": [
+          "I used verb + adverb (rose sharply) or a + adjective + noun (a sharp rise).",
+          "I gave numbers or dates.",
+          "I used at least three different trend words."
+        ],
         "model": "Rent in my city rose steadily from 2019 to 2022, when it reached a peak of $600 a week. In 2023, there was a slight fall to $560. Since then, prices have remained stable. Overall, rent has increased significantly over the five years."
       }
     },
     {
-      "id": "cause-effect", "level": "B1", "minutes": 12, "verified": false,
+      "id": "cause-effect",
+      "level": "B1",
+      "minutes": 12,
+      "verified": false,
       "title": "Cause and effect",
       "cando": "Explain causes and results: lead to, result in, due to, have an effect on.",
-      "tags": ["cause", "effect", "result", "due to", "lead to", "essay", "affect"],
-      "sample": ["<b>leads to</b> stress", "<b>due to</b> the cost"],
+      "tags": [
+        "cause",
+        "effect",
+        "result",
+        "due to",
+        "lead to",
+        "essay",
+        "affect"
+      ],
+      "sample": [
+        "<b>leads to</b> stress",
+        "<b>due to</b> the cost"
+      ],
       "words": [
-        { "w": "cause", "m": "make something happen", "ex": "Heavy rain caused flooding." },
-        { "w": "lead to", "m": "cause (often over time)", "ex": "Lack of sleep can lead to poor concentration." },
-        { "w": "result in", "m": "have something as a result", "ex": "The changes resulted in fewer accidents." },
-        { "w": "due to / because of + noun", "m": "because of (giving the reason)", "ex": "The class was cancelled due to illness." },
-        { "w": "As a result, …", "m": "so (starts a new sentence)", "ex": "Rents rose. As a result, many students moved." },
-        { "w": "have an effect on", "m": "change or influence something", "ex": "Exercise has a positive effect on mood." },
-        { "w": "contribute to", "m": "be one of several causes", "ex": "Social media can contribute to stress." },
-        { "w": "a major factor (in)", "m": "an important cause", "ex": "Cost is a major factor in students’ choices." }
+        {
+          "w": "cause",
+          "m": "make something happen",
+          "ex": "Heavy rain caused flooding."
+        },
+        {
+          "w": "lead to",
+          "m": "cause (often over time)",
+          "ex": "Lack of sleep can lead to poor concentration."
+        },
+        {
+          "w": "result in",
+          "m": "have something as a result",
+          "ex": "The changes resulted in fewer accidents."
+        },
+        {
+          "w": "due to / because of + noun",
+          "m": "because of (giving the reason)",
+          "ex": "The class was cancelled due to illness."
+        },
+        {
+          "w": "As a result, …",
+          "m": "so (starts a new sentence)",
+          "ex": "Rents rose. As a result, many students moved."
+        },
+        {
+          "w": "have an effect on",
+          "m": "change or influence something",
+          "ex": "Exercise has a positive effect on mood."
+        },
+        {
+          "w": "contribute to",
+          "m": "be one of several causes",
+          "ex": "Social media can contribute to stress."
+        },
+        {
+          "w": "a major factor (in)",
+          "m": "an important cause",
+          "ex": "Cost is a major factor in students’ choices."
+        }
       ],
       "pre": [
-        { "t": "mcq", "q": "Lack of sleep can ___ poor concentration.", "o": ["lead to", "lead", "result from"], "a": 0 },
-        { "t": "mcq", "q": "The flight was cancelled ___ bad weather.", "o": ["due to", "because", "as a result"], "a": 0 },
-        { "t": "mcq", "q": "Smoking ___ a negative effect on health.", "o": ["has", "makes", "does"], "a": 0 },
-        { "t": "fix", "s": "The new rules resulted {to} fewer accidents.", "c": "in" },
-        { "t": "gap", "q": "Stress is a major ___ in poor exam performance.", "a": ["factor"] }
+        {
+          "t": "mcq",
+          "q": "Lack of sleep can ___ poor concentration.",
+          "o": [
+            "lead to",
+            "lead",
+            "result from"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "The flight was cancelled ___ bad weather.",
+          "o": [
+            "due to",
+            "because",
+            "as a result"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "Smoking ___ a negative effect on health.",
+          "o": [
+            "has",
+            "makes",
+            "does"
+          ],
+          "a": 0
+        },
+        {
+          "t": "fix",
+          "s": "The new rules resulted {to} fewer accidents.",
+          "c": "in"
+        },
+        {
+          "t": "gap",
+          "q": "Stress is a major ___ in poor exam performance.",
+          "a": [
+            "factor"
+          ]
+        }
       ],
       "notice": {
         "title": "Paragraph: Why do students feel stressed?",
@@ -237,60 +1544,311 @@
         "after": "Look at the small words in each phrase: lead <b>to</b>, result <b>in</b>, effect <b>on</b>. You’ll work out the patterns next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "can <b>lead to</b> tiredness · often <b>result in</b> lower marks", "q": "In ‘A leads to B’, which one happens first?", "o": ["A is the cause; B is the result", "B is the cause; A is the result"], "a": 0, "keep": true, "hint": "Long working hours → tiredness.", "insight": "cause → <b>lead to / result in / cause / contribute to</b> → effect. (Careful: <i>result from</i> goes the other way: B results from A.)" },
-        { "t": "mcq", "ctx": "<b>Due to</b> high rents, many students must work more. · <b>As a result</b>, they sleep less.", "q": "What comes after <b>due to</b>, and how is <b>as a result</b> used?", "o": ["due to + noun phrase; As a result, + a new sentence", "due to + subject + verb; as a result + noun", "Both are followed by a noun"], "a": 0, "keep": true, "hint": "Is ‘high rents’ a noun or a clause?", "insight": "<b>due to / because of</b> + noun (due to high rents). <b>because</b> + subject + verb. <b>As a result,</b> starts a new sentence." },
-        { "t": "mcq", "ctx": "<b>has a negative effect on</b> concentration · <b>contribute to</b> stress", "q": "Which preposition goes with <b>effect</b>?", "o": ["on", "to", "for"], "a": 0, "keep": true, "hint": "Look at the text.", "insight": "<b>have an effect on</b> (effect is a noun). <b>affect</b> is the verb: <i>Stress affects sleep.</i>" }
+        {
+          "t": "mcq",
+          "ctx": "can <b>lead to</b> tiredness · often <b>result in</b> lower marks",
+          "q": "In ‘A leads to B’, which one happens first?",
+          "o": [
+            "A is the cause; B is the result",
+            "B is the cause; A is the result"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Long working hours → tiredness.",
+          "insight": "cause → <b>lead to / result in / cause / contribute to</b> → effect. (Careful: <i>result from</i> goes the other way: B results from A.)"
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>Due to</b> high rents, many students must work more. · <b>As a result</b>, they sleep less.",
+          "q": "What comes after <b>due to</b>, and how is <b>as a result</b> used?",
+          "o": [
+            "due to + noun phrase; As a result, + a new sentence",
+            "due to + subject + verb; as a result + noun",
+            "Both are followed by a noun"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Is ‘high rents’ a noun or a clause?",
+          "insight": "<b>due to / because of</b> + noun (due to high rents). <b>because</b> + subject + verb. <b>As a result,</b> starts a new sentence."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>has a negative effect on</b> concentration · <b>contribute to</b> stress",
+          "q": "Which preposition goes with <b>effect</b>?",
+          "o": [
+            "on",
+            "to",
+            "for"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at the text.",
+          "insight": "<b>have an effect on</b> (effect is a noun). <b>affect</b> is the verb: <i>Stress affects sleep.</i>"
+        }
       ],
       "rule": {
         "title": "Your word card",
-        "points": ["Cause → result: <b>cause, lead to, result in, contribute to</b> (one of several causes).", "Reason: <b>due to / because of</b> + noun; <b>because</b> + subject + verb.", "Linking sentences: <b>As a result, …</b> / <b>Therefore, …</b>", "<b>have an effect on</b> (noun) / <b>affect</b> (verb); <b>a major factor in</b>."],
+        "points": [
+          "Cause → result: <b>cause, lead to, result in, contribute to</b> (one of several causes).",
+          "Reason: <b>due to / because of</b> + noun; <b>because</b> + subject + verb.",
+          "Linking sentences: <b>As a result, …</b> / <b>Therefore, …</b>",
+          "<b>have an effect on</b> (noun) / <b>affect</b> (verb); <b>a major factor in</b>."
+        ],
         "watch": "<s>result to</s> → result in; <s>lead stress</s> → lead to stress; <s>due to it was late</s> → because it was late."
       },
       "practice": [
-        { "t": "match", "instr": "Match the beginnings and endings.", "pairs": [["lead", "to tiredness"], ["result", "in lower marks"], ["contribute", "to stress"], ["have an effect", "on sleep"], ["due", "to the cost"]] },
-        { "t": "mcq", "q": "The road was closed ___ an accident.", "o": ["because", "due to", "as a result"], "a": 1, "hint": "‘an accident’ is a noun.", "why": "due to + noun." },
-        { "t": "gap", "q": "Exercise can have a positive effect ___ mental health.", "a": ["on"], "hint": "Which preposition goes with effect?", "why": "have an effect on" },
-        { "t": "fix", "s": "Poor diet can {lead} heart disease.", "c": "lead to", "hint": "This verb needs a preposition.", "why": "lead to + result." },
-        { "t": "mcq", "q": "Many students work long hours. ___, they have less time to study.", "o": ["As a result", "Due to", "Because of"], "a": 0, "hint": "New sentence + comma.", "why": "As a result, + sentence." },
-        { "t": "mcq", "q": "Social media can ___ how young people see themselves.", "o": ["affect", "effect"], "a": 0, "keep": true, "hint": "You need a verb here.", "why": "affect = verb; effect = noun (have an effect on)." },
-        { "t": "order", "a": "Rising rents have led to longer working hours.", "hint": "Start with Rising rents…", "why": "cause + have led to + result." }
+        {
+          "t": "match",
+          "instr": "Match the beginnings and endings.",
+          "pairs": [
+            [
+              "lead",
+              "to tiredness"
+            ],
+            [
+              "result",
+              "in lower marks"
+            ],
+            [
+              "contribute",
+              "to stress"
+            ],
+            [
+              "have an effect",
+              "on sleep"
+            ],
+            [
+              "due",
+              "to the cost"
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "The road was closed ___ an accident.",
+          "o": [
+            "because",
+            "due to",
+            "as a result"
+          ],
+          "a": 1,
+          "hint": "‘an accident’ is a noun.",
+          "why": "due to + noun."
+        },
+        {
+          "t": "gap",
+          "q": "Exercise can have a positive effect ___ mental health.",
+          "a": [
+            "on"
+          ],
+          "hint": "Which preposition goes with effect?",
+          "why": "have an effect on"
+        },
+        {
+          "t": "fix",
+          "s": "Poor diet can {lead} heart disease.",
+          "c": "lead to",
+          "hint": "This verb needs a preposition.",
+          "why": "lead to + result."
+        },
+        {
+          "t": "mcq",
+          "q": "Many students work long hours. ___, they have less time to study.",
+          "o": [
+            "As a result",
+            "Due to",
+            "Because of"
+          ],
+          "a": 0,
+          "hint": "New sentence + comma.",
+          "why": "As a result, + sentence."
+        },
+        {
+          "t": "mcq",
+          "q": "Social media can ___ how young people see themselves.",
+          "o": [
+            "affect",
+            "effect"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "You need a verb here.",
+          "why": "affect = verb; effect = noun (have an effect on)."
+        },
+        {
+          "t": "order",
+          "a": "Rising rents have led to longer working hours.",
+          "hint": "Start with Rising rents…",
+          "why": "cause + have led to + result."
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "Heavy rain ___ flooding in many areas.", "o": ["caused", "caused to", "resulted"], "a": 0, "why": "cause + result (no preposition)." },
-        { "t": "mcq", "q": "The event was postponed ___ the storm.", "o": ["because", "due to", "therefore"], "a": 1, "why": "due to + noun." },
-        { "t": "mcq", "q": "Noise can ___ a serious effect on sleep.", "o": ["have", "make", "give"], "a": 0, "why": "have an effect on" },
-        { "t": "fix", "s": "The new policy resulted {on} lower costs.", "c": "in", "why": "result in" },
-        { "t": "gap", "q": "Air pollution can ___ to breathing problems.", "a": ["lead", "contribute"], "why": "lead to / contribute to" }
+        {
+          "t": "mcq",
+          "q": "Heavy rain ___ flooding in many areas.",
+          "o": [
+            "caused",
+            "caused to",
+            "resulted"
+          ],
+          "a": 0,
+          "why": "cause + result (no preposition)."
+        },
+        {
+          "t": "mcq",
+          "q": "The event was postponed ___ the storm.",
+          "o": [
+            "because",
+            "due to",
+            "therefore"
+          ],
+          "a": 1,
+          "why": "due to + noun."
+        },
+        {
+          "t": "mcq",
+          "q": "Noise can ___ a serious effect on sleep.",
+          "o": [
+            "have",
+            "make",
+            "give"
+          ],
+          "a": 0,
+          "why": "have an effect on"
+        },
+        {
+          "t": "fix",
+          "s": "The new policy resulted {on} lower costs.",
+          "c": "in",
+          "why": "result in"
+        },
+        {
+          "t": "gap",
+          "q": "Air pollution can ___ to breathing problems.",
+          "a": [
+            "lead",
+            "contribute"
+          ],
+          "why": "lead to / contribute to"
+        }
       ],
       "produce": {
         "task": "Write 3–4 sentences explaining the causes and effects of a problem you know (for example, traffic in your city, or stress at university). Use at least four cause-and-effect expressions.",
         "target": "cause and effect language: cause, lead to, result in, contribute to, due to, as a result, have an effect on",
-        "checklist": ["I used the right preposition: lead <b>to</b>, result <b>in</b>, effect <b>on</b>.", "After <b>due to</b> I used a noun phrase.", "I used <b>As a result,</b> to start a sentence."],
+        "checklist": [
+          "I used the right preposition: lead <b>to</b>, result <b>in</b>, effect <b>on</b>.",
+          "After <b>due to</b> I used a noun phrase.",
+          "I used <b>As a result,</b> to start a sentence."
+        ],
         "model": "Traffic in my city is a serious problem, mainly due to the lack of public transport. Long journeys lead to stress and tiredness. As a result, many workers arrive late. Car pollution also contributes to poor air quality, which has a negative effect on people’s health."
       }
     },
     {
-      "id": "research-data", "level": "B2", "minutes": 12, "verified": false,
+      "id": "research-data",
+      "level": "B2",
+      "minutes": 12,
+      "verified": false,
       "title": "Talking about research and data",
       "cando": "Use key academic words for research: conduct a study, collect data, the findings indicate…",
-      "tags": ["research", "data", "study", "findings", "AWL", "academic word list", "method", "significant"],
-      "sample": ["<b>conduct</b> a study", "the findings <b>indicate</b>"],
+      "tags": [
+        "research",
+        "data",
+        "study",
+        "findings",
+        "AWL",
+        "academic word list",
+        "method",
+        "significant"
+      ],
+      "sample": [
+        "<b>conduct</b> a study",
+        "the findings <b>indicate</b>"
+      ],
       "words": [
-        { "w": "conduct / carry out a study", "m": "do research in a planned way", "ex": "We conducted a study with 300 students." },
-        { "w": "collect / gather data", "m": "get information for research", "ex": "Data was collected through online surveys." },
-        { "w": "analyse data", "m": "examine information in detail", "ex": "We analysed the data in Excel." },
-        { "w": "a research method", "m": "the way you do research", "ex": "Interviews were the main research method." },
-        { "w": "identify (a problem / a trend)", "m": "find and name something", "ex": "The study identified three main problems." },
-        { "w": "the findings", "m": "the results of a study (plural)", "ex": "The findings were published in 2024." },
-        { "w": "indicate / suggest", "m": "show (but not prove)", "ex": "The results indicate a link between sleep and mood." },
-        { "w": "significant", "m": "large or important enough to matter; in statistics, not just chance", "ex": "There was a significant difference between the groups." }
+        {
+          "w": "conduct / carry out a study",
+          "m": "do research in a planned way",
+          "ex": "We conducted a study with 300 students."
+        },
+        {
+          "w": "collect / gather data",
+          "m": "get information for research",
+          "ex": "Data was collected through online surveys."
+        },
+        {
+          "w": "analyse data",
+          "m": "examine information in detail",
+          "ex": "We analysed the data in Excel."
+        },
+        {
+          "w": "a research method",
+          "m": "the way you do research",
+          "ex": "Interviews were the main research method."
+        },
+        {
+          "w": "identify (a problem / a trend)",
+          "m": "find and name something",
+          "ex": "The study identified three main problems."
+        },
+        {
+          "w": "the findings",
+          "m": "the results of a study (plural)",
+          "ex": "The findings were published in 2024."
+        },
+        {
+          "w": "indicate / suggest",
+          "m": "show (but not prove)",
+          "ex": "The results indicate a link between sleep and mood."
+        },
+        {
+          "w": "significant",
+          "m": "large or important enough to matter; in statistics, not just chance",
+          "ex": "There was a significant difference between the groups."
+        }
       ],
       "pre": [
-        { "t": "mcq", "q": "The researchers ___ a study with 300 participants.", "o": ["did make", "conducted", "produced"], "a": 1 },
-        { "t": "mcq", "q": "Data was ___ through online surveys.", "o": ["collected", "picked", "taken up"], "a": 0 },
-        { "t": "mcq", "q": "The findings ___ that sleep affects memory.", "o": ["indicate", "say about", "tell"], "a": 0 },
-        { "t": "fix", "s": "We {analysis} the data using statistics software.", "c": "analysed" },
-        { "t": "gap", "q": "There was a statistically ___ difference between the two groups.", "a": ["significant"] }
+        {
+          "t": "mcq",
+          "q": "The researchers ___ a study with 300 participants.",
+          "o": [
+            "did make",
+            "conducted",
+            "produced"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "Data was ___ through online surveys.",
+          "o": [
+            "collected",
+            "picked",
+            "taken up"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "The findings ___ that sleep affects memory.",
+          "o": [
+            "indicate",
+            "say about",
+            "tell"
+          ],
+          "a": 0
+        },
+        {
+          "t": "fix",
+          "s": "We {analysis} the data using statistics software.",
+          "c": "analysed"
+        },
+        {
+          "t": "gap",
+          "q": "There was a statistically ___ difference between the two groups.",
+          "a": [
+            "significant"
+          ]
+        }
       ],
       "notice": {
         "title": "From a journal article abstract (invented example)",
@@ -299,60 +1857,335 @@
         "after": "Which verbs go with study and data? How sure is <b>indicate</b>? You’ll work it out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "<b>conducted</b> a survey · <b>collected</b> data · <b>analysed</b> the data", "q": "Which verb does NOT go with ‘a study’ or ‘research’?", "o": ["conduct", "carry out", "make"], "a": 2, "keep": true, "hint": "Think of make / do from the B1 unit.", "insight": "We <b>conduct / carry out / do</b> research or a study. <s>make research</s> is a common error." },
-        { "t": "mcq", "ctx": "The findings <b>indicate</b> that working more than 15 hours… has a negative effect.", "q": "How sure is <b>indicate</b>?", "o": ["It shows something is likely, but doesn’t prove it", "It proves it 100%", "It means the writer is guessing"], "a": 0, "keep": true, "hint": "Researchers are careful with their claims.", "insight": "<b>indicate / suggest</b> = show (but not prove). Researchers rarely say <i>prove</i>. Stronger: <b>demonstrate, show</b>." },
-        { "t": "mcq", "ctx": "a <b>significant</b> negative effect", "q": "In research, <b>significant</b> usually means…", "o": ["large enough to matter, or not just chance", "very interesting", "small"], "a": 0, "keep": true, "hint": "It isn’t about being interesting.", "insight": "<b>significant</b> = important or large enough to matter. <b>Statistically significant</b> = unlikely to be chance." }
+        {
+          "t": "mcq",
+          "ctx": "<b>conducted</b> a survey · <b>collected</b> data · <b>analysed</b> the data",
+          "q": "Which verb does NOT go with ‘a study’ or ‘research’?",
+          "o": [
+            "conduct",
+            "carry out",
+            "make"
+          ],
+          "a": 2,
+          "keep": true,
+          "hint": "Think of make / do from the B1 unit.",
+          "insight": "We <b>conduct / carry out / do</b> research or a study. <s>make research</s> is a common error."
+        },
+        {
+          "t": "mcq",
+          "ctx": "The findings <b>indicate</b> that working more than 15 hours… has a negative effect.",
+          "q": "How sure is <b>indicate</b>?",
+          "o": [
+            "It shows something is likely, but doesn’t prove it",
+            "It proves it 100%",
+            "It means the writer is guessing"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Researchers are careful with their claims.",
+          "insight": "<b>indicate / suggest</b> = show (but not prove). Researchers rarely say <i>prove</i>. Stronger: <b>demonstrate, show</b>."
+        },
+        {
+          "t": "mcq",
+          "ctx": "a <b>significant</b> negative effect",
+          "q": "In research, <b>significant</b> usually means…",
+          "o": [
+            "large enough to matter, or not just chance",
+            "very interesting",
+            "small"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "It isn’t about being interesting.",
+          "insight": "<b>significant</b> = important or large enough to matter. <b>Statistically significant</b> = unlikely to be chance."
+        }
       ],
       "rule": {
         "title": "Your word card",
-        "points": ["Doing research: <b>conduct / carry out</b> a study, <b>collect / gather</b> data, <b>analyse</b> data, use a research <b>method</b>.", "Results: the <b>findings</b> (plural) <b>indicate / suggest / show</b> that…", "<b>identify</b> a problem / a trend / a factor; a <b>significant</b> difference / effect / increase."],
+        "points": [
+          "Doing research: <b>conduct / carry out</b> a study, <b>collect / gather</b> data, <b>analyse</b> data, use a research <b>method</b>.",
+          "Results: the <b>findings</b> (plural) <b>indicate / suggest / show</b> that…",
+          "<b>identify</b> a problem / a trend / a factor; a <b>significant</b> difference / effect / increase."
+        ],
         "watch": "<i>Data</i> can take a singular or plural verb in academic writing (the data was / were collected). Choose one and be consistent."
       },
       "practice": [
-        { "t": "match", "instr": "Match the word partners.", "pairs": [["conduct", "a study"], ["collect", "data"], ["identify", "a problem"], ["a significant", "difference"], ["the findings", "indicate"]] },
-        { "t": "gap", "q": "Researchers ___ the data to look for patterns.", "a": ["analysed", "analyzed", "examined"], "hint": "It means ‘examined in detail’. Australian spelling: -yse.", "why": "analyse data" },
-        { "t": "mcq", "q": "The results ___ that the new method is more effective.", "o": ["suggest", "propose to", "talk"], "a": 0, "hint": "verb + that", "why": "The results suggest / indicate that…" },
-        { "t": "fix", "s": "They {made} a study on student motivation.", "c": "conducted", "hint": "Which verbs go with study?", "why": "conduct / carry out / do a study" },
-        { "t": "mcq", "q": "Which phrase means ‘the results of a study’?", "o": ["the findings", "the founds", "the finds"], "a": 0, "keep": true, "hint": "It ends in -ings.", "why": "the findings" },
-        { "t": "order", "a": "The study identified three main factors.", "hint": "Start with The study…", "why": "identify + factors" },
-        { "t": "sort", "instr": "Doing the research, or reporting the results?", "bins": ["Doing the research", "Reporting results"], "chips": [["collect data", 0], ["the findings show", 1], ["conduct interviews", 0], ["the results indicate", 1], ["analyse data", 0], ["a significant increase was found", 1]] }
+        {
+          "t": "match",
+          "instr": "Match the word partners.",
+          "pairs": [
+            [
+              "conduct",
+              "a study"
+            ],
+            [
+              "collect",
+              "data"
+            ],
+            [
+              "identify",
+              "a problem"
+            ],
+            [
+              "a significant",
+              "difference"
+            ],
+            [
+              "the findings",
+              "indicate"
+            ]
+          ]
+        },
+        {
+          "t": "gap",
+          "q": "Researchers ___ the data to look for patterns.",
+          "a": [
+            "analysed",
+            "analyzed",
+            "examined"
+          ],
+          "hint": "It means ‘examined in detail’. Australian spelling: -yse.",
+          "why": "analyse data"
+        },
+        {
+          "t": "mcq",
+          "q": "The results ___ that the new method is more effective.",
+          "o": [
+            "suggest",
+            "propose to",
+            "talk"
+          ],
+          "a": 0,
+          "hint": "verb + that",
+          "why": "The results suggest / indicate that…"
+        },
+        {
+          "t": "fix",
+          "s": "They {made} a study on student motivation.",
+          "c": "conducted",
+          "hint": "Which verbs go with study?",
+          "why": "conduct / carry out / do a study"
+        },
+        {
+          "t": "mcq",
+          "q": "Which phrase means ‘the results of a study’?",
+          "o": [
+            "the findings",
+            "the founds",
+            "the finds"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "It ends in -ings.",
+          "why": "the findings"
+        },
+        {
+          "t": "order",
+          "a": "The study identified three main factors.",
+          "hint": "Start with The study…",
+          "why": "identify + factors"
+        },
+        {
+          "t": "sort",
+          "instr": "Doing the research, or reporting the results?",
+          "bins": [
+            "Doing the research",
+            "Reporting results"
+          ],
+          "chips": [
+            [
+              "collect data",
+              0
+            ],
+            [
+              "the findings show",
+              1
+            ],
+            [
+              "conduct interviews",
+              0
+            ],
+            [
+              "the results indicate",
+              1
+            ],
+            [
+              "analyse data",
+              0
+            ],
+            [
+              "a significant increase was found",
+              1
+            ]
+          ]
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "We ___ research on climate anxiety in teenagers.", "o": ["conducted", "made", "produced"], "a": 0, "why": "conduct research" },
-        { "t": "mcq", "q": "Data ___ over six months.", "o": ["was collected", "collected", "was picking"], "a": 0, "why": "Data was collected (passive)." },
-        { "t": "mcq", "q": "The ___ suggest that more research is needed.", "o": ["findings", "finding outs", "founds"], "a": 0, "why": "the findings suggest" },
-        { "t": "fix", "s": "The interviews {identification} several problems.", "c": "identified", "why": "You need the verb: identify → identified." },
-        { "t": "gap", "q": "There was no ___ difference between men and women.", "a": ["significant"], "why": "a significant difference" }
+        {
+          "t": "mcq",
+          "q": "We ___ research on climate anxiety in teenagers.",
+          "o": [
+            "conducted",
+            "made",
+            "produced"
+          ],
+          "a": 0,
+          "why": "conduct research"
+        },
+        {
+          "t": "mcq",
+          "q": "Data ___ over six months.",
+          "o": [
+            "was collected",
+            "collected",
+            "was picking"
+          ],
+          "a": 0,
+          "why": "Data was collected (passive)."
+        },
+        {
+          "t": "mcq",
+          "q": "The ___ suggest that more research is needed.",
+          "o": [
+            "findings",
+            "finding outs",
+            "founds"
+          ],
+          "a": 0,
+          "why": "the findings suggest"
+        },
+        {
+          "t": "fix",
+          "s": "The interviews {identification} several problems.",
+          "c": "identified",
+          "why": "You need the verb: identify → identified."
+        },
+        {
+          "t": "gap",
+          "q": "There was no ___ difference between men and women.",
+          "a": [
+            "significant"
+          ],
+          "why": "a significant difference"
+        }
       ],
       "produce": {
         "task": "Imagine you did a small study (for example, about students’ phone use). Write 3–4 sentences describing what you did and what you found. Use at least four research words from this unit.",
         "target": "research vocabulary: conduct a study, collect/analyse data, method, identify, findings, indicate/suggest, significant",
-        "checklist": ["I used conduct / carry out (not make) with study or research.", "I described the method and the findings.", "I used indicate or suggest instead of prove."],
+        "checklist": [
+          "I used conduct / carry out (not make) with study or research.",
+          "I described the method and the findings.",
+          "I used indicate or suggest instead of prove."
+        ],
         "model": "We conducted a small study on phone use among 50 first-year students. Data was collected through a short online survey and analysed in Excel. The findings indicate that students check their phones about 80 times a day. We also identified a significant link between phone use at night and tiredness in class."
       }
     },
     {
-      "id": "problems-solutions", "level": "B2", "minutes": 12, "verified": false,
+      "id": "problems-solutions",
+      "level": "B2",
+      "minutes": 12,
+      "verified": false,
       "title": "Problems and solutions",
       "cando": "Discuss problems and solutions in essays: tackle an issue, pose a challenge, implement a policy.",
-      "tags": ["problem", "solution", "essay", "tackle", "address", "challenge", "policy", "awareness"],
-      "sample": ["<b>tackle</b> the problem", "<b>raise</b> awareness"],
+      "tags": [
+        "problem",
+        "solution",
+        "essay",
+        "tackle",
+        "address",
+        "challenge",
+        "policy",
+        "awareness"
+      ],
+      "sample": [
+        "<b>tackle</b> the problem",
+        "<b>raise</b> awareness"
+      ],
       "words": [
-        { "w": "tackle / address a problem", "m": "start dealing with a problem", "ex": "The city must tackle the problem of traffic." },
-        { "w": "a pressing issue", "m": "an urgent problem", "ex": "Housing is a pressing issue for students." },
-        { "w": "pose a challenge / threat", "m": "create a difficulty or danger", "ex": "Rising sea levels pose a threat to coastal towns." },
-        { "w": "face a challenge", "m": "have to deal with a difficulty", "ex": "Many graduates face the challenge of finding work." },
-        { "w": "take measures / steps", "m": "do things to solve a problem", "ex": "The school took measures to reduce bullying." },
-        { "w": "implement a policy", "m": "put a plan into action", "ex": "The policy was implemented in 2024." },
-        { "w": "an effective solution", "m": "a solution that works well", "ex": "Public transport is an effective solution to congestion." },
-        { "w": "raise awareness (of)", "m": "help people know about a problem", "ex": "The campaign raised awareness of mental health." }
+        {
+          "w": "tackle / address a problem",
+          "m": "start dealing with a problem",
+          "ex": "The city must tackle the problem of traffic."
+        },
+        {
+          "w": "a pressing issue",
+          "m": "an urgent problem",
+          "ex": "Housing is a pressing issue for students."
+        },
+        {
+          "w": "pose a challenge / threat",
+          "m": "create a difficulty or danger",
+          "ex": "Rising sea levels pose a threat to coastal towns."
+        },
+        {
+          "w": "face a challenge",
+          "m": "have to deal with a difficulty",
+          "ex": "Many graduates face the challenge of finding work."
+        },
+        {
+          "w": "take measures / steps",
+          "m": "do things to solve a problem",
+          "ex": "The school took measures to reduce bullying."
+        },
+        {
+          "w": "implement a policy",
+          "m": "put a plan into action",
+          "ex": "The policy was implemented in 2024."
+        },
+        {
+          "w": "an effective solution",
+          "m": "a solution that works well",
+          "ex": "Public transport is an effective solution to congestion."
+        },
+        {
+          "w": "raise awareness (of)",
+          "m": "help people know about a problem",
+          "ex": "The campaign raised awareness of mental health."
+        }
       ],
       "pre": [
-        { "t": "mcq", "q": "Governments must ___ the problem of homelessness.", "o": ["tackle", "fight with", "solve out"], "a": 0 },
-        { "t": "mcq", "q": "Rising sea levels ___ a serious threat to coastal cities.", "o": ["pose", "make", "give"], "a": 0 },
-        { "t": "mcq", "q": "The council plans to ___ a new policy to reduce traffic.", "o": ["implement", "make up", "apply to"], "a": 0 },
-        { "t": "fix", "s": "The campaign aims to {rise} awareness of mental health.", "c": "raise" },
-        { "t": "gap", "q": "Recycling alone is not an ___ solution to plastic pollution.", "a": ["effective"] }
+        {
+          "t": "mcq",
+          "q": "Governments must ___ the problem of homelessness.",
+          "o": [
+            "tackle",
+            "fight with",
+            "solve out"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "Rising sea levels ___ a serious threat to coastal cities.",
+          "o": [
+            "pose",
+            "make",
+            "give"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "The council plans to ___ a new policy to reduce traffic.",
+          "o": [
+            "implement",
+            "make up",
+            "apply to"
+          ],
+          "a": 0
+        },
+        {
+          "t": "fix",
+          "s": "The campaign aims to {rise} awareness of mental health.",
+          "c": "raise"
+        },
+        {
+          "t": "gap",
+          "q": "Recycling alone is not an ___ solution to plastic pollution.",
+          "a": [
+            "effective"
+          ]
+        }
       ],
       "notice": {
         "title": "Essay paragraph: Traffic congestion",
@@ -361,59 +2194,955 @@
         "after": "Which verbs go with problem, challenge, policy and awareness? You’ll work it out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "<b>tackle</b> this problem · <b>address</b> the issue", "q": "What do ‘tackle a problem’ and ‘address an issue’ mean?", "o": ["Start dealing with it", "Only write about it", "Create it"], "a": 0, "keep": true, "hint": "What should governments do about traffic?", "insight": "<b>tackle / address / deal with</b> a problem or issue = make an effort to solve it." },
-        { "t": "mcq", "ctx": "Traffic congestion <b>poses</b> a challenge.", "q": "Which sentence is natural?", "o": ["Climate change poses a challenge.", "The government poses a challenge to solve it."], "a": 0, "keep": true, "hint": "Who or what poses the challenge in the text?", "insight": "A <b>problem</b> poses a challenge / threat / risk. <b>People face</b> a challenge." },
-        { "t": "mcq", "ctx": "<b>take</b> measures · <b>implemented</b> a policy · <b>raise</b> awareness", "q": "Which verb means ‘put a plan or policy into action’?", "o": ["implement", "raise", "pose"], "a": 0, "keep": true, "hint": "What did some cities do with the policy?", "insight": "<b>implement</b> a policy / plan; <b>take</b> measures / steps; <b>raise</b> awareness <b>of</b>." }
+        {
+          "t": "mcq",
+          "ctx": "<b>tackle</b> this problem · <b>address</b> the issue",
+          "q": "What do ‘tackle a problem’ and ‘address an issue’ mean?",
+          "o": [
+            "Start dealing with it",
+            "Only write about it",
+            "Create it"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "What should governments do about traffic?",
+          "insight": "<b>tackle / address / deal with</b> a problem or issue = make an effort to solve it."
+        },
+        {
+          "t": "mcq",
+          "ctx": "Traffic congestion <b>poses</b> a challenge.",
+          "q": "Which sentence is natural?",
+          "o": [
+            "Climate change poses a challenge.",
+            "The government poses a challenge to solve it."
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Who or what poses the challenge in the text?",
+          "insight": "A <b>problem</b> poses a challenge / threat / risk. <b>People face</b> a challenge."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>take</b> measures · <b>implemented</b> a policy · <b>raise</b> awareness",
+          "q": "Which verb means ‘put a plan or policy into action’?",
+          "o": [
+            "implement",
+            "raise",
+            "pose"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "What did some cities do with the policy?",
+          "insight": "<b>implement</b> a policy / plan; <b>take</b> measures / steps; <b>raise</b> awareness <b>of</b>."
+        }
       ],
       "rule": {
         "title": "Your word card",
-        "points": ["Problems: a <b>pressing</b> / serious issue; X <b>poses</b> a challenge / threat / risk; people <b>face</b> a challenge.", "Action: <b>tackle / address</b> a problem; <b>take</b> measures / steps; <b>implement</b> a policy; <b>raise</b> awareness <b>of</b>.", "Results: an <b>effective</b> solution; <b>reduce</b> the impact."],
+        "points": [
+          "Problems: a <b>pressing</b> / serious issue; X <b>poses</b> a challenge / threat / risk; people <b>face</b> a challenge.",
+          "Action: <b>tackle / address</b> a problem; <b>take</b> measures / steps; <b>implement</b> a policy; <b>raise</b> awareness <b>of</b>.",
+          "Results: an <b>effective</b> solution; <b>reduce</b> the impact."
+        ],
         "watch": "<s>rise awareness</s> → raise awareness (raise has an object; rise doesn’t)."
       },
       "practice": [
-        { "t": "match", "instr": "Match the word partners.", "pairs": [["tackle", "a problem"], ["pose", "a threat"], ["implement", "a policy"], ["raise", "awareness"], ["take", "measures"]] },
-        { "t": "mcq", "q": "Many young people ___ the challenge of finding affordable housing.", "o": ["face", "pose", "raise"], "a": 0, "hint": "People ___ a challenge; problems pose challenges.", "why": "People face a challenge." },
-        { "t": "gap", "q": "Schools should ___ awareness of online safety.", "a": ["raise"], "hint": "Not rise!", "why": "raise awareness of" },
-        { "t": "fix", "s": "Unemployment {makes} a serious challenge for young graduates.", "c": "poses", "hint": "A problem ___ a challenge.", "why": "pose a challenge" },
-        { "t": "mcq", "q": "Which sentence is the most academic?", "o": ["We need to do something about the problem.", "Urgent measures must be taken to address the problem.", "We should fix this thing quickly."], "a": 1, "keep": true, "hint": "Look for collocations from this unit.", "why": "take measures + address a problem" },
-        { "t": "order", "a": "The government must take urgent measures.", "hint": "Start with The government…", "why": "take (urgent) measures" }
+        {
+          "t": "match",
+          "instr": "Match the word partners.",
+          "pairs": [
+            [
+              "tackle",
+              "a problem"
+            ],
+            [
+              "pose",
+              "a threat"
+            ],
+            [
+              "implement",
+              "a policy"
+            ],
+            [
+              "raise",
+              "awareness"
+            ],
+            [
+              "take",
+              "measures"
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "Many young people ___ the challenge of finding affordable housing.",
+          "o": [
+            "face",
+            "pose",
+            "raise"
+          ],
+          "a": 0,
+          "hint": "People ___ a challenge; problems pose challenges.",
+          "why": "People face a challenge."
+        },
+        {
+          "t": "gap",
+          "q": "Schools should ___ awareness of online safety.",
+          "a": [
+            "raise"
+          ],
+          "hint": "Not rise!",
+          "why": "raise awareness of"
+        },
+        {
+          "t": "fix",
+          "s": "Unemployment {makes} a serious challenge for young graduates.",
+          "c": "poses",
+          "hint": "A problem ___ a challenge.",
+          "why": "pose a challenge"
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence is the most academic?",
+          "o": [
+            "We need to do something about the problem.",
+            "Urgent measures must be taken to address the problem.",
+            "We should fix this thing quickly."
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Look for collocations from this unit.",
+          "why": "take measures + address a problem"
+        },
+        {
+          "t": "order",
+          "a": "The government must take urgent measures.",
+          "hint": "Start with The government…",
+          "why": "take (urgent) measures"
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "Universities need to ___ the issue of student wellbeing.", "o": ["address", "speak", "solve up"], "a": 0, "why": "address an issue" },
-        { "t": "mcq", "q": "Cyber attacks ___ a growing threat to businesses.", "o": ["pose", "do", "put"], "a": 0, "why": "pose a threat" },
-        { "t": "mcq", "q": "The new policy was ___ in 2024.", "o": ["implemented", "raised", "posed"], "a": 0, "why": "implement a policy" },
-        { "t": "fix", "s": "The documentary helped to {rise} awareness of plastic pollution.", "c": "raise", "why": "raise awareness" },
-        { "t": "gap", "q": "Housing costs are a ___ issue in Australian cities.", "a": ["pressing", "serious", "major", "key", "big"], "why": "a pressing / serious issue" }
+        {
+          "t": "mcq",
+          "q": "Universities need to ___ the issue of student wellbeing.",
+          "o": [
+            "address",
+            "speak",
+            "solve up"
+          ],
+          "a": 0,
+          "why": "address an issue"
+        },
+        {
+          "t": "mcq",
+          "q": "Cyber attacks ___ a growing threat to businesses.",
+          "o": [
+            "pose",
+            "do",
+            "put"
+          ],
+          "a": 0,
+          "why": "pose a threat"
+        },
+        {
+          "t": "mcq",
+          "q": "The new policy was ___ in 2024.",
+          "o": [
+            "implemented",
+            "raised",
+            "posed"
+          ],
+          "a": 0,
+          "why": "implement a policy"
+        },
+        {
+          "t": "fix",
+          "s": "The documentary helped to {rise} awareness of plastic pollution.",
+          "c": "raise",
+          "why": "raise awareness"
+        },
+        {
+          "t": "gap",
+          "q": "Housing costs are a ___ issue in Australian cities.",
+          "a": [
+            "pressing",
+            "serious",
+            "major",
+            "key",
+            "big"
+          ],
+          "why": "a pressing / serious issue"
+        }
       ],
       "produce": {
         "task": "Choose a problem in your city or country. Write 3–4 sentences: describe the problem and suggest solutions. Use at least four expressions from this unit.",
         "target": "problem-solution collocations: tackle/address an issue, pose a challenge, take measures, implement a policy, raise awareness, an effective solution",
-        "checklist": ["A problem <b>poses</b> a challenge; people <b>face</b> it.", "I used <b>raise</b> (not rise) awareness.", "I suggested at least one solution."],
+        "checklist": [
+          "A problem <b>poses</b> a challenge; people <b>face</b> it.",
+          "I used <b>raise</b> (not rise) awareness.",
+          "I suggested at least one solution."
+        ],
         "model": "Air pollution is a pressing issue in my city, and it poses a serious threat to children’s health. To tackle this problem, the government should implement a policy of low-emission zones. It should also take measures to improve public transport. Finally, schools could raise awareness of the health risks."
       }
     },
     {
-      "id": "reporting-verbs", "level": "C1", "minutes": 14, "verified": false,
-      "title": "Reporting verbs: how strong is the claim?",
-      "cando": "Report sources accurately with verbs like suggest, argue, demonstrate and acknowledge.",
-      "tags": ["reporting verbs", "citation", "sources", "stance", "argue", "claim", "suggest", "literature review"],
-      "sample": ["Ahmed (2019) <b>argued</b> that…", "the data <b>suggest</b>…"],
+      "id": "word-formation",
+      "level": "B2",
+      "minutes": 12,
+      "verified": false,
+      "title": "Word formation: academic suffixes",
+      "cando": "Build academic nouns, verbs and adjectives with common suffixes.",
+      "tags": [
+        "word formation",
+        "suffixes",
+        "nouns",
+        "adjectives",
+        "AWL",
+        "nominalisation"
+      ],
+      "sample": [
+        "analyse → <b>analysis</b>",
+        "rely → <b>reliable</b>"
+      ],
       "words": [
-        { "w": "demonstrate / show", "m": "show clearly with evidence (strong)", "ex": "The trial demonstrated that the drug was safe." },
-        { "w": "suggest", "m": "put forward an idea carefully (tentative)", "ex": "The results suggest a possible link." },
-        { "w": "indicate", "m": "show, without proving", "ex": "Early data indicate a small improvement." },
-        { "w": "argue", "m": "give reasons for a position", "ex": "Lee (2020) argued that fees should be lower." },
-        { "w": "contend", "m": "argue firmly, often against others (formal)", "ex": "Fischer (2021) contended that the effect was small." },
-        { "w": "claim", "m": "say something is true (the writer may doubt it)", "ex": "Rossi (2020) claimed that games improve memory." },
-        { "w": "question / challenge", "m": "express doubt or disagree", "ex": "Several studies have questioned this view." },
-        { "w": "acknowledge", "m": "admit or accept a point, often a limitation", "ex": "The authors acknowledged that the sample was small." }
+        {
+          "w": "-tion / -sion",
+          "m": "verb → noun: the action or result",
+          "ex": "implement → implementation; decide → decision"
+        },
+        {
+          "w": "-ment",
+          "m": "verb → noun",
+          "ex": "develop → development; assess → assessment"
+        },
+        {
+          "w": "-ity",
+          "m": "adjective → noun: a quality",
+          "ex": "available → availability; complex → complexity"
+        },
+        {
+          "w": "-ise / -ify",
+          "m": "noun/adjective → verb",
+          "ex": "modern → modernise; simple → simplify"
+        },
+        {
+          "w": "-al / -ive / -ous",
+          "m": "noun/verb → adjective",
+          "ex": "culture → cultural; effect → effective; danger → dangerous"
+        },
+        {
+          "w": "-able / -ible",
+          "m": "verb → adjective: can be done",
+          "ex": "rely → reliable; access → accessible"
+        },
+        {
+          "w": "-ly",
+          "m": "adjective → adverb",
+          "ex": "significant → significantly"
+        }
       ],
       "pre": [
-        { "t": "mcq", "q": "Lee (2022) ___ that social media harms sleep, but other studies disagree.", "o": ["claimed", "proved", "demonstrated"], "a": 0 },
-        { "t": "mcq", "q": "The experiment clearly ___ that the drug works.", "o": ["demonstrated", "wondered", "claimed to"], "a": 0 },
-        { "t": "mcq", "q": "Although she supports the approach, the writer ___ that it has some problems.", "o": ["acknowledges", "demonstrates", "questions"], "a": 0 },
-        { "t": "mcq", "q": "Which verb shows that the writer DOUBTS the source?", "o": ["Jones (2020) claimed that…", "Jones (2020) demonstrated that…", "Jones (2020) showed that…"], "a": 0, "keep": true },
-        { "t": "gap", "instr": "Type a verb that means ‘admitted’. It starts with a…", "q": "The authors ___ that their findings may not apply to other countries.", "a": ["acknowledged", "admitted", "accepted"] }
+        {
+          "t": "mcq",
+          "q": "The ___ of the new system took two years.",
+          "o": [
+            "implementation",
+            "implement",
+            "implementive",
+            "implemented"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The results were ___ different between the groups.",
+          "o": [
+            "significantly",
+            "significant",
+            "significance",
+            "signify"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Public transport should be ___ to everyone.",
+          "o": [
+            "accessible",
+            "access",
+            "accessive",
+            "accessment"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "The {complex} of the problem surprised everyone.",
+          "c": "complexity"
+        },
+        {
+          "t": "gap",
+          "q": "We need to ___ (simple) the process.",
+          "a": [
+            "simplify"
+          ]
+        }
+      ],
+      "notice": {
+        "title": "From a report on online learning",
+        "instr": "Tap the words made with a suffix (an ending like -tion, -ity, -able, -ly).",
+        "text": "The [[development]] of online learning has changed higher [[education]]. Course materials are more [[accessible]], and the [[availability]] of recorded lectures helps students review. However, a [[significant]] number of students find it hard to stay [[motivated]]. Universities are trying to [[modernise]] their teaching and make it more [[effective]].",
+        "after": "Each ending changes the type of word. Which endings make nouns, and which make adjectives or verbs?"
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "<b>development</b> · <b>education</b> · <b>availability</b>",
+          "q": "What do -ment, -tion and -ity make?",
+          "o": [
+            "nouns",
+            "verbs",
+            "adjectives"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Can you put “the” before them?",
+          "insight": "<b>-tion/-sion, -ment, -ity, -ness</b> make nouns. These are very common in academic writing."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>accessible</b> · <b>significant</b> · <b>effective</b>",
+          "q": "What do -ible, -ant and -ive make?",
+          "o": [
+            "adjectives",
+            "nouns",
+            "verbs"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "They describe a noun.",
+          "insight": "<b>-able/-ible, -al, -ive, -ous, -ant/-ent</b> make adjectives. Add <b>-ly</b> to make adverbs: significantly, effectively."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>modernise</b> (modern + -ise)",
+          "q": "What does -ise make?",
+          "o": [
+            "a verb",
+            "a noun",
+            "an adjective"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Universities are trying to modernise…",
+          "insight": "<b>-ise</b> (Australian/British spelling; US -ize) and <b>-ify</b> make verbs: modernise, prioritise, simplify, clarify."
+        }
+      ],
+      "rule": {
+        "title": "Your word card",
+        "points": [
+          "Nouns: <b>-tion/-sion, -ment, -ity, -ness, -ance/-ence</b>.",
+          "Adjectives: <b>-al, -ive, -ous, -able/-ible, -ant/-ent</b>.",
+          "Verbs: <b>-ise, -ify, -en</b>. Adverbs: <b>-ly</b>.",
+          "Check the spelling change: <i>simple → simplify, rely → reliable, decide → decision</i>."
+        ],
+        "watch": "Choose the form the sentence needs: after <i>the</i> → noun; before a noun → adjective; after <i>to</i> → verb; before an adjective or after a verb → adverb."
+      },
+      "practice": [
+        {
+          "t": "sort",
+          "instr": "Which type of word is it?",
+          "bins": [
+            "noun",
+            "adjective",
+            "verb"
+          ],
+          "chips": [
+            [
+              "assessment",
+              0
+            ],
+            [
+              "reliable",
+              1
+            ],
+            [
+              "clarify",
+              2
+            ],
+            [
+              "complexity",
+              0
+            ],
+            [
+              "cultural",
+              1
+            ],
+            [
+              "prioritise",
+              2
+            ],
+            [
+              "decision",
+              0
+            ],
+            [
+              "dangerous",
+              1
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "Many students rely on ___ sources of information.",
+          "o": [
+            "reliable",
+            "reliability",
+            "rely",
+            "reliably"
+          ],
+          "a": 0,
+          "why": "Before a noun → adjective.",
+          "keep": true
+        },
+        {
+          "t": "gap",
+          "q": "The ___ (assess) includes an essay and an exam.",
+          "a": [
+            "assessment"
+          ],
+          "why": "After the → noun.",
+          "hint": "What comes after “the”?"
+        },
+        {
+          "t": "fix",
+          "s": "This method is more {effect} than the old one.",
+          "c": "effective",
+          "why": "After more, before nothing → adjective: effective."
+        },
+        {
+          "t": "mcq",
+          "q": "Prices increased ___ last year.",
+          "o": [
+            "significantly",
+            "significant",
+            "significance",
+            "signify"
+          ],
+          "a": 0,
+          "why": "After a verb → adverb.",
+          "keep": true
+        },
+        {
+          "t": "order",
+          "a": "The government plans to modernise public transport.",
+          "hint": "Start with The government…",
+          "why": "plans to + verb (modernise)."
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "The ___ of the project depends on funding.",
+          "o": [
+            "success",
+            "succeed",
+            "successful",
+            "successfully"
+          ],
+          "a": 0,
+          "why": "After the → noun.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Is this website ___?",
+          "o": [
+            "reliable",
+            "rely",
+            "reliance",
+            "reliably"
+          ],
+          "a": 0,
+          "why": "After is → adjective.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "We need to ___ the instructions.",
+          "o": [
+            "clarify",
+            "clear",
+            "clarity",
+            "clarification"
+          ],
+          "a": 0,
+          "why": "After to → verb.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "The {available} of housing is a problem.",
+          "c": "availability",
+          "why": "After the → noun: availability."
+        },
+        {
+          "t": "gap",
+          "q": "The two results are ___ (significant) different.",
+          "a": [
+            "significantly"
+          ],
+          "why": "Before an adjective → adverb."
+        }
+      ],
+      "produce": {
+        "task": "Write 3–4 sentences about a change in education or technology. Use at least four words with academic suffixes (for example development, accessible, significantly, modernise).",
+        "target": "word formation with academic suffixes (-tion, -ment, -ity, -able, -ive, -ise, -ly)",
+        "checklist": [
+          "I used the right type of word (noun, adjective, verb or adverb).",
+          "My spelling changes are correct (rely → reliable).",
+          "I used at least four suffix words."
+        ],
+        "model": "The development of mobile apps has significantly changed how students learn vocabulary. Learning materials are now more accessible, and their availability on phones helps busy students. Universities are trying to modernise their courses."
+      }
+    },
+    {
+      "id": "comparing-contrasting",
+      "level": "B2",
+      "minutes": 12,
+      "verified": false,
+      "title": "Comparing and contrasting",
+      "cando": "Compare and contrast ideas, results and sources in academic writing.",
+      "tags": [
+        "compare",
+        "contrast",
+        "whereas",
+        "similarly",
+        "in contrast",
+        "differ",
+        "similar to",
+        "academic phrases",
+        "essay"
+      ],
+      "sample": [
+        "X <b>differs from</b> Y",
+        "<b>Similarly,</b>…"
+      ],
+      "words": [
+        {
+          "w": "differ from … in (several) respects",
+          "m": "be different in some ways",
+          "ex": "The two courses differ in several respects."
+        },
+        {
+          "w": "whereas / while",
+          "m": "in one sentence: show a contrast between two clauses",
+          "ex": "Online courses are flexible, whereas campus courses offer more contact."
+        },
+        {
+          "w": "In contrast, / By contrast, / On the other hand,",
+          "m": "start a new sentence that contrasts with the last one",
+          "ex": "City rents rose. In contrast, rural rents fell."
+        },
+        {
+          "w": "Similarly, / Likewise,",
+          "m": "start a sentence that shows a similar idea",
+          "ex": "Lee (2021) found a link. Similarly, Ng (2023) …"
+        },
+        {
+          "w": "similar to / comparable to",
+          "m": "the same in many ways",
+          "ex": "The results are similar to those of earlier studies."
+        },
+        {
+          "w": "that of / those of",
+          "m": "avoid repeating the noun in a comparison",
+          "ex": "Our results are similar to those of Lee (2021)."
+        },
+        {
+          "w": "slight / clear / significant differences",
+          "m": "how big the difference is",
+          "ex": "There were significant differences between the groups."
+        }
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "Online courses are flexible, ___ campus courses offer more contact.",
+          "o": [
+            "whereas",
+            "in contrast",
+            "similarly",
+            "likewise"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "City rents rose. ___, rural rents fell.",
+          "o": [
+            "By contrast",
+            "Whereas",
+            "While",
+            "Although"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Our results are similar ___ earlier studies.",
+          "o": [
+            "to those of",
+            "to",
+            "as those of",
+            "with that of"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "The two methods differ {on} several respects.",
+          "c": "in"
+        },
+        {
+          "t": "gap",
+          "q": "Lee (2021) found a link between sleep and memory. ___, Ng (2023) reported better recall after sleep.",
+          "a": [
+            "Similarly",
+            "Likewise"
+          ]
+        }
+      ],
+      "notice": {
+        "title": "Paragraph: Two ways to learn vocabulary",
+        "instr": "Tap the words and phrases that compare or contrast.",
+        "text": "Learning vocabulary with apps [[differs from]] learning with paper flashcards in several respects. Apps can repeat difficult words automatically, [[whereas]] paper cards need to be sorted by hand. [[In contrast]], paper cards are cheaper and have no notifications. Apps are also [[more]] motivating for some learners. However, the results of recent studies are [[similar to those of]] older research: regular review matters most. [[Similarly]], both methods work best when learners test themselves.",
+        "after": "Some phrases join ideas in one sentence; others start a new sentence. You’ll work out which next."
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "Apps repeat words automatically, <b>whereas</b> paper cards need sorting. · <b>In contrast,</b> paper cards are cheaper.",
+          "q": "What is the difference between <b>whereas</b> and <b>In contrast,</b>?",
+          "o": [
+            "whereas joins two clauses in one sentence; In contrast, starts a new sentence and has a comma",
+            "They are used in exactly the same way",
+            "whereas starts a new sentence"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at the full stops and commas.",
+          "insight": "<b>whereas / while</b> join two contrasting clauses in ONE sentence. <b>In contrast, / By contrast, / On the other hand,</b> start a NEW sentence, followed by a comma."
+        },
+        {
+          "t": "mcq",
+          "ctx": "the results are similar <b>to those of</b> older research",
+          "q": "Why does the writer say <b>those of</b> older research?",
+          "o": [
+            "to compare results with results, not results with research",
+            "because it sounds more polite",
+            "it is a spelling rule"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "What exactly is being compared?",
+          "insight": "Use <b>that of / those of</b> so you compare like with like: <i>Our results are similar to those of Lee (2021)</i> (results = results)."
+        },
+        {
+          "t": "mcq",
+          "ctx": "only slight · minor · clear · notable · significant · considerable",
+          "q": "Which list goes from weakest to strongest?",
+          "o": [
+            "slight → minor → clear → notable → significant → considerable",
+            "significant → slight → clear → minor",
+            "They all mean the same"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Think about how big each difference is.",
+          "insight": "Choose an adjective that matches the evidence: <i>only slight differences</i> … <i>considerable differences</i>."
+        }
+      ],
+      "rule": {
+        "title": "Your phrase card",
+        "points": [
+          "One sentence: <b>X …, whereas/while Y …</b> · <b>In contrast to X, Y …</b> · <b>Compared with X, Y …</b>",
+          "Two sentences: <b>… . In contrast, / By contrast, / On the other hand, …</b>",
+          "Similarity: <b>… . Similarly, / Likewise, …</b> · <b>X is similar to / comparable to Y</b> · <b>Both X and Y …</b>",
+          "Differences: <b>X differs from Y in several respects</b> · <b>There were significant differences between X and Y</b>",
+          "Compare like with like: <b>similar to that of / those of</b>"
+        ],
+        "watch": "<s>Whereas, …</s> at the start of a new sentence → In contrast, …. And <i>whereas</i> joins two clauses: <i>A is …, whereas B is …</i>"
+      },
+      "practice": [
+        {
+          "t": "sort",
+          "instr": "One sentence or a new sentence?",
+          "bins": [
+            "joins two clauses in one sentence",
+            "starts a new sentence"
+          ],
+          "chips": [
+            [
+              "whereas",
+              0
+            ],
+            [
+              "while",
+              0
+            ],
+            [
+              "In contrast,",
+              1
+            ],
+            [
+              "On the other hand,",
+              1
+            ],
+            [
+              "Similarly,",
+              1
+            ],
+            [
+              "Likewise,",
+              1
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "Men in the study slept less. ___, women slept more on weekdays.",
+          "o": [
+            "In contrast",
+            "Whereas",
+            "While",
+            "Compared with"
+          ],
+          "a": 0,
+          "why": "New sentence + comma.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "Our method differs {with} that of earlier studies.",
+          "c": "from",
+          "why": "differ from."
+        },
+        {
+          "t": "gap",
+          "q": "The cost of rent in Sydney is higher than ___ in Adelaide.",
+          "a": [
+            "that"
+          ],
+          "why": "Compare cost with cost: that (singular).",
+          "hint": "Which word replaces “the cost of rent”?"
+        },
+        {
+          "t": "mcq",
+          "q": "There were only ___ differences between the two groups, so the methods seem equally effective.",
+          "o": [
+            "slight",
+            "considerable",
+            "significant",
+            "major"
+          ],
+          "a": 0,
+          "why": "Equally effective → the differences were small.",
+          "keep": true
+        },
+        {
+          "t": "order",
+          "a": "Compared with paper books, e-books are easier to carry.",
+          "hint": "Start with Compared with…",
+          "why": "Compared with + noun, + main clause."
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "Some students prefer group work, ___ others prefer to work alone.",
+          "o": [
+            "whereas",
+            "in contrast",
+            "similarly",
+            "likewise"
+          ],
+          "a": 0,
+          "why": "Joins two contrasting clauses in one sentence.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Smith (2020) argued that homework helps. ___, Patel (2022) found clear benefits for older students.",
+          "o": [
+            "Similarly",
+            "Whereas",
+            "In contrast",
+            "While"
+          ],
+          "a": 0,
+          "why": "A similar idea in a new sentence.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Our findings are similar to ___ of Lee (2021).",
+          "o": [
+            "those",
+            "that",
+            "them",
+            "these"
+          ],
+          "a": 0,
+          "why": "Findings (plural) → those of.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "{Whereas,} public transport is cheaper.",
+          "c": "In contrast,",
+          "why": "Whereas cannot start a new sentence with a comma; use In contrast,."
+        },
+        {
+          "t": "gap",
+          "q": "The two cities differ ___ several important respects.",
+          "a": [
+            "in"
+          ],
+          "why": "differ in … respects."
+        }
+      ],
+      "produce": {
+        "task": "Compare two things you know well (for example, two cities, two courses or two study methods) in 4–5 sentences. Use at least one phrase for difference, one for similarity, and whereas or In contrast correctly.",
+        "target": "comparing and contrasting language: differ from, whereas/while, in contrast, similarly/likewise, similar to that of / those of",
+        "checklist": [
+          "<b>whereas/while</b> join two clauses in one sentence.",
+          "<b>In contrast, / Similarly,</b> start a new sentence with a comma.",
+          "I compared like with like (<b>that of / those of</b>)."
+        ],
+        "model": "Melbourne and Brisbane differ in several respects. Melbourne’s weather changes quickly, whereas Brisbane is warm for most of the year. In contrast, the cost of living in the two cities is quite similar. Both cities have large universities. Similarly, both have good public transport, although Melbourne’s tram network is much larger than that of Brisbane."
+      }
+    },
+    {
+      "id": "reporting-verbs",
+      "level": "C1",
+      "minutes": 14,
+      "verified": false,
+      "title": "Reporting verbs: how strong is the claim?",
+      "cando": "Report sources accurately with verbs like suggest, argue, demonstrate and acknowledge.",
+      "tags": [
+        "reporting verbs",
+        "citation",
+        "sources",
+        "stance",
+        "argue",
+        "claim",
+        "suggest",
+        "literature review"
+      ],
+      "sample": [
+        "Ahmed (2019) <b>argued</b> that…",
+        "the data <b>suggest</b>…"
+      ],
+      "words": [
+        {
+          "w": "demonstrate / show",
+          "m": "show clearly with evidence (strong)",
+          "ex": "The trial demonstrated that the drug was safe."
+        },
+        {
+          "w": "suggest",
+          "m": "put forward an idea carefully (tentative)",
+          "ex": "The results suggest a possible link."
+        },
+        {
+          "w": "indicate",
+          "m": "show, without proving",
+          "ex": "Early data indicate a small improvement."
+        },
+        {
+          "w": "argue",
+          "m": "give reasons for a position",
+          "ex": "Lee (2020) argued that fees should be lower."
+        },
+        {
+          "w": "contend",
+          "m": "argue firmly, often against others (formal)",
+          "ex": "Fischer (2021) contended that the effect was small."
+        },
+        {
+          "w": "claim",
+          "m": "say something is true (the writer may doubt it)",
+          "ex": "Rossi (2020) claimed that games improve memory."
+        },
+        {
+          "w": "question / challenge",
+          "m": "express doubt or disagree",
+          "ex": "Several studies have questioned this view."
+        },
+        {
+          "w": "acknowledge",
+          "m": "admit or accept a point, often a limitation",
+          "ex": "The authors acknowledged that the sample was small."
+        }
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "Lee (2022) ___ that social media harms sleep, but other studies disagree.",
+          "o": [
+            "claimed",
+            "proved",
+            "demonstrated"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "The experiment clearly ___ that the drug works.",
+          "o": [
+            "demonstrated",
+            "wondered",
+            "claimed to"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "Although she supports the approach, the writer ___ that it has some problems.",
+          "o": [
+            "acknowledges",
+            "demonstrates",
+            "questions"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "Which verb shows that the writer DOUBTS the source?",
+          "o": [
+            "Jones (2020) claimed that…",
+            "Jones (2020) demonstrated that…",
+            "Jones (2020) showed that…"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "gap",
+          "instr": "Type a verb that means ‘admitted’. It starts with a…",
+          "q": "The authors ___ that their findings may not apply to other countries.",
+          "a": [
+            "acknowledged",
+            "admitted",
+            "accepted"
+          ]
+        }
       ],
       "notice": {
         "title": "Literature review paragraph (invented sources)",
@@ -422,59 +3151,324 @@
         "after": "Each verb tells you how strong the source’s claim is and what the writer thinks of it. You’ll work out how next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "Ahmed’s review <b>demonstrated</b> a clear link. · Recent data <b>suggest</b> that the effect depends on age.", "q": "Which verb is stronger (more certain)?", "o": ["demonstrated", "suggest"], "a": 0, "keep": true, "hint": "Which one sounds like proof?", "insight": "<b>demonstrate / show</b> = strong evidence. <b>suggest / indicate</b> = more careful (tentative)." },
-        { "t": "mcq", "ctx": "Nguyen (2023) <b>claimed</b> that homework has no benefit at all…", "q": "Why might the writer choose <b>claimed</b> here?", "o": ["To show doubt: the writer isn’t sure it’s true", "To show strong agreement", "Because it is more polite"], "a": 0, "keep": true, "hint": "Look at what follows: ‘her sample was small’.", "insight": "<b>claim</b> often signals that the writer doubts the source. Your choice of reporting verb shows <b>your</b> stance." },
-        { "t": "mcq", "ctx": "Fischer (2021) <b>questioned</b> this view and <b>contended</b> that… · she <b>acknowledged</b> that her sample was small.", "q": "Which verb reports a source admitting a weakness?", "o": ["acknowledged", "contended", "questioned"], "a": 0, "keep": true, "hint": "Which one is about a limitation?", "insight": "<b>acknowledge</b> = admit a limitation; <b>question</b> = doubt; <b>contend / argue</b> = put forward a position with reasons." }
+        {
+          "t": "mcq",
+          "ctx": "Ahmed’s review <b>demonstrated</b> a clear link. · Recent data <b>suggest</b> that the effect depends on age.",
+          "q": "Which verb is stronger (more certain)?",
+          "o": [
+            "demonstrated",
+            "suggest"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Which one sounds like proof?",
+          "insight": "<b>demonstrate / show</b> = strong evidence. <b>suggest / indicate</b> = more careful (tentative)."
+        },
+        {
+          "t": "mcq",
+          "ctx": "Nguyen (2023) <b>claimed</b> that homework has no benefit at all…",
+          "q": "Why might the writer choose <b>claimed</b> here?",
+          "o": [
+            "To show doubt: the writer isn’t sure it’s true",
+            "To show strong agreement",
+            "Because it is more polite"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at what follows: ‘her sample was small’.",
+          "insight": "<b>claim</b> often signals that the writer doubts the source. Your choice of reporting verb shows <b>your</b> stance."
+        },
+        {
+          "t": "mcq",
+          "ctx": "Fischer (2021) <b>questioned</b> this view and <b>contended</b> that… · she <b>acknowledged</b> that her sample was small.",
+          "q": "Which verb reports a source admitting a weakness?",
+          "o": [
+            "acknowledged",
+            "contended",
+            "questioned"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Which one is about a limitation?",
+          "insight": "<b>acknowledge</b> = admit a limitation; <b>question</b> = doubt; <b>contend / argue</b> = put forward a position with reasons."
+        }
       ],
       "rule": {
         "title": "Your word card",
-        "points": ["Strong: <b>demonstrate, show, establish</b>.", "Position: <b>argue, contend, state, note</b>.", "Tentative: <b>suggest, indicate</b>.", "Doubt or disagreement: <b>claim</b> (the writer is unsure), <b>question, challenge</b>.", "Admitting: <b>acknowledge, concede</b>."],
+        "points": [
+          "Strong: <b>demonstrate, show, establish</b>.",
+          "Position: <b>argue, contend, state, note</b>.",
+          "Tentative: <b>suggest, indicate</b>.",
+          "Doubt or disagreement: <b>claim</b> (the writer is unsure), <b>question, challenge</b>.",
+          "Admitting: <b>acknowledge, concede</b>."
+        ],
         "watch": "Pattern: <i>argue <b>that</b>…, suggest <b>that</b>…</i> (not <s>suggest to</s>). In APA style, report a specific study in the past or present perfect: <i>Ahmed (2019) argued / has argued…</i>"
       },
       "practice": [
-        { "t": "sort", "instr": "How strong is each verb?", "bins": ["Strong", "Tentative", "Doubt"], "chips": [["demonstrate", 0], ["show", 0], ["suggest", 1], ["indicate", 1], ["claim", 2], ["question", 2]] },
-        { "t": "mcq", "q": "The data ___ that the policy may have reduced crime, but more research is needed.", "o": ["suggest", "demonstrate", "prove"], "a": 0, "hint": "‘may’ and ‘more research is needed’ = careful.", "why": "Careful claim → suggest." },
-        { "t": "gap", "q": "Ali (2020) ___ that the sample was not representative, which limits the findings.", "a": ["acknowledged", "admitted", "conceded", "noted", "recognised", "recognized", "accepted"], "hint": "The author is admitting a weakness.", "why": "acknowledge = admit a limitation." },
-        { "t": "mcq", "q": "The study found a small link that may be due to chance. Which sentence reports it most fairly?", "o": ["Kim (2022) demonstrated that sugar causes obesity.", "Kim (2022) suggested a possible link between sugar and obesity."], "a": 1, "keep": true, "hint": "Is the evidence strong?", "why": "Weak evidence → a tentative verb (suggested)." },
-        { "t": "mcq", "q": "Fischer (2021) ___ the view that homework is always useful.", "o": ["questioned", "demonstrated", "acknowledged that"], "a": 0, "hint": "Fischer disagrees.", "why": "question / challenge a view = disagree." },
-        { "t": "order", "a": "The authors acknowledged that the sample was small.", "hint": "Start with The authors…", "why": "acknowledge + that + clause." }
+        {
+          "t": "sort",
+          "instr": "How strong is each verb?",
+          "bins": [
+            "Strong",
+            "Tentative",
+            "Doubt"
+          ],
+          "chips": [
+            [
+              "demonstrate",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "suggest",
+              1
+            ],
+            [
+              "indicate",
+              1
+            ],
+            [
+              "claim",
+              2
+            ],
+            [
+              "question",
+              2
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "The data ___ that the policy may have reduced crime, but more research is needed.",
+          "o": [
+            "suggest",
+            "demonstrate",
+            "prove"
+          ],
+          "a": 0,
+          "hint": "‘may’ and ‘more research is needed’ = careful.",
+          "why": "Careful claim → suggest."
+        },
+        {
+          "t": "gap",
+          "q": "Ali (2020) ___ that the sample was not representative, which limits the findings.",
+          "a": [
+            "acknowledged",
+            "admitted",
+            "conceded",
+            "noted",
+            "recognised",
+            "recognized",
+            "accepted"
+          ],
+          "hint": "The author is admitting a weakness.",
+          "why": "acknowledge = admit a limitation."
+        },
+        {
+          "t": "mcq",
+          "q": "The study found a small link that may be due to chance. Which sentence reports it most fairly?",
+          "o": [
+            "Kim (2022) demonstrated that sugar causes obesity.",
+            "Kim (2022) suggested a possible link between sugar and obesity."
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Is the evidence strong?",
+          "why": "Weak evidence → a tentative verb (suggested)."
+        },
+        {
+          "t": "mcq",
+          "q": "Fischer (2021) ___ the view that homework is always useful.",
+          "o": [
+            "questioned",
+            "demonstrated",
+            "acknowledged that"
+          ],
+          "a": 0,
+          "hint": "Fischer disagrees.",
+          "why": "question / challenge a view = disagree."
+        },
+        {
+          "t": "order",
+          "a": "The authors acknowledged that the sample was small.",
+          "hint": "Start with The authors…",
+          "why": "acknowledge + that + clause."
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "Rossi (2020) ___ that video games improve memory, but the study had only 12 participants.", "o": ["claimed", "demonstrated", "established"], "a": 0, "why": "Weak evidence that the writer doubts → claimed." },
-        { "t": "mcq", "q": "Large trials have ___ that the vaccine is safe.", "o": ["demonstrated", "wondered", "claimed to"], "a": 0, "why": "Strong evidence → demonstrated." },
-        { "t": "mcq", "q": "The authors ___ that their study had some limitations.", "o": ["acknowledged", "contended", "demonstrated"], "a": 0, "why": "Admitting a weakness → acknowledged." },
-        { "t": "gap", "q": "These early results ___ that the treatment might work.", "a": ["suggest", "indicate"], "why": "Tentative → suggest / indicate." },
-        { "t": "mcq", "q": "Which sentence shows disagreement with a source?", "o": ["Lopez (2019) challenged this view.", "Lopez (2019) demonstrated this view.", "Lopez (2019) acknowledged this view."], "a": 0, "keep": true, "why": "challenge / question = disagree." }
+        {
+          "t": "mcq",
+          "q": "Rossi (2020) ___ that video games improve memory, but the study had only 12 participants.",
+          "o": [
+            "claimed",
+            "demonstrated",
+            "established"
+          ],
+          "a": 0,
+          "why": "Weak evidence that the writer doubts → claimed."
+        },
+        {
+          "t": "mcq",
+          "q": "Large trials have ___ that the vaccine is safe.",
+          "o": [
+            "demonstrated",
+            "wondered",
+            "claimed to"
+          ],
+          "a": 0,
+          "why": "Strong evidence → demonstrated."
+        },
+        {
+          "t": "mcq",
+          "q": "The authors ___ that their study had some limitations.",
+          "o": [
+            "acknowledged",
+            "contended",
+            "demonstrated"
+          ],
+          "a": 0,
+          "why": "Admitting a weakness → acknowledged."
+        },
+        {
+          "t": "gap",
+          "q": "These early results ___ that the treatment might work.",
+          "a": [
+            "suggest",
+            "indicate"
+          ],
+          "why": "Tentative → suggest / indicate."
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence shows disagreement with a source?",
+          "o": [
+            "Lopez (2019) challenged this view.",
+            "Lopez (2019) demonstrated this view.",
+            "Lopez (2019) acknowledged this view."
+          ],
+          "a": 0,
+          "keep": true,
+          "why": "challenge / question = disagree."
+        }
       ],
       "produce": {
         "task": "Write 3–4 sentences reporting two or three sources on a topic you know (you can invent them). Choose reporting verbs that show how strong each claim is and what you think of it.",
         "target": "reporting verbs and stance: demonstrate, show, suggest, indicate, argue, contend, claim, question, acknowledge",
-        "checklist": ["I chose strong verbs only for strong evidence.", "I used <b>claim</b> or <b>question</b> to show doubt.", "I used <b>verb + that</b> (argued that…)."],
+        "checklist": [
+          "I chose strong verbs only for strong evidence.",
+          "I used <b>claim</b> or <b>question</b> to show doubt.",
+          "I used <b>verb + that</b> (argued that…)."
+        ],
         "model": "Ahmed (2019) demonstrated a clear link between sleep and exam results in a study of 2,000 students. Fischer (2021) argued that the link is weaker for older students. However, Lopez (2022) claimed that sleep has no effect at all, although she acknowledged that her sample was very small."
       }
     },
     {
-      "id": "evaluating-evidence", "level": "C1", "minutes": 14, "verified": false,
+      "id": "evaluating-evidence",
+      "level": "C1",
+      "minutes": 14,
+      "verified": false,
       "title": "Evaluating evidence",
       "cando": "Judge sources and evidence with collocations like compelling evidence and widely accepted.",
-      "tags": ["evidence", "critical thinking", "literature review", "compelling", "widely accepted", "collocations"],
-      "sample": ["<b>compelling</b> evidence", "<b>widely</b> accepted"],
+      "tags": [
+        "evidence",
+        "critical thinking",
+        "literature review",
+        "compelling",
+        "widely accepted",
+        "collocations"
+      ],
+      "sample": [
+        "<b>compelling</b> evidence",
+        "<b>widely</b> accepted"
+      ],
       "words": [
-        { "w": "compelling / strong evidence", "m": "very convincing evidence", "ex": "There is compelling evidence that smoking causes cancer." },
-        { "w": "limited evidence", "m": "not much evidence", "ex": "There is only limited evidence for this diet." },
-        { "w": "conflicting evidence", "m": "studies that disagree with each other", "ex": "The evidence on coffee is conflicting." },
-        { "w": "robust findings", "m": "strong, reliable results", "ex": "The large sample produced robust findings." },
-        { "w": "a growing body of research", "m": "more and more studies", "ex": "A growing body of research links exercise and mood." },
-        { "w": "widely accepted", "m": "believed by most experts", "ex": "The theory is now widely accepted." },
-        { "w": "shed light on", "m": "help to explain", "ex": "The study sheds light on how children learn." },
-        { "w": "call into question", "m": "make people doubt something", "ex": "New data called the old theory into question." }
+        {
+          "w": "compelling / strong evidence",
+          "m": "very convincing evidence",
+          "ex": "There is compelling evidence that smoking causes cancer."
+        },
+        {
+          "w": "limited evidence",
+          "m": "not much evidence",
+          "ex": "There is only limited evidence for this diet."
+        },
+        {
+          "w": "conflicting evidence",
+          "m": "studies that disagree with each other",
+          "ex": "The evidence on coffee is conflicting."
+        },
+        {
+          "w": "robust findings",
+          "m": "strong, reliable results",
+          "ex": "The large sample produced robust findings."
+        },
+        {
+          "w": "a growing body of research",
+          "m": "more and more studies",
+          "ex": "A growing body of research links exercise and mood."
+        },
+        {
+          "w": "widely accepted",
+          "m": "believed by most experts",
+          "ex": "The theory is now widely accepted."
+        },
+        {
+          "w": "shed light on",
+          "m": "help to explain",
+          "ex": "The study sheds light on how children learn."
+        },
+        {
+          "w": "call into question",
+          "m": "make people doubt something",
+          "ex": "New data called the old theory into question."
+        }
       ],
       "pre": [
-        { "t": "mcq", "q": "There is ___ evidence that smoking causes cancer.", "o": ["compelling", "heavy", "tall"], "a": 0 },
-        { "t": "mcq", "q": "This theory is now ___ accepted by scientists.", "o": ["widely", "highly", "strongly"], "a": 0 },
-        { "t": "mcq", "q": "The new study helps to ___ light on the causes of the disease.", "o": ["shed", "give", "make"], "a": 0 },
-        { "t": "fix", "s": "There is only {small} evidence that the diet works.", "c": "limited" },
-        { "t": "gap", "q": "A growing ___ of research shows that exercise improves mood.", "a": ["body"] }
+        {
+          "t": "mcq",
+          "q": "There is ___ evidence that smoking causes cancer.",
+          "o": [
+            "compelling",
+            "heavy",
+            "tall"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "This theory is now ___ accepted by scientists.",
+          "o": [
+            "widely",
+            "highly",
+            "strongly"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "The new study helps to ___ light on the causes of the disease.",
+          "o": [
+            "shed",
+            "give",
+            "make"
+          ],
+          "a": 0
+        },
+        {
+          "t": "fix",
+          "s": "There is only {small} evidence that the diet works.",
+          "c": "limited"
+        },
+        {
+          "t": "gap",
+          "q": "A growing ___ of research shows that exercise improves mood.",
+          "a": [
+            "body"
+          ]
+        }
       ],
       "notice": {
         "title": "Literature review paragraph",
@@ -483,36 +3477,551 @@
         "after": "Some phrases make the evidence sound strong, others weak or unclear. You’ll sort them out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "<b>compelling</b> evidence · <b>conflicting</b> evidence · <b>limited</b> evidence", "q": "Which adjective means that different studies disagree?", "o": ["conflicting", "compelling", "limited"], "a": 0, "keep": true, "hint": "Two studies, two different results.", "insight": "<b>compelling / strong / robust</b> = convincing; <b>limited / weak</b> = not enough; <b>conflicting / mixed</b> = studies disagree." },
-        { "t": "mcq", "ctx": "this view became <b>widely accepted</b> · <b>a growing body of</b> research", "q": "<b>Widely accepted</b> means…", "o": ["most experts agree", "only a few people agree", "it is new"], "a": 0, "keep": true, "hint": "Widely = by many people.", "insight": "<b>widely accepted / held / used</b> = by many people. <b>a growing body of</b> research / evidence = more and more studies." },
-        { "t": "mcq", "ctx": "studies have <b>called into question</b> these results · research is needed to <b>shed light on</b>…", "q": "Which phrase means ‘make people doubt’?", "o": ["call into question", "shed light on"], "a": 0, "keep": true, "hint": "Shed light = make clearer.", "insight": "<b>call into question</b> = cause doubt about; <b>shed light on</b> = help explain." }
+        {
+          "t": "mcq",
+          "ctx": "<b>compelling</b> evidence · <b>conflicting</b> evidence · <b>limited</b> evidence",
+          "q": "Which adjective means that different studies disagree?",
+          "o": [
+            "conflicting",
+            "compelling",
+            "limited"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Two studies, two different results.",
+          "insight": "<b>compelling / strong / robust</b> = convincing; <b>limited / weak</b> = not enough; <b>conflicting / mixed</b> = studies disagree."
+        },
+        {
+          "t": "mcq",
+          "ctx": "this view became <b>widely accepted</b> · <b>a growing body of</b> research",
+          "q": "<b>Widely accepted</b> means…",
+          "o": [
+            "most experts agree",
+            "only a few people agree",
+            "it is new"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Widely = by many people.",
+          "insight": "<b>widely accepted / held / used</b> = by many people. <b>a growing body of</b> research / evidence = more and more studies."
+        },
+        {
+          "t": "mcq",
+          "ctx": "studies have <b>called into question</b> these results · research is needed to <b>shed light on</b>…",
+          "q": "Which phrase means ‘make people doubt’?",
+          "o": [
+            "call into question",
+            "shed light on"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Shed light = make clearer.",
+          "insight": "<b>call into question</b> = cause doubt about; <b>shed light on</b> = help explain."
+        }
       ],
       "rule": {
         "title": "Your word card",
-        "points": ["Strong: <b>compelling / robust / convincing</b> evidence; findings are <b>widely accepted</b>.", "Weak or unclear: <b>limited / weak / anecdotal</b> evidence; <b>conflicting / mixed</b> evidence.", "Change: <b>a growing body of</b> research; new studies <b>call into question</b> or <b>shed light on</b>…", "<b>Evidence</b> is uncountable: <i>some evidence, a piece of evidence</i> (not <s>evidences</s>)."],
+        "points": [
+          "Strong: <b>compelling / robust / convincing</b> evidence; findings are <b>widely accepted</b>.",
+          "Weak or unclear: <b>limited / weak / anecdotal</b> evidence; <b>conflicting / mixed</b> evidence.",
+          "Change: <b>a growing body of</b> research; new studies <b>call into question</b> or <b>shed light on</b>…",
+          "<b>Evidence</b> is uncountable: <i>some evidence, a piece of evidence</i> (not <s>evidences</s>)."
+        ],
         "watch": "We say <i>evidence <b>that</b>…</i> or <i>evidence <b>for / of</b>…</i>"
       },
       "practice": [
-        { "t": "match", "instr": "Match the word partners.", "pairs": [["compelling", "evidence"], ["widely", "accepted"], ["shed", "light on"], ["call", "into question"], ["a growing body", "of research"]] },
-        { "t": "mcq", "q": "Studies have found opposite results, so the evidence is ___.", "o": ["conflicting", "compelling", "robust"], "a": 0, "hint": "The studies disagree.", "why": "conflicting evidence = studies disagree." },
-        { "t": "gap", "q": "The study was very small, so the evidence is ___.", "a": ["limited", "weak"], "hint": "Not much evidence.", "why": "limited / weak evidence" },
-        { "t": "fix", "s": "The court heard many {evidences} against him.", "c": "pieces of evidence", "hint": "Can you count evidence?", "why": "Evidence is uncountable: many pieces of evidence / a lot of evidence." },
-        { "t": "mcq", "q": "Which sentence is the most academic?", "o": ["The proof is really good.", "There is compelling evidence for this claim.", "Everybody knows this is true."], "a": 1, "keep": true, "hint": "Look for a collocation from this unit.", "why": "compelling evidence for a claim" },
-        { "t": "order", "a": "Recent findings have called this theory into question.", "hint": "Start with Recent findings… The phrase splits: called … into question.", "why": "call something into question" },
-        { "t": "sort", "instr": "Does each word describe strong or weak evidence?", "bins": ["Strong", "Weak or unclear"], "chips": [["compelling", 0], ["limited", 1], ["robust", 0], ["conflicting", 1], ["convincing", 0], ["anecdotal", 1, "based on personal stories, not research"]] }
+        {
+          "t": "match",
+          "instr": "Match the word partners.",
+          "pairs": [
+            [
+              "compelling",
+              "evidence"
+            ],
+            [
+              "widely",
+              "accepted"
+            ],
+            [
+              "shed",
+              "light on"
+            ],
+            [
+              "call",
+              "into question"
+            ],
+            [
+              "a growing body",
+              "of research"
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "Studies have found opposite results, so the evidence is ___.",
+          "o": [
+            "conflicting",
+            "compelling",
+            "robust"
+          ],
+          "a": 0,
+          "hint": "The studies disagree.",
+          "why": "conflicting evidence = studies disagree."
+        },
+        {
+          "t": "gap",
+          "q": "The study was very small, so the evidence is ___.",
+          "a": [
+            "limited",
+            "weak"
+          ],
+          "hint": "Not much evidence.",
+          "why": "limited / weak evidence"
+        },
+        {
+          "t": "fix",
+          "s": "The court heard many {evidences} against him.",
+          "c": "pieces of evidence",
+          "hint": "Can you count evidence?",
+          "why": "Evidence is uncountable: many pieces of evidence / a lot of evidence."
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence is the most academic?",
+          "o": [
+            "The proof is really good.",
+            "There is compelling evidence for this claim.",
+            "Everybody knows this is true."
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Look for a collocation from this unit.",
+          "why": "compelling evidence for a claim"
+        },
+        {
+          "t": "order",
+          "a": "Recent findings have called this theory into question.",
+          "hint": "Start with Recent findings… The phrase splits: called … into question.",
+          "why": "call something into question"
+        },
+        {
+          "t": "sort",
+          "instr": "Does each word describe strong or weak evidence?",
+          "bins": [
+            "Strong",
+            "Weak or unclear"
+          ],
+          "chips": [
+            [
+              "compelling",
+              0
+            ],
+            [
+              "limited",
+              1
+            ],
+            [
+              "robust",
+              0
+            ],
+            [
+              "conflicting",
+              1
+            ],
+            [
+              "convincing",
+              0
+            ],
+            [
+              "anecdotal",
+              1,
+              "based on personal stories, not research"
+            ]
+          ]
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "There is ___ evidence that regular exercise improves sleep.", "o": ["strong", "heavy", "high"], "a": 0, "why": "strong / compelling evidence" },
-        { "t": "mcq", "q": "This method is ___ used in hospitals around the world.", "o": ["widely", "largely big", "highly"], "a": 0, "why": "widely used" },
-        { "t": "mcq", "q": "These results ___ into question earlier findings.", "o": ["call", "shed", "raise"], "a": 0, "why": "call into question" },
-        { "t": "fix", "s": "Researchers have found new {evidences} for this theory.", "c": "evidence", "why": "Evidence is uncountable: no -s." },
-        { "t": "gap", "q": "A large new study helps to ___ light on why some people never get colds.", "a": ["shed", "throw", "cast"], "why": "shed light on" }
+        {
+          "t": "mcq",
+          "q": "There is ___ evidence that regular exercise improves sleep.",
+          "o": [
+            "strong",
+            "heavy",
+            "high"
+          ],
+          "a": 0,
+          "why": "strong / compelling evidence"
+        },
+        {
+          "t": "mcq",
+          "q": "This method is ___ used in hospitals around the world.",
+          "o": [
+            "widely",
+            "largely big",
+            "highly"
+          ],
+          "a": 0,
+          "why": "widely used"
+        },
+        {
+          "t": "mcq",
+          "q": "These results ___ into question earlier findings.",
+          "o": [
+            "call",
+            "shed",
+            "raise"
+          ],
+          "a": 0,
+          "why": "call into question"
+        },
+        {
+          "t": "fix",
+          "s": "Researchers have found new {evidences} for this theory.",
+          "c": "evidence",
+          "why": "Evidence is uncountable: no -s."
+        },
+        {
+          "t": "gap",
+          "q": "A large new study helps to ___ light on why some people never get colds.",
+          "a": [
+            "shed",
+            "throw",
+            "cast"
+          ],
+          "why": "shed light on"
+        }
       ],
       "produce": {
         "task": "Write 3–4 sentences evaluating the evidence on a topic you know (for example, coffee and health, or homework). Use at least four phrases from this unit.",
         "target": "collocations for evaluating evidence: compelling/limited/conflicting evidence, a growing body of research, widely accepted, call into question, shed light on",
-        "checklist": ["I used <b>evidence</b> as uncountable (no -s).", "I showed how strong the evidence is.", "I used at least four phrases from the word card."],
+        "checklist": [
+          "I used <b>evidence</b> as uncountable (no -s).",
+          "I showed how strong the evidence is.",
+          "I used at least four phrases from the word card."
+        ],
         "model": "There is a growing body of research on coffee and health. Several large studies provide compelling evidence that moderate coffee drinking is safe for most adults. However, the evidence on pregnant women is limited, and some smaller studies have produced conflicting results. Further research may shed light on why people react differently to caffeine."
+      }
+    },
+    {
+      "id": "adverb-adjective",
+      "level": "C1",
+      "minutes": 14,
+      "verified": false,
+      "title": "Adverb + adjective collocations",
+      "cando": "Use precise adverb + adjective partners like highly significant and widely available.",
+      "tags": [
+        "collocations",
+        "adverbs",
+        "precision",
+        "academic style",
+        "highly",
+        "widely",
+        "increasingly"
+      ],
+      "sample": [
+        "<b>highly</b> significant",
+        "<b>widely</b> available"
+      ],
+      "words": [
+        {
+          "w": "highly significant / effective / likely",
+          "m": "very (with abstract qualities)",
+          "ex": "The results were highly significant."
+        },
+        {
+          "w": "widely available / used / accepted",
+          "m": "by or for many people",
+          "ex": "The vaccine is now widely available."
+        },
+        {
+          "w": "increasingly common / important / difficult",
+          "m": "more and more",
+          "ex": "Online study is increasingly common."
+        },
+        {
+          "w": "relatively small / low / new",
+          "m": "compared with others",
+          "ex": "The sample was relatively small."
+        },
+        {
+          "w": "strongly / closely linked",
+          "m": "clearly connected",
+          "ex": "Sleep is closely linked to memory."
+        },
+        {
+          "w": "fully aware",
+          "m": "completely know",
+          "ex": "Participants were fully aware of the aims."
+        },
+        {
+          "w": "statistically significant",
+          "m": "not likely to be chance (in statistics)",
+          "ex": "The difference was statistically significant."
+        },
+        {
+          "w": "broadly similar",
+          "m": "similar in general",
+          "ex": "The two groups were broadly similar."
+        }
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "The difference between the groups was ___ significant.",
+          "o": [
+            "highly",
+            "widely",
+            "deeply",
+            "fully"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The app is now ___ available in Australia.",
+          "o": [
+            "widely",
+            "highly",
+            "strongly",
+            "bitterly"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The sample was ___ small, so the results may not apply to everyone.",
+          "o": [
+            "relatively",
+            "widely",
+            "highly",
+            "fully"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "Participants were {highly} aware of the risks.",
+          "c": "fully"
+        },
+        {
+          "t": "gap",
+          "q": "Online learning is becoming ___ common.",
+          "a": [
+            "increasingly"
+          ]
+        }
+      ],
+      "notice": {
+        "title": "From a research summary",
+        "instr": "Tap the adverb + adjective partners.",
+        "text": "Mobile learning has become [[increasingly popular]]. The study used a [[relatively small]] sample of 60 students. Results were [[broadly similar]] across age groups. However, daily practice was [[closely linked]] to higher scores, and this difference was [[statistically significant]]. Language apps are now [[widely available]], but teachers should be [[fully aware]] of their limits.",
+        "after": "Why “widely available” and not “highly available”? The adverbs have regular partners. You’ll find the patterns next."
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "<b>widely</b> available · <b>widely</b> used · <b>widely</b> accepted",
+          "q": "What does <b>widely</b> add?",
+          "o": [
+            "by or for many people",
+            "very strongly",
+            "more and more"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Available to whom? Accepted by whom?",
+          "insight": "<b>widely</b> = by/for many people: widely available, widely used, widely accepted, widely believed."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>increasingly</b> popular · <b>relatively</b> small",
+          "q": "What do <b>increasingly</b> and <b>relatively</b> mean?",
+          "o": [
+            "increasingly = more and more; relatively = compared with others",
+            "both mean very",
+            "both mean completely"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Increasingly: over time. Relatively: compared with…",
+          "insight": "<b>increasingly</b> shows change over time; <b>relatively</b> compares (relatively small = small compared with similar studies)."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>closely</b> linked · <b>fully</b> aware · <b>statistically</b> significant",
+          "q": "Which is NOT a natural partner?",
+          "o": [
+            "highly aware",
+            "fully aware",
+            "closely linked",
+            "strongly linked"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Which adverb goes with aware?",
+          "insight": "Some partners are fixed: <b>fully</b> aware, <b>closely/strongly</b> linked, <b>statistically</b> significant. <s>highly aware</s> sounds unnatural."
+        }
+      ],
+      "rule": {
+        "title": "Your word card",
+        "points": [
+          "<b>highly</b> + abstract quality: highly significant, highly effective, highly likely, highly qualified.",
+          "<b>widely</b> + -ed/available: widely used, widely accepted, widely available.",
+          "<b>increasingly</b> (more and more) · <b>relatively</b> (compared with others) · <b>broadly</b> (in general).",
+          "Fixed partners: <b>fully</b> aware, <b>closely</b> linked, <b>statistically</b> significant."
+        ],
+        "watch": "Avoid very + strong adjectives in academic writing: <s>very essential</s>, <s>very unique</s>. Use precise partners instead: <i>highly significant, increasingly important</i>."
+      },
+      "practice": [
+        {
+          "t": "match",
+          "instr": "Match each adverb with its partner.",
+          "pairs": [
+            [
+              "highly",
+              "effective"
+            ],
+            [
+              "widely",
+              "accepted"
+            ],
+            [
+              "closely",
+              "related"
+            ],
+            [
+              "fully",
+              "aware"
+            ],
+            [
+              "statistically",
+              "significant"
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "Remote work has become ___ common since 2020.",
+          "o": [
+            "increasingly",
+            "highly",
+            "fully",
+            "widely"
+          ],
+          "a": 0,
+          "why": "More and more over time.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "This theory is now {highly} accepted by scientists.",
+          "c": "widely",
+          "why": "Accepted by many people → widely accepted."
+        },
+        {
+          "t": "gap",
+          "q": "The cost of the trial was ___ low compared with similar studies.",
+          "a": [
+            "relatively"
+          ],
+          "why": "Compared with others → relatively.",
+          "hint": "Which adverb means “compared with others”?"
+        },
+        {
+          "t": "mcq",
+          "q": "Which is the most precise academic phrase?",
+          "o": [
+            "The results were broadly similar.",
+            "The results were kind of the same.",
+            "The results were very same."
+          ],
+          "a": 0,
+          "why": "broadly similar = similar in general.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Students who exercise regularly are ___ likely to sleep well.",
+          "o": [
+            "more",
+            "widely",
+            "fully",
+            "closely"
+          ],
+          "a": 0,
+          "why": "likely takes more/highly: more likely, highly likely.",
+          "keep": true
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "The treatment proved ___ effective.",
+          "o": [
+            "highly",
+            "widely",
+            "fully",
+            "closely"
+          ],
+          "a": 0,
+          "why": "highly effective.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Smartphones are now ___ used in classrooms.",
+          "o": [
+            "widely",
+            "highly",
+            "deeply",
+            "fully"
+          ],
+          "a": 0,
+          "why": "widely used = used by many.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Stress and poor sleep are ___ linked.",
+          "o": [
+            "closely",
+            "widely",
+            "fully",
+            "relatively"
+          ],
+          "a": 0,
+          "why": "closely linked.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "The difference was {strongly} significant (p < .01).",
+          "c": "statistically",
+          "why": "statistically significant."
+        },
+        {
+          "t": "gap",
+          "q": "The two groups were ___ similar in age and gender.",
+          "a": [
+            "broadly",
+            "largely",
+            "generally"
+          ],
+          "why": "broadly similar = similar in general."
+        }
+      ],
+      "produce": {
+        "task": "Describe the results of a study or survey (real or imagined) in 3–4 sentences. Use at least four adverb + adjective partners from the word card.",
+        "target": "adverb + adjective collocations (highly significant, widely available, increasingly common, relatively small, closely linked, fully aware, broadly similar)",
+        "checklist": [
+          "I used the right adverb partner (widely used, not highly used).",
+          "I avoided very + strong adjectives.",
+          "I used at least four partners."
+        ],
+        "model": "The survey used a relatively small sample of 80 students. Results were broadly similar for men and women. However, time spent on social media was closely linked to lower sleep quality, and the difference was statistically significant. As phones become increasingly common in classrooms, teachers should be fully aware of these effects."
       }
     }
   ]

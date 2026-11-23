@@ -115,7 +115,7 @@
     var r = S.units[u.id], label = r && r.done ? "Practise again" : (r && r.max > 0 ? "Continue" : "Start");
     var s = [u.title, u.cando, (u.tags || []).join(" "), (u.sample || []).join(" ").replace(/<[^>]+>/g, "")].join(" ").toLowerCase();
     return '<article class="ucard" data-level="' + u.level + '" data-s="' + esc(s) + '">' +
-      '<div class="meta"><span class="lvl-tag">' + u.level + '</span><span>≈ ' + (u.minutes || 10) + ' min</span></div>' +
+      '<div class="meta"><span class="lvl-tag">' + u.level + (u.quick ? " · Quick fix" : "") + '</span><span>≈ ' + (u.minutes || 10) + ' min</span></div>' +
       '<h3>' + esc(u.title) + '</h3><p class="cando">' + esc(u.cando) + '</p>' +
       (u.sample ? '<div class="sample">' + u.sample.map(function (x) { return "<span>" + x + "</span>"; }).join("") + "</div>" : "") +
       '<div class="foot">' + statusHtml(u) + '<a class="go" href="#/u/' + u.id + '" aria-label="' + label + ': ' + esc(u.title) + '">' + label + ' →</a></div></article>';
@@ -125,7 +125,8 @@
     var html = '<div class="wrap">';
     html += '<section class="hero"><p class="eyebrow">' + D.hero.eyebrow + '</p><h1>' + D.hero.title + '</h1><p class="lead">' + D.hero.lead + '</p>' +
       '<ol class="steps" aria-label="How every unit works">' + STEPS.map(function (s) { return '<li' + (s[2] ? ' class="t"' : "") + '><b>' + s[0] + '</b><span class="muted">' + s[1] + "</span></li>"; }).join("") + "</ol>" +
-      '<p class="steps-note">You test yourself first, so the lesson focuses on what <em>you</em> need. Then you test again and see your progress.</p></section>';
+      '<p class="steps-note">You test yourself first, so the lesson focuses on what <em>you</em> need. Then you test again and see your progress.</p>' +
+      '<p class="steps-note"><b>Not sure of your level?</b> <a href="../level-check/">Take the 30-minute level check</a> (B1–C1), then start with the units it suggests.</p></section>';
 
     if (API && S.share === null)
       html += '<div class="panel optin" id="optin"><p><b>Help improve this hub?</b> Share your before-and-after scores anonymously, for example “passive voice: 40% → 80%”. No name, no email, no tracking. <a href="#/about">What is shared</a></p><div class="row"><button class="btn primary sm" data-share="1" type="button">Yes, share anonymously</button><button class="btn sm" data-share="0" type="button">No thanks</button></div></div>';
@@ -139,8 +140,10 @@
       levels.map(function (l) { return '<button class="chip" type="button" data-lv="' + l + '" data-level="' + l + '" aria-pressed="' + (F.level === l) + '"><span class="dot" aria-hidden="true"></span>' + l + ' <span class="sr">' + levelName(l) + "</span></button>"; }).join("") +
       '</div><label class="search"><span class="sr">Search units</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="' + esc(D.searchHint || "Search") + '" value="' + esc(F.q) + '" autocomplete="off"></label></div>';
 
+    var quick = D.units.filter(function (u) { return u.quick; });
+    if (quick.length) html += '<section class="lvl" data-sec="quick" aria-labelledby="h-quick"><div class="lvl-head"><span class="lvl-tag" style="--lc:var(--hub);--lb:var(--hub-bg)">4 min</span><h2 id="h-quick">Quick fixes</h2><p>Short lessons on common mix-ups. Each one takes about four minutes.</p></div><div class="grid">' + quick.map(cardHtml).join("") + "</div></section>";
     levels.forEach(function (l) {
-      var units = D.units.filter(function (u) { return u.level === l; });
+      var units = D.units.filter(function (u) { return u.level === l && !u.quick; });
       var soon = (D.soon && D.soon[l]) || [];
       html += '<section class="lvl" data-sec="' + l + '" data-level="' + l + '" aria-labelledby="h-' + l + '"><div class="lvl-head"><span class="lvl-tag">' + l + '</span><h2 id="h-' + l + '">' + esc(levelName(l)) + '</h2><p>' + esc(D.levels[l].cando) + '</p></div>' +
         '<div class="grid">' + units.map(cardHtml).join("") + "</div>" +
@@ -161,7 +164,7 @@
   function applyFilter() {
     var q = norm(F.q), any = false;
     $$(".lvl").forEach(function (sec) {
-      var showLevel = F.level === "all" || sec.dataset.sec === F.level, vis = 0;
+      var showLevel = F.level === "all" || sec.dataset.sec === F.level || sec.dataset.sec === "quick", vis = 0;
       $$(".ucard", sec).forEach(function (c) { var ok = showLevel && (!q || c.dataset.s.indexOf(q) > -1); c.hidden = !ok; if (ok) vis++; });
       sec.hidden = !vis; if (vis) any = true;
       var soon = $(".soon", sec); if (soon) soon.hidden = !!q;

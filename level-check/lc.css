@@ -1,0 +1,22 @@
+/* Level Check: small additions on top of the shared hub stylesheet (/assets/hub/hub.css). */
+.lc-passage{font-size:1.05rem;line-height:1.9;padding:14px 16px;border-radius:14px;background:var(--surface-2);margin:0 0 14px}
+.lc-passage .gap{display:inline-block;min-width:3.2em;border-bottom:2px solid var(--border-strong);text-align:center;font-weight:700;font-size:.85em;color:var(--muted)}
+.lc-passage .gap.now{border-bottom:3px solid var(--ink);color:var(--text);background:var(--sun);color:#14181f;border-radius:4px 4px 0 0;padding:0 4px}
+.opt.chosen{border-color:var(--ink);background:var(--ink-soft);box-shadow:inset 0 0 0 1px var(--ink)}
+.opt.chosen .k{background:var(--ink);color:var(--on-ink)}
+.idk{margin-top:4px;border-style:dashed}
+.lc-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px}
+.result-level{font-size:clamp(2.4rem,7vw,3.6rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:6px 0}
+.levelbars{display:grid;gap:10px;margin:12px 0}
+.lb{display:grid;grid-template-columns:44px 1fr 92px;gap:10px;align-items:center;font-weight:600;font-size:.95rem}
+.lb .track{height:14px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border);overflow:hidden;position:relative}
+.lb .track i{display:block;height:100%;background:var(--ok)}
+.lb .track::after{content:"";position:absolute;top:-3px;bottom:-3px;left:var(--m,65%);border-left:2px dashed var(--text);opacity:.55}
+.lb .pass{font-weight:700}
+.code{font:600 1.05rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:10px 14px;border-radius:10px;background:var(--surface-2);border:1px dashed var(--border-strong);word-break:break-all;user-select:all}
+.lc-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.lc-table th,.lc-table td{padding:8px 6px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.lc-table th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.input{width:100%;min-height:var(--tap);font:500 1rem var(--font);color:var(--text);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:8px 12px}
+.flag{color:var(--bad);font-weight:700}
+@media print{.lc-print-hide{display:none!important}}

@@ -1,0 +1,699 @@
+{
+ "_help": "Level check items. 'a' is the index of the correct option in 'o' (options are shuffled on screen). verified=false until Dave has checked and piloted the test.",
+ "version": "LC1",
+ "verified": false,
+ "mastery": 0.65,
+ "approaching": 0.5,
+ "parts": {
+  "grammar": "Part 1 · Grammar",
+  "vocab": "Part 2 · Vocabulary and collocations",
+  "reading": "Part 3 · Academic texts"
+ },
+ "passages": {
+  "A": {
+   "title": "Online or face-to-face?",
+   "text": "Online and face-to-face courses differ in a number of [1]. Online courses tend to be more flexible, [2] face-to-face courses offer more contact with teachers. Students in online courses are also less [3] to ask questions. Partly [4] this reason, completion rates tend to be lower for online courses. Interestingly, recent survey results are similar [5] reported ten years ago. However, both types of course [6] one important feature: success depends on regular practice."
+  },
+  "B": {
+   "title": "Sleep and learning",
+   "text": "Sleep is often [1] one of the most important factors in learning. Students who [2] enough sleep usually remember more of what they study. However, many students [3] up late before exams. The benefits of sleep are [4] to be greatest on the night after learning something new. [5] this, few universities teach students about sleep. [6] universities to offer short courses on sleep, students might perform better."
+  }
+ },
+ "items": [
+  {
+   "id": "g01",
+   "part": "grammar",
+   "level": "B1",
+   "q": "I ___ in this city since 2019.",
+   "o": [
+    "have lived",
+    "live",
+    "am living",
+    "lived"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g02",
+   "part": "grammar",
+   "level": "B1",
+   "q": "If it rains tomorrow, we ___ the picnic.",
+   "o": [
+    "will cancel",
+    "would cancel",
+    "cancelled",
+    "had cancelled"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g03",
+   "part": "grammar",
+   "level": "B1",
+   "q": "The report ___ by the manager last week.",
+   "o": [
+    "was written",
+    "wrote",
+    "has written",
+    "is writing"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g04",
+   "part": "grammar",
+   "level": "B1",
+   "q": "She asked me where ___.",
+   "o": [
+    "I lived",
+    "did I live",
+    "do I live",
+    "I do live"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g05",
+   "part": "grammar",
+   "level": "B1",
+   "q": "You ___ wear a uniform at my school. It’s optional.",
+   "o": [
+    "don’t have to",
+    "mustn’t",
+    "shouldn’t",
+    "can’t"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g06",
+   "part": "grammar",
+   "level": "B1",
+   "q": "This is the book ___ I told you about.",
+   "o": [
+    "that",
+    "what",
+    "who",
+    "whose"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g07",
+   "part": "grammar",
+   "level": "B1",
+   "q": "I’m not used to ___ up so early.",
+   "o": [
+    "getting",
+    "get",
+    "got",
+    "be getting"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g08",
+   "part": "grammar",
+   "level": "B1",
+   "q": "If I ___ more time, I would learn another language.",
+   "o": [
+    "had",
+    "have",
+    "would have",
+    "will have"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g09",
+   "part": "grammar",
+   "level": "B2",
+   "q": "By the time we arrived, the lecture ___.",
+   "o": [
+    "had already started",
+    "already started",
+    "has already started",
+    "was already start"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g10",
+   "part": "grammar",
+   "level": "B2",
+   "q": "He ___ have left yet: his coat is still here.",
+   "o": [
+    "can’t",
+    "mustn’t",
+    "shouldn’t",
+    "needn’t"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g11",
+   "part": "grammar",
+   "level": "B2",
+   "q": "If she had studied harder, she ___ the exam.",
+   "o": [
+    "would have passed",
+    "would pass",
+    "will have passed",
+    "had passed"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g12",
+   "part": "grammar",
+   "level": "B2",
+   "q": "The new policy, ___ was introduced in 2020, has been a success.",
+   "o": [
+    "which",
+    "that",
+    "what",
+    "who"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g13",
+   "part": "grammar",
+   "level": "B2",
+   "q": "I’d rather you ___ tell anyone about this yet.",
+   "o": [
+    "didn’t",
+    "don’t",
+    "won’t",
+    "not"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g14",
+   "part": "grammar",
+   "level": "B2",
+   "q": "Despite ___ very tired, she finished the essay.",
+   "o": [
+    "being",
+    "she was",
+    "be",
+    "of being"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g15",
+   "part": "grammar",
+   "level": "B2",
+   "q": "The participants were made ___ the test twice.",
+   "o": [
+    "to repeat",
+    "repeat",
+    "repeating",
+    "repeated"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g16",
+   "part": "grammar",
+   "level": "B2",
+   "q": "It’s time we ___ a decision about the project.",
+   "o": [
+    "made",
+    "make",
+    "will make",
+    "have made"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g17",
+   "part": "grammar",
+   "level": "C1",
+   "q": "Not until the results were published ___ the scale of the problem.",
+   "o": [
+    "did people realise",
+    "people realised",
+    "people did realise",
+    "had realised people"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g18",
+   "part": "grammar",
+   "level": "C1",
+   "q": "___ the data been checked more carefully, the error would have been noticed.",
+   "o": [
+    "Had",
+    "If",
+    "Were",
+    "Should"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g19",
+   "part": "grammar",
+   "level": "C1",
+   "q": "The new drug is thought ___ fewer side effects than the old one.",
+   "o": [
+    "to have",
+    "having",
+    "that it has",
+    "to having"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g20",
+   "part": "grammar",
+   "level": "C1",
+   "q": "What surprised the researchers ___ how quickly attitudes changed.",
+   "o": [
+    "was",
+    "were",
+    "it was",
+    "being"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g21",
+   "part": "grammar",
+   "level": "C1",
+   "q": "The number of international students ___ risen sharply since 2015.",
+   "o": [
+    "has",
+    "have",
+    "are",
+    "were"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g22",
+   "part": "grammar",
+   "level": "C1",
+   "q": "___ in the 1990s, the theory is still widely used today.",
+   "o": [
+    "Developed",
+    "Developing",
+    "Having developed",
+    "To develop"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g23",
+   "part": "grammar",
+   "level": "C1",
+   "q": "I wanted to join the study group, but I wasn’t able ___.",
+   "o": [
+    "to",
+    "it",
+    "to it",
+    "so"
+   ],
+   "a": 0
+  },
+  {
+   "id": "g24",
+   "part": "grammar",
+   "level": "C1",
+   "q": "The findings, ___ most participants were unaware, were published a year later.",
+   "o": [
+    "of which",
+    "which",
+    "that",
+    "of that"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v25",
+   "part": "vocab",
+   "level": "B1",
+   "q": "Could you ___ me a favour?",
+   "o": [
+    "do",
+    "make",
+    "give",
+    "take"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v26",
+   "part": "vocab",
+   "level": "B1",
+   "q": "The price of fuel ___ sharply last year.",
+   "o": [
+    "rose",
+    "raised",
+    "grew up",
+    "lifted"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v27",
+   "part": "vocab",
+   "level": "B1",
+   "q": "She is very good ___ maths.",
+   "o": [
+    "at",
+    "in",
+    "on",
+    "for"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v28",
+   "part": "vocab",
+   "level": "B1",
+   "q": "The flight was cancelled ___ bad weather.",
+   "o": [
+    "due to",
+    "because",
+    "so",
+    "despite"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v29",
+   "part": "vocab",
+   "level": "B1",
+   "q": "Smoking can ___ serious health problems.",
+   "o": [
+    "cause",
+    "make",
+    "do",
+    "effect"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v30",
+   "part": "vocab",
+   "level": "B2",
+   "q": "The study ___ a clear link between sleep and memory.",
+   "o": [
+    "found",
+    "did",
+    "made",
+    "took"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v31",
+   "part": "vocab",
+   "level": "B2",
+   "q": "Governments must ___ the problem of plastic waste.",
+   "o": [
+    "tackle",
+    "solve up",
+    "fight with",
+    "handle out"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v32",
+   "part": "vocab",
+   "level": "B2",
+   "q": "Rising sea levels ___ a serious threat to coastal cities.",
+   "o": [
+    "pose",
+    "make",
+    "give",
+    "put"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v33",
+   "part": "vocab",
+   "level": "B2",
+   "q": "Prices went from $100 to $101: a ___ increase.",
+   "o": [
+    "slight",
+    "sharp",
+    "heavy",
+    "strong"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v34",
+   "part": "vocab",
+   "level": "B2",
+   "q": "The researchers ___ a survey of 500 students.",
+   "o": [
+    "conducted",
+    "made",
+    "did up",
+    "took"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v35",
+   "part": "vocab",
+   "level": "C1",
+   "q": "There is ___ evidence that smoking causes cancer.",
+   "o": [
+    "compelling",
+    "heavy",
+    "tall",
+    "deep"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v36",
+   "part": "vocab",
+   "level": "C1",
+   "q": "This theory is now ___ accepted by scientists.",
+   "o": [
+    "widely",
+    "highly",
+    "deeply",
+    "strongly"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v37",
+   "part": "vocab",
+   "level": "C1",
+   "q": "These results ___ into question earlier assumptions about learning.",
+   "o": [
+    "call",
+    "shed",
+    "raise",
+    "make"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v38",
+   "part": "vocab",
+   "level": "C1",
+   "q": "The difference between the two groups was ___ significant.",
+   "o": [
+    "statistically",
+    "deeply",
+    "bitterly",
+    "heavily"
+   ],
+   "a": 0
+  },
+  {
+   "id": "v39",
+   "part": "vocab",
+   "level": "C1",
+   "q": "The ___ of the new system took three years.",
+   "o": [
+    "implementation",
+    "implement",
+    "implementing",
+    "implemented"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rA1",
+   "part": "reading",
+   "level": "C1",
+   "passage": "A",
+   "gap": 1,
+   "o": [
+    "respects",
+    "sides",
+    "points",
+    "parts"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rA2",
+   "part": "reading",
+   "level": "B2",
+   "passage": "A",
+   "gap": 2,
+   "o": [
+    "whereas",
+    "however",
+    "despite",
+    "in contrast"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rA3",
+   "part": "reading",
+   "level": "B2",
+   "passage": "A",
+   "gap": 3,
+   "o": [
+    "likely",
+    "probable",
+    "possibly",
+    "possible"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rA4",
+   "part": "reading",
+   "level": "B1",
+   "passage": "A",
+   "gap": 4,
+   "o": [
+    "for",
+    "of",
+    "by",
+    "from"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rA5",
+   "part": "reading",
+   "level": "C1",
+   "passage": "A",
+   "gap": 5,
+   "o": [
+    "to those",
+    "to that",
+    "with those",
+    "as those"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rA6",
+   "part": "reading",
+   "level": "B1",
+   "passage": "A",
+   "gap": 6,
+   "o": [
+    "share",
+    "both have",
+    "divide",
+    "common"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rB1",
+   "part": "reading",
+   "level": "B2",
+   "passage": "B",
+   "gap": 1,
+   "o": [
+    "regarded as",
+    "thought",
+    "seen like",
+    "believed as"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rB2",
+   "part": "reading",
+   "level": "B1",
+   "passage": "B",
+   "gap": 2,
+   "o": [
+    "get",
+    "make",
+    "do",
+    "take"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rB3",
+   "part": "reading",
+   "level": "B1",
+   "passage": "B",
+   "gap": 3,
+   "o": [
+    "stay",
+    "stand",
+    "keep",
+    "sit"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rB4",
+   "part": "reading",
+   "level": "C1",
+   "passage": "B",
+   "gap": 4,
+   "o": [
+    "said",
+    "told",
+    "spoken",
+    "talked"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rB5",
+   "part": "reading",
+   "level": "B2",
+   "passage": "B",
+   "gap": 5,
+   "o": [
+    "Despite",
+    "Although",
+    "However",
+    "Even"
+   ],
+   "a": 0
+  },
+  {
+   "id": "rB6",
+   "part": "reading",
+   "level": "C1",
+   "passage": "B",
+   "gap": 6,
+   "o": [
+    "Were",
+    "If",
+    "Had",
+    "Should"
+   ],
+   "a": 0
+  }
+ ]
+}
