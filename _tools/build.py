@@ -317,6 +317,29 @@ APPS = [
  ("vocab","Vocabulary","Register Swapper","Students turn informal language into academic language (“a lot of” → “a considerable number of”) and learn why each choice fits the academic register.",["Academic register","Word choice"]),
 ]
 
+# Order of app cards (home page and /apps/): PINNED first, always, in this order;
+# then every other live app, newest first by LAUNCHED date (add the date when an app goes live);
+# then apps still in development, in APPS order.
+PINNED = ["APA Trainer", "APA Reference Guide", "Grammar Hub", "Vocabulary Hub"]
+LAUNCHED = {
+ "Level Check": "2026-11-23", "Dictogloss": "2026-11-22", "Grammar Hub": "2026-11-22", "Vocabulary Hub": "2026-11-22",
+ "APA Reference Guide": "2026-11-21", "Feedback-to-Mastery Coach": "2026-11-18", "APA Trainer": "2026-11-17",
+ "Nominalisation and Hedging Trainer": "2026-11-15T10", "Grammar Self-Correction Trainer": "2026-11-15T04", "Notetaking Trainer": "2026-11-15T03",
+}
+def _launched(title):
+    if title in LAUNCHED: return LAUNCHED[title]
+    try:  # fallback: first commit that added the app's folder
+        import subprocess
+        out = subprocess.run(["git", "log", "--diff-filter=A", "--format=%aI", "--", LIVE[title]], capture_output=True, text=True, cwd=os.path.dirname(os.path.abspath(__file__)) + "/..").stdout.split()
+        return out[-1] if out else "0000"
+    except Exception:
+        return "0000"
+def ordered_apps():
+    pinned = [a for t in PINNED for a in APPS if a[2] == t and t in LIVE]
+    rest = sorted([a for a in APPS if a[2] in LIVE and a[2] not in PINNED], key=lambda a: _launched(a[2]), reverse=True)
+    dev = [a for a in APPS if a[2] not in LIVE]
+    return pinned + rest + dev
+
 
 # ------------------------------------------------------------------ IELTS RESULTS (49 students; certificates in assets/img/results/result-NN.webp)
 # (n, first name, module A/G/?, "YYYY-MM", L, R, W, S, overall)  n matches the image number.
@@ -421,7 +444,7 @@ def coach_band(L, full=False):
 def home(L):
     q = "".join(quote(L, t, n, p, d=i*.08) for i, (t, n, p) in enumerate(T_HOME))
     marq = "".join(img(L, f, "Dave Nab with students and colleagues", w, h, lazy=False) for f, w, h in MOMENTS)
-    feat = "".join(f'''<article class="card feature {c} reveal" style="--d:{i*.06:.2f}s" data-cat="{c}"><span class="f-icon" aria-hidden="true">{FEATURE[t][0]}</span><div class="f-main"><div class="top"><span class="tag">{s}</span><span class="status live">Live</span></div><h3>{t}</h3><p>{FEATURE[t][1]}</p></div><div class="go"><a class="btn-card stretch" href="{L(LIVE[t])}">{FEATURE[t][2]} {ARR}</a></div></article>''' for i,(c,s,t,d,fo) in enumerate(x for x in APPS if x[2] in FEATURE and x[2] in LIVE))
+    feat = "".join(f'''<article class="card feature {c} reveal" style="--d:{i*.06:.2f}s" data-cat="{c}"><span class="f-icon" aria-hidden="true">{FEATURE[t][0]}</span><div class="f-main"><div class="top"><span class="tag">{s}</span><span class="status live">Live</span></div><h3>{t}</h3><p>{FEATURE[t][1]}</p></div><div class="go"><a class="btn-card stretch" href="{L(LIVE[t])}">{FEATURE[t][2]} {ARR}</a></div></article>''' for i,(c,s,t,d,fo) in enumerate(x for x in ordered_apps() if x[2] in FEATURE and x[2] in LIVE))
     apps = ", ".join(t for c,s_,t,d,fo in APPS if t not in LIVE)
     soon = [("res-nominalisation.webp","Nominalisation"),("res-dependent-clauses.webp","Dependent clauses"),("res-paraphrasing.webp","Paraphrasing")]
     soonh = "".join(f'<a class="res reveal" style="--d:{i*.06:.2f}s" href="{L("resources/")}"><div class="thumb">{img(L,f,t+" lesson slides",600,600)}</div><div><h3>{t}</h3><div class="meta">Coming soon</div></div></a>' for i,(f,t) in enumerate(soon))
@@ -938,7 +961,7 @@ page("resources/hedging-in-academic-writing/index.html", "Hedging in Academic Wr
 
 # ------------------------------------------------------------------ APPS
 def apps(L):
-    cards = "".join(f'''<article class="card {c} reveal" style="--d:{(i%3)*.06:.2f}s" data-cat="{c}"><div class="top"><span class="tag">{s}</span>{'<span class="status live">Live</span>' if t in LIVE else '<span class="status">In development</span>'}</div><h3>{t}</h3><p>{d}</p><div class="focus">{''.join(f'<span>{x}</span>' for x in fo)}</div><div class="go">{f'<a class="btn-card stretch" href="{L(LIVE[t])}">Try it {ARR}</a>' if t in LIVE else '<span class="soon">Coming soon</span>'}</div></article>''' for i,(c,s,t,d,fo) in enumerate(APPS))
+    cards = "".join(f'''<article class="card {c} reveal" style="--d:{(i%3)*.06:.2f}s" data-cat="{c}"><div class="top"><span class="tag">{s}</span>{'<span class="status live">Live</span>' if t in LIVE else '<span class="status">In development</span>'}</div><h3>{t}</h3><p>{d}</p><div class="focus">{''.join(f'<span>{x}</span>' for x in fo)}</div><div class="go">{f'<a class="btn-card stretch" href="{L(LIVE[t])}">Try it {ARR}</a>' if t in LIVE else '<span class="soon">Coming soon</span>'}</div></article>''' for i,(c,s,t,d,fo) in enumerate(ordered_apps()))
     return f'''
 <header class="page-hero"><div class="wrap">
   {crumb(L, "Apps")}
