@@ -7,35 +7,668 @@
   },
   "searchHint": "Search, e.g. passive, although, much",
   "levels": {
-    "A2": { "name": "Elementary", "cando": "Everyday topics: describing, comparing and talking about amounts.", "about": "You can talk about familiar topics in simple sentences." },
-    "B1": { "name": "Intermediate", "cando": "Experiences, processes and simple opinions.", "about": "You can describe experiences and processes and give simple reasons and opinions." },
-    "B2": { "name": "Upper-intermediate", "cando": "Connecting ideas clearly for study and work.", "about": "You can write clear, connected texts and explain a viewpoint. A typical level for starting university." },
-    "C1": { "name": "Advanced", "cando": "Concise, formal and emphatic academic writing.", "about": "You can write well-structured, detailed academic texts and use language flexibly." }
+    "A2": {
+      "name": "Elementary",
+      "cando": "Everyday topics: describing, comparing and talking about amounts.",
+      "about": "You can talk about familiar topics in simple sentences."
+    },
+    "B1": {
+      "name": "Intermediate",
+      "cando": "Experiences, processes and simple opinions.",
+      "about": "You can describe experiences and processes and give simple reasons and opinions."
+    },
+    "B2": {
+      "name": "Upper-intermediate",
+      "cando": "Connecting ideas clearly for study and work.",
+      "about": "You can write clear, connected texts and explain a viewpoint. A typical level for starting university."
+    },
+    "C1": {
+      "name": "Advanced",
+      "cando": "Concise, formal and emphatic academic writing.",
+      "about": "You can write well-structured, detailed academic texts and use language flexibly."
+    }
   },
   "soon": {
-    "A2": ["Articles: a, an, the", "Past simple: regular and irregular verbs", "Prepositions of time and place"],
-    "B1": ["First and second conditionals", "Modal verbs: must, have to, should", "Gerund or infinitive?"],
-    "B2": ["Third and mixed conditionals", "Modals of deduction: must have, might have", "Reported speech"],
-    "C1": ["Cleft sentences: What we found was…", "Hedging", "Nominalisation"]
+    "A2": [
+      "Past simple: regular and irregular verbs",
+      "Prepositions of time and place"
+    ],
+    "B1": [
+      "First and second conditionals",
+      "Modal verbs: must, have to, should",
+      "Gerund or infinitive?"
+    ],
+    "B2": [
+      "Third and mixed conditionals",
+      "Modals of deduction: must have, might have",
+      "Reported speech"
+    ],
+    "C1": [
+      "Cleft sentences: What we found was…",
+      "Hedging",
+      "Nominalisation"
+    ]
   },
   "related": [
-    { "t": "Vocabulary Hub", "d": "Academic words and collocations, A2–C1", "u": "../vocabulary-hub/" },
-    { "t": "Grammar Self-Correction Trainer", "d": "Find and fix errors in real student writing", "u": "../grammar-self-correction/" },
-    { "t": "Nominalisation and Hedging Trainer", "d": "Short practice for a more academic style", "u": "../nominalisation-hedging-trainer/" }
+    {
+      "t": "Vocabulary Hub",
+      "d": "Academic words and collocations, A2–C1",
+      "u": "../vocabulary-hub/"
+    },
+    {
+      "t": "Grammar Self-Correction Trainer",
+      "d": "Find and fix errors in real student writing",
+      "u": "../grammar-self-correction/"
+    },
+    {
+      "t": "Nominalisation and Hedging Trainer",
+      "d": "Short practice for a more academic style",
+      "u": "../nominalisation-hedging-trainer/"
+    }
   ],
   "units": [
     {
-      "id": "comparatives", "level": "A2", "minutes": 10, "verified": false,
+      "id": "for-since-during",
+      "level": "B1",
+      "quick": true,
+      "minutes": 4,
+      "verified": false,
+      "title": "For, since or during?",
+      "cando": "Talk about time periods correctly.",
+      "tags": [
+        "time",
+        "prepositions",
+        "present perfect",
+        "quick fix"
+      ],
+      "sample": [
+        "<b>for</b> three years",
+        "<b>since</b> 2020",
+        "<b>during</b> the lecture"
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "I have lived here ___ 2021.",
+          "o": [
+            "since",
+            "for",
+            "during"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "She studied in Japan ___ two years.",
+          "o": [
+            "for",
+            "since",
+            "during"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "My phone rang ___ the lecture.",
+          "o": [
+            "during",
+            "for",
+            "since"
+          ],
+          "a": 0
+        }
+      ],
+      "notice": {
+        "title": "A student’s message",
+        "instr": "Tap every time word: for, since or during.",
+        "text": "I have studied English [[for]] six years, and I have lived in Perth [[since]] March. [[During]] my first month, I felt homesick. I have not visited my family [[since]] then, but we talk [[for]] an hour every Sunday.",
+        "after": "Look at what comes after each word: a length of time, a starting point, or an event?"
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "<b>for</b> six years · <b>for</b> an hour",
+          "q": "What comes after <b>for</b>?",
+          "o": [
+            "a length of time",
+            "a starting point",
+            "an event"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Six years, an hour: how long?",
+          "insight": "<b>for</b> + a length of time: for six years, for an hour, for a long time."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>since</b> March · <b>since</b> then · <b>During</b> my first month",
+          "q": "What comes after <b>since</b>, and what comes after <b>during</b>?",
+          "o": [
+            "since + a starting point; during + an event or period (when it happened)",
+            "since + a length of time; during + a starting point",
+            "both + a length of time"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "March is a point in time.",
+          "insight": "<b>since</b> + a starting point (since 2021, since Monday), usually with the present perfect. <b>during</b> + a noun for an event or period: during the lecture, during the summer."
+        }
+      ],
+      "rule": {
+        "title": "For, since, during",
+        "points": [
+          "<b>for</b> + length of time: for three weeks, for ages.",
+          "<b>since</b> + starting point: since 2020, since I arrived (usually with have/has + past participle).",
+          "<b>during</b> + event or period, to say when: during the exam, during my first year."
+        ],
+        "ex": [
+          "I have worked here <b>for</b> two years, <b>since</b> 2024. I learned a lot <b>during</b> my first month."
+        ],
+        "watch": "Don’t use <i>during</i> for how long: <s>during three hours</s> → for three hours."
+      },
+      "practice": [
+        {
+          "t": "mcq",
+          "q": "The library has been closed ___ Monday.",
+          "o": [
+            "since",
+            "for",
+            "during"
+          ],
+          "a": 0,
+          "why": "Monday = starting point."
+        },
+        {
+          "t": "mcq",
+          "q": "Please don’t talk ___ the exam.",
+          "o": [
+            "during",
+            "for",
+            "since"
+          ],
+          "a": 0,
+          "why": "The exam is an event."
+        },
+        {
+          "t": "fix",
+          "s": "We waited {during} two hours for the bus.",
+          "c": "for",
+          "why": "A length of time → for."
+        },
+        {
+          "t": "gap",
+          "q": "I haven’t seen him ___ last semester.",
+          "a": [
+            "since"
+          ],
+          "why": "Last semester = a starting point → since.",
+          "hint": "Is it a length of time or a starting point?"
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "They have been married ___ ten years.",
+          "o": [
+            "for",
+            "since",
+            "during"
+          ],
+          "a": 0,
+          "why": "Ten years = length of time."
+        },
+        {
+          "t": "mcq",
+          "q": "I fell asleep ___ the film.",
+          "o": [
+            "during",
+            "for",
+            "since"
+          ],
+          "a": 0,
+          "why": "The film = an event."
+        },
+        {
+          "t": "mcq",
+          "q": "He has worked here ___ he finished university.",
+          "o": [
+            "since",
+            "for",
+            "during"
+          ],
+          "a": 0,
+          "why": "Starting point (a clause) → since."
+        }
+      ],
+      "produce": {
+        "task": "Write 2–3 sentences about your studies or your life now. Use for, since and during once each.",
+        "target": "for, since and during",
+        "checklist": [
+          "I used <b>for</b> with a length of time.",
+          "I used <b>since</b> with a starting point.",
+          "I used <b>during</b> with an event or period."
+        ],
+        "model": "I have studied at this university since February. I have lived with my cousin for three months. During my first week, I got lost on campus every day."
+      }
+    },
+    {
+      "id": "fewer-less",
+      "level": "B1",
+      "quick": true,
+      "minutes": 4,
+      "verified": false,
+      "title": "Fewer or less? Number or amount?",
+      "cando": "Talk about quantities correctly in academic writing.",
+      "tags": [
+        "quantifiers",
+        "countable",
+        "uncountable",
+        "quick fix",
+        "academic writing"
+      ],
+      "sample": [
+        "<b>fewer</b> students",
+        "<b>less</b> time",
+        "the <b>number</b> of cars"
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "There are ___ students in the class this year.",
+          "o": [
+            "fewer",
+            "less"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "We have ___ time than we thought.",
+          "o": [
+            "less",
+            "fewer"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The ___ of cars in the city has increased.",
+          "o": [
+            "number",
+            "amount"
+          ],
+          "a": 0,
+          "keep": true
+        }
+      ],
+      "notice": {
+        "title": "From a report on transport",
+        "instr": "Tap the words that talk about quantity.",
+        "text": "The [[number]] of people who drive to work has fallen. [[Fewer]] cars are on the roads, so there is [[less]] traffic in the morning. The [[amount]] of money spent on fuel has also dropped, and [[fewer]] accidents have been reported.",
+        "after": "Look at the nouns after each word: can you count them?"
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "<b>fewer</b> cars · <b>fewer</b> accidents · <b>less</b> traffic",
+          "q": "Which nouns go with <b>fewer</b>?",
+          "o": [
+            "plural countable nouns (cars, accidents)",
+            "uncountable nouns (traffic)"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Can you count cars?",
+          "insight": "<b>fewer</b> + plural countable nouns; <b>less</b> + uncountable nouns."
+        },
+        {
+          "t": "mcq",
+          "ctx": "the <b>number</b> of people · the <b>amount</b> of money",
+          "q": "Which word goes with countable nouns?",
+          "o": [
+            "number",
+            "amount"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "People can be counted.",
+          "insight": "<b>the number of</b> + plural countable noun; <b>the amount of</b> + uncountable noun."
+        }
+      ],
+      "rule": {
+        "title": "Fewer, less, number, amount",
+        "points": [
+          "Countable: <b>fewer</b> students, <b>the number of</b> students.",
+          "Uncountable: <b>less</b> time, <b>the amount of</b> time.",
+          "<b>The number of</b> + plural noun takes a singular verb: <i>The number of students <b>has</b> increased.</i>"
+        ],
+        "watch": "<s>less students</s> → fewer students; <s>the amount of people</s> → the number of people."
+      },
+      "practice": [
+        {
+          "t": "mcq",
+          "q": "___ people use cash these days.",
+          "o": [
+            "Fewer",
+            "Less"
+          ],
+          "a": 0,
+          "why": "People are countable.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "The {amount} of students who passed has increased.",
+          "c": "number",
+          "why": "Students are countable → the number of."
+        },
+        {
+          "t": "gap",
+          "q": "Electric cars produce ___ pollution.",
+          "a": [
+            "less"
+          ],
+          "why": "Pollution is uncountable → less.",
+          "hint": "Can you count pollution?"
+        },
+        {
+          "t": "mcq",
+          "q": "The number of complaints ___ fallen.",
+          "o": [
+            "has",
+            "have"
+          ],
+          "a": 0,
+          "why": "The number of + plural noun → singular verb.",
+          "keep": true
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "This method uses ___ energy.",
+          "o": [
+            "less",
+            "fewer"
+          ],
+          "a": 0,
+          "why": "Energy is uncountable.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "There were ___ mistakes in her second essay.",
+          "o": [
+            "fewer",
+            "less"
+          ],
+          "a": 0,
+          "why": "Mistakes are countable.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The ___ of rain this year was low.",
+          "o": [
+            "amount",
+            "number"
+          ],
+          "a": 0,
+          "why": "Rain is uncountable → amount.",
+          "keep": true
+        }
+      ],
+      "produce": {
+        "task": "Compare your city now with ten years ago in 2–3 sentences. Use fewer, less, the number of and the amount of.",
+        "target": "fewer/less and the number of/the amount of",
+        "checklist": [
+          "<b>fewer</b> / <b>the number of</b> + plural countable nouns.",
+          "<b>less</b> / <b>the amount of</b> + uncountable nouns.",
+          "<i>The number of …</i> has a singular verb."
+        ],
+        "model": "The number of cafés in my city has doubled, but there is less green space. Fewer people drive to the centre, and the amount of traffic has fallen."
+      }
+    },
+    {
+      "id": "its-its",
+      "level": "B1",
+      "quick": true,
+      "minutes": 4,
+      "verified": false,
+      "title": "Its or it’s?",
+      "cando": "Avoid one of the most common writing errors.",
+      "tags": [
+        "apostrophe",
+        "possessive",
+        "quick fix",
+        "writing"
+      ],
+      "sample": [
+        "<b>its</b> results",
+        "<b>it’s</b> clear"
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "The company changed ___ name.",
+          "o": [
+            "its",
+            "it’s"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "___ important to check your sources.",
+          "o": [
+            "It’s",
+            "Its"
+          ],
+          "a": 0,
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The study has ___ limitations.",
+          "o": [
+            "its",
+            "it’s"
+          ],
+          "a": 0,
+          "keep": true
+        }
+      ],
+      "notice": {
+        "title": "From a book review",
+        "instr": "Tap every its and it’s.",
+        "text": "[[It’s]] a useful book for first-year students. [[Its]] main strength is [[its]] clear examples. However, [[it’s]] quite long, and [[its]] last chapter feels rushed.",
+        "after": "One form has an apostrophe and one doesn’t. What’s the difference?"
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "<b>It’s</b> a useful book. · <b>it’s</b> quite long",
+          "q": "What does <b>it’s</b> mean?",
+          "o": [
+            "it is (or it has)",
+            "belonging to it"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Try replacing it with “it is”.",
+          "insight": "<b>it’s</b> = it is / it has. The apostrophe shows a missing letter."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>Its</b> main strength · <b>its</b> last chapter",
+          "q": "What does <b>its</b> show?",
+          "o": [
+            "belonging to it (like his or her)",
+            "it is"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Its main strength = the book’s main strength.",
+          "insight": "<b>its</b> = belonging to it, like <i>his</i> and <i>her</i>. No apostrophe."
+        }
+      ],
+      "rule": {
+        "title": "Its or it’s?",
+        "points": [
+          "<b>it’s</b> = it is / it has: <i>It’s clear. It’s been a long day.</i>",
+          "<b>its</b> = belonging to it: <i>The city and its people.</i>",
+          "Test: if you can say “it is” or “it has”, write <b>it’s</b>."
+        ],
+        "watch": "In formal academic writing, avoid contractions: write <i>it is</i>, not <i>it’s</i>. But <i>its</i> (possessive) is always fine."
+      },
+      "practice": [
+        {
+          "t": "fix",
+          "s": "The university updated {it’s} website.",
+          "c": "its",
+          "why": "Belonging to the university → its."
+        },
+        {
+          "t": "mcq",
+          "q": "___ been a difficult year.",
+          "o": [
+            "It’s",
+            "Its"
+          ],
+          "a": 0,
+          "why": "It has been → It’s.",
+          "keep": true
+        },
+        {
+          "t": "gap",
+          "q": "Every plant needs ___ own space.",
+          "a": [
+            "its"
+          ],
+          "why": "Belonging to the plant → its.",
+          "hint": "Can you say “it is” here?"
+        },
+        {
+          "t": "fix",
+          "s": "{Its} clear that more research is needed.",
+          "c": "It is",
+          "why": "It is clear → it’s, or better, “It is” in formal writing."
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "The government defended ___ decision.",
+          "o": [
+            "its",
+            "it’s"
+          ],
+          "a": 0,
+          "why": "Belonging to the government → its.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "I think ___ going to rain.",
+          "o": [
+            "it’s",
+            "its"
+          ],
+          "a": 0,
+          "why": "It is going to rain → it’s.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The theory has ___ critics.",
+          "o": [
+            "its",
+            "it’s"
+          ],
+          "a": 0,
+          "why": "Belonging to the theory → its.",
+          "keep": true
+        }
+      ],
+      "produce": {
+        "task": "Write 2–3 sentences about a city, a company or an app. Use its at least twice and it is once.",
+        "target": "its (possessive) and it is / it’s",
+        "checklist": [
+          "<b>its</b> (no apostrophe) = belonging to it.",
+          "<b>it’s</b> only means it is / it has.",
+          "In formal writing I wrote <i>it is</i> in full."
+        ],
+        "model": "Melbourne is famous for its coffee and its laneways. It is also known for its changeable weather."
+      }
+    },
+    {
+      "id": "comparatives",
+      "level": "A2",
+      "minutes": 10,
+      "verified": false,
       "title": "Comparatives and superlatives",
       "cando": "Compare two things, or one thing with a whole group.",
-      "tags": ["comparing", "adjectives", "than", "best", "-er", "-est"],
-      "sample": ["<b>cheaper</b> than", "<b>the most</b> useful"],
+      "tags": [
+        "comparing",
+        "adjectives",
+        "than",
+        "best",
+        "-er",
+        "-est"
+      ],
+      "sample": [
+        "<b>cheaper</b> than",
+        "<b>the most</b> useful"
+      ],
       "pre": [
-        { "t": "mcq", "q": "Melbourne is ___ than Adelaide.", "o": ["big", "bigger", "more big", "biggest"], "a": 1 },
-        { "t": "mcq", "q": "This is the ___ book I have ever read.", "o": ["more interesting", "most interesting", "interestingest", "interesting"], "a": 1 },
-        { "t": "gap", "q": "The library is ___ (quiet) than the café.", "a": ["quieter"] },
-        { "t": "fix", "s": "This exam was {difficulter} than the last one.", "c": "more difficult" },
-        { "t": "mcq", "q": "My essay is ___ than yours.", "o": ["good", "better", "more good", "best"], "a": 1 }
+        {
+          "t": "mcq",
+          "q": "Melbourne is ___ than Adelaide.",
+          "o": [
+            "big",
+            "bigger",
+            "more big",
+            "biggest"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "This is the ___ book I have ever read.",
+          "o": [
+            "more interesting",
+            "most interesting",
+            "interestingest",
+            "interesting"
+          ],
+          "a": 1
+        },
+        {
+          "t": "gap",
+          "q": "The library is ___ (quiet) than the café.",
+          "a": [
+            "quieter"
+          ]
+        },
+        {
+          "t": "fix",
+          "s": "This exam was {difficulter} than the last one.",
+          "c": "more difficult"
+        },
+        {
+          "t": "mcq",
+          "q": "My essay is ___ than yours.",
+          "o": [
+            "good",
+            "better",
+            "more good",
+            "best"
+          ],
+          "a": 1
+        }
       ],
       "notice": {
         "title": "Where is the best place to study?",
@@ -44,9 +677,48 @@
         "after": "Some words end in <b>-er</b> or <b>-est</b>, and some use <b>more</b> or <b>most</b>. Why? You’ll work it out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "big<b>ger</b> · cheap<b>er</b> · nois<b>ier</b> · quiet<b>er</b>", "q": "These are short adjectives (big, cheap, noisy, quiet). How do we compare two things with them?", "o": ["add -er (+ than)", "put more in front", "add -est"], "a": 0, "keep": true, "hint": "Look at the endings.", "insight": "Short adjectives (one syllable, or two syllables ending in -y): add <b>-er</b> + <b>than</b>. noisy → nois<b>ier</b> (y → i); big → big<b>ger</b> (double the last letter)." },
-        { "t": "mcq", "ctx": "<b>more</b> comfortable · the <b>most</b> comfortable", "q": "Comfortable is a long adjective. What do we use with long adjectives?", "o": ["more / the most", "-er / -est", "much / many"], "a": 0, "keep": true, "hint": "Look at the words in front of comfortable.", "insight": "Long adjectives: <b>more</b> … than / <b>the most</b> …" },
-        { "t": "mcq", "ctx": "the <b>best</b> place · the <b>quietest</b> room", "q": "We use the best and the quietest to compare…", "o": ["two things", "one thing with all the others in a group", "things that are the same"], "a": 1, "keep": true, "hint": "The quietest room in… what?", "insight": "Superlatives compare one thing with the whole group: <b>the</b> + -est / <b>the most</b>. Irregular: good → better → the best; bad → worse → the worst." }
+        {
+          "t": "mcq",
+          "ctx": "big<b>ger</b> · cheap<b>er</b> · nois<b>ier</b> · quiet<b>er</b>",
+          "q": "These are short adjectives (big, cheap, noisy, quiet). How do we compare two things with them?",
+          "o": [
+            "add -er (+ than)",
+            "put more in front",
+            "add -est"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at the endings.",
+          "insight": "Short adjectives (one syllable, or two syllables ending in -y): add <b>-er</b> + <b>than</b>. noisy → nois<b>ier</b> (y → i); big → big<b>ger</b> (double the last letter)."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>more</b> comfortable · the <b>most</b> comfortable",
+          "q": "Comfortable is a long adjective. What do we use with long adjectives?",
+          "o": [
+            "more / the most",
+            "-er / -est",
+            "much / many"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at the words in front of comfortable.",
+          "insight": "Long adjectives: <b>more</b> … than / <b>the most</b> …"
+        },
+        {
+          "t": "mcq",
+          "ctx": "the <b>best</b> place · the <b>quietest</b> room",
+          "q": "We use the best and the quietest to compare…",
+          "o": [
+            "two things",
+            "one thing with all the others in a group",
+            "things that are the same"
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "The quietest room in… what?",
+          "insight": "Superlatives compare one thing with the whole group: <b>the</b> + -est / <b>the most</b>. Irregular: good → better → the best; bad → worse → the worst."
+        }
       ],
       "rule": {
         "title": "Comparing things",
@@ -56,44 +728,244 @@
           "Long adjectives: <b>more … than</b> / <b>the most …</b> (expensive → more expensive → the most expensive).",
           "Irregular: good → better → the best; bad → worse → the worst; far → further → the furthest."
         ],
-        "ex": ["The café is <b>cheaper than</b> the library.", "It is <b>the quietest</b> room in the building."],
+        "ex": [
+          "The café is <b>cheaper than</b> the library.",
+          "It is <b>the quietest</b> room in the building."
+        ],
         "watch": "Never use <i>more</i> and <i>-er</i> together: <s>more cheaper</s> → cheaper."
       },
       "practice": [
-        { "t": "gap", "q": "Living in the city is ___ (expensive) than living in the country.", "a": ["more expensive"], "hint": "Expensive is a long adjective.", "why": "Long adjective: more expensive than." },
-        { "t": "mcq", "q": "Today is ___ day of the year so far.", "o": ["the hottest", "the hotest", "hotter", "the most hot"], "a": 0, "hint": "Superlative. And look at the spelling.", "why": "hot → hotter → the hottest: double the final t." },
-        { "t": "fix", "s": "This is the {goodest} restaurant near campus.", "c": "best", "hint": "Good is irregular.", "why": "good → better → the best." },
-        { "t": "sort", "instr": "-er or more? Sort the adjectives.", "bins": ["-er / -ier", "more …"], "chips": [["cheap", 0], ["busy", 0, "busy → busier"], ["important", 1], ["difficult", 1], ["easy", 0, "easy → easier"], ["useful", 1], ["large", 0, "large → larger"], ["expensive", 1]] },
-        { "t": "mcq", "q": "My listening score was ___ than my reading score.", "o": ["worse", "badder", "more bad", "worst"], "a": 0, "hint": "Bad is irregular.", "why": "bad → worse → the worst." },
-        { "t": "order", "a": "Speaking is much harder than writing.", "hint": "Start with Speaking… Much goes before the comparative.", "why": "Use <b>much</b> before a comparative to make it stronger: much harder." },
-        { "t": "gap", "q": "Writing Task 2 is ___ (difficult) part of the exam for many students.", "a": ["the most difficult"], "hint": "Compare one part with all the other parts.", "why": "Superlative of a long adjective: the most difficult." }
+        {
+          "t": "gap",
+          "q": "Living in the city is ___ (expensive) than living in the country.",
+          "a": [
+            "more expensive"
+          ],
+          "hint": "Expensive is a long adjective.",
+          "why": "Long adjective: more expensive than."
+        },
+        {
+          "t": "mcq",
+          "q": "Today is ___ day of the year so far.",
+          "o": [
+            "the hottest",
+            "the hotest",
+            "hotter",
+            "the most hot"
+          ],
+          "a": 0,
+          "hint": "Superlative. And look at the spelling.",
+          "why": "hot → hotter → the hottest: double the final t."
+        },
+        {
+          "t": "fix",
+          "s": "This is the {goodest} restaurant near campus.",
+          "c": "best",
+          "hint": "Good is irregular.",
+          "why": "good → better → the best."
+        },
+        {
+          "t": "sort",
+          "instr": "-er or more? Sort the adjectives.",
+          "bins": [
+            "-er / -ier",
+            "more …"
+          ],
+          "chips": [
+            [
+              "cheap",
+              0
+            ],
+            [
+              "busy",
+              0,
+              "busy → busier"
+            ],
+            [
+              "important",
+              1
+            ],
+            [
+              "difficult",
+              1
+            ],
+            [
+              "easy",
+              0,
+              "easy → easier"
+            ],
+            [
+              "useful",
+              1
+            ],
+            [
+              "large",
+              0,
+              "large → larger"
+            ],
+            [
+              "expensive",
+              1
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "My listening score was ___ than my reading score.",
+          "o": [
+            "worse",
+            "badder",
+            "more bad",
+            "worst"
+          ],
+          "a": 0,
+          "hint": "Bad is irregular.",
+          "why": "bad → worse → the worst."
+        },
+        {
+          "t": "order",
+          "a": "Speaking is much harder than writing.",
+          "hint": "Start with Speaking… Much goes before the comparative.",
+          "why": "Use <b>much</b> before a comparative to make it stronger: much harder."
+        },
+        {
+          "t": "gap",
+          "q": "Writing Task 2 is ___ (difficult) part of the exam for many students.",
+          "a": [
+            "the most difficult"
+          ],
+          "hint": "Compare one part with all the other parts.",
+          "why": "Superlative of a long adjective: the most difficult."
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "Brisbane is ___ than Hobart.", "o": ["warm", "warmer", "more warm", "warmest"], "a": 1, "why": "Warm is short: add -er + than." },
-        { "t": "mcq", "q": "This is the ___ topic in the course.", "o": ["more useful", "most useful", "usefullest", "useful"], "a": 1, "why": "Useful is a long adjective: the most useful." },
-        { "t": "gap", "q": "Group work is ___ (easy) than presenting alone.", "a": ["easier"], "why": "Easy ends in -y: y → i + -er = easier." },
-        { "t": "fix", "s": "Speaking is {badder} than writing for me.", "c": "worse", "why": "Bad is irregular: bad → worse → the worst." },
-        { "t": "mcq", "q": "That was the ___ lecture of the week.", "o": ["better", "best", "good", "most good"], "a": 1, "why": "Superlative of good: the best." }
+        {
+          "t": "mcq",
+          "q": "Brisbane is ___ than Hobart.",
+          "o": [
+            "warm",
+            "warmer",
+            "more warm",
+            "warmest"
+          ],
+          "a": 1,
+          "why": "Warm is short: add -er + than."
+        },
+        {
+          "t": "mcq",
+          "q": "This is the ___ topic in the course.",
+          "o": [
+            "more useful",
+            "most useful",
+            "usefullest",
+            "useful"
+          ],
+          "a": 1,
+          "why": "Useful is a long adjective: the most useful."
+        },
+        {
+          "t": "gap",
+          "q": "Group work is ___ (easy) than presenting alone.",
+          "a": [
+            "easier"
+          ],
+          "why": "Easy ends in -y: y → i + -er = easier."
+        },
+        {
+          "t": "fix",
+          "s": "Speaking is {badder} than writing for me.",
+          "c": "worse",
+          "why": "Bad is irregular: bad → worse → the worst."
+        },
+        {
+          "t": "mcq",
+          "q": "That was the ___ lecture of the week.",
+          "o": [
+            "better",
+            "best",
+            "good",
+            "most good"
+          ],
+          "a": 1,
+          "why": "Superlative of good: the best."
+        }
       ],
       "produce": {
         "task": "Compare two places where you can study (for example, the library and your home). Write 3–4 sentences. Use at least two comparatives and one superlative.",
         "target": "comparative and superlative adjectives",
-        "checklist": ["I used <b>than</b> after each comparative.", "I didn’t use <i>more</i> and <i>-er</i> together.", "I used <b>the</b> before my superlative."],
+        "checklist": [
+          "I used <b>than</b> after each comparative.",
+          "I didn’t use <i>more</i> and <i>-er</i> together.",
+          "I used <b>the</b> before my superlative."
+        ],
         "model": "The library is quieter than my home, but my home is more comfortable. The library is also further from my house, so it takes longer to get there. For me, the best place to study is the library on a weekday morning, because it is the quietest time."
       }
     },
     {
-      "id": "much-many", "level": "A2", "minutes": 10, "verified": false,
+      "id": "much-many",
+      "level": "A2",
+      "minutes": 10,
+      "verified": false,
       "title": "Much, many, a few, a little",
       "cando": "Talk about amounts with countable and uncountable nouns.",
-      "tags": ["quantifiers", "countable", "uncountable", "a lot of", "some", "advice", "information"],
-      "sample": ["<b>many</b> students", "<b>much</b> time", "<b>a little</b> money"],
+      "tags": [
+        "quantifiers",
+        "countable",
+        "uncountable",
+        "a lot of",
+        "some",
+        "advice",
+        "information"
+      ],
+      "sample": [
+        "<b>many</b> students",
+        "<b>much</b> time",
+        "<b>a little</b> money"
+      ],
       "pre": [
-        { "t": "mcq", "q": "How ___ homework do you have tonight?", "o": ["much", "many", "a few"], "a": 0 },
-        { "t": "mcq", "q": "There aren’t ___ students in the library today.", "o": ["much", "many", "a little"], "a": 1 },
-        { "t": "mcq", "q": "Can I give you ___ advice?", "o": ["an", "some", "many"], "a": 1 },
-        { "t": "fix", "s": "I need more {informations} about the course.", "c": "information" },
-        { "t": "gap", "instr": "Type the missing words: a few or a little?", "q": "I only have ___ minutes before my class, so let’s be quick.", "a": ["a few"] }
+        {
+          "t": "mcq",
+          "q": "How ___ homework do you have tonight?",
+          "o": [
+            "much",
+            "many",
+            "a few"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "There aren’t ___ students in the library today.",
+          "o": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "Can I give you ___ advice?",
+          "o": [
+            "an",
+            "some",
+            "many"
+          ],
+          "a": 1
+        },
+        {
+          "t": "fix",
+          "s": "I need more {informations} about the course.",
+          "c": "information"
+        },
+        {
+          "t": "gap",
+          "instr": "Type the missing words: a few or a little?",
+          "q": "I only have ___ minutes before my class, so let’s be quick.",
+          "a": [
+            "a few"
+          ]
+        }
       ],
       "notice": {
         "title": "A message to a classmate",
@@ -102,9 +974,46 @@
         "after": "Look at the nouns after each word: time, readings, books, articles, advice, money. Can you count them? You’ll work it out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "<b>much</b> time · <b>a little</b> money · <b>some</b> advice", "q": "Can we count time, money and advice (one money, two moneys…)?", "o": ["Yes: they are countable", "No: they are uncountable"], "a": 1, "keep": true, "hint": "Can you say ‘two advices’?", "insight": "<b>Uncountable</b> nouns have no plural: time, money, advice, information, research, homework." },
-        { "t": "mcq", "ctx": "not <b>many</b> books · <b>a few</b> articles", "q": "Books and articles are countable (they have a plural -s). Which words go with plural countable nouns?", "o": ["many / a few", "much / a little"], "a": 0, "keep": true, "hint": "Look at the words in front of books and articles.", "insight": "Countable plurals: <b>many</b>, <b>a few</b>. Uncountable: <b>much</b>, <b>a little</b>." },
-        { "t": "mcq", "ctx": "<b>a lot of</b> readings · <b>some</b> advice", "q": "Which words work with BOTH countable and uncountable nouns?", "o": ["a lot of / some", "many / much", "a few / a little"], "a": 0, "keep": true, "hint": "Readings is countable; advice is uncountable.", "insight": "<b>a lot of</b>, <b>some</b> and <b>any</b> work with both. In positive sentences, <b>a lot of</b> sounds more natural than much: <i>I have a lot of time.</i>" }
+        {
+          "t": "mcq",
+          "ctx": "<b>much</b> time · <b>a little</b> money · <b>some</b> advice",
+          "q": "Can we count time, money and advice (one money, two moneys…)?",
+          "o": [
+            "Yes: they are countable",
+            "No: they are uncountable"
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Can you say ‘two advices’?",
+          "insight": "<b>Uncountable</b> nouns have no plural: time, money, advice, information, research, homework."
+        },
+        {
+          "t": "mcq",
+          "ctx": "not <b>many</b> books · <b>a few</b> articles",
+          "q": "Books and articles are countable (they have a plural -s). Which words go with plural countable nouns?",
+          "o": [
+            "many / a few",
+            "much / a little"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at the words in front of books and articles.",
+          "insight": "Countable plurals: <b>many</b>, <b>a few</b>. Uncountable: <b>much</b>, <b>a little</b>."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>a lot of</b> readings · <b>some</b> advice",
+          "q": "Which words work with BOTH countable and uncountable nouns?",
+          "o": [
+            "a lot of / some",
+            "many / much",
+            "a few / a little"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Readings is countable; advice is uncountable.",
+          "insight": "<b>a lot of</b>, <b>some</b> and <b>any</b> work with both. In positive sentences, <b>a lot of</b> sounds more natural than much: <i>I have a lot of time.</i>"
+        }
       ],
       "rule": {
         "title": "How much? How many?",
@@ -114,43 +1023,231 @@
           "Both: <b>a lot of</b>, <b>some</b>, <b>any</b>.",
           "<b>Much</b> is used mostly in questions and negatives: <i>I don’t have much time.</i>"
         ],
-        "ex": ["There aren’t <b>many</b> books, but I found <b>a few</b> articles.", "I don’t have <b>much</b> time, but I have <b>a little</b> money."],
+        "ex": [
+          "There aren’t <b>many</b> books, but I found <b>a few</b> articles.",
+          "I don’t have <b>much</b> time, but I have <b>a little</b> money."
+        ],
         "watch": "Uncountable nouns have no plural: <s>informations</s>, <s>advices</s>, <s>researches</s>."
       },
       "practice": [
-        { "t": "sort", "instr": "Countable or uncountable?", "bins": ["Countable", "Uncountable"], "chips": [["student", 0], ["information", 1], ["idea", 0], ["advice", 1], ["research", 1, "We say ‘a study’ or ‘a piece of research’."], ["assignment", 0], ["homework", 1], ["book", 0]] },
-        { "t": "mcq", "q": "How ___ people came to the lecture?", "o": ["much", "many"], "a": 1, "keep": true, "hint": "People is a plural countable noun.", "why": "People = plural, countable → How many." },
-        { "t": "gap", "q": "I don’t have ___ money this month, so I’m cooking at home.", "a": ["much"], "hint": "Money is uncountable, and this is a negative sentence.", "why": "Negative + uncountable → not much." },
-        { "t": "fix", "s": "My teacher gave me some useful {advices} on my essay.", "c": "advice", "hint": "Can you count this noun?", "why": "Advice is uncountable: no -s." },
-        { "t": "mcq", "q": "There are only ___ tickets left. Buy one quickly!", "o": ["a few", "a little", "much"], "a": 0, "hint": "Tickets is countable.", "why": "Countable plural → a few." },
-        { "t": "order", "a": "We need a little more time.", "hint": "Start with We need…", "why": "Time is uncountable → a little (more) time." }
+        {
+          "t": "sort",
+          "instr": "Countable or uncountable?",
+          "bins": [
+            "Countable",
+            "Uncountable"
+          ],
+          "chips": [
+            [
+              "student",
+              0
+            ],
+            [
+              "information",
+              1
+            ],
+            [
+              "idea",
+              0
+            ],
+            [
+              "advice",
+              1
+            ],
+            [
+              "research",
+              1,
+              "We say ‘a study’ or ‘a piece of research’."
+            ],
+            [
+              "assignment",
+              0
+            ],
+            [
+              "homework",
+              1
+            ],
+            [
+              "book",
+              0
+            ]
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "How ___ people came to the lecture?",
+          "o": [
+            "much",
+            "many"
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "People is a plural countable noun.",
+          "why": "People = plural, countable → How many."
+        },
+        {
+          "t": "gap",
+          "q": "I don’t have ___ money this month, so I’m cooking at home.",
+          "a": [
+            "much"
+          ],
+          "hint": "Money is uncountable, and this is a negative sentence.",
+          "why": "Negative + uncountable → not much."
+        },
+        {
+          "t": "fix",
+          "s": "My teacher gave me some useful {advices} on my essay.",
+          "c": "advice",
+          "hint": "Can you count this noun?",
+          "why": "Advice is uncountable: no -s."
+        },
+        {
+          "t": "mcq",
+          "q": "There are only ___ tickets left. Buy one quickly!",
+          "o": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "a": 0,
+          "hint": "Tickets is countable.",
+          "why": "Countable plural → a few."
+        },
+        {
+          "t": "order",
+          "a": "We need a little more time.",
+          "hint": "Start with We need…",
+          "why": "Time is uncountable → a little (more) time."
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "How ___ money do you spend on books?", "o": ["much", "many", "a few"], "a": 0, "why": "Money is uncountable → How much." },
-        { "t": "mcq", "q": "There weren’t ___ people at the seminar.", "o": ["much", "many", "a little"], "a": 1, "why": "People is countable plural → many." },
-        { "t": "mcq", "q": "Let me give you ___ information about the test.", "o": ["an", "some", "many"], "a": 1, "why": "Information is uncountable: some information (not an information)." },
-        { "t": "fix", "s": "We did a lot of {researches} for this project.", "c": "research", "why": "Research is uncountable: no -s." },
-        { "t": "gap", "instr": "Type the missing word(s).", "q": "I have ___ questions about the homework. Can we talk after class?", "a": ["a few", "some", "a lot of", "many"], "why": "Questions is countable plural: a few / some / a lot of questions." }
+        {
+          "t": "mcq",
+          "q": "How ___ money do you spend on books?",
+          "o": [
+            "much",
+            "many",
+            "a few"
+          ],
+          "a": 0,
+          "why": "Money is uncountable → How much."
+        },
+        {
+          "t": "mcq",
+          "q": "There weren’t ___ people at the seminar.",
+          "o": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "a": 1,
+          "why": "People is countable plural → many."
+        },
+        {
+          "t": "mcq",
+          "q": "Let me give you ___ information about the test.",
+          "o": [
+            "an",
+            "some",
+            "many"
+          ],
+          "a": 1,
+          "why": "Information is uncountable: some information (not an information)."
+        },
+        {
+          "t": "fix",
+          "s": "We did a lot of {researches} for this project.",
+          "c": "research",
+          "why": "Research is uncountable: no -s."
+        },
+        {
+          "t": "gap",
+          "instr": "Type the missing word(s).",
+          "q": "I have ___ questions about the homework. Can we talk after class?",
+          "a": [
+            "a few",
+            "some",
+            "a lot of",
+            "many"
+          ],
+          "why": "Questions is countable plural: a few / some / a lot of questions."
+        }
       ],
       "produce": {
         "task": "Write 3–4 sentences about your week: how much time, money or homework you have, and how many classes or assignments. Use at least four words from this unit (much, many, a few, a little, a lot of, some).",
         "target": "quantifiers with countable and uncountable nouns (much, many, a few, a little, a lot of, some)",
-        "checklist": ["I used <b>many / a few</b> with plural nouns.", "I used <b>much / a little</b> with uncountable nouns.", "I didn’t add -s to advice, information, homework or research."],
+        "checklist": [
+          "I used <b>many / a few</b> with plural nouns.",
+          "I used <b>much / a little</b> with uncountable nouns.",
+          "I didn’t add -s to advice, information, homework or research."
+        ],
         "model": "This week I have a lot of homework and three assignments. I don’t have much free time, but I have a few hours on Saturday. I also have a little money left, so I might go to the cinema. My teacher gave me some useful advice about my essay."
       }
     },
     {
-      "id": "present-perfect-past-simple", "level": "B1", "minutes": 12, "verified": false,
+      "id": "present-perfect-past-simple",
+      "level": "B1",
+      "minutes": 12,
+      "verified": false,
       "title": "Present perfect or past simple?",
       "cando": "Talk about experiences and finished past events correctly.",
-      "tags": ["tenses", "have been", "ever", "yet", "since", "for", "past"],
-      "sample": ["I <b>have studied</b>…", "I <b>moved</b> in 2023"],
+      "tags": [
+        "tenses",
+        "have been",
+        "ever",
+        "yet",
+        "since",
+        "for",
+        "past"
+      ],
+      "sample": [
+        "I <b>have studied</b>…",
+        "I <b>moved</b> in 2023"
+      ],
       "pre": [
-        { "t": "mcq", "q": "I ___ to Japan three times in my life, and I want to go again.", "o": ["have been", "went", "am going"], "a": 0 },
-        { "t": "mcq", "q": "She ___ her degree in 2022.", "o": ["has finished", "finished", "has been finishing"], "a": 1 },
-        { "t": "mcq", "q": "___ you ever ___ a presentation in English?", "o": ["Did / give", "Have / given", "Have / gave"], "a": 1 },
-        { "t": "fix", "s": "I {lived} in this city since 2020.", "c": "have lived" },
-        { "t": "gap", "q": "We ___ (not / finish) the project yet.", "a": ["haven't finished", "have not finished"] }
+        {
+          "t": "mcq",
+          "q": "I ___ to Japan three times in my life, and I want to go again.",
+          "o": [
+            "have been",
+            "went",
+            "am going"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "She ___ her degree in 2022.",
+          "o": [
+            "has finished",
+            "finished",
+            "has been finishing"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "___ you ever ___ a presentation in English?",
+          "o": [
+            "Did / give",
+            "Have / given",
+            "Have / gave"
+          ],
+          "a": 1
+        },
+        {
+          "t": "fix",
+          "s": "I {lived} in this city since 2020.",
+          "c": "have lived"
+        },
+        {
+          "t": "gap",
+          "q": "We ___ (not / finish) the project yet.",
+          "a": [
+            "haven't finished",
+            "have not finished"
+          ]
+        }
       ],
       "notice": {
         "title": "A student profile",
@@ -159,9 +1256,46 @@
         "after": "Some verbs are one word (moved) and some are <b>have/has + another verb</b> (have made). What’s the difference? You’ll work it out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "I <b>moved</b> to Sydney <u>in 2023</u>. · I <b>passed</b> my exam <u>last month</u>.", "q": "These verbs are in the past simple. What do the underlined words tell us?", "o": ["The exact, finished time", "That the action is still happening", "That we don’t know when"], "a": 0, "keep": true, "hint": "Is 2023 finished?", "insight": "Past simple + <b>finished time</b>: in 2023, last month, yesterday, two years ago." },
-        { "t": "mcq", "ctx": "<u>Since then</u>, I <b>have made</b> many friends. · I <b>have done</b> two placements.", "q": "Do we know exactly WHEN Lina made friends or did her placements?", "o": ["Yes, the dates are given", "No, and it isn’t important: the experience or result now matters"], "a": 1, "keep": true, "hint": "Look for a date.", "insight": "Present perfect (<b>have/has + past participle</b>): the time is not stated. The experience or result matters <b>now</b>." },
-        { "t": "mcq", "ctx": "I <b>haven’t worked</b> in a hospital <u>yet</u>. · My English <b>has improved</b> <u>since</u> I arrived.", "q": "Which time words go with the present perfect?", "o": ["yet, since, ever, already, never", "yesterday, in 2023, last week"], "a": 0, "keep": true, "hint": "Which words connect the past to now?", "insight": "Present perfect time words: <b>ever, never, already, yet, just, since, for</b> (up to now). Finished-time words take the past simple." }
+        {
+          "t": "mcq",
+          "ctx": "I <b>moved</b> to Sydney <u>in 2023</u>. · I <b>passed</b> my exam <u>last month</u>.",
+          "q": "These verbs are in the past simple. What do the underlined words tell us?",
+          "o": [
+            "The exact, finished time",
+            "That the action is still happening",
+            "That we don’t know when"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Is 2023 finished?",
+          "insight": "Past simple + <b>finished time</b>: in 2023, last month, yesterday, two years ago."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<u>Since then</u>, I <b>have made</b> many friends. · I <b>have done</b> two placements.",
+          "q": "Do we know exactly WHEN Lina made friends or did her placements?",
+          "o": [
+            "Yes, the dates are given",
+            "No, and it isn’t important: the experience or result now matters"
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Look for a date.",
+          "insight": "Present perfect (<b>have/has + past participle</b>): the time is not stated. The experience or result matters <b>now</b>."
+        },
+        {
+          "t": "mcq",
+          "ctx": "I <b>haven’t worked</b> in a hospital <u>yet</u>. · My English <b>has improved</b> <u>since</u> I arrived.",
+          "q": "Which time words go with the present perfect?",
+          "o": [
+            "yet, since, ever, already, never",
+            "yesterday, in 2023, last week"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Which words connect the past to now?",
+          "insight": "Present perfect time words: <b>ever, never, already, yet, just, since, for</b> (up to now). Finished-time words take the past simple."
+        }
       ],
       "rule": {
         "title": "Past simple or present perfect?",
@@ -171,44 +1305,206 @@
           "Form: <b>have/has + past participle</b> (done, been, written, worked).",
           "Questions: <i>Have you ever…?</i> Give details in the past simple: <i>Yes, I went there in 2022.</i>"
         ],
-        "ex": ["I <b>have visited</b> Melbourne twice. I <b>went</b> there last summer."],
+        "ex": [
+          "I <b>have visited</b> Melbourne twice. I <b>went</b> there last summer."
+        ],
         "watch": "Don’t use the present perfect with a finished time: <s>I have finished it yesterday</s> → I finished it yesterday."
       },
       "practice": [
-        { "t": "mcq", "q": "I ___ my assignment yesterday.", "o": ["submitted", "have submitted"], "a": 0, "keep": true, "hint": "Yesterday is a finished time.", "why": "Finished time (yesterday) → past simple." },
-        { "t": "mcq", "q": "___ you ___ the new library yet?", "o": ["Have / visited", "Did / visit"], "a": 0, "keep": true, "hint": "Look for yet.", "why": "Yet (up to now) → present perfect in British and Australian English." },
-        { "t": "gap", "q": "She ___ (live) in Perth since 2021.", "a": ["has lived", "has been living", "'s lived"], "hint": "Since 2021 = from 2021 up to now.", "why": "Since + up to now → present perfect: has lived." },
-        { "t": "fix", "s": "I {go} to Bali with my family last year.", "c": "went", "hint": "Last year is finished.", "why": "Finished time → past simple: went." },
-        { "t": "order", "a": "Have you ever studied online?", "hint": "Questions start with Have. Ever goes before the past participle.", "why": "Have + subject + ever + past participle." },
-        { "t": "gap", "q": "I ___ (just / finish) my essay. Can you read it?", "a": ["have just finished", "'ve just finished"], "hint": "Just = a very short time ago, with a result now.", "why": "have + just + past participle." },
-        { "t": "mcq", "q": "My English ___ a lot since I came here.", "o": ["has improved", "improved"], "a": 0, "keep": true, "hint": "Look for since.", "why": "Since → present perfect." }
+        {
+          "t": "mcq",
+          "q": "I ___ my assignment yesterday.",
+          "o": [
+            "submitted",
+            "have submitted"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Yesterday is a finished time.",
+          "why": "Finished time (yesterday) → past simple."
+        },
+        {
+          "t": "mcq",
+          "q": "___ you ___ the new library yet?",
+          "o": [
+            "Have / visited",
+            "Did / visit"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look for yet.",
+          "why": "Yet (up to now) → present perfect in British and Australian English."
+        },
+        {
+          "t": "gap",
+          "q": "She ___ (live) in Perth since 2021.",
+          "a": [
+            "has lived",
+            "has been living",
+            "'s lived"
+          ],
+          "hint": "Since 2021 = from 2021 up to now.",
+          "why": "Since + up to now → present perfect: has lived."
+        },
+        {
+          "t": "fix",
+          "s": "I {go} to Bali with my family last year.",
+          "c": "went",
+          "hint": "Last year is finished.",
+          "why": "Finished time → past simple: went."
+        },
+        {
+          "t": "order",
+          "a": "Have you ever studied online?",
+          "hint": "Questions start with Have. Ever goes before the past participle.",
+          "why": "Have + subject + ever + past participle."
+        },
+        {
+          "t": "gap",
+          "q": "I ___ (just / finish) my essay. Can you read it?",
+          "a": [
+            "have just finished",
+            "'ve just finished"
+          ],
+          "hint": "Just = a very short time ago, with a result now.",
+          "why": "have + just + past participle."
+        },
+        {
+          "t": "mcq",
+          "q": "My English ___ a lot since I came here.",
+          "o": [
+            "has improved",
+            "improved"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look for since.",
+          "why": "Since → present perfect."
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "I ___ to Korea twice, and I’d love to go back.", "o": ["have been", "was going", "am"], "a": 0, "why": "Life experience, no finished time → present perfect." },
-        { "t": "mcq", "q": "He ___ his job last year.", "o": ["has started", "started", "has been starting"], "a": 1, "why": "Last year is finished → past simple." },
-        { "t": "mcq", "q": "Have you ever ___ a research paper?", "o": ["wrote", "written", "write"], "a": 1, "why": "have + past participle: written." },
-        { "t": "fix", "s": "We {know} each other since primary school.", "c": "have known", "why": "Since + up to now → present perfect: have known." },
-        { "t": "gap", "q": "They ___ (not / reply) to my email yet.", "a": ["haven't replied", "have not replied"], "why": "Yet → present perfect negative." }
+        {
+          "t": "mcq",
+          "q": "I ___ to Korea twice, and I’d love to go back.",
+          "o": [
+            "have been",
+            "was going",
+            "am"
+          ],
+          "a": 0,
+          "why": "Life experience, no finished time → present perfect."
+        },
+        {
+          "t": "mcq",
+          "q": "He ___ his job last year.",
+          "o": [
+            "has started",
+            "started",
+            "has been starting"
+          ],
+          "a": 1,
+          "why": "Last year is finished → past simple."
+        },
+        {
+          "t": "mcq",
+          "q": "Have you ever ___ a research paper?",
+          "o": [
+            "wrote",
+            "written",
+            "write"
+          ],
+          "a": 1,
+          "why": "have + past participle: written."
+        },
+        {
+          "t": "fix",
+          "s": "We {know} each other since primary school.",
+          "c": "have known",
+          "why": "Since + up to now → present perfect: have known."
+        },
+        {
+          "t": "gap",
+          "q": "They ___ (not / reply) to my email yet.",
+          "a": [
+            "haven't replied",
+            "have not replied"
+          ],
+          "why": "Yet → present perfect negative."
+        }
       ],
       "produce": {
         "task": "Write 4–5 sentences about your studies or your life in a new place. Use the present perfect for experiences and results up to now (I have made…), and the past simple for finished times (In 2023, I moved…).",
         "target": "present perfect vs past simple",
-        "checklist": ["I used the past simple with finished times (last year, in 2023, ago).", "I used <b>have/has + past participle</b> for experiences up to now.", "My past participles are correct (done, been, written…)."],
+        "checklist": [
+          "I used the past simple with finished times (last year, in 2023, ago).",
+          "I used <b>have/has + past participle</b> for experiences up to now.",
+          "My past participles are correct (done, been, written…)."
+        ],
         "model": "I moved to Brisbane in 2024 to start a master’s degree. At first, I found the accent difficult, but my listening has improved a lot since then. I have joined two student clubs and I have made friends from many countries. Last semester, I gave my first presentation in English. I haven’t visited Melbourne yet, but I plan to go in the holidays."
       }
     },
     {
-      "id": "passive-voice", "level": "B1", "minutes": 12, "verified": false,
+      "id": "passive-voice",
+      "level": "B1",
+      "minutes": 12,
+      "verified": false,
       "title": "The passive voice",
       "cando": "Describe processes and research when the action matters more than the person.",
-      "tags": ["passive", "process", "method", "was collected", "is made", "academic"],
-      "sample": ["The data <b>was collected</b>", "Rice <b>is grown</b>"],
+      "tags": [
+        "passive",
+        "process",
+        "method",
+        "was collected",
+        "is made",
+        "academic"
+      ],
+      "sample": [
+        "The data <b>was collected</b>",
+        "Rice <b>is grown</b>"
+      ],
       "pre": [
-        { "t": "mcq", "q": "English ___ in many countries.", "o": ["speaks", "is spoken", "is speaking"], "a": 1 },
-        { "t": "mcq", "q": "The survey ___ by 200 students last year.", "o": ["completed", "was completed", "is completed"], "a": 1 },
-        { "t": "gap", "q": "Paper ___ (make) from wood.", "a": ["is made"] },
-        { "t": "fix", "s": "The new building was {build} in 2020.", "c": "built" },
-        { "t": "mcq", "q": "Our essays ___ by two teachers.", "o": ["are marked", "mark", "are marking"], "a": 0 }
+        {
+          "t": "mcq",
+          "q": "English ___ in many countries.",
+          "o": [
+            "speaks",
+            "is spoken",
+            "is speaking"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "The survey ___ by 200 students last year.",
+          "o": [
+            "completed",
+            "was completed",
+            "is completed"
+          ],
+          "a": 1
+        },
+        {
+          "t": "gap",
+          "q": "Paper ___ (make) from wood.",
+          "a": [
+            "is made"
+          ]
+        },
+        {
+          "t": "fix",
+          "s": "The new building was {build} in 2020.",
+          "c": "built"
+        },
+        {
+          "t": "mcq",
+          "q": "Our essays ___ by two teachers.",
+          "o": [
+            "are marked",
+            "mark",
+            "are marking"
+          ],
+          "a": 0
+        }
       ],
       "notice": {
         "title": "How the study was done (from a student report)",
@@ -217,9 +1513,48 @@
         "after": "Who designed, tested and sent the questionnaire? The text doesn’t say. Why not? You’ll work it out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "a questionnaire <b>was designed</b> · the answers <b>were collected</b>", "q": "Who designed the questionnaire and collected the answers?", "o": ["The text tells us clearly", "The researchers, but the text doesn’t say: it isn’t important", "The students"], "a": 1, "keep": true, "hint": "Is the person important here, or the action?", "insight": "We use the passive when the <b>action</b> or <b>result</b> matters more than who did it, or when the doer is obvious or unknown." },
-        { "t": "mcq", "ctx": "was designed · were changed · is stored · are carried out", "q": "How do we form the passive?", "o": ["be + past participle", "have + past participle", "be + -ing"], "a": 0, "keep": true, "hint": "is, are, was and were are all forms of one verb.", "insight": "Passive = <b>be</b> + <b>past participle</b>. The tense is in <b>be</b>: is/are (present), was/were (past)." },
-        { "t": "mcq", "ctx": "The survey was completed <b>by 200 students</b>.", "q": "What does <b>by</b> + person show?", "o": ["Who did the action (only when it’s useful)", "The place", "The time"], "a": 0, "keep": true, "hint": "Who completed the survey?", "insight": "Add <b>by</b> + doer only when it’s important or new information. Usually we leave it out." }
+        {
+          "t": "mcq",
+          "ctx": "a questionnaire <b>was designed</b> · the answers <b>were collected</b>",
+          "q": "Who designed the questionnaire and collected the answers?",
+          "o": [
+            "The text tells us clearly",
+            "The researchers, but the text doesn’t say: it isn’t important",
+            "The students"
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Is the person important here, or the action?",
+          "insight": "We use the passive when the <b>action</b> or <b>result</b> matters more than who did it, or when the doer is obvious or unknown."
+        },
+        {
+          "t": "mcq",
+          "ctx": "was designed · were changed · is stored · are carried out",
+          "q": "How do we form the passive?",
+          "o": [
+            "be + past participle",
+            "have + past participle",
+            "be + -ing"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "is, are, was and were are all forms of one verb.",
+          "insight": "Passive = <b>be</b> + <b>past participle</b>. The tense is in <b>be</b>: is/are (present), was/were (past)."
+        },
+        {
+          "t": "mcq",
+          "ctx": "The survey was completed <b>by 200 students</b>.",
+          "q": "What does <b>by</b> + person show?",
+          "o": [
+            "Who did the action (only when it’s useful)",
+            "The place",
+            "The time"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Who completed the survey?",
+          "insight": "Add <b>by</b> + doer only when it’s important or new information. Usually we leave it out."
+        }
       ],
       "rule": {
         "title": "The passive voice",
@@ -229,44 +1564,516 @@
           "It’s very common in academic writing: methods, processes and results.",
           "Add <b>by …</b> only if the doer is important: <i>The study was funded by the government.</i>"
         ],
-        "ex": ["Active: Researchers <b>collected</b> the answers. → Passive: The answers <b>were collected</b>.", "Rice <b>is grown</b> in many parts of Asia."],
+        "ex": [
+          "Active: Researchers <b>collected</b> the answers. → Passive: The answers <b>were collected</b>.",
+          "Rice <b>is grown</b> in many parts of Asia."
+        ],
         "watch": "Use the past participle, not the base form or past simple: <s>was build</s> → was built; <s>were wrote</s> → were written."
       },
       "practice": [
-        { "t": "gap", "q": "Coffee ___ (grow) in Brazil and Vietnam.", "a": ["is grown"], "hint": "Present simple passive: is/are + past participle.", "why": "is + grown (past participle of grow)." },
-        { "t": "mcq", "q": "The bridge ___ in 1932.", "o": ["built", "was built", "has built"], "a": 1, "hint": "Bridges don’t build things!", "why": "Past simple passive: was built." },
-        { "t": "fix", "s": "All the interviews {was} recorded and transcribed.", "c": "were", "hint": "Interviews is plural.", "why": "Plural subject → were + past participle." },
-        { "t": "order", "a": "The participants were asked three questions.", "hint": "Start with The participants…", "why": "Subject + were + asked + object." },
-        { "t": "mcq", "q": "Which sentence is more typical of a science report?", "o": ["We heated the water to 100°C.", "The water was heated to 100°C."], "a": 1, "keep": true, "hint": "In a report, does the person or the action matter more?", "why": "Method sections often use the passive because the action matters more (some fields also accept ‘we’)." },
-        { "t": "gap", "q": "The essays ___ (mark) last week, and the results are now online.", "a": ["were marked"], "hint": "Last week + plural.", "why": "Past simple passive, plural: were marked." },
-        { "t": "sort", "instr": "Active or passive?", "bins": ["Active", "Passive"], "chips": [["The data was analysed.", 1], ["Students completed a survey.", 0], ["Many languages are spoken here.", 1], ["The teacher marked the tests.", 0], ["The results were published in 2024.", 1], ["The city has grown quickly.", 0, "has grown is present perfect, active: no form of be."]] }
+        {
+          "t": "gap",
+          "q": "Coffee ___ (grow) in Brazil and Vietnam.",
+          "a": [
+            "is grown"
+          ],
+          "hint": "Present simple passive: is/are + past participle.",
+          "why": "is + grown (past participle of grow)."
+        },
+        {
+          "t": "mcq",
+          "q": "The bridge ___ in 1932.",
+          "o": [
+            "built",
+            "was built",
+            "has built"
+          ],
+          "a": 1,
+          "hint": "Bridges don’t build things!",
+          "why": "Past simple passive: was built."
+        },
+        {
+          "t": "fix",
+          "s": "All the interviews {was} recorded and transcribed.",
+          "c": "were",
+          "hint": "Interviews is plural.",
+          "why": "Plural subject → were + past participle."
+        },
+        {
+          "t": "order",
+          "a": "The participants were asked three questions.",
+          "hint": "Start with The participants…",
+          "why": "Subject + were + asked + object."
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence is more typical of a science report?",
+          "o": [
+            "We heated the water to 100°C.",
+            "The water was heated to 100°C."
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "In a report, does the person or the action matter more?",
+          "why": "Method sections often use the passive because the action matters more (some fields also accept ‘we’)."
+        },
+        {
+          "t": "gap",
+          "q": "The essays ___ (mark) last week, and the results are now online.",
+          "a": [
+            "were marked"
+          ],
+          "hint": "Last week + plural.",
+          "why": "Past simple passive, plural: were marked."
+        },
+        {
+          "t": "sort",
+          "instr": "Active or passive?",
+          "bins": [
+            "Active",
+            "Passive"
+          ],
+          "chips": [
+            [
+              "The data was analysed.",
+              1
+            ],
+            [
+              "Students completed a survey.",
+              0
+            ],
+            [
+              "Many languages are spoken here.",
+              1
+            ],
+            [
+              "The teacher marked the tests.",
+              0
+            ],
+            [
+              "The results were published in 2024.",
+              1
+            ],
+            [
+              "The city has grown quickly.",
+              0,
+              "has grown is present perfect, active: no form of be."
+            ]
+          ]
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "These phones ___ in China.", "o": ["make", "are made", "are making"], "a": 1, "why": "Phones don’t make anything: passive, are made." },
-        { "t": "mcq", "q": "The interviews ___ in March.", "o": ["recorded", "were recorded", "are recording"], "a": 1, "why": "Past simple passive: were recorded." },
-        { "t": "gap", "q": "Glass ___ (make) from sand.", "a": ["is made"], "why": "Present simple passive: is made." },
-        { "t": "fix", "s": "The results were {wrote} in a short report.", "c": "written", "why": "be + past participle: written (not wrote)." },
-        { "t": "mcq", "q": "Our class ___ by Dr Lee this semester.", "o": ["is taught", "teaches", "is teaching"], "a": 0, "why": "The class doesn’t teach: passive, is taught." }
+        {
+          "t": "mcq",
+          "q": "These phones ___ in China.",
+          "o": [
+            "make",
+            "are made",
+            "are making"
+          ],
+          "a": 1,
+          "why": "Phones don’t make anything: passive, are made."
+        },
+        {
+          "t": "mcq",
+          "q": "The interviews ___ in March.",
+          "o": [
+            "recorded",
+            "were recorded",
+            "are recording"
+          ],
+          "a": 1,
+          "why": "Past simple passive: were recorded."
+        },
+        {
+          "t": "gap",
+          "q": "Glass ___ (make) from sand.",
+          "a": [
+            "is made"
+          ],
+          "why": "Present simple passive: is made."
+        },
+        {
+          "t": "fix",
+          "s": "The results were {wrote} in a short report.",
+          "c": "written",
+          "why": "be + past participle: written (not wrote)."
+        },
+        {
+          "t": "mcq",
+          "q": "Our class ___ by Dr Lee this semester.",
+          "o": [
+            "is taught",
+            "teaches",
+            "is teaching"
+          ],
+          "a": 0,
+          "why": "The class doesn’t teach: passive, is taught."
+        }
       ],
       "produce": {
         "task": "Describe a simple process you know (for example, how coffee is made, or how a survey was done). Write 4–5 sentences. Use at least three passive verbs.",
         "target": "the passive voice (present and past simple)",
-        "checklist": ["I used <b>be + past participle</b>.", "I chose <b>is/are</b> (present) or <b>was/were</b> (past) correctly.", "I only used <b>by …</b> when the doer is important."],
+        "checklist": [
+          "I used <b>be + past participle</b>.",
+          "I chose <b>is/are</b> (present) or <b>was/were</b> (past) correctly.",
+          "I only used <b>by …</b> when the doer is important."
+        ],
         "model": "First, the coffee beans are picked by hand. Then they are dried in the sun for about two weeks. After that, the beans are roasted at a high temperature. Finally, they are ground and packed. In our class experiment, the coffee was tasted by ten students, and their opinions were recorded."
       }
     },
     {
-      "id": "relative-clauses", "level": "B2", "minutes": 12, "verified": false,
+      "id": "articles",
+      "level": "B1",
+      "minutes": 12,
+      "verified": false,
+      "title": "Articles: a, an, the or no article",
+      "cando": "Use articles correctly in academic writing.",
+      "tags": [
+        "articles",
+        "a",
+        "an",
+        "the",
+        "zero article",
+        "generic",
+        "academic writing"
+      ],
+      "sample": [
+        "<b>a</b> study",
+        "<b>the</b> results",
+        "Ø research"
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "___ study was carried out in 2023.",
+          "o": [
+            "A",
+            "An",
+            "The",
+            "–"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "___ results of the study were surprising.",
+          "o": [
+            "The",
+            "A",
+            "–",
+            "An"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "___ technology is changing how we learn.",
+          "o": [
+            "–",
+            "A",
+            "The",
+            "An"
+          ],
+          "a": 0
+        },
+        {
+          "t": "fix",
+          "s": "She is {a} honest researcher.",
+          "c": "an"
+        },
+        {
+          "t": "gap",
+          "q": "He wants to study at ___ University of Melbourne.",
+          "a": [
+            "the"
+          ]
+        }
+      ],
+      "notice": {
+        "title": "From a research summary",
+        "instr": "Tap every article: a, an and the.",
+        "text": "[[A]] recent study looked at sleep and memory. [[The]] researchers asked students to learn [[a]] list of words. [[The]] students who slept well remembered more. [[The]] study suggests that sleep helps learning. It is [[an]] important finding for students and teachers.",
+        "after": "When is it a, and when is it the? And notice: “sleep”, “memory”, “students” and “learning” have no article."
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "<b>A</b> recent study looked at… · <b>The</b> study suggests…",
+          "q": "Why does the text say <b>a</b> study first, then <b>the</b> study?",
+          "o": [
+            "A = first mention (new); the = the reader already knows which one",
+            "There is no difference",
+            "The = more important"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Which study? The one we just mentioned.",
+          "insight": "<b>a/an</b> = first mention, one of many. <b>the</b> = the reader knows which one (mentioned before, or only one)."
+        },
+        {
+          "t": "mcq",
+          "ctx": "sleep and memory · students and teachers · learning",
+          "q": "Why is there no article here?",
+          "o": [
+            "We mean these things in general",
+            "It is a mistake",
+            "Because they are short words"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Do we mean particular students, or students in general?",
+          "insight": "No article for uncountable or plural nouns used <b>in general</b>: <i>Sleep helps learning. Students need breaks.</i>"
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>an</b> important finding · <b>a</b> university",
+          "q": "Why <b>an</b> important but <b>a</b> university?",
+          "o": [
+            "It depends on the first SOUND, not the letter",
+            "It depends on the first letter",
+            "Both are wrong"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Say them aloud: “a yoo-niversity”.",
+          "insight": "<b>an</b> before a vowel sound (an hour, an important); <b>a</b> before a consonant sound (a university, a European study)."
+        }
+      ],
+      "rule": {
+        "title": "Articles",
+        "points": [
+          "<b>a/an</b>: one of many, first mention: <i>a study, an idea</i>.",
+          "<b>the</b>: the reader knows which one: <i>the study (mentioned before), the results of this study, the internet</i>.",
+          "<b>No article</b> for general plural or uncountable nouns: <i>Research shows… Students need sleep.</i>",
+          "<b>an</b> before a vowel <i>sound</i>: an hour, an MBA; <b>a</b> before a consonant sound: a university."
+        ],
+        "ex": [
+          "<b>A</b> survey asked 200 students about Ø stress. <b>The</b> survey found that Ø stress affects Ø sleep."
+        ],
+        "watch": "Don’t put <i>the</i> before general uncountable nouns: <s>The technology is changing education</s> → Technology is changing education."
+      },
+      "practice": [
+        {
+          "t": "mcq",
+          "q": "___ research suggests that exercise improves mood.",
+          "o": [
+            "–",
+            "A",
+            "The"
+          ],
+          "a": 0,
+          "why": "Research in general, uncountable.",
+          "hint": "Do we mean research in general?",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "I read ___ interesting article yesterday. ___ article was about AI.",
+          "o": [
+            "an / The",
+            "a / An",
+            "the / A"
+          ],
+          "a": 0,
+          "why": "First mention → an; second mention → the.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "{The} students need regular breaks to learn well.",
+          "c": "Students",
+          "why": "Students in general → no article."
+        },
+        {
+          "t": "gap",
+          "q": "It took ___ hour to finish the test.",
+          "a": [
+            "an"
+          ],
+          "why": "Hour starts with a vowel sound → an.",
+          "hint": "Say it aloud: does it start with a vowel sound?"
+        },
+        {
+          "t": "mcq",
+          "q": "___ number of students has increased.",
+          "o": [
+            "The",
+            "A",
+            "–"
+          ],
+          "a": 0,
+          "why": "The number of… is fixed; a number of = several.",
+          "keep": true
+        },
+        {
+          "t": "sort",
+          "instr": "a/an, the, or no article?",
+          "bins": [
+            "a / an",
+            "the",
+            "no article"
+          ],
+          "chips": [
+            [
+              "___ survey (first mention)",
+              0
+            ],
+            [
+              "___ results of this survey",
+              1
+            ],
+            [
+              "___ information",
+              2,
+              "Uncountable, general."
+            ],
+            [
+              "___ hour",
+              0,
+              "an hour"
+            ],
+            [
+              "___ internet",
+              1,
+              "Only one: the internet."
+            ],
+            [
+              "___ students in general",
+              2
+            ]
+          ]
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "___ experiment was repeated three times.",
+          "o": [
+            "The",
+            "–",
+            "An"
+          ],
+          "a": 0,
+          "why": "We know which experiment (the one being discussed).",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "___ climate change affects every country.",
+          "o": [
+            "–",
+            "The",
+            "A"
+          ],
+          "a": 0,
+          "why": "Climate change in general → no article.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "She has ___ MBA from Sydney.",
+          "o": [
+            "an",
+            "a",
+            "the"
+          ],
+          "a": 0,
+          "why": "MBA starts with a vowel sound (em) → an.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "This is {an} useful tool for students.",
+          "c": "a",
+          "why": "Useful starts with a consonant sound (yoo) → a."
+        },
+        {
+          "t": "gap",
+          "q": "___ data from the survey was analysed in Excel.",
+          "a": [
+            "The"
+          ],
+          "why": "Specific data (from the survey) → the."
+        }
+      ],
+      "produce": {
+        "task": "Describe a study, a survey or an experiment (real or imagined) in 3–4 sentences. Use a/an for the first mention, the for the second, and no article for general ideas.",
+        "target": "articles: a, an, the and no article",
+        "checklist": [
+          "First mention: <b>a/an</b>; then <b>the</b>.",
+          "No article for general plural or uncountable nouns.",
+          "<b>an</b> before a vowel sound."
+        ],
+        "model": "A survey asked 300 students about part-time work. The survey found that students who work long hours have less time for study. Work can be useful, but sleep and study time also matter. The results are an important reminder for universities."
+      }
+    },
+    {
+      "id": "relative-clauses",
+      "level": "B2",
+      "minutes": 12,
+      "verified": false,
       "title": "Relative clauses: who, which, that, whose",
       "cando": "Add information to nouns and combine ideas in one sentence.",
-      "tags": ["who", "which", "that", "whose", "defining", "non-defining", "commas"],
-      "sample": ["students <b>who</b> sleep…", "the study, <b>which</b> was…"],
+      "tags": [
+        "who",
+        "which",
+        "that",
+        "whose",
+        "defining",
+        "non-defining",
+        "commas"
+      ],
+      "sample": [
+        "students <b>who</b> sleep…",
+        "the study, <b>which</b> was…"
+      ],
       "pre": [
-        { "t": "mcq", "q": "The lecturer ___ teaches statistics is very clear.", "o": ["who", "which", "whose"], "a": 0 },
-        { "t": "mcq", "q": "This is the article ___ I told you about.", "o": ["who", "which", "whose"], "a": 1 },
-        { "t": "mcq", "q": "Students ___ parents are teachers often read more.", "o": ["who", "whose", "which"], "a": 1 },
-        { "t": "fix", "s": "Canberra, {that} is the capital of Australia, is a planned city.", "c": "which" },
-        { "t": "mcq", "q": "Which sentence is correct?", "o": ["My sister, who lives in Perth, is a nurse.", "My sister who lives in Perth, is a nurse."], "a": 0, "keep": true }
+        {
+          "t": "mcq",
+          "q": "The lecturer ___ teaches statistics is very clear.",
+          "o": [
+            "who",
+            "which",
+            "whose"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "This is the article ___ I told you about.",
+          "o": [
+            "who",
+            "which",
+            "whose"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "Students ___ parents are teachers often read more.",
+          "o": [
+            "who",
+            "whose",
+            "which"
+          ],
+          "a": 1
+        },
+        {
+          "t": "fix",
+          "s": "Canberra, {that} is the capital of Australia, is a planned city.",
+          "c": "which"
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence is correct?",
+          "o": [
+            "My sister, who lives in Perth, is a nurse.",
+            "My sister who lives in Perth, is a nurse."
+          ],
+          "a": 0,
+          "keep": true
+        }
       ],
       "notice": {
         "title": "From a report on sleep and study",
@@ -275,9 +2082,46 @@
         "after": "Some of these groups have commas around them and some don’t. Why? You’ll work it out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "Students <b>who</b> sleep… · Participants <b>whose</b> sleep improved… · phones <b>that</b> are used… · a study, <b>which</b> was…", "q": "Which word do we use for <b>people</b>?", "o": ["who", "which", "whose"], "a": 0, "keep": true, "hint": "Students and researchers are people.", "insight": "<b>who</b> (or that) for people; <b>which</b> (or that) for things; <b>whose</b> = belonging to (whose sleep = their sleep)." },
-        { "t": "mcq", "ctx": "Students who sleep less than six hours often find it hard to concentrate.", "q": "If we remove ‘who sleep less than six hours’, does the sentence mean the same?", "o": ["Yes, it’s just extra information", "No: it tells us WHICH students we mean"], "a": 1, "keep": true, "hint": "Do ALL students find it hard to concentrate?", "insight": "This is a <b>defining</b> clause: it tells us which people or things we mean. <b>No commas.</b>" },
-        { "t": "mcq", "ctx": "A recent study, which was carried out in 2024, followed 500 students.", "q": "What about ‘which was carried out in 2024’?", "o": ["It’s extra information: the sentence works without it", "It tells us which study we mean"], "a": 0, "keep": true, "hint": "Try reading the sentence without it.", "insight": "This is a <b>non-defining</b> clause: extra information between <b>commas</b>. You can’t use <b>that</b> here." }
+        {
+          "t": "mcq",
+          "ctx": "Students <b>who</b> sleep… · Participants <b>whose</b> sleep improved… · phones <b>that</b> are used… · a study, <b>which</b> was…",
+          "q": "Which word do we use for <b>people</b>?",
+          "o": [
+            "who",
+            "which",
+            "whose"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Students and researchers are people.",
+          "insight": "<b>who</b> (or that) for people; <b>which</b> (or that) for things; <b>whose</b> = belonging to (whose sleep = their sleep)."
+        },
+        {
+          "t": "mcq",
+          "ctx": "Students who sleep less than six hours often find it hard to concentrate.",
+          "q": "If we remove ‘who sleep less than six hours’, does the sentence mean the same?",
+          "o": [
+            "Yes, it’s just extra information",
+            "No: it tells us WHICH students we mean"
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Do ALL students find it hard to concentrate?",
+          "insight": "This is a <b>defining</b> clause: it tells us which people or things we mean. <b>No commas.</b>"
+        },
+        {
+          "t": "mcq",
+          "ctx": "A recent study, which was carried out in 2024, followed 500 students.",
+          "q": "What about ‘which was carried out in 2024’?",
+          "o": [
+            "It’s extra information: the sentence works without it",
+            "It tells us which study we mean"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Try reading the sentence without it.",
+          "insight": "This is a <b>non-defining</b> clause: extra information between <b>commas</b>. You can’t use <b>that</b> here."
+        }
       ],
       "rule": {
         "title": "Relative clauses",
@@ -287,44 +2131,210 @@
           "<b>Non-defining</b> clauses add extra information: use commas, and never <i>that</i>. <i>Canberra, which is the capital, is a planned city.</i>",
           "In defining clauses, you can leave out who/which/that when it is the object: <i>the article (that) I read</i>."
         ],
-        "ex": ["The researchers, <b>who</b> work in Melbourne, found that phones <b>that</b> are used late at night reduce sleep."],
+        "ex": [
+          "The researchers, <b>who</b> work in Melbourne, found that phones <b>that</b> are used late at night reduce sleep."
+        ],
         "watch": "<s>Canberra, that is the capital…</s> → Canberra, which is the capital…"
       },
       "practice": [
-        { "t": "mcq", "q": "A person ___ studies the climate is called a climatologist.", "o": ["who", "which", "whose"], "a": 0, "hint": "A person.", "why": "People → who." },
-        { "t": "gap", "q": "This is the student ___ essay won the prize.", "a": ["whose"], "hint": "The essay belongs to the student.", "why": "Possession → whose." },
-        { "t": "fix", "s": "The University of Sydney, {that} was founded in 1850, is Australia’s oldest university.", "c": "which", "hint": "Look at the commas.", "why": "Non-defining clause (commas) → which, not that." },
-        { "t": "mcq", "q": "Choose the correct punctuation.", "o": ["The book, that I borrowed, is overdue.", "The book that I borrowed is overdue."], "a": 1, "keep": true, "hint": "Can you use that with commas?", "why": "‘That’ is only used in defining clauses, with no commas." },
-        { "t": "order", "a": "The app that I use for vocabulary is free.", "hint": "Start with The app…", "why": "The relative clause goes straight after the noun it describes." },
-        { "t": "mcq", "q": "Which word can you leave out? ‘The course that I chose is very practical.’", "o": ["that", "course", "chose"], "a": 0, "hint": "Who chose the course? ‘I’ is the subject of the clause.", "why": "When that/which/who is the object of the clause (I chose the course), you can leave it out: The course I chose…" },
-        { "t": "gap", "q": "My flatmate, ___ is from Brazil, is studying engineering.", "a": ["who"], "hint": "A person + commas.", "why": "Non-defining, a person → who." }
+        {
+          "t": "mcq",
+          "q": "A person ___ studies the climate is called a climatologist.",
+          "o": [
+            "who",
+            "which",
+            "whose"
+          ],
+          "a": 0,
+          "hint": "A person.",
+          "why": "People → who."
+        },
+        {
+          "t": "gap",
+          "q": "This is the student ___ essay won the prize.",
+          "a": [
+            "whose"
+          ],
+          "hint": "The essay belongs to the student.",
+          "why": "Possession → whose."
+        },
+        {
+          "t": "fix",
+          "s": "The University of Sydney, {that} was founded in 1850, is Australia’s oldest university.",
+          "c": "which",
+          "hint": "Look at the commas.",
+          "why": "Non-defining clause (commas) → which, not that."
+        },
+        {
+          "t": "mcq",
+          "q": "Choose the correct punctuation.",
+          "o": [
+            "The book, that I borrowed, is overdue.",
+            "The book that I borrowed is overdue."
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Can you use that with commas?",
+          "why": "‘That’ is only used in defining clauses, with no commas."
+        },
+        {
+          "t": "order",
+          "a": "The app that I use for vocabulary is free.",
+          "hint": "Start with The app…",
+          "why": "The relative clause goes straight after the noun it describes."
+        },
+        {
+          "t": "mcq",
+          "q": "Which word can you leave out? ‘The course that I chose is very practical.’",
+          "o": [
+            "that",
+            "course",
+            "chose"
+          ],
+          "a": 0,
+          "hint": "Who chose the course? ‘I’ is the subject of the clause.",
+          "why": "When that/which/who is the object of the clause (I chose the course), you can leave it out: The course I chose…"
+        },
+        {
+          "t": "gap",
+          "q": "My flatmate, ___ is from Brazil, is studying engineering.",
+          "a": [
+            "who"
+          ],
+          "hint": "A person + commas.",
+          "why": "Non-defining, a person → who."
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "The scientist ___ discovered penicillin was Alexander Fleming.", "o": ["who", "which", "whose"], "a": 0, "why": "A person → who." },
-        { "t": "mcq", "q": "Is this the laptop ___ you bought last week?", "o": ["who", "which", "whose"], "a": 1, "why": "A thing → which (or that)." },
-        { "t": "mcq", "q": "I met a woman ___ son studies with me.", "o": ["who", "whose", "which"], "a": 1, "why": "Her son → whose son." },
-        { "t": "fix", "s": "My laptop, {that} is five years old, still works well.", "c": "which", "why": "Non-defining clause (commas) → which, not that." },
-        { "t": "mcq", "q": "Which sentence is correct?", "o": ["The students who passed the test can join the course.", "The students, that passed the test, can join the course."], "a": 0, "keep": true, "why": "Defining clause: no commas. ‘That’ never goes between commas." }
+        {
+          "t": "mcq",
+          "q": "The scientist ___ discovered penicillin was Alexander Fleming.",
+          "o": [
+            "who",
+            "which",
+            "whose"
+          ],
+          "a": 0,
+          "why": "A person → who."
+        },
+        {
+          "t": "mcq",
+          "q": "Is this the laptop ___ you bought last week?",
+          "o": [
+            "who",
+            "which",
+            "whose"
+          ],
+          "a": 1,
+          "why": "A thing → which (or that)."
+        },
+        {
+          "t": "mcq",
+          "q": "I met a woman ___ son studies with me.",
+          "o": [
+            "who",
+            "whose",
+            "which"
+          ],
+          "a": 1,
+          "why": "Her son → whose son."
+        },
+        {
+          "t": "fix",
+          "s": "My laptop, {that} is five years old, still works well.",
+          "c": "which",
+          "why": "Non-defining clause (commas) → which, not that."
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence is correct?",
+          "o": [
+            "The students who passed the test can join the course.",
+            "The students, that passed the test, can join the course."
+          ],
+          "a": 0,
+          "keep": true,
+          "why": "Defining clause: no commas. ‘That’ never goes between commas."
+        }
       ],
       "produce": {
         "task": "Write 3–4 sentences about your city, your university or a person you admire. Use at least one defining clause (no commas) and one non-defining clause (with commas).",
         "target": "defining and non-defining relative clauses (who, which, that, whose)",
-        "checklist": ["I used <b>who</b> for people and <b>which</b> for things.", "My non-defining clause has commas and doesn’t use <b>that</b>.", "My defining clause has no commas."],
+        "checklist": [
+          "I used <b>who</b> for people and <b>which</b> for things.",
+          "My non-defining clause has commas and doesn’t use <b>that</b>.",
+          "My defining clause has no commas."
+        ],
         "model": "Adelaide, which is the capital of South Australia, is a quiet and friendly city. Students who like the outdoors will enjoy the beaches and hills nearby. My favourite place is a small café that sells excellent coffee. The owner, whose family is from Italy, always remembers my name."
       }
     },
     {
-      "id": "contrast-linkers", "level": "B2", "minutes": 12, "verified": false,
+      "id": "contrast-linkers",
+      "level": "B2",
+      "minutes": 12,
+      "verified": false,
       "title": "Although, despite, however, whereas",
       "cando": "Show contrast clearly and correctly in academic writing.",
-      "tags": ["linking words", "contrast", "although", "despite", "however", "whereas", "cohesion", "essay"],
-      "sample": ["<b>Although</b> it was hard,…", "<b>Despite</b> the cost,…"],
+      "tags": [
+        "linking words",
+        "contrast",
+        "although",
+        "despite",
+        "however",
+        "whereas",
+        "cohesion",
+        "essay"
+      ],
+      "sample": [
+        "<b>Although</b> it was hard,…",
+        "<b>Despite</b> the cost,…"
+      ],
       "pre": [
-        { "t": "mcq", "q": "___ the weather was bad, the event went ahead.", "o": ["Although", "Despite", "However"], "a": 0 },
-        { "t": "mcq", "q": "___ the high cost, many students choose to live on campus.", "o": ["Although", "Despite", "Whereas"], "a": 1 },
-        { "t": "mcq", "q": "Online courses are flexible. ___, they require self-discipline.", "o": ["Although", "Despite", "However"], "a": 2 },
-        { "t": "fix", "s": "{Despite} it was expensive, the course was worth it.", "c": "Although" },
-        { "t": "gap", "instr": "Type one linking word.", "q": "City life is exciting, ___ country life is more relaxing.", "a": ["whereas", "while", "but"] }
+        {
+          "t": "mcq",
+          "q": "___ the weather was bad, the event went ahead.",
+          "o": [
+            "Although",
+            "Despite",
+            "However"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "___ the high cost, many students choose to live on campus.",
+          "o": [
+            "Although",
+            "Despite",
+            "Whereas"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "Online courses are flexible. ___, they require self-discipline.",
+          "o": [
+            "Although",
+            "Despite",
+            "However"
+          ],
+          "a": 2
+        },
+        {
+          "t": "fix",
+          "s": "{Despite} it was expensive, the course was worth it.",
+          "c": "Although"
+        },
+        {
+          "t": "gap",
+          "instr": "Type one linking word.",
+          "q": "City life is exciting, ___ country life is more relaxing.",
+          "a": [
+            "whereas",
+            "while",
+            "but"
+          ]
+        }
       ],
       "notice": {
         "title": "Paragraph: Is online learning effective?",
@@ -333,9 +2343,48 @@
         "after": "Look at what comes straight after each word you found: a noun? a subject + verb? a comma? You’ll work out the pattern next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "<b>Although</b> it offers flexibility, … · <b>Despite</b> the convenience of recorded lectures, …", "q": "What comes after <b>although</b>, and what comes after <b>despite</b>?", "o": ["although + subject + verb (it offers); despite + noun phrase (the convenience)", "Both are followed by a noun", "Both are followed by subject + verb"], "a": 0, "keep": true, "hint": "Is there a verb after despite?", "insight": "<b>although / even though / whereas</b> + subject + verb. <b>despite / in spite of</b> + noun or -ing: <i>despite the cost, despite being tired</i>." },
-        { "t": "mcq", "ctx": "… may offer the best of both. → <b>However</b>, a mix of…", "q": "Where is <b>however</b>, and what punctuation is used?", "o": ["At the start of a new sentence, followed by a comma", "In the middle of a sentence, with no punctuation", "Before a noun, like despite"], "a": 0, "keep": true, "hint": "Look at the full stop before it and the comma after it.", "insight": "<b>However</b> links two sentences: <i>Sentence. However, sentence.</i> (Or after a semicolon: <i>…; however, …</i>)" },
-        { "t": "mcq", "ctx": "Some students study better at home, <b>whereas</b> others need a classroom.", "q": "What does <b>whereas</b> do here?", "o": ["Compares two different groups or facts", "Gives a reason", "Shows a result"], "a": 0, "keep": true, "hint": "Some students… others…", "insight": "<b>whereas / while</b> compare two contrasting facts in one sentence." }
+        {
+          "t": "mcq",
+          "ctx": "<b>Although</b> it offers flexibility, … · <b>Despite</b> the convenience of recorded lectures, …",
+          "q": "What comes after <b>although</b>, and what comes after <b>despite</b>?",
+          "o": [
+            "although + subject + verb (it offers); despite + noun phrase (the convenience)",
+            "Both are followed by a noun",
+            "Both are followed by subject + verb"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Is there a verb after despite?",
+          "insight": "<b>although / even though / whereas</b> + subject + verb. <b>despite / in spite of</b> + noun or -ing: <i>despite the cost, despite being tired</i>."
+        },
+        {
+          "t": "mcq",
+          "ctx": "… may offer the best of both. → <b>However</b>, a mix of…",
+          "q": "Where is <b>however</b>, and what punctuation is used?",
+          "o": [
+            "At the start of a new sentence, followed by a comma",
+            "In the middle of a sentence, with no punctuation",
+            "Before a noun, like despite"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at the full stop before it and the comma after it.",
+          "insight": "<b>However</b> links two sentences: <i>Sentence. However, sentence.</i> (Or after a semicolon: <i>…; however, …</i>)"
+        },
+        {
+          "t": "mcq",
+          "ctx": "Some students study better at home, <b>whereas</b> others need a classroom.",
+          "q": "What does <b>whereas</b> do here?",
+          "o": [
+            "Compares two different groups or facts",
+            "Gives a reason",
+            "Shows a result"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Some students… others…",
+          "insight": "<b>whereas / while</b> compare two contrasting facts in one sentence."
+        }
       ],
       "rule": {
         "title": "Showing contrast",
@@ -345,44 +2394,498 @@
           "<b>however</b> starts a new sentence (or follows a semicolon) and takes a comma: <i>…. However, …</i>",
           "<b>whereas / while</b> compare two different facts: <i>A is cheap, whereas B is expensive.</i>"
         ],
-        "ex": ["<b>Although</b> the test was hard, most students passed. <b>However</b>, a few failed."],
+        "ex": [
+          "<b>Although</b> the test was hard, most students passed. <b>However</b>, a few failed."
+        ],
         "watch": "<s>Despite it was expensive</s> → Although it was expensive / Despite the cost. And never <s>despite of</s>."
       },
       "practice": [
-        { "t": "mcq", "q": "___ feeling nervous, she gave an excellent presentation.", "o": ["Although", "Despite", "However"], "a": 1, "hint": "Feeling is an -ing form.", "why": "Despite + -ing: despite feeling nervous." },
-        { "t": "gap", "q": "Some people prefer e-books, ___ others still like paper books.", "a": ["whereas", "while", "but"], "hint": "Compare two groups in one sentence.", "why": "whereas / while compare two groups (but also works; whereas is more formal)." },
-        { "t": "fix", "s": "We went out {despite} it was raining.", "c": "although", "hint": "Is there a subject + verb after it?", "why": "Subject + verb (it was raining) → although." },
-        { "t": "order", "a": "Although the test was difficult, most students passed.", "hint": "Start with Although…", "why": "Although + clause, + main clause." },
-        { "t": "mcq", "q": "The method is cheap. ___, it is not very accurate.", "o": ["However", "Although", "Despite"], "a": 0, "hint": "New sentence + comma.", "why": "However, at the start of a new sentence." },
-        { "t": "mcq", "q": "Choose the correct sentence.", "o": ["Despite the rain, the match continued.", "Despite it rained, the match continued.", "Although the rain, the match continued."], "a": 0, "keep": true, "hint": "Despite + noun; although + subject + verb.", "why": "Despite + noun phrase (the rain)." },
-        { "t": "sort", "instr": "What comes after each linker?", "bins": ["+ subject + verb", "+ noun / -ing", "New sentence + comma"], "chips": [["although", 0], ["even though", 0], ["whereas", 0], ["despite", 1], ["in spite of", 1], ["however", 2], ["nevertheless", 2, "Nevertheless works like however."]] }
+        {
+          "t": "mcq",
+          "q": "___ feeling nervous, she gave an excellent presentation.",
+          "o": [
+            "Although",
+            "Despite",
+            "However"
+          ],
+          "a": 1,
+          "hint": "Feeling is an -ing form.",
+          "why": "Despite + -ing: despite feeling nervous."
+        },
+        {
+          "t": "gap",
+          "q": "Some people prefer e-books, ___ others still like paper books.",
+          "a": [
+            "whereas",
+            "while",
+            "but"
+          ],
+          "hint": "Compare two groups in one sentence.",
+          "why": "whereas / while compare two groups (but also works; whereas is more formal)."
+        },
+        {
+          "t": "fix",
+          "s": "We went out {despite} it was raining.",
+          "c": "although",
+          "hint": "Is there a subject + verb after it?",
+          "why": "Subject + verb (it was raining) → although."
+        },
+        {
+          "t": "order",
+          "a": "Although the test was difficult, most students passed.",
+          "hint": "Start with Although…",
+          "why": "Although + clause, + main clause."
+        },
+        {
+          "t": "mcq",
+          "q": "The method is cheap. ___, it is not very accurate.",
+          "o": [
+            "However",
+            "Although",
+            "Despite"
+          ],
+          "a": 0,
+          "hint": "New sentence + comma.",
+          "why": "However, at the start of a new sentence."
+        },
+        {
+          "t": "mcq",
+          "q": "Choose the correct sentence.",
+          "o": [
+            "Despite the rain, the match continued.",
+            "Despite it rained, the match continued.",
+            "Although the rain, the match continued."
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Despite + noun; although + subject + verb.",
+          "why": "Despite + noun phrase (the rain)."
+        },
+        {
+          "t": "sort",
+          "instr": "What comes after each linker?",
+          "bins": [
+            "+ subject + verb",
+            "+ noun / -ing",
+            "New sentence + comma"
+          ],
+          "chips": [
+            [
+              "although",
+              0
+            ],
+            [
+              "even though",
+              0
+            ],
+            [
+              "whereas",
+              0
+            ],
+            [
+              "despite",
+              1
+            ],
+            [
+              "in spite of",
+              1
+            ],
+            [
+              "however",
+              2
+            ],
+            [
+              "nevertheless",
+              2,
+              "Nevertheless works like however."
+            ]
+          ]
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "___ it was late, the library was still busy.", "o": ["Although", "Despite", "However"], "a": 0, "why": "Subject + verb (it was) → although." },
-        { "t": "mcq", "q": "___ the noise, I managed to finish my essay.", "o": ["Although", "In spite of", "Whereas"], "a": 1, "why": "Noun (the noise) → in spite of / despite." },
-        { "t": "mcq", "q": "Solar power is clean. ___, it depends on the weather.", "o": ["Although", "Despite", "However"], "a": 2, "why": "New sentence + comma → However." },
-        { "t": "fix", "s": "{Despite} the course was short, I learned a lot.", "c": "Although", "why": "Subject + verb (the course was) → although." },
-        { "t": "gap", "instr": "Type one linking word.", "q": "My brother loves maths, ___ I prefer languages.", "a": ["whereas", "while", "but"], "why": "Two contrasting facts → whereas / while." }
+        {
+          "t": "mcq",
+          "q": "___ it was late, the library was still busy.",
+          "o": [
+            "Although",
+            "Despite",
+            "However"
+          ],
+          "a": 0,
+          "why": "Subject + verb (it was) → although."
+        },
+        {
+          "t": "mcq",
+          "q": "___ the noise, I managed to finish my essay.",
+          "o": [
+            "Although",
+            "In spite of",
+            "Whereas"
+          ],
+          "a": 1,
+          "why": "Noun (the noise) → in spite of / despite."
+        },
+        {
+          "t": "mcq",
+          "q": "Solar power is clean. ___, it depends on the weather.",
+          "o": [
+            "Although",
+            "Despite",
+            "However"
+          ],
+          "a": 2,
+          "why": "New sentence + comma → However."
+        },
+        {
+          "t": "fix",
+          "s": "{Despite} the course was short, I learned a lot.",
+          "c": "Although",
+          "why": "Subject + verb (the course was) → although."
+        },
+        {
+          "t": "gap",
+          "instr": "Type one linking word.",
+          "q": "My brother loves maths, ___ I prefer languages.",
+          "a": [
+            "whereas",
+            "while",
+            "but"
+          ],
+          "why": "Two contrasting facts → whereas / while."
+        }
       ],
       "produce": {
         "task": "Write 3–4 sentences about the advantages and disadvantages of studying abroad (or working from home). Use at least three different contrast linkers from this unit.",
         "target": "contrast linkers: although, despite / in spite of, however, whereas",
-        "checklist": ["After <b>although / whereas</b> I have a subject + verb.", "After <b>despite / in spite of</b> I have a noun or -ing form.", "<b>However</b> starts a sentence and has a comma after it."],
+        "checklist": [
+          "After <b>although / whereas</b> I have a subject + verb.",
+          "After <b>despite / in spite of</b> I have a noun or -ing form.",
+          "<b>However</b> starts a sentence and has a comma after it."
+        ],
         "model": "Studying abroad can be expensive. However, it gives students valuable international experience. Although many students feel homesick at first, most adapt within a few months. Despite the challenge of a new language, they often improve quickly, whereas students who stay at home may have fewer chances to practise."
       }
     },
     {
-      "id": "participle-clauses", "level": "C1", "minutes": 14, "verified": false,
+      "id": "distancing",
+      "level": "B2",
+      "minutes": 12,
+      "verified": false,
+      "title": "Distancing: It is believed that…",
+      "cando": "Report ideas and claims with a careful, impersonal academic voice.",
+      "tags": [
+        "passive",
+        "reporting",
+        "hedging",
+        "academic style",
+        "it is said",
+        "is thought to"
+      ],
+      "sample": [
+        "<b>It is believed that</b>…",
+        "X <b>is thought to</b>…"
+      ],
+      "pre": [
+        {
+          "t": "mcq",
+          "q": "___ that the policy will reduce traffic.",
+          "o": [
+            "It is expected",
+            "It expects",
+            "Is expected",
+            "It is expecting"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "The drug is thought ___ fewer side effects.",
+          "o": [
+            "to have",
+            "having",
+            "that it has",
+            "have"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "The building ___ to be over 500 years old.",
+          "o": [
+            "is said",
+            "says",
+            "is saying",
+            "said"
+          ],
+          "a": 0
+        },
+        {
+          "t": "fix",
+          "s": "It is {believe} that the economy will grow.",
+          "c": "believed"
+        },
+        {
+          "t": "gap",
+          "q": "Coffee is known ___ improve concentration.",
+          "a": [
+            "to"
+          ]
+        }
+      ],
+      "notice": {
+        "title": "From a report on coffee",
+        "instr": "Tap the phrases that report what people believe or say, without saying who.",
+        "text": "Coffee is one of the most popular drinks in the world. [[It is often said that]] coffee helps people concentrate. Moderate coffee drinking [[is thought to]] be safe for most adults. [[It has been suggested that]] coffee may protect against some diseases, but the evidence is limited. Too much caffeine [[is known to]] cause sleep problems.",
+        "after": "Who says or thinks these things? The writer doesn’t say. Why? You’ll work it out next."
+      },
+      "discover": [
+        {
+          "t": "mcq",
+          "ctx": "<b>It is often said that</b> coffee helps… · <b>It has been suggested that</b> coffee may…",
+          "q": "Why does the writer use these phrases?",
+          "o": [
+            "To report a claim without naming who made it, and to sound careful",
+            "To give the writer’s strong personal opinion",
+            "To ask a question"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Who said it? Do we know?",
+          "insight": "Distancing reports common beliefs or claims impersonally and shows the writer is not claiming them as fact."
+        },
+        {
+          "t": "mcq",
+          "ctx": "It is said <b>that</b> + clause · coffee <b>is thought to</b> + verb",
+          "q": "What are the two patterns?",
+          "o": [
+            "It + passive + that + clause; Subject + passive + to + verb",
+            "It + active + to; Subject + that",
+            "Only one pattern is correct"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at what follows each.",
+          "insight": "Pattern 1: <b>It is said/believed/thought/known that</b> + clause. Pattern 2: <b>Subject + is said/believed/thought/known to</b> + verb."
+        },
+        {
+          "t": "mcq",
+          "ctx": "is thought <b>to be</b> safe · is known <b>to cause</b>…",
+          "q": "Which is correct for a past action?",
+          "o": [
+            "The site is believed to have been built in 1200.",
+            "The site is believed to be built in 1200."
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "The building happened in the past.",
+          "insight": "For an earlier action use <b>to have + past participle</b>: <i>is believed to have been built</i>."
+        }
+      ],
+      "rule": {
+        "title": "Distancing",
+        "points": [
+          "<b>It is said / believed / thought / known / expected / reported that</b> + clause.",
+          "<b>Subject + is said / believed / thought / known + to</b> + verb: <i>Coffee is thought to improve focus.</i>",
+          "Past action: <b>to have + past participle</b>: <i>The city is believed to have been founded in 1820.</i>",
+          "Use it for common beliefs or claims you are reporting, not for your own findings."
+        ],
+        "ex": [
+          "<b>It is widely believed that</b> sleep improves memory. Sleep <b>is thought to</b> help the brain store information."
+        ],
+        "watch": "Use the past participle: <s>It is believe that</s> → It is believed that. And not <s>is thought that it has</s> in pattern 2."
+      },
+      "practice": [
+        {
+          "t": "mcq",
+          "q": "Exercise ___ to reduce stress.",
+          "o": [
+            "is known",
+            "knows",
+            "is knowing",
+            "known"
+          ],
+          "a": 0,
+          "why": "Subject + is known + to + verb.",
+          "keep": true
+        },
+        {
+          "t": "gap",
+          "q": "It ___ (report) that the bridge will close next year.",
+          "a": [
+            "is reported",
+            "has been reported"
+          ],
+          "why": "It + passive + that.",
+          "hint": "It + is + past participle…"
+        },
+        {
+          "t": "mcq",
+          "q": "The painting is believed ___ by a student of Rembrandt.",
+          "o": [
+            "to have been painted",
+            "to paint",
+            "to be painting",
+            "painted"
+          ],
+          "a": 0,
+          "why": "Past + passive → to have been painted.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "Social media is thought {that} affect sleep.",
+          "c": "to",
+          "why": "Subject + is thought + to + verb."
+        },
+        {
+          "t": "order",
+          "a": "It is widely believed that diet affects mood.",
+          "hint": "Start with It is…",
+          "why": "It + is + widely + believed + that + clause."
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence uses distancing correctly?",
+          "o": [
+            "Sugar is said to be addictive.",
+            "Sugar is said that it is addictive.",
+            "It is said sugar to be addictive."
+          ],
+          "a": 0,
+          "why": "Pattern 2: subject + is said + to.",
+          "keep": true
+        }
+      ],
+      "post": [
+        {
+          "t": "mcq",
+          "q": "___ that prices will rise next year.",
+          "o": [
+            "It is expected",
+            "It expects",
+            "Expected",
+            "It is expect"
+          ],
+          "a": 0,
+          "why": "It + is expected + that.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "Green tea is believed ___ health benefits.",
+          "o": [
+            "to have",
+            "that it has",
+            "having",
+            "have"
+          ],
+          "a": 0,
+          "why": "Subject + is believed + to + verb.",
+          "keep": true
+        },
+        {
+          "t": "mcq",
+          "q": "The castle is thought ___ in the 12th century.",
+          "o": [
+            "to have been built",
+            "to build",
+            "to be build",
+            "that was built"
+          ],
+          "a": 0,
+          "why": "Past + passive → to have been built.",
+          "keep": true
+        },
+        {
+          "t": "fix",
+          "s": "It is {know} that smoking causes cancer.",
+          "c": "known",
+          "why": "Past participle: known."
+        },
+        {
+          "t": "gap",
+          "q": "The new policy is expected ___ reduce costs.",
+          "a": [
+            "to"
+          ],
+          "why": "is expected to + verb."
+        }
+      ],
+      "produce": {
+        "task": "Write 3–4 sentences about a common belief in your field or about a health topic. Use both distancing patterns at least once.",
+        "target": "distancing: It is believed that… / X is thought to…",
+        "checklist": [
+          "Pattern 1: <b>It is + past participle + that</b> + clause.",
+          "Pattern 2: <b>Subject + is + past participle + to</b> + verb.",
+          "I used distancing for reported claims, not my own findings."
+        ],
+        "model": "It is widely believed that bilingual children learn faster. Bilingualism is thought to improve attention control. However, it has been suggested that the benefits may be smaller than once thought."
+      }
+    },
+    {
+      "id": "participle-clauses",
+      "level": "C1",
+      "minutes": 14,
+      "verified": false,
       "title": "Participle clauses",
       "cando": "Write shorter, more academic sentences with -ing and -ed clauses.",
-      "tags": ["participle", "reduced relative", "having", "dangling", "academic style", "concise"],
-      "sample": ["<b>Using</b> a survey, we…", "<b>Published</b> in 2024, the…"],
+      "tags": [
+        "participle",
+        "reduced relative",
+        "having",
+        "dangling",
+        "academic style",
+        "concise"
+      ],
+      "sample": [
+        "<b>Using</b> a survey, we…",
+        "<b>Published</b> in 2024, the…"
+      ],
       "pre": [
-        { "t": "mcq", "q": "___ the data, the researchers found a clear pattern.", "o": ["Analysing", "Analysed", "To analysing"], "a": 0 },
-        { "t": "mcq", "q": "___ in 1990, the theory is still widely used.", "o": ["Developing", "Developed", "Having developing"], "a": 1 },
-        { "t": "mcq", "q": "Students ___ in the online group scored higher.", "o": ["enrolled", "enrolling to", "were enrolled"], "a": 0 },
-        { "t": "fix", "s": "Having {finish} the experiment, the team wrote the report.", "c": "finished" },
-        { "t": "mcq", "q": "Which sentence is correct?", "o": ["Walking into the lab, the smell of chemicals was strong.", "Walking into the lab, I noticed a strong smell of chemicals."], "a": 1, "keep": true }
+        {
+          "t": "mcq",
+          "q": "___ the data, the researchers found a clear pattern.",
+          "o": [
+            "Analysing",
+            "Analysed",
+            "To analysing"
+          ],
+          "a": 0
+        },
+        {
+          "t": "mcq",
+          "q": "___ in 1990, the theory is still widely used.",
+          "o": [
+            "Developing",
+            "Developed",
+            "Having developing"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "Students ___ in the online group scored higher.",
+          "o": [
+            "enrolled",
+            "enrolling to",
+            "were enrolled"
+          ],
+          "a": 0
+        },
+        {
+          "t": "fix",
+          "s": "Having {finish} the experiment, the team wrote the report.",
+          "c": "finished"
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence is correct?",
+          "o": [
+            "Walking into the lab, the smell of chemicals was strong.",
+            "Walking into the lab, I noticed a strong smell of chemicals."
+          ],
+          "a": 1,
+          "keep": true
+        }
       ],
       "notice": {
         "title": "From a research summary (invented example)",
@@ -391,9 +2894,48 @@
         "after": "Some clauses use -ing, some use a past participle, and one uses <b>having</b>. What’s the difference in meaning? You’ll work it out next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "Families <b>living</b> in newer houses used less electricity. = Families <u>who live</u> in newer houses…", "q": "What does the -ing participle replace here?", "o": ["who + an active verb (who live)", "which + a passive verb", "because + a verb"], "a": 0, "keep": true, "hint": "Look at the underlined words.", "insight": "<b>-ing</b> participle = active meaning: <i>families living… = families who live…</i>" },
-        { "t": "mcq", "ctx": "The report, <b>published</b> in 2025, recommends… = The report, <u>which was published</u> in 2025, …", "q": "What kind of meaning does the past participle have?", "o": ["Passive: the report was published", "Active: the report published something", "Future"], "a": 0, "keep": true, "hint": "Did the report publish something, or was it published?", "insight": "<b>Past participle</b> = passive meaning: <i>published = which was published</i>." },
-        { "t": "mcq", "ctx": "<b>Having compared</b> the two groups, the authors concluded…", "q": "Who compared the groups? Look at the subject of the main clause.", "o": ["The authors", "The groups", "It isn’t clear"], "a": 0, "keep": true, "hint": "Who is doing the concluding?", "insight": "The participle clause and the main clause must share the <b>same subject</b>. <b>Having + past participle</b> shows that one action happened first." }
+        {
+          "t": "mcq",
+          "ctx": "Families <b>living</b> in newer houses used less electricity. = Families <u>who live</u> in newer houses…",
+          "q": "What does the -ing participle replace here?",
+          "o": [
+            "who + an active verb (who live)",
+            "which + a passive verb",
+            "because + a verb"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Look at the underlined words.",
+          "insight": "<b>-ing</b> participle = active meaning: <i>families living… = families who live…</i>"
+        },
+        {
+          "t": "mcq",
+          "ctx": "The report, <b>published</b> in 2025, recommends… = The report, <u>which was published</u> in 2025, …",
+          "q": "What kind of meaning does the past participle have?",
+          "o": [
+            "Passive: the report was published",
+            "Active: the report published something",
+            "Future"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Did the report publish something, or was it published?",
+          "insight": "<b>Past participle</b> = passive meaning: <i>published = which was published</i>."
+        },
+        {
+          "t": "mcq",
+          "ctx": "<b>Having compared</b> the two groups, the authors concluded…",
+          "q": "Who compared the groups? Look at the subject of the main clause.",
+          "o": [
+            "The authors",
+            "The groups",
+            "It isn’t clear"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Who is doing the concluding?",
+          "insight": "The participle clause and the main clause must share the <b>same subject</b>. <b>Having + past participle</b> shows that one action happened first."
+        }
       ],
       "rule": {
         "title": "Participle clauses",
@@ -403,44 +2945,215 @@
           "<b>Having + past participle</b> = this happened first: <i>Having read the instructions, I started.</i>",
           "The participle clause and the main clause need the <b>same subject</b>, or the participle ‘dangles’."
         ],
-        "ex": ["<b>Funded</b> by the government, the project ran for three years."],
+        "ex": [
+          "<b>Funded</b> by the government, the project ran for three years."
+        ],
         "watch": "Dangling participle: <s>Looking at the results, a pattern appeared.</s> (The pattern didn’t look!) → Looking at the results, we noticed a pattern."
       },
       "practice": [
-        { "t": "mcq", "q": "The number of students ___ abroad has increased.", "o": ["studying", "studied", "study"], "a": 0, "hint": "Students who study → active.", "why": "Active meaning → -ing: students studying abroad." },
-        { "t": "mcq", "q": "The questionnaire, ___ by 300 students, showed mixed results.", "o": ["completing", "completed", "having completing"], "a": 1, "hint": "Did the questionnaire complete something?", "why": "Passive meaning (which was completed) → completed." },
-        { "t": "gap", "q": "___ (read) the article twice, I finally understood the main argument.", "a": ["Having read"], "hint": "This happened first: having + past participle.", "why": "Having read = after I had read." },
-        { "t": "fix", "s": "Students {attended} the workshop received a certificate.", "c": "attending", "hint": "Students who attended → active.", "why": "Active meaning → -ing: students attending the workshop." },
-        { "t": "mcq", "q": "Choose the sentence without a dangling participle.", "o": ["Having finished the survey, the data was analysed.", "Having finished the survey, we analysed the data."], "a": 1, "keep": true, "hint": "Who finished the survey: the data?", "why": "The subject of the main clause (we) must be the one who finished." },
-        { "t": "order", "a": "Most people interviewed for the study were under 30.", "hint": "Start with Most people…", "why": "interviewed = who were interviewed (passive)." },
-        { "t": "mcq", "q": "Reduce the clause: ‘The method which is described in Section 2 is simple.’", "o": ["The method describing in Section 2 is simple.", "The method described in Section 2 is simple.", "The method has described in Section 2 is simple."], "a": 1, "keep": true, "hint": "Which is described = passive.", "why": "which is described → described." }
+        {
+          "t": "mcq",
+          "q": "The number of students ___ abroad has increased.",
+          "o": [
+            "studying",
+            "studied",
+            "study"
+          ],
+          "a": 0,
+          "hint": "Students who study → active.",
+          "why": "Active meaning → -ing: students studying abroad."
+        },
+        {
+          "t": "mcq",
+          "q": "The questionnaire, ___ by 300 students, showed mixed results.",
+          "o": [
+            "completing",
+            "completed",
+            "having completing"
+          ],
+          "a": 1,
+          "hint": "Did the questionnaire complete something?",
+          "why": "Passive meaning (which was completed) → completed."
+        },
+        {
+          "t": "gap",
+          "q": "___ (read) the article twice, I finally understood the main argument.",
+          "a": [
+            "Having read"
+          ],
+          "hint": "This happened first: having + past participle.",
+          "why": "Having read = after I had read."
+        },
+        {
+          "t": "fix",
+          "s": "Students {attended} the workshop received a certificate.",
+          "c": "attending",
+          "hint": "Students who attended → active.",
+          "why": "Active meaning → -ing: students attending the workshop."
+        },
+        {
+          "t": "mcq",
+          "q": "Choose the sentence without a dangling participle.",
+          "o": [
+            "Having finished the survey, the data was analysed.",
+            "Having finished the survey, we analysed the data."
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Who finished the survey: the data?",
+          "why": "The subject of the main clause (we) must be the one who finished."
+        },
+        {
+          "t": "order",
+          "a": "Most people interviewed for the study were under 30.",
+          "hint": "Start with Most people…",
+          "why": "interviewed = who were interviewed (passive)."
+        },
+        {
+          "t": "mcq",
+          "q": "Reduce the clause: ‘The method which is described in Section 2 is simple.’",
+          "o": [
+            "The method describing in Section 2 is simple.",
+            "The method described in Section 2 is simple.",
+            "The method has described in Section 2 is simple."
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Which is described = passive.",
+          "why": "which is described → described."
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "___ a mixed-methods approach, the study combined surveys and interviews.", "o": ["Adopting", "Adopted", "Adopt"], "a": 0, "why": "The study adopted an approach: active → Adopting." },
-        { "t": "mcq", "q": "___ in plain English, the guide is easy to follow.", "o": ["Writing", "Written", "Having writing"], "a": 1, "why": "The guide was written: passive → Written." },
-        { "t": "mcq", "q": "Patients ___ the new drug recovered faster.", "o": ["receiving", "received to", "were receiving"], "a": 0, "why": "Patients who received → active → receiving." },
-        { "t": "fix", "s": "Having {wrote} the introduction, she moved on to the method.", "c": "written", "why": "Having + past participle: written." },
-        { "t": "mcq", "q": "Which sentence is correct?", "o": ["Driving to work, the radio was on.", "Driving to work, I listened to the radio."], "a": 1, "keep": true, "why": "The subject (I) must be the one driving." }
+        {
+          "t": "mcq",
+          "q": "___ a mixed-methods approach, the study combined surveys and interviews.",
+          "o": [
+            "Adopting",
+            "Adopted",
+            "Adopt"
+          ],
+          "a": 0,
+          "why": "The study adopted an approach: active → Adopting."
+        },
+        {
+          "t": "mcq",
+          "q": "___ in plain English, the guide is easy to follow.",
+          "o": [
+            "Writing",
+            "Written",
+            "Having writing"
+          ],
+          "a": 1,
+          "why": "The guide was written: passive → Written."
+        },
+        {
+          "t": "mcq",
+          "q": "Patients ___ the new drug recovered faster.",
+          "o": [
+            "receiving",
+            "received to",
+            "were receiving"
+          ],
+          "a": 0,
+          "why": "Patients who received → active → receiving."
+        },
+        {
+          "t": "fix",
+          "s": "Having {wrote} the introduction, she moved on to the method.",
+          "c": "written",
+          "why": "Having + past participle: written."
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence is correct?",
+          "o": [
+            "Driving to work, the radio was on.",
+            "Driving to work, I listened to the radio."
+          ],
+          "a": 1,
+          "keep": true,
+          "why": "The subject (I) must be the one driving."
+        }
       ],
       "produce": {
         "task": "Write 3–4 sentences describing a study, a project or a process. Use at least one -ing clause, one past participle clause and, if you can, one ‘having + past participle’ clause.",
         "target": "participle clauses (-ing, past participle, having + past participle)",
-        "checklist": ["My -ing clauses have an active meaning; my past participle clauses have a passive meaning.", "Each participle clause has the same subject as the main clause.", "I used commas after clauses at the start of a sentence."],
+        "checklist": [
+          "My -ing clauses have an active meaning; my past participle clauses have a passive meaning.",
+          "Each participle clause has the same subject as the main clause.",
+          "I used commas after clauses at the start of a sentence."
+        ],
         "model": "Using a short online survey, we asked 150 students about their sleep. Most students taking part were in their first year. Collected over two weeks, the data showed that students sleeping less than six hours felt more stressed. Having analysed the results, we recommend later morning classes."
       }
     },
     {
-      "id": "inversion", "level": "C1", "minutes": 14, "verified": false,
+      "id": "inversion",
+      "level": "C1",
+      "minutes": 14,
+      "verified": false,
       "title": "Inversion for emphasis",
       "cando": "Add emphasis and a formal tone with Not only…, Rarely…, Only when…",
-      "tags": ["inversion", "emphasis", "not only", "rarely", "never", "formal", "word order"],
-      "sample": ["<b>Not only does</b> it…", "<b>Rarely have</b> we…"],
+      "tags": [
+        "inversion",
+        "emphasis",
+        "not only",
+        "rarely",
+        "never",
+        "formal",
+        "word order"
+      ],
+      "sample": [
+        "<b>Not only does</b> it…",
+        "<b>Rarely have</b> we…"
+      ],
       "pre": [
-        { "t": "mcq", "q": "Not only ___ cheaper, but it is also faster.", "o": ["it is", "is it", "it does"], "a": 1 },
-        { "t": "mcq", "q": "Rarely ___ such a clear result.", "o": ["we have seen", "have we seen", "we saw"], "a": 1 },
-        { "t": "mcq", "q": "Only when the data was checked ___ the error.", "o": ["did they notice", "they noticed", "they did notice"], "a": 0 },
-        { "t": "gap", "q": "Little ___ (they / know) that the results would change everything.", "a": ["did they know"] },
-        { "t": "mcq", "q": "Which sentence is correct?", "o": ["Hardly had we started when the fire alarm rang.", "Hardly we had started when the fire alarm rang."], "a": 0, "keep": true }
+        {
+          "t": "mcq",
+          "q": "Not only ___ cheaper, but it is also faster.",
+          "o": [
+            "it is",
+            "is it",
+            "it does"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "Rarely ___ such a clear result.",
+          "o": [
+            "we have seen",
+            "have we seen",
+            "we saw"
+          ],
+          "a": 1
+        },
+        {
+          "t": "mcq",
+          "q": "Only when the data was checked ___ the error.",
+          "o": [
+            "did they notice",
+            "they noticed",
+            "they did notice"
+          ],
+          "a": 0
+        },
+        {
+          "t": "gap",
+          "q": "Little ___ (they / know) that the results would change everything.",
+          "a": [
+            "did they know"
+          ]
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence is correct?",
+          "o": [
+            "Hardly had we started when the fire alarm rang.",
+            "Hardly we had started when the fire alarm rang."
+          ],
+          "a": 0,
+          "keep": true
+        }
       ],
       "notice": {
         "title": "From an opinion essay on renewable energy",
@@ -449,9 +3162,48 @@
         "after": "Each sentence starts with a negative or limiting word, and then the word order looks like a question. You’ll work out the rule next."
       },
       "discover": [
-        { "t": "mcq", "ctx": "Normal: The cost <u>has fallen</u>. → <b>Not only has</b> the cost fallen…", "q": "What happens after <b>Not only</b> at the start of a sentence?", "o": ["The auxiliary (has) comes before the subject, like in a question", "Nothing changes", "The verb goes to the end"], "a": 0, "keep": true, "hint": "Compare it with the question: Has the cost fallen?", "insight": "After a negative or limiting word at the start, use <b>question word order</b>: <i>Not only has the cost fallen…</i>" },
-        { "t": "mcq", "ctx": "Normal: A technology <u>rarely spreads</u> so quickly. → <b>Rarely does</b> a technology spread so quickly.", "q": "There’s no auxiliary in ‘rarely spreads’. What do we add?", "o": ["do / does / did", "have", "will"], "a": 0, "keep": true, "hint": "How do you make a question from ‘It spreads’?", "insight": "No auxiliary? Add <b>do / does / did</b>, as in a question: <i>Rarely does it…, Only then did we…</i>" },
-        { "t": "mcq", "ctx": "Rarely · Never before · Only recently · At no time · Not only · Little · Seldom", "q": "Why do writers use inversion?", "o": ["To add emphasis and a formal tone", "To ask a question", "Because it’s required after every adverb"], "a": 0, "keep": true, "hint": "Is it needed for meaning?", "insight": "Inversion is formal and emphatic. Use it sparingly: once in an essay can be powerful; five times sounds unnatural." }
+        {
+          "t": "mcq",
+          "ctx": "Normal: The cost <u>has fallen</u>. → <b>Not only has</b> the cost fallen…",
+          "q": "What happens after <b>Not only</b> at the start of a sentence?",
+          "o": [
+            "The auxiliary (has) comes before the subject, like in a question",
+            "Nothing changes",
+            "The verb goes to the end"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Compare it with the question: Has the cost fallen?",
+          "insight": "After a negative or limiting word at the start, use <b>question word order</b>: <i>Not only has the cost fallen…</i>"
+        },
+        {
+          "t": "mcq",
+          "ctx": "Normal: A technology <u>rarely spreads</u> so quickly. → <b>Rarely does</b> a technology spread so quickly.",
+          "q": "There’s no auxiliary in ‘rarely spreads’. What do we add?",
+          "o": [
+            "do / does / did",
+            "have",
+            "will"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "How do you make a question from ‘It spreads’?",
+          "insight": "No auxiliary? Add <b>do / does / did</b>, as in a question: <i>Rarely does it…, Only then did we…</i>"
+        },
+        {
+          "t": "mcq",
+          "ctx": "Rarely · Never before · Only recently · At no time · Not only · Little · Seldom",
+          "q": "Why do writers use inversion?",
+          "o": [
+            "To add emphasis and a formal tone",
+            "To ask a question",
+            "Because it’s required after every adverb"
+          ],
+          "a": 0,
+          "keep": true,
+          "hint": "Is it needed for meaning?",
+          "insight": "Inversion is formal and emphatic. Use it sparingly: once in an essay can be powerful; five times sounds unnatural."
+        }
       ],
       "rule": {
         "title": "Inversion",
@@ -461,29 +3213,144 @@
           "Common starters: <b>Not only… but also, Rarely, Seldom, Never (before), Only when / Only then / Only recently, At no time, Under no circumstances, Little, Hardly… when, No sooner… than</b>.",
           "With <b>Only when / Only after</b>, invert the main clause, not the first clause: <i>Only when we checked the data <u>did we notice</u> the error.</i>"
         ],
-        "ex": ["<b>Not only does</b> the app save time, but it also reduces stress."],
+        "ex": [
+          "<b>Not only does</b> the app save time, but it also reduces stress."
+        ],
         "watch": "Only invert when the negative word comes first: <i>We have rarely seen this</i> (normal) / <i>Rarely have we seen this</i> (inverted)."
       },
       "practice": [
-        { "t": "mcq", "q": "Never ___ such a difficult exam.", "o": ["I have taken", "have I taken", "I took"], "a": 1, "hint": "Never at the start → question word order.", "why": "Never + have + I + past participle." },
-        { "t": "gap", "q": "Not only ___ (the app / save) time, but it also reduces stress.", "a": ["does the app save"], "hint": "Present simple, no auxiliary → does + subject + base verb.", "why": "Not only does + subject + base verb." },
-        { "t": "mcq", "q": "Only after the meeting ___ the problem.", "o": ["did we understand", "we understood", "understood we"], "a": 0, "hint": "Invert the main clause.", "why": "Only after… + did + subject + base verb." },
-        { "t": "order", "a": "Seldom do students ask for feedback.", "hint": "Seldom + do + subject…", "why": "Seldom + do + subject + base verb." },
-        { "t": "mcq", "instr": "Careful: which one is NOT correct?", "q": "Which sentence is NOT correct?", "o": ["Rarely do we see such results.", "Rarely we see such results.", "We rarely see such results."], "a": 1, "keep": true, "hint": "Rarely at the start needs inversion.", "why": "Rarely at the start → Rarely do we see…" },
-        { "t": "fix", "s": "No sooner had we arrived {when} it started to rain.", "c": "than", "hint": "No sooner… ? / Hardly… when", "why": "No sooner … than; Hardly … when." },
-        { "t": "gap", "q": "Under no circumstances ___ (students / should / use) their phones during the exam.", "a": ["should students use"], "hint": "Auxiliary (should) + subject + verb.", "why": "Under no circumstances + should + subject + base verb." }
+        {
+          "t": "mcq",
+          "q": "Never ___ such a difficult exam.",
+          "o": [
+            "I have taken",
+            "have I taken",
+            "I took"
+          ],
+          "a": 1,
+          "hint": "Never at the start → question word order.",
+          "why": "Never + have + I + past participle."
+        },
+        {
+          "t": "gap",
+          "q": "Not only ___ (the app / save) time, but it also reduces stress.",
+          "a": [
+            "does the app save"
+          ],
+          "hint": "Present simple, no auxiliary → does + subject + base verb.",
+          "why": "Not only does + subject + base verb."
+        },
+        {
+          "t": "mcq",
+          "q": "Only after the meeting ___ the problem.",
+          "o": [
+            "did we understand",
+            "we understood",
+            "understood we"
+          ],
+          "a": 0,
+          "hint": "Invert the main clause.",
+          "why": "Only after… + did + subject + base verb."
+        },
+        {
+          "t": "order",
+          "a": "Seldom do students ask for feedback.",
+          "hint": "Seldom + do + subject…",
+          "why": "Seldom + do + subject + base verb."
+        },
+        {
+          "t": "mcq",
+          "instr": "Careful: which one is NOT correct?",
+          "q": "Which sentence is NOT correct?",
+          "o": [
+            "Rarely do we see such results.",
+            "Rarely we see such results.",
+            "We rarely see such results."
+          ],
+          "a": 1,
+          "keep": true,
+          "hint": "Rarely at the start needs inversion.",
+          "why": "Rarely at the start → Rarely do we see…"
+        },
+        {
+          "t": "fix",
+          "s": "No sooner had we arrived {when} it started to rain.",
+          "c": "than",
+          "hint": "No sooner… ? / Hardly… when",
+          "why": "No sooner … than; Hardly … when."
+        },
+        {
+          "t": "gap",
+          "q": "Under no circumstances ___ (students / should / use) their phones during the exam.",
+          "a": [
+            "should students use"
+          ],
+          "hint": "Auxiliary (should) + subject + verb.",
+          "why": "Under no circumstances + should + subject + base verb."
+        }
       ],
       "post": [
-        { "t": "mcq", "q": "Not only ___ the course useful, but it was also fun.", "o": ["was", "it was", "did"], "a": 0, "why": "Not only + was + subject: Not only was the course useful…" },
-        { "t": "mcq", "q": "Seldom ___ such a clear explanation.", "o": ["we hear", "do we hear", "we do hear"], "a": 1, "why": "Seldom + do + subject + base verb." },
-        { "t": "mcq", "q": "Only when I read the feedback ___ my mistake.", "o": ["I understood", "did I understand", "understood I"], "a": 1, "why": "Only when… → invert the main clause: did I understand." },
-        { "t": "gap", "q": "Rarely ___ (it / snow) in Sydney.", "a": ["does it snow"], "why": "Rarely + does + it + base verb." },
-        { "t": "mcq", "q": "Which sentence is correct?", "o": ["No sooner had the lecture started than the power went off.", "No sooner the lecture had started than the power went off."], "a": 0, "keep": true, "why": "No sooner + had + subject + past participle … than." }
+        {
+          "t": "mcq",
+          "q": "Not only ___ the course useful, but it was also fun.",
+          "o": [
+            "was",
+            "it was",
+            "did"
+          ],
+          "a": 0,
+          "why": "Not only + was + subject: Not only was the course useful…"
+        },
+        {
+          "t": "mcq",
+          "q": "Seldom ___ such a clear explanation.",
+          "o": [
+            "we hear",
+            "do we hear",
+            "we do hear"
+          ],
+          "a": 1,
+          "why": "Seldom + do + subject + base verb."
+        },
+        {
+          "t": "mcq",
+          "q": "Only when I read the feedback ___ my mistake.",
+          "o": [
+            "I understood",
+            "did I understand",
+            "understood I"
+          ],
+          "a": 1,
+          "why": "Only when… → invert the main clause: did I understand."
+        },
+        {
+          "t": "gap",
+          "q": "Rarely ___ (it / snow) in Sydney.",
+          "a": [
+            "does it snow"
+          ],
+          "why": "Rarely + does + it + base verb."
+        },
+        {
+          "t": "mcq",
+          "q": "Which sentence is correct?",
+          "o": [
+            "No sooner had the lecture started than the power went off.",
+            "No sooner the lecture had started than the power went off."
+          ],
+          "a": 0,
+          "keep": true,
+          "why": "No sooner + had + subject + past participle … than."
+        }
       ],
       "produce": {
         "task": "Write a short paragraph (3–4 sentences) about a big change in technology, education or your city. Use inversion once or twice for emphasis (for example Not only…, Rarely…, Only recently…).",
         "target": "inversion after negative and limiting adverbials",
-        "checklist": ["After my negative or limiting word, the auxiliary comes before the subject.", "I added do/does/did when there was no auxiliary.", "I used inversion only once or twice."],
+        "checklist": [
+          "After my negative or limiting word, the auxiliary comes before the subject.",
+          "I added do/does/did when there was no auxiliary.",
+          "I used inversion only once or twice."
+        ],
         "model": "Smartphones have transformed the way students learn. Not only can they access lectures at any time, but they can also join study groups from anywhere. Rarely has a single device changed education so quickly. However, only recently have universities started to teach students how to manage digital distractions."
       }
     }

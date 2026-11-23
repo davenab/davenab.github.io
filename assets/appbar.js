@@ -12,6 +12,7 @@
     apaguide: { t: "APA Reference Guide", d: "Patterns and examples for every common source type", u: "/apa-reference-guide/" },
     grammarhub: { t: "Grammar Hub", d: "Test yourself, work out the rule, practise (A2–C1)", u: "/grammar-hub/" },
     vocabhub: { t: "Vocabulary Hub", d: "Academic words and collocations (A2–C1)", u: "/vocabulary-hub/" },
+    levelcheck: { t: "Level Check (B1–C1)", d: "Find your level and what to study next", u: "/level-check/" },
     dictogloss: { t: "Dictogloss Trainer", d: "Listen, take notes and rebuild a short academic talk", u: "/dictogloss/" },
     coach:    { t: "Feedback-to-Mastery Coach", d: "Turn your teacher's feedback into skills you can use", u: "/feedback-coach/" }
   };
